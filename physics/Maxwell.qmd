@@ -1,0 +1,1093 @@
+---
+title: "麦克斯韦方程组的洛伦兹协变性"
+author:
+  - name: "杨国梁"
+    affiliation: "山东 济南"
+    email: "guoliang.yang@example.com"
+subject: "理论物理 · 相对论"
+keywords:
+  - 相对论
+  - 麦克斯韦方程组
+  - 洛伦兹变换
+  - 协变性
+  - 电磁场张量
+lang: zh-CN
+documentclass: ctexbook
+classoption:
+  - "UTF8"
+  - "12pt"
+  - "oneside"
+  - "openany"
+papersize: a4
+linestretch: 1.5
+toc: true
+toc-depth: 3
+secnumdepth: 3
+number-sections: true
+lot: true
+lof: false
+colorlinks: true
+linkcolor: "blue!50!black"
+citecolor: "blue!50!black"
+urlcolor: "blue!50!black"
+format:
+  pdf:
+    pdf-engine: xelatex
+    keep-tex: false
+    include-in-header:
+      text: |
+        % ===== 抑制 Quarto 默认 \maketitle（自定义封面代行）=====
+        \let\maketitle\relax
+        \AtBeginDocument{\let\maketitle\relax}
+        % ===== 书籍样式页眉页脚 =====
+        \usepackage{fancyhdr}
+        \usepackage{xcolor}
+        \usepackage{titlesec}
+        \pagestyle{fancy}
+        \fancyhf{}
+        \fancyhead[LE]{\thepage\quad\textit{麦克斯韦方程组的洛伦兹协变性}}
+        \fancyhead[RO]{\textit{杨国梁}\quad\thepage}
+        \fancyfoot[C]{\thepage}
+        \renewcommand{\headrulewidth}{0.4pt}
+        \renewcommand{\footrulewidth}{0pt}
+        \fancypagestyle{plain}{
+          \fancyhf{}
+          \fancyfoot[C]{\thepage}
+          \renewcommand{\headrulewidth}{0pt}
+          \renewcommand{\footrulewidth}{0pt}
+        }
+        % ===== 章节标题美化 =====
+        \titleformat{\chapter}[hang]
+          {\Huge\bfseries\color{blue!50!black}}
+          {\thechapter}{1.2em}{}
+        \titleformat{\section}
+          {\Large\bfseries\color{blue!40!black}}
+          {\thesection}{1em}{}
+        \titleformat{\subsection}
+          {\large\bfseries\color{blue!30!black}}
+          {\thesubsection}{0.8em}{}
+        \titleformat{\subsubsection}
+          {\normalsize\bfseries\color{blue!20!black}}
+          {\thesubsubsection}{0.6em}{}
+        % ===== 5、6 级标题（段落头 + runin）：必须补齐，
+        %        否则一旦文档里出现 ##### ###### 就会报
+        %        "Package titlesec Error: No format for this command." =====
+        \titleformat{\paragraph}[runin]
+          {\normalsize\bfseries}{}{0pt}{}
+        \titleformat{\subparagraph}[runin]
+          {\normalsize\itshape}{}{0pt}{}
+    include-before-body:
+      text: |
+        % ===== 封面（titlepage） =====
+        \begin{titlepage}
+          \thispagestyle{empty}
+          \begin{center}
+            \vspace*{2cm}
+            {\Huge\bfseries\color{blue!50!black} 麦克斯韦方程组的洛伦兹协变性}\\[1.2cm]
+            \rule{\linewidth}{0.6pt}\\[1cm]
+            {\Large 杨国梁\quad 著}\\[1cm]
+            \rule{\linewidth}{0.6pt}\\[2cm]
+            {\large 2025年12月}\\[1cm]
+            {\small 山东 \quad 济南}
+          \end{center}
+        \end{titlepage}
+        \cleardoublepage
+        \frontmatter
+---
+
+```{=latex}
+\newpage
+```
+
+# 序 {.unnumbered #preface .unlisted}
+
+本书是作者在学习狭义相对论过程中，对麦克斯韦方程组与洛伦兹变换之间关系的一次系统性梳理。
+全书的写法以"先讲物理动机，再做张量抽象，最后回到分量形式"为节奏：
+第 1 章先回顾麦克斯韦方程组和洛伦兹协变性的概念，
+随后在第 2 章中给出电磁场张量 $\mathbf{F}^{\mu\nu}$ 的协变形式与有源、无源两组方程，
+并在分量层面验证电场、磁场在惯性系间的变换关系。
+
+::: {.author-note}
+> 杨国梁
+>
+> 2025年12月，于济南
+:::
+
+```{=latex}
+\newpage
+```
+
+```{=latex}
+\mainmatter
+```
+
+# 麦克斯韦方程组
+
+## 问题的提出 
+
+在经典力学中，惯性系 $S$ 和 $S'$（其中 $S'$ 以恒定速度 $v$ 沿 $x$ 轴相对 $S$ 运动）之间的坐标变换由伽利略变换描述为式[(1‑1)](#_Ref215817165)。
+
+$$
+\left\{ \begin{aligned}
+   & t' = t \\
+   & x' = x - vt \\
+   & y' = y \\
+   & z' = z
+  \end{aligned} \right.\
+\tag{1‑1}
+$$
+[]{#215817165 .anchor}
+
+然而，麦克斯韦方程组预言了真空中光速 $c$ 为一个普适常数，见式[(1‑2)](#_Ref215817307)。
+
+$$
+c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}
+\tag{1‑2}
+$$
+[]{#215817307 .anchor}
+
+这与伽利略变换下的速度合成法则相矛盾。
+
+## 洛伦兹变换
+
+爱因斯坦基于以下两条原理构建了狭义相对论：
+
+**相对性原理**：所有物理定律在所有惯性参考系中具有相同的形式。
+
+**光速不变原理**：在任何惯性参考系中，真空中的光速 $c$ 都相同。
+
+满足这两条原理的坐标变换是洛伦兹变换。采用四维闵可夫斯基时空坐标 $\mathbf{x}^{v} = (ct,x,y,z)$，将时间分量乘以c，即使用$x_{0} = ct$，是为了让四个分量具有相同的长度量纲，这样在变换矩阵中各个元素都是无量纲的。
+
+洛伦兹变换式[(1‑3)](#_Ref191889580)。
+
+$$
+\left\{ \begin{aligned}
+   & t' = \gamma\left( t - \frac{v}{c^{2}}x \right) \\
+   & x' = \gamma(x - vt) \\
+   & y' = y \\
+   & z' = z
+  \end{aligned} \right.\
+\tag{1‑3}
+$$
+[]{#191889580 .anchor}
+
+其中，$\gamma = 1/\sqrt{1 - v^{2}/c^{2}}$，为洛伦兹因子。
+
+初始时 $S$ 系和 $S'$ 系的原点重合，$S'$ 系沿 $x$ 轴以速度 $v$ 运动。从$S$ 系到 $S'$ 矩阵形式的洛伦兹变换为式[(1‑4)](#_Ref215817902)。
+
+$$
+\mathbf{x}^{'\mu} = \mathbf{\Lambda}_{\nu}^{\mu}\mathbf{x}^{v}
+\tag{1‑4}
+$$
+[]{#215817902 .anchor}
+
+其中，式[(1‑4)](#_Ref215817902)中的$\mathbf{\Lambda}_{\nu}^{\mu}$为洛伦兹变换矩阵式[(1‑5)](#_Ref216171664)。
+
++--------------------------------------------------------------+-------------------------------------------------------------+
+| $$\mathbf{\Lambda}_{\nu}^{\mu} = \begin{bmatrix}             | []{#_Ref216171664 .anchor}(1‑5)                             |
+| \gamma & - \gamma\beta & 0 & 0 \\                            |                                                             |
+|  - \gamma\beta & \gamma & 0 & 0 \\                           |                                                             |
+| 0 & 0 & 1 & 0 \\                                             |                                                             |
+| 0 & 0 & 0 & 1                                                |                                                             |
+| \end{bmatrix}$$                                              |                                                             |
++==============================================================+=========================================+===================+
+|  $\mathbf{x}^{'\mu} = \begin{bmatrix}                        | (1‑6)                                                       |
+| {ct}' \\                                                     |                                                             |
+| x' \\                                                        |                                                             |
+| y' \\                                                        |                                                             |
+| z'                                                           |                                                             |
+| \end{bmatrix}$                                               |                                                             |
++--------------------------------------------------------------+-------------------------------------------------------------+
+|  $\mathbf{x}^{v} = \begin{bmatrix}                           | (1‑7)                                                       |
+| ct \\                                                        |                                                             |
+| x \\                                                         |                                                             |
+| y \\                                                         |                                                             |
+| z                                                            |                                                             |
+| \end{bmatrix}$                                               |                                                             |
++--------------------------------------------------------------+-----------------------------------------+-------------------+
+| $$\beta = \frac{v}{c}$$                                                                                | []{#_Ref215834169 |
+|                                                                                                        | .anchor}(1‑8)     |
++--------------------------------------------------------------------------------------------------------+-------------------+
+| $$\gamma = \frac{1}{\sqrt{1 - \beta^{2}}} = \frac{1}{\sqrt{1 - v^{2}/c^{2}}}$$                         | []{#_Ref217378274 |
+|                                                                                                        | .anchor}(1‑9)     |
++--------------------------------------------------------------------------------------------------------+-------------------+
+
+将矩阵乘法展开，并代入[(1‑8)](#_Ref215834169)，得到式[(1‑10)](#_Ref215834263)、式[(1‑11)](#_Ref215834289)、式[(1‑12)](#_Ref215834261)、式[(1‑13)](#_Ref215834264)，合起来就是非矩阵形式的洛伦兹变换式[**(1‑3)**](#_Ref191889580)。
+
+$$
+{t' = \frac{1}{c}\left( \gamma(ct) + ( - \gamma\beta)x + 0 \cdot y + 0 \cdot z \right)
+  }{= \gamma t - \gamma\frac{\beta}{c}x
+  }{= \gamma\left( t - \frac{v}{c^{2}}x \right)}
+\tag{1‑10}
+$$
+[]{#215834263 .anchor}
+$$
+{x' = ( - \gamma\beta)(ct) + \gamma x + 0 \cdot y + 0 \cdot z
+  }{= \gamma x - \gamma\beta ct
+  }{= \gamma(x - vt)}
+\tag{1‑11}
+$$
+[]{#215834289 .anchor}
+$$
+y' = 0 \cdot ct + 0 \cdot x + 1 \cdot y + 0 \cdot z = y
+\tag{1‑12}
+$$
+[]{#215834261 .anchor}
+$$
+z' = 0 \cdot ct + 0 \cdot x + 0 \cdot y + 1 \cdot z = z
+\tag{1‑13}
+$$
+[]{#215834264 .anchor}
+
+从$S'$系到 $S$ 矩阵形式的逆变换矩阵为式[(1‑14)](#_Ref215835353)，其中，式[(1‑15)](#_Ref216171626)中的$\mathbf{\Lambda}_{\mu}^{\nu}$是式[(1‑5)](#_Ref216171664)中$\mathbf{\Lambda}\ _{\nu}^{\mu}$的逆矩阵。
+
+$$
+\mathbf{x}^{v} = \mathbf{\Lambda}_{\mu}^{\nu}\mathbf{x}^{'\mu}
+\tag{1‑14}
+$$
+[]{#215835353 .anchor}
+$$
+\mathbf{\Lambda}_{\mu}^{\nu} = \begin{bmatrix}
+  \gamma & \gamma\beta & 0 & 0 \\
+  \gamma\beta & \gamma & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1
+  \end{bmatrix}
+\tag{1‑15}
+$$
+[]{#216171626 .anchor}
+
+ 逆变换的非矩阵形式为式[(1‑16)](#_Ref215835494)。
+
+$$
+\left\{ \begin{aligned}
+   & t = \gamma\left( t' + \frac{v}{c^{2}}x \right) \\
+   & x = \gamma\left( x' + vt \right) \\
+   & y = y' \\
+   & z = z'
+  \end{aligned} \right.\
+\tag{1‑16}
+$$
+[]{#215835494 .anchor}
+
+## 麦克斯韦方程组
+
+将麦克斯韦方程组改写为四维时空中的张量形式。
+
+### 四维势与电磁场张量
+
+电磁场张量** **$\mathbf{F}^{\mu\nu}$ 由四维势的定义为式[(1‑17)](#_Ref215819077)，统一了电场和磁场。
+
+$$
+\mathbf{F}^{\mu\nu} = \mathbf{\partial}^{\mu}\mathbf{A}^{\nu} - \mathbf{\partial}^{\nu}\mathbf{A}^{\mu}
+\tag{1‑17}
+$$
+[]{#215819077 .anchor}
+
+四维势 $\mathbf{A}^{\mu}$为式[(1‑18)](#_Ref215818785)，$\phi$ 是标量势，$\mathbf{A}$ 是矢量势。
+
+$$
+\mathbf{A}^{\mu} = \left( \frac{\phi}{c},\mathbf{A} \right) = \left( \frac{\phi}{c},\mathbf{A}_{x},\mathbf{A}_{y},\mathbf{A}_{z} \right)
+\tag{1‑18}
+$$
+[]{#215818785 .anchor}
+
+  $\mathbf{\partial}^{\mu}$是四维梯度算符，为式$\ REF\ \_ Ref215819418\ \backslash h\ \ \backslash*\ MERGEFORMAT\ (119)$。
+
+$$
+\mathbf{\partial}^{\mu} = \left( \frac{1}{c}\frac{\partial}{\partial t}, - \mathbf{\nabla} \right) = \left( \frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right)
+\tag{1‑19}
+$$
+[]{#215819418 .anchor}
+
+#### 张量定义到矩阵
+
+电场的势为式[(1‑20)](#_Ref217552139)，与磁场的势为[(1‑21)](#_Ref217552163)。
+
+  ------------------------------------------------------------------------------------------------
+  $\mathbf{E} = - \nabla\phi\mathbf{-}\frac{\partial\mathbf{A}}{\partial t}$ ​  []{#_Ref217552139
+                                                                               .anchor}(1‑20)
+  ---------------------------------------------------------------------------- -------------------
+   $\mathbf{B} = \nabla\mathbf{\times A}$                                      []{#_Ref217552163
+                                                                               .anchor}(1‑21)
+
+  ------------------------------------------------------------------------------------------------
+
+分量形式为
+
+  ------------------------------------------------------------------------------------------------------------------------------------------
+  $\mathbf{E}_{\mathbf{i}} = - \frac{\partial\phi}{\partial x^{i}}\mathbf{-}\frac{\partial\mathbf{A}^{i}}{\partial t}$ ​  []{#_Ref217553109
+                                                                                                                         .anchor}(1‑22)
+  ---------------------------------------------------------------------------------------------------------------------- -------------------
+   $\mathbf{B}_{\mathbf{i}} = \left( \nabla\mathbf{\times A} \right)_{i}$                                                (1‑23)
+
+  ------------------------------------------------------------------------------------------------------------------------------------------
+
+##### 计算上三角元素
+
+$\mu = \nu = i$为式[(1‑24)](#_Ref217554419)。
+
+$$
+\mathbf{F}^{ii} = \mathbf{\partial}^{i}\mathbf{A}^{i} - \mathbf{\partial}^{i}\mathbf{A}^{i} = 0
+\tag{1‑24}
+$$
+[]{#217554419 .anchor}
+
+ 时间-空间分量，$\mu = 0$，$\nu = i$，并代入式[(1‑22)](#_Ref217553109)，得式[(1‑25)](#_Ref217553211)。
+
+$$
+{\mathbf{F}^{0i} = \mathbf{\partial}^{0}\mathbf{A}^{i} - \mathbf{\partial}^{i}\mathbf{A}^{0}
+  }{= \frac{1}{c}\frac{\partial\mathbf{A}^{i}}{\partial t} - \left( - \frac{\partial}{\partial x^{i}} \right)\left( \frac{\phi}{c} \right)
+  }{= \frac{1}{c}\left( \frac{\partial\mathbf{A}^{i}}{\partial t} + \frac{\partial\phi}{\partial x^{i}} \right)
+  }{= - \frac{\mathbf{E}_{\mathbf{i}}}{c}}
+\tag{1‑25}
+$$
+[]{#217553211 .anchor}
+
+空间-空间分量，$\mu = i,\nu = j,i,j = 1,2,3$
+
+$$
+{\mathbf{F}^{ij} = \mathbf{\partial}^{i}\mathbf{A}^{j} - \mathbf{\partial}^{j}\mathbf{A}^{i}
+  }{= - \frac{\partial\mathbf{A}^{j}}{\partial x^{i}} + \frac{\partial\mathbf{A}^{i}}{\partial x^{j}}}
+\tag{1‑26}
+$$
+[]{#218585331 .anchor}
+
+计算$\mathbf{F}^{12}$，代入[(1‑26)](#_Ref218585331)，得到式[(1‑27)](#_Ref217554093)。
+
+$$
+{\mathbf{F}^{12} = - \frac{\partial\mathbf{A}^{2}}{\partial x^{1}} + \frac{\partial\mathbf{A}^{1}}{\partial x^{2}}
+  }{= - \frac{\partial\mathbf{A}_{\mathbf{y}}}{\partial x} + \frac{\partial\mathbf{A}_{\mathbf{x}}}{\partial y}
+  }{= - \mathbf{B}_{\mathbf{z}}}
+\tag{1‑27}
+$$
+[]{#217554093 .anchor}
+
+计算$\mathbf{F}^{13}$，代入[(1‑26)](#_Ref218585331)，得到式[(1‑28)](#_Ref217554192)。
+
+$$
+{\mathbf{F}^{13} = - \frac{\partial\mathbf{A}^{3}}{\partial x^{1}} + \frac{\partial\mathbf{A}^{1}}{\partial x^{3}}
+  }{= - \frac{\partial\mathbf{A}_{\mathbf{z}}}{\partial x} + \frac{\partial\mathbf{A}_{\mathbf{x}}}{\partial z}
+  }{= \mathbf{B}_{\mathbf{y}}}
+\tag{1‑28}
+$$
+[]{#217554192 .anchor}
+
+计算$\mathbf{F}^{23}$，代入[(1‑26)](#_Ref218585331)，得到式[(1‑29)](#_Ref217554511)。
+
+$$
+{\mathbf{F}^{23} = - \frac{\partial\mathbf{A}^{3}}{\partial x^{2}} + \frac{\partial\mathbf{A}^{2}}{\partial x^{3}}
+  }{= - \frac{\partial\mathbf{A}_{\mathbf{z}}}{\partial y} + \frac{\partial\mathbf{A}_{\mathbf{y}}}{\partial z}
+  }{= - \mathbf{B}_{\mathbf{x}}}
+\tag{1‑29}
+$$
+[]{#217554511 .anchor}
+
+##### 矩阵形式
+
+根据式[(1‑17)](#_Ref215819077)的定义可知$\left( \mathbf{F}^{\mu\nu} \right)^{\top} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为式[(1‑30)](#_Ref215820080)。
+
+$$
+\mathbf{F}^{\mu\nu} = \begin{bmatrix}
+  0 & - \frac{\mathbf{E}_{x}}{c} & - \frac{\mathbf{E}_{y}}{c} & - \frac{\mathbf{E}_{z}}{c} \\
+  \frac{\mathbf{E}_{x}}{c} & 0 & - \mathbf{B}_{z} & \mathbf{B}_{y} \\
+  \frac{\mathbf{E}_{y}}{c} & \mathbf{B}_{z} & 0 & {- \mathbf{B}}_{x} \\
+  \frac{\mathbf{E}_{z}}{c} & - \mathbf{B}_{y} & \mathbf{B}_{x} & 0
+  \end{bmatrix}
+\tag{1‑30}
+$$
+[]{#215820080 .anchor}
+
+利用电磁场张量，麦克斯韦方程组可以简洁地表示为两个协变方程。
+
+### 非齐次麦克斯韦方程组
+
+$$
+{\mathbf{\partial}_{\mu}\mathbf{F}}^{\mu\nu} = \mu_{0}\mathbf{J}^{\nu}
+\tag{1‑31}
+$$
+[]{#216074766 .anchor}
+
+$\mathbf{\partial}_{\mu}$是协变四维导数式[(1‑32)](#_Ref216074497)，$\mathbf{J}^{\nu}$ 是四维电流密度式[(1‑33)](#_Ref215822787)。
+
+$$
+\mathbf{\partial}_{\mu} = \left( \frac{1}{c}\frac{\partial}{\partial t},\mathbf{\nabla} \right) = \left( \frac{1}{c}\frac{\partial}{\partial t},\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right)
+\tag{1‑32}
+$$
+[]{#216074497 .anchor}
+
+#### 高斯电场定律
+
+时间分量当 $\nu = 0$ 时，是$\partial_{\mu}$与$\mathbf{F}^{\mu\nu}$的第0列点乘，为式[(1‑34)](#_Ref216075123)，其中 $\mathbf{J}^{0} = c\rho$。
+
+$$
+\frac{\partial}{\partial x}\left( \frac{\mathbf{E}_{x}}{c} \right) + \frac{\partial}{\partial y}\left( \frac{\mathbf{E}_{y}}{c} \right) + \frac{\partial}{\partial z}\left( \frac{\mathbf{E}_{z}}{c} \right) = \mu_{0}c\rho
+\tag{1‑34}
+$$
+[]{#216075123 .anchor}
+
+式[(1‑34)](#_Ref216075123)两边乘以 $c$，得式[(1‑35)](#_Ref216078372)。
+
+$$
+\frac{\partial\mathbf{E}_{x}}{\partial x} + \frac{\partial\mathbf{E}_{y}}{\partial y} + \frac{\partial\mathbf{E}_{z}}{\partial z} = \mu_{0}c^{2}\rho
+\tag{1‑35}
+$$
+[]{#216078372 .anchor}
+
+利用式[(1‑2)](#_Ref215817307)得 $\mu_{0}c^{2} = 1/\epsilon_{0}$，代入[(1‑35)](#_Ref216078372)整理后得到高斯电场定律式[(1‑36)](#_Ref216076201) 。
+
+  ----------------------------------------------------------------------------------
+  $\mathbf{\nabla \cdot E} = \frac{\rho}{\epsilon_{0}}$          []{#_Ref216076201
+                                                                 .anchor}(1‑36)
+  -------------------------------------------------------------- -------------------
+
+  ----------------------------------------------------------------------------------
+
+#### 安培-麦克斯韦定律
+
+由式[(1‑2)](#_Ref215817307)得式[(1‑37)](#_Ref218586595)。
+
+$$
+\frac{1}{c^{2}} = \mu_{0}\epsilon_{0}
+\tag{1‑37}
+$$
+[]{#218586595 .anchor}
+
+空间分量当 $\nu = 1$ 时，是$\mathbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第1列点乘，为式[(1‑38)](#_Ref216076657)，其中， $\mathbf{J}^{1} = \mathbf{J}_{x}$。
+
+$$
+\frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{x}}{c} \right) + \frac{\partial\mathbf{B}_{z}}{\partial y} - \frac{\partial\mathbf{B}_{y}}{\partial z} = \mu_{0}\mathbf{J}_{x}
+\tag{1‑38}
+$$
+[]{#216076657 .anchor}
+
+将式[(1‑37)](#_Ref218586595)代入式[(1‑38)](#_Ref216076657)后整理得式[(1‑39)](#_Ref216077463)，其中，$\frac{\partial\mathbf{B}_{z}}{\partial y} - \frac{\partial\mathbf{B}_{y}}{\partial z} = \left( \mathbf{\nabla}\mathbf{\times B} \right)_{x}$。
+
+$$
+\left( \mathbf{\nabla}\mathbf{\times B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{x}}{\partial t} = \mu_{0}\mathbf{J}_{x}
+\tag{1‑39}
+$$
+[]{#216077463 .anchor}
+
+当 $\nu = 2$ 时，是$\mathbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第2列点乘，为式[(1‑40)](#_Ref216078264)，其中， $\mathbf{J}^{2} = \mathbf{J}_{y}$。
+
+$$
+\frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{y}}{c} \right) - \frac{\partial\mathbf{B}_{z}}{\partial x} + \frac{\partial\mathbf{B}_{x}}{\partial z} = \mu_{0}\mathbf{J}_{y}
+\tag{1‑40}
+$$
+[]{#216078264 .anchor}
+
+将式[(1‑37)](#_Ref218586595)代入式[(1‑40)](#_Ref216078264)后整理得式[(1‑41)](#_Ref216078276)，其中，$\frac{\partial\mathbf{B}_{x}}{\partial z} - \frac{\partial\mathbf{B}_{z}}{\partial x} = \left( \mathbf{\nabla}\mathbf{\times B} \right)_{y}$。
+
+$$
+\left( \mathbf{\nabla}\mathbf{\times B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{y}}{\partial t} = \mu_{0}\mathbf{J}_{y}
+\tag{1‑41}
+$$
+[]{#216078276 .anchor}
+
+当 $\nu = 3$ 时，是$\mathbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第3列点乘，为式[(1‑42)](#_Ref216078498)，其中， $\mathbf{J}^{3} = \mathbf{J}_{z}$。
+
+$$
+\frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{z}}{c} \right) + \frac{\partial\mathbf{B}_{y}}{\partial x} - \frac{\partial\mathbf{B}_{x}}{\partial y} = \mu_{0}\mathbf{J}_{z}
+\tag{1‑42}
+$$
+[]{#216078498 .anchor}
+
+将式[(1‑37)](#_Ref218586595)代入式[(1‑42)](#_Ref216078498)后整理得式[(1‑43)](#_Ref216078799)，其中，$\frac{\partial\mathbf{B}_{y}}{\partial x} - \frac{\partial\mathbf{B}_{x}}{\partial y} = \left( \mathbf{\nabla}\mathbf{\times B} \right)_{z}$。
+
+$$
+\left( \mathbf{\nabla}\mathbf{\times B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{z}}{\partial t} = \mu_{0}\mathbf{J}_{z}
+\tag{1‑43}
+$$
+[]{#216078799 .anchor}
+
+当 $\nu = 1,2,3$ 时，合并三个分量方程式[(1‑39)](#_Ref216077463)、式[(1‑41)](#_Ref216078276)、式[(1‑43)](#_Ref216078799)为矢量式[(1‑44)](#_Ref215820756)，此方程给出安培-麦克斯韦定律。 
+
+$$
+\mathbf{\nabla} \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}
+\tag{1‑44}
+$$
+[]{#215820756 .anchor}
+
+#### 对应关系
+
+[表
+1‑1](#_Ref216080190)中对4维与3维对应关系做了总结，1个4维张量方程包含了2个3维矢量方程。
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  4维形式                                                                                  3维形式                                                                                                       物理定律
+  ---------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------- -------------------
+  $${\mathbf{\partial}_{\mu}\mathbf{F}}^{\mu\nu} = \mu_{0}\mathbf{J}^{\nu},(v = 0)$$       $$\mathbf{\nabla \cdot E} = \frac{\rho}{\epsilon_{0}}$$                                                       高斯电场定律
+
+  $${\mathbf{\partial}_{\mu}\mathbf{F}}^{\mu\nu} = \mu_{0}\mathbf{J}^{\nu},(v = 1,2,3)$$   $$\mathbf{\nabla \times B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}$$   安培-麦克斯韦定律
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  : []{#_Ref216080190 .anchor}表 1‑1 有源项4维3维对应关系
+
+时间分量（$v = 0$）对应高斯电场定律，空间分量（$v = 1,2,3$）对应安培-麦克斯韦定律。
+
+### 齐次麦克斯韦方程组
+
+循环形式为式[(1‑45)](#_Ref216080650)。
+
+$$
+\mathbf{\partial}^{\lambda}\mathbf{F}^{\mu\nu} + \mathbf{\partial}^{\mu}\mathbf{F}^{\nu\lambda} + \mathbf{\partial}^{\nu}\mathbf{F}^{\lambda\mu} = 0
+\tag{1‑45}
+$$
+[]{#216080650 .anchor}
+
+或者等价地，莱维-奇维塔式[(1‑46)](#_Ref216080707)。
+
+$$
+\epsilon^{\alpha\beta\gamma\delta}\partial_{\beta}\mathbf{F}_{\gamma\delta} = 0
+\tag{1‑46}
+$$
+[]{#216080707 .anchor}
+
+#### 高斯磁场定律
+
+式[(1‑45)](#_Ref216080650)选择$(\lambda,\mu,\nu) = (1,2,3)$得到式[(1‑47)](#_Ref216081978)。
+
+$$
+\mathbf{\partial}^{1}\mathbf{F}^{23} + \mathbf{\partial}^{2}\mathbf{F}^{31} + \mathbf{\partial}^{3}\mathbf{F}^{12} = 0
+\tag{1‑47}
+$$
+[]{#216081978 .anchor}
+
+将式[(1‑19)](#_Ref215819418)和式[(1‑30)](#_Ref215820080)代入式[(1‑47)](#_Ref216081978)，得到式[(1‑48)](#_Ref216082498)。
+
+$$
+- \frac{\partial}{\partial x}\left( - \mathbf{B}_{x} \right) - \frac{\partial}{\partial y}\left( - \mathbf{B}_{y} \right) - \frac{\partial}{\partial z}\left( - \mathbf{B}_{z} \right) = 0
+\tag{1‑48}
+$$
+[]{#216082498 .anchor}
+
+将式[(1‑48)](#_Ref216082498)整理后得高斯磁场定律式[(1‑49)](#_Ref215821159)。
+
+  ----------------------------------------------------------------------------------
+   $\mathbf{\nabla \cdot B} = 0$                                 []{#_Ref215821159
+                                                                 .anchor}(1‑49)
+  -------------------------------------------------------------- -------------------
+
+  ----------------------------------------------------------------------------------
+
+#### 法拉第电磁感应定律
+
+x-分量式[(1‑45)](#_Ref216080650)选择$(\lambda,\mu,\nu) = (0,2,3)$，得到式[(1‑50)](#_Ref216082919)。
+
+$$
+\mathbf{\partial}^{0}\mathbf{F}^{23} + \mathbf{\partial}^{2}\mathbf{F}^{30} + \mathbf{\partial}^{3}\mathbf{F}^{02} = 0
+\tag{1‑50}
+$$
+[]{#216082919 .anchor}
+
+将式[(1‑19)](#_Ref215819418)和式[(1‑30)](#_Ref215820080)代入[(1‑50)](#_Ref216082919)得到式[(1‑51)](#_Ref216083244)。
+
+$$
+\frac{1}{c}\frac{\partial}{\partial t}\left( - \mathbf{B}_{x} \right) - \frac{\partial}{\partial y}\left( \frac{\mathbf{E}_{z}}{c} \right) - \frac{\partial}{\partial z}\left( - \frac{\mathbf{E}_{y}}{c} \right) = 0
+\tag{1‑51}
+$$
+[]{#216083244 .anchor}
+
+将式[(1‑51)](#_Ref216083244)乘c整理后得式[(1‑52)](#_Ref216083354)。
+
+$$
+- \frac{\partial\mathbf{B}_{x}}{\partial t} - \frac{\partial\mathbf{E}_{z}}{\partial y} + \frac{\partial\mathbf{E}_{y}}{\partial z} = 0
+\tag{1‑52}
+$$
+[]{#216083354 .anchor}
+
+式[(1‑53)](#_Ref216083691)中$\frac{\partial\mathbf{E}_{y}}{\partial z} - \frac{\partial\mathbf{E}_{z}}{\partial y} = \left( \nabla \times \mathbf{E} \right)_{x}$，可以得到式[(1‑53)](#_Ref216083691)。
+
+$$
+\left( \mathbf{\nabla}\mathbf{\times E} \right)_{x} = \frac{\partial\mathbf{B}_{x}}{\partial t}
+\tag{1‑53}
+$$
+[]{#216083691 .anchor}
+
+y-分量式[(1‑45)](#_Ref216080650)选择$(\lambda,\mu,\nu) = (0,3,1)$，得到式[(1‑54)](#_Ref216083842)。
+
+$$
+\mathbf{\partial}^{0}\mathbf{F}^{31} + \mathbf{\partial}^{3}\mathbf{F}^{10} + \mathbf{\partial}^{1}\mathbf{F}^{03} = 0
+\tag{1‑54}
+$$
+[]{#216083842 .anchor}
+
+将式[(1‑19)](#_Ref215819418)和式[(1‑30)](#_Ref215820080)代入[(1‑54)](#_Ref216083842)得到式[(1‑55)](#_Ref216083924)。
+
+$$
+\frac{1}{c}\frac{\partial}{\partial t}\left( - \mathbf{B}_{y} \right) - \frac{\partial}{\partial z}\left( \frac{\mathbf{E}_{x}}{c} \right) - \frac{\partial}{\partial x}\left( - \frac{\mathbf{E}_{z}}{c} \right) = 0
+\tag{1‑55}
+$$
+[]{#216083924 .anchor}
+
+将式[(1‑55)](#_Ref216083924)乘c整理后得式[(1‑56)](#_Ref216084225)。
+
+$$
+- \frac{\partial\mathbf{B}_{y}}{\partial t} - \frac{\partial\mathbf{E}_{x}}{\partial z} + \frac{\partial\mathbf{E}_{z}}{\partial x} = 0
+\tag{1‑56}
+$$
+[]{#216084225 .anchor}
+
+式[(1‑56)](#_Ref216084225)中$\frac{\partial\mathbf{E}_{z}}{\partial x} - \frac{\partial\mathbf{E}_{x}}{\partial z} = \left( \mathbf{\nabla}\mathbf{\times E} \right)_{y}$，可以得到式[(1‑57)](#_Ref216084334)。
+
+$$
+\left( \mathbf{\nabla}\mathbf{\times E} \right)_{y} = \frac{\partial\mathbf{B}_{y}}{\partial t}
+\tag{1‑57}
+$$
+[]{#216084334 .anchor}
+
+z-分量式[(1‑45)](#_Ref216080650)选择$(\lambda,\mu,\nu) = (0,1,2)$，得到式[(1‑58)](#_Ref216084498)。
+
+$$
+\mathbf{\partial}^{0}\mathbf{F}^{12} + \mathbf{\partial}^{1}\mathbf{F}^{20} + \mathbf{\partial}^{2}\mathbf{F}^{01} = 0
+\tag{1‑58}
+$$
+[]{#216084498 .anchor}
+
+将式[(1‑19)](#_Ref215819418)和式[(1‑30)](#_Ref215820080)代入[(1‑58)](#_Ref216084498)得到式[(1‑59)](#_Ref216084592)。
+
+$$
+\frac{1}{c}\frac{\partial}{\partial t}\left( - \mathbf{B}_{z} \right) - \frac{\partial}{\partial x}\left( \frac{\mathbf{E}_{y}}{c} \right) - \frac{\partial}{\partial y}\left( - \frac{\mathbf{E}_{x}}{c} \right) = 0
+\tag{1‑59}
+$$
+[]{#216084592 .anchor}
+
+将式[(1‑51)](#_Ref216083244)乘c整理后得式[(1‑60)](#_Ref216084852)。
+
+$$
+- \frac{\partial\mathbf{B}_{z}}{\partial t} - \frac{\partial\mathbf{E}_{y}}{\partial x} + \frac{\partial\mathbf{E}_{x}}{\partial y} = 0
+\tag{1‑60}
+$$
+[]{#216084852 .anchor}
+
+式[(1‑60)](#_Ref216084852)中$\frac{\partial\mathbf{E}_{x}}{\partial y} - \frac{\partial\mathbf{E}_{y}}{\partial x} = \left( \mathbf{\nabla}\mathbf{\times E} \right)_{z}$，可以得到式[(1‑61)](#_Ref216084874)。
+
+$$
+\left( \mathbf{\nabla}\mathbf{\times E} \right)_{z} = \frac{\partial B_{z}}{\partial t}
+\tag{1‑61}
+$$
+[]{#216084874 .anchor}
+
+合并三个分量方程式[(1‑53)](#_Ref216083691)、式[(1‑57)](#_Ref216084334)、式[(1‑61)](#_Ref216084874)为矢量式[(1‑62)](#_Ref215821158) 。
+
+  --------------------------------------------------------------------------------------------------
+  $\mathbf{\nabla} \times \mathbf{E} = \frac{\partial\mathbf{B}}{\partial t}$    []{#_Ref215821158
+                                                                                 .anchor}(1‑62)
+  ------------------------------------------------------------------------------ -------------------
+
+  --------------------------------------------------------------------------------------------------
+
+法拉第电磁感应定律式[(1‑63)](#_Ref216085287)有一个负号​，而推导得到的式[(1‑62)](#_Ref215821158) 是正号。这个差异源于电磁场张量定义中的符号约定。
+
+  ----------------------------------------------------------------------------------------------------
+  $\mathbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$    []{#_Ref216085287
+                                                                                   .anchor}(1‑63)
+  -------------------------------------------------------------------------------- -------------------
+
+  ----------------------------------------------------------------------------------------------------
+
+#### 对应关系
+
+[表
+1‑2](#_Ref216085789)中对4维与3维对应关系做了总结，1个4维张量方程包含了2个3维矢量方程。
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------+
+| 4维形式                                                                                                                                                  | 3维形式                                                                         | 物理定律           |
++==========================================================================================================================================================+=================================================================================+====================+
+| $$\mathbf{\partial}^{\lambda}\mathbf{F}^{\mu\nu} + \mathbf{\partial}^{\mu}\mathbf{F}^{\nu\lambda} + \mathbf{\partial}^{\nu}\mathbf{F}^{\lambda\mu} = 0$$ | $$\mathbf{\nabla} \cdot \mathbf{B} = 0$$                                        | 高斯磁场定律       |
+|                                                                                                                                                          |                                                                                 |                    |
+| $$(\lambda,\mu,\nu) = (1,2,3)$$                                                                                                                          |                                                                                 |                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------+
+| $$\mathbf{\partial}^{\lambda}\mathbf{F}^{\mu\nu} + \mathbf{\partial}^{\mu}\mathbf{F}^{\nu\lambda} + \mathbf{\partial}^{\nu}\mathbf{F}^{\lambda\mu} = 0$$ | $$\mathbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$$ | 法拉第电磁感应定律 |
+|                                                                                                                                                          |                                                                                 |                    |
+| $$(\lambda,\mu,\nu) = \left( (0,2,3),(0,3,1),(0,1,2) \right)$$                                                                                           |                                                                                 |                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+--------------------+
+
+: []{#_Ref216085789 .anchor}表 1‑2 无源项4维3维对应关系
+
+## 协变性与电磁场的变换
+
+证明非齐次麦克斯韦方程组在洛伦兹变换下是协变的，即证明式[(1‑74)](#_Ref216173408)。
+
+### 物理量的洛伦兹变换
+
+在洛伦兹变换下，物理量按特定规则变换，二阶电磁场张量式[(1‑68)](#_Ref216170974)。$\mathbf{A}^{'\mu}$ 是四维矢量，其变换规则为式[(1‑64)](#_Ref217463243)。
+
+$$
+\mathbf{A}^{'\mu} = \mathbf{\Lambda}_{\nu}^{\mu}\mathbf{A}^{\nu}
+\tag{1‑64}
+$$
+[]{#217463243 .anchor}
+
+偏导数算符 $\mathbf{\partial}^{'\mu}$ 在洛伦兹变换下，坐标微分变换导致偏导数的变换为式[(1‑65)](#_Ref217463483)。
+
+$$
+\mathbf{\partial}^{'\mu} = \mathbf{\Lambda}_{\nu}^{\mu}\mathbf{\partial}^{v}
+\tag{1‑65}
+$$
+[]{#217463483 .anchor}
+
+在 $S'$ 系中，电磁场张量定义为式[(1‑66)](#_Ref217463678)。
+
+$$
+\mathbf{F}^{'\mu\nu} = \mathbf{\partial}^{'\mu}\mathbf{A}^{'\nu} - \mathbf{\partial}^{'\nu}\mathbf{A}^{'\mu}
+\tag{1‑66}
+$$
+[]{#217463678 .anchor}
+
+根据式[(1‑64)](#_Ref217463243)和式[(1‑65)](#_Ref217463483)的变换规则，由式[(1‑66)](#_Ref217463678)得式[(1‑67)](#_Ref217464111)。
+
+$$
+{\mathbf{F}^{'\mu\nu} = \left( \mathbf{\Lambda}_{\rho}^{\mu}\mathbf{\partial}^{\rho} \right)\left( \mathbf{\Lambda}_{\sigma}^{v}\mathbf{A}^{\sigma} \right) - \left( \mathbf{\Lambda}_{\sigma}^{\nu}\mathbf{\partial}^{\sigma} \right)\left( \mathbf{\Lambda}_{\rho}^{\mu}\mathbf{A}^{\rho} \right)
+  }{\mathbf{=}\mathbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\sigma}^{v}\mathbf{\partial}^{\rho}\mathbf{A}^{\sigma} - \mathbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\sigma}^{v}\mathbf{\partial}^{\sigma}\mathbf{A}^{\rho}
+  }{= \left( \mathbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\sigma}^{v} \right)\left( \mathbf{\partial}^{\rho}\mathbf{A}^{\sigma} - \mathbf{\partial}^{\sigma}\mathbf{A}^{\rho} \right)
+  }{= \mathbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\sigma}^{v}\mathbf{F}^{\rho\sigma}}
+\tag{1‑67}
+$$
+[]{#217464111 .anchor}
+
+洛伦兹变换系数是常数，可提到前面。$\mathbf{\Lambda}_{\rho}^{\mu}$和$\mathbf{\Lambda}_{\rho}^{\mu}$是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，$\mathbf{\Lambda}_{\sigma}^{\nu}\mathbf{\Lambda}_{\rho}^{\mu} = \mathbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\sigma}^{v}$。最后，根据式[(1‑17)](#_Ref215819077)的定义，可以得到电磁场张量式[(1‑68)](#_Ref216170974)。
+
+$$
+\mathbf{F}^{'\mu\nu} = \mathbf{\Lambda}\ _{\rho}^{\mu}\mathbf{\Lambda}\ _{\sigma}^{\nu}\ \mathbf{F}^{\rho\sigma}
+\tag{1‑68}
+$$
+[]{#216170974 .anchor}
+$$
+\mathbf{J}^{'\mu} = \mathbf{\Lambda}\ _{\nu}^{\mu}\ \mathbf{J}^{\nu}
+\tag{1‑69}
+$$
+[]{#216171155 .anchor}
+$$
+\mathbf{\partial}_{\mu}' = \mathbf{\Lambda}_{\mu}^{\nu}\mathbf{\partial}_{\nu}
+\tag{1‑70}
+$$
+[]{#216171177 .anchor}
+
+根据坐标变换关系式[(1‑4)](#_Ref215817902)，四维电流密度为式[(1‑69)](#_Ref216171155)，四维导数为式[(1‑70)](#_Ref216171177)，$\mathbf{\Lambda}_{\nu}^{\mu}$为式[(1‑5)](#_Ref216171664)。
+
+### 非齐次方程的协变性
+
+将式[(1‑68)](#_Ref216170974)和式[(1‑70)](#_Ref216171177)代入${{\mathbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu}$得到式[(1‑71)](#_Ref216171901)，系数$\mathbf{\Lambda}\ _{\rho}^{\mu}$和$\mathbf{\Lambda}\ _{\sigma}^{\nu}$是常数，可以将它们提到微分算符$\mathbf{\partial}_{\nu}$的前面。
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ${{\mathbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \left( \mathbf{\Lambda}_{\mu}^{\nu}\mathbf{\partial}_{\nu} \right)\left( \mathbf{\Lambda}\ _{\rho}^{\mu}\mathbf{\Lambda}\ _{\sigma}^{\nu}\ \mathbf{F}^{\rho\sigma} \right) = \mathbf{\Lambda}_{\mu}^{\nu}\mathbf{\Lambda}\ _{\rho}^{\mu}\mathbf{\Lambda}\ _{\sigma}^{\nu}\ \mathbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}$    []{#_Ref216171901
+                                                                                                                                                                                                                                                                                                                                                                                    .anchor}(1‑71)
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+洛伦兹变换矩阵$满$足正交关系,
+${\mathbf{\delta}_{\rho}^{v} = \mathbf{\Lambda}}_{\mu}^{\nu}\mathbf{\Lambda}\ _{\rho}^{\mu}$，$\nu = \rho$为$\mathbf{\delta}_{\rho}^{v} = 1$，否则为$\mathbf{\delta}_{\rho}^{v} = 0$。
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ${{\mathbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \mathbf{\Lambda}\ _{\sigma}^{\nu}\ \mathbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}$    []{#_Ref216173227
+                                                                                                                                            .anchor}(1‑72)
+  ----------------------------------------------------------------------------------------------------------------------------------------- -------------------
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+在 $S$ 系中，根据式[(1‑31)](#_Ref216074766)有 $\mathbf{\partial}_{\nu}\mathbf{F}^{\sigma\rho} = \mu_{0}\mathbf{J}^{\rho}$ ，代入式[(1‑72)](#_Ref216173227)得式[(1‑73)](#_Ref216173196)。
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ${{\mathbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \mathbf{\Lambda}\ _{\sigma}^{\nu}\ \mu_{0}\mathbf{J}^{\rho} = \mu_{0}\mathbf{\Lambda}\ _{\sigma}^{\nu}\ \mathbf{J}^{\rho}$    []{#_Ref216173196
+                                                                                                                                                                                    .anchor}(1‑73)
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+根据四维电流密度的变换式[(1‑69)](#_Ref216171155)，有 $\mathbf{J}^{'\nu} = \mathbf{\Lambda}\ _{\sigma}^{\nu}\ \mathbf{J}^{\rho}$，得到式[(1‑74)](#_Ref216173408)。
+
+$$
+{{\mathbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \mu_{0}\mathbf{J}^{'\nu}
+\tag{1‑74}
+$$
+[]{#216173408 .anchor}
+
+式[(1‑74)](#_Ref216173408)和式[(1‑31)](#_Ref216074766)有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
+
+### 齐次方程的协变性
+
+证明循环形式的齐次方程式[(1‑45)](#_Ref216080650)在洛伦兹变换下形式不变。即，如果在参考系S中上述方程成立，则在参考系
+S′中，相应的式[(1‑75)](#_Ref217544542)也成立。
+
+$$
+\mathbf{\partial'}^{\lambda}\mathbf{F'}^{\mu\nu} + \mathbf{\partial'}^{\mu}\mathbf{F}^{'\nu\lambda} + \mathbf{\partial'}^{\nu}\mathbf{F}^{'\lambda\mu} = 0
+\tag{1‑75}
+$$
+[]{#217544542 .anchor}
+
+将变换规则式[(1‑65)](#_Ref217463483)和式[(1‑68)](#_Ref216170974)
+代入式[(1‑75)](#_Ref217544542)的第一项得式[(1‑76)](#_Ref217544998)。
+
+$$
+{{\mathbf{\partial}^{\mathbf{'}}}^{\lambda}{\mathbf{F}^{\mathbf{'}}}^{\mu\nu} = \left( \mathbf{\Lambda}_{\rho}^{\lambda}\mathbf{\partial}^{\rho} \right)\left( \mathbf{\Lambda}\ _{\alpha}^{\mu}\mathbf{\Lambda}\ _{\beta}^{\nu}\ \mathbf{F}^{\alpha\beta} \right)
+  }{= \mathbf{\Lambda}_{\rho}^{\lambda}\mathbf{\ \Lambda}\ _{\alpha}^{\mu}\mathbf{\Lambda}\ _{\beta}^{\nu}\ \mathbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta}}
+\tag{1‑76}
+$$
+[]{#217544998 .anchor}
+
+同理，式[(1‑75)](#_Ref217544542)的第二项得式[(1‑77)](#_Ref217545223)，并将哑指标 $(\rho,\alpha,\beta)$ 轮换为 $(\alpha,\beta,\rho)$ 。式[(1‑75)](#_Ref217544542)的第三项得式[(1‑78)](#_Ref217545242)，并将哑指标 $(\beta,\rho,\alpha)$ 轮换为 $(\alpha,\beta,\rho)$ 。
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  $\mathbf{\partial'}^{\mu}\mathbf{F}^{'\nu\lambda} = \mathbf{\Lambda}_{\rho}^{\mu}\mathbf{\ \Lambda}\ _{\alpha}^{\nu}\mathbf{\Lambda}\ _{\beta}^{\lambda}\ \mathbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta}$=$\mathbf{\Lambda}_{\alpha}^{\mu}\mathbf{\ \Lambda}\ _{\beta}^{\nu}\mathbf{\Lambda}\ _{\rho}^{\lambda}\ \mathbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}$    []{#_Ref217545223
+                                                                                                                                                                                                                                                                                                                                                                          .anchor}(1‑77)
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------
+   $\mathbf{\partial'}^{\nu}\mathbf{F}^{'\lambda\mu} = \mathbf{\Lambda}_{\rho}^{\nu}\mathbf{\ \Lambda}\ _{\alpha}^{\lambda}\mathbf{\Lambda}\ _{\beta}^{\mu}\ \mathbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \mathbf{\Lambda}_{\beta}^{\nu}\mathbf{\ \Lambda}\ _{\rho}^{\lambda}\mathbf{\Lambda}\ _{\alpha}^{\mu}\ \mathbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha}$   []{#_Ref217545242
+                                                                                                                                                                                                                                                                                                                                                                          .anchor}(1‑78)
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+在每一项中使用了相同的哑指标，可以适当地重命名。式[(1‑75)](#_Ref217544542)变换后的方程左端变为
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+| $$\mathbf{\ }\mathbf{\Lambda}_{\rho}^{\lambda}\mathbf{\ \Lambda}\ _{\alpha}^{\mu}\mathbf{\Lambda}\ _{\beta}^{\nu}\ \mathbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} + \mathbf{\Lambda}_{\alpha}^{\mu}\mathbf{\ \Lambda}\ _{\beta}^{\nu}\mathbf{\Lambda}\ _{\rho}^{\lambda}\ \mathbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho} + \mathbf{\Lambda}_{\beta}^{\nu}\mathbf{\ \Lambda}\ _{\rho}^{\lambda}\mathbf{\Lambda}\ _{\alpha}^{\mu}\ \mathbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha}$$ | []{#_Ref217547944 |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | .anchor}(1‑79)    |
+| =$\mathbf{\Lambda}_{\rho}^{\lambda}\mathbf{\ \Lambda}\ _{\alpha}^{\mu}\mathbf{\Lambda}\ _{\beta}^{\nu}\left( \mathbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} + \mathbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho} + \mathbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha} \right) = 0$                                                                                                                                                                                                        |                   |
++=========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+===================+
+
+由于 $\mathbf{\Lambda}\ _{\nu}^{\mu}$
+是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子$\mathbf{\Lambda}_{\rho}^{\lambda}\mathbf{\ \Lambda}\ _{\alpha}^{\mu}\mathbf{\Lambda}\ _{\beta}^{\nu}$，只是顺序不同。根据式[(1‑45)](#_Ref216080650)可得式[(1‑79)](#_Ref217547944)为0，即，证明了式[(1‑75)](#_Ref217544542)成立。
+
+### 电磁场的变换关系
+
+在S\'系中，式[(1‑80)](#_Ref216252245)中的$\mathbf{F}^{'\mu\nu}$与式[(1‑30)](#_Ref215820080)中$\mathbf{F}^{\mu\nu}$具有相同的形式。
+
+$$
+\mathbf{F}^{'\mu\nu} = \begin{bmatrix}
+  0 & - {\mathbf{E}'}_{x}/c & - {\mathbf{E}'}_{y}/c & - {\mathbf{E}'}_{z}/c \\
+  {\mathbf{E}'}_{x}/c & 0 & - {\mathbf{B}'}_{z} & {\mathbf{B}'}_{y} \\
+  {\mathbf{E}'}_{y}/c & {\mathbf{B}'}_{z} & 0 & {- \mathbf{B}'}_{x} \\
+  {\mathbf{E}'}_{z}/c & - {\mathbf{B}'}_{y} & {\mathbf{B}'}_{x} & 0
+  \end{bmatrix}
+\tag{1‑80}
+$$
+[]{#216252245 .anchor}
+
+根据电磁场张量的变换法则为式[(1‑68)](#_Ref216170974)，可以推导出三维空间中电场和磁场分量的显式变换关系。
+
+####  ${\mathbf{E}'}_{x}$与$\mathbf{F}^{\mathbf{'01}}$ 分量
+
+式[(1‑68)](#_Ref216170974)中$\mu = 0$，$\nu = 1$，得式[(1‑81)](#_Ref216254331)。
+
+$$
+{\mathbf{F}^{'01} = \mathbf{\Lambda}\ _{\rho}^{0}\mathbf{\Lambda}\ _{\sigma}^{1}\ \mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\sum_{\sigma = 0}^{3}{\mathbf{\Lambda}\ _{\rho}^{0}\mathbf{\Lambda}\ _{\sigma}^{1}\ \mathbf{F}^{\rho\sigma}}}}
+\tag{1‑81}
+$$
+[]{#216254331 .anchor}
+
+根据[(1‑9)](#_Ref217378274)得式[(1‑82)](#_Ref217378583)。
+
+$$
+\gamma^{2}\left( 1 - \beta^{2} \right) = 1
+\tag{1‑82}
+$$
+[]{#217378583 .anchor}
+
+将式[(1‑5)](#_Ref216171664)和[(1‑30)](#_Ref215820080)和式[(1‑82)](#_Ref217378583)代入式[(1‑81)](#_Ref216254331)，只保留非0元素为。
+
+$$
+{\mathbf{F}^{'01} = \mathbf{\Lambda}\ _{0}^{0}\mathbf{\Lambda}\ _{1}^{1}\ \mathbf{F}^{01} + \mathbf{\Lambda}\ _{1}^{0}\mathbf{\Lambda}\ _{0}^{1}\ \mathbf{F}^{10}
+  }{\mathbf{F}^{'01} = \gamma \cdot \gamma \cdot \left( - \frac{\mathbf{E}_{x}}{c} \right) + ( - \gamma\beta)\mathbf{\cdot}( - \gamma\beta)\mathbf{\cdot}\left( \frac{\mathbf{E}_{x}}{c} \right)
+  }{\mathbf{F}^{'01} = - \gamma^{2}\left( 1 - \beta^{2} \right)\left( \frac{\mathbf{E}_{x}}{c} \right)
+  }{- \frac{{\mathbf{E}^{\mathbf{'}}}_{x}}{c} = - \frac{\mathbf{E}_{x}}{c}}
+\tag{1‑83}
+$$
+[]{#216258641 .anchor}
+
+式[(1‑83)](#_Ref216258641)两边同乘以-c，得到式[(1‑93)](#_Ref216255316)。
+
+####  ${\mathbf{E}'}_{y}$与$\mathbf{F}^{\mathbf{'02}}$ 分量
+
+式[(1‑68)](#_Ref216170974)中$\mu = 0$，$\nu = 2$，得式[(1‑84)](#_Ref217378691)，由于$\mathbf{\Lambda}\ _{\sigma}^{2}$只有在 $\sigma = 2$ 时为
+1，其它为 0。
+
+$$
+{\mathbf{F}^{'02} = \mathbf{\Lambda}\ _{\rho}^{0}\mathbf{\Lambda}\ _{\sigma}^{2}\ \mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\mathbf{\Lambda}\ _{\rho}^{0}\ \mathbf{F}^{\rho 2}}}
+\tag{1‑84}
+$$
+[]{#217378691 .anchor}
+
+将式[(1‑5)](#_Ref216171664)和[(1‑30)](#_Ref215820080)代入式[(1‑84)](#_Ref217378691)，只保留非0元素为。
+
+$$
+{\mathbf{F}^{'02} = \mathbf{\Lambda}\ _{0}^{0}\ \mathbf{F}^{02} + \mathbf{\Lambda}\ _{1}^{0}\ \mathbf{F}^{12}
+  }{\mathbf{F}^{'02} = \gamma \cdot \left( - \frac{\mathbf{E}_{y}}{c} \right) + ( - \gamma\beta)\mathbf{\cdot}\left( - \mathbf{B}_{z} \right)
+  }{- \frac{{\mathbf{E}'}_{y}}{c} = - \gamma\left( \frac{\mathbf{E}_{y}}{c} - \beta\mathbf{B}_{z} \right)}
+\tag{1‑85}
+$$
+[]{#216258166 .anchor}
+
+式[(1‑85)](#_Ref216258166)两边同乘以-c，并代入式[(1‑8)](#_Ref215834169)，得到式[(1‑94)](#_Ref216256709)。
+
+####  ${\mathbf{E}'}_{z}$与$\mathbf{F}^{\mathbf{'03}}$ 分量
+
+式[(1‑68)](#_Ref216170974)中$\mu = 0$，$\nu = 2$，得式[(1‑86)](#_Ref217378932)，由于$\mathbf{\Lambda}\ _{\sigma}^{3}$只有在 $\sigma = 3$ 时为
+1，其它为 0。
+
+$$
+{\mathbf{F}^{'03} = \mathbf{\Lambda}\ _{\rho}^{0}\mathbf{\Lambda}\ _{\sigma}^{3}\ \mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\mathbf{\Lambda}\ _{\rho}^{0}\ \mathbf{F}^{\rho 3}}}
+\tag{1‑86}
+$$
+[]{#217378932 .anchor}
+
+将式[(1‑5)](#_Ref216171664)和[(1‑30)](#_Ref215820080)中代入式[(1‑86)](#_Ref217378932)，只保留非0元素为。
+
+$$
+{\mathbf{F}^{'03} = \mathbf{\Lambda}\ _{0}^{0}\ \mathbf{F}^{03} + \mathbf{\Lambda}\ _{1}^{0}\ \mathbf{F}^{13}
+  }{\mathbf{F}^{'03} = \gamma \cdot \left( - \frac{\mathbf{E}_{z}}{c} \right) + ( - \gamma\beta)\mathbf{\cdot}\left( \mathbf{B}_{y} \right)
+  }{- \frac{{\mathbf{E}'}_{z}}{c} = - \gamma\left( \frac{\mathbf{E}_{z}}{c} + \beta B_{y} \right)}
+\tag{1‑87}
+$$
+[]{#216258297 .anchor}
+
+式[(1‑87)](#_Ref216258297)两边同乘以-c，并代入式[(1‑8)](#_Ref215834169)，得到式[(1‑95)](#_Ref216257724)。
+
+####  ${\mathbf{B}^{\mathbf{'}}}_{x}$与$\mathbf{F}^{\mathbf{'23}}$ 分量
+
+式[(1‑68)](#_Ref216170974)中$\mu = 0$，$\nu = 2$，得式[(1‑88)](#_Ref217288821)，由于$\mathbf{\Lambda}\ _{\rho}^{2}$只有在 $\rho = 2$ 时为
+1， $\mathbf{\Lambda}\ _{\sigma}^{3}$只有在 $\sigma = 3$ 时为 1，其它为
+0。
+
+$$
+{\mathbf{F}^{'23} = \mathbf{\Lambda}\ _{\rho}^{2}\mathbf{\Lambda}\ _{\sigma}^{3}\ \mathbf{F}^{\rho\sigma}
+  }{\mathbf{F}^{'23} = \mathbf{F}^{23}
+  }{- {\mathbf{B}^{\mathbf{'}}}_{x} = - \mathbf{B}_{x}}
+\tag{1‑88}
+$$
+[]{#217288821 .anchor}
+
+整理式[(1‑88)](#_Ref217288821)得式[(1‑96)](#_Ref216258492)。
+
+####  ${\mathbf{B}'}_{y}$与$\mathbf{F}^{\mathbf{'13}}$ 分量
+
+式[(1‑68)](#_Ref216170974)中$\mu = 1$，$\nu = 3$，得式[(1‑89)](#_Ref217287710)，由于$\mathbf{\Lambda}\ _{\sigma}^{3}$只有在 $\sigma = 3$ 时为
+1，其它为 0。
+
+$$
+{\mathbf{F}^{'13} = \mathbf{\Lambda}\ _{\rho}^{1}\mathbf{\Lambda}\ _{\sigma}^{3}\ \mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\mathbf{\Lambda}\ _{\rho}^{1}\ \mathbf{F}^{\rho 3}}}
+\tag{1‑89}
+$$
+[]{#217287710 .anchor}
+
+将式[(1‑5)](#_Ref216171664)和[(1‑30)](#_Ref215820080)中代入式[(1‑89)](#_Ref217287710)，只保留非0元素为。
+
+$$
+{\mathbf{F}^{'13} = \mathbf{\Lambda}\ _{0}^{1}\ \mathbf{F}^{03} + \mathbf{\Lambda}\ _{1}^{1}\ \mathbf{F}^{13}
+  }{\mathbf{F}^{'13} = ( - \gamma\beta) \cdot \left( - \frac{\mathbf{E}_{z}}{c} \right) + \gamma\mathbf{\cdot}\left( \mathbf{B}_{y} \right)
+  }{{\mathbf{B}'}_{y} = \gamma\left( \frac{{\beta\mathbf{E}}_{z}}{c} + B_{y} \right)}
+\tag{1‑90}
+$$
+[]{#217288259 .anchor}
+
+式[(1‑8)](#_Ref215834169)代入式[(1‑90)](#_Ref217288259)，得到式[(1‑97)](#_Ref216258494)。
+
+####  ${\mathbf{B}^{\mathbf{'}}}_{z}$与$\mathbf{F}^{\mathbf{'12}}$ 分量
+
+式[(1‑68)](#_Ref216170974)中$\mu = 1$，$\nu = 2$，得式[(1‑91)](#_Ref217286643)，由于$\mathbf{\Lambda}\ _{\sigma}^{2}$只有在 $\sigma = 2$ 时为
+1，其它为 0。
+
+$$
+{\mathbf{F}^{'12} = \mathbf{\Lambda}\ _{\rho}^{1}\mathbf{\Lambda}\ _{\sigma}^{2}\ \mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\mathbf{\Lambda}\ _{\rho}^{1}\ \mathbf{F}^{\rho 2}}}
+\tag{1‑91}
+$$
+[]{#217286643 .anchor}
+
+将式[(1‑5)](#_Ref216171664)和[(1‑30)](#_Ref215820080)中代入式[(1‑91)](#_Ref217286643)，只保留非0元素为。
+
+$$
+{\mathbf{F}^{'12} = \mathbf{\Lambda}\ _{0}^{1}\ \mathbf{F}^{02} + \mathbf{\Lambda}\ _{1}^{1}\ \mathbf{F}^{12}
+  }{\mathbf{F}^{'12} = ( - \gamma\beta) \cdot \left( - \frac{\mathbf{E}_{y}}{c} \right) + \gamma\mathbf{\cdot}\left( - \mathbf{B}_{z} \right)
+  }{- {\mathbf{B}^{\mathbf{'}}}_{z} = \gamma\left( \frac{{\beta\mathbf{E}}_{y}}{c} - \mathbf{B}_{z} \right)}
+\tag{1‑92}
+$$
+[]{#217287209 .anchor}
+
+式[(1‑92)](#_Ref217287209)两边同乘-1，并将式[(1‑8)](#_Ref215834169)代入式[(1‑92)](#_Ref217287209)，可以得到式[(1‑98)](#_Ref216258497)。
+
+对于沿 $x$ 轴方向的 boost
+变换（$S'$ 系相对于 $S$ 系以速度 $v$ 运动），电场分量的变换为式[(1‑93)](#_Ref216255316)、式[(1‑94)](#_Ref216256709)、式[(1‑95)](#_Ref216257724)，磁场分量的变换为式[(1‑96)](#_Ref216258492)、式[(1‑97)](#_Ref216258494)、式[(1‑98)](#_Ref216258497)，其中，垂直于相对运动方向的分量发生混合。
+
+$$
+{\mathbf{E}'}_{x} = \mathbf{E}_{x}
+\tag{1‑93}
+$$
+[]{#216255316 .anchor}
+$$
+{\mathbf{E}'}_{y} = \gamma\left( \mathbf{E}_{y} - v\mathbf{B}_{z} \right)
+\tag{1‑94}
+$$
+[]{#216256709 .anchor}
+$$
+{\mathbf{E}'}_{z} = \gamma\left( \mathbf{E}_{z} + v\mathbf{B}_{y} \right)
+\tag{1‑95}
+$$
+[]{#216257724 .anchor}
+$$
+\mathbf{B}_{x}' = \mathbf{B}_{x}
+\tag{1‑96}
+$$
+[]{#216258492 .anchor}
+$$
+\mathbf{B}_{y}' = \gamma\left( \mathbf{B}_{y} + \frac{v}{c^{2}}\mathbf{E}_{Z} \right)
+\tag{1‑97}
+$$
+[]{#216258494 .anchor}
+$$
+\mathbf{B}_{z}' = \gamma\left( \mathbf{B}_{z} - \frac{v}{c^{2}}\mathbf{E}_{y} \right)
+\tag{1‑98}
+$$
+[]{#216258497 .anchor}
+
+### 小结
+
+如果麦克斯韦方程组在参考系 $S$ 中成立，则在经过洛伦兹变换后的参考系 $S'$ 中也成立。因此，麦克斯韦方程组具有洛伦兹协变性。
+
+```{=latex}
+\newpage
+```
+
+```{=latex}
+\backmatter
+```
+
+# 参考文献 {.unnumbered #references .unlisted}
+
+本书涉及的经典教材、原始论文与辅助资料将在此集中列出；
+正式出版前请按 **GB/T 7714**（顺序编码）或 **MLA / APA** 规范补全条目。
+下方为分组占位：
+
+::: {#refs-classic}
+## 经典教材
+
+- 〔美〕J. D. Jackson. 《经典电动力学》（第 3 版）. 朱培豫 译. 北京：高等教育出版社，2004.
+- 〔俄〕Л. Д. 朗道, Е. М. 栗弗席兹. 《场论》（第 2 版）. 鲁欣，任朗，袁炳南 译. 北京：高等教育出版社，2012.
+- 俞允强. 《电动力学简明教程》. 北京：北京大学出版社，1999.
+
+> 备注：以上为参考条目占位，正式提交前请依据本人真实使用过的版本替换。
+:::
+
+::: {#refs-papers}
+## 原始论文
+
+- Einstein, A. (1905). *Zur Elektrodynamik bewegter Körper*. **Annalen der Physik**, 17, 891–921.
+- Lorentz, H. A. (1904). *Electromagnetic phenomena in a system moving with any velocity smaller than that of light*. **Proceedings of the Royal Netherlands Academy of Arts and Sciences**, 6, 809–831.
+- Minkowski, H. (1908). *Die Grundgleichungen für die elektromagnetischen Vorgänge in bewegten Körpern*. **Nachrichten der Gesellschaft der Wissenschaften zu Göttingen**, 53–111.
+
+> 备注：若写作中未直接引用，请按本人使用的版本重新核对 ISBN / DOI。
+:::
+
+::: {#refs-online}
+## 网络资料
+
+- HyperPhysics — *Lorentz Transformation*（在线电磁学 / 相对论补充材料）.
+  （访问日期：YYYY-MM-DD；引用前请确认页面仍可访问，建议打印为本地副本。）
+:::
+
+{ -#_Toc297105692 }
