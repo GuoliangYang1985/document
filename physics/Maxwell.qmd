@@ -45,6 +45,9 @@ format:
         \setlength{\parindent}{2em}    % 段首缩进 2 个汉字宽
         \setlength{\parskip}{0pt}      % 段间不留额外垂直空白（中文书传统）
         \usepackage{indentfirst}       % 让 \chapter 后的第一段也跟着缩进
+        \usepackage[a4paper, inner=2.5cm, outer=2.0cm, top=2.5cm, bottom=2.5cm]{geometry}
+        \usepackage{setspace}
+        \setstretch{1.35}
         % ===== 书籍样式页眉页脚 =====
         \usepackage{fancyhdr}
         \usepackage{xcolor}
@@ -196,7 +199,7 @@ $$
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}
-$$ {#eq-lambda #eq-Lambda-define}
+$$ {#eq-Lambda-define}
 
 $$
 \mathbf{x}^{'\mu} = \begin{bmatrix}
