@@ -1,0 +1,1290 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  chinese,
+  a4paper,
+  UTF8,
+  12pt,
+  oneside,
+  openany]{ctexbook}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{3}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off,provide=*]{babel}
+\else
+\usepackage[bidi=default,shorthands=off,provide=*]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+% ===== 抑制 Quarto 默认 \maketitle（自定义封面代行）=====
+\let\maketitle\relax
+\AtBeginDocument{\let\maketitle\relax}
+% ===== 粗体数学：\bm{X} 提供给 \symbf{\Lambda} 这类字符 =====
+\usepackage{bm}
+% ===== 中文段落：段首空两字、统一设置 =====
+\setlength{\parindent}{2em}    % 段首缩进 2 个汉字宽
+\setlength{\parskip}{0pt}      % 段间不留额外垂直空白（中文书传统）
+\usepackage{indentfirst}       % 让 \chapter 后的第一段也跟着缩进
+\usepackage[a4paper, inner=2.5cm, outer=2.0cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.35}
+% ===== 书籍样式页眉页脚 =====
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\pagestyle{fancy}
+\usepackage{amsthm}
+\newtheorem{definition}{定义}[chapter]
+\newtheorem{axiom}{公理}[chapter]
+\fancyhf{}
+\fancyhead[LE]{\thepage\quad\textit{狭义相对论}}
+\fancyhead[RO]{\textit{狭义相对论}\quad\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+% ===== 章节标题美化 =====
+% 强制全局使用阿拉伯数字编号（第1章）
+\CTEXsetup[
+  name={第,章},
+  number=\arabic{chapter}
+]{chapter}
+% 章号自动改为"第N章"（ctexbook 内置），并按 display 样式居中。
+\titleformat{\chapter}
+  {\Huge\bfseries\color{blue!50!black}\centering}
+  {第\thechapter 章}{1em}{}
+
+\titleformat{\section}
+  {\Large\bfseries\color{blue!40!black}}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{blue!30!black}}
+  {\thesubsection}{0.8em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{blue!20!black}}
+  {\thesubsubsection}{0.6em}{}
+% ===== 5、6 级标题（段落头 + runin）：必须补齐，
+%        否则一旦文档里出现 ##### ###### 就会报
+%        "Package titlesec Error: No format for this command." =====
+\titleformat{\paragraph}[runin]
+  {\normalsize\bfseries}{}{0pt}{}
+\titleformat{\subparagraph}[runin]
+  {\normalsize\itshape}{}{0pt}{}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{目录}
+\else
+  \newcommand\contentsname{目录}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{图索引}
+\else
+  \newcommand\listfigurename{图索引}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{表索引}
+\else
+  \newcommand\listtablename{表索引}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{图}
+\else
+  \newcommand\figurename{图}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{表}
+\else
+  \newcommand\tablename{表}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{列表}
+\newcommand*\listoflistings{\listof{codelisting}{列表索引}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={狭义相对论},
+  pdfauthor={杨国梁},
+  pdflang={zh-CN},
+  pdfsubject={理论物理 · 相对论},
+  pdfkeywords={\xmpquote{相对论}, \xmpquote{麦克斯韦方程组}, \xmpquote{洛伦兹变换}, \xmpquote{协变性}, \xmpquote{电磁场张量}},
+  colorlinks=true,
+  linkcolor={blue!50!black},
+  filecolor={Maroon},
+  citecolor={blue!50!black},
+  urlcolor={blue!50!black},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{狭义相对论}
+\author{杨国梁}
+\date{}
+\begin{document}
+\frontmatter
+\maketitle
+
+% ===== 封面（titlepage） =====
+\begin{titlepage}
+  \thispagestyle{empty}
+  \begin{center}
+    \vspace*{2cm}
+    {\Huge\bfseries\color{blue!50!black} 狭义相对论}\\[1.2cm]
+    \rule{\linewidth}{0.6pt}\\[1cm]
+    {\Large 杨国梁}\\[1cm]
+    \rule{\linewidth}{0.6pt}\\[2cm]
+    {\large 2025年12月}\\[1cm]
+  \end{center}
+\end{titlepage}
+\cleardoublepage
+\frontmatter
+
+\renewcommand*\contentsname{目录}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\listoftables
+
+\setstretch{1.5}
+\mainmatter
+\newpage
+
+\chapter*{序}\label{preface}
+
+本书是作者在学习狭义相对论过程中，对麦克斯韦方程组与洛伦兹变换之间关系的一次系统性梳理。
+全书的写法以''先讲物理动机，再做张量抽象，最后回到分量形式''为节奏： 第
+1 章先回顾麦克斯韦方程组和洛伦兹协变性的概念， 随后在第 2
+章中给出电磁场张量 \(\mathbf{F}^{\mu\nu}\)
+的协变形式与有源、无源两组方程，
+并在分量层面验证电场、磁场在惯性系间的变换关系。
+
+\begin{quote}
+杨国梁
+
+2025年12月
+\end{quote}
+
+\newpage
+
+\mainmatter
+
+\chapter{对称双生子问题}\label{ux5bf9ux79f0ux53ccux751fux5b50ux95eeux9898}
+
+\section{对称双生子实验}\label{ux5bf9ux79f0ux53ccux751fux5b50ux5b9eux9a8c}
+
+\begin{definition}[实验对象] \label{def-experiment-object}
+设惯性参考系 $S$ 中存在两个质点 $A$ 和 $B$。在时空原点 $O$ 处，$A$ 与 $B$ 相遇并完成时钟对表。设此时 $S$ 系的坐标时 $t=0$，两者的本体时间（携带的时钟读数）分别记为 $\tau_{OA}$ 和 $\tau_{OB}$，且设 $\tau_{OA} = \tau_{OB} = 0$。
+\end{definition}
+
+\begin{definition}[路径分段] \label{def-path-segments}
+从 $O$ 点出发，$A$ 和 $B$ 分别沿两条完全镜像对称的空间路径运动，最终在时空点 $M$ 再次相遇。其路径分为两个阶段：
+
+\begin{enumerate}
+  \item \textbf{弧线段 $O \rightarrow P$ 与 $O \rightarrow Q$}：$A$ 经过弧线到达点 $P$，$B$ 经过完全镜像的弧线到达点 $Q$。这两段过程包含了加速与转向。
+  \item \textbf{直线段 $P \rightarrow M$ 与 $Q \rightarrow M$}：设 $A$ 到达 $P$ 点后，从点 $P$ 开始以恒定速度 $v$ 沿直线向 $M$ 运动，$B$ 到达 $Q$ 点后，从点 $Q$ 开始以恒定速度 $-v$ 沿直线向 $M$ 运动。
+\end{enumerate}
+\end{definition}
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{狭义相对论学习笔记_files/figure-pdf/fig-twins-output-1.pdf}}
+
+}
+
+\caption{\label{fig-twins}对称双生子实验}
+
+\end{figure}%
+
+\begin{axiom}[对称性公理] \label{ax-symmetry}
+根据实验设定，路径 $O \rightarrow P \rightarrow M$ 与 $O \rightarrow Q \rightarrow M$ 关于中心轴 $OM$ 完美镜像对称。即：$A$ 和 $B$ 的物理经历在空间几何与动力学上完全等价。这一对称性在逻辑上确立了 $A$ 与 $B$ 的身份平等与可互换性。
+\end{axiom}
+
+\section{钟慢效应}\label{ux949fux6162ux6548ux5e94}
+
+当前，只研究第2阶段匀速直线运动的直线段。
+
+在 \(A\) 的静止参考系 \(S_A\) 中，\(B\) 以相对速度 \(v_{B/A}\)
+运动。根据洛伦兹变换，\(A\) 观测 \(B\) 的时间会发生膨胀：
+
+\begin{equation}\protect\phantomsection\label{eq-time-dilation-A}{
+\Delta t_A = \gamma \left( \Delta t_B + \frac{v_{B/A} \Delta x_B}{c^2} \right)
+\quad \Longrightarrow \quad
+\Delta t_B = \frac{1}{\gamma} \Delta t_A
+}\end{equation}
+
+即 \(A\) 认为 \(B\) 的时间流逝更慢。同理，在 \(B\) 的静止参考系 \(S_B\)
+中，\(B\) 也会得出 \(A\) 的时间流逝更慢的结论。
+
+\section{基于对称性公理的逻辑裁决}\label{ux57faux4e8eux5bf9ux79f0ux6027ux516cux7406ux7684ux903bux8f91ux88c1ux51b3}
+
+根据对称性公理 \ref{ax-symmetry}，\(A\) 和 \(B\)
+经历了完全镜像对称的物理过程。在 \(M\)
+点相遇时，两者经历的本体时间相等，即 式~\ref{eq-AQB} 。
+
+\begin{equation}\protect\phantomsection\label{eq-AQB}{
+\tau_{MA} = \tau_{MB}
+}\end{equation}
+
+\textbf{这一结论不依赖于任何时间膨胀或固有时的计算公式，而是由系统绝对的几何对称性直接决定的。}
+
+这揭示了``时间膨胀''是理论测量（坐标投影）效应，而不是物理上时钟流逝速率的绝对改变。
+
+\chapter{麦克斯韦方程组}\label{ux9ea6ux514bux65afux97e6ux65b9ux7a0bux7ec4}
+
+\section{问题的提出}\label{ux95eeux9898ux7684ux63d0ux51fa}
+
+在经典力学中，惯性系~\(S\)~和~\(S'\)（其中~\(S'\)~以恒定速度~\(v\)~沿~\(x\)~轴相对~\(S\)~运动）之间的坐标变换由伽利略变换描述为
+式~\ref{eq-galileo}。
+
+\begin{equation}\protect\phantomsection\label{eq-galileo}{
+\left\{ \begin{aligned}
+   & t' = t \\
+   & x' = x - vt \\
+   & y' = y \\
+   & z' = z
+  \end{aligned} \right.\
+}\end{equation}
+
+然而，麦克斯韦方程组预言了真空中光速~\(c\)~为一个普适常数，见
+式~\ref{eq-light-speed-c}。
+
+\begin{equation}\protect\phantomsection\label{eq-light-speed-c}{
+c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}
+}\end{equation}
+
+这与伽利略变换下的速度合成法则相矛盾。
+
+\section{洛伦兹变换}\label{ux6d1bux4f26ux5179ux53d8ux6362}
+
+爱因斯坦基于以下两条原理构建了狭义相对论：
+
+\textbf{相对性原理}：所有物理定律在所有惯性参考系中具有相同的形式。
+
+\textbf{光速不变原理}：在任何惯性参考系中，真空中的光速~\(c\)~都相同。
+
+满足这两条原理的坐标变换是洛伦兹变换。采用四维闵可夫斯基时空坐标~\(\mathbf{x}^{v}=(ct,x,y,z)\)，将时间分量乘以c，即使用\(x_{0} = ct\)，是为了让四个分量具有相同的长度量纲，这样在变换矩阵中各个元素都是无量纲的。
+
+洛伦兹变换 式~\ref{eq-lorentz}。
+
+\begin{equation}\protect\phantomsection\label{eq-lorentz}{
+\left\{ \begin{aligned}
+   & t' = \gamma\left( t - \frac{v}{c^{2}}x \right) \\
+   & x' = \gamma(x - vt) \\
+   & y' = y \\
+   & z' = z
+  \end{aligned} \right.\
+}\end{equation}
+
+其中，\(\gamma = 1/\sqrt{1 - v^{2}/c^{2}}\)，为洛伦兹因子。
+
+初始时~\(S\)~系和~\(S'\)~系的原点重合，\(S'\)~系沿~\(x\)~轴以速度~\(v\)~运动。从\(S\)~系到~\(S'\)~矩阵形式的洛伦兹变换为
+式~\ref{eq-lorentz-mat}。
+
+\begin{equation}\protect\phantomsection\label{eq-lorentz-mat}{
+\mathbf{x}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{x}^{v}
+}\end{equation}
+
+其中， 式~\ref{eq-lorentz-mat}
+中的\(\symbf{\Lambda}_{\nu}^{\mu}\)为洛伦兹变换矩阵
+式~\ref{eq-Lambda-define}。
+
+\begin{equation}\protect\phantomsection\label{eq-Lambda-define}{
+\symbf{\Lambda}_{\nu}^{\mu} = \begin{bmatrix}
+\gamma & -\gamma\beta & 0 & 0 \\
+-\gamma\beta & \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+}\end{equation}
+
+\begin{equation}\protect\phantomsection\label{eq-x-prime}{
+\mathbf{x}^{'\mu} = \begin{bmatrix}
+ct' \\
+x' \\
+y' \\
+z'
+\end{bmatrix}
+}\end{equation}
+
+\begin{equation}\protect\phantomsection\label{eq-x}{
+\mathbf{x}^{\nu} = \begin{bmatrix}
+ct \\
+x \\
+y \\
+z
+\end{bmatrix}
+}\end{equation}
+
+\begin{equation}\protect\phantomsection\label{eq-beta}{
+\beta = \frac{v}{c}
+}\end{equation}
+
+\begin{equation}\protect\phantomsection\label{eq-gamma}{
+\gamma = \frac{1}{\sqrt{1 - \beta^{2}}} = \frac{1}{\sqrt{1 - v^{2}/c^{2}}}
+}\end{equation}
+
+将矩阵乘法展开，并代入 式~\ref{eq-beta}，得到 式~\ref{eq-215834263}、
+式~\ref{eq-215834289}、 式~\ref{eq-215834261}、
+式~\ref{eq-215834264}，合起来就是非矩阵形式的洛伦兹变换
+式~\ref{eq-lorentz}。
+
+\begin{equation}\protect\phantomsection\label{eq-215834263}{
+{t' = \frac{1}{c}\left( \gamma(ct) + ( - \gamma\beta)x + 0 \cdot y + 0 \cdot z \right)
+  }{= \gamma t - \gamma\frac{\beta}{c}x
+  }{= \gamma\left( t - \frac{v}{c^{2}}x \right)}
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-215834289}{
+{x' = ( - \gamma\beta)(ct) + \gamma x + 0 \cdot y + 0 \cdot z
+  }{= \gamma x - \gamma\beta ct
+  }{= \gamma(x - vt)}
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-215834261}{
+y' = 0 \cdot ct + 0 \cdot x + 1 \cdot y + 0 \cdot z = y
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-215834264}{
+z' = 0 \cdot ct + 0 \cdot x + 0 \cdot y + 1 \cdot z = z
+}\end{equation}
+
+从\(S'\)系到~\(S\)~矩阵形式的逆变换矩阵为 式~\ref{eq-215835353}，其中，
+式~\ref{eq-216171626} 中的\(\symbf{\Lambda}_{\mu}^{\nu}\)是
+式~\ref{eq-Lambda-define} 中\(\symbf{\Lambda}_{\nu}^{\mu}\)的逆矩阵。
+
+\begin{equation}\protect\phantomsection\label{eq-215835353}{
+\mathbf{x}^{v} = \symbf{\Lambda}_{\mu}^{\nu}\mathbf{x}^{'\mu}
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216171626}{
+\symbf{\Lambda}_{\mu}^{\nu} = \begin{bmatrix}
+  \gamma & \gamma\beta & 0 & 0 \\
+  \gamma\beta & \gamma & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1
+  \end{bmatrix}
+}\end{equation}
+
+逆变换的非矩阵形式为 式~\ref{eq-215835494}。
+
+\begin{equation}\protect\phantomsection\label{eq-215835494}{
+\left\{ \begin{aligned}
+   & t = \gamma\left( t' + \frac{v}{c^{2}}x \right) \\
+   & x = \gamma\left( x' + vt \right) \\
+   & y = y' \\
+   & z = z'
+  \end{aligned} \right.\
+}\end{equation}
+
+\section{麦克斯韦方程组}\label{ux9ea6ux514bux65afux97e6ux65b9ux7a0bux7ec4-1}
+
+将麦克斯韦方程组改写为四维时空中的张量形式。
+
+\subsection{四维势与电磁场张量}\label{ux56dbux7ef4ux52bfux4e0eux7535ux78c1ux573aux5f20ux91cf}
+
+电磁场张量\textbf{~}\(\mathbf{F}^{\mu\nu}\)~由四维势的定义为
+式~\ref{eq-F-tensor}，统一了电场和磁场。
+
+\begin{equation}\protect\phantomsection\label{eq-F-tensor}{
+\mathbf{F}^{\mu\nu} = \symbf{\partial}^{\mu}\mathbf{A}^{\nu} - \symbf{\partial}^{\nu}\mathbf{A}^{\mu}
+}\end{equation}
+
+四维势~\(\mathbf{A}^{\mu}\)为
+式~\ref{eq-A-four}，\(\phi\)~是标量势，\(\mathbf{A}\)~是矢量势。
+
+\begin{equation}\protect\phantomsection\label{eq-A-four}{
+\mathbf{A}^{\mu} = \left( \frac{\phi}{c},\mathbf{A} \right) = \left( \frac{\phi}{c},\mathbf{A}_{x},\mathbf{A}_{y},\mathbf{A}_{z} \right)
+}\end{equation}
+
+~~\(\symbf{\partial}^{\mu}\)是四维梯度算符，为
+式~\ref{eq-partial-four}。
+
+\begin{equation}\protect\phantomsection\label{eq-partial-four}{
+\symbf{\partial}^{\mu} = \left( \frac{1}{c}\frac{\partial}{\partial t}, - \symbf{\nabla} \right) = \left( \frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right)
+}\end{equation}
+
+\subsubsection{张量定义到矩阵}\label{ux5f20ux91cfux5b9aux4e49ux5230ux77e9ux9635}
+
+电场的势为 式~\ref{eq-217552139}，与磁场的势为 式~\ref{eq-217552163}。
+\begin{equation}\protect\phantomsection\label{eq-217552139}{\mathbf{E} = - \nabla\phi\mathbf{-}\frac{\partial\mathbf{A}}{\partial t}}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-217552163}{\mathbf{B} = \nabla\mathbf{\times A}}\end{equation}
+分量形式为
+\begin{equation}\protect\phantomsection\label{eq-217553109}{\mathbf{E}_{\mathbf{i}} = - \frac{\partial\phi}{\partial x^{i}}\mathbf{-}\frac{\partial\mathbf{A}^{i}}{\partial t}}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-21755310911}{\mathbf{B}_{\mathbf{i}} = \left( \nabla\mathbf{\times A} \right)_{i} }\end{equation}
+
+\paragraph{计算上三角元素}\label{ux8ba1ux7b97ux4e0aux4e09ux89d2ux5143ux7d20}
+
+\(\mu = \nu = i\)为 式~\ref{eq-F-ii}。
+
+\begin{equation}\protect\phantomsection\label{eq-F-ii}{
+\mathbf{F}^{ii} = \symbf{\partial}^{i}\mathbf{A}^{i} - \symbf{\partial}^{i}\mathbf{A}^{i} = 0
+}\end{equation}
+
+~时间-空间分量，\(\mu = 0\)，\(\nu = i\)，并代入
+式~\ref{eq-217553109}，得 式~\ref{eq-F-0i}。
+
+\begin{equation}\protect\phantomsection\label{eq-F-0i}{
+\begin{aligned}
+\mathbf{F}^{0i}
+&= \symbf{\partial}^{0}\mathbf{A}^{i} - \symbf{\partial}^{i}\mathbf{A}^{0} \\
+&= \frac{1}{c}\frac{\partial\mathbf{A}^{i}}{\partial t}
+- \biggl(-\frac{\partial}{\partial x^{i}}\biggr)\biggl( \frac{\phi}{c} \biggr) \\
+&= \frac{1}{c}\left( \frac{\partial\mathbf{A}^{i}}{\partial t}
++ \frac{\partial\phi}{\partial x^{i}} \right) \\
+&= -\frac{\mathbf{E}_{i}}{c}
+\end{aligned}
+}\end{equation}
+
+空间-空间分量，\(\mu = i,\nu = j,i,j = 1,2,3\)
+
+\begin{equation}\protect\phantomsection\label{eq-F-0i-coord}{
+{\mathbf{F}^{ij} = \symbf{\partial}^{i}\mathbf{A}^{j} - \symbf{\partial}^{j}\mathbf{A}^{i}
+  }{= - \frac{\partial\mathbf{A}^{j}}{\partial x^{i}} + \frac{\partial\mathbf{A}^{i}}{\partial x^{j}}}
+}\end{equation}
+
+计算\(\mathbf{F}^{12}\)，代入 式~\ref{eq-F-0i-coord}，得到
+式~\ref{eq-B-field-1}。
+
+\begin{equation}\protect\phantomsection\label{eq-B-field-1}{
+{\mathbf{F}^{12} = - \frac{\partial\mathbf{A}^{2}}{\partial x^{1}} + \frac{\partial\mathbf{A}^{1}}{\partial x^{2}}
+  }{= - \frac{\partial\mathbf{A}_{\mathbf{y}}}{\partial x} + \frac{\partial\mathbf{A}_{\mathbf{x}}}{\partial y}
+  }{= - \mathbf{B}_{\mathbf{z}}}
+}\end{equation}
+
+计算\(\mathbf{F}^{13}\)，代入 式~\ref{eq-F-0i-coord}，得到
+式~\ref{eq-B-field-2}。
+
+\begin{equation}\protect\phantomsection\label{eq-B-field-2}{
+{\mathbf{F}^{13} = - \frac{\partial\mathbf{A}^{3}}{\partial x^{1}} + \frac{\partial\mathbf{A}^{1}}{\partial x^{3}}
+  }{= - \frac{\partial\mathbf{A}_{\mathbf{z}}}{\partial x} + \frac{\partial\mathbf{A}_{\mathbf{x}}}{\partial z}
+  }{= \mathbf{B}_{\mathbf{y}}}
+}\end{equation}
+
+计算\(\mathbf{F}^{23}\)，代入 式~\ref{eq-F-0i-coord}，得到
+式~\ref{eq-div-partial}。
+
+\begin{equation}\protect\phantomsection\label{eq-div-partial}{
+{\mathbf{F}^{23} = - \frac{\partial\mathbf{A}^{3}}{\partial x^{2}} + \frac{\partial\mathbf{A}^{2}}{\partial x^{3}}
+  }{= - \frac{\partial\mathbf{A}_{\mathbf{z}}}{\partial y} + \frac{\partial\mathbf{A}_{\mathbf{y}}}{\partial z}
+  }{= - \mathbf{B}_{\mathbf{x}}}
+}\end{equation}
+
+\textbf{矩阵形式}
+
+根据 式~\ref{eq-F-tensor}
+的定义可知\(\left( \mathbf{F}^{\mu\nu} \right)^{\top} = - \mathbf{F}^{\nu\mu}\)，电磁场张量~\(\mathbf{F}^{\mu\nu}\)~是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为
+式~\ref{eq-inhomo-eq1}。
+
+\begin{equation}\protect\phantomsection\label{eq-inhomo-eq1}{
+\mathbf{F}^{\mu\nu} = \begin{bmatrix}
+  0 & - \frac{\mathbf{E}_{x}}{c} & - \frac{\mathbf{E}_{y}}{c} & - \frac{\mathbf{E}_{z}}{c} \\
+  \frac{\mathbf{E}_{x}}{c} & 0 & - \mathbf{B}_{z} & \mathbf{B}_{y} \\
+  \frac{\mathbf{E}_{y}}{c} & \mathbf{B}_{z} & 0 & {- \mathbf{B}}_{x} \\
+  \frac{\mathbf{E}_{z}}{c} & - \mathbf{B}_{y} & \mathbf{B}_{x} & 0
+  \end{bmatrix}
+}\end{equation}
+
+利用电磁场张量，麦克斯韦方程组可以简洁地表示为两个协变方程。
+
+\subsection{非齐次麦克斯韦方程组}\label{ux975eux9f50ux6b21ux9ea6ux514bux65afux97e6ux65b9ux7a0bux7ec4}
+
+\begin{equation}\protect\phantomsection\label{eq-inhomo-eq2}{
+{\symbf{\partial}_{\mu}\mathbf{F}}^{\mu\nu} = \mu_{0}\mathbf{J}^{\nu}
+}\end{equation}
+
+\(\symbf{\partial}_{\mu}\)是协变四维导数
+式~\ref{eq-inhomo-eq3}，\(\mathbf{J}^{\nu}\)~是四维电流密度
+式~\ref{eq-inhomo-eq2}。
+
+\begin{equation}\protect\phantomsection\label{eq-inhomo-eq3}{
+\symbf{\partial}_{\mu} = \left( \frac{1}{c}\frac{\partial}{\partial t},\symbf{\nabla} \right) = \left( \frac{1}{c}\frac{\partial}{\partial t},\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right)
+}\end{equation}
+
+\begin{equation}\protect\phantomsection\label{eq-four-current}{
+\mathbf{J}^{\nu} = (c\rho, \mathbf{J}) = (c\rho, \mathbf{J}_x, \mathbf{J}_y, \mathbf{J}_z)
+}\end{equation}
+
+\subsubsection{高斯电场定律}\label{ux9ad8ux65afux7535ux573aux5b9aux5f8b}
+
+时间分量当~\(\nu = 0\)~时，是\(\partial_{\mu}\)与\(\mathbf{F}^{\mu\nu}\)的第0列点乘，为
+式~\ref{eq-inhomo-eq4}，其中~\(\mathbf{J}^{0} = c\rho\)。
+
+\begin{equation}\protect\phantomsection\label{eq-inhomo-eq4}{
+\frac{\partial}{\partial x}\left( \frac{\mathbf{E}_{x}}{c} \right) + \frac{\partial}{\partial y}\left( \frac{\mathbf{E}_{y}}{c} \right) + \frac{\partial}{\partial z}\left( \frac{\mathbf{E}_{z}}{c} \right) = \mu_{0}c\rho
+}\end{equation}
+
+式~\ref{eq-inhomo-eq4} 两边乘以~\(c\)，得 式~\ref{eq-inhomo-eq5}。
+
+\begin{equation}\protect\phantomsection\label{eq-inhomo-eq5}{
+\frac{\partial\mathbf{E}_{x}}{\partial x} + \frac{\partial\mathbf{E}_{y}}{\partial y} + \frac{\partial\mathbf{E}_{z}}{\partial z} = \mu_{0}c^{2}\rho
+}\end{equation}
+
+利用 式~\ref{eq-light-speed-c}
+得~\(\mu_{0}c^{2} = 1/\epsilon_{0}\)，代入 式~\ref{eq-inhomo-eq5}
+整理后得到高斯电场定律 式~\ref{eq-216076201}~。
+
+\begin{equation}\protect\phantomsection\label{eq-216076201}{\symbf{\nabla} \mathbf{\cdot E} = \frac{\rho}{\epsilon_{0}}}\end{equation}
+
+\subsubsection{安培-麦克斯韦定律}\label{ux5b89ux57f9-ux9ea6ux514bux65afux97e6ux5b9aux5f8b}
+
+由 式~\ref{eq-light-speed-c} 得 式~\ref{eq-homo-eq1}。
+
+\begin{equation}\protect\phantomsection\label{eq-homo-eq1}{
+\frac{1}{c^{2}} = \mu_{0}\epsilon_{0}
+}\end{equation}
+
+空间分量当~\(\nu = 1\)~时，是\(\symbf{\partial}_{\mu}\)与\(\mathbf{F}^{\mu\nu}\)的第1列点乘，为
+式~\ref{eq-homo-eq2}，其中，~\(\mathbf{J}^{1} = \mathbf{J}_{x}\)。
+
+\begin{equation}\protect\phantomsection\label{eq-homo-eq2}{
+\frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{x}}{c} \right) + \frac{\partial\mathbf{B}_{z}}{\partial y} - \frac{\partial\mathbf{B}_{y}}{\partial z} = \mu_{0}\mathbf{J}_{x}
+}\end{equation}
+
+将 式~\ref{eq-homo-eq1} 代入 式~\ref{eq-homo-eq2} 后整理得
+式~\ref{eq-216077463}，其中，\(\frac{\partial\mathbf{B}_{z}}{\partial y} - \frac{\partial\mathbf{B}_{y}}{\partial z} = \left( \symbf{\nabla}\mathbf{\times B} \right)_{x}\)。
+
+\begin{equation}\protect\phantomsection\label{eq-216077463}{
+\left( \symbf{\nabla}\mathbf{\times B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{x}}{\partial t} = \mu_{0}\mathbf{J}_{x}
+}\end{equation}
+
+当~\(\nu = 2\)~时，是\(\symbf{\partial}_{\mu}\)与\(\mathbf{F}^{\mu\nu}\)的第2列点乘，为
+式~\ref{eq-216078264}，其中，~\(\mathbf{J}^{2} = \mathbf{J}_{y}\)。
+
+\begin{equation}\protect\phantomsection\label{eq-216078264}{
+\frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{y}}{c} \right) - \frac{\partial\mathbf{B}_{z}}{\partial x} + \frac{\partial\mathbf{B}_{x}}{\partial z} = \mu_{0}\mathbf{J}_{y}
+}\end{equation}
+
+将 式~\ref{eq-homo-eq1} 代入 式~\ref{eq-216078264} 后整理得
+式~\ref{eq-216078276}，其中，\(\frac{\partial\mathbf{B}_{x}}{\partial z} - \frac{\partial\mathbf{B}_{z}}{\partial x} = \left( \symbf{\nabla}\mathbf{\times B} \right)_{y}\)。
+
+\begin{equation}\protect\phantomsection\label{eq-216078276}{
+\left( \symbf{\nabla}\mathbf{\times B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{y}}{\partial t} = \mu_{0}\mathbf{J}_{y}
+}\end{equation}
+
+当~\(\nu = 3\)~时，是\(\symbf{\partial}_{\mu}\)与\(\mathbf{F}^{\mu\nu}\)的第3列点乘，为
+式~\ref{eq-216078498}，其中，~\(\mathbf{J}^{3} = \mathbf{J}_{z}\)。
+
+\begin{equation}\protect\phantomsection\label{eq-216078498}{
+\frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{z}}{c} \right) + \frac{\partial\mathbf{B}_{y}}{\partial x} - \frac{\partial\mathbf{B}_{x}}{\partial y} = \mu_{0}\mathbf{J}_{z}
+}\end{equation}
+
+将 式~\ref{eq-homo-eq1} 代入 式~\ref{eq-216078498} 后整理得
+式~\ref{eq-216078799}，其中，\(\frac{\partial\mathbf{B}_{y}}{\partial x} - \frac{\partial\mathbf{B}_{x}}{\partial y} = \left( \symbf{\nabla}\mathbf{\times B} \right)_{z}\)。
+
+\begin{equation}\protect\phantomsection\label{eq-216078799}{
+\left( \symbf{\nabla}\mathbf{\times B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{z}}{\partial t} = \mu_{0}\mathbf{J}_{z}
+}\end{equation}
+
+当~\(\nu = 1,2,3\)~时，合并三个分量方程 式~\ref{eq-216077463}、
+式~\ref{eq-216078276}、 式~\ref{eq-216078799} 为矢量
+式~\ref{eq-215820756}，此方程给出安培-麦克斯韦定律。~
+
+\begin{equation}\protect\phantomsection\label{eq-215820756}{
+\symbf{\nabla} \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}
+}\end{equation}
+
+\subsubsection{对应关系}\label{ux5bf9ux5e94ux5173ux7cfb}
+
+表~\ref{tbl-tab-sourceful}
+中对4维与3维对应关系做了总结，1个4维张量方程包含了2个3维矢量方程。
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4444}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2222}}@{}}
+\caption{有源项4维3维对应关系}\label{tbl-tab-sourceful}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+4维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+物理定律
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+4维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+物理定律
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\partial_{\mu}\mathbf{F}^{\mu\nu}=\mu_{0}\mathbf{J}^{\nu},(\nu = 0)\)
+& \(\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_{0}}\) &
+高斯电场定律 \\
+\(\partial_{\mu}\mathbf{F}^{\mu\nu}=\mu_{0}\mathbf{J}^{\nu},(\nu = 1,2,3)\)
+&
+\(\nabla \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}\)
+& 安培‑麦克斯韦定律 \\
+\end{longtable}
+
+时间分量（\(v = 0\)）对应高斯电场定律，空间分量（\(v = 1,2,3\)）对应安培-麦克斯韦定律。
+
+\subsection{齐次麦克斯韦方程组}\label{ux9f50ux6b21ux9ea6ux514bux65afux97e6ux65b9ux7a0bux7ec4}
+
+循环形式为 式~\ref{eq-216080650}。
+
+\begin{equation}\protect\phantomsection\label{eq-216080650}{
+\symbf{\partial}^{\lambda}\mathbf{F}^{\mu\nu} + \symbf{\partial}^{\mu}\mathbf{F}^{\nu\lambda} + \symbf{\partial}^{\nu}\mathbf{F}^{\lambda\mu} = 0
+}\end{equation}
+
+或者等价地，莱维-奇维塔 式~\ref{eq-216080707}。
+
+\begin{equation}\protect\phantomsection\label{eq-216080707}{
+\epsilon^{\alpha\beta\gamma\delta}\partial_{\beta}\mathbf{F}_{\gamma\delta} = 0
+}\end{equation}
+
+\subsubsection{高斯磁场定律}\label{ux9ad8ux65afux78c1ux573aux5b9aux5f8b}
+
+式~\ref{eq-216080650} 选择\((\lambda,\mu,\nu) = (1,2,3)\)得到
+式~\ref{eq-216081978}。
+
+\begin{equation}\protect\phantomsection\label{eq-216081978}{
+\symbf{\partial}^{1}\mathbf{F}^{23} + \symbf{\partial}^{2}\mathbf{F}^{31} + \symbf{\partial}^{3}\mathbf{F}^{12} = 0
+}\end{equation}
+
+将 式~\ref{eq-partial-four} 和 式~\ref{eq-inhomo-eq1} 代入
+式~\ref{eq-216081978}，得到 式~\ref{eq-216082498}。
+
+\begin{equation}\protect\phantomsection\label{eq-216082498}{
+- \frac{\partial}{\partial x}\left( - \mathbf{B}_{x} \right) - \frac{\partial}{\partial y}\left( - \mathbf{B}_{y} \right) - \frac{\partial}{\partial z}\left( - \mathbf{B}_{z} \right) = 0
+}\end{equation}
+
+将 式~\ref{eq-216082498} 整理后得高斯磁场定律 式~\ref{eq-215821159}。
+~\begin{equation}\protect\phantomsection\label{eq-215821159}{\symbf{\nabla \cdot B} = 0}\end{equation}
+
+\subsubsection{法拉第电磁感应定律}\label{ux6cd5ux62c9ux7b2cux7535ux78c1ux611fux5e94ux5b9aux5f8b}
+
+x-分量 式~\ref{eq-216080650} 选择\((\lambda,\mu,\nu) = (0,2,3)\)，得到
+式~\ref{eq-216082919}。
+
+\begin{equation}\protect\phantomsection\label{eq-216082919}{
+\symbf{\partial}^{0}\mathbf{F}^{23} + \symbf{\partial}^{2}\mathbf{F}^{30} + \symbf{\partial}^{3}\mathbf{F}^{02} = 0
+}\end{equation}
+
+将 式~\ref{eq-partial-four} 和 式~\ref{eq-inhomo-eq1} 代入
+式~\ref{eq-216082919} 得到 式~\ref{eq-216083244}。
+
+\begin{equation}\protect\phantomsection\label{eq-216083244}{
+\frac{1}{c}\frac{\partial}{\partial t}\left( - \mathbf{B}_{x} \right) - \frac{\partial}{\partial y}\left( \frac{\mathbf{E}_{z}}{c} \right) - \frac{\partial}{\partial z}\left( - \frac{\mathbf{E}_{y}}{c} \right) = 0
+}\end{equation}
+
+将 式~\ref{eq-216083244} 乘c整理后得 式~\ref{eq-216083354}。
+
+\begin{equation}\protect\phantomsection\label{eq-216083354}{
+- \frac{\partial\mathbf{B}_{x}}{\partial t} - \frac{\partial\mathbf{E}_{z}}{\partial y} + \frac{\partial\mathbf{E}_{y}}{\partial z} = 0
+}\end{equation}
+
+式~\ref{eq-216083691}
+中\(\frac{\partial\mathbf{E}_{y}}{\partial z} - \frac{\partial\mathbf{E}_{z}}{\partial y} = \left( \nabla \times \mathbf{E} \right)_{x}\)，可以得到
+式~\ref{eq-216083691}。
+
+\begin{equation}\protect\phantomsection\label{eq-216083691}{
+\left( \symbf{\nabla}\mathbf{\times E} \right)_{x} = \frac{\partial\mathbf{B}_{x}}{\partial t}
+}\end{equation}
+
+y-分量 式~\ref{eq-216080650} 选择\((\lambda,\mu,\nu) = (0,3,1)\)，得到
+式~\ref{eq-216083842}。
+
+\begin{equation}\protect\phantomsection\label{eq-216083842}{
+\symbf{\partial}^{0}\mathbf{F}^{31} + \symbf{\partial}^{3}\mathbf{F}^{10} + \symbf{\partial}^{1}\mathbf{F}^{03} = 0
+}\end{equation}
+
+将 式~\ref{eq-partial-four} 和 式~\ref{eq-inhomo-eq1} 代入
+式~\ref{eq-216083842} 得到 式~\ref{eq-216083924}。
+
+\begin{equation}\protect\phantomsection\label{eq-216083924}{
+\frac{1}{c}\frac{\partial}{\partial t}\left( - \mathbf{B}_{y} \right) - \frac{\partial}{\partial z}\left( \frac{\mathbf{E}_{x}}{c} \right) - \frac{\partial}{\partial x}\left( - \frac{\mathbf{E}_{z}}{c} \right) = 0
+}\end{equation}
+
+将 式~\ref{eq-216083924} 乘c整理后得 式~\ref{eq-216084225}。
+
+\begin{equation}\protect\phantomsection\label{eq-216084225}{
+- \frac{\partial\mathbf{B}_{y}}{\partial t} - \frac{\partial\mathbf{E}_{x}}{\partial z} + \frac{\partial\mathbf{E}_{z}}{\partial x} = 0
+}\end{equation}
+
+式~\ref{eq-216084225}
+中\(\frac{\partial\mathbf{E}_{z}}{\partial x} - \frac{\partial\mathbf{E}_{x}}{\partial z} = \left( \symbf{\nabla}\mathbf{\times E} \right)_{y}\)，可以得到
+式~\ref{eq-216084334}。
+
+\begin{equation}\protect\phantomsection\label{eq-216084334}{
+\left( \symbf{\nabla}\mathbf{\times E} \right)_{y} = \frac{\partial\mathbf{B}_{y}}{\partial t}
+}\end{equation}
+
+z-分量 式~\ref{eq-216080650} 选择\((\lambda,\mu,\nu) = (0,1,2)\)，得到
+式~\ref{eq-216084498}。
+
+\begin{equation}\protect\phantomsection\label{eq-216084498}{
+\symbf{\partial}^{0}\mathbf{F}^{12} + \symbf{\partial}^{1}\mathbf{F}^{20} + \symbf{\partial}^{2}\mathbf{F}^{01} = 0
+}\end{equation}
+
+将 式~\ref{eq-partial-four} 和 式~\ref{eq-inhomo-eq1} 代入
+式~\ref{eq-216084498} 得到 式~\ref{eq-216084592}。
+
+\begin{equation}\protect\phantomsection\label{eq-216084592}{
+\frac{1}{c}\frac{\partial}{\partial t}\left( - \mathbf{B}_{z} \right) - \frac{\partial}{\partial x}\left( \frac{\mathbf{E}_{y}}{c} \right) - \frac{\partial}{\partial y}\left( - \frac{\mathbf{E}_{x}}{c} \right) = 0
+}\end{equation}
+
+将 式~\ref{eq-216083244} 乘c整理后得 式~\ref{eq-216084852}。
+
+\begin{equation}\protect\phantomsection\label{eq-216084852}{
+- \frac{\partial\mathbf{B}_{z}}{\partial t} - \frac{\partial\mathbf{E}_{y}}{\partial x} + \frac{\partial\mathbf{E}_{x}}{\partial y} = 0
+}\end{equation}
+
+式~\ref{eq-216084852}
+中\(\frac{\partial\mathbf{E}_{x}}{\partial y} - \frac{\partial\mathbf{E}_{y}}{\partial x} = \left( \symbf{\nabla}\mathbf{\times E} \right)_{z}\)，可以得到
+式~\ref{eq-216084874}。
+
+\begin{equation}\protect\phantomsection\label{eq-216084874}{
+\left( \symbf{\nabla}\mathbf{\times E} \right)_{z} = \frac{\partial B_{z}}{\partial t}
+}\end{equation}
+
+合并三个分量方程 式~\ref{eq-216083691}、 式~\ref{eq-216084334}、
+式~\ref{eq-216084874} 为矢量 式~\ref{eq-215821158}~。
+\begin{equation}\protect\phantomsection\label{eq-215821158}{\symbf{\nabla} \times \mathbf{E} = \frac{\partial\mathbf{B}}{\partial t}}\end{equation}
+
+法拉第电磁感应定律 式~\ref{eq-216085287}
+有一个负号\hspace{0pt}，而推导得到的
+式~\ref{eq-215821158}~是正号。这个差异源于电磁场张量定义中的符号约定。
+\begin{equation}\protect\phantomsection\label{eq-216085287}{\symbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}}\end{equation}
+
+\subsubsection{对应关系}\label{ux5bf9ux5e94ux5173ux7cfb-1}
+
+表~\ref{tbl-tab-sourceless}
+中对4维与3维对应关系做了总结，1个4维张量方程包含了2个3维矢量方程。
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3000}}@{}}
+\caption{无源项4维3维对应关系}\label{tbl-tab-sourceless}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+4维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+物理定律
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+4维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+3维形式
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+物理定律
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(\partial^{\lambda}\mathbf{F}^{\mu\nu} + \partial^{\mu}\mathbf{F}^{\nu\lambda} + \partial^{\nu}\mathbf{F}^{\lambda\mu} = 0\)\((\lambda,\mu,\nu) = (1,2,3)\)
+& \(\nabla \cdot \mathbf{B} = 0\) & 高斯磁场定律 \\
+\(\partial^{\lambda}\mathbf{F}^{\mu\nu} + \partial^{\mu}\mathbf{F}^{\nu\lambda} + \partial^{\nu}\mathbf{F}^{\lambda\mu} = 0\)\((\lambda,\mu,\nu) = \left( (0,2,3),(0,3,1),(0,1,2) \right)\)
+& \(\nabla \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}\)
+& 法拉第电磁感应定律 \\
+\end{longtable}
+
+\section{协变性与电磁场的变换}\label{ux534fux53d8ux6027ux4e0eux7535ux78c1ux573aux7684ux53d8ux6362}
+
+证明非齐次麦克斯韦方程组在洛伦兹变换下是协变的，即证明
+式~\ref{eq-216173408}。
+
+\subsection{物理量的洛伦兹变换}\label{ux7269ux7406ux91cfux7684ux6d1bux4f26ux5179ux53d8ux6362}
+
+在洛伦兹变换下，物理量按特定规则变换，二阶电磁场张量
+式~\ref{eq-216170974}。\(\mathbf{A}^{'\mu}\)~是四维矢量，其变换规则为
+式~\ref{eq-217463243}。
+
+\begin{equation}\protect\phantomsection\label{eq-217463243}{
+\mathbf{A}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{A}^{\nu}
+}\end{equation}
+
+偏导数算符~\(\symbf{\partial}^{'\mu}\)~在洛伦兹变换下，坐标微分变换导致偏导数的变换为
+式~\ref{eq-217463483}。
+
+\begin{equation}\protect\phantomsection\label{eq-217463483}{
+\symbf{\partial}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\symbf{\partial}^{v}
+}\end{equation}
+
+在~\(S'\)~系中，电磁场张量定义为 式~\ref{eq-217463678}。
+
+\begin{equation}\protect\phantomsection\label{eq-217463678}{
+\mathbf{F}^{'\mu\nu} = \symbf{\partial}^{'\mu}\mathbf{A}^{'\nu} - \symbf{\partial}^{'\nu}\mathbf{A}^{'\mu}
+}\end{equation}
+
+根据 式~\ref{eq-217463243} 和 式~\ref{eq-217463483} 的变换规则，由
+式~\ref{eq-217463678} 得 式~\ref{eq-217464111}。
+
+\begin{equation}\protect\phantomsection\label{eq-217464111}{
+\begin{aligned}
+\mathbf{F}'^{\mu\nu}
+&= \left( \symbf{\Lambda}_{\rho}^{\mu}\symbf{\partial}^{\rho} \right)\left( \symbf{\Lambda}_{\sigma}^{\nu}\mathbf{A}^{\sigma} \right)
+- \left( \symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}^{\sigma} \right)\left( \symbf{\Lambda}_{\rho}^{\mu}\mathbf{A}^{\rho} \right) \\
+&= \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}^{\rho}\mathbf{A}^{\sigma}
+- \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}^{\sigma}\mathbf{A}^{\rho} \\
+&= \left( \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu} \right)
+\bigl( \symbf{\partial}^{\rho}\mathbf{A}^{\sigma} - \symbf{\partial}^{\sigma}\mathbf{A}^{\rho} \bigr) \\
+&= \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma}
+\end{aligned}
+}\end{equation}
+
+洛伦兹变换系数是常数，可提到前面。\(\symbf{\Lambda}_{\rho}^{\mu}\)和\(\symbf{\Lambda}_{\rho}^{\mu}\)是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，\(\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\Lambda}_{\rho}^{\mu} = \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{v}\)。最后，根据
+式~\ref{eq-F-tensor} 的定义，可以得到电磁场张量 式~\ref{eq-216170974}。
+
+\begin{equation}\protect\phantomsection\label{eq-216170974}{
+\mathbf{F}^{'\mu\nu} = \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma}
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216171155}{
+\mathbf{J}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{J}^{\nu}
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216171177}{
+\symbf{\partial}_{\mu}' = \symbf{\Lambda}_{\mu}^{\nu}\symbf{\partial}_{\nu}
+}\end{equation}
+
+根据坐标变换关系 式~\ref{eq-lorentz-mat}，四维电流密度为
+式~\ref{eq-216171155}，四维导数为
+式~\ref{eq-216171177}，\(\symbf{\Lambda}_{\nu}^{\mu}\)为
+式~\ref{eq-Lambda-define}。
+
+\subsection{非齐次方程的协变性}\label{ux975eux9f50ux6b21ux65b9ux7a0bux7684ux534fux53d8ux6027}
+
+将 式~\ref{eq-216170974} 和 式~\ref{eq-216171177}
+代入\({{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu}\)得到
+式~\ref{eq-216171901}，系数\(\symbf{\Lambda}_{\rho}^{\mu}\)和\(\symbf{\Lambda}_{\sigma}^{\nu}\)是常数，可以将它们提到微分算符\(\symbf{\partial}_{\nu}\)的前面。
+
+\begin{equation}\protect\phantomsection\label{eq-216171901}{{{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \left( \symbf{\Lambda}_{\mu}^{\nu}\symbf{\partial}_{\nu} \right)\left( \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma} \right) = \symbf{\Lambda}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}}\end{equation}
+
+洛伦兹变换矩阵满足正交关系,
+\({\symbf{\delta}_{\rho}^{v} = \symbf{\Lambda}}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}^{\mu}\)，\(\nu = \rho\)为\(\symbf{\delta}_{\rho}^{v} = 1\)，否则为\(\symbf{\delta}_{\rho}^{v} = 0\)。
+\begin{equation}\protect\phantomsection\label{eq-216173227}{{{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}}\end{equation}
+
+在~\(S\)~系中，根据 式~\ref{eq-inhomo-eq2}
+有~\(\symbf{\partial}_{\nu}\mathbf{F}^{\sigma\rho} = \mu_{0}\mathbf{J}^{\rho}\)~，代入
+式~\ref{eq-216173227} 得 式~\ref{eq-216173196}。
+
+\begin{equation}\protect\phantomsection\label{eq-216173196}{{{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\mu_{0}\mathbf{J}^{\rho} = \mu_{0}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{J}^{\rho}}\end{equation}
+
+根据四维电流密度的变换
+式~\ref{eq-216171155}，有~\(\mathbf{J}^{'\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\mathbf{J}^{\rho}\)，得到
+式~\ref{eq-216173408}。
+
+\begin{equation}\protect\phantomsection\label{eq-216173408}{
+{{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \mu_{0}\mathbf{J}^{'\nu}
+}\end{equation}
+
+式~\ref{eq-216173408} 和 式~\ref{eq-inhomo-eq2}
+有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
+
+\subsection{齐次方程的协变性}\label{ux9f50ux6b21ux65b9ux7a0bux7684ux534fux53d8ux6027}
+
+证明循环形式的齐次方程 式~\ref{eq-216080650}
+在洛伦兹变换下形式不变。即，如果在参考系\(S\)中上述方程成立，则在参考系\(S′\)中，相应的
+式~\ref{eq-217544542} 也成立。
+
+\begin{equation}\protect\phantomsection\label{eq-217544542}{
+\symbf{\partial}'^{\lambda}\mathbf{F'}^{\mu\nu} + \symbf{\partial}'^{\mu}\mathbf{F}^{'\nu\lambda} + \symbf{\partial}'^{\nu}\mathbf{F}^{'\lambda\mu} = 0
+}\end{equation}
+
+将变换规则 式~\ref{eq-217463483} 和 式~\ref{eq-216170974} 代入
+式~\ref{eq-217544542} 的第一项得 式~\ref{eq-217544998}。
+
+\begin{equation}\protect\phantomsection\label{eq-217544998}{
+{{\symbf{\partial}^{\mathbf{'}}}^{\lambda}{\mathbf{F}^{\mathbf{'}}}^{\mu\nu} = \left( \symbf{\Lambda}_{\rho}^{\lambda}\symbf{\partial}^{\rho} \right)\left( \symbf{\Lambda}_{\alpha}^{\mu}\symbf{\Lambda}_{\beta}^{\nu}\mathbf{F}^{\alpha\beta} \right)
+  }{= \symbf{\Lambda}_{\rho}^{\lambda}\mathbf{\Lambda}_{\alpha}^{\mu}\symbf{\Lambda}_{\beta}^{\nu}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta}}
+}\end{equation}
+
+同理， 式~\ref{eq-217544542} 的第二项得
+式~\ref{eq-217545223}，并将哑指标~\((\rho,\alpha,\beta)\)~轮换为~\((\alpha,\beta,\rho)\)~。
+式~\ref{eq-217544542} 的第三项得
+式~\ref{eq-217545242}，并将哑指标~\((\beta,\rho,\alpha)\)~轮换为~\((\alpha,\beta,\rho)\)~。
+
+\begin{equation}\protect\phantomsection\label{eq-217545223}{
+\symbf{\partial}'^{\mu}\mathbf{F}^{'\nu\lambda} = \symbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\alpha}^{\nu}\symbf{\Lambda}_{\beta}^{\lambda}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\alpha}^{\mu}\mathbf{\Lambda}_{\beta}^{\nu}\symbf{\Lambda}_{\rho}^{\lambda}\symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}
+}\end{equation}
+
+\begin{equation}\protect\phantomsection\label{eq-217545242}{
+\symbf{\partial}'^{\nu}\mathbf{F}^{'\lambda\mu} = \symbf{\Lambda}_{\rho}^{\nu}\mathbf{\Lambda}_{\alpha}^{\lambda}\symbf{\Lambda}_{\beta}^{\mu}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\beta}^{\nu}\mathbf{\Lambda}_{\rho}^{\lambda}\symbf{\Lambda}_{\alpha}^{\mu}\symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha}
+}\end{equation}
+
+在每一项中使用了相同的哑指标，可以适当地重命名。 式~\ref{eq-217544542}
+变换后的方程左端变为 式~\ref{eq-217547944} 。
+\begin{equation}\protect\phantomsection\label{eq-217547944}{
+\begin{aligned}
+& \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu}\, \symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} + \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu} \symbf{\Lambda}_{\rho}^{\lambda}\, \symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho} + \symbf{\Lambda}_{\beta}^{\nu} \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu}\, \symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha} \\
+&= \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu}
+\biggl( \symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta}
++ \symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}
++ \symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha} \biggr)
+= 0 \end{aligned}
+}\end{equation}
+
+由于 \(\symbf{\Lambda}_{\nu}^{\mu}\)
+是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子\(\symbf{\Lambda}_{\rho}^{\lambda}\mathbf{\Lambda}_{\alpha}^{\mu}\symbf{\Lambda}_{\beta}^{\nu}\)，只是顺序不同。根据
+式~\ref{eq-216080650} 可得 式~\ref{eq-217547944} 为0，即，证明了
+式~\ref{eq-217544542} 成立。
+
+\subsection{电磁场的变换关系}\label{ux7535ux78c1ux573aux7684ux53d8ux6362ux5173ux7cfb}
+
+在S\textquotesingle 系中， 式~\ref{eq-216252245}
+中的\(\mathbf{F}^{'\mu\nu}\)与 式~\ref{eq-inhomo-eq1}
+中\(\mathbf{F}^{\mu\nu}\)具有相同的形式。
+
+\begin{equation}\protect\phantomsection\label{eq-216252245}{
+\mathbf{F}^{'\mu\nu} = \begin{bmatrix}
+  0 & - {\mathbf{E}'}_{x}/c & - {\mathbf{E}'}_{y}/c & - {\mathbf{E}'}_{z}/c \\
+  {\mathbf{E}'}_{x}/c & 0 & - {\mathbf{B}'}_{z} & {\mathbf{B}'}_{y} \\
+  {\mathbf{E}'}_{y}/c & {\mathbf{B}'}_{z} & 0 & {- \mathbf{B}'}_{x} \\
+  {\mathbf{E}'}_{z}/c & - {\mathbf{B}'}_{y} & {\mathbf{B}'}_{x} & 0
+  \end{bmatrix}
+}\end{equation}
+
+根据电磁场张量的变换法则为
+式~\ref{eq-216170974}，可以推导出三维空间中电场和磁场分量的显式变换关系。
+
+\subsubsection{\texorpdfstring{~\({\mathbf{E}'}_{x}\)与\(\mathbf{F}^{\mathbf{'01}}\)~分量}{~\{\textbackslash mathbf\{E\}\textquotesingle\}\_\{x\}与\textbackslash mathbf\{F\}\^{}\{\textbackslash mathbf\{\textquotesingle01\}\}~分量}}\label{mathbfe_xux4e0emathbffmathbf01-ux5206ux91cf}
+
+式~\ref{eq-216170974} 中\(\mu = 0\)，\(\nu = 1\)，得
+式~\ref{eq-216254331}。
+
+\begin{equation}\protect\phantomsection\label{eq-216254331}{
+{\mathbf{F}^{'01} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{1}\mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\sum_{\sigma = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{1}\mathbf{F}^{\rho\sigma}}}}
+}\end{equation}
+
+根据 式~\ref{eq-217378583} 得 式~\ref{eq-217378583}。
+
+\begin{equation}\protect\phantomsection\label{eq-217378583}{
+\gamma^{2}\left( 1 - \beta^{2} \right) = 1
+}\end{equation}
+
+将 式~\ref{eq-Lambda-define} 和 式~\ref{eq-inhomo-eq1} 和
+式~\ref{eq-217378583} 代入 式~\ref{eq-216254331}，只保留非0元素为。
+
+\begin{equation}\protect\phantomsection\label{eq-216258641}{
+\begin{aligned}
+\mathbf{F}'^{01}
+&= \symbf{\Lambda}_{0}^{0}\symbf{\Lambda}_{1}^{1}\,\mathbf{F}^{01}
++ \symbf{\Lambda}_{1}^{0}\symbf{\Lambda}_{0}^{1}\,\mathbf{F}^{10} \\
+\mathbf{F}'^{01}
+&= \gamma\gamma\left(-\frac{\mathbf{E}_{x}}{c}\right)
++ (-\gamma\beta)(-\gamma\beta)\left(\frac{\mathbf{E}_{x}}{c}\right) \\
+\mathbf{F}'^{01}
+&= -\gamma^{2}\bigl(1-\beta^{2}\bigr)\left(\frac{\mathbf{E}_{x}}{c}\right) \\
+-\frac{\mathbf{E}'_{x}}{c}
+&= -\frac{\mathbf{E}_{x}}{c}
+\end{aligned}
+}\end{equation}
+
+式~\ref{eq-216258641} 两边同乘以-c，得到 式~\ref{eq-216255316}。
+
+\subsubsection{\texorpdfstring{~\({\mathbf{E}'}_{y}\)与\(\mathbf{F}^{\mathbf{'02}}\)~分量}{~\{\textbackslash mathbf\{E\}\textquotesingle\}\_\{y\}与\textbackslash mathbf\{F\}\^{}\{\textbackslash mathbf\{\textquotesingle02\}\}~分量}}\label{mathbfe_yux4e0emathbffmathbf02-ux5206ux91cf}
+
+式~\ref{eq-216170974} 中\(\mu = 0\)，\(\nu = 2\)，得
+式~\ref{eq-217378691}，由于\(\symbf{\Lambda}_{\sigma}^{2}\)只有在~\(\sigma = 2\)~时为
+1，其它为 0。
+
+\begin{equation}\protect\phantomsection\label{eq-217378691}{
+{\mathbf{F}^{'02} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\mathbf{F}^{\rho 2}}}
+}\end{equation}
+
+将 式~\ref{eq-Lambda-define} 和 式~\ref{eq-inhomo-eq1} 代入
+式~\ref{eq-217378691}，只保留非0元素为。
+
+\begin{equation}\protect\phantomsection\label{eq-216258166}{
+\begin{aligned}
+\mathbf{F}'^{02} &= \Lambda_{0}^{0} \mathbf{F}^{02} + \Lambda_{1}^{0} \mathbf{F}^{12} \\
+\mathbf{F}'^{02} &= \gamma \cdot \left( - \frac{\mathbf{E}_y}{c} \right) + (-\gamma\beta) \cdot ( - \mathbf{B}_z ) \\
+- \frac{\mathbf{E}'_y}{c} &= - \gamma \left( \frac{\mathbf{E}_y}{c} - \beta \mathbf{B}_z \right)
+\end{aligned}
+}\end{equation}
+
+式~\ref{eq-216258166} 两边同乘以-c，并代入 式~\ref{eq-216255316}，得到
+式~\ref{eq-216256709}。
+
+\subsubsection{\texorpdfstring{~\({\mathbf{E}'}_{z}\)与\(\mathbf{F}^{\mathbf{'03}}\)~分量}{~\{\textbackslash mathbf\{E\}\textquotesingle\}\_\{z\}与\textbackslash mathbf\{F\}\^{}\{\textbackslash mathbf\{\textquotesingle03\}\}~分量}}\label{mathbfe_zux4e0emathbffmathbf03-ux5206ux91cf}
+
+式~\ref{eq-216170974} 中\(\mu = 0\)，\(\nu = 2\)，得
+式~\ref{eq-217378932}，由于\(\symbf{\Lambda}_{\sigma}^{3}\)只有在~\(\sigma = 3\)~时为
+1，其它为 0。
+
+\begin{equation}\protect\phantomsection\label{eq-217378932}{
+{\mathbf{F}^{'03} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\mathbf{F}^{\rho 3}}}
+}\end{equation}
+
+将 式~\ref{eq-Lambda-define} 和 式~\ref{eq-inhomo-eq1} 中代入
+式~\ref{eq-217378932}，只保留非0元素为。
+
+\begin{equation}\protect\phantomsection\label{eq-216258297}{
+\begin{aligned}
+\mathbf{F}'^{03}
+&= \symbf{\Lambda}_{0}^{0}\,\mathbf{F}^{03} + \symbf{\Lambda}_{1}^{0}\,\mathbf{F}^{13} \\
+\mathbf{F}'^{03}
+&= \gamma\left(-\frac{\mathbf{E}_{z}}{c}\right) + (-\gamma\beta)\mathbf{B}_{y} \\
+-\frac{\mathbf{E}'_{z}}{c}
+&= -\gamma\left( \frac{\mathbf{E}_{z}}{c} + \beta B_{y} \right)
+\end{aligned}
+}\end{equation}
+
+式~\ref{eq-216258297} 两边同乘以-c，并代入 式~\ref{eq-beta}，得到
+式~\ref{eq-216257724}。
+
+\subsubsection{\texorpdfstring{~\({\mathbf{B}^{\mathbf{'}}}_{x}\)与\(\mathbf{F}^{\mathbf{'23}}\)~分量}{~\{\textbackslash mathbf\{B\}\^{}\{\textbackslash mathbf\{\textquotesingle\}\}\}\_\{x\}与\textbackslash mathbf\{F\}\^{}\{\textbackslash mathbf\{\textquotesingle23\}\}~分量}}\label{mathbfbmathbf_xux4e0emathbffmathbf23-ux5206ux91cf}
+
+式~\ref{eq-216170974} 中\(\mu = 0\)，\(\nu = 2\)，得
+式~\ref{eq-217288821}，由于\(\symbf{\Lambda}_{\rho}^{2}\)只有在~\(\rho = 2\)~时为
+1， \(\symbf{\Lambda}_{\sigma}^{3}\)只有在~\(\sigma = 3\)~时为 1，其它为
+0。
+
+\begin{equation}\protect\phantomsection\label{eq-217288821}{
+{\mathbf{F}^{'23} = \symbf{\Lambda}_{\rho}^{2}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
+  }{\mathbf{F}^{'23} = \mathbf{F}^{23}
+  }{- {\mathbf{B}^{\mathbf{'}}}_{x} = - \mathbf{B}_{x}}
+}\end{equation}
+
+整理 式~\ref{eq-217288821} 得 式~\ref{eq-216258492}。
+
+\subsubsection{\texorpdfstring{~\({\mathbf{B}'}_{y}\)与\(\mathbf{F}^{\mathbf{'13}}\)~分量}{~\{\textbackslash mathbf\{B\}\textquotesingle\}\_\{y\}与\textbackslash mathbf\{F\}\^{}\{\textbackslash mathbf\{\textquotesingle13\}\}~分量}}\label{mathbfb_yux4e0emathbffmathbf13-ux5206ux91cf}
+
+式~\ref{eq-216170974} 中\(\mu = 1\)，\(\nu = 3\)，得
+式~\ref{eq-217287710}，由于\(\symbf{\Lambda}_{\sigma}^{3}\)只有在~\(\sigma = 3\)~时为
+1，其它为 0。
+
+\begin{equation}\protect\phantomsection\label{eq-217287710}{
+{\mathbf{F}^{'13} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{1}\mathbf{F}^{\rho 3}}}
+}\end{equation}
+
+将 式~\ref{eq-Lambda-define} 和 式~\ref{eq-inhomo-eq1} 中代入
+式~\ref{eq-217287710}，只保留非0元素为。
+
+\begin{equation}\protect\phantomsection\label{eq-217288259}{
+\begin{aligned}
+\mathbf{F}'^{13}
+&= \symbf{\Lambda}_{0}^{1}\,\mathbf{F}^{03} + \symbf{\Lambda}_{1}^{1}\,\mathbf{F}^{13} \\
+\mathbf{F}'^{13}
+&= (-\gamma\beta)\left(-\frac{\mathbf{E}_{z}}{c}\right) + \gamma\,\mathbf{B}_{y} \\
+\mathbf{B}'_{y}
+&= \gamma\left( \frac{\beta\mathbf{E}_{z}}{c} + \mathbf{B}_{y} \right)
+\end{aligned}
+}\end{equation}
+
+式~\ref{eq-beta} 代入 式~\ref{eq-217288259}，得到
+式~\ref{eq-216258494}。
+
+\subsubsection{\texorpdfstring{~\({\mathbf{B}^{\mathbf{'}}}_{z}\)与\(\mathbf{F}^{\mathbf{'12}}\)~分量}{~\{\textbackslash mathbf\{B\}\^{}\{\textbackslash mathbf\{\textquotesingle\}\}\}\_\{z\}与\textbackslash mathbf\{F\}\^{}\{\textbackslash mathbf\{\textquotesingle12\}\}~分量}}\label{mathbfbmathbf_zux4e0emathbffmathbf12-ux5206ux91cf}
+
+式~\ref{eq-216170974} 中\(\mu = 1\)，\(\nu = 2\)，得
+式~\ref{eq-217286643}，由于\(\symbf{\Lambda}_{\sigma}^{2}\)只有在~\(\sigma = 2\)~时为
+1，其它为 0。
+
+\begin{equation}\protect\phantomsection\label{eq-217286643}{
+{\mathbf{F}^{'12} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
+  }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{1}\mathbf{F}^{\rho 2}}}
+}\end{equation}
+
+将 式~\ref{eq-Lambda-define} 和 式~\ref{eq-inhomo-eq1} 中代入
+式~\ref{eq-217286643}，只保留非0元素为。
+\begin{equation}\protect\phantomsection\label{eq-217287209}{
+\begin{aligned}
+\mathbf{F}'^{12}
+&= \symbf{\Lambda}_{0}^{1}\,\mathbf{F}^{02} + \symbf{\Lambda}_{1}^{1}\,\mathbf{F}^{12} \\
+\mathbf{F}'^{12}
+&= (-\gamma\beta)\left(-\frac{\mathbf{E}_{y}}{c}\right) + \gamma\left(-\mathbf{B}_{z}\right) \\
+-\mathbf{B}'_{z}
+&= \gamma\left( \frac{\beta\mathbf{E}_{y}}{c} - \mathbf{B}_{z} \right)
+\end{aligned}
+}\end{equation}
+
+式~\ref{eq-217287209} 两边同乘-1，并将 式~\ref{eq-beta} 代入
+式~\ref{eq-217287209}，可以得到 式~\ref{eq-216258497}。
+
+对于沿~\(x\)~轴方向的 boost
+变换（\(S'\)~系相对于~\(S\)~系以速度~\(v\)~运动），电场分量的变换为
+式~\ref{eq-216255316}、 式~\ref{eq-216256709}、
+式~\ref{eq-216257724}，磁场分量的变换为 式~\ref{eq-216258492}、
+式~\ref{eq-216258494}、
+式~\ref{eq-216258497}，其中，垂直于相对运动方向的分量发生混合。
+
+\begin{equation}\protect\phantomsection\label{eq-216255316}{
+{\mathbf{E}'}_{x} = \mathbf{E}_{x}
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216256709}{
+{\mathbf{E}'}_{y} = \gamma\left( \mathbf{E}_{y} - v\mathbf{B}_{z} \right)
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216257724}{
+{\mathbf{E}'}_{z} = \gamma\left( \mathbf{E}_{z} + v\mathbf{B}_{y} \right)
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216258492}{
+\mathbf{B}_{x}' = \mathbf{B}_{x}
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216258494}{
+\mathbf{B}_{y}' = \gamma\left( \mathbf{B}_{y} + \frac{v}{c^{2}}\mathbf{E}_{Z} \right)
+}\end{equation}
+\begin{equation}\protect\phantomsection\label{eq-216258497}{
+\mathbf{B}_{z}' = \gamma\left( \mathbf{B}_{z} - \frac{v}{c^{2}}\mathbf{E}_{y} \right)
+}\end{equation}
+
+\subsection{小结}\label{ux5c0fux7ed3}
+
+如果麦克斯韦方程组在参考系~\(S\)~中成立，则在经过洛伦兹变换后的参考系~\(S'\)~中也成立。因此，麦克斯韦方程组具有洛伦兹协变性。
+
+\newpage
+
+\backmatter
+
+\chapter*{参考文献}\label{references}
+
+\protect\phantomsection\label{refs-classic}
+\section{经典教材}\label{ux7ecfux5178ux6559ux6750}
+
+\begin{itemize}
+\tightlist
+\item
+  〔美〕J. D. Jackson. 《经典电动力学》（第 3 版）. 朱培豫 译.
+  北京：高等教育出版社，2004.
+\end{itemize}
+
+\begin{quote}
+备注：以上为参考条目占位。
+\end{quote}
+
+
+\backmatter
+
+
+\end{document}

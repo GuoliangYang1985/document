@@ -1,5 +1,5 @@
 ---
-title: "麦克斯韦方程组的洛伦兹协变性"
+title: "狭义相对论"
 author:
   - name: "杨国梁"
     affiliation: "山东 济南"
@@ -57,8 +57,8 @@ format:
         \newtheorem{definition}{定义}[chapter]
         \newtheorem{axiom}{公理}[chapter]
         \fancyhf{}
-        \fancyhead[LE]{\thepage\quad\textit{麦克斯韦方程组的洛伦兹协变性}}
-        \fancyhead[RO]{\textit{麦克斯韦方程组的洛伦兹协变性}\quad\thepage}
+        \fancyhead[LE]{\thepage\quad\textit{狭义相对论}}
+        \fancyhead[RO]{\textit{狭义相对论}\quad\thepage}
         \fancyfoot[C]{\thepage}
         \renewcommand{\headrulewidth}{0.4pt}
         \renewcommand{\footrulewidth}{0pt}
@@ -104,7 +104,7 @@ format:
           \thispagestyle{empty}
           \begin{center}
             \vspace*{2cm}
-            {\Huge\bfseries\color{blue!50!black} 麦克斯韦方程组的洛伦兹协变性}\\[1.2cm]
+            {\Huge\bfseries\color{blue!50!black} 狭义相对论}\\[1.2cm]
             \rule{\linewidth}{0.6pt}\\[1cm]
             {\Large 杨国梁}\\[1cm]
             \rule{\linewidth}{0.6pt}\\[2cm]
