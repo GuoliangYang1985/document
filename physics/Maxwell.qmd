@@ -53,6 +53,9 @@ format:
         \usepackage{xcolor}
         \usepackage{titlesec}
         \pagestyle{fancy}
+        \usepackage{amsthm}
+        \newtheorem{definition}{定义}[chapter]
+        \newtheorem{axiom}{公理}[chapter]
         \fancyhf{}
         \fancyhead[LE]{\thepage\quad\textit{麦克斯韦方程组的洛伦兹协变性}}
         \fancyhead[RO]{\textit{麦克斯韦方程组的洛伦兹协变性}\quad\thepage}
@@ -127,7 +130,7 @@ format:
 ::: {.author-note}
 > 杨国梁
 >
-> 2025年12月，于济南
+> 2025年12月
 :::
 
 ```{=latex}
@@ -137,6 +140,58 @@ format:
 ```{=latex}
 \mainmatter
 ```
+# 对称双生子问题
+## 对称双生子实验
+
+\begin{definition}[实验对象] \label{def-experiment-object}
+设惯性参考系 $S$ 中存在两个质点 $A$ 和 $B$。在时空原点 $O$ 处，$A$ 与 $B$ 相遇并完成时钟对表。设此时 $S$ 系的坐标时 $t=0$，两者的本体时间（携带的时钟读数）分别记为 $\tau_{OA}$ 和 $\tau_{OB}$，且设 $\tau_{OA} = \tau_{OB} = 0$。
+\end{definition}
+
+\begin{definition}[路径分段] \label{def-path-segments}
+从 $O$ 点出发，$A$ 和 $B$ 分别沿两条完全镜像对称的空间路径运动，最终在时空点 $M$ 再次相遇。其路径分为两个阶段：
+
+\begin{enumerate}
+  \item \textbf{弧线段 $O \rightarrow P$ 与 $O \rightarrow Q$}：$A$ 经过弧线到达点 $P$，$B$ 经过完全镜像的弧线到达点 $Q$。这两段过程包含了加速与转向。
+  \item \textbf{直线段 $P \rightarrow M$ 与 $Q \rightarrow M$}：设 $A$ 到达 $P$ 点后，从点 $P$ 开始以恒定速度 $v$ 沿直线向 $M$ 运动，$B$ 到达 $Q$ 点后，从点 $Q$ 开始以恒定速度 $-v$ 沿直线向 $M$ 运动。
+\end{enumerate}
+\end{definition}
+
+```{python}
+#| echo: false
+#| label: fig-twins
+#| fig-cap: "对称双生子实验"
+%run scripts/twins_plot.py
+```
+
+\begin{axiom}[对称性公理] \label{ax-symmetry}
+根据实验设定，路径 $O \rightarrow P \rightarrow M$ 与 $O \rightarrow Q \rightarrow M$ 关于中心轴 $OM$ 完美镜像对称。即：$A$ 和 $B$ 的物理经历在空间几何与动力学上完全等价。这一对称性在逻辑上确立了 $A$ 与 $B$ 的身份平等与可互换性。
+\end{axiom}
+
+
+## 钟慢效应
+当前，只研究第2阶段匀速直线运动的直线段。
+
+在 $A$ 的静止参考系 $S_A$ 中，$B$ 以相对速度 $v_{B/A}$ 运动。根据洛伦兹变换，$A$ 观测 $B$ 的时间会发生膨胀：
+
+$$
+\Delta t_A = \gamma \left( \Delta t_B + \frac{v_{B/A} \Delta x_B}{c^2} \right)
+\quad \Longrightarrow \quad
+\Delta t_B = \frac{1}{\gamma} \Delta t_A
+$$ {#eq-time-dilation-A}
+
+即 $A$ 认为 $B$ 的时间流逝更慢。同理，在 $B$ 的静止参考系 $S_B$ 中，$B$ 也会得出 $A$ 的时间流逝更慢的结论。
+
+## 基于对称性公理的逻辑裁决
+
+根据对称性公理 \ref{ax-symmetry}，$A$ 和 $B$ 经历了完全镜像对称的物理过程。在 $M$ 点相遇时，两者经历的本体时间相等，即 @eq-AQB 。
+
+$$
+\tau_{MA} = \tau_{MB}
+$$ {#eq-AQB}
+
+**这一结论不依赖于任何时间膨胀或固有时的计算公式，而是由系统绝对的几何对称性直接决定的。**
+
+这揭示了“时间膨胀”是理论测量（坐标投影）效应，而不是物理上时钟流逝速率的绝对改变。
 
 # 麦克斯韦方程组
 
@@ -587,7 +642,7 @@ $$\symbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$$ {
 @tbl-tab-sourceless 中对4维与3维对应关系做了总结，1个4维张量方程包含了2个3维矢量方程。
 
 | 4维形式 | 3维形式 | 物理定律 |
-|----|--|---|
+|-----|--|---|
 | $\partial^{\lambda}\mathbf{F}^{\mu\nu} + \partial^{\mu}\mathbf{F}^{\nu\lambda} + \partial^{\nu}\mathbf{F}^{\lambda\mu} = 0$<br>$(\lambda,\mu,\nu) = (1,2,3)$ | $\nabla \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
 | $\partial^{\lambda}\mathbf{F}^{\mu\nu} + \partial^{\mu}\mathbf{F}^{\nu\lambda} + \partial^{\nu}\mathbf{F}^{\lambda\mu} = 0$<br>$(\lambda,\mu,\nu) = \left( (0,2,3),(0,3,1),(0,1,2) \right)$ | $\nabla \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
 
