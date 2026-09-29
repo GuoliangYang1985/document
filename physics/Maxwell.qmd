@@ -224,7 +224,7 @@ $$ {#eq-light-speed-c}
 
 **光速不变原理**：在任何惯性参考系中，真空中的光速 $c$ 都相同。
 
-满足这两条原理的坐标变换是洛伦兹变换。采用四维闵可夫斯基时空坐标 $\mathbf{x}^{v} = (ct,x,y,z)$，将时间分量乘以c，即使用$x_{0} = ct$，是为了让四个分量具有相同的长度量纲，这样在变换矩阵中各个元素都是无量纲的。
+满足这两条原理的坐标变换是洛伦兹变换。采用四维闵可夫斯基时空坐标 $\mathbf{x}^{v}=(ct,x,y,z)$，将时间分量乘以c，即使用$x_{0} = ct$，是为了让四个分量具有相同的长度量纲，这样在变换矩阵中各个元素都是无量纲的。
 
 洛伦兹变换 @eq-lorentz。
 
@@ -314,9 +314,8 @@ $$
   0 & 0 & 0 & 1
   \end{bmatrix}
 $$ {#eq-216171626}
-{#eq-inv-Lambda}
 
- 逆变换的非矩阵形式为 @eq-215835494。
+逆变换的非矩阵形式为 @eq-215835494。
 
 $$
 \left\{ \begin{aligned}
@@ -414,7 +413,7 @@ $$
   }{= - \mathbf{B}_{\mathbf{x}}}
 $$ {#eq-div-partial}
 
-##### 矩阵形式
+**矩阵形式**
 
 根据 @eq-F-tensor 的定义可知$\left( \mathbf{F}^{\mu\nu} \right)^{\top} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
 
@@ -442,7 +441,7 @@ $$
 $$ {#eq-inhomo-eq3}
 
 $$
-J^{\nu} = (c\rho, \mathbf{J}) = (c\rho, J_x, J_y, J_z)
+\mathbf{J}^{\nu} = (c\rho, \mathbf{J}) = (c\rho, \mathbf{J}_x, \mathbf{J}_y, \mathbf{J}_z)
 $$ {#eq-four-current}
 
 #### 高斯电场定律
@@ -707,9 +706,8 @@ $$ {#eq-216171177}
 
   $${{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \left( \symbf{\Lambda}_{\mu}^{\nu}\symbf{\partial}_{\nu} \right)\left( \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma} \right) = \symbf{\Lambda}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}$$   {#eq-216171901}
 
-洛伦兹变换矩阵$满$足正交关系,
-${\mathbf{\delta}_{\rho}^{v} = \symbf{\Lambda}}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}^{\mu}$，$\nu = \rho$为$\mathbf{\delta}_{\rho}^{v} = 1$，否则为$\mathbf{\delta}_{\rho}^{v} = 0$。
-
+洛伦兹变换矩阵满足正交关系,
+${\symbf{\delta}_{\rho}^{v} = \symbf{\Lambda}}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}^{\mu}$，$\nu = \rho$为$\symbf{\delta}_{\rho}^{v} = 1$，否则为$\symbf{\delta}_{\rho}^{v} = 0$。
   $${{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}$$ {#eq-216173227}
 
 在 $S$ 系中，根据 @eq-inhomo-eq2 有 $\symbf{\partial}_{\nu}\mathbf{F}^{\sigma\rho} = \mu_{0}\mathbf{J}^{\rho}$ ，代入 @eq-216173227 得 @eq-216173196。
@@ -726,8 +724,7 @@ $$ {#eq-216173408}
 
 ### 齐次方程的协变性
 
-证明循环形式的齐次方程 @eq-216080650 在洛伦兹变换下形式不变。即，如果在参考系S中上述方程成立，则在参考系
-S′中，相应的 @eq-217544542 也成立。
+证明循环形式的齐次方程 @eq-216080650 在洛伦兹变换下形式不变。即，如果在参考系$S$中上述方程成立，则在参考系$S′$中，相应的 @eq-217544542 也成立。
 
 $$
 \symbf{\partial}'^{\lambda}\mathbf{F'}^{\mu\nu} + \symbf{\partial}'^{\mu}\mathbf{F}^{'\nu\lambda} + \symbf{\partial}'^{\nu}\mathbf{F}^{'\lambda\mu} = 0
@@ -751,7 +748,7 @@ $$
 \symbf{\partial}'^{\nu}\mathbf{F}^{'\lambda\mu} = \symbf{\Lambda}_{\rho}^{\nu}\mathbf{\Lambda}_{\alpha}^{\lambda}\symbf{\Lambda}_{\beta}^{\mu}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\beta}^{\nu}\mathbf{\Lambda}_{\rho}^{\lambda}\symbf{\Lambda}_{\alpha}^{\mu}\symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha}
 $$ {#eq-217545242}
 
-在每一项中使用了相同的哑指标，可以适当地重命名。 @eq-217544542 变换后的方程左端变为
+在每一项中使用了相同的哑指标，可以适当地重命名。 @eq-217544542 变换后的方程左端变为 @eq-217547944 。
 $$
 \begin{aligned}
 & \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu}\, \symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} + \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu} \symbf{\Lambda}_{\rho}^{\lambda}\, \symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho} + \symbf{\Lambda}_{\beta}^{\nu} \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu}\, \symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha} \\
@@ -760,7 +757,8 @@ $$
 + \symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}
 + \symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha} \biggr)
 = 0 \end{aligned}
-$$    {#eq-217547944}                                                                                                                                                        
+$${#eq-217547944}
+
 由于 $\symbf{\Lambda}_{\nu}^{\mu}$
 是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子$\symbf{\Lambda}_{\rho}^{\lambda}\mathbf{\Lambda}_{\alpha}^{\mu}\symbf{\Lambda}_{\beta}^{\nu}$，只是顺序不同。根据 @eq-216080650 可得 @eq-217547944 为0，即，证明了 @eq-217544542 成立。
 
@@ -827,9 +825,9 @@ $$ {#eq-217378691}
 
 $$
 \begin{aligned}
-F'^{02} &= \Lambda_{0}^{0} F^{02} + \Lambda_{1}^{0} F^{12} \\
-F'^{02} &= \gamma \cdot \left( - \frac{E_y}{c} \right) + (-\gamma\beta) \cdot ( - B_z ) \\
-- \frac{E'_y}{c} &= - \gamma \left( \frac{E_y}{c} - \beta B_z \right)
+\mathbf{F}'^{02} &= \Lambda_{0}^{0} \mathbf{F}^{02} + \Lambda_{1}^{0} \mathbf{F}^{12} \\
+\mathbf{F}'^{02} &= \gamma \cdot \left( - \frac{\mathbf{E}_y}{c} \right) + (-\gamma\beta) \cdot ( - \mathbf{B}_z ) \\
+- \frac{\mathbf{E}'_y}{c} &= - \gamma \left( \frac{\mathbf{E}_y}{c} - \beta \mathbf{B}_z \right)
 \end{aligned}
 $$ {#eq-216258166}
 
@@ -858,7 +856,7 @@ $$
 \end{aligned}
 $$ {#eq-216258297}
 
- @eq-216258297 两边同乘以-c，并代入 @eq-216255316，得到 @eq-216257724。
+ @eq-216258297 两边同乘以-c，并代入 @eq-beta，得到 @eq-216257724。
 
 ####  ${\mathbf{B}^{\mathbf{'}}}_{x}$与$\mathbf{F}^{\mathbf{'23}}$ 分量
 
@@ -897,7 +895,7 @@ $$
 \end{aligned}
 $$ {#eq-217288259}
 
- @eq-beta 代入 @eq-216255316，得到 @eq-216258494。
+ @eq-beta 代入 @eq-217288259，得到 @eq-216258494。
 
 ####  ${\mathbf{B}^{\mathbf{'}}}_{z}$与$\mathbf{F}^{\mathbf{'12}}$ 分量
 
@@ -963,7 +961,5 @@ $$ {#eq-216258497}
 ## 经典教材
 
 - 〔美〕J. D. Jackson. 《经典电动力学》（第 3 版）. 朱培豫 译. 北京：高等教育出版社，2004.
-- 〔俄〕Л. Д. 朗道, Е. М. 栗弗席兹. 《场论》（第 2 版）. 鲁欣，任朗，袁炳南 译. 北京：高等教育出版社，2012.
-- 俞允强. 《电动力学简明教程》. 北京：北京大学出版社，1999.
 
 > 备注：以上为参考条目占位。
