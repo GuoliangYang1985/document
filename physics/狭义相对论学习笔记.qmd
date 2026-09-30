@@ -192,6 +192,234 @@ $$ {#eq-AQB}
 ## 实验结论
 在满足狭义相对论条件的前提下，狭义相对论测量时得到的“时间不一致”，与对称性确定的“随身时钟时相等”发生了冲突。这说明：狭义相对论测量出的时间差异，并不等同于物理上时钟实际经历的差异。“钟慢效应”是特定理论下的测量结果，它不等同于随身时钟读数的物理过程的真实发生。
 
+# 洛伦兹变换的推导
+## 公理设定
+
+洛伦兹变换的推导，只需立足于三条最弱的前提：变换的线性性、不变速度的存在，以及变换集合的群结构。
+换言之，我们并不预设"光"这一具体物理对象，而只假定时空具有均匀性与各向同性，并存在一个在所有惯性系中取值相同的特征速度 $c$。
+
+\begin{axiom}[均匀性假设（线性变换）] \label{ax-homogeneity}
+空间是均匀的，时间是均匀的。因此，两个惯性系 $S$ 和 $S'$ 之间的坐标变换必须是线性变换（齐次线性变换加平移，这里取原点重合的齐次部分）。
+\end{axiom}
+
+\begin{axiom}[存在不变速度] \label{ax-invariant-speed}
+存在一个恒定的特征速度 $c$，在任何参考系中，沿任意方向测量该速度都恒为 $c$。这意味着如果 $x = ct$，则在 $S'$ 中必有 $x' = ct'$；若 $x = -ct$，则 $x' = -ct'$。
+\end{axiom}
+
+\begin{axiom}[协变性（群结构）] \label{ax-covariance}
+所有的空间方向是对称的（各向同性），且变换构成的集合必须形成"群"：即连续做两次变换等于做一次变换，且存在逆变换回到原坐标系。
+\end{axiom}
+
+## 第一步：建立一般线性变换形式
+
+设 $S'$ 系相对于 $S$ 系以速度 $v$ 沿 $x$ 轴正向运动，$y, z$ 轴不变。
+由于空间的各向同性，以及为了保持 $x - t$ 平面的独立性，线性变换的通式可以写为（设坐标原点在 $t = 0, x = 0$ 时重合）：
+
+$$
+x' = Ax + Bt
+$$ {#eq-lin-x}
+
+$$
+t' = Cx + Dt
+$$ {#eq-lin-t}
+
+其中 $A, B, C, D$ 是待定的常数（依赖于 $v$ 和 $c$）。
+
+### 约束 1：追踪 $S'$ 的原点
+
+$S'$ 的原点 $x' = 0$，在 $S$ 系中对应 $x = vt$。代入 @eq-lin-x：
+
+$$
+0 = A(vt) + Bt \quad \Longrightarrow \quad B = -Av
+$$
+
+于是 @eq-lin-x 变为：
+
+$$
+x' = A(x - vt)
+$$ {#eq-lin-x2}
+
+### 约束 2：相对性原理
+
+$S$ 系相对于 $S'$ 系以速度 $-v$ 运动。根据线性变换的群性质，从 $S'$ 到 $S$ 的变换应该具有相同的形式（只是 $v$ 变 $-v$）。利用这一点，或者利用逆变换，可以推导出 $D = A$。（这是经典推导技巧，后面我们会用光速不变严格约束它。）
+
+现在，变换矩阵的形式缩小为：
+
+$$
+\begin{pmatrix}
+x' \\ t'
+\end{pmatrix}
+=
+\begin{pmatrix}
+A & -Av \\
+C & A
+\end{pmatrix}
+\begin{pmatrix}
+x \\ t
+\end{pmatrix}
+$$ {#eq-matrix-form}
+
+## 第二步：引入"恒定速度"条件
+
+我们要求存在一个速度 $c$，在 $S$ 系中满足 $x = ct$，且变换到 $S'$ 系后依然满足 $x' = ct'$。
+代入 @eq-lin-x2 和 @eq-lin-t 的形式：
+
+$$
+x' = A(ct - vt) = A(c - v)t
+$$
+
+$$
+t' = C(ct) + At = (Cc + A)t
+$$
+
+因为要求 $x' = ct'$，代入得到：
+
+$$
+A(c - v)t = c(Cc + A)t
+$$
+
+消去 $t$（$t > 0$），得：
+
+$$
+\begin{aligned}
+A(c - v) &= c(Cc + A) \\
+Ac - Av &= Cc^{2} + Ac \\
+-Av &= Cc^{2} \quad \Longrightarrow \quad C = -\frac{Av}{c^{2}}
+\end{aligned}
+$$ {#eq-C-constraint}
+
+现在，我们的变换矩阵变成了只依赖参数 $A$ 的形式：
+
+$$
+x' = A(x - vt)
+$$ {#eq-x-final-1}
+
+$$
+t' = A\left( t - \frac{v}{c^{2}}x \right)
+$$ {#eq-t-final-1}
+
+## 第三步：确定参数 $A$
+
+我们需要确定 $A$。利用变换的"群"性质：如果从 $S$ 到 $S'$ 用速度 $v_{1}$，从 $S'$ 到 $S''$ 用速度 $v_{2}$，那么从 $S$ 直接到 $S''$ 必须等价于一次速度为 $v_{3}$ 的变换。
+
+或者，我们直接用物理约束的闭合：做一次速度为 $v$ 的变换，再做一次速度为 $-v$ 的变换，必须回到原始坐标系。
+即：矩阵的逆变换必须等于速度为 $-v$ 的变换。
+从矩阵形式：
+
+$$
+\Lambda(v) =
+\begin{pmatrix}
+A & -Av \\
+-Av/c^{2} & A
+\end{pmatrix}
+$$
+
+逆矩阵 $\Lambda(v)^{-1}$ 应该等于 $\Lambda(-v)$：
+
+$$
+\Lambda(-v) =
+\begin{pmatrix}
+A & Av \\
+Av/c^{2} & A
+\end{pmatrix}
+$$
+
+计算 $\Lambda(v)$ 的逆矩阵（行列式 $\det = A^{2} - A^{2}v^{2}/c^{2} = A^{2}(1 - v^{2}/c^{2})$）：
+
+$$
+\Lambda(v)^{-1}
+= \frac{1}{A^{2}(1 - v^{2}/c^{2})}
+\begin{pmatrix}
+A & Av \\
+Av/c^{2} & A
+\end{pmatrix}
+= \frac{1}{A(1 - v^{2}/c^{2})}
+\begin{pmatrix}
+1 & v \\
+v/c^{2} & 1
+\end{pmatrix}
+$$
+
+令 $\Lambda(v)^{-1} = \Lambda(-v)$，即：
+
+$$
+\frac{1}{A(1 - v^{2}/c^{2})}
+\begin{pmatrix}
+1 & v \\
+v/c^{2} & 1
+\end{pmatrix}
+=
+\begin{pmatrix}
+A & Av \\
+Av/c^{2} & A
+\end{pmatrix}
+$$
+
+比较矩阵的左上角元素：
+
+$$
+\frac{1}{A(1 - v^{2}/c^{2})} = A \quad \Longrightarrow \quad A^{2}(1 - v^{2}/c^{2}) = 1
+$$
+
+解得：
+
+$$
+A = \frac{1}{\sqrt{1 - v^{2}/c^{2}}} \equiv \gamma
+$$ {#eq-gamma}
+
+（这里取正号，因为要求 $v = 0$ 时变换退化为恒等变换 $A = 1$。）
+
+## 第四步：最终形式
+
+将 $A = \gamma$ 代入 @eq-x-final-1 和 @eq-t-final-1，我们得到洛伦兹变换 @eq-final-x 与 @eq-final-t：
+
+$$
+x' = \gamma(x - vt)
+$$ {#eq-final-x}
+
+$$
+t' = \gamma\left( t - \frac{v}{c^{2}}x \right)
+$$ {#eq-final-t}
+
+写成矩阵形式：
+
+$$
+\begin{pmatrix}
+x' \\ t'
+\end{pmatrix}
+=
+\begin{pmatrix}
+\gamma & -\gamma v \\
+-\gamma v/c^{2} & \gamma
+\end{pmatrix}
+\begin{pmatrix}
+x \\ t
+\end{pmatrix}
+$$ {#eq-final-matrix}
+
+同时，根据 $C$ 的约束，逆变换就是 $v \to -v$。
+如果将时间乘以 $c$ 构造 $ct$，则矩阵可以写成更对称的双曲形式：
+
+$$
+\begin{pmatrix}
+x' \\ ct'
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cosh\phi & -\sinh\phi \\
+-\sinh\phi & \cosh\phi
+\end{pmatrix}
+\begin{pmatrix}
+x \\ ct
+\end{pmatrix}
+$$ {#eq-final-hyperbolic}
+
+其中 $\tanh\phi = v/c$。
+
+```{=latex}
+\newpage
+```
+
 # 麦克斯韦方程组
 
 ## 问题的提出 
