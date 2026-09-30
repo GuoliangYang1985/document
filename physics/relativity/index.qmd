@@ -1,0 +1,23 @@
+```{=latex}
+\newpage
+```
+
+# 序 {.unnumbered #preface .unlisted}
+
+致谢
+本项研究的逻辑推演与代数验证，得到了 DeepSeek AI 助手的深度参与，特此致谢。
+
+
+::: {.author-note}
+> 杨国梁
+>
+> 2026年9月
+:::
+
+```{=latex}
+\newpage
+```
+
+```{=latex}
+\mainmatter
+```
