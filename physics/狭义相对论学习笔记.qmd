@@ -210,7 +210,7 @@ $$ {#eq-AQB}
 所有的空间方向是对称的（各向同性），且变换构成的集合必须形成"群"：即连续做两次变换等于做一次变换，且存在逆变换回到原坐标系。
 \end{axiom}
 
-## 第一步：建立一般线性变换形式
+## 建立一般线性变换形式
 
 设 $S'$ 系相对于 $S$ 系以速度 $v$ 沿 $x$ 轴正向运动，$y, z$ 轴不变。
 由于空间的各向同性，以及为了保持 $x - t$ 平面的独立性，线性变换的通式可以写为（设坐标原点在 $t = 0, x = 0$ 时重合）：
@@ -233,7 +233,7 @@ $$
 0 = A(vt) + Bt \quad \Longrightarrow \quad B = -Av
 $$
 
-于是 @eq-lin-x 变为：
+于是 @eq-lin-x 变为 @eq-lin-x2 。
 
 $$
 x' = A(x - vt)
@@ -241,7 +241,51 @@ $$ {#eq-lin-x2}
 
 ### 约束 2：相对性原理
 
-$S$ 系相对于 $S'$ 系以速度 $-v$ 运动。根据线性变换的群性质，从 $S'$ 到 $S$ 的变换应该具有相同的形式（只是 $v$ 变 $-v$）。利用这一点，或者利用逆变换，可以推导出 $D = A$。（这是经典推导技巧，后面我们会用光速不变严格约束它。）
+由 @eq-lin-x2 和 @eq-lin-t 得到变换矩阵为 @eq-lambda 。
+
+$$
+\Lambda =
+\begin{pmatrix}
+A & -Av \\
+C & D
+\end{pmatrix}
+$$ {#eq-lambda}
+
+$S$ 系相对于 $S'$ 系以速度 $-v$ 运动。根据线性变换的群性质，从 $S'$ 到 $S$ 的逆变换必须具有相同的数学形式。
+
+首先计算一般线性变换的行列式：
+
+$$
+\det(\Lambda) = AD + AvC = A(D + vC)
+$$ {#eq-det-lambda}
+
+@eq-lambda 逆矩阵为 @eq-inv-lambda 。
+
+$$
+\Lambda^{-1} = \frac{1}{\det(\Lambda)}
+\begin{pmatrix}
+D & Av \\
+-C & A
+\end{pmatrix}
+$$ {#eq-inv-lambda}
+
+由此得到从 $S'$ 到 $S$ 的变换方程：
+
+$$
+x = \frac{D}{A(D + vC)} x' + \frac{Av}{A(D + vC)} t'
+$$ {#eq-transform-x}
+
+由于 $S$ 系相对于 $S'$ 系以 $-v$ 运动，$S$ 系的原点（$x = 0$）在 $S'$ 系中满足 $x' = -v t'$。代入上式：
+
+$$
+0 = \frac{D}{A(D + vC)} (-v t') + \frac{Av}{A(D + vC)} t'
+$$ {#eq-substitute}
+
+消去公因子后得：
+
+$$
+-Dv + Av = 0 \quad \Longrightarrow \quad D = A
+$$ {#eq-result}
 
 现在，变换矩阵的形式缩小为：
 
@@ -259,7 +303,7 @@ x \\ t
 \end{pmatrix}
 $$ {#eq-matrix-form}
 
-## 第二步：引入"恒定速度"条件
+## 引入恒定速度
 
 我们要求存在一个速度 $c$，在 $S$ 系中满足 $x = ct$，且变换到 $S'$ 系后依然满足 $x' = ct'$。
 代入 @eq-lin-x2 和 @eq-lin-t 的形式：
@@ -298,7 +342,7 @@ $$
 t' = A\left( t - \frac{v}{c^{2}}x \right)
 $$ {#eq-t-final-1}
 
-## 第三步：确定参数 $A$
+## 确定参数 $A$
 
 我们需要确定 $A$。利用变换的"群"性质：如果从 $S$ 到 $S'$ 用速度 $v_{1}$，从 $S'$ 到 $S''$ 用速度 $v_{2}$，那么从 $S$ 直接到 $S''$ 必须等价于一次速度为 $v_{3}$ 的变换。
 
@@ -369,9 +413,9 @@ $$ {#eq-gamma}
 
 （这里取正号，因为要求 $v = 0$ 时变换退化为恒等变换 $A = 1$。）
 
-## 第四步：最终形式
+## 最终形式
 
-将 $A = \gamma$ 代入 @eq-x-final-1 和 @eq-t-final-1，我们得到洛伦兹变换 @eq-final-x 与 @eq-final-t：
+将 $A = \gamma$ 代入 @eq-x-final-1 和 @eq-t-final-1，我们得到洛伦兹变换 @eq-final-x 与 @eq-final-t。
 
 $$
 x' = \gamma(x - vt)
@@ -381,7 +425,7 @@ $$
 t' = \gamma\left( t - \frac{v}{c^{2}}x \right)
 $$ {#eq-final-t}
 
-写成矩阵形式：
+写成矩阵形 @eq-final-matrix 。
 
 $$
 \begin{pmatrix}
@@ -396,25 +440,6 @@ x' \\ t'
 x \\ t
 \end{pmatrix}
 $$ {#eq-final-matrix}
-
-同时，根据 $C$ 的约束，逆变换就是 $v \to -v$。
-如果将时间乘以 $c$ 构造 $ct$，则矩阵可以写成更对称的双曲形式：
-
-$$
-\begin{pmatrix}
-x' \\ ct'
-\end{pmatrix}
-=
-\begin{pmatrix}
-\cosh\phi & -\sinh\phi \\
--\sinh\phi & \cosh\phi
-\end{pmatrix}
-\begin{pmatrix}
-x \\ ct
-\end{pmatrix}
-$$ {#eq-final-hyperbolic}
-
-其中 $\tanh\phi = v/c$。
 
 ```{=latex}
 \newpage
