@@ -1,6 +1,6 @@
 project:
   type: book
-  # 渲染时工作目录 = 项目根（D:\test），使 chapters/ 下 %run scripts/... 可解析
+  # 渲染时工作目录 = 项目根，使 chapters/ 下 %run scripts/... 可解析
   execute-dir: project
 
 book:
@@ -8,10 +8,10 @@ book:
   author: "杨国梁"
   chapters:
     - index.qmd
-    - chapters/对称双生子实验.qmd
-    - chapters/洛伦兹变换的推导.qmd
-    - chapters/麦克斯韦方程组.qmd
-    - chapters/参考文献.qmd
+    - chapters/symmetric-twins.qmd
+    - chapters/lorentz-transform.qmd
+    - chapters/maxwell-equations.qmd
+    - chapters/references.qmd
 
 lang: zh-CN
 
@@ -124,7 +124,6 @@ format:
             \rule{\linewidth}{0.6pt}\\[1cm]
             {\Large 杨国梁}\\[1cm]
             \rule{\linewidth}{0.6pt}\\[2cm]
-            {\large 2025年12月}\\[1cm]
           \end{center}
         \end{titlepage}
         \cleardoublepage

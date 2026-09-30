@@ -34,9 +34,9 @@ ax.plot([left_x, center_x], [straight_y_top, straight_y_top], color=a_color, lin
 ax.plot([right_x, center_x], [straight_y_top, straight_y_top], color=b_color, linewidth=6, solid_capstyle='round', label='B的轨迹 (速度 -v)')
 
 # 3. 绘制剩余轨迹 (细线表示闭环)
-# A的剩余部分 (顺时针)
-right_arc_A = patches.Arc((right_x, 0), track_height, track_height, angle=0, theta1=-90, theta2=90, color=b_color, linewidth=2)
-ax.add_patch(right_arc_A)
+# B的剩余部分 (右侧半圆弧，从底部直道转向 Q 点)
+right_arc_B = patches.Arc((right_x, 0), track_height, track_height, angle=0, theta1=-90, theta2=90, color=b_color, linewidth=2)
+ax.add_patch(right_arc_B)
 ax.plot([0, left_x], [straight_y_bottom, straight_y_bottom], color=a_color, linewidth=2)
 left_arc_A = patches.Arc((left_x, 0), track_height, track_height, angle=0, theta1=90, theta2=270, color=a_color, linewidth=2)
 ax.add_patch(left_arc_A)
