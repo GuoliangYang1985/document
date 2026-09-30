@@ -1,4 +1,7 @@
 # 对称双生子实验
+
+本章设计一个完全镜像对称的双生子实验，检验“钟慢效应”这一测量结果与随身时钟物理过程之间的关系。
+
 ## 实验过程
 
 \begin{definition}[实验对象] \label{def-experiment-object}
@@ -27,9 +30,9 @@
 
 
 ## 钟慢效应
-当前，只研究实验中2直线段的惯性运动过程。
+本章只研究路径分段（定义 \ref{def-path-segments}）中第 2 阶段直线段的惯性运动过程。
 
-在 $A$ 的静止参考系 $S_A$ 中，$B$ 以相对速度 $v_{B/A}$ 运动。根据洛伦兹变换，$A$ 观测 $B$ 的时间会发生膨胀：
+在 $A$ 的静止参考系 $S_A$ 中，$B$ 以相对速度 $v_{B/A}$ 运动。根据洛伦兹变换，$A$ 测量 $B$ 的时间会发生膨胀 @eq-time-dilation-A。
 
 $$
 \Delta t_A = \gamma \left( \Delta t_B + \frac{v_{B/A} \Delta x_B}{c^2} \right)
@@ -37,9 +40,7 @@ $$
 \Delta t_B = \frac{1}{\gamma} \Delta t_A
 $$ {#eq-time-dilation-A}
 
-@eq-time-dilation-A 中的 $\Delta t_B$ 是 $A$ 在 $S_A$ 系中通过洛伦兹变换计算出的时间，并非 $B$ 随身时钟的实际读数。
-
-@eq-time-dilation-A 揭示了$A$ 测量 $B$ 的时间流逝更慢。同理，在 $B$ 的静止参考系 $S_B$ 中，$B$ 也会得出 $A$ 的时间流逝更慢的结论。
+@eq-time-dilation-A 中，$B$ 的静止位置处$\Delta x_B = 0$，$\Delta t_B$ 是 $A$ 在 $S_A$ 系中通过洛伦兹变换计算出的时间， 揭示了$A$ 测量 $B$ 的时间流逝更慢。同理，在 $B$ 的静止参考系 $S_B$ 中，$B$ 也会得出 $A$ 的时间流逝更慢的结论。
 
 ## 对称性约束
 

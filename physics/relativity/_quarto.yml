@@ -120,7 +120,7 @@ format:
           \thispagestyle{empty}
           \begin{center}
             \vspace*{2cm}
-            {\Huge\bfseries\color{blue!50!black} 狭义相对论}\\[1.2cm]
+            {\Huge\bfseries\color{blue!50!black} 狭义相对论}\\[0.9cm]
             \rule{\linewidth}{0.6pt}\\[1cm]
             {\Large 杨国梁}\\[1cm]
             \rule{\linewidth}{0.6pt}\\[2cm]
