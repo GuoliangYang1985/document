@@ -1,5 +1,7 @@
 project:
   type: book
+  # 渲染时工作目录 = 项目根（D:\test），使 chapters/ 下 %run scripts/... 可解析
+  execute-dir: project
 
 book:
   title: "狭义相对论"
@@ -12,6 +14,7 @@ book:
     - chapters/参考文献.qmd
 
 lang: zh-CN
+
 author:
   - name: "杨国梁"
     affiliation: "山东 济南"
