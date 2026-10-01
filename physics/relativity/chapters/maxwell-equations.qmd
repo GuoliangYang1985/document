@@ -29,7 +29,7 @@ $$ {#eq-light-speed-c}
 
 **光速不变原理**：在任何惯性参考系中，真空中的光速 $c$ 都相同。
 
-满足这两条原理的坐标变换是洛伦兹变换。采用四维闵可夫斯基时空坐标 $\mathbf{x}^{v}=(ct,x,y,z)$，将时间分量乘以c，即使用$x_{0} = ct$，是为了让四个分量具有相同的长度量纲，这样在变换矩阵中各个元素都是无量纲的。
+满足这两条原理的坐标变换是洛伦兹变换。采用四维闵可夫斯基时空坐标 $\mathbf{x}^{\nu}=(ct,x,y,z)$，将时间分量乘以c，即使用$x_{0} = ct$，是为了让四个分量具有相同的长度量纲，这样在变换矩阵中各个元素都是无量纲的。
 
 洛伦兹变换 @eq-lorentz。
 
@@ -47,7 +47,7 @@ $$ {#eq-lorentz}
 初始时 $S$ 系和 $S'$ 系的原点重合，$S'$ 系沿 $x$ 轴以速度 $v$ 运动。从$S$ 系到 $S'$ 矩阵形式的洛伦兹变换为 @eq-lorentz-mat。
 
 $$
-\mathbf{x}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{x}^{v}
+\mathbf{x}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{x}^{\nu}
 $$ {#eq-lorentz-mat}
 
 其中， @eq-lorentz-mat 中的$\symbf{\Lambda}_{\nu}^{\mu}$为洛伦兹变换矩阵 @eq-Lambda-define。
@@ -62,7 +62,7 @@ $$
 $$ {#eq-Lambda-define}
 
 $$
-\mathbf{x}^{'\mu} = \begin{bmatrix}
+\mathbf{x}'^{\mu} = \begin{bmatrix}
 ct' \\
 x' \\
 y' \\
@@ -106,10 +106,10 @@ $$
 z' = 0 \cdot ct + 0 \cdot x + 0 \cdot y + 1 \cdot z = z
 $$ {#eq-215834264}
 
-从$S'$系到 $S$ 矩阵形式的逆变换矩阵为 @eq-215835353，其中， @eq-216171626 中的$\symbf{\Lambda}_{\mu}^{\nu}$是 @eq-Lambda-define 中$\symbf{\Lambda}_{\nu}^{\mu}$的逆矩阵。
+从 $S'$ 系到 $S$ 的矩阵形式逆变换为 @eq-215835353，其中， @eq-216171626 中的$\symbf{\Lambda}_{\mu}^{\nu}$是 @eq-Lambda-define 中$\symbf{\Lambda}_{\nu}^{\mu}$的逆矩阵。
 
 $$
-\mathbf{x}^{v} = \symbf{\Lambda}_{\mu}^{\nu}\mathbf{x}^{'\mu}
+\mathbf{x}^{\nu} = \symbf{\Lambda}_{\mu}^{\nu}\mathbf{x}'^{\mu}
 $$ {#eq-215835353}
 $$
 \symbf{\Lambda}_{\mu}^{\nu} = \begin{bmatrix}
@@ -124,8 +124,8 @@ $$ {#eq-216171626}
 
 $$
 \left\{ \begin{aligned}
-   & t = \gamma\left( t' + \frac{v}{c^{2}}x \right) \\
-   & x = \gamma\left( x' + vt \right) \\
+   & t = \gamma\left( t' + \frac{v}{c^{2}}x' \right) \\
+   & x = \gamma\left( x' + vt' \right) \\
    & y = y' \\
    & z = z'
   \end{aligned} \right.\
@@ -458,22 +458,22 @@ $$\symbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$$ {
 
 ### 物理量的洛伦兹变换
 
-在洛伦兹变换下，物理量按特定规则变换，二阶电磁场张量 @eq-216170974。$\mathbf{A}^{'\mu}$ 是四维矢量，其变换规则为 @eq-217463243。
+在洛伦兹变换下，物理量按特定规则变换，二阶电磁场张量 @eq-216170974。$\mathbf{A}'^{\mu}$ 是四维矢量，其变换规则为 @eq-217463243。
 
 $$
-\mathbf{A}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{A}^{\nu}
+\mathbf{A}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{A}^{\nu}
 $$ {#eq-217463243}
 
-偏导数算符 $\symbf{\partial}^{'\mu}$ 在洛伦兹变换下，坐标微分变换导致偏导数的变换为 @eq-217463483。
+偏导数算符 $\symbf{\partial}'^{\mu}$ 在洛伦兹变换下，坐标微分变换导致偏导数的变换为 @eq-217463483。
 
 $$
-\symbf{\partial}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\symbf{\partial}^{v}
+\symbf{\partial}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\symbf{\partial}^{v}
 $$ {#eq-217463483}
 
 在 $S'$ 系中，电磁场张量定义为 @eq-217463678。
 
 $$
-\mathbf{F}^{'\mu\nu} = \symbf{\partial}^{'\mu}\mathbf{A}^{'\nu} - \symbf{\partial}^{'\nu}\mathbf{A}^{'\mu}
+\mathbf{F}'^{\mu\nu} = \symbf{\partial}'^{\mu}\mathbf{A}'^{\nu} - \symbf{\partial}'^{\nu}\mathbf{A}'^{\mu}
 $$ {#eq-217463678}
 
 根据 @eq-217463243 和 @eq-217463483 的变换规则，由 @eq-217463678 得 @eq-217464111。
@@ -494,10 +494,10 @@ $$ {#eq-217464111}
 洛伦兹变换系数是常数，可提到前面。$\symbf{\Lambda}_{\rho}^{\mu}$和$\symbf{\Lambda}_{\rho}^{\mu}$是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，$\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\Lambda}_{\rho}^{\mu} = \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{v}$。最后，根据 @eq-F-tensor 的定义，可以得到电磁场张量 @eq-216170974。
 
 $$
-\mathbf{F}^{'\mu\nu} = \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma}
+\mathbf{F}'^{\mu\nu} = \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma}
 $$ {#eq-216170974}
 $$
-\mathbf{J}^{'\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{J}^{\nu}
+\mathbf{J}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{J}^{\nu}
 $$ {#eq-216171155}
 $$
 \symbf{\partial}_{\mu}' = \symbf{\Lambda}_{\mu}^{\nu}\symbf{\partial}_{\nu}
@@ -519,10 +519,10 @@ ${\symbf{\delta}_{\rho}^{v} = \symbf{\Lambda}}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}
 
   $${{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\mu_{0}\mathbf{J}^{\rho} = \mu_{0}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{J}^{\rho}$$ {#eq-216173196}
 
-根据四维电流密度的变换 @eq-216171155，有 $\mathbf{J}^{'\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\mathbf{J}^{\rho}$，得到 @eq-216173408。
+根据四维电流密度的变换 @eq-216171155，有 $\mathbf{J}'^{\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\mathbf{J}^{\rho}$，得到 @eq-216173408。
 
 $$
-{{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \mu_{0}\mathbf{J}^{'\nu}
+{{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \mu_{0}\mathbf{J}'^{\nu}
 $$ {#eq-216173408}
 
  @eq-216173408 和 @eq-inhomo-eq2 有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
@@ -532,7 +532,7 @@ $$ {#eq-216173408}
 证明循环形式的齐次方程 @eq-216080650 在洛伦兹变换下形式不变。即，如果在参考系$S$中上述方程成立，则在参考系$S′$中，相应的 @eq-217544542 也成立。
 
 $$
-\symbf{\partial}'^{\lambda}\mathbf{F'}^{\mu\nu} + \symbf{\partial}'^{\mu}\mathbf{F}^{'\nu\lambda} + \symbf{\partial}'^{\nu}\mathbf{F}^{'\lambda\mu} = 0
+\symbf{\partial}'^{\lambda}\mathbf{F'}^{\mu\nu} + \symbf{\partial}'^{\mu}\mathbf{F}'^{\nu\lambda} + \symbf{\partial}'^{\nu}\mathbf{F}'^{\lambda\mu} = 0
 $$ {#eq-217544542}
 
 将变换规则 @eq-217463483 和 @eq-216170974
@@ -546,11 +546,11 @@ $$ {#eq-217544998}
 同理， @eq-217544542 的第二项得 @eq-217545223，并将哑指标 $(\rho,\alpha,\beta)$ 轮换为 $(\alpha,\beta,\rho)$ 。 @eq-217544542 的第三项得 @eq-217545242，并将哑指标 $(\beta,\rho,\alpha)$ 轮换为 $(\alpha,\beta,\rho)$ 。
 
   $$
-\symbf{\partial}'^{\mu}\mathbf{F}^{'\nu\lambda} = \symbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\alpha}^{\nu}\symbf{\Lambda}_{\beta}^{\lambda}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\alpha}^{\mu}\mathbf{\Lambda}_{\beta}^{\nu}\symbf{\Lambda}_{\rho}^{\lambda}\symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}
+\symbf{\partial}'^{\mu}\mathbf{F}'^{\nu\lambda} = \symbf{\Lambda}_{\rho}^{\mu}\mathbf{\Lambda}_{\alpha}^{\nu}\symbf{\Lambda}_{\beta}^{\lambda}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\alpha}^{\mu}\mathbf{\Lambda}_{\beta}^{\nu}\symbf{\Lambda}_{\rho}^{\lambda}\symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}
 $$ {#eq-217545223}
 
 $$
-\symbf{\partial}'^{\nu}\mathbf{F}^{'\lambda\mu} = \symbf{\Lambda}_{\rho}^{\nu}\mathbf{\Lambda}_{\alpha}^{\lambda}\symbf{\Lambda}_{\beta}^{\mu}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\beta}^{\nu}\mathbf{\Lambda}_{\rho}^{\lambda}\symbf{\Lambda}_{\alpha}^{\mu}\symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha}
+\symbf{\partial}'^{\nu}\mathbf{F}'^{\lambda\mu} = \symbf{\Lambda}_{\rho}^{\nu}\mathbf{\Lambda}_{\alpha}^{\lambda}\symbf{\Lambda}_{\beta}^{\mu}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\beta}^{\nu}\mathbf{\Lambda}_{\rho}^{\lambda}\symbf{\Lambda}_{\alpha}^{\mu}\symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha}
 $$ {#eq-217545242}
 
 在每一项中使用了相同的哑指标，可以适当地重命名。 @eq-217544542 变换后的方程左端变为 @eq-217547944 。
@@ -569,10 +569,10 @@ $${#eq-217547944}
 
 ### 电磁场的变换关系
 
-在S\'系中， @eq-216252245 中的$\mathbf{F}^{'\mu\nu}$与 @eq-inhomo-eq1 中$\mathbf{F}^{\mu\nu}$具有相同的形式。
+在S\'系中， @eq-216252245 中的$\mathbf{F}'^{\mu\nu}$与 @eq-inhomo-eq1 中$\mathbf{F}^{\mu\nu}$具有相同的形式。
 
 $$
-\mathbf{F}^{'\mu\nu} = \begin{bmatrix}
+\mathbf{F}'^{\mu\nu} = \begin{bmatrix}
   0 & - {\mathbf{E}'}_{x}/c & - {\mathbf{E}'}_{y}/c & - {\mathbf{E}'}_{z}/c \\
   {\mathbf{E}'}_{x}/c & 0 & - {\mathbf{B}'}_{z} & {\mathbf{B}'}_{y} \\
   {\mathbf{E}'}_{y}/c & {\mathbf{B}'}_{z} & 0 & {- \mathbf{B}'}_{x} \\
@@ -587,7 +587,7 @@ $$ {#eq-216252245}
  @eq-216170974 中$\mu = 0$，$\nu = 1$，得 @eq-216254331。
 
 $$
-{\mathbf{F}^{'01} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{1}\mathbf{F}^{\rho\sigma}
+{\mathbf{F}'^{01} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{1}\mathbf{F}^{\rho\sigma}
   }{= \sum_{\rho = 0}^{3}{\sum_{\sigma = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{1}\mathbf{F}^{\rho\sigma}}}}
 $$ {#eq-216254331}
 
@@ -622,7 +622,7 @@ $$ {#eq-216258641}
 1，其它为 0。
 
 $$
-{\mathbf{F}^{'02} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
+{\mathbf{F}'^{02} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
   }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\mathbf{F}^{\rho 2}}}
 $$ {#eq-217378691}
 
@@ -644,7 +644,7 @@ $$ {#eq-216258166}
 1，其它为 0。
 
 $$
-{\mathbf{F}^{'03} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
+{\mathbf{F}'^{03} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
   }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\mathbf{F}^{\rho 3}}}
 $$ {#eq-217378932}
 
@@ -670,8 +670,8 @@ $$ {#eq-216258297}
 0。
 
 $$
-{\mathbf{F}^{'23} = \symbf{\Lambda}_{\rho}^{2}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
-  }{\mathbf{F}^{'23} = \mathbf{F}^{23}
+{\mathbf{F}'^{23} = \symbf{\Lambda}_{\rho}^{2}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
+  }{\mathbf{F}'^{23} = \mathbf{F}^{23}
   }{- {\mathbf{B}^{\mathbf{'}}}_{x} = - \mathbf{B}_{x}}
 $$ {#eq-217288821}
 
@@ -683,7 +683,7 @@ $$ {#eq-217288821}
 1，其它为 0。
 
 $$
-{\mathbf{F}^{'13} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
+{\mathbf{F}'^{13} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
   }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{1}\mathbf{F}^{\rho 3}}}
 $$ {#eq-217287710}
 
@@ -708,7 +708,7 @@ $$ {#eq-217288259}
 1，其它为 0。
 
 $$
-{\mathbf{F}^{'12} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
+{\mathbf{F}'^{12} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
   }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{1}\mathbf{F}^{\rho 2}}}
 $$ {#eq-217286643}
 
