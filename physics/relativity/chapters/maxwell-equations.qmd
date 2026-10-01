@@ -137,7 +137,7 @@ $$ {#eq-215835494}
 
 ### 四维势与电磁场张量
 
-电磁场张量** **$\mathbf{F}^{\mu\nu}$ 由四维势的定义为 @eq-F-tensor，统一了电场和磁场。
+电磁场张量 $\mathbf{F}^{\mu\nu}$ 由四维势的定义为 @eq-F-tensor，统一了电场和磁场。
 
 $$
 \mathbf{F}^{\mu\nu} = \symbf{\partial}^{\mu}\mathbf{A}^{\nu} - \symbf{\partial}^{\nu}\mathbf{A}^{\mu}
@@ -149,7 +149,7 @@ $$
 \mathbf{A}^{\mu} = \left( \frac{\phi}{c},\mathbf{A} \right) = \left( \frac{\phi}{c},\mathbf{A}_{x},\mathbf{A}_{y},\mathbf{A}_{z} \right)
 $$ {#eq-A-four}
 
-  $\symbf{\partial}^{\mu}$是四维梯度算符，为 @eq-partial-four。
+$\symbf{\partial}^{\mu}$是四维梯度算符，为 @eq-partial-four。
 
 $$
 \symbf{\partial}^{\mu} = \left( \frac{1}{c}\frac{\partial}{\partial t}, - \symbf{\nabla} \right) = \left( \frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right)
@@ -157,23 +157,35 @@ $$ {#eq-partial-four}
 
 #### 张量定义到矩阵
 
-电场的势为 @eq-217552139，与磁场的势为 @eq-217552163。
-$$\mathbf{E} = - \nabla\phi\mathbf{-}\frac{\partial\mathbf{A}}{\partial t}$$ {#eq-217552139}
-$$\mathbf{B} = \nabla \times \mathbf{A}$$ {#eq-217552163}
-分量形式为
- $$\mathbf{E}_{\mathbf{i}} = - \frac{\partial\phi}{\partial x^{i}}\mathbf{-}\frac{\partial\mathbf{A}^{i}}{\partial t}$$ {#eq-217553109}
-$$\mathbf{B}_{\mathbf{i}} = \left( \nabla \times \mathbf{A} \right)_{i} $$ {#eq-21755310911}                              
+电场和磁场由势定义为式 @eq-E 和 @eq-B 。
+$$\mathbf{E} = - \nabla\phi - \frac{\partial\mathbf{A}}{\partial t}$$ {#eq-E}
+$$
+\mathbf{B} = \nabla \times \mathbf{A} =
+\begin{vmatrix}
+\mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\[4pt]
+\dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\[8pt]
+A_x & A_y & A_z
+\end{vmatrix}
+$$ {#eq-B}
 
+分量形式为 @eq-E_i 和 @eq-E_i 。
+ $$\mathbf{E}_{i} = - \frac{\partial\phi}{\partial x^{i}} - \frac{\partial\mathbf{A}^{i}}{\partial t}$$ {#eq-E_i}
+$$
+B_x = \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}, \qquad
+B_y = \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}, \qquad
+B_z = \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}
+$$ {#eq-B_i}                              
+**上三角元素**
 
-##### 计算上三角元素
+根据 @eq-F-tensor 计算 $\mathbf{F}^{\mu\nu}$ 中的上三角元素。
 
-$\mu = \nu = i$为 @eq-F-ii。
+$\mu = \nu = i$ 代入 @eq-F-tensor 得到 @eq-F-ii。
 
 $$
 \mathbf{F}^{ii} = \symbf{\partial}^{i}\mathbf{A}^{i} - \symbf{\partial}^{i}\mathbf{A}^{i} = 0
 $$ {#eq-F-ii}
 
- 时间-空间分量，$\mu = 0$，$\nu = i$，并代入 @eq-217553109，得 @eq-F-0i。
+时间-空间分量，$\mu = 0$，$\nu = i$ 代入 @eq-F-tensor ，化简后代入 @eq-E_i 得到 @eq-F-0i。
 
 $$
 \begin{aligned}
@@ -187,37 +199,36 @@ $$
 \end{aligned}
 $$ {#eq-F-0i}
 
-空间-空间分量，$\mu = i,\nu = j,i,j = 1,2,3$
+空间-空间分量，$\mu = i,\nu = j$ 代入 @eq-F-tensor 得到 @eq-F_ij ， 其中 $i,j = 1,2,3$ 。
 
 $$
 {\mathbf{F}^{ij} = \symbf{\partial}^{i}\mathbf{A}^{j} - \symbf{\partial}^{j}\mathbf{A}^{i}
   }{= - \frac{\partial\mathbf{A}^{j}}{\partial x^{i}} + \frac{\partial\mathbf{A}^{i}}{\partial x^{j}}}
-$$ {#eq-F-0i-coord}
+$$ {#eq-F_ij}
 
-计算$\mathbf{F}^{12}$，代入 @eq-F-0i-coord，得到 @eq-B-field-1。
+计算$\mathbf{F}^{12}$，代入 @eq-F_ij，得到 @eq-B-field-1。
 
 $$
 {\mathbf{F}^{12} = - \frac{\partial\mathbf{A}^{2}}{\partial x^{1}} + \frac{\partial\mathbf{A}^{1}}{\partial x^{2}}
-  }{= - \frac{\partial\mathbf{A}_{\mathbf{y}}}{\partial x} + \frac{\partial\mathbf{A}_{\mathbf{x}}}{\partial y}
-  }{= - \mathbf{B}_{\mathbf{z}}}
+  }{= - \frac{\partial A_{y}}{\partial x} + \frac{\partial A_{x}}{\partial y}
+  }{= - B_z}
 $$ {#eq-B-field-1}
 
-计算$\mathbf{F}^{13}$，代入 @eq-F-0i-coord，得到 @eq-B-field-2。
+计算$\mathbf{F}^{13}$，代入 @eq-F_ij，得到 @eq-B-field-2。
 
 $$
 {\mathbf{F}^{13} = - \frac{\partial\mathbf{A}^{3}}{\partial x^{1}} + \frac{\partial\mathbf{A}^{1}}{\partial x^{3}}
-  }{= - \frac{\partial\mathbf{A}_{\mathbf{z}}}{\partial x} + \frac{\partial\mathbf{A}_{\mathbf{x}}}{\partial z}
-  }{= \mathbf{B}_{\mathbf{y}}}
+  }{= - \frac{\partial A_{z}}{\partial x} + \frac{\partial A_{x}}{\partial z}
+  }{= B_y}
 $$ {#eq-B-field-2}
 
-计算$\mathbf{F}^{23}$，代入 @eq-F-0i-coord，得到 @eq-div-partial。
+计算$\mathbf{F}^{23}$，代入 @eq-F_ij，得到 @eq-div-partial。
 
 $$
 {\mathbf{F}^{23} = - \frac{\partial\mathbf{A}^{3}}{\partial x^{2}} + \frac{\partial\mathbf{A}^{2}}{\partial x^{3}}
-  }{= - \frac{\partial\mathbf{A}_{\mathbf{z}}}{\partial y} + \frac{\partial\mathbf{A}_{\mathbf{y}}}{\partial z}
-  }{= - \mathbf{B}_{\mathbf{x}}}
+  }{= - \frac{\partial A_{z}}{\partial y} + \frac{\partial A_{y}}{\partial z}
+  }{= - B_x}
 $$ {#eq-div-partial}
-
 **矩阵形式**
 
 根据 @eq-F-tensor 的定义可知 $\left( \mathbf{F}^{\mu\nu} \right)^{\top} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
