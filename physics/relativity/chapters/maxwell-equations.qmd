@@ -159,10 +159,10 @@ $$ {#eq-partial-four}
 
 电场的势为 @eq-217552139，与磁场的势为 @eq-217552163。
 $$\mathbf{E} = - \nabla\phi\mathbf{-}\frac{\partial\mathbf{A}}{\partial t}$$ {#eq-217552139}
-$$\mathbf{B} = \nabla\mathbf{\times A}$$ {#eq-217552163}
+$$\mathbf{B} = \nabla \times \mathbf{A}$$ {#eq-217552163}
 分量形式为
  $$\mathbf{E}_{\mathbf{i}} = - \frac{\partial\phi}{\partial x^{i}}\mathbf{-}\frac{\partial\mathbf{A}^{i}}{\partial t}$$ {#eq-217553109}
-$$\mathbf{B}_{\mathbf{i}} = \left( \nabla\mathbf{\times A} \right)_{i} $$ {#eq-21755310911}                              
+$$\mathbf{B}_{\mathbf{i}} = \left( \nabla \times \mathbf{A} \right)_{i} $$ {#eq-21755310911}                              
 
 
 ##### 计算上三角元素
@@ -220,7 +220,7 @@ $$ {#eq-div-partial}
 
 **矩阵形式**
 
-根据 @eq-F-tensor 的定义可知$\left( \mathbf{F}^{\mu\nu} \right)^{\top} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
+根据 @eq-F-tensor 的定义可知 $\left( \mathbf{F}^{\mu\nu} \right)^{\top} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
 
 $$
 \mathbf{F}^{\mu\nu} = \begin{bmatrix}
@@ -281,10 +281,10 @@ $$
 \frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{x}}{c} \right) + \frac{\partial\mathbf{B}_{z}}{\partial y} - \frac{\partial\mathbf{B}_{y}}{\partial z} = \mu_{0}\mathbf{J}_{x}
 $$ {#eq-homo-eq2}
 
-将 @eq-homo-eq1 代入 @eq-homo-eq2 后整理得 @eq-216077463，其中，$\frac{\partial\mathbf{B}_{z}}{\partial y} - \frac{\partial\mathbf{B}_{y}}{\partial z} = \left( \symbf{\nabla}\mathbf{\times B} \right)_{x}$。
+将 @eq-homo-eq1 代入 @eq-homo-eq2 后整理得 @eq-216077463，其中，$\frac{\partial\mathbf{B}_{z}}{\partial y} - \frac{\partial\mathbf{B}_{y}}{\partial z} = \left( \symbf{\nabla} \times \mathbf{B} \right)_{x}$。
 
 $$
-\left( \symbf{\nabla}\mathbf{\times B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{x}}{\partial t} = \mu_{0}\mathbf{J}_{x}
+\left( \symbf{\nabla} \times \mathbf{B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{x}}{\partial t} = \mu_{0}\mathbf{J}_{x}
 $$ {#eq-216077463}
 
 当 $\nu = 2$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第2列点乘，为 @eq-216078264，其中， $\mathbf{J}^{2} = \mathbf{J}_{y}$。
@@ -293,10 +293,10 @@ $$
 \frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{y}}{c} \right) - \frac{\partial\mathbf{B}_{z}}{\partial x} + \frac{\partial\mathbf{B}_{x}}{\partial z} = \mu_{0}\mathbf{J}_{y}
 $$ {#eq-216078264}
 
-将 @eq-homo-eq1 代入 @eq-216078264 后整理得 @eq-216078276，其中，$\frac{\partial\mathbf{B}_{x}}{\partial z} - \frac{\partial\mathbf{B}_{z}}{\partial x} = \left( \symbf{\nabla}\mathbf{\times B} \right)_{y}$。
+将 @eq-homo-eq1 代入 @eq-216078264 后整理得 @eq-216078276，其中，$\frac{\partial\mathbf{B}_{x}}{\partial z} - \frac{\partial\mathbf{B}_{z}}{\partial x} = \left( \symbf{\nabla} \times \mathbf{B} \right)_{y}$。
 
 $$
-\left( \symbf{\nabla}\mathbf{\times B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{y}}{\partial t} = \mu_{0}\mathbf{J}_{y}
+\left( \symbf{\nabla} \times \mathbf{B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{y}}{\partial t} = \mu_{0}\mathbf{J}_{y}
 $$ {#eq-216078276}
 
 当 $\nu = 3$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第3列点乘，为 @eq-216078498，其中， $\mathbf{J}^{3} = \mathbf{J}_{z}$。
@@ -305,10 +305,10 @@ $$
 \frac{1}{c}\frac{\partial}{\partial t}\left( \frac{{- \mathbf{E}}_{z}}{c} \right) + \frac{\partial\mathbf{B}_{y}}{\partial x} - \frac{\partial\mathbf{B}_{x}}{\partial y} = \mu_{0}\mathbf{J}_{z}
 $$ {#eq-216078498}
 
-将 @eq-homo-eq1 代入 @eq-216078498 后整理得 @eq-216078799，其中，$\frac{\partial\mathbf{B}_{y}}{\partial x} - \frac{\partial\mathbf{B}_{x}}{\partial y} = \left( \symbf{\nabla}\mathbf{\times B} \right)_{z}$。
+将 @eq-homo-eq1 代入 @eq-216078498 后整理得 @eq-216078799，其中，$\frac{\partial\mathbf{B}_{y}}{\partial x} - \frac{\partial\mathbf{B}_{x}}{\partial y} = \left( \symbf{\nabla} \times \mathbf{B} \right)_{z}$。
 
 $$
-\left( \symbf{\nabla}\mathbf{\times B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{z}}{\partial t} = \mu_{0}\mathbf{J}_{z}
+\left( \symbf{\nabla} \times \mathbf{B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}_{z}}{\partial t} = \mu_{0}\mathbf{J}_{z}
 $$ {#eq-216078799}
 
 当 $\nu = 1,2,3$ 时，合并三个分量方程 @eq-216077463、 @eq-216078276、 @eq-216078799 为矢量 @eq-215820756，此方程给出安培-麦克斯韦定律。 
@@ -328,7 +328,7 @@ $$ {#eq-215820756}
 
 : 有源项4维3维对应关系 {#tbl-tab-sourceful}
 
-时间分量（$v = 0$）对应高斯电场定律，空间分量（$v = 1,2,3$）对应安培-麦克斯韦定律。
+时间分量（$\nu = 0$）对应高斯电场定律，空间分量（$\nu = 1,2,3$）对应安培-麦克斯韦定律。
 
 ### 齐次麦克斯韦方程组
 
@@ -338,7 +338,7 @@ $$
 \symbf{\partial}^{\lambda}\mathbf{F}^{\mu\nu} + \symbf{\partial}^{\mu}\mathbf{F}^{\nu\lambda} + \symbf{\partial}^{\nu}\mathbf{F}^{\lambda\mu} = 0
 $$ {#eq-216080650}
 
-或者等价地，莱维-奇维塔 @eq-216080707。
+或者等价地写成莱维-奇维塔符号形式 @eq-216080707。
 
 $$
 \epsilon^{\alpha\beta\gamma\delta}\partial_{\beta}\mathbf{F}_{\gamma\delta} = 0
@@ -384,7 +384,7 @@ $$ {#eq-216083354}
  @eq-216083691 中$\frac{\partial\mathbf{E}_{y}}{\partial z} - \frac{\partial\mathbf{E}_{z}}{\partial y} = \left( \nabla \times \mathbf{E} \right)_{x}$，可以得到 @eq-216083691。
 
 $$
-\left( \symbf{\nabla}\mathbf{\times E} \right)_{x} = \frac{\partial\mathbf{B}_{x}}{\partial t}
+\left( \symbf{\nabla} \times \mathbf{E} \right)_{x} = \frac{\partial\mathbf{B}_{x}}{\partial t}
 $$ {#eq-216083691}
 
 y-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-216083842。
@@ -405,10 +405,10 @@ $$
 - \frac{\partial\mathbf{B}_{y}}{\partial t} - \frac{\partial\mathbf{E}_{x}}{\partial z} + \frac{\partial\mathbf{E}_{z}}{\partial x} = 0
 $$ {#eq-216084225}
 
- @eq-216084225 中$\frac{\partial\mathbf{E}_{z}}{\partial x} - \frac{\partial\mathbf{E}_{x}}{\partial z} = \left( \symbf{\nabla}\mathbf{\times E} \right)_{y}$，可以得到 @eq-216084334。
+ @eq-216084225 中$\frac{\partial\mathbf{E}_{z}}{\partial x} - \frac{\partial\mathbf{E}_{x}}{\partial z} = \left( \symbf{\nabla} \times \mathbf{E} \right)_{y}$，可以得到 @eq-216084334。
 
 $$
-\left( \symbf{\nabla}\mathbf{\times E} \right)_{y} = \frac{\partial\mathbf{B}_{y}}{\partial t}
+\left( \symbf{\nabla} \times \mathbf{E} \right)_{y} = \frac{\partial\mathbf{B}_{y}}{\partial t}
 $$ {#eq-216084334}
 
 z-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-216084498。
@@ -429,10 +429,10 @@ $$
 - \frac{\partial\mathbf{B}_{z}}{\partial t} - \frac{\partial\mathbf{E}_{y}}{\partial x} + \frac{\partial\mathbf{E}_{x}}{\partial y} = 0
 $$ {#eq-216084852}
 
- @eq-216084852 中$\frac{\partial\mathbf{E}_{x}}{\partial y} - \frac{\partial\mathbf{E}_{y}}{\partial x} = \left( \symbf{\nabla}\mathbf{\times E} \right)_{z}$，可以得到 @eq-216084874。
+ @eq-216084852 中$\frac{\partial\mathbf{E}_{x}}{\partial y} - \frac{\partial\mathbf{E}_{y}}{\partial x} = \left( \symbf{\nabla} \times \mathbf{E} \right)_{z}$，可以得到 @eq-216084874。
 
 $$
-\left( \symbf{\nabla}\mathbf{\times E} \right)_{z} = \frac{\partial B_{z}}{\partial t}
+\left( \symbf{\nabla} \times \mathbf{E} \right)_{z} = \frac{\partial B_{z}}{\partial t}
 $$ {#eq-216084874}
 
 合并三个分量方程 @eq-216083691、 @eq-216084334、 @eq-216084874 为矢量 @eq-215821158 。
