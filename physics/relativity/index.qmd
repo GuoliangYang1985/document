@@ -1,5 +1,5 @@
 
-# 序 {.unnumbered #preface}
+# 前言 {.unnumbered #preface}
 
 - @sec-symmetric-twins ：设计一个完全镜像对称的双生子实验，以对称性约束检验“钟慢效应”的测量解释与随身时钟物理过程之间的区分。
 - @sec-lorentz-derivation ：不预设“光”这一具体物理对象，仅从线性性、不变速度与群结构三条弱前提出发，严格导出洛伦兹变换；

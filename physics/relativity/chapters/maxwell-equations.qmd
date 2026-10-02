@@ -168,13 +168,17 @@ A_x & A_y & A_z
 \end{vmatrix}
 $$ {#eq-B}
 
-分量形式为 @eq-E_i 和 @eq-E_i 。
+@eq-E 的分量形式为 @eq-E_i ， @eq-B 的的分量形式为 @eq-B_x 、@eq-B_y 、@eq-B_z 。
  $$ E_{i} = - \frac{\partial\phi}{\partial x^{i}} - \frac{\partial A^i}{\partial t}$$ {#eq-E_i}
 $$
-B_x = \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}, \qquad
-B_y = \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}, \qquad
+B_x = \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}
+$$ {#eq-B_x}
+$$
+B_y = \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}
+$$ {#eq-B_y}
+$$
 B_z = \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}
-$$ {#eq-B_i}     
+$$ {#eq-B_z}
 **上三角元素**
 
 根据 @eq-F-tensor 计算 $\mathbf{F}^{\mu\nu}$ 中的上三角元素。
