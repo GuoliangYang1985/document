@@ -1,4 +1,4 @@
-# 麦克斯韦方程组
+# 麦克斯韦方程组 {#sec-maxwell-equations}
 
 ## 问题的提出 
 
@@ -157,7 +157,7 @@ $$ {#eq-partial-four}
 
 #### 张量定义到矩阵
 
-电场和磁场由势定义为式 @eq-E 和 @eq-B 。
+电场和磁场由势定义为式 @eq-E 和 @eq-B ,参考文献 [@griffiths2025] 第367页。
 $$\mathbf{E} = - \nabla\phi - \frac{\partial\mathbf{A}}{\partial t}$$ {#eq-E}
 $$
 \mathbf{B} = \nabla \times \mathbf{A} =

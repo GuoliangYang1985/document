@@ -1,5 +1,4 @@
-# 参考文献 {.unnumbered #preface .unlisted}
+# 参考文献 {.unnumbered}
 
-- 〔美〕J. D. Jackson. 《经典电动力学》（第 3 版）. 朱培豫 译. 北京：高等教育出版社，2004.
-
-> 备注：以上为参考条目占位。
+::: {#refs}
+:::

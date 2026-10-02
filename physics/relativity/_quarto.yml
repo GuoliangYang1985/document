@@ -13,6 +13,9 @@ book:
     - chapters/maxwell-equations.qmd
     - chapters/references.qmd
 
+csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl
+bibliography: chapters/references.bib
+
 lang: zh-CN
 
 author:
@@ -31,6 +34,7 @@ format:
   pdf:
     pdf-engine: xelatex
     keep-tex: true
+    link-citations: true
     documentclass: ctexbook
     classoption:
       - "UTF8"
