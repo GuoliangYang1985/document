@@ -190,7 +190,7 @@ $$ {#eq-F-ii}
 $$
 \begin{aligned}
 F^{0i}
-&= \symbf{\partial}^{0}A^i - \symbf{\partial}^{i}A^0 \\
+&= \partial^{0}A^i - \partial^{i}A^0 \\
 &= \frac{1}{c}\frac{\partial A^i}{\partial t}
 - \biggl(-\frac{\partial}{\partial x^{i}}\biggr)\biggl(\frac{\phi}{c} \biggr) \\
 &= \frac{1}{c}\left(\frac{\partial A^i}{\partial t}
@@ -256,12 +256,12 @@ $$
 $$ {#eq-inhomo-eq3}
 
 $$
-\mathbf{J}^{\nu} = (c\rho, \mathbf{J}) = (c\rho, \mathbf{J}_x, \mathbf{J}_y, \mathbf{J}_z)
+\mathbf{J}^{\nu} = (c\rho, \mathbf{J}) = (c\rho, J_x, J_y, J_z)
 $$ {#eq-four-current}
 
 #### 高斯电场定律
 
-时间分量当 $\nu = 0$ 时，是$\partial_{\mu}$与$\mathbf{F}^{\mu\nu}$的第0列点乘，为 @eq-inhomo-eq4，其中 $\mathbf{J}^{0} = c\rho$。
+时间分量当 $\nu = 0$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第0列点乘，为 @eq-inhomo-eq4，其中 $J^{0} = c\rho$。
 
 $$
 \frac{\partial}{\partial x}\left(\frac{E_{x}}{c} \right) + \frac{\partial}{\partial y}\left(\frac{E_{y}}{c} \right) + \frac{\partial}{\partial z}\left(\frac{E_{z}}{c} \right) = \mu_{0}c\rho
@@ -279,49 +279,73 @@ $$\symbf{\nabla} \mathbf{\cdot E} = \frac{\rho}{\epsilon_{0}}$${#eq-216076201}
 
 #### 安培-麦克斯韦定律
 
+磁感应强度 $\mathbf{B}$ 的旋度 $\nabla \times \mathbf{B}$ 为 @eq-nabla-times-B 。
+$$
+\nabla \times \mathbf{B} = 
+\begin{vmatrix}
+\mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+B_x & B_y & B_z
+\end{vmatrix}
+$$ {#eq-nabla-times-B}
+
+ @eq-nabla-times-B 可以展开为三个分量方程 @eq-curl-Bx 、@eq-curl-By 、@eq-curl-Bx 。
+
+$$
+(\nabla \times \mathbf{B})_x = \frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z}
+$$ {#eq-curl-Bx}
+
+$$
+(\nabla \times \mathbf{B})_y = \frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x}
+$$ {#eq-curl-By}
+
+$$
+(\nabla \times \mathbf{B})_z = \frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y}
+$$ {#eq-curl-Bz}
+
 由 @eq-light-speed-c 得 @eq-homo-eq1。
 
 $$
 \frac{1}{c^{2}} = \mu_{0}\epsilon_{0}
 $$ {#eq-homo-eq1}
 
-空间分量当 $\nu = 1$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第1列点乘，为 @eq-homo-eq2，其中， $\mathbf{J}^{1} = J_{x}$。
+空间分量当 $\nu = 1$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第1列点乘，为 @eq-amp-m-x，其中， $J^{1} = J_{x}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{x}}{c} \right) + \frac{\partial B_{z}}{\partial y} - \frac{\partial B_{y}}{\partial z} = \mu_{0} J_{x}
-$$ {#eq-homo-eq2}
+$$ {#eq-amp-m-x}
 
-将 @eq-homo-eq1 代入 @eq-homo-eq2 后整理得 @eq-216077463，其中，$\frac{\partial B_{z}}{\partial y} - \frac{\partial B_{y}}{\partial z} = \left(\symbf{\nabla} \times \mathbf{B} \right)_{x}$。
+将 @eq-homo-eq1 和 @eq-curl-Bx 代入 @eq-amp-m-x 后整理得 @eq-amp-x 。
 
 $$
 \left(\symbf{\nabla} \times \mathbf{B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial E_{x}}{\partial t} = \mu_{0} J_{x}
-$$ {#eq-216077463}
+$$ {#eq-amp-x}
 
-当 $\nu = 2$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第2列点乘，为 @eq-216078264，其中， $\mathbf{J}^{2} = J_{y}$。
+当 $\nu = 2$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第2列点乘，为 @eq-amp-m-y，其中， $J^{2} = J_{y}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{y}}{c} \right) - \frac{\partial B_{z}}{\partial x} + \frac{\partial B_{x}}{\partial z} = \mu_{0} J_{y}
-$$ {#eq-216078264}
+$$ {#eq-amp-m-y}
 
-将 @eq-homo-eq1 代入 @eq-216078264 后整理得 @eq-216078276，其中，$\frac{\partial B_{x}}{\partial z} - \frac{\partial B_{z}}{\partial x} = \left(\symbf{\nabla} \times \mathbf{B} \right)_{y}$。
+将 @eq-homo-eq1 和 @eq-curl-By 代入 @eq-amp-m-y 后整理得 @eq-amp-y 。
 
 $$
 \left(\symbf{\nabla} \times \mathbf{B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial E_{y}}{\partial t} = \mu_{0} J_{y}
-$$ {#eq-216078276}
+$$ {#eq-amp-y}
 
-当 $\nu = 3$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第3列点乘，为 @eq-216078498，其中， $\mathbf{J}^{3} = J_{z}$。
+当 $\nu = 3$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第3列点乘，为 @eq-amp-m-z，其中， $J^{3} = J_{z}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{z}}{c} \right) + \frac{\partial B_{y}}{\partial x} - \frac{\partial B_{x}}{\partial y} = \mu_{0} J_{z}
-$$ {#eq-216078498}
+$$ {#eq-amp-m-z}
 
-将 @eq-homo-eq1 代入 @eq-216078498 后整理得 @eq-216078799，其中，$\frac{\partial B_{y}}{\partial x} - \frac{\partial B_{x}}{\partial y} = \left(\symbf{\nabla} \times \mathbf{B} \right)_{z}$。
+将 @eq-homo-eq1 和 @eq-curl-Bz 代入 @eq-amp-m-z 后整理得 @eq-amp-z 。
 
 $$
 \left(\symbf{\nabla} \times \mathbf{B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial E_{z}}{\partial t} = \mu_{0} J_{z}
-$$ {#eq-216078799}
+$$ {#eq-amp-z}
 
-当 $\nu = 1,2,3$ 时，合并三个分量方程 @eq-216077463、 @eq-216078276、 @eq-216078799 为矢量 @eq-215820756，此方程给出安培-麦克斯韦定律。 
+当 $\nu = 1,2,3$ 时，合并三个分量方程 @eq-amp-x、 @eq-amp-y、 @eq-amp-z 为矢量 @eq-215820756，此方程给出安培-麦克斯韦定律。 
 
 $$
 \symbf{\nabla} \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}
@@ -331,12 +355,13 @@ $$ {#eq-215820756}
 
 @tbl-tab-sourceful 中对4维与3维对应关系做了总结，1个4维张量方程包含了2个3维矢量方程。
 
-|4维形式|3维形式|物理定律|
-|----|---|--|
-|$\partial_{\mu}\mathbf{F}^{\mu\nu}=\mu_{0}\mathbf{J}^{\nu},(\nu = 0)$|$\nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_{0}}$ |高斯电场定律|
-|$\partial_{\mu}\mathbf{F}^{\mu\nu}=\mu_{0}\mathbf{J}^{\nu},(\nu = 1,2,3)$ | $\nabla \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}$ |安培‑麦克斯韦定律|
+: 有源项 4 维 3 维对应关系 {#tbl-tab-sourceful tbl-colwidths="[34,38,28]"}
 
-: 有源项4维3维对应关系 {#tbl-tab-sourceful}
+| 4 维形式 | 3 维形式 | 物理定律 |
+|:---------|:---------|:---------|
+| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu \ (\nu = 0)$ | $\nabla \cdot \mathbf{E} = \rho/\epsilon_0$ | 高斯电场定律 |
+| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu \ (\nu = 1,2,3)$ | $\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \partial_t \mathbf{E}$ | 安培-麦克斯韦定律 |
+
 
 时间分量（$\nu = 0$）对应高斯电场定律，空间分量（$\nu = 1,2,3$）对应安培-麦克斯韦定律。
 
