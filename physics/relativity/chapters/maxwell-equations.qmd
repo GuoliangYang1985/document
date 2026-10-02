@@ -157,8 +157,8 @@ $$ {#eq-partial-four}
 
 #### 张量定义到矩阵
 
-电场和磁场由势定义为式 @eq-E 和 @eq-B ,文献 [@griffiths2025] 478页。
-$$\mathbf{E} = - \nabla\phi - \frac{\partial\mathbf{A}}{\partial t}$$ {#eq-E}
+电场和磁场由势定义为式 @eq-E 和 @eq-B ,文献 [@feynman2020vol2] 240页。
+$$\mathbf{E} = - \symbf{\nabla}\phi - \frac{\partial\mathbf{A}}{\partial t}$$ {#eq-E}
 $$
 \mathbf{B} = \symbf{\nabla} \times \mathbf{A} =
 \begin{vmatrix}
