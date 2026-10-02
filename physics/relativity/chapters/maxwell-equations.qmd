@@ -234,7 +234,7 @@ F^{23} = -\frac{\partial A^3}{\partial x^{2}} + \frac{\partial A^2}{\partial x^{
 $$ {#eq-div-partial}
 **矩阵形式**
 
-根据 @eq-F-tensor 的定义可知 $\left(\mathbf{F}^{\mu\nu} \right)^{\top} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
+根据 @eq-F-tensor 的定义可知 $\mathbf{F}^{\mu\nu} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
 
 $$
 \mathbf{F}^{\mu\nu} = \begin{bmatrix}
