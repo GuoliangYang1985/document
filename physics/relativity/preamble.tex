@@ -1,0 +1,62 @@
+% ===== 抑制 Quarto 默认 \maketitle（自定义封面代行）=====
+\let\maketitle\relax
+\AtBeginDocument{\let\maketitle\relax}
+% ===== 粗体数学：\bm{X} 提供给 \symbf{\Lambda} 这类字符 =====
+\usepackage{bm}
+% ===== 中文段落：段首空两字、统一设置 =====
+\setlength{\parindent}{2em}    % 段首缩进 2 个汉字宽
+\setlength{\parskip}{0pt}      % 段间不留额外垂直空白（中文书传统）
+\usepackage{indentfirst}       % 让 \chapter 后的第一段也跟着缩进
+\usepackage[a4paper, inner=2.5cm, outer=2.0cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.35}
+% ===== 书籍样式页眉页脚 =====
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\pagestyle{fancy}
+\usepackage{amsthm}
+\newtheorem{definition}{定义}[chapter]
+\newtheorem{axiom}{公理}[chapter]
+\fancyhf{}
+\fancyhead[LE]{\thepage\quad\textit{狭义相对论}}
+\fancyhead[RO]{\textit{狭义相对论}\quad\thepage}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+% ===== 章节标题美化 =====
+% 强制全局使用阿拉伯数字编号（第1章）
+\CTEXsetup[
+    name={第,章},
+    number=\arabic{chapter}
+]{chapter}
+% 章号自动改为"第N章"（ctexbook 内置），并按 display 样式居中。
+\titleformat{\chapter}
+    {\Huge\bfseries\color{blue!50!black}\centering}
+    {第\thechapter 章}{1em}{}
+
+\titleformat{\section}
+    {\Large\bfseries\color{blue!40!black}}
+    {\thesection}{1em}{}
+
+\titleformat{\subsection}
+    {\large\bfseries\color{blue!30!black}}
+    {\thesubsection}{0.8em}{}
+
+\titleformat{\subsubsection}
+    {\normalsize\bfseries\color{blue!20!black}}
+    {\thesubsubsection}{0.6em}{}
+
+% ===== 5、6 级标题（段落头 + runin）：必须补齐，
+%        否则一旦文档里出现 ##### ###### 就会报
+%        "Package titlesec Error: No format for this command." =====
+\titleformat{\paragraph}[runin]
+    {\normalsize\bfseries}{}{0pt}{}
+\titleformat{\subparagraph}[runin]
+    {\normalsize\itshape}{}{0pt}{}
