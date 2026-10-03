@@ -250,17 +250,17 @@ $$ {#eq-inhomo-eq1}
 ### 非齐次麦克斯韦方程组
 
 $$
-\partial_{\mu}F^{\mu\nu} = \mu_{0}\partial_{\mu}
+\partial_{\mu}F^{\mu\nu} = \mu_{0}J^\nu
 $$ {#eq-inhomo-eq2}
 
-$\partial_{\mu}$是协变四维导数 @eq-inhomo-eq3，$\partial_{\mu}$ 是四维电流密度 @eq-inhomo-eq2。
+$\partial_{\mu}$是协变四维导数 @eq-inhomo-eq3，$J^\nu$ 是四维电流密度 @eq-inhomo-eq2。
 
 $$
 \partial_{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t},\symbf{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t},\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right)
 $$ {#eq-inhomo-eq3}
 
 $$
-\partial_{\mu} = (c\rho, \mathbf{J}) = (c\rho, J_x, J_y, J_z)
+J^\nu = (c\rho, \mathbf{J}) = (c\rho, J_x, J_y, J_z)
 $$ {#eq-four-current}
 
 #### 高斯电场定律
@@ -558,7 +558,7 @@ $$
 F'^{\mu\nu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma}
 $$ {#eq-216170974}
 $$
-J'^{\mu} = \Lambda_{\nu}^{\mu}\partial_{\mu}
+J'^{\mu} = \Lambda_{\nu}^{\mu}J^{\mu}
 $$ {#eq-216171155}
 $$
 \partial_{\mu}' = \Lambda_{\mu}^{\nu}\partial_{\nu}
