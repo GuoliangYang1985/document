@@ -47,13 +47,13 @@ $$ {#eq-lorentz}
 初始时 $S$ 系和 $S'$ 系的原点重合，$S'$ 系沿 $x$ 轴以速度 $v$ 运动。从$S$ 系到 $S'$ 矩阵形式的洛伦兹变换为 @eq-lorentz-mat。
 
 $$
-\mathbf{x}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{x}^{\nu}
+\mathbf{x}'^{\mu} = \Lambda_{\nu}^{\mu}\mathbf{x}^{\nu}
 $$ {#eq-lorentz-mat}
 
-其中， @eq-lorentz-mat 中的$\symbf{\Lambda}_{\nu}^{\mu}$为洛伦兹变换矩阵 @eq-Lambda-define。
+其中， @eq-lorentz-mat 中的$\Lambda_{\nu}^{\mu}$为洛伦兹变换矩阵 @eq-Lambda-define。
 
 $$
-\symbf{\Lambda}_{\nu}^{\mu} = \begin{bmatrix}
+\Lambda_{\nu}^{\mu} = \begin{bmatrix}
 \gamma & -\gamma\beta & 0 & 0 \\
 -\gamma\beta & \gamma & 0 & 0 \\
 0 & 0 & 1 & 0 \\
@@ -106,13 +106,13 @@ $$
 z' = 0 \cdot ct + 0 \cdot x + 0 \cdot y + 1 \cdot z = z
 $$ {#eq-215834264}
 
-从 $S'$ 系到 $S$ 的矩阵形式逆变换为 @eq-215835353，其中， @eq-216171626 中的$\symbf{\Lambda}_{\mu}^{\nu}$是 @eq-Lambda-define 中$\symbf{\Lambda}_{\nu}^{\mu}$的逆矩阵。
+从 $S'$ 系到 $S$ 的矩阵形式逆变换为 @eq-215835353，其中， @eq-216171626 中的$\Lambda_{\mu}^{\nu}$是 @eq-Lambda-define 中$\Lambda_{\nu}^{\mu}$的逆矩阵。
 
 $$
-\mathbf{x}^{\nu} = \symbf{\Lambda}_{\mu}^{\nu}\mathbf{x}'^{\mu}
+\mathbf{x}^{\nu} = \Lambda_{\mu}^{\nu}\mathbf{x}'^{\mu}
 $$ {#eq-215835353}
 $$
-\symbf{\Lambda}_{\mu}^{\nu} = \begin{bmatrix}
+\Lambda_{\mu}^{\nu} = \begin{bmatrix}
  \gamma & \gamma\beta & 0 & 0 \\
  \gamma\beta & \gamma & 0 & 0 \\
  0 & 0 & 1 & 0 \\
@@ -137,22 +137,22 @@ $$ {#eq-215835494}
 
 ### 四维势与电磁场张量
 
-电磁场张量 $\mathbf{F}^{\mu\nu}$ 由四维势的定义为 @eq-F-tensor，统一了电场和磁场。
+电磁场张量 $F^{\mu\nu}$ 由四维势的定义为 @eq-F-tensor，统一了电场和磁场。
 
 $$
-\mathbf{F}^{\mu\nu} = \symbf{\partial}^{\mu}\mathbf{A}^{\nu} - \symbf{\partial}^{\nu}\mathbf{A}^{\mu}
+F^{\mu\nu} = \partial^{\mu}A^{\nu} - \partial^{\nu}A^{\mu}
 $$ {#eq-F-tensor}
 
-四维势 $\mathbf{A}^{\mu}$为 @eq-A-four，$\phi$ 是标量势，$\mathbf{A}$ 是矢量势。
+四维势 $A^{\mu}$为 @eq-A-four，$\phi$ 是标量势，$\mathbf{A}$ 是矢量势。
 
 $$
-\mathbf{A}^{\mu} = \left(\frac{\phi}{c},\mathbf{A} \right) = \left(\frac{\phi}{c}, A_{x}, A_{y}, A_{z} \right)
+A^{\mu} = \left(\frac{\phi}{c},\mathbf{A} \right) = \left(\frac{\phi}{c}, A_{x}, A_{y}, A_{z} \right)
 $$ {#eq-A-four}
 
-$\symbf{\partial}^{\mu}$是四维梯度算符，为 @eq-partial-four。
+$\partial^{\mu}$是四维梯度算符，为 @eq-partial-four。
 
 $$
-\symbf{\partial}^{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \symbf{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right)
+\partial^{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \symbf{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right)
 $$ {#eq-partial-four}
 
 #### 张量定义到矩阵
@@ -162,7 +162,7 @@ $$\mathbf{E} = - \symbf{\nabla}\phi - \frac{\partial\mathbf{A}}{\partial t}$$ {#
 $$
 \mathbf{B} = \symbf{\nabla} \times \mathbf{A} =
 \begin{vmatrix}
-\mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\[4pt]
+E_x & E_y & E_z \\[4pt]
 \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\[8pt]
 A_x & A_y & A_z
 \end{vmatrix}
@@ -181,7 +181,7 @@ B_z = (\symbf{\nabla} \times \mathbf{A})_z = \frac{\partial A_y}{\partial x} - \
 $$ {#eq-B_z}
 **上三角元素**
 
-根据 @eq-F-tensor 计算 $\mathbf{F}^{\mu\nu}$ 中的上三角元素。
+根据 @eq-F-tensor 计算 $F^{\mu\nu}$ 中的上三角元素。
 
 $\mu = \nu = i$ 代入 @eq-F-tensor 得到 @eq-F-ii。
 
@@ -234,10 +234,10 @@ F^{23} = -\frac{\partial A^3}{\partial x^{2}} + \frac{\partial A^2}{\partial x^{
 $$ {#eq-div-partial}
 **矩阵形式**
 
-根据 @eq-F-tensor 的定义可知 $\mathbf{F}^{\mu\nu} = - \mathbf{F}^{\nu\mu}$，电磁场张量 $\mathbf{F}^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
+根据 @eq-F-tensor 的定义可知 $F^{\mu\nu} = - F^{\nu\mu}$，电磁场张量 $F^{\mu\nu}$ 是一个反对称二阶张量，可以通过上三角元素对称位置加负号获得下三角的各元素，其矩阵形式为 @eq-inhomo-eq1。
 
 $$
-\mathbf{F}^{\mu\nu} = \begin{bmatrix}
+F^{\mu\nu} = \begin{bmatrix}
  0 & - \frac{E_{x}}{c} & - \frac{E_{y}}{c} & - \frac{E_{z}}{c} \\
  \frac{E_{x}}{c} & 0 & -B_{z} & B_{y} \\
  \frac{E_{y}}{c} & B_{z} & 0 & -B_{x} \\
@@ -250,22 +250,22 @@ $$ {#eq-inhomo-eq1}
 ### 非齐次麦克斯韦方程组
 
 $$
-{\symbf{\partial}_{\mu}\mathbf{F}}^{\mu\nu} = \mu_{0}\mathbf{J}^{\nu}
+\partial_{\mu}F^{\mu\nu} = \mu_{0}\partial_{\mu}
 $$ {#eq-inhomo-eq2}
 
-$\symbf{\partial}_{\mu}$是协变四维导数 @eq-inhomo-eq3，$\mathbf{J}^{\nu}$ 是四维电流密度 @eq-inhomo-eq2。
+$\partial_{\mu}$是协变四维导数 @eq-inhomo-eq3，$\partial_{\mu}$ 是四维电流密度 @eq-inhomo-eq2。
 
 $$
-\symbf{\partial}_{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t},\symbf{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t},\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right)
+\partial_{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t},\symbf{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t},\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right)
 $$ {#eq-inhomo-eq3}
 
 $$
-\mathbf{J}^{\nu} = (c\rho, \mathbf{J}) = (c\rho, J_x, J_y, J_z)
+\partial_{\mu} = (c\rho, \mathbf{J}) = (c\rho, J_x, J_y, J_z)
 $$ {#eq-four-current}
 
 #### 高斯电场定律
 
-时间分量当 $\nu = 0$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第0列点乘，为 @eq-inhomo-eq4，其中 $J^{0} = c\rho$。
+时间分量当 $\nu = 0$ 时，是$\partial_{\mu}$与$F^{\mu\nu}$的第0列点乘，为 @eq-inhomo-eq4，其中 $J^{0} = c\rho$。
 
 $$
 \frac{\partial}{\partial x}\left(\frac{E_{x}}{c} \right) + \frac{\partial}{\partial y}\left(\frac{E_{y}}{c} \right) + \frac{\partial}{\partial z}\left(\frac{E_{z}}{c} \right) = \mu_{0}c\rho
@@ -287,7 +287,7 @@ $$\symbf{\nabla} \mathbf{\cdot E} = \frac{\rho}{\epsilon_{0}}$${#eq-216076201}
 $$
 \symbf{\nabla} \times \mathbf{B} = 
 \begin{vmatrix}
-\mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\
+E_x & E_y & E_z \\
 \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
 B_x & B_y & B_z
 \end{vmatrix}
@@ -313,7 +313,7 @@ $$
 \frac{1}{c^{2}} = \mu_{0}\epsilon_{0}
 $$ {#eq-homo-eq1}
 
-空间分量当 $\nu = 1$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第1列点乘，为 @eq-amp-m-x，其中， $J^{1} = J_{x}$。
+空间分量当 $\nu = 1$ 时，是$\partial_{\mu}$与$F^{\mu\nu}$的第1列点乘，为 @eq-amp-m-x，其中， $J^{1} = J_{x}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{x}}{c} \right) + \frac{\partial B_{z}}{\partial y} - \frac{\partial B_{y}}{\partial z} = \mu_{0} J_{x}
@@ -325,7 +325,7 @@ $$
 \left(\symbf{\nabla} \times \mathbf{B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial E_{x}}{\partial t} = \mu_{0} J_{x}
 $$ {#eq-amp-x}
 
-当 $\nu = 2$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第2列点乘，为 @eq-amp-m-y，其中， $J^{2} = J_{y}$。
+当 $\nu = 2$ 时，是$\partial_{\mu}$与$F^{\mu\nu}$的第2列点乘，为 @eq-amp-m-y，其中， $J^{2} = J_{y}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{y}}{c} \right) - \frac{\partial B_{z}}{\partial x} + \frac{\partial B_{x}}{\partial z} = \mu_{0} J_{y}
@@ -337,7 +337,7 @@ $$
 \left(\symbf{\nabla} \times \mathbf{B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial E_{y}}{\partial t} = \mu_{0} J_{y}
 $$ {#eq-amp-y}
 
-当 $\nu = 3$ 时，是$\symbf{\partial}_{\mu}$与$\mathbf{F}^{\mu\nu}$的第3列点乘，为 @eq-amp-m-z，其中， $J^{3} = J_{z}$。
+当 $\nu = 3$ 时，是$\partial_{\mu}$与$F^{\mu\nu}$的第3列点乘，为 @eq-amp-m-z，其中， $J^{3} = J_{z}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{z}}{c} \right) + \frac{\partial B_{y}}{\partial x} - \frac{\partial B_{x}}{\partial y} = \mu_{0} J_{z}
@@ -374,7 +374,7 @@ $$ {#eq-215820756}
 循环形式为 @eq-216080650。
 
 $$
-\symbf{\partial}^{\lambda}\mathbf{F}^{\mu\nu} + \symbf{\partial}^{\mu}\mathbf{F}^{\nu\lambda} + \symbf{\partial}^{\nu}\mathbf{F}^{\lambda\mu} = 0
+\partial^{\lambda}F^{\mu\nu} + \partial^{\mu}F^{\nu\lambda} + \partial^{\nu}F^{\lambda\mu} = 0
 $$ {#eq-216080650}
 
 或者等价地写成莱维-奇维塔符号形式 @eq-216080707。
@@ -388,7 +388,7 @@ $$ {#eq-216080707}
  @eq-216080650 选择$(\lambda,\mu,\nu) = (1,2,3)$得到 @eq-216081978。
 
 $$
-\symbf{\partial}^{1}\mathbf{F}^{23} + \symbf{\partial}^{2}\mathbf{F}^{31} + \symbf{\partial}^{3}\mathbf{F}^{12} = 0
+\partial^{1}F^{23} + \partial^{2}F^{31} + \partial^{3}F^{12} = 0
 $$ {#eq-216081978}
 
 将 @eq-partial-four 和 @eq-inhomo-eq1 代入 @eq-216081978，得到 @eq-216082498。
@@ -407,7 +407,7 @@ $$ {#eq-216082498}
 $$
 \symbf{\nabla} \times \mathbf{E} = 
 \begin{vmatrix}
-\mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\
+E_x & E_y & E_z \\
 \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
 E_x & E_y & E_z
 \end{vmatrix}
@@ -430,7 +430,7 @@ $$ {#eq-curl-Ez}
 x-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-216082919。
 
 $$
-\symbf{\partial}^{0}\mathbf{F}^{23} + \symbf{\partial}^{2}\mathbf{F}^{30} + \symbf{\partial}^{3}\mathbf{F}^{02} = 0
+\partial^{0}F^{23} + \partial^{2}F^{30} + \partial^{3}F^{02} = 0
 $$ {#eq-216082919}
 
 将 @eq-partial-four 和 @eq-inhomo-eq1 代入 @eq-216082919 得到 @eq-216083244。
@@ -454,7 +454,7 @@ $$ {#eq-nabla-times-E_x}
 y-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-216083842。
 
 $$
-\symbf{\partial}^{0}\mathbf{F}^{31} + \symbf{\partial}^{3}\mathbf{F}^{10} + \symbf{\partial}^{1}\mathbf{F}^{03} = 0
+\partial^{0}F^{31} + \partial^{3}F^{10} + \partial^{1}F^{03} = 0
 $$ {#eq-216083842}
 
 将 @eq-partial-four 和 @eq-inhomo-eq1 代入 @eq-216083842 得到 @eq-216083924。
@@ -478,7 +478,7 @@ $$ {#eq-nabla-times-E_y}
 z-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-216084498。
 
 $$
-\symbf{\partial}^{0}\mathbf{F}^{12} + \symbf{\partial}^{1}\mathbf{F}^{20} + \symbf{\partial}^{2}\mathbf{F}^{01} = 0
+\partial^{0}F^{12} + \partial^{1}F^{20} + \partial^{2}F^{01} = 0
 $$ {#eq-216084498}
 
 将 @eq-partial-four 和 @eq-inhomo-eq1 代入 @eq-216084498 得到 @eq-216084592。
@@ -508,8 +508,8 @@ $$\symbf{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#
 
 | 4维形式 | 3维形式 | 物理定律 |
 |-----|--|---|
-|$\partial^{\lambda}\mathbf{F}^{\mu\nu}+\partial^{\mu}\mathbf{F}^{\nu\lambda}+\partial^{\nu}\mathbf{F}^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\nabla \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
-|$\partial^{\lambda}\mathbf{F}^{\mu\nu}+\partial^{\mu}\mathbf{F}^{\nu\lambda}+\partial^{\nu}\mathbf{F}^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in[(0,2,3),(0,3,1),(0,1,2)]$| $\symbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
+|$\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\nabla \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
+|$\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in[(0,2,3),(0,3,1),(0,1,2)]$| $\symbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
 
 : 无源项4维3维对应关系 {#tbl-tab-sourceless tbl-colwidths="[57,18,25]"}
 
@@ -519,71 +519,71 @@ $$\symbf{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#
 
 ### 物理量的洛伦兹变换
 
-在洛伦兹变换下，物理量按特定规则变换，二阶电磁场张量 @eq-216170974。$\mathbf{A}'^{\mu}$ 是四维矢量，其变换规则为 @eq-217463243。
+在洛伦兹变换下，物理量按特定规则变换，二阶电磁场张量 @eq-216170974 。$A'^{\mu}$ 是四维矢量，其变换规则为 @eq-217463243 ，$\Lambda_{\nu}^{\mu}$ 为 @eq-Lambda-define。
 
 $$
-\mathbf{A}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{A}^{\nu}
+A'^{\nu} = \Lambda_{\sigma}^{\nu}A^{\sigma}
 $$ {#eq-217463243}
 
-偏导数算符 $\symbf{\partial}'^{\mu}$ 在洛伦兹变换下，坐标微分变换导致偏导数的变换为 @eq-217463483。
+偏导数算符 $\partial'^{\mu}$ 在洛伦兹变换下，坐标微分变换导致偏导数的变换为 @eq-217463483。
 
 $$
-\symbf{\partial}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\symbf{\partial}^{v}
+\partial'^{\mu} = \Lambda_{\rho}^{\mu}\partial^{\rho}
 $$ {#eq-217463483}
 
 在 $S'$ 系中，电磁场张量定义为 @eq-217463678。
 
 $$
-\mathbf{F}'^{\mu\nu} = \symbf{\partial}'^{\mu}\mathbf{A}'^{\nu} - \symbf{\partial}'^{\nu}\mathbf{A}'^{\mu}
+F'^{\mu\nu} = \partial'^{\mu}A'^{\nu} - \partial'^{\nu}A'^{\mu}
 $$ {#eq-217463678}
 
 根据 @eq-217463243 和 @eq-217463483 的变换规则，由 @eq-217463678 得 @eq-217464111。
 
 $$
 \begin{aligned}
-\mathbf{F}'^{\mu\nu}
-&= \left(\symbf{\Lambda}_{\rho}^{\mu}\symbf{\partial}^{\rho} \right)\left(\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{A}^{\sigma} \right)
-- \left(\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}^{\sigma} \right)\left(\symbf{\Lambda}_{\rho}^{\mu}\mathbf{A}^{\rho} \right) \\
-&= \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}^{\rho}\mathbf{A}^{\sigma}
-- \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}^{\sigma}\mathbf{A}^{\rho} \\
-&= \left(\symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu} \right)
-\bigl(\symbf{\partial}^{\rho}\mathbf{A}^{\sigma} - \symbf{\partial}^{\sigma}\mathbf{A}^{\rho} \bigr) \\
-&= \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma}
+F'^{\mu\nu}
+&= \left(\Lambda_{\rho}^{\mu}\partial^{\rho} \right)\left(\Lambda_{\sigma}^{\nu}A^{\sigma} \right)
+- \left(\Lambda_{\sigma}^{\nu}\partial^{\sigma} \right)\left(\Lambda_{\rho}^{\mu}A^{\rho} \right) \\
+&= \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}\partial^{\rho}A^{\sigma}
+- \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}\partial^{\sigma}A^{\rho} \\
+&= \left(\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu} \right)
+\bigl(\partial^{\rho}A^{\sigma} - \partial^{\sigma}A^{\rho} \bigr) \\
+&= \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma}
 \end{aligned}
 $$ {#eq-217464111}
 
-洛伦兹变换系数是常数，可提到前面。$\symbf{\Lambda}_{\rho}^{\mu}$和$\symbf{\Lambda}_{\rho}^{\mu}$是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，$\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\Lambda}_{\rho}^{\mu} = \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{v}$。最后，根据 @eq-F-tensor 的定义，可以得到电磁场张量 @eq-216170974。
+洛伦兹变换系数是常数，可提到前面。$\Lambda_{\rho}^{\mu}$和$\Lambda_{\rho}^{\mu}$是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，$\Lambda_{\sigma}^{\nu}\Lambda_{\rho}^{\mu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{v}$。最后，根据 @eq-F-tensor 的定义，可以得到电磁场张量 @eq-216170974。
 
 $$
-\mathbf{F}'^{\mu\nu} = \symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma}
+F'^{\mu\nu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma}
 $$ {#eq-216170974}
 $$
-\mathbf{J}'^{\mu} = \symbf{\Lambda}_{\nu}^{\mu}\mathbf{J}^{\nu}
+J'^{\mu} = \Lambda_{\nu}^{\mu}\partial_{\mu}
 $$ {#eq-216171155}
 $$
-\symbf{\partial}_{\mu}' = \symbf{\Lambda}_{\mu}^{\nu}\symbf{\partial}_{\nu}
+\partial_{\mu}' = \Lambda_{\mu}^{\nu}\partial_{\nu}
 $$ {#eq-216171177}
 
-根据坐标变换关系 @eq-lorentz-mat，四维电流密度为 @eq-216171155，四维导数为 @eq-216171177，$\symbf{\Lambda}_{\nu}^{\mu}$为 @eq-Lambda-define。
+根据坐标变换关系 @eq-lorentz-mat ，四维电流密度为 @eq-216171155 ，四维导数为 @eq-216171177 。
 
 ### 非齐次方程的协变性
 
-将 @eq-216170974 和 @eq-216171177 代入${{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu}$得到 @eq-216171901，系数$\symbf{\Lambda}_{\rho}^{\mu}$和$\symbf{\Lambda}_{\sigma}^{\nu}$是常数，可以将它们提到微分算符$\symbf{\partial}_{\nu}$的前面。
+将 @eq-216170974 和 @eq-216171177 代入 ${\partial'_{\mu}F'}^{\mu\nu}$ 得到 @eq-216171901 ，系数 $\Lambda_{\rho}^{\mu}$ 和 $\Lambda_{\sigma}^{\nu}$ 是常数，可以将它们提到微分算符 $\partial_{\nu}$ 的前面。
 
- $${{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \left(\symbf{\Lambda}_{\mu}^{\nu}\symbf{\partial}_{\nu} \right)\left(\symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{F}^{\rho\sigma} \right) = \symbf{\Lambda}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}^{\mu}\symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}$$  {#eq-216171901}
+ $${\partial'_{\mu}F'}^{\mu\nu} = \left(\Lambda_{\mu}^{\nu}\partial_{\nu} \right)\left(\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma} \right) = \Lambda_{\mu}^{\nu}\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}\partial_{\nu}F^{\rho\sigma}$$  {#eq-216171901}
 
 洛伦兹变换矩阵满足正交关系,
-${\symbf{\delta}_{\rho}^{v} = \symbf{\Lambda}}_{\mu}^{\nu}\symbf{\Lambda}_{\rho}^{\mu}$，$\nu = \rho$为$\symbf{\delta}_{\rho}^{v} = 1$，否则为$\symbf{\delta}_{\rho}^{v} = 0$。
- $${{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\symbf{\partial}_{\nu}\mathbf{F}^{\rho\sigma}$$ {#eq-216173227}
+$\delta_{\rho}^{v} = \Lambda_{\mu}^{\nu}\Lambda_{\rho}^{\mu}$，$\nu = \rho$为$\delta_{\rho}^{v} = 1$，否则为$\delta_{\rho}^{v} = 0$。
+ $${\partial'_{\mu}F'}^{\mu\nu} = \Lambda_{\sigma}^{\nu}\partial_{\nu}F^{\rho\sigma}$$ {#eq-216173227}
 
-在 $S$ 系中，根据 @eq-inhomo-eq2 有 $\symbf{\partial}_{\nu}\mathbf{F}^{\sigma\rho} = \mu_{0}\mathbf{J}^{\rho}$ ，代入 @eq-216173227 得 @eq-216173196。
+在 $S$ 系中，根据 @eq-inhomo-eq2 有 $\partial_{\nu}F^{\sigma\rho} = \mu_{0}J^{\rho}$ ，代入 @eq-216173227 得 @eq-216173196。
 
- $${{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\mu_{0}\mathbf{J}^{\rho} = \mu_{0}\symbf{\Lambda}_{\sigma}^{\nu}\mathbf{J}^{\rho}$$ {#eq-216173196}
+ $${\partial'_{\mu}F'}^{\mu\nu} = \Lambda_{\sigma}^{\nu}\mu_{0}J^{\rho} = \mu_{0}\Lambda_{\sigma}^{\nu}J^{\rho}$$ {#eq-216173196}
 
-根据四维电流密度的变换 @eq-216171155，有 $\mathbf{J}'^{\nu} = \symbf{\Lambda}_{\sigma}^{\nu}\mathbf{J}^{\rho}$，得到 @eq-216173408。
+根据四维电流密度的变换 @eq-216171155，有 $J'^{\nu} = \Lambda_{\sigma}^{\nu}J^{\rho}$，得到 @eq-216173408。
 
 $$
-{{\symbf{\partial}'}_{\mu}\mathbf{F}'}^{\mu\nu} = \mu_{0}\mathbf{J}'^{\nu}
+{\partial'_{\mu}F'}^{\mu\nu} = \mu_{0}J'^{\nu}
 $$ {#eq-216173408}
 
  @eq-216173408 和 @eq-inhomo-eq2 有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
@@ -593,63 +593,63 @@ $$ {#eq-216173408}
 证明循环形式的齐次方程 @eq-216080650 在洛伦兹变换下形式不变。即，如果在参考系$S$中上述方程成立，则在参考系$S′$中，相应的 @eq-217544542 也成立。
 
 $$
-\symbf{\partial}'^{\lambda}\mathbf{F'}^{\mu\nu} + \symbf{\partial}'^{\mu}\mathbf{F}'^{\nu\lambda} + \symbf{\partial}'^{\nu}\mathbf{F}'^{\lambda\mu} = 0
+\partial'^{\lambda}F'^{\mu\nu} + \partial'^{\mu}F'^{\nu\lambda} + \partial'^{\nu}F'^{\lambda\mu} = 0
 $$ {#eq-217544542}
 
 将变换规则 @eq-217463483 和 @eq-216170974
 代入 @eq-217544542 的第一项得 @eq-217544998。
 
 $$
-{{\symbf{\partial}^{\mathbf{'}}}^{\lambda}{\mathbf{F}^{\mathbf{'}}}^{\mu\nu} = \left(\symbf{\Lambda}_{\rho}^{\lambda}\symbf{\partial}^{\rho} \right)\left(\symbf{\Lambda}_{\alpha}^{\mu}\symbf{\Lambda}_{\beta}^{\nu}\mathbf{F}^{\alpha\beta} \right)
- }{= \symbf{\Lambda}_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\symbf{\Lambda}_{\beta}^{\nu}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta}}
+{{\partial^{{'}}}^{\lambda}{F^{{'}}}^{\mu\nu} = \left(\Lambda_{\rho}^{\lambda}\partial^{\rho} \right)\left(\Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}F^{\alpha\beta} \right)
+ }{= \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}\partial^{\rho}F^{\alpha\beta}}
 $$ {#eq-217544998}
 
 同理， @eq-217544542 的第二项得 @eq-217545223，并将哑指标 $(\rho,\alpha,\beta)$ 轮换为 $(\alpha,\beta,\rho)$ 。 @eq-217544542 的第三项得 @eq-217545242，并将哑指标 $(\beta,\rho,\alpha)$ 轮换为 $(\alpha,\beta,\rho)$ 。
 
  $$
-\symbf{\partial}'^{\mu}\mathbf{F}'^{\nu\lambda} = \symbf{\Lambda}_{\rho}^{\mu} \Lambda_{\alpha}^{\nu}\symbf{\Lambda}_{\beta}^{\lambda}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\symbf{\Lambda}_{\rho}^{\lambda}\symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}
+\partial'^{\mu}F'^{\nu\lambda} = \Lambda_{\rho}^{\mu} \Lambda_{\alpha}^{\nu}\Lambda_{\beta}^{\lambda}\partial^{\rho}F^{\alpha\beta} = \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\Lambda_{\rho}^{\lambda}\partial^{\alpha}F^{\beta\rho}
 $$ {#eq-217545223}
 
 $$
-\symbf{\partial}'^{\nu}\mathbf{F}'^{\lambda\mu} = \symbf{\Lambda}_{\rho}^{\nu} \Lambda_{\alpha}^{\lambda}\symbf{\Lambda}_{\beta}^{\mu}\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} = \symbf{\Lambda}_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\symbf{\Lambda}_{\alpha}^{\mu}\symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha}
+\partial'^{\nu}F'^{\lambda\mu} = \Lambda_{\rho}^{\nu} \Lambda_{\alpha}^{\lambda}\Lambda_{\beta}^{\mu}\partial^{\rho}F^{\alpha\beta} = \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\Lambda_{\alpha}^{\mu}\partial^{\beta}F^{\rho\alpha}
 $$ {#eq-217545242}
 
 在每一项中使用了相同的哑指标，可以适当地重命名。 @eq-217544542 变换后的方程左端变为 @eq-217547944 。
 $$
 \begin{aligned}
-& \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu}\, \symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta} + \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu} \symbf{\Lambda}_{\rho}^{\lambda}\, \symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho} + \symbf{\Lambda}_{\beta}^{\nu} \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu}\, \symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha} \\
-&= \symbf{\Lambda}_{\rho}^{\lambda} \symbf{\Lambda}_{\alpha}^{\mu} \symbf{\Lambda}_{\beta}^{\nu}
-\biggl(\symbf{\partial}^{\rho}\mathbf{F}^{\alpha\beta}
-+ \symbf{\partial}^{\alpha}\mathbf{F}^{\beta\rho}
-+ \symbf{\partial}^{\beta}\mathbf{F}^{\rho\alpha} \biggr)
+& \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\, \partial^{\rho}F^{\alpha\beta} + \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\, \partial^{\alpha}F^{\beta\rho} + \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\, \partial^{\beta}F^{\rho\alpha} \\
+&= \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}
+\biggl(\partial^{\rho}F^{\alpha\beta}
++ \partial^{\alpha}F^{\beta\rho}
++ \partial^{\beta}F^{\rho\alpha} \biggr)
 = 0 \end{aligned}
 $${#eq-217547944}
 
-由于 $\symbf{\Lambda}_{\nu}^{\mu}$
-是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子$\symbf{\Lambda}_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\symbf{\Lambda}_{\beta}^{\nu}$，只是顺序不同。根据 @eq-216080650 可得 @eq-217547944 为0，即，证明了 @eq-217544542 成立。
+由于 $\Lambda_{\nu}^{\mu}$
+是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子$\Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}$，只是顺序不同。根据 @eq-216080650 可得 @eq-217547944 为0，即，证明了 @eq-217544542 成立。
 
 ### 电磁场的变换关系
 
-在S\'系中， @eq-216252245 中的$\mathbf{F}'^{\mu\nu}$与 @eq-inhomo-eq1 中$\mathbf{F}^{\mu\nu}$具有相同的形式。
+在S\'系中， @eq-216252245 中的$F'^{\mu\nu}$与 @eq-inhomo-eq1 中$F^{\mu\nu}$具有相同的形式。
 
 $$
-\mathbf{F}'^{\mu\nu} = \begin{bmatrix}
- 0 & - {\mathbf{E}'}_{x}/c & - {\mathbf{E}'}_{y}/c & - {\mathbf{E}'}_{z}/c \\
- {\mathbf{E}'}_{x}/c & 0 & - {\mathbf{B}'}_{z} & {\mathbf{B}'}_{y} \\
- {\mathbf{E}'}_{y}/c & {\mathbf{B}'}_{z} & 0 & {- \mathbf{B}'}_{x} \\
- {\mathbf{E}'}_{z}/c & - {\mathbf{B}'}_{y} & {\mathbf{B}'}_{x} & 0
+F'^{\mu\nu} = \begin{bmatrix}
+ 0 & - E'_{x}/c & - E'_{y}/c & - E'_{z}/c \\
+ E'_{x}/c & 0 & - B'_{z} & B'_{y} \\
+ E'_{y}/c & B'_{z} & 0 & {-B'}_{x} \\
+ E'_{z}/c & - B'_{y} & B'_{x} & 0
  \end{bmatrix}
 $$ {#eq-216252245}
 
 根据电磁场张量的变换法则为 @eq-216170974，可以推导出三维空间中电场和磁场分量的显式变换关系。
 
-####  ${\mathbf{E}'}_{x}$与$\mathbf{F}^{\mathbf{'01}}$ 分量
+####  $E'_{x}$与$F^{{'01}}$ 分量
 
  @eq-216170974 中$\mu = 0$，$\nu = 1$，得 @eq-216254331。
 
 $$
-{\mathbf{F}'^{01} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{1}\mathbf{F}^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\sum_{\sigma = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{1}\mathbf{F}^{\rho\sigma}}}}
+{F'^{01} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{1}F^{\rho\sigma}
+ }{= \sum_{\rho = 0}^{3}{\sum_{\sigma = 0}^{3}{\Lambda_{\rho}^{0}\Lambda_{\sigma}^{1}F^{\rho\sigma}}}}
 $$ {#eq-216254331}
 
 根据 @eq-217378583 得 @eq-217378583。
@@ -662,125 +662,125 @@ $$ {#eq-217378583}
 
 $$
 \begin{aligned}
-\mathbf{F}'^{01}
-&= \symbf{\Lambda}_{0}^{0}\symbf{\Lambda}_{1}^{1}\,\mathbf{F}^{01}
-+ \symbf{\Lambda}_{1}^{0}\symbf{\Lambda}_{0}^{1}\,\mathbf{F}^{10} \\
-\mathbf{F}'^{01}
+F'^{01}
+&= \Lambda_{0}^{0}\Lambda_{1}^{1}\,F^{01}
++ \Lambda_{1}^{0}\Lambda_{0}^{1}\,F^{10} \\
+F'^{01}
 &= \gamma\gamma\left(-\frac{E_{x}}{c}\right)
 + (-\gamma\beta)(-\gamma\beta)\left(\frac{E_{x}}{c}\right) \\
-\mathbf{F}'^{01}
+F'^{01}
 &= -\gamma^{2}\bigl(1-\beta^{2}\bigr)\left(\frac{E_{x}}{c}\right) \\
--\frac{\mathbf{E}'_{x}}{c}
+-\frac{E'_{x}}{c}
 &= -\frac{E_{x}}{c}
 \end{aligned}
 $$ {#eq-216258641}
 
  @eq-216258641 两边同乘以-c，得到 @eq-216255316。
 
-####  ${\mathbf{E}'}_{y}$与$\mathbf{F}^{\mathbf{'02}}$ 分量
+####  $E'_{y}$与$F^{{'02}}$ 分量
 
- @eq-216170974 中$\mu = 0$，$\nu = 2$，得 @eq-217378691，由于$\symbf{\Lambda}_{\sigma}^{2}$只有在 $\sigma = 2$ 时为
+ @eq-216170974 中$\mu = 0$，$\nu = 2$，得 @eq-217378691，由于$\Lambda_{\sigma}^{2}$只有在 $\sigma = 2$ 时为
 1，其它为 0。
 
 $$
-{\mathbf{F}'^{02} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\mathbf{F}^{\rho 2}}}
+{F'^{02} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{2}F^{\rho\sigma}
+ }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{0}F^{\rho 2}}}
 $$ {#eq-217378691}
 
 将 @eq-Lambda-define 和 @eq-inhomo-eq1 代入 @eq-217378691，只保留非0元素为。
 
 $$
 \begin{aligned}
-\mathbf{F}'^{02} &= \Lambda_{0}^{0} \mathbf{F}^{02} + \Lambda_{1}^{0} \mathbf{F}^{12} \\
-\mathbf{F}'^{02} &= \gamma \cdot \left(- \frac{\mathbf{E}_y}{c} \right) + (-\gamma\beta) \cdot (- \mathbf{B}_z ) \\
-- \frac{\mathbf{E}'_y}{c} &= - \gamma \left(\frac{\mathbf{E}_y}{c} - \beta \mathbf{B}_z \right)
+F'^{02} &= \Lambda_{0}^{0} F^{02} + \Lambda_{1}^{0} F^{12} \\
+F'^{02} &= \gamma \cdot \left(-\frac{E_y}{c} \right) + (-\gamma\beta) \cdot (- B_z ) \\
+- \frac{E'_y}{c} &= - \gamma \left(\frac{E_y}{c} - \beta B_z \right)
 \end{aligned}
 $$ {#eq-216258166}
 
  @eq-216258166 两边同乘以-c，并代入 @eq-216255316，得到 @eq-216256709。
 
-####  ${\mathbf{E}'}_{z}$与$\mathbf{F}^{\mathbf{'03}}$ 分量
+####  $E'_{z}$与$F^{{'03}}$ 分量
 
- @eq-216170974 中$\mu = 0$，$\nu = 2$，得 @eq-217378932，由于$\symbf{\Lambda}_{\sigma}^{3}$只有在 $\sigma = 3$ 时为
+ @eq-216170974 中$\mu = 0$，$\nu = 2$，得 @eq-217378932，由于$\Lambda_{\sigma}^{3}$只有在 $\sigma = 3$ 时为
 1，其它为 0。
 
 $$
-{\mathbf{F}'^{03} = \symbf{\Lambda}_{\rho}^{0}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{0}\mathbf{F}^{\rho 3}}}
+{F'^{03} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{3}F^{\rho\sigma}
+ }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{0}F^{\rho 3}}}
 $$ {#eq-217378932}
 
 将 @eq-Lambda-define 和 @eq-inhomo-eq1 中代入 @eq-217378932，只保留非0元素为。
 
 $$
 \begin{aligned}
-\mathbf{F}'^{03}
-&= \symbf{\Lambda}_{0}^{0}\,\mathbf{F}^{03} + \symbf{\Lambda}_{1}^{0}\,\mathbf{F}^{13} \\
-\mathbf{F}'^{03}
+F'^{03}
+&= \Lambda_{0}^{0}\,F^{03} + \Lambda_{1}^{0}\,F^{13} \\
+F'^{03}
 &= \gamma\left(-\frac{E_{z}}{c}\right) + (-\gamma\beta) B_{y} \\
--\frac{\mathbf{E}'_{z}}{c}
+-\frac{E'_{z}}{c}
 &= -\gamma\left(\frac{E_{z}}{c} + \beta B_{y} \right)
 \end{aligned}
 $$ {#eq-216258297}
 
  @eq-216258297 两边同乘以-c，并代入 @eq-beta，得到 @eq-216257724。
 
-####  ${\mathbf{B}^{\mathbf{'}}}_{x}$与$\mathbf{F}^{\mathbf{'23}}$ 分量
+####  $B'_{x}$ 与 $F^{'23}$ 分量
 
- @eq-216170974 中$\mu = 0$，$\nu = 2$，得 @eq-217288821，由于$\symbf{\Lambda}_{\rho}^{2}$只有在 $\rho = 2$ 时为
-1， $\symbf{\Lambda}_{\sigma}^{3}$只有在 $\sigma = 3$ 时为 1，其它为
+ @eq-216170974 中$\mu = 0$，$\nu = 2$，得 @eq-217288821，由于$\Lambda_{\rho}^{2}$只有在 $\rho = 2$ 时为
+1， $\Lambda_{\sigma}^{3}$只有在 $\sigma = 3$ 时为 1，其它为
 0。
 
 $$
-{\mathbf{F}'^{23} = \symbf{\Lambda}_{\rho}^{2}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
- }{\mathbf{F}'^{23} = \mathbf{F}^{23}
- }{- {\mathbf{B}^{\mathbf{'}}}_{x} = - B_{x}}
+{F'^{23} = \Lambda_{\rho}^{2}\Lambda_{\sigma}^{3}F^{\rho\sigma}
+ }{F'^{23} = F^{23}
+ }{- {B'}_{x} = -B_{x}}
 $$ {#eq-217288821}
 
 整理 @eq-217288821 得 @eq-216258492。
 
-####  ${\mathbf{B}'}_{y}$与$\mathbf{F}^{\mathbf{'13}}$ 分量
+####  $B'_{y}$与$F^{{'13}}$ 分量
 
- @eq-216170974 中$\mu = 1$，$\nu = 3$，得 @eq-217287710，由于$\symbf{\Lambda}_{\sigma}^{3}$只有在 $\sigma = 3$ 时为
+ @eq-216170974 中$\mu = 1$，$\nu = 3$，得 @eq-217287710，由于$\Lambda_{\sigma}^{3}$只有在 $\sigma = 3$ 时为
 1，其它为 0。
 
 $$
-{\mathbf{F}'^{13} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{3}\mathbf{F}^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{1}\mathbf{F}^{\rho 3}}}
+{F'^{13} = \Lambda_{\rho}^{1}\Lambda_{\sigma}^{3}F^{\rho\sigma}
+ }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{1}F^{\rho 3}}}
 $$ {#eq-217287710}
 
 将 @eq-Lambda-define 和 @eq-inhomo-eq1 中代入 @eq-217287710，只保留非0元素为。
 
 $$
 \begin{aligned}
-\mathbf{F}'^{13}
-&= \symbf{\Lambda}_{0}^{1}\,\mathbf{F}^{03} + \symbf{\Lambda}_{1}^{1}\,\mathbf{F}^{13} \\
-\mathbf{F}'^{13}
+F'^{13}
+&= \Lambda_{0}^{1}\,F^{03} + \Lambda_{1}^{1}\,F^{13} \\
+F'^{13}
 &= (-\gamma\beta)\left(-\frac{E_{z}}{c}\right) + \gamma\, B_{y} \\
-\mathbf{B}'_{y}
+B'_{y}
 &= \gamma\left(\frac{\beta E_{z}}{c} + B_{y} \right)
 \end{aligned}
 $$ {#eq-217288259}
 
  @eq-beta 代入 @eq-217288259，得到 @eq-216258494。
 
-####  ${\mathbf{B}^{\mathbf{'}}}_{z}$与$\mathbf{F}^{\mathbf{'12}}$ 分量
+####  $B'_{z}$与$F^{'12}$ 分量
 
- @eq-216170974 中$\mu = 1$，$\nu = 2$，得 @eq-217286643，由于$\symbf{\Lambda}_{\sigma}^{2}$只有在 $\sigma = 2$ 时为
+ @eq-216170974 中$\mu = 1$，$\nu = 2$，得 @eq-217286643，由于$\Lambda_{\sigma}^{2}$只有在 $\sigma = 2$ 时为
 1，其它为 0。
 
 $$
-{\mathbf{F}'^{12} = \symbf{\Lambda}_{\rho}^{1}\symbf{\Lambda}_{\sigma}^{2}\mathbf{F}^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\symbf{\Lambda}_{\rho}^{1}\mathbf{F}^{\rho 2}}}
+{F'^{12} = \Lambda_{\rho}^{1}\Lambda_{\sigma}^{2}F^{\rho\sigma}
+ }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{1}F^{\rho 2}}}
 $$ {#eq-217286643}
 
 将 @eq-Lambda-define 和 @eq-inhomo-eq1 中代入 @eq-217286643，只保留非0元素为。
 $$
 \begin{aligned}
-\mathbf{F}'^{12}
-&= \symbf{\Lambda}_{0}^{1}\,\mathbf{F}^{02} + \symbf{\Lambda}_{1}^{1}\,\mathbf{F}^{12} \\
-\mathbf{F}'^{12}
-&= (-\gamma\beta)\left(-\frac{E_{y}}{c}\right) + \gamma\left(- B_{z}\right) \\
--\mathbf{B}'_{z}
+F'^{12}
+&= \Lambda_{0}^{1}\,F^{02} + \Lambda_{1}^{1}\,F^{12} \\
+F'^{12}
+&= (-\gamma\beta)\left(-\frac{E_{y}}{c}\right) + \gamma\left(-B_{z}\right) \\
+-B'_{z}
 &= \gamma\left(\frac{\beta E_{y}}{c} - B_{z} \right)
 \end{aligned}
 $$ {#eq-217287209}
