@@ -371,11 +371,11 @@ $$ {#eq-215820756}
 
 ### 齐次麦克斯韦方程组
 
-循环形式为 @eq-216080650。
+循环形式为 @eq-S-homogeneous。
 
 $$
 \partial^{\lambda}F^{\mu\nu} + \partial^{\mu}F^{\nu\lambda} + \partial^{\nu}F^{\lambda\mu} = 0
-$$ {#eq-216080650}
+$$ {#eq-S-homogeneous}
 
 或者等价地写成莱维-奇维塔符号形式 @eq-216080707。
 
@@ -385,7 +385,7 @@ $$ {#eq-216080707}
 
 #### 高斯磁场定律
 
- @eq-216080650 选择$(\lambda,\mu,\nu) = (1,2,3)$得到 @eq-216081978。
+ @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (1,2,3)$得到 @eq-216081978。
 
 $$
 \partial^{1}F^{23} + \partial^{2}F^{31} + \partial^{3}F^{12} = 0
@@ -427,7 +427,7 @@ $$
 (\symbf{\nabla} \times \mathbf{E})_z = \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}
 $$ {#eq-curl-Ez}
 
-x-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-216082919。
+x-分量 @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-216082919。
 
 $$
 \partial^{0}F^{23} + \partial^{2}F^{30} + \partial^{3}F^{02} = 0
@@ -451,7 +451,7 @@ $$
 \left(\symbf{\nabla} \times \mathbf{E} \right)_{x} = -\frac{\partial B_{x}}{\partial t}
 $$ {#eq-nabla-times-E_x}
 
-y-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-216083842。
+y-分量 @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-216083842。
 
 $$
 \partial^{0}F^{31} + \partial^{3}F^{10} + \partial^{1}F^{03} = 0
@@ -475,7 +475,7 @@ $$
 \left(\symbf{\nabla} \times \mathbf{E} \right)_{y} = -\frac{\partial B_{y}}{\partial t}
 $$ {#eq-nabla-times-E_y}
 
-z-分量 @eq-216080650 选择$(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-216084498。
+z-分量 @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-216084498。
 
 $$
 \partial^{0}F^{12} + \partial^{1}F^{20} + \partial^{2}F^{01} = 0
@@ -590,31 +590,31 @@ $$ {#eq-216173408}
 
 ### 齐次方程的协变性
 
-证明循环形式的齐次方程 @eq-216080650 在洛伦兹变换下形式不变。即，如果在参考系$S$中上述方程成立，则在参考系$S′$中，相应的 @eq-217544542 也成立。
+证明循环形式的齐次方程 @eq-S-homogeneous 在洛伦兹变换下形式不变。即，如果在参考系 $S$ 中 @eq-S-homogeneous 成立，则在参考系 $S′$ 中，相应的 @eq-S-2-homogeneous 也成立。
 
 $$
 \partial'^{\lambda}F'^{\mu\nu} + \partial'^{\mu}F'^{\nu\lambda} + \partial'^{\nu}F'^{\lambda\mu} = 0
-$$ {#eq-217544542}
+$$ {#eq-S-2-homogeneous}
 
 将变换规则 @eq-217463483 和 @eq-216170974
-代入 @eq-217544542 的第一项得 @eq-217544998。
+代入 @eq-S-2-homogeneous 的第一项得 @eq-217544998。
 
 $$
-{{\partial^{{'}}}^{\lambda}{F^{{'}}}^{\mu\nu} = \left(\Lambda_{\rho}^{\lambda}\partial^{\rho} \right)\left(\Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}F^{\alpha\beta} \right)
- }{= \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}\partial^{\rho}F^{\alpha\beta}}
+\partial'^{\lambda}F'^{\mu\nu} = \left(\Lambda_{\rho}^{\lambda}\partial^{\rho} \right)\left(\Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}F^{\alpha\beta} \right)
+ {= \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}\partial^{\rho}F^{\alpha\beta}}
 $$ {#eq-217544998}
 
-同理， @eq-217544542 的第二项得 @eq-217545223，并将哑指标 $(\rho,\alpha,\beta)$ 轮换为 $(\alpha,\beta,\rho)$ 。 @eq-217544542 的第三项得 @eq-217545242，并将哑指标 $(\beta,\rho,\alpha)$ 轮换为 $(\alpha,\beta,\rho)$ 。
+同理， @eq-S-2-homogeneous 的第二项得 @eq-217545223 。 @eq-S-2-homogeneous 的第三项得 @eq-217545242 。
 
  $$
-\partial'^{\mu}F'^{\nu\lambda} = \Lambda_{\rho}^{\mu} \Lambda_{\alpha}^{\nu}\Lambda_{\beta}^{\lambda}\partial^{\rho}F^{\alpha\beta} = \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\Lambda_{\rho}^{\lambda}\partial^{\alpha}F^{\beta\rho}
+\partial'^{\mu}F'^{\nu\lambda} = \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\Lambda_{\rho}^{\lambda}\partial^{\alpha}F^{\beta\rho}
 $$ {#eq-217545223}
 
 $$
-\partial'^{\nu}F'^{\lambda\mu} = \Lambda_{\rho}^{\nu} \Lambda_{\alpha}^{\lambda}\Lambda_{\beta}^{\mu}\partial^{\rho}F^{\alpha\beta} = \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\Lambda_{\alpha}^{\mu}\partial^{\beta}F^{\rho\alpha}
+\partial'^{\nu}F'^{\lambda\mu} = \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\Lambda_{\alpha}^{\mu}\partial^{\beta}F^{\rho\alpha}
 $$ {#eq-217545242}
 
-在每一项中使用了相同的哑指标，可以适当地重命名。 @eq-217544542 变换后的方程左端变为 @eq-217547944 。
+@eq-S-2-homogeneous 变换后的方程左端变为 @eq-217547944 。
 $$
 \begin{aligned}
 & \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\, \partial^{\rho}F^{\alpha\beta} + \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\, \partial^{\alpha}F^{\beta\rho} + \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\, \partial^{\beta}F^{\rho\alpha} \\
@@ -626,7 +626,7 @@ $$
 $${#eq-217547944}
 
 由于 $\Lambda_{\nu}^{\mu}$
-是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子$\Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}$，只是顺序不同。根据 @eq-216080650 可得 @eq-217547944 为0，即，证明了 @eq-217544542 成立。
+是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子$\Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}$，只是顺序不同。根据 @eq-S-homogeneous 可得 @eq-217547944 为0，即，证明了 @eq-S-2-homogeneous 成立。
 
 ### 电磁场的变换关系
 
