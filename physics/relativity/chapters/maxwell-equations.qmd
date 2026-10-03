@@ -279,7 +279,9 @@ $$ {#eq-inhomo-eq5}
 
 利用 @eq-light-speed-c 得 $\mu_{0}c^{2} = 1/\epsilon_{0}$，代入 @eq-inhomo-eq5 整理后得到高斯电场定律 @eq-216076201 。
 
-$$\symbf{\nabla} \mathbf{\cdot E} = \frac{\rho}{\epsilon_{0}}$${#eq-216076201}
+$$
+\symbf{\nabla} \mathbf{\cdot E} = \frac{\rho}{\epsilon_{0}}
+$${#eq-216076201}
 
 #### 安培-麦克斯韦定律
 
@@ -313,7 +315,7 @@ $$
 \frac{1}{c^{2}} = \mu_{0}\epsilon_{0}
 $$ {#eq-homo-eq1}
 
-空间分量当 $\nu = 1$ 时，是$\partial_{\mu}$与$F^{\mu\nu}$的第1列点乘，为 @eq-amp-m-x，其中， $J^{1} = J_{x}$。
+空间分量当 $\nu = 1$ 时，是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 的第1列点乘，为 @eq-amp-m-x，其中， $J^{1} = J_{x}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{x}}{c} \right) + \frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z} = \mu_{0} J_{x}
@@ -325,7 +327,7 @@ $$
 \left(\symbf{\nabla} \times \mathbf{B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial E_x}{\partial t} = \mu_{0} J_{x}
 $$ {#eq-amp-x}
 
-当 $\nu = 2$ 时，是$\partial_{\mu}$与$F^{\mu\nu}$的第2列点乘，为 @eq-amp-m-y，其中， $J^{2} = J_{y}$。
+当 $\nu = 2$ 时，是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 的第2列点乘，为 @eq-amp-m-y，其中， $J^{2} = J_{y}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{y}}{c} \right) - \frac{\partial B_z}{\partial x} + \frac{\partial B_x}{\partial z} = \mu_{0} J_{y}
@@ -337,7 +339,7 @@ $$
 \left(\symbf{\nabla} \times \mathbf{B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial E_y}{\partial t} = \mu_{0} J_{y}
 $$ {#eq-amp-y}
 
-当 $\nu = 3$ 时，是$\partial_{\mu}$与$F^{\mu\nu}$的第3列点乘，为 @eq-amp-m-z，其中， $J^{3} = J_{z}$。
+当 $\nu = 3$ 时，是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 的第3列点乘，为 @eq-amp-m-z，其中， $J^{3} = J_{z}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{{- \mathbf{E}}_{z}}{c} \right) + \frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y} = \mu_{0} J_{z}
@@ -398,7 +400,9 @@ $$
 $$ {#eq-216082498}
 
 将 @eq-216082498 整理后得高斯磁场定律 @eq-215821159。
- $$\symbf{\nabla \cdot B} = 0$$ {#eq-215821159}
+ $$
+\symbf{\nabla \cdot B} = 0
+$$ {#eq-215821159}
 
 #### 法拉第电磁感应定律
 
@@ -427,7 +431,7 @@ $$
 (\symbf{\nabla} \times \mathbf{E})_z = \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}
 $$ {#eq-curl-Ez}
 
-x-分量 @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-216082919。
+x-分量 @eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-216082919。
 
 $$
 \partial^{0}F^{23} + \partial^{2}F^{30} + \partial^{3}F^{02} = 0
@@ -475,7 +479,7 @@ $$
 \left(\symbf{\nabla} \times \mathbf{E} \right)_{y} = -\frac{\partial B_y}{\partial t}
 $$ {#eq-nabla-times-E_y}
 
-z-分量 @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-216084498。
+z-分量 @eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-216084498。
 
 $$
 \partial^{0}F^{12} + \partial^{1}F^{20} + \partial^{2}F^{01} = 0
@@ -552,7 +556,7 @@ F'^{\mu\nu}
 \end{aligned}
 $$ {#eq-F-formula-to-mu-nu}
 
-洛伦兹变换系数是常数，可提到前面。$\Lambda_{\rho}^{\mu}$和$\Lambda_{\rho}^{\mu}$是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，$\Lambda_{\sigma}^{\nu}\Lambda_{\rho}^{\mu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{v}$。最后，根据 @eq-F-tensor 的定义，可以得到电磁场张量 @eq-F-to-formula。
+洛伦兹变换系数是常数，可提到前面。$\Lambda_{\rho}^{\mu}$ 和 $\Lambda_{\rho}^{\mu}$ 是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，$\Lambda_{\sigma}^{\nu}\Lambda_{\rho}^{\mu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{v}$。最后，根据 @eq-F-tensor 的定义，可以得到电磁场张量 @eq-F-to-formula。
 
 $$
 F'^{\mu\nu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma}
@@ -576,7 +580,7 @@ $$ {#eq-216171177}
 $\delta_{\rho}^{v} = \Lambda_{\mu}^{\nu}\Lambda_{\rho}^{\mu}$，$\nu = \rho$为$\delta_{\rho}^{v} = 1$，否则为$\delta_{\rho}^{v} = 0$。
  $${\partial'_{\mu}F'}^{\mu\nu} = \Lambda_{\sigma}^{\nu}\partial_{\nu}F^{\rho\sigma}$$ {#eq-216173227}
 
-在 $S$ 系中，根据 @eq-inhomo-eq2 有 $\partial_{\nu}F^{\sigma\rho} = \mu_{0}J^{\rho}$ ，代入 @eq-216173227 得到 @eq-216173196。
+在 $S$ 系中，根据 @eq-inhomo-eq2 有 $\partial_{\nu}F^{\sigma\rho} = \mu_{0}J^{\rho}$，代入 @eq-216173227 得到 @eq-216173196。
 
  $${\partial'_{\mu}F'}^{\mu\nu} = \Lambda_{\sigma}^{\nu}\mu_{0}J^{\rho} = \mu_{0}\Lambda_{\sigma}^{\nu}J^{\rho}$$ {#eq-216173196}
 
@@ -626,7 +630,7 @@ $$
 $${#eq-217547944}
 
 由于 $\Lambda_{\nu}^{\mu}$
-是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子$\Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}$，只是顺序不同。根据 @eq-S-homogeneous 可得到 @eq-217547944 为0，即，证明了 @eq-S-2-homogeneous 成立。
+是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子 $\Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}$，只是顺序不同。根据 @eq-S-homogeneous 可得到 @eq-217547944 为0，即，证明了 @eq-S-2-homogeneous 成立。
 
 ### 电磁场的变换关系
 
@@ -803,4 +807,3 @@ $$ {#eq-B_to_z}
 ```{=latex}
 \newpage
 ```
-
