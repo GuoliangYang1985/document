@@ -17,12 +17,7 @@
 \end{enumerate}
 \end{definition}
 
-```{python}
-#| echo: false
-#| label: fig-twins
-#| fig-cap: "对称双生子实验"
-%run scripts/twins_plot.py
-```
+![对称双生子实验](images/symmetric.png){#fig-twins width=95%}
 
 \begin{axiom}[对称性公理] \label{ax-symmetry}
 根据实验设定，路径 $O \rightarrow P \rightarrow M$ 与 $O \rightarrow Q \rightarrow M$ 关于中心轴 $OM$ 完美镜像对称。即：$A$ 和 $B$ 的物理经历在空间几何与动力学上完全等价。这一对称性在逻辑上确立了 $A$ 与 $B$ 的身份平等与可互换性。

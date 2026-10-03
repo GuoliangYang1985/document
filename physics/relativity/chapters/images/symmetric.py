@@ -69,4 +69,4 @@ ax.arrow(4, straight_y_top, -1.5, 0, head_width=0.3, head_length=0.4, fc=b_color
 ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), ncol=2, fontsize=12, frameon=False)
 
 plt.tight_layout()
-plt.show()
+plt.savefig(r"symmetric.png", dpi=200, bbox_inches="tight", facecolor="white")
