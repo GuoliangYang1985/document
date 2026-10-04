@@ -538,25 +538,29 @@ $$\symbf{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#
 
 ### 物理量的洛伦兹变换
 
-在洛伦兹变换下，物理量按特定规则变换，二阶电磁场张量 @eq-F-to-formula。$A'^{\mu}$ 是四维矢量，其变换规则为 @eq-217463243，$\Lambda_{\nu}^{\mu}$ 为 @eq-Lambda-define。
+在洛伦兹变换下，各物理量按其张量阶数以确定的规则变换。四维矢量按 @eq-A-transform 变换，其中 $\Lambda_{\nu}^{\mu}$ 为 @eq-Lambda-define。
 
 $$
 A'^{\nu} = \Lambda_{\sigma}^{\nu}A^{\sigma}
-$$ {#eq-217463243}
+$$ {#eq-A-transform}
 
-偏导数算符 $\partial'^{\mu}$ 在洛伦兹变换下，坐标微分变换导致偏导数的变换为 @eq-part-mu。
+偏导数算符的变换由链式法则导出。对 @eq-lorentz-mat 求逆得 @eq-lorentz-inv-mat，于是 $\partial'_{\mu} = \frac{\partial x^{\nu}}{\partial x'^{\mu}}\partial_{\nu} = \Lambda_{\mu}^{\nu}\partial_{\nu}$，即协变四维导数的变换 @eq-partial-cov-transform；用度规升指标后，逆变四维导数的变换为 @eq-part-mu。
+
+$$
+\partial'_{\mu} = \Lambda_{\mu}^{\nu}\partial_{\nu}
+$$ {#eq-partial-cov-transform}
 
 $$
 \partial'^{\mu} = \Lambda_{\rho}^{\mu}\partial^{\rho}
 $$ {#eq-part-mu}
 
-在 $S'$ 系中，电磁场张量定义为 @eq-217463678。
+在 $S'$ 系中，电磁场张量定义为 @eq-F-prime-def。
 
 $$
 F'^{\mu\nu} = \partial'^{\mu}A'^{\nu} - \partial'^{\nu}A'^{\mu}
-$$ {#eq-217463678}
+$$ {#eq-F-prime-def}
 
-根据 @eq-217463243 和 @eq-part-mu 的变换规则，由 @eq-217463678 得到 @eq-F-formula-to-mu-nu。
+将 @eq-A-transform 和 @eq-part-mu 代入 @eq-F-prime-def。由于洛伦兹变换矩阵的元素是常数，可以提到偏导算符之前；又因矩阵元素是普通实数，乘法可交换，$\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu} = \Lambda_{\sigma}^{\nu}\Lambda_{\rho}^{\mu}$，于是得到 @eq-F-formula-to-mu-nu。
 
 $$
 \begin{aligned}
@@ -571,85 +575,99 @@ F'^{\mu\nu}
 \end{aligned}
 $$ {#eq-F-formula-to-mu-nu}
 
-洛伦兹变换系数是常数，可提到前面。$\Lambda_{\rho}^{\mu}$ 和 $\Lambda_{\rho}^{\mu}$ 是洛伦兹变换矩阵的特定元素，即标量实数（或复数），因此，$\Lambda_{\sigma}^{\nu}\Lambda_{\rho}^{\mu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{v}$。最后，根据 @eq-F-tensor 的定义，可以得到电磁场张量 @eq-F-to-formula。
+最后，根据 @eq-F-tensor 的定义，得到电磁场张量的变换法则 @eq-F-to-formula。
 
 $$
 F'^{\mu\nu} = \Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma}
 $$ {#eq-F-to-formula}
-$$
-J'^{\mu} = \Lambda_{\nu}^{\mu}J^{\mu}
-$$ {#eq-216171155}
-$$
-\partial_{\mu}' = \Lambda_{\mu}^{\nu}\partial_{\nu}
-$$ {#eq-216171177}
 
-根据坐标变换关系 @eq-lorentz-mat，四维电流密度为 @eq-216171155，四维导数为 @eq-216171177。
+同理，四维电流密度与协变四维导数分别按 @eq-J-transform 和 @eq-partial-cov-transform 变换。
+
+$$
+J'^{\mu} = \Lambda_{\nu}^{\mu}J^{\nu}
+$$ {#eq-J-transform}
 
 ### 非齐次方程的协变性
 
-将 @eq-F-to-formula 和 @eq-216171177 代入 ${\partial'_{\mu}F'}^{\mu\nu}$ 得到 @eq-216171901，系数 $\Lambda_{\rho}^{\mu}$ 和 $\Lambda_{\sigma}^{\nu}$ 是常数，可以将它们提到微分算符 $\partial_{\nu}$ 的前面。
-
- $${\partial'_{\mu}F'}^{\mu\nu} = \left(\Lambda_{\mu}^{\nu}\partial_{\nu} \right)\left(\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma} \right) = \Lambda_{\mu}^{\nu}\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}\partial_{\nu}F^{\rho\sigma}$$  {#eq-216171901}
-
-洛伦兹变换矩阵满足正交关系,
-$\delta_{\rho}^{v} = \Lambda_{\mu}^{\nu}\Lambda_{\rho}^{\mu}$，$\nu = \rho$为$\delta_{\rho}^{v} = 1$，否则为$\delta_{\rho}^{v} = 0$。
- $${\partial'_{\mu}F'}^{\mu\nu} = \Lambda_{\sigma}^{\nu}\partial_{\nu}F^{\rho\sigma}$$ {#eq-216173227}
-
-在 $S$ 系中，根据 @eq-maxwell-inhomo 有 $\partial_{\nu}F^{\sigma\rho} = \mu_{0}J^{\rho}$，代入 @eq-216173227 得到 @eq-216173196。
-
- $${\partial'_{\mu}F'}^{\mu\nu} = \Lambda_{\sigma}^{\nu}\mu_{0}J^{\rho} = \mu_{0}\Lambda_{\sigma}^{\nu}J^{\rho}$$ {#eq-216173196}
-
-根据四维电流密度的变换 @eq-216171155，有 $J'^{\nu} = \Lambda_{\sigma}^{\nu}J^{\rho}$，得到 @eq-cov-final。
+将 @eq-F-to-formula 和 @eq-partial-cov-transform 代入 $\partial'_{\mu}F'^{\mu\nu}$。为避免哑指标与自由指标重复，将求和指标改记为 $\alpha$；由于 $\Lambda$ 的元素是常数，可提到偏导算符之前，得到 @eq-cov-step1。
 
 $$
-{\partial'_{\mu}F'}^{\mu\nu} = \mu_{0}J'^{\nu}
+\begin{aligned}
+\partial'_{\mu}F'^{\mu\nu}
+&= \left(\Lambda_{\mu}^{\alpha}\partial_{\alpha} \right)
+\left(\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}F^{\rho\sigma} \right) \\
+&= \Lambda_{\mu}^{\alpha}\Lambda_{\rho}^{\mu}\Lambda_{\sigma}^{\nu}\partial_{\alpha}F^{\rho\sigma}
+\end{aligned}
+$$ {#eq-cov-step1}
+
+洛伦兹变换矩阵满足正交关系 @eq-cov-orthogonal（即 $\Lambda^{-1}\Lambda = I$）。
+
+$$
+\Lambda_{\mu}^{\alpha}\Lambda_{\rho}^{\mu} = \delta_{\rho}^{\alpha}
+$$ {#eq-cov-orthogonal}
+
+其中 Kronecker 符号 $\delta_{\rho}^{\alpha}$ 在 $\rho = \alpha$ 时为 1，否则为 0。利用 @eq-cov-orthogonal 化简 @eq-cov-step1，得到 @eq-cov-step2。
+
+$$
+\partial'_{\mu}F'^{\mu\nu} = \Lambda_{\sigma}^{\nu}\partial_{\rho}F^{\rho\sigma}
+$$ {#eq-cov-step2}
+
+在 $S$ 系中 @eq-maxwell-inhomo 成立，即 $\partial_{\rho}F^{\rho\sigma} = \mu_{0}J^{\sigma}$，代入 @eq-cov-step2 得到 @eq-cov-step3。
+
+$$
+\partial'_{\mu}F'^{\mu\nu} = \Lambda_{\sigma}^{\nu}\mu_{0}J^{\sigma} = \mu_{0}\Lambda_{\sigma}^{\nu}J^{\sigma}
+$$ {#eq-cov-step3}
+
+根据四维电流密度的变换 @eq-J-transform，$\Lambda_{\sigma}^{\nu}J^{\sigma} = J'^{\nu}$，于是得到 @eq-cov-final。
+
+$$
+\partial'_{\mu}F'^{\mu\nu} = \mu_{0}J'^{\nu}
 $$ {#eq-cov-final}
 
- @eq-cov-final 和 @eq-maxwell-inhomo 有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
+@eq-cov-final 与 @eq-maxwell-inhomo 具有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
 
 ### 齐次方程的协变性
 
-证明循环形式的齐次方程 @eq-S-homogeneous 在洛伦兹变换下形式不变。即，如果在参考系 $S$ 中 @eq-S-homogeneous 成立，则在参考系 $S′$ 中，相应的 @eq-S-2-homogeneous 也成立。
+证明循环形式的齐次方程 @eq-S-homogeneous 在洛伦兹变换下形式不变，即：如果在参考系 $S$ 中 @eq-S-homogeneous 成立，则在参考系 $S'$ 中，相应的 @eq-S-2-homogeneous 也成立。
 
 $$
 \partial'^{\lambda}F'^{\mu\nu} + \partial'^{\mu}F'^{\nu\lambda} + \partial'^{\nu}F'^{\lambda\mu} = 0
 $$ {#eq-S-2-homogeneous}
 
-将变换规则 @eq-part-mu 和 @eq-F-to-formula
-代入 @eq-S-2-homogeneous 的第一项得到 @eq-217544998。
+将变换规则 @eq-part-mu 和 @eq-F-to-formula 代入 @eq-S-2-homogeneous 的第一项，得到 @eq-hom-cov-term1。
 
 $$
 \partial'^{\lambda}F'^{\mu\nu} = \left(\Lambda_{\rho}^{\lambda}\partial^{\rho} \right)\left(\Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}F^{\alpha\beta} \right)
- {= \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}\partial^{\rho}F^{\alpha\beta}}
-$$ {#eq-217544998}
+= \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}\partial^{\rho}F^{\alpha\beta}
+$$ {#eq-hom-cov-term1}
 
-同理， @eq-S-2-homogeneous 的第二项得到 @eq-217545223。 @eq-S-2-homogeneous 的第三项得到 @eq-217545242 。
+同理，@eq-S-2-homogeneous 的第二项得到 @eq-hom-cov-term2，第三项得到 @eq-hom-cov-term3。
 
- $$
+$$
 \partial'^{\mu}F'^{\nu\lambda} = \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\Lambda_{\rho}^{\lambda}\partial^{\alpha}F^{\beta\rho}
-$$ {#eq-217545223}
+$$ {#eq-hom-cov-term2}
 
 $$
 \partial'^{\nu}F'^{\lambda\mu} = \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\Lambda_{\alpha}^{\mu}\partial^{\beta}F^{\rho\alpha}
-$$ {#eq-217545242}
+$$ {#eq-hom-cov-term3}
 
-@eq-S-2-homogeneous 变换后的方程左端变为 @eq-217547944。
+@eq-S-2-homogeneous 变换后的方程左端变为 @eq-hom-cov-sum。
+
 $$
 \begin{aligned}
 & \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}\, \partial^{\rho}F^{\alpha\beta} + \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda}\, \partial^{\alpha}F^{\beta\rho} + \Lambda_{\beta}^{\nu} \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\, \partial^{\beta}F^{\rho\alpha} \\
-&= \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}
+=& \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}
 \biggl(\partial^{\rho}F^{\alpha\beta}
 + \partial^{\alpha}F^{\beta\rho}
-+ \partial^{\beta}F^{\rho\alpha} \biggr)
-= 0 \end{aligned}
-$${#eq-217547944}
++ \partial^{\beta}F^{\rho\alpha} \biggr) = 0 
+\end{aligned}
+$$ {#eq-hom-cov-sum}
 
-由于 $\Lambda_{\nu}^{\mu}$
-是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序。三个乘积实际上包含相同的因子 $\Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}$，只是顺序不同。根据 @eq-S-homogeneous 可得到 @eq-217547944 为0，即，证明了 @eq-S-2-homogeneous 成立。
+由于 $\Lambda_{\nu}^{\mu}$ 是数字（矩阵元素），数的乘法可交换，因此可以将每个乘积中的因子重新排序：三个乘积实际上包含相同的因子 $\Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu}\Lambda_{\beta}^{\nu}$，只是顺序不同。而括号内正是 $S$ 系中的齐次方程 @eq-S-homogeneous（将指标 $(\lambda,\mu,\nu)$ 换为 $(\rho,\alpha,\beta)$），故其值为 0。这就证明了 @eq-S-2-homogeneous 成立。
 
 ### 电磁场的变换关系
 
-在 $S'$ 系中， @eq-F-mat-to-mu-nu 中的 $F'^{\mu\nu}$ 与 @eq-F-matrix 中 $F^{\mu\nu}$ 具有相同的形式。
+在 $S'$ 系中，$F'^{\mu\nu}$ 同样由该系的四维势 $A'^{\mu}$ 按 @eq-F-prime-def 的方式定义，因而也是反对称张量，其矩阵元素与 $\mathbf{E}'$、$\mathbf{B}'$ 的对应关系和 $S$ 系中一致，即 @eq-F-mat-to-mu-nu 中的 $F'^{\mu\nu}$ 与 @eq-F-matrix 中的 $F^{\mu\nu}$ 具有相同的形式。
 
 $$
 F'^{\mu\nu} = \begin{pmatrix}
@@ -660,15 +678,15 @@ F'^{\mu\nu} = \begin{pmatrix}
  \end{pmatrix}
 $$ {#eq-F-mat-to-mu-nu}
 
-根据电磁场张量的变换法则为 @eq-F-to-formula，可以推导出三维空间中电场和磁场分量的显式变换关系。
+根据电磁场张量的变换法则 @eq-F-to-formula，可以推导出三维空间中电场和磁场分量的显式变换关系。
 
-####  $E'_x$ 与 $F'^{01}$ 分量
+#### $E'_x$ 与 $F'^{01}$ 分量
 
-@eq-F-to-formula 中$\mu = 0$，$\nu = 1$，得到 @eq-m-F-to-01。
+@eq-F-to-formula 中取 $\mu = 0$，$\nu = 1$，得到 @eq-m-F-to-01。
 
 $$
-{F'^{01} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{1}F^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\sum_{\sigma = 0}^{3}{\Lambda_{\rho}^{0}\Lambda_{\sigma}^{1}F^{\rho\sigma}}}}
+F'^{01} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{1}F^{\rho\sigma}
+= \sum_{\rho = 0}^{3}\sum_{\sigma = 0}^{3}\Lambda_{\rho}^{0}\Lambda_{\sigma}^{1}F^{\rho\sigma}
 $$ {#eq-m-F-to-01}
 
 根据 @eq-gamma 得到 @eq-gamma-beta。
@@ -677,7 +695,7 @@ $$
 \gamma^{2}\left(1 - \beta^{2} \right) = 1
 $$ {#eq-gamma-beta}
 
-将 @eq-Lambda-define 和 @eq-F-matrix 和 @eq-gamma-beta 代入 @eq-m-F-to-01，只保留非0元素，得到 @eq-F-to-01。
+将 @eq-Lambda-define、@eq-F-matrix 和 @eq-gamma-beta 代入 @eq-m-F-to-01，只保留非零元素，得到 @eq-F-to-01。
 
 $$
 \begin{aligned}
@@ -691,18 +709,18 @@ $$
 \end{aligned}
 $$ {#eq-F-to-01}
 
-@eq-F-to-01 两边同乘以-c，得到 @eq-E_to_x。
+@eq-F-to-01 两边同乘以 $-c$，得到 @eq-E_to_x。
 
 ####  $E'_y$ 与 $F'^{02}$ 分量
 
-@eq-F-to-formula 中$\mu = 0$，$\nu = 2$，得到 @eq-m-F-to-02，由于 $\Lambda_{\sigma}^{2}$ 只有在 $\sigma = 2$ 时为 1，其它为 0。
+@eq-F-to-formula 中取 $\mu = 0$，$\nu = 2$。由于 $\Lambda_{\sigma}^{2}$ 只有在 $\sigma = 2$ 时为 1，其它为 0，得到 @eq-m-F-to-02。
 
 $$
-{F'^{02} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{2}F^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{0}F^{\rho 2}}}
+F'^{02} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{2}F^{\rho\sigma}
+= \sum_{\rho = 0}^{3}\Lambda_{\rho}^{0}F^{\rho 2}
 $$ {#eq-m-F-to-02}
 
-将 @eq-Lambda-define 和 @eq-F-matrix 代入 @eq-m-F-to-02，只保留非0元素，得到 @eq-F-to-02。
+将 @eq-Lambda-define 和 @eq-F-matrix 代入 @eq-m-F-to-02，只保留非零元素，得到 @eq-F-to-02。
 
 $$
 \begin{aligned}
@@ -712,18 +730,18 @@ $$
 \end{aligned}
 $$ {#eq-F-to-02}
 
- @eq-F-to-02 两边同乘以-c，并代入 @eq-E_to_x，得到 @eq-E_to_y。
+@eq-F-to-02 两边同乘以 $-c$，并代入 @eq-beta，得到 @eq-E_to_y。
 
-####  $E'_z$ 与 $F'^{03}$ 分量
+#### $E'_z$ 与 $F'^{03}$ 分量
 
-@eq-F-to-formula 中$\mu = 0$，$\nu = 3$，得到 @eq-m-F-to-03，由于$\Lambda_{\sigma}^{3}$只有在 $\sigma = 3$ 时为 1，其它为 0。
+@eq-F-to-formula 中取 $\mu = 0$，$\nu = 3$。由于 $\Lambda_{\sigma}^{3}$ 只有在 $\sigma = 3$ 时为 1，其它为 0，得到 @eq-m-F-to-03。
 
 $$
-{F'^{03} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{3}F^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{0}F^{\rho 3}}}
+F'^{03} = \Lambda_{\rho}^{0}\Lambda_{\sigma}^{3}F^{\rho\sigma}
+= \sum_{\rho = 0}^{3}\Lambda_{\rho}^{0}F^{\rho 3}
 $$ {#eq-m-F-to-03}
 
-将 @eq-Lambda-define 和 @eq-F-matrix 中代入 @eq-m-F-to-03，只保留非0元素，得到 @eq-F-to-03。
+将 @eq-Lambda-define 和 @eq-F-matrix 代入 @eq-m-F-to-03，只保留非零元素，得到 @eq-F-to-03。
 
 $$
 \begin{aligned}
@@ -734,11 +752,11 @@ $$
 \end{aligned}
 $$ {#eq-F-to-03}
 
-@eq-F-to-03 两边同乘以-c，并代入 @eq-beta，得到 @eq-E_to_z。
+@eq-F-to-03 两边同乘以 $-c$，并代入 @eq-beta，得到 @eq-E_to_z。
 
-####  $B'_x$ 与 $F'^{23}$ 分量
+#### $B'_x$ 与 $F'^{23}$ 分量
 
-@eq-F-to-formula 中 $\mu = 2$，$\nu = 3$，得到 @eq-F-to-23，由于 $\Lambda_{\rho}^{2}$ 只有在 $\rho = 2$ 时为 1， $\Lambda_{\sigma}^{3}$ 只有在 $\sigma = 3$ 时为 1，其它为 0。
+@eq-F-to-formula 中取 $\mu = 2$，$\nu = 3$。由于 $\Lambda_{\rho}^{2}$ 只有在 $\rho = 2$ 时为 1，$\Lambda_{\sigma}^{3}$ 只有在 $\sigma = 3$ 时为 1，其它为 0，得到 @eq-F-to-23。
 
 $$
 \begin{aligned}
@@ -752,14 +770,14 @@ $$ {#eq-F-to-23}
 
 ####  $B'_y$ 与 $F'^{13}$ 分量
 
-@eq-F-to-formula 中 $\mu = 1$， $\nu = 3$，得到 @eq-m-F-to-13，由于 $\Lambda_{\sigma}^{3}$ 只有在 $\sigma = 3$ 时为 1，其它为 0。
+@eq-F-to-formula 中取 $\mu = 1$，$\nu = 3$。由于 $\Lambda_{\sigma}^{3}$ 只有在 $\sigma = 3$ 时为 1，其它为 0，得到 @eq-m-F-to-13。
 
 $$
-{F'^{13} = \Lambda_{\rho}^{1}\Lambda_{\sigma}^{3}F^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{1}F^{\rho 3}}}
+F'^{13} = \Lambda_{\rho}^{1}\Lambda_{\sigma}^{3}F^{\rho\sigma}
+= \sum_{\rho = 0}^{3}\Lambda_{\rho}^{1}F^{\rho 3}
 $$ {#eq-m-F-to-13}
 
-将 @eq-Lambda-define 和 @eq-F-matrix 中代入 @eq-m-F-to-13，只保留非0元素, 得到 @eq-F-to-13。
+将 @eq-Lambda-define 和 @eq-F-matrix 代入 @eq-m-F-to-13，只保留非零元素，得到 @eq-F-to-13。
 
 $$
 \begin{aligned}
@@ -770,18 +788,19 @@ B'_y
 \end{aligned}
 $$ {#eq-F-to-13}
 
-@eq-beta 代入 @eq-F-to-13，得到 @eq-B_to_y。
+将 @eq-beta 代入 @eq-F-to-13，得到 @eq-B_to_y。
 
-####  $B'_z$ 与 $F^{'12}$ 分量
+#### $B'_z$ 与 $F'^{12}$ 分量
 
-@eq-F-to-formula 中 $\mu = 1$，$\nu = 2$，得到 @eq-m-F-to-12，由于$\Lambda_{\sigma}^{2}$ 只有在 $\sigma = 2$ 时为 1，其它为 0。
+@eq-F-to-formula 中取 $\mu = 1$，$\nu = 2$。由于 $\Lambda_{\sigma}^{2}$ 只有在 $\sigma = 2$ 时为 1，其它为 0，得到 @eq-m-F-to-12。
 
 $$
-{F'^{12} = \Lambda_{\rho}^{1}\Lambda_{\sigma}^{2}F^{\rho\sigma}
- }{= \sum_{\rho = 0}^{3}{\Lambda_{\rho}^{1}F^{\rho 2}}}
+F'^{12} = \Lambda_{\rho}^{1}\Lambda_{\sigma}^{2}F^{\rho\sigma}
+= \sum_{\rho = 0}^{3}\Lambda_{\rho}^{1}F^{\rho 2}
 $$ {#eq-m-F-to-12}
 
-将 @eq-Lambda-define 和 @eq-F-matrix 中代入 @eq-m-F-to-12，只保留非0元素, 得到 @eq-F-to-12。
+将 @eq-Lambda-define 和 @eq-F-matrix 代入 @eq-m-F-to-12，只保留非零元素，得到 @eq-F-to-12。
+
 $$
 \begin{aligned}
 -B'_z
@@ -791,29 +810,91 @@ $$
 \end{aligned}
 $$ {#eq-F-to-12}
 
-@eq-F-to-12 两边同乘-1，并将 @eq-beta 代入 @eq-F-to-12，可以得到 @eq-B_to_z。
+@eq-F-to-12 两边同乘以 $-1$，并将 @eq-beta 代入 @eq-F-to-12，得到 @eq-B_to_z。
 
-对于沿 $x$ 轴方向的 boost
-变换（$S'$ 系相对于 $S$ 系以速度 $v$ 运动），电场分量的变换为 @eq-E_to_x、 @eq-E_to_y、 @eq-E_to_z，磁场分量的变换为 @eq-B_to_x、 @eq-B_to_y、 @eq-B_to_z，其中，垂直于相对运动方向的分量发生混合。
+对于沿 $x$ 轴方向的 boost 变换（$S'$ 系相对于 $S$ 系以速度 $v$ 运动），电场分量的变换为 @eq-E_to_x、@eq-E_to_y、@eq-E_to_z，磁场分量的变换为 @eq-B_to_x、@eq-B_to_y、@eq-B_to_z。
 
 $$
 E'_x = E_x
 $$ {#eq-E_to_x}
+
 $$
 E'_y = \gamma\left(E_y - v B_z \right)
 $$ {#eq-E_to_y}
+
 $$
 E'_z = \gamma\left(E_z + v B_y \right)
 $$ {#eq-E_to_z}
+
 $$
 B'_x = B_x
 $$ {#eq-B_to_x}
+
 $$
 B'_y = \gamma\left(B_y + \frac{v}{c^{2}} E_z \right)
 $$ {#eq-B_to_y}
+
 $$
 B'_z = \gamma\left(B_z - \frac{v}{c^{2}} E_y \right)
 $$ {#eq-B_to_z}
+
+#### 矢量形式
+
+将电场、磁场分解为平行于相对运动方向（$x$ 方向）的分量与垂直分量。
+
+平行分量不变，见 @eq-EB-parallel-proof。
+
+$$
+\mathbf{E}'_\parallel = \mathbf{E}_\parallel, \qquad \mathbf{B}'_\parallel = \mathbf{B}_\parallel
+$$ {#eq-EB-parallel-proof}
+
+垂直分量发生电与磁的混合。由分量变换式 @eq-E_to_y 和 @eq-E_to_z，可写出垂直分量的矢量形式 @eq-E-perp-proof。
+
+$$
+\begin{aligned}
+\mathbf{E}'_\perp
+&= E'_y \mathbf{e}_y + E'_z \mathbf{e}_z \\
+&= \gamma(E_y - vB_z)\mathbf{e}_y + \gamma(E_z + vB_y)\mathbf{e}_z \\
+&= \gamma\bigl[ E_y \mathbf{e}_y + E_z \mathbf{e}_z + v(B_y \mathbf{e}_z - B_z \mathbf{e}_y) \bigr] \\
+&= \gamma(\mathbf{E}_\perp + \mathbf{v} \times \mathbf{B})
+\end{aligned}
+$$ {#eq-E-perp-proof}
+
+其中 $\mathbf{v} = v\mathbf{e}_x$，且利用了 @eq-v-cross-B-proof。
+
+$$
+\mathbf{v} \times \mathbf{B}
+= v\mathbf{e}_x \times (B_x\mathbf{e}_x + B_y\mathbf{e}_y + B_z\mathbf{e}_z)
+= v(B_y\mathbf{e}_z - B_z\mathbf{e}_y)
+$$ {#eq-v-cross-B-proof}
+
+同理，由分量变换式 @eq-B_to_y 和 @eq-B_to_z 可写出 @eq-B-perp-proof。
+
+$$
+\begin{aligned}
+\mathbf{B}'_\perp
+&= B'_y \mathbf{e}_y + B'_z \mathbf{e}_z \\
+&= \gamma\left(B_y + \frac{v}{c^2}E_z\right)\mathbf{e}_y + \gamma\left(B_z - \frac{v}{c^2}E_y\right)\mathbf{e}_z \\
+&= \gamma\left[ B_y \mathbf{e}_y + B_z \mathbf{e}_z + \frac{v}{c^2}(E_z \mathbf{e}_y - E_y \mathbf{e}_z) \right] \\
+&= \gamma\left(\mathbf{B}_\perp - \frac{1}{c^2}\mathbf{v} \times \mathbf{E}\right)
+\end{aligned}
+$$ {#eq-B-perp-proof}
+
+其中
+
+$$
+\mathbf{v} \times \mathbf{E}
+= v\mathbf{e}_x \times (E_x\mathbf{e}_x + E_y\mathbf{e}_y + E_z\mathbf{e}_z)
+= v(E_y\mathbf{e}_z - E_z\mathbf{e}_y)
+$$ {#eq-v-cross-E-proof}
+
+于是得到垂直分量的变换关系，见 @eq-EB-perp-proof，其中 $\mathbf{v} = v\mathbf{e}_x$。
+
+$$
+\mathbf{E}'_\perp = \gamma(\mathbf{E}_\perp + \mathbf{v} \times \mathbf{B}), \qquad \mathbf{B}'_\perp = \gamma\left(\mathbf{B}_\perp - \frac{1}{c^2}\mathbf{v} \times \mathbf{E}\right)
+$$ {#eq-EB-perp-proof}
+
+由此可见，电场与磁场并不是相互独立的对象，而是同一个电磁场张量 $F^{\mu\nu}$ 在不同惯性系中的不同分量表现。
 
 ### 小结
 
