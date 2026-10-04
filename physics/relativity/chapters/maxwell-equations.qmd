@@ -393,45 +393,40 @@ $$ {#eq-ampere}
 
 ### 齐次麦克斯韦方程组
 
-循环形式为 @eq-S-homogeneous。
+循环（指标三重交替）形式为 @eq-S-homogeneous，该式对指标 $\lambda,\mu,\nu$ 的任意取值均成立。
 
 $$
 \partial^{\lambda}F^{\mu\nu} + \partial^{\mu}F^{\nu\lambda} + \partial^{\nu}F^{\lambda\mu} = 0
 $$ {#eq-S-homogeneous}
 
-或者等价地写成莱维-奇维塔符号形式 @eq-216080707。
-
-$$
-\epsilon^{\alpha\beta\gamma\delta}\partial_{\beta} F_{\gamma\delta} = 0
-$$ {#eq-216080707}
-
 #### 高斯磁场定律
 
- @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (1,2,3)$得到 @eq-216081978。
+@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (1,2,3)$ 得到 @eq-hom-123。
 
 $$
 \partial^{1}F^{23} + \partial^{2}F^{31} + \partial^{3}F^{12} = 0
-$$ {#eq-216081978}
+$$ {#eq-hom-123}
 
-将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-216081978，得到 @eq-216082498。
+将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-hom-123，得到 @eq-hom-123-sub。
 
 $$
 - \frac{\partial}{\partial x}\left(- B_x \right) - \frac{\partial}{\partial y}\left(- B_y \right) - \frac{\partial}{\partial z}\left(- B_z \right) = 0
-$$ {#eq-216082498}
+$$ {#eq-hom-123-sub}
 
-将 @eq-216082498 整理后得高斯磁场定律 @eq-215821159。
- $$
-\symbf{\nabla \cdot B} = 0
-$$ {#eq-215821159}
+将 @eq-hom-123-sub 整理后得高斯磁场定律 @eq-gauss-B。
+
+$$
+\symbf{\nabla} \cdot \mathbf{B} = 0
+$$ {#eq-gauss-B}
 
 #### 法拉第电磁感应定律
 
 电场 $\mathbf{E}$ 的旋度 $\symbf{\nabla} \times \mathbf{E}$ 为 @eq-nabla-times-E。
 
 $$
-\symbf{\nabla} \times \mathbf{E} = 
+\symbf{\nabla} \times \mathbf{E} =
 \begin{vmatrix}
-E_x & E_y & E_z \\
+\mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\
 \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
 E_x & E_y & E_z
 \end{vmatrix}
@@ -451,19 +446,19 @@ $$
 (\symbf{\nabla} \times \mathbf{E})_z = \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}
 $$ {#eq-curl-Ez}
 
-x-分量 @eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-216082919。
+x-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-hom-023。
 
 $$
 \partial^{0}F^{23} + \partial^{2}F^{30} + \partial^{3}F^{02} = 0
-$$ {#eq-216082919}
+$$ {#eq-hom-023}
 
-将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-216082919 得到 @eq-216083244。
+将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-hom-023 得到 @eq-hom-023-sub。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(- B_x \right) - \frac{\partial}{\partial y}\left(\frac{E_z}{c} \right) - \frac{\partial}{\partial z}\left(- \frac{E_y}{c} \right) = 0
-$$ {#eq-216083244}
+$$ {#eq-hom-023-sub}
 
-将 @eq-216083244 乘c整理后得到 @eq-m-nabla-times-E_x。
+将 @eq-hom-023-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E_x。
 
 $$
 - \frac{\partial B_x}{\partial t} - \frac{\partial E_z}{\partial y} + \frac{\partial E_y}{\partial z} = 0
@@ -475,71 +470,71 @@ $$
 \left(\symbf{\nabla} \times \mathbf{E} \right)_{x} = -\frac{\partial B_x}{\partial t}
 $$ {#eq-nabla-times-E_x}
 
-y-分量 @eq-S-homogeneous 选择$(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-216083842。
+y-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-hom-031。
 
 $$
 \partial^{0}F^{31} + \partial^{3}F^{10} + \partial^{1}F^{03} = 0
-$$ {#eq-216083842}
+$$ {#eq-hom-031}
 
-将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-216083842 得到 @eq-216083924。
+将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-hom-031 得到 @eq-hom-031-sub。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(- B_y \right) - \frac{\partial}{\partial z}\left(\frac{E_x}{c} \right) - \frac{\partial}{\partial x}\left(- \frac{E_z}{c} \right) = 0
-$$ {#eq-216083924}
+$$ {#eq-hom-031-sub}
 
-将 @eq-216083924 乘c整理后得到 @eq-m-nabla-times-E_y。
+将 @eq-hom-031-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E_y。
 
 $$
 - \frac{\partial B_y}{\partial t} - \frac{\partial E_x}{\partial z} + \frac{\partial E_z}{\partial x} = 0
 $$ {#eq-m-nabla-times-E_y}
 
-将 @eq-curl-Ey 代入 @eq-m-nabla-times-E_y 得到 @eq-nabla-times-E_y
+将 @eq-curl-Ey 代入 @eq-m-nabla-times-E_y 得到 @eq-nabla-times-E_y。
 
 $$
 \left(\symbf{\nabla} \times \mathbf{E} \right)_{y} = -\frac{\partial B_y}{\partial t}
 $$ {#eq-nabla-times-E_y}
 
-z-分量 @eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-216084498。
+z-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-hom-012。
 
 $$
 \partial^{0}F^{12} + \partial^{1}F^{20} + \partial^{2}F^{01} = 0
-$$ {#eq-216084498}
+$$ {#eq-hom-012}
 
-将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-216084498 得到 @eq-216084592。
+将 @eq-partial-four 和 @eq-F-matrix 代入 @eq-hom-012 得到 @eq-hom-012-sub。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(- B_z \right) - \frac{\partial}{\partial x}\left(\frac{E_y}{c} \right) - \frac{\partial}{\partial y}\left(- \frac{E_x}{c} \right) = 0
-$$ {#eq-216084592}
+$$ {#eq-hom-012-sub}
 
-将 @eq-216083244 乘c整理后得到 @eq-m-nabla-times-E_z。
+将 @eq-hom-012-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E_z。
 
 $$
 - \frac{\partial B_z}{\partial t} - \frac{\partial E_y}{\partial x} + \frac{\partial E_x}{\partial y} = 0
 $$ {#eq-m-nabla-times-E_z}
 
-将 @eq-curl-Ez 代入 @eq-m-nabla-times-E_z 得到 @eq-nabla-times-E_z
+将 @eq-curl-Ez 代入 @eq-m-nabla-times-E_z 得到 @eq-nabla-times-E_z。
 
 $$
 \left(\symbf{\nabla} \times \mathbf{E} \right)_{z} = -\frac{\partial B_z}{\partial t}
 $$ {#eq-nabla-times-E_z}
 
-合并三个分量方程 @eq-nabla-times-E_x、 @eq-nabla-times-E_y、 @eq-nabla-times-E_z 得到法拉第电磁感应定律 @eq-farad 。
+合并三个分量方程 @eq-nabla-times-E_x、@eq-nabla-times-E_y、@eq-nabla-times-E_z 得到法拉第电磁感应定律 @eq-farad。
+
 $$\symbf{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#eq-farad}
 
 #### 对应关系
 
-@tbl-tab-sourceless 中对4维与3维对应关系做了总结，1个4维张量方程包含了2个3维矢量方程。
+@tbl-tab-sourceless 中对 4 维与 3 维的对应关系做了总结：1 个 4 维张量方程包含了 2 个 3 维矢量方程。
 
 | 4维形式 | 3维形式 | 物理定律 |
 |-----|--|---|
 |$\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\nabla \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
-|$\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in[(0,2,3),(0,3,1),(0,1,2)]$| $\symbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
+|$\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in\{(0,2,3),(0,3,1),(0,1,2)\}$| $\symbf{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
 
 : 无源项4维3维对应关系 {#tbl-tab-sourceless tbl-colwidths="[57,18,25]"}
 
 ## 协变性与电磁场的变换
-
-证明非齐次麦克斯韦方程组在洛伦兹变换下是协变的，即证明 @eq-216173408。
+本节证明麦克斯韦方程组在洛伦兹变换下是协变的：若方程组在惯性系 $S$ 中成立，则在洛伦兹变换后的惯性系 $S'$ 中具有相同的形式。其中，证明非齐次麦克斯韦方程组在洛伦兹变换下是协变的，核心是证明 @eq-cov-final。
 
 ### 物理量的洛伦兹变换
 
@@ -604,13 +599,13 @@ $\delta_{\rho}^{v} = \Lambda_{\mu}^{\nu}\Lambda_{\rho}^{\mu}$，$\nu = \rho$为$
 
  $${\partial'_{\mu}F'}^{\mu\nu} = \Lambda_{\sigma}^{\nu}\mu_{0}J^{\rho} = \mu_{0}\Lambda_{\sigma}^{\nu}J^{\rho}$$ {#eq-216173196}
 
-根据四维电流密度的变换 @eq-216171155，有 $J'^{\nu} = \Lambda_{\sigma}^{\nu}J^{\rho}$，得到 @eq-216173408。
+根据四维电流密度的变换 @eq-216171155，有 $J'^{\nu} = \Lambda_{\sigma}^{\nu}J^{\rho}$，得到 @eq-cov-final。
 
 $$
 {\partial'_{\mu}F'}^{\mu\nu} = \mu_{0}J'^{\nu}
-$$ {#eq-216173408}
+$$ {#eq-cov-final}
 
- @eq-216173408 和 @eq-maxwell-inhomo 有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
+ @eq-cov-final 和 @eq-maxwell-inhomo 有相同的形式，这证明了非齐次麦克斯韦方程组在洛伦兹变换下是协变的。
 
 ### 齐次方程的协变性
 
