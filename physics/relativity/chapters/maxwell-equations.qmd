@@ -10,7 +10,7 @@ $$
   & x' = x - vt \\
   & y' = y \\
   & z' = z
- \end{aligned} \right.\
+ \end{aligned} \right.
 $$ {#eq-galileo}
 
 然而，麦克斯韦方程组预言了真空中光速 $c$ 为一个普适常数，见 @eq-light-speed-c。
@@ -39,7 +39,7 @@ $$
   & x' = \gamma(x - vt) \\
   & y' = y \\
   & z' = z
- \end{aligned} \right.\
+ \end{aligned} \right.
 $$ {#eq-lorentz}
 
 $$
@@ -136,12 +136,12 @@ $$
   & x = \gamma\left(x' + vt' \right) \\
   & y = y' \\
   & z = z'
- \end{aligned} \right.\
+ \end{aligned} \right.
 $$ {#eq-lorentz-inv}
 
 ## 麦克斯韦方程组
 
-将麦克斯韦方程组改写为四维时空中的张量形式。
+本节将麦克斯韦方程组改写为四维时空中的张量形式。采用闵可夫斯基度规 $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)$；时空指标取 $\mu,\nu = 0,1,2,3$，空间指标取 $i,j = 1,2,3$，重复的上下指标按爱因斯坦求和约定求和。
 
 ### 四维势与电磁场张量
 
@@ -157,7 +157,7 @@ $$
 A^{\mu} = \left(\frac{\phi}{c},\mathbf{A} \right) = \left(\frac{\phi}{c}, A_{x}, A_{y}, A_{z} \right)
 $$ {#eq-A-four}
 
-$\partial^{\mu}$是四维梯度算符，为 @eq-partial-four。
+$\partial^{\mu}$ 是逆变四维梯度算符，为 @eq-partial-four。
 
 $$
 \partial^{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \symbf{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right)
@@ -336,7 +336,7 @@ $$
 \frac{1}{c^{2}} = \mu_{0}\epsilon_{0}
 $$ {#eq-mu0-eps0}
 
-取空间分量，$\nu = 1$ 时，$\partial_{\mu}F^{\mu 1}$ 是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 第 1 列的点乘，得到 @eq-amp-m-x，其中 $J^{1} = J_{x}$。
+取空间分量 $\nu = 1$ 时，$\partial_{\mu}F^{\mu 1}$ 是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 第 1 列的点乘，得到 @eq-amp-m-x，其中 $J^{1} = J_{x}$。
 
 $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(\frac{-E_{x}}{c} \right) + \frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z} = \mu_{0} J_{x}
@@ -534,7 +534,8 @@ $$\symbf{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#
 : 无源项4维3维对应关系 {#tbl-tab-sourceless tbl-colwidths="[57,18,25]"}
 
 ## 协变性与电磁场的变换
-本节证明麦克斯韦方程组在洛伦兹变换下是协变的：若方程组在惯性系 $S$ 中成立，则在洛伦兹变换后的惯性系 $S'$ 中具有相同的形式。其中，证明非齐次麦克斯韦方程组在洛伦兹变换下是协变的，核心是证明 @eq-cov-final。
+
+本节证明麦克斯韦方程组在洛伦兹变换下是协变的：若方程组在惯性系 $S$ 中成立，则在洛伦兹变换后的惯性系 $S'$ 中具有相同的形式。其中非齐次方程协变性的证明，核心是证明 @eq-cov-final；齐次方程的形式不变性由 @eq-S-homogeneous 的循环结构保证；最后由张量变换法则导出电场与磁场分量的显式变换关系。
 
 ### 物理量的洛伦兹变换
 
@@ -659,7 +660,7 @@ $$
 =& \Lambda_{\rho}^{\lambda} \Lambda_{\alpha}^{\mu} \Lambda_{\beta}^{\nu}
 \biggl(\partial^{\rho}F^{\alpha\beta}
 + \partial^{\alpha}F^{\beta\rho}
-+ \partial^{\beta}F^{\rho\alpha} \biggr) = 0 
++ \partial^{\beta}F^{\rho\alpha} \biggr) = 0
 \end{aligned}
 $$ {#eq-hom-cov-sum}
 
@@ -880,7 +881,7 @@ $$
 \end{aligned}
 $$ {#eq-B-perp-proof}
 
-其中
+其中利用了 @eq-v-cross-E-proof。
 
 $$
 \mathbf{v} \times \mathbf{E}
@@ -888,7 +889,7 @@ $$
 = v(E_y\mathbf{e}_z - E_z\mathbf{e}_y)
 $$ {#eq-v-cross-E-proof}
 
-于是得到垂直分量的变换关系，见 @eq-EB-perp-proof，其中 $\mathbf{v} = v\mathbf{e}_x$。
+于是得到垂直分量的变换关系 @eq-EB-perp-proof。
 
 $$
 \mathbf{E}'_\perp = \gamma(\mathbf{E}_\perp + \mathbf{v} \times \mathbf{B}), \qquad \mathbf{B}'_\perp = \gamma\left(\mathbf{B}_\perp - \frac{1}{c^2}\mathbf{v} \times \mathbf{E}\right)
