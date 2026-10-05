@@ -1,8 +1,10 @@
 % ===== 抑制 Quarto 默认 \maketitle（自定义封面代行）=====
 \let\maketitle\relax
 \AtBeginDocument{\let\maketitle\relax}
-% ===== 粗体数学：\bm{X} 提供给 \symbf{\Lambda} 这类字符 =====
-\usepackage{bm}
+% ===== 粗体数学 =====
+% 注意：不要加载 bm 宏包！bm 会重定义 \boldsymbol，且与 unicode-math 的
+% OpenType 数学字体不兼容，编译时报 "Improper alphabetic constant"。
+% 统一使用 amsmath 的 \boldsymbol{X}（KaTeX/MathJax/xelatex 三方兼容）。
 % ===== 中文段落：段首空两字、统一设置 =====
 \setlength{\parindent}{2em}    % 段首缩进 2 个汉字宽
 \setlength{\parskip}{0pt}      % 段间不留额外垂直空白（中文书传统）
@@ -16,8 +18,8 @@
 \usepackage{titlesec}
 \pagestyle{fancy}
 \usepackage{amsthm}
-\newtheorem{definition}{定义}[chapter]
-\newtheorem{axiom}{公理}[chapter]
+% 公理/定义环境已改用 Quarto 原生定理 div（::: {#prp-*} / ::: {#def-*}），
+% 其 LaTeX 环境由 Quarto 自动定义，此处不再 \newtheorem，避免重复定义冲突。
 \fancyhf{}
 \fancyhead[LE]{\thepage\quad\textit{狭义相对论}}
 \fancyhead[RO]{\textit{狭义相对论}\quad\thepage}

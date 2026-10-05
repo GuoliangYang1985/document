@@ -6,6 +6,8 @@ project:
 book:
   title: "狭义相对论"
   author: "杨国梁"
+  # HTML 版页面右上角提供 PDF 下载按钮
+  downloads: pdf
   chapters:
     - index.qmd
     - chapters/symmetric-twins.qmd
@@ -17,6 +19,11 @@ csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl
 bibliography: chapters/references.bib
 
 lang: zh-CN
+
+# 将定理类环境 prp（命题）的显示标签改为"公理"，
+# 使 @prp-* 交叉引用在 PDF 与 HTML 中均渲染为"公理 N"
+language:
+  crossref-prp-title: "公理"
 
 author:
   - name: "杨国梁"
@@ -55,7 +62,18 @@ format:
     urlcolor: "blue!50!black"
     include-in-header:
       - preamble.tex
-        
+
     include-before-body:
       - before-body.tex
+
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    # KaTeX 渲染数学公式（快速且离线友好）
+    html-math-method: katex
+    link-citations: true
+    # 图片自适应缩放
+    fig-responsive: true
 
