@@ -13,6 +13,7 @@ book:
     - chapters/symmetric-twins.qmd
     - chapters/lorentz-transform.qmd
     - chapters/maxwell-equations.qmd
+    - chapters/galilean-electrodynamics.qmd
     - chapters/references.qmd
 
 csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl

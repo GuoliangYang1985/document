@@ -1,0 +1,383 @@
+# 伽利略协变的场方程组：一个纯数学构造 {#sec-galilean-electrodynamics}
+
+本章为一个假想的“伽利略世界”构造一套自洽的场方程组。这个世界的规则只有两条：**绝对时间**与**速度按伽利略方式叠加**。要回答的问题是纯数学的：*能否构造一组偏微分方程，使其在伽利略变换下形式不变，并在速度补偿对象为零时退化为标准麦克斯韦方程组？*
+
+本章不讨论物理：方程组中的 $c$ 只是一个参数，不预设它对应现实世界中的任何测量对象。
+
+## 设定与目标 {#sec-gal-setup}
+
+**定义 1（底空间与群）** 底空间为 $\mathbb{R}^{3}\times\mathbb{R}$，坐标记 $(\mathbf{x},t)$。变换群取**伽利略群** $G$：对每个常向量 $\mathbf{u}\in\mathbb{R}^{3}$，
+
+$$
+t' = t, \qquad \mathbf{x}' = \mathbf{x} - \mathbf{u}t
+$$ {#eq-gal-transform}
+
+**定义 2（场）** 研究对象是两个 $\mathbb{R}^{3}$ 值光滑场 $\mathbf{E}(\mathbf{x},t)$、$\mathbf{B}(\mathbf{x},t)$。**本节不赋予它们任何物理含义。**
+
+**定义 3（标准系统）** 称以下四条方程为**标准系统**（即通常所说的真空麦克斯韦方程组，此处仅作为数学对象引用）：
+
+$$
+\nabla\cdot\mathbf{E} = 0, \qquad
+\nabla\cdot\mathbf{B} = 0, \qquad
+\nabla\times\mathbf{E} = -\partial_{t}\mathbf{B}, \qquad
+\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\partial_{t}\mathbf{E}.
+$$ {#eq-standard-maxwell}
+
+**目标（G）** 构造一组方程，满足：
+
+- **(G1) 形式不变**：在 @eq-gal-transform 的变换下，方程写成完全相同的形式；
+- **(G2) 叠加色散**：其平面波解满足 $\omega = c|\mathbf{k}| + \mathbf{w}\cdot\mathbf{k}$（速度叠加自动成立，$\mathbf{w}$ 见 @sec-gal-kinematics）；
+- **(G3) 退化条件**：当补偿速度 $\mathbf{w}=\mathbf{0}$ 时，严格退化为 @eq-standard-maxwell。
+
+### "形式不变"的三种含义
+
+这个短语必须先精确化，因为三种含义给出三个不同的问题：
+
+| 编号 | 含义 | 在伽利略群下的可行性 |
+|------|------|----------------------|
+| ① 逐字不变 | 存在一个补偿对象 $\mathbf{w}$，使方程在新坐标系下写成**逐字相同**的式子 | 可行（本章的做法） |
+| ② 共变 | 场按群的一个非平凡表示变换，方程形式不变 | 对所有 $\mathbf{u}$ 被证明不可能（见 @sec-gal-boundary 的注记） |
+| ③ 完全不变 | 场与方程均不变 | 与波解的存在性矛盾 |
+
+: "形式不变"的三种含义 {#tbl-form-invariance}
+
+**对照**：洛伦兹协变属于②，且在那里是免费的——洛伦兹群自带不变量（光锥、达朗贝尔算符 $\partial_\mu\partial^\mu$），场按现成的张量表示变换即可。伽利略群没有这样的不变量，②走不通，于是只剩①：**引入一个补偿对象，让它替场去变换**。这就是 @sec-gal-kinematics 的引理将要严格证明的事。
+
+**记号约定**（全章统一）：$\mathbf{u}$ 只出现在坐标变换中，表示**两套坐标之间的相对速度**；$\mathbf{w}$ 只出现在方程中，是**补偿速度**（一个给定的常向量）。$c$ 是方程的参数，不参与任何变换。
+
+## 运动学：唯一可用的算子 {#sec-gal-kinematics}
+
+### 两个基本恒等式
+
+对 @eq-gal-transform 直接求导（注意 $t=t'$，$\mathbf{x} = \mathbf{x}' + \mathbf{u}t'$）：
+
+$$
+\nabla' = \nabla,
+\qquad
+\partial_{t'} = \partial_{t} + \mathbf{u}\cdot\nabla .
+$$ {#eq-operator-transform}
+
+**梯度不变，时间偏导数不是。** 这一行是全部构造的起点。
+
+### 引理：一阶算子的分类
+
+**引理 1（算子分类）** 设 $L = a\,\partial_{t} + \mathbf{b}\cdot\nabla$（$a$ 为常数，$\mathbf{b}$ 为某个待定的三维对象）。在 @eq-gal-transform 下，
+
+$$
+L = a\,\partial_{t'} + \left(\mathbf{b} - a\,\mathbf{u}\right)\cdot\nabla' .
+$$ {#eq-lemma-L}
+
+于是 $L$ 保持形式只有两条出路：
+
+1. $a = 0$：$L$ 退化为纯空间算子 $\mathbf{b}\cdot\nabla$；
+2. $\mathbf{b}$ 是一个按 $\mathbf{b}' = \mathbf{b} - a\mathbf{u}$ 变换的对象。
+
+**证明** 将 @eq-operator-transform 代入 $L$ 展开、合并 $\partial_{t'}$ 与 $\nabla'$ 的系数即得 @eq-lemma-L。
+
+**推论（无波定理）** 若走出路 1，则方程组中不含任何时间导数，四条方程退化为 $\mathbb{R}^{3}$ 上的纯空间约束，其解空间对 $t$ 是常值的——**没有波解**。要满足 (G2)，必须走出路 2。
+
+### 引入补偿速度 $\mathbf{w}$
+
+**定义 4（补偿速度与对流导数）** 引入一个新对象 $\mathbf{w}$，规定其变换规则为
+
+$$
+\mathbf{w}' = \mathbf{w} - \mathbf{u},
+$$ {#eq-w-transform}
+
+并定义**对流导数**
+
+$$
+\mathcal{D}_{t}^{(\mathbf{w})} \;\equiv\; \partial_{t} + \mathbf{w}\cdot\nabla .
+$$ {#eq-convective-def}
+
+**引理 2（对流导数的形式不变性）**
+
+$$
+\mathcal{D}_{t}^{(\mathbf{w})} = \mathcal{D}_{t'}^{(\mathbf{w}-\mathbf{u})}.
+$$ {#eq-convective-proof}
+
+即：$\mathcal{D}_t^{(\mathbf{w})}$ 作用在场上，与"在带撇坐标系中用 $\mathbf{w}'=\mathbf{w}-\mathbf{u}$ 写出的对流导数"是同一个算子。这正是引理 1 的出路 2：**$\partial_t$ 不变不了，就让 $\mathbf{w}$ 替它变。**
+
+**证明** 将 @eq-operator-transform 与 @eq-w-transform 代入 @eq-convective-def 的右端：
+
+$$
+\partial_{t'} + \mathbf{w}'\cdot\nabla'
+= \left(\partial_{t} + \mathbf{u}\cdot\nabla\right) + \left(\mathbf{w}-\mathbf{u}\right)\cdot\nabla
+= \partial_{t} + \mathbf{w}\cdot\nabla
+$$
+
+### 一条硬约束：$\mathbf{w}$ 必须是常向量
+
+**引理 3（交换性）** 对一切光滑场 $\mathbf{F}$，
+
+$$
+\nabla\times\left(\mathcal{D}_{t}^{(\mathbf{w})}\mathbf{F}\right)
+- \mathcal{D}_{t}^{(\mathbf{w})}\left(\nabla\times\mathbf{F}\right)
+= \sum_{i,j,k,l}\varepsilon_{ijk}\,\left(\partial_{j}w_{l}\right)\left(\partial_{l}F_{k}\right)\,\mathbf{e}_{i}.
+$$ {#eq-commutation}
+
+上式对一切 $\mathbf{F}$ 为零，当且仅当 $\partial_{j}w_{l}=0$ 对一切 $j,l$ 成立，即 **$\mathbf{w}$ 是常向量**。
+
+**证明要点** 展开两端，$\mathbf{w}_l\partial_j\partial_l F_k$ 一类的项因偏导数可交换而相消，只剩含 $\partial_j w_l$ 的项。若 $\mathbf{w}$ 非常值，取 $\partial_l F_k$ 为任意矩阵即可使 @eq-commutation 非零。
+
+这条约束的后果：**本构造中 $\mathbf{w}$ 只能取常向量**。若允许 $\mathbf{w}=\mathbf{w}(\mathbf{x},t)$，则旋度方程与散度方程不再自洽地配对（齐次结构断裂），需要另行引入修正项——那是另一个模型，见 @sec-gal-boundary 的讨论。
+
+## 构造：修改清单 {#sec-gal-construction}
+
+构造只做**一个动作**：凡标准系统中出现 $\partial_t$ 的地方，全部换成 $\mathcal{D}_t^{(\mathbf{w})}$。
+
+### 修改后的方程组（无源）
+
+$$
+\nabla\cdot\mathbf{E} = 0,
+\qquad
+\nabla\cdot\mathbf{B} = 0,
+$$ {#eq-mod-div}
+
+$$
+\nabla\times\mathbf{E} = -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B},
+\qquad
+\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E}.
+$$ {#eq-mod-curl}
+
+与 @eq-standard-maxwell 逐条对照（完整清单见 @tbl-modification）：
+
+| 方程 | 标准系统 | 修改后 | 改动 |
+|------|----------|--------|------|
+| 高斯型 $\nabla\cdot\mathbf{E}=0$ | $\partial_t$ 不出现 | 同左 | **不动**（$\nabla$ 是不变量） |
+| 磁高斯 $\nabla\cdot\mathbf{B}=0$ | $\partial_t$ 不出现 | 同左 | **不动** |
+| 法拉第型 | $\partial_t\mathbf{B}$ | $\mathcal{D}_t^{(\mathbf{w})}\mathbf{B}$ | 换导数 |
+| 安培型 | $\partial_t\mathbf{E}$ | $\mathcal{D}_t^{(\mathbf{w})}\mathbf{E}$ | 换导数 |
+| 势的定义 | $\mathbf{E}=-\nabla\phi-\partial_t\mathbf{A}$ | $-\nabla\phi-\mathcal{D}_t^{(\mathbf{w})}\mathbf{A}$ | 同步换 |
+| 规范变换 | $\phi\to\phi-\partial_t\chi$ | $\phi\to\phi-\mathcal{D}_t^{(\mathbf{w})}\chi$ | 同步换 |
+
+: 修改清单：只换时间导数，散度方程不动 {#tbl-modification}
+
+**势与规范**。定义
+
+$$
+\mathbf{B} = \nabla\times\mathbf{A},
+\qquad
+\mathbf{E} = -\nabla\phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{A},
+$$ {#eq-potentials}
+
+则 @eq-mod-div 的两条齐次方程自动成立；规范变换取
+
+$$
+\mathbf{A} \to \mathbf{A} + \nabla\chi,
+\qquad
+\phi \to \phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\chi,
+$$ {#eq-gauge}
+
+它保持 @eq-potentials 不变，且与 @eq-gauge 一起构成修改后系统自带的规范自由度。这里必须同步替换的原因是：$\nabla\times$ 与 $\mathcal{D}_t^{(\mathbf{w})}$ 的可交换性（引理 3）正是"齐次方程 $\Leftrightarrow$ 存在势"这条等价性的支柱——$\mathbf{w}$ 取常向量时该等价性完整保留。
+
+### 有源情形：源项必须同步修改
+
+引入标量源 $\rho$ 与矢量源 $\mathbf{J}$，把高斯型与安培型改为
+
+$$
+\nabla\cdot\mathbf{E} = \frac{\rho}{\varepsilon_{0}},
+\qquad
+\nabla\times\mathbf{B} = \mu_{0}\left(\mathbf{J} - \rho\,\mathbf{w}\right) + \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E},
+$$ {#eq-mod-source}
+
+其中 $c^{2}=1/(\mu_{0}\varepsilon_{0})$，$\mu_{0},\varepsilon_{0}$ 只是记号 convenience。
+
+**命题 1（相容性）** @eq-mod-source 自洽的充要条件是源满足**标准连续性方程**
+
+$$
+\partial_{t}\rho + \nabla\cdot\mathbf{J} = 0,
+$$ {#eq-continuity}
+
+即 @eq-continuity 一个字不用改；代价是安培型的源必须是 $\mathbf{J}-\rho\mathbf{w}$。
+
+**证明** 对 @eq-mod-source 第二式取散度。左端恒为零；右端给出
+
+$$
+0 = \mu_{0}\,\nabla\cdot\left(\mathbf{J}-\rho\mathbf{w}\right) + \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\frac{\rho}{\varepsilon_{0}}
+= \mu_{0}\left[\nabla\cdot\mathbf{J} - \nabla\cdot(\rho\mathbf{w}) + \mathcal{D}_{t}^{(\mathbf{w})}\rho\right].
+$$
+
+由引理 3（$\mathbf{w}$ 为常向量），$\nabla\cdot(\rho\mathbf{w}) = \mathbf{w}\cdot\nabla\rho$，故方括号内为
+
+$$
+\nabla\cdot\mathbf{J} - \mathbf{w}\cdot\nabla\rho + \partial_{t}\rho + \mathbf{w}\cdot\nabla\rho
+= \partial_{t}\rho + \nabla\cdot\mathbf{J}.
+$$
+
+两项对流贡献**恰好相消**。
+
+这个"恰好相消"不是巧合：$\mathbf{J}-\rho\mathbf{w}$ 正是"$\mathbf{J}$ 在以 $\mathbf{w}$ 运动的坐标网中的表现"，连续性方程的不变性由此自动成立。
+
+## 验证一：形式不变性 {#sec-gal-covariance}
+
+### 定理与证明
+
+**定理 1（形式不变性）** 在变换 @eq-gal-transform 与 @eq-w-transform 之下，方程组 @eq-mod-div–@eq-mod-source 保持形式：新系中的方程是把原方程中的 $\mathbf{w}$ 换成 $\mathbf{w}' = \mathbf{w}-\mathbf{u}$ 后的**逐字相同**的式子。
+
+**证明** 以法拉第型为例（其余同理）。在带撇坐标系中，
+
+$$
+\nabla'\times\mathbf{E} = -\,\mathcal{D}_{t'}^{(\mathbf{w}')}\,\mathbf{B}
+\;\overset{\text{@eq-convective-proof}}{=}\; -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B},
+$$
+
+其中第一步是"同一方程在新坐标系中的写法"，第二步用了引理 2。即：带撇系中的方程与原方程逐字相同。散度方程不含 $\partial_t$，而 $\nabla'=\nabla$，自动不变。
+
+### 换元定理：这组方程的全部解都是已知的
+
+**定理 2（换元定理）** 作变量替换
+
+$$
+\boldsymbol{\xi} = \mathbf{x} - \mathbf{w}t,
+\qquad
+\tau = t .
+$$ {#eq-change-of-variables}
+
+则 $\partial_{\tau} = \mathcal{D}_{t}^{(\mathbf{w})}$、$\nabla_{\boldsymbol{\xi}} = \nabla$。于是 $\left(\mathbf{E},\mathbf{B}\right)$ 是修改后方程组的解，当且仅当 $\left(\mathbf{E},\mathbf{B}\right)$ 作为 $\left(\boldsymbol{\xi},\tau\right)$ 的函数是标准系统 @eq-standard-maxwell 的解。
+
+**证明** 直接对 @eq-change-of-variables 求链式法则：$\partial_t|_{\mathbf{x}} = \partial_{\tau}|_{\boldsymbol{\xi}} - \mathbf{w}\cdot\nabla_{\boldsymbol{\xi}}$，移项即 $\mathcal{D}_t^{(\mathbf{w})} = \partial_\tau$。
+
+**定理 2 的含义说明**：修改后方程组的解空间与标准系统的解空间之间只隔着一个**伽利略换元**——每一个解都是"标准解的剪切像"（把标准解沿速度 $\mathbf{w}$ 平移）。因此本构造**没有制造新的数学内容**，它做的是：把标准系统与伽利略群**打包成一个整体**，使形式不变性成为构造的自动性质而非事后检验。这正是①（逐字不变 + 补偿结构）的本质：**把②所需要的表示变换外包给一个新对象 $\mathbf{w}$ 去承担。**
+
+## 验证二：波解与速度叠加 {#sec-gal-wave}
+
+### 波动方程与色散关系
+
+对 @eq-mod-curl 的安培型取旋度、用法拉第型消去 $\mathbf{E}$（$\mathbf{w}$ 为常向量，引理 3 保证算子可自由交换）：
+
+$$
+\nabla^{2}\mathbf{B} - \frac{1}{c^{2}}\left(\mathcal{D}_{t}^{(\mathbf{w})}\right)^{2}\mathbf{B} = \mathbf{0},
+$$ {#eq-wave-equation}
+
+对 $\mathbf{E}$ 同理。代入平面波 $e^{i\left(\mathbf{k}\cdot\mathbf{x}-\omega t\right)}$：$\nabla\to i\mathbf{k}$，$\mathcal{D}_t^{(\mathbf{w})}\to -i\left(\omega-\mathbf{w}\cdot\mathbf{k}\right)$，得
+
+$$
+\left(\omega - \mathbf{w}\cdot\mathbf{k}\right)^{2} = c^{2}|\mathbf{k}|^{2}
+\quad\Longrightarrow\quad
+\boxed{\;\omega = c|\mathbf{k}| + \mathbf{w}\cdot\mathbf{k}\;}
+$$ {#eq-dispersion}
+
+（取正向分支；负向分支对应反向传播。）这就是目标 (G2)：**速度叠加不是假设，是从方程里掉出来的**。
+
+### 相速度、群速度：叠加的两种表现
+
+由 @eq-dispersion 直接求导：
+
+$$
+v_{\mathrm{ph}} = \frac{\omega}{|\mathbf{k}|} = c + \mathbf{w}\cdot\hat{\mathbf{k}},
+\qquad
+\mathbf{v}_{\mathrm{g}} = \nabla_{\mathbf{k}}\,\omega = c\,\hat{\mathbf{k}} + \mathbf{w}.
+$$ {#eq-phase-group}
+
+相速度与群速度都等于"$c$ 加上 $\mathbf{w}$ 在传播方向上的分量"——正是伽利略叠加公式。三个直接推论：
+
+- **各向异性、非色散**：$v_{\mathrm{ph}}$ 依赖方向 $\hat{\mathbf{k}}$，但不依赖 $|\mathbf{k}|$；
+- **双程速度**：记 $w_{\parallel} = \mathbf{w}\cdot\hat{\mathbf{v}}$。沿 $\hat{\mathbf{v}}$ 往返一趟（单程长 $L$）的平均速度为
+
+$$
+v_{\mathrm{rt}} = \frac{2L}{\dfrac{L}{c+w_{\parallel}} + \dfrac{L}{c-w_{\parallel}}}
+= \frac{c^{2}-w_{\parallel}^{2}}{c}
+= c\left(1-\frac{w_{\parallel}^{2}}{c^{2}}\right),
+$$ {#eq-round-trip}
+
+  即往返测得的等效速度与 $c$ 的偏差是**二阶小量**——单向测量与双向测量给出不同的答案，这是本模型可内部检验的特征；
+- **平面波的变换**：由 $\nabla'=\nabla$ 与 $\partial_{t'}=\partial_t+\mathbf{u}\cdot\nabla$，
+
+$$
+\mathbf{k}' = \mathbf{k},
+\qquad
+\omega' = \omega - \mathbf{u}\cdot\mathbf{k}.
+$$ {#eq-galilean-wave-transform}
+
+把 @eq-dispersion 代入 @eq-galilean-wave-transform 立得 $\omega' = c|\mathbf{k}'| + (\mathbf{w}-\mathbf{u})\cdot\mathbf{k}'$——色散关系在变换下形式不变，与 $\mathbf{w}'=\mathbf{w}-\mathbf{u}$ 自洽。
+
+## 数学边界：走不通的路与自由参数 {#sec-gal-boundary}
+
+### 注记：为什么路线②走不通（一阶计算）
+
+设仍要求场做非平凡变换 $\mathbf{E}' = \mathbf{E} + a\,\mathbf{u}\times\mathbf{B}$、$\mathbf{B}'=\mathbf{B}$（$a$ 待定），并要求标准系统 @eq-standard-maxwell 在伽利略变换下共变。用 @eq-operator-transform 逐条检验：
+
+**法拉第型**要求 $a=1$：
+
+$$
+\underbrace{\nabla\times\left(\mathbf{E}+a\,\mathbf{u}\times\mathbf{B}\right)}_{\nabla\times\mathbf{E}-a\left(\mathbf{u}\cdot\nabla\right)\mathbf{B}}
+= -\left(\partial_{t}+\mathbf{u}\cdot\nabla\right)\mathbf{B}
+\;\Longrightarrow\; a = 1;
+$$ {#eq-nogo-faraday}
+
+**高斯型**要求 $a=0$：
+
+$$
+\nabla\cdot\mathbf{E}' = \nabla\cdot\mathbf{E} - a\,\mathbf{u}\cdot\left(\nabla\times\mathbf{B}\right)
+= -a\,\frac{1}{c^{2}}\,\mathbf{u}\cdot\partial_{t}\mathbf{E}
+\;\overset{!}{=}\; 0
+\;\Longrightarrow\; a = 0.
+$$ {#eq-nogo-gauss}
+
+$a$ 不能同时等于 $0$ 和 $1$，矛盾。这就是 @tbl-form-invariance 中②被标为"不可能"的完整一阶论证（系统性的分类与不可能性定理见 Le Bellac–Lévy-Leblond 1973，@sec-gal-lineage）。**因此引入补偿对象 $\mathbf{w}$（路线①）不是诸多选项之一，而是保留波解的前提下最省的出路。**
+
+### 系数层修补为何不够
+
+一个自然的替代设想：不动算子，改系数——令 $c$ 依赖 $\mathbf{w}$（即 $c = c(\mathbf{w})$，相当于把 $\mu\varepsilon$ 当成速度的函数）。这在数学上被封死，三条独立理由：
+
+1. **奇偶性**：系数层给出的色散必为 $\omega = c(\mathbf{w})|\mathbf{k}|$，它是 $\mathbf{k}$ 的**偶函数**且各向同性；而要求 @eq-dispersion 含奇部 $\mathbf{w}\cdot\mathbf{k}$——奇偶性对不上。
+2. **方向依赖**：$\mathbf{w}\cdot\hat{\mathbf{k}}$ 依赖传播方向，任何标量系数 $c(\mathbf{w})$ 只能给出各向同性的 $|\mathbf{k}|$。
+3. **本构层面**：要在本构关系中造出 $\mathbf{w}\cdot\mathbf{k}$，关系式必须显含 $\mathbf{k}$ 的一次幂，即**空间色散（非局域）**。
+
+一句话：**叠加是"算子层"的现象，不是"系数层"的现象。** 这也解释了为什么构造只能动 $\partial_t$。
+
+### 本构造的三个自由参数
+
+数学给出的是**一族**模型，以下三项是外部输入，数学本身不决定它们：
+
+| # | 待定项 | 选项 | 影响 |
+|---|--------|------|------|
+| 1 | $\mathbf{w}$ 的取值 | 每个解给定一个常向量 | 决定该解的"剪切方向" |
+| 2 | 整体场 vs 可分介质 | $\mathbf{w}$ 全局一个，或分区各自给定 | 多源时速度贡献是**叠加**还是**各自独立** |
+| 3 | 本构是否含剪切分量 | 弹性张量含/不含剪切项 | 决定方程是否支持横波解 |
+
+: 本构造的三个自由参数（外部输入） {#tbl-free-parameters}
+
+第 2 项多说一句：若选"整体场"，多个源对 $\mathbf{w}$ 的贡献按某个权重**叠加**（相向对称的两源在正中恰好抵消）；若选"可分介质"，各区各自独立。两种都是自洽的数学模型，但**是不同的模型**——选定之前，"两列相向运动的载体之间 $\mathbf{w}$ 取什么"没有答案。
+
+**模型与理论的区别**（本构造的定位）：输入 $\mathbf{w}$ 后，@eq-mod-div–@eq-mod-source 的每一条性质都是定理；但"$\mathbf{w}$ 本身服从什么方程"数学不回答。给它写一条演化方程、把"给定"变成"解出"，是把本模型升级为理论的下一步——那等于给 $\mathbf{w}$ 自己一个动力学。
+
+## 数学谱系注记 {#sec-gal-lineage}
+
+本构造的每个组成部分都有前人做过，其中一条与 @eq-mod-div–@eq-mod-source **逐字相同**。按时间顺序：
+
+**Hertz（1890）**。Hertz 发表过一组运动介质的场方程：$\partial_t$ 换成 $\partial_t+\mathbf{v}\cdot\nabla$，源项取 $\mathbf{J}-\rho\mathbf{v}$，散度方程不动——与本构造完全一致（$\mathbf{v}$ 即此处的 $\mathbf{w}$）：
+
+| 本构造 | Hertz 1890 |
+|--------|------------|
+| $\mathcal{D}_t^{(\mathbf{w})} = \partial_t+\mathbf{w}\cdot\nabla$ | 同 |
+| 源项 $\mu_0(\mathbf{J}-\rho\mathbf{w})$ | 同 |
+| 散度方程不动 | 同 |
+| $\mathbf{w}$：带变换规则的补偿对象 | $\mathbf{v}$：被拖曳介质的速度（物理解释） |
+
+: 本构造与 Hertz 1890 方程的逐条对照 {#tbl-hertz}
+
+差别只在解释：Hertz 给 $\mathbf{v}$ 一个物理身份（被物质完全拖曳的介质），该解释后来被实验否定；本构造不给 $\mathbf{w}$ 任何身份，只规定变换规则——数学内容相同，承诺更少。
+
+**对流波动方程**。声学中"风里的波"的标准写法
+
+$$
+\nabla^{2}\varphi - \frac{1}{c^{2}}\left(\partial_{t}+\mathbf{w}\cdot\nabla\right)^{2}\varphi = 0
+$$
+
+正是①型补偿结构在另一学科中的日常形态（气动声学的标准工程方程），风的变换规则同样是 $\mathbf{w}'=\mathbf{w}-\mathbf{u}$。这说明①的数学结构本身完全体面。
+
+**Le Bellac–Lévy-Leblond（1973）**。该文对"伽利略群下的电磁型方程"做了系统分类，结论：标准系统在伽利略群下只有 $c\to\infty$ 极限的两个退化版本（电极限、磁极限）能自洽；保留有限 $c$ 时路线②不可能。@sec-gal-boundary 的一阶计算是其最简版本。
+
+**Newton–Cartan 几何与 Hořava 引力（现代）**。在当代非相对论场论中，"要让理论伽利略协变，就必须往背景里引入额外结构"已是标准操作：Newton–Cartan 几何需要一个"钟形式"（或等价地一个类时矢量场，文献通称 **ether vector，以太矢量**——正式术语）；Hořava 引力（2009）即为恢复伽利略式对称而显式引入该矢量场的当代实例。$\mathbf{w}$ 在这个框架里有精确的几何身份。
+
+## 与现实世界的接口 {#sec-gal-interface}
+
+本章自始至终没有做任何物理承诺：
+
+- $c$ 是参数。是否把它认同为现实世界中某个测量值，不是本章的前提；
+- $\mathbf{w}$ 是带变换规则的补偿对象。它是否对应任何可观察量，同样推迟；
+- @eq-round-trip 的二阶偏差、@eq-dispersion 的各向异性，在纯数学立场上只是模型内部的可检验特征，用于区分本模型与其他模型，不用于宣判对错。
+
+若日后需要与现实比对：比对的结果只会决定“是否为 $\mathbf{w}$ 另写一个版本（例如给它动力学、或改其变换规则）”，不影响本章任何定理的成立——定理的前提全部在数学内部。
