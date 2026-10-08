@@ -11,7 +11,7 @@ book:
   chapters:
     - index.qmd
     - chapters/symmetric-twins.qmd
-    - chapters/lorentz-transform.qmd
+    - chapters/transform-derivation.qmd
     - chapters/maxwell-equations.qmd
     - chapters/galilean-electrodynamics.qmd
     - chapters/references.qmd
