@@ -25,212 +25,127 @@
 
 ## 建立一般线性变换形式
 
-设 $S'$ 系相对于 $S$ 系以速度 $v$ 沿 $x$ 轴正向运动，两系对应的坐标轴两两平行，且在 $t = t' = 0$ 时原点重合。两系的几何关系如图 @fig-lorentz-frames 所示。本节先在 $x$–$t$ 平面内建立变换；横向坐标 $y$、$z$ 保持不变这一结论将在 @sec-lorentz-4d 节中由对称性严格证明，届时将看到二维推导对四维变换是完全充分的。
+设 $S'$ 系相对于 $S$ 系以速度 $v$ 沿 $x$ 轴正向运动，两系对应的坐标轴两两平行，且在 $t = t' = 0$ 时原点重合。两系的几何关系如图 @fig-lorentz-frames 所示。本节先在 $(t, x)$ 平面内建立变换；横向坐标 $y$、$z$ 保持不变这一结论将在 @sec-lorentz-4d 节中由对称性严格证明，届时将看到二维推导对四维变换是完全充分的。
 
 ![洛伦兹变换的坐标变换示意：惯性系 $S$ 与 $S'$ 坐标轴对应平行，$S'$ 系以速度 $v$ 沿 $x$ 轴正向相对 $S$ 系运动，同一事件 $P$ 在两系中的横坐标分别为 $x$ 与 $x'$，纵坐标 $y' = y$](images/lorentz-frames.png){#fig-lorentz-frames width=60%}
 
-由于变换是线性的，$x$–$t$ 平面内的通式可以写为：
+由 @prp-homogeneity，$(t, x)$ 平面内的线性变换必为
 
 $$
-x' = Ax + Bt
-$$ {#eq-lin-x}
+\begin{pmatrix} t' \\ x' \end{pmatrix}
+=
+\begin{pmatrix} A & B \\ C & D \end{pmatrix}
+\begin{pmatrix} t \\ x \end{pmatrix}
+$$ {#eq-lambda}
+
+即
 
 $$
-t' = Cx + Dt
+t' = A t + B x
 $$ {#eq-lin-t}
 
-其中 $A, B, C, D$ 是待定的常数（只依赖于 $v$ 和 $c$）。
+$$
+x' = C t + D x
+$$ {#eq-lin-x}
+
+其中 $A, B, C, D$ 是只依赖于 $v$ 与 $c$ 的待定常数。
 
 ### 约束 1：追踪 $S'$ 的原点
 
-$S'$ 的原点 $x' = 0$，在 $S$ 系中对应 $x = vt$。代入 @eq-lin-x：
+$S'$ 的原点满足 $x' = 0$，它在 $S$ 系中对应 $x = vt$。代入 @eq-lin-x：
 
 $$
-0 = A(vt) + Bt \quad \Longrightarrow \quad B = -Av
-$$
+0 = C t + D(vt) = (C + Dv)\,t
+\quad \Longrightarrow \quad
+C = -Dv
+$$ {#eq-constraint-origin}
 
 于是 @eq-lin-x 变为 @eq-lin-x2。
 
 $$
-x' = A(x - vt)
+x' = D(x - vt)
 $$ {#eq-lin-x2}
 
-### 约束 2：相对性原理
+### 约束 2：相对速度
 
-由 @eq-lin-x2 和 @eq-lin-t 得到变换矩阵为 @eq-lambda，它作用于列向量 $(x, t)^{\mathsf{T}}$。
+由相对性原理（@prp-covariance），$S$ 系在自己看来静止，而在 $S'$ 系中必须以速度 $-v$ 退行，即其原点 $x = 0$ 满足 $x' = -v t'$。
 
-$$
-\Lambda =
-\begin{pmatrix}
-A & -Av \\
-C & D
-\end{pmatrix}
-$$ {#eq-lambda}
-
-$S$ 系相对于 $S'$ 系以速度 $-v$ 运动。根据 @prp-covariance 的群性质，从 $S'$ 到 $S$ 的逆变换必须具有相同的数学形式。
-
-首先计算一般线性变换的行列式为 @eq-det-lambda。
+在 @eq-lin-t 和 @eq-lin-x2 中令 $x = 0$，得 $t' = A t$、$x' = -Dv\,t$，于是 $x'/t' = -Dv/A$。要求它等于 $-v$（$v \neq 0$；$v = 0$ 时变换退化为恒等，$A = D = 1$ 自动成立）：
 
 $$
-\det(\Lambda) = AD + AvC = A(D + vC)
-$$ {#eq-det-lambda}
+-\frac{Dv}{A} = -v
+\quad \Longrightarrow \quad
+D = A
+$$ {#eq-constraint-velocity}
 
-设 $\det(\Lambda) \neq 0$，否则变换不可逆，与群结构公理矛盾。@eq-lambda 的逆矩阵为 @eq-inv-lambda。
-
-$$
-\Lambda^{-1} = \frac{1}{\det(\Lambda)}
-\begin{pmatrix}
-D & Av \\
--C & A
-\end{pmatrix}
-$$ {#eq-inv-lambda}
-
-由此得到从 $S'$ 到 $S$ 的变换方程：
+此时变换只剩下 $A$、$B$ 两个参数，矩阵形式为
 
 $$
-x = \frac{D}{A(D + vC)} x' + \frac{Av}{A(D + vC)} t'
-$$ {#eq-transform-x}
-
-由于 $S$ 系相对于 $S'$ 系以 $-v$ 运动，$S$ 系的原点（$x = 0$）在 $S'$ 系中满足 $x' = -v t'$。代入 @eq-transform-x：
-
-$$
-0 = \frac{D}{A(D + vC)} (-v t') + \frac{Av}{A(D + vC)} t'
-$$ {#eq-substitute}
-
-消去公因子后得：
-
-$$
--Dv + Av = 0 \quad \Longrightarrow \quad D = A
-$$ {#eq-result}
-
-现在，变换矩阵的形式缩小为：
-
-$$
-\begin{pmatrix}
-x' \\ t'
-\end{pmatrix}
-=
-\begin{pmatrix}
-A & -Av \\
-C & A
-\end{pmatrix}
-\begin{pmatrix}
-x \\ t
-\end{pmatrix}
+\Lambda = \begin{pmatrix} A & B \\ -Av & A \end{pmatrix}
 $$ {#eq-matrix-form}
 
-## 引入恒定速度
+### 约束 3：不变速度
 
-我们要求存在一个速度 $c$，在 $S$ 系中满足 $x = ct$，且变换到 $S'$ 系后依然满足 $x' = ct'$。
-代入 @eq-lin-x2 和 @eq-lin-t 的形式：
-
-$$
-x' = A(ct - vt) = A(c - v)t
-$$
+由 @prp-invariant-speed，要求 $x = ct \Rightarrow x' = ct'$。取满足 $x = ct$ 的事件，用 @eq-lin-t 和 @eq-lin-x2 直接构造组合 $x' - ct'$：
 
 $$
-t' = C(ct) + At = (Cc + A)t
+x' - c t'
+= A(ct - vt) - c\,(At + Bct)
+= -\left(Av + Bc^{2}\right)t
 $$
 
-因为要求 $x' = ct'$，代入得到：
+要求该组合恒为零，即得
 
 $$
-A(c - v)t = c(Cc + A)t
+Av + Bc^{2} = 0
+\quad \Longrightarrow \quad
+B = -\frac{Av}{c^{2}}
+$$ {#eq-constraint-light}
+
+至此变换只剩一个参数 $A$：
+
 $$
-
-消去 $t$（$t > 0$），得：
-
-$$
-\begin{aligned}
-A(c - v) &= c(Cc + A) \\
-Ac - Av &= Cc^{2} + Ac \\
--Av &= Cc^{2} \quad \Longrightarrow \quad C = -\frac{Av}{c^{2}}
-\end{aligned}
-$$ {#eq-C-constraint}
-
-对反向光信号 $x = -ct$（此时要求 $x' = -ct'$）作同样的计算，得到完全相同的约束，不产生新的限制。
-
-现在，变换只依赖最后一个参数 $A$：
+t' = A\left(t - \frac{v}{c^{2}}x\right)
+$$ {#eq-t-final-1}
 
 $$
 x' = A(x - vt)
 $$ {#eq-x-final-1}
 
-$$
-t' = A\left( t - \frac{v}{c^{2}}x \right)
-$$ {#eq-t-final-1}
+### 约束 4：群结构
 
-## 确定参数 $A$
+由 @prp-covariance，变换集合构成群，故速度为 $v$ 的变换与速度为 $-v$ 的变换互逆：$\Lambda(v)\,\Lambda(-v) = I$。
 
-我们需要确定最后一个参数 $A$。由 @prp-covariance，变换集合构成群：连续做一次速度为 $v$ 的变换与一次速度为 $-v$ 的变换，必须回到原坐标系，即逆变换等于速度反号的变换，$\Lambda(v)^{-1} = \Lambda(-v)$。
-从矩阵形式（作用于列向量 $(x, t)^{\mathsf{T}}$）：
+把 $v \to -v$ 代入 @eq-matrix-form。由各向同性，$A$ 只依赖速率大小而与此方向无关，故 $A(-v) = A(v) \equiv A$：
 
 $$
-\Lambda(v) =
-\begin{pmatrix}
-A & -Av \\
--Av/c^{2} & A
-\end{pmatrix}
+\Lambda(-v) = \begin{pmatrix} A & Av/c^{2} \\ Av & A \end{pmatrix}
 $$
 
-逆矩阵 $\Lambda(v)^{-1}$ 应该等于 $\Lambda(-v)$：
+两者相乘，非对角元两两相消，对角元给出 $A^{2} - A^{2}v^{2}/c^{2}$：
 
 $$
-\Lambda(-v) =
-\begin{pmatrix}
-A & Av \\
-Av/c^{2} & A
-\end{pmatrix}
-$$
+\begin{aligned}
+\Lambda(v) \Lambda(-v) &= \begin{pmatrix} A & -Av/c^2 \\ -Av & A \end{pmatrix} \begin{pmatrix} A & Av/c^2 \\ Av & A \end{pmatrix} \\
+&= \begin{pmatrix} A^2 \left(1 - \frac{v^2}{c^2}\right) & 0 \\ 0 & A^2 \left(1 - \frac{v^2}{c^2}\right) \end{pmatrix} \\
+&= A^2 \left(1 - \frac{v^2}{c^2}\right) \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \\
+&= A^2 \left(1 - \frac{v^2}{c^2}\right) I
+\end{aligned}
+$$ {#eq-boost-product}
 
-计算 $\Lambda(v)$ 的逆矩阵（行列式 $\det = A^{2} - A^{2}v^{2}/c^{2} = A^{2}(1 - v^{2}/c^{2})$）：
-
-$$
-\Lambda(v)^{-1}
-= \frac{1}{A^{2}(1 - v^{2}/c^{2})}
-\begin{pmatrix}
-A & Av \\
-Av/c^{2} & A
-\end{pmatrix}
-= \frac{1}{A(1 - v^{2}/c^{2})}
-\begin{pmatrix}
-1 & v \\
-v/c^{2} & 1
-\end{pmatrix}
-$$
-
-令 $\Lambda(v)^{-1} = \Lambda(-v)$，即：
+要求乘积为单位阵，得
 
 $$
-\frac{1}{A(1 - v^{2}/c^{2})}
-\begin{pmatrix}
-1 & v \\
-v/c^{2} & 1
-\end{pmatrix}
-=
-\begin{pmatrix}
-A & Av \\
-Av/c^{2} & A
-\end{pmatrix}
-$$
-
-比较矩阵的左上角元素：
-
-$$
-\frac{1}{A(1 - v^{2}/c^{2})} = A \quad \Longrightarrow \quad A^{2}(1 - v^{2}/c^{2}) = 1
-$$
-
-解得：
-
-$$
+A^{2}\left(1 - \frac{v^{2}}{c^{2}}\right) = 1
+\quad \Longrightarrow \quad
 A = \frac{1}{\sqrt{1 - v^{2}/c^{2}}} \equiv \gamma
 $$ {#eq-gamma-def}
 
-（这里取正号，因为要求 $v = 0$ 时变换退化为恒等变换 $A = 1$。）
+根号取正号：$v \to 0$ 时变换必须连续地退化为恒等变换，$A \to 1$。
 
 ## 最终形式
 
-将 $A = \gamma$ 代入 @eq-x-final-1 与 @eq-t-final-1，我们得到 $x$–$t$ 平面内的洛伦兹变换。为与下一节四维形式的变量顺序约定 $(t, x, y, z)$ 保持一致，这里按 $t'$、$x'$ 的顺序汇总：
+将 $A = \gamma$ 代入 @eq-t-final-1 与 @eq-x-final-1，得到 $(t, x)$ 平面内的洛伦兹变换：
 
 $$
 t' = \gamma\left( t - \frac{v}{c^{2}}x \right)
@@ -240,34 +155,29 @@ $$
 x' = \gamma(x - vt)
 $$ {#eq-final-x}
 
-写成矩阵形式 @eq-final-matrix，列向量相应按 $(t, x)$ 的顺序排列，其左上角 $2 \times 2$ 块与下一节四维形式 @eq-lorentz-4d-mat 完全一致。
+写成矩阵形式 @eq-final-matrix：
 
 $$
-\begin{pmatrix}
-t' \\ x'
-\end{pmatrix}
+\begin{pmatrix} t' \\ x' \end{pmatrix}
 =
-\begin{pmatrix}
-\gamma & -\gamma v/c^{2} \\
--\gamma v & \gamma
-\end{pmatrix}
-\begin{pmatrix}
-t \\ x
-\end{pmatrix}
+\begin{pmatrix} \gamma & -\gamma v/c^{2} \\ -\gamma v & \gamma \end{pmatrix}
+\begin{pmatrix} t \\ x \end{pmatrix}
 $$ {#eq-final-matrix}
+
+由于 $t$ 与 $x$ 的量纲相差一个 $c$，@eq-final-matrix 并非对称矩阵；取 $x^{0} = ct$ 消去量纲差后即化为对称形式（见 @eq-lorentz-4d-beta）。其左上角 $2 \times 2$ 块与下一节四维形式 @eq-lorentz-4d-mat 完全一致。
 
 ## 推广到四维时空 {#sec-lorentz-4d}
 
-前几节在 $x$–$t$ 平面内完成了推导。本节补齐四维图景：先由对称性证明横向坐标 $y$、$z$ 在变换下不变，再给出完整的四维洛伦兹变换及其矩阵形式，最后验证时空间隔的不变性。
+前几节在 $(t, x)$ 平面内完成了推导。本节补齐四维图景：先由对称性证明横向坐标 $y$、$z$ 在变换下不变，再给出完整的四维洛伦兹变换及其矩阵形式，最后验证时空间隔的不变性。
 
 ### 横向坐标不变：对称性论证
 
-设两系坐标轴对应平行。$y$、$z$ 坐标的一般线性变换可写为 @eq-yz-general（系数只依赖于 $v$ 与 $c$）。
+设两系坐标轴对应平行。$y$、$z$ 坐标的一般线性变换可写为 @eq-yz-general（系数只依赖于 $v$ 与 $c$）：
 
 $$
 \begin{aligned}
-y' &= a y + b z + \alpha x + \eta t \\
-z' &= c y + d z + \mu x + \nu t
+y' &= p\,y + q\,z + \alpha x + \eta t \\
+z' &= r\,y + s\,z + \mu x + \nu t
 \end{aligned}
 $$ {#eq-yz-general}
 
@@ -277,13 +187,13 @@ $$
 \alpha = \eta = \mu = \nu = 0
 $$
 
-**第二步（反射对称性）。** 将两系的 $y$ 轴同时反向（$y \to -y$，$y' \to -y'$），物理情境不变，变换形式应保持不变。在反射后的坐标下 $-y' = -ay + bz$，即 $y' = ay - bz$，与原式 $y' = ay + bz$ 比较得 $b = 0$；同理，由 $z \to -z$ 的反射对称性得 $c = 0$。于是
+**第二步（反射对称性）。** 将两系的 $y$ 轴同时反向（$y \to -y$，$y' \to -y'$），物理情境不变，变换形式应保持不变。在反射后的坐标下 $-y' = -py + qz$，即 $y' = py - qz$，与原式 $y' = py + qz$ 比较得 $q = 0$；同理，由 $z \to -z$ 的反射对称性得 $r = 0$。于是
 
 $$
-y' = a y, \qquad z' = d z
+y' = p\,y, \qquad z' = s\,z
 $$
 
-**第三步（确定横向比例因子）。** 由 $y$、$z$ 两个横向方向的等价性，$a = d$，记为 $a(v)$。
+**第三步（确定横向比例因子）。** 由 $y$、$z$ 两个横向方向的等价性，$p = s$，记为 $a(v)$。
 
 - 一方面，对上式求逆（即把 $v$ 换成 $-v$ 的变换）得 $y = a(-v)\,y'$，故
 
@@ -299,7 +209,7 @@ $$
 y' = y, \qquad z' = z
 $$ {#eq-yz-invariant}
 
-即**横向坐标在洛伦兹变换下不变**。因此四维变换在 $(t, x)$ 与 $(y, z)$ 子空间上是分块对角的，前几节在 $x$–$t$ 平面内的推导对四维变换完全充分。
+即**横向坐标在洛伦兹变换下不变**。因此四维变换在 $(t, x)$ 与 $(y, z)$ 子空间上是分块对角的，前几节在 $(t, x)$ 平面内的推导对四维变换完全充分。
 
 ### 四维洛伦兹变换
 
@@ -332,7 +242,7 @@ t \\ x \\ y \\ z
 \end{pmatrix}
 $$ {#eq-lorentz-4d-mat}
 
-取 $x^{0} = ct$ 并记 $\beta = v/c$，四个分量具有相同的长度量纲，矩阵化为对称形式 @eq-lorentz-4d-beta。
+取 $x^{0} = ct$ 并记 $\beta = v/c$，四个分量具有相同的长度量纲，@eq-final-matrix 的 $2 \times 2$ 块化为对称形式 @eq-lorentz-4d-beta。
 
 $$
 \begin{pmatrix}

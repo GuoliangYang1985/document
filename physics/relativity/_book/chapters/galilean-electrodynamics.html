@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="杨国梁">
+<meta name="keywords" content="相对论, 麦克斯韦方程组, 洛伦兹变换, 协变性, 电磁场张量">
+
+<title>4&nbsp; 伽利略协变的场方程组：一个纯数学构造 – 狭义相对论</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/references.html" rel="next">
+<link href="../chapters/maxwell-equations.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-631496449bf32ff9b0bb69a6bfd9195d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/galilean-electrodynamics.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">伽利略协变的场方程组：一个纯数学构造</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="搜索" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">狭义相对论</a> 
+        <div class="sidebar-tools-main">
+    <a href="../狭义相对论.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="搜索"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/symmetric-twins.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">对称双生子实验</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/lorentz-transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">洛伦兹变换的推导</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/maxwell-equations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">麦克斯韦方程组</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/galilean-electrodynamics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">伽利略协变的场方程组：一个纯数学构造</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">参考文献</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目录</h2>
+   
+  <ul>
+  <li><a href="#sec-gal-setup" id="toc-sec-gal-setup" class="nav-link active" data-scroll-target="#sec-gal-setup"><span class="header-section-number">4.1</span> 设定与目标</a>
+  <ul class="collapse">
+  <li><a href="#形式不变的三种含义" id="toc-形式不变的三种含义" class="nav-link" data-scroll-target="#形式不变的三种含义"><span class="header-section-number">4.1.1</span> “形式不变”的三种含义</a></li>
+  </ul></li>
+  <li><a href="#sec-gal-kinematics" id="toc-sec-gal-kinematics" class="nav-link" data-scroll-target="#sec-gal-kinematics"><span class="header-section-number">4.2</span> 运动学：唯一可用的算子</a>
+  <ul class="collapse">
+  <li><a href="#两个基本恒等式" id="toc-两个基本恒等式" class="nav-link" data-scroll-target="#两个基本恒等式"><span class="header-section-number">4.2.1</span> 两个基本恒等式</a></li>
+  <li><a href="#引理一阶算子的分类" id="toc-引理一阶算子的分类" class="nav-link" data-scroll-target="#引理一阶算子的分类"><span class="header-section-number">4.2.2</span> 引理：一阶算子的分类</a></li>
+  <li><a href="#引入补偿速度-mathbfw" id="toc-引入补偿速度-mathbfw" class="nav-link" data-scroll-target="#引入补偿速度-mathbfw"><span class="header-section-number">4.2.3</span> 引入补偿速度 <span class="math inline">\mathbf{w}</span></a></li>
+  <li><a href="#一条硬约束mathbfw-必须是常向量" id="toc-一条硬约束mathbfw-必须是常向量" class="nav-link" data-scroll-target="#一条硬约束mathbfw-必须是常向量"><span class="header-section-number">4.2.4</span> 一条硬约束：<span class="math inline">\mathbf{w}</span> 必须是常向量</a></li>
+  </ul></li>
+  <li><a href="#sec-gal-construction" id="toc-sec-gal-construction" class="nav-link" data-scroll-target="#sec-gal-construction"><span class="header-section-number">4.3</span> 构造：修改清单</a>
+  <ul class="collapse">
+  <li><a href="#修改后的方程组无源" id="toc-修改后的方程组无源" class="nav-link" data-scroll-target="#修改后的方程组无源"><span class="header-section-number">4.3.1</span> 修改后的方程组（无源）</a></li>
+  <li><a href="#有源情形源项必须同步修改" id="toc-有源情形源项必须同步修改" class="nav-link" data-scroll-target="#有源情形源项必须同步修改"><span class="header-section-number">4.3.2</span> 有源情形：源项必须同步修改</a></li>
+  </ul></li>
+  <li><a href="#sec-gal-covariance" id="toc-sec-gal-covariance" class="nav-link" data-scroll-target="#sec-gal-covariance"><span class="header-section-number">4.4</span> 验证一：形式不变性</a>
+  <ul class="collapse">
+  <li><a href="#定理与证明" id="toc-定理与证明" class="nav-link" data-scroll-target="#定理与证明"><span class="header-section-number">4.4.1</span> 定理与证明</a></li>
+  <li><a href="#换元定理这组方程的全部解都是已知的" id="toc-换元定理这组方程的全部解都是已知的" class="nav-link" data-scroll-target="#换元定理这组方程的全部解都是已知的"><span class="header-section-number">4.4.2</span> 换元定理：这组方程的全部解都是已知的</a></li>
+  </ul></li>
+  <li><a href="#sec-gal-wave" id="toc-sec-gal-wave" class="nav-link" data-scroll-target="#sec-gal-wave"><span class="header-section-number">4.5</span> 验证二：波解与速度叠加</a>
+  <ul class="collapse">
+  <li><a href="#波动方程与色散关系" id="toc-波动方程与色散关系" class="nav-link" data-scroll-target="#波动方程与色散关系"><span class="header-section-number">4.5.1</span> 波动方程与色散关系</a></li>
+  <li><a href="#相速度群速度叠加的两种表现" id="toc-相速度群速度叠加的两种表现" class="nav-link" data-scroll-target="#相速度群速度叠加的两种表现"><span class="header-section-number">4.5.2</span> 相速度、群速度：叠加的两种表现</a></li>
+  </ul></li>
+  <li><a href="#sec-gal-boundary" id="toc-sec-gal-boundary" class="nav-link" data-scroll-target="#sec-gal-boundary"><span class="header-section-number">4.6</span> 数学边界：走不通的路与自由参数</a>
+  <ul class="collapse">
+  <li><a href="#注记为什么路线②走不通一阶计算" id="toc-注记为什么路线②走不通一阶计算" class="nav-link" data-scroll-target="#注记为什么路线②走不通一阶计算"><span class="header-section-number">4.6.1</span> 注记：为什么路线②走不通（一阶计算）</a></li>
+  <li><a href="#系数层修补为何不够" id="toc-系数层修补为何不够" class="nav-link" data-scroll-target="#系数层修补为何不够"><span class="header-section-number">4.6.2</span> 系数层修补为何不够</a></li>
+  <li><a href="#本构造的三个自由参数" id="toc-本构造的三个自由参数" class="nav-link" data-scroll-target="#本构造的三个自由参数"><span class="header-section-number">4.6.3</span> 本构造的三个自由参数</a></li>
+  </ul></li>
+  <li><a href="#sec-gal-lineage" id="toc-sec-gal-lineage" class="nav-link" data-scroll-target="#sec-gal-lineage"><span class="header-section-number">4.7</span> 数学谱系注记</a></li>
+  <li><a href="#sec-gal-interface" id="toc-sec-gal-interface" class="nav-link" data-scroll-target="#sec-gal-interface"><span class="header-section-number">4.8</span> 与现实世界的接口</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-galilean-electrodynamics" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">伽利略协变的场方程组：一个纯数学构造</span></span></h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">作者</div>
+  <div class="quarto-title-meta-heading">单位</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">杨国梁 <a href="mailto:guoliang-yang@hotmail.com" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            山东 济南
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">关键词</div>
+    <p>相对论, 麦克斯韦方程组, 洛伦兹变换, 协变性, 电磁场张量</p>
+  </div>
+</div>
+
+</header>
+
+
+<p>本章为一个假想的“伽利略世界”构造一套自洽的场方程组。这个世界的规则只有两条：<strong>绝对时间</strong>与<strong>速度按伽利略方式叠加</strong>。要回答的问题是纯数学的：<em>能否构造一组偏微分方程，使其在伽利略变换下形式不变，并在速度补偿对象为零时退化为标准麦克斯韦方程组？</em></p>
+<p>本章不讨论物理：方程组中的 <span class="math inline">c</span> 只是一个参数，不预设它对应现实世界中的任何测量对象。</p>
+<section id="sec-gal-setup" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sec-gal-setup"><span class="header-section-number">4.1</span> 设定与目标</h2>
+<p><strong>定义 1（底空间与群）</strong> 底空间为 <span class="math inline">\mathbb{R}^{3}\times\mathbb{R}</span>，坐标记 <span class="math inline">(\mathbf{x},t)</span>。变换群取<strong>伽利略群</strong> <span class="math inline">G</span>：对每个常向量 <span class="math inline">\mathbf{u}\in\mathbb{R}^{3}</span>，</p>
+<p><span id="eq-gal-transform"><span class="math display">
+t' = t, \qquad \mathbf{x}' = \mathbf{x} - \mathbf{u}t
+\tag{4.1}</span></span></p>
+<p><strong>定义 2（场）</strong> 研究对象是两个 <span class="math inline">\mathbb{R}^{3}</span> 值光滑场 <span class="math inline">\mathbf{E}(\mathbf{x},t)</span>、<span class="math inline">\mathbf{B}(\mathbf{x},t)</span>。<strong>本节不赋予它们任何物理含义。</strong></p>
+<p><strong>定义 3（标准系统）</strong> 称以下四条方程为<strong>标准系统</strong>（即通常所说的真空麦克斯韦方程组，此处仅作为数学对象引用）：</p>
+<p><span id="eq-standard-maxwell"><span class="math display">
+\nabla\cdot\mathbf{E} = 0, \qquad
+\nabla\cdot\mathbf{B} = 0, \qquad
+\nabla\times\mathbf{E} = -\partial_{t}\mathbf{B}, \qquad
+\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\partial_{t}\mathbf{E}.
+\tag{4.2}</span></span></p>
+<p><strong>目标（G）</strong> 构造一组方程，满足：</p>
+<ul>
+<li><strong>(G1) 形式不变</strong>：在 <a href="#eq-gal-transform" class="quarto-xref">式&nbsp;<span>4.1</span></a> 的变换下，方程写成完全相同的形式；</li>
+<li><strong>(G2) 叠加色散</strong>：其平面波解满足 <span class="math inline">\omega = c|\mathbf{k}| + \mathbf{w}\cdot\mathbf{k}</span>（速度叠加自动成立，<span class="math inline">\mathbf{w}</span> 见 <a href="#sec-gal-kinematics" class="quarto-xref"><span>小节 4.2</span></a>）；</li>
+<li><strong>(G3) 退化条件</strong>：当补偿速度 <span class="math inline">\mathbf{w}=\mathbf{0}</span> 时，严格退化为 <a href="#eq-standard-maxwell" class="quarto-xref">式&nbsp;<span>4.2</span></a>。</li>
+</ul>
+<section id="形式不变的三种含义" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="形式不变的三种含义"><span class="header-section-number">4.1.1</span> “形式不变”的三种含义</h3>
+<p>这个短语必须先精确化，因为三种含义给出三个不同的问题：</p>
+<div id="tbl-form-invariance" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-form-invariance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;4.1: “形式不变”的三种含义
+</figcaption>
+<div aria-describedby="tbl-form-invariance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>编号</th>
+<th>含义</th>
+<th>在伽利略群下的可行性</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>① 逐字不变</td>
+<td>存在一个补偿对象 <span class="math inline">\mathbf{w}</span>，使方程在新坐标系下写成<strong>逐字相同</strong>的式子</td>
+<td>可行（本章的做法）</td>
+</tr>
+<tr class="even">
+<td>② 共变</td>
+<td>场按群的一个非平凡表示变换，方程形式不变</td>
+<td>对所有 <span class="math inline">\mathbf{u}</span> 被证明不可能（见 <a href="#sec-gal-boundary" class="quarto-xref"><span>小节 4.6</span></a> 的注记）</td>
+</tr>
+<tr class="odd">
+<td>③ 完全不变</td>
+<td>场与方程均不变</td>
+<td>与波解的存在性矛盾</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>对照</strong>：洛伦兹协变属于②，且在那里是免费的——洛伦兹群自带不变量（光锥、达朗贝尔算符 <span class="math inline">\partial_\mu\partial^\mu</span>），场按现成的张量表示变换即可。伽利略群没有这样的不变量，②走不通，于是只剩①：<strong>引入一个补偿对象，让它替场去变换</strong>。这就是 <a href="#sec-gal-kinematics" class="quarto-xref"><span>小节 4.2</span></a> 的引理将要严格证明的事。</p>
+<p><strong>记号约定</strong>（全章统一）：<span class="math inline">\mathbf{u}</span> 只出现在坐标变换中，表示<strong>两套坐标之间的相对速度</strong>；<span class="math inline">\mathbf{w}</span> 只出现在方程中，是<strong>补偿速度</strong>（一个给定的常向量）。<span class="math inline">c</span> 是方程的参数，不参与任何变换。</p>
+</section>
+</section>
+<section id="sec-gal-kinematics" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-gal-kinematics"><span class="header-section-number">4.2</span> 运动学：唯一可用的算子</h2>
+<section id="两个基本恒等式" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="两个基本恒等式"><span class="header-section-number">4.2.1</span> 两个基本恒等式</h3>
+<p>对 <a href="#eq-gal-transform" class="quarto-xref">式&nbsp;<span>4.1</span></a> 直接求导（注意 <span class="math inline">t=t'</span>，<span class="math inline">\mathbf{x} = \mathbf{x}' + \mathbf{u}t'</span>）：</p>
+<p><span id="eq-operator-transform"><span class="math display">
+\nabla' = \nabla,
+\qquad
+\partial_{t'} = \partial_{t} + \mathbf{u}\cdot\nabla .
+\tag{4.3}</span></span></p>
+<p><strong>梯度不变，时间偏导数不是。</strong> 这一行是全部构造的起点。</p>
+</section>
+<section id="引理一阶算子的分类" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="引理一阶算子的分类"><span class="header-section-number">4.2.2</span> 引理：一阶算子的分类</h3>
+<p><strong>引理 1（算子分类）</strong> 设 <span class="math inline">L = a\,\partial_{t} + \mathbf{b}\cdot\nabla</span>（<span class="math inline">a</span> 为常数，<span class="math inline">\mathbf{b}</span> 为某个待定的三维对象）。在 <a href="#eq-gal-transform" class="quarto-xref">式&nbsp;<span>4.1</span></a> 下，</p>
+<p><span id="eq-lemma-L"><span class="math display">
+L = a\,\partial_{t'} + \left(\mathbf{b} - a\,\mathbf{u}\right)\cdot\nabla' .
+\tag{4.4}</span></span></p>
+<p>于是 <span class="math inline">L</span> 保持形式只有两条出路：</p>
+<ol type="1">
+<li><span class="math inline">a = 0</span>：<span class="math inline">L</span> 退化为纯空间算子 <span class="math inline">\mathbf{b}\cdot\nabla</span>；</li>
+<li><span class="math inline">\mathbf{b}</span> 是一个按 <span class="math inline">\mathbf{b}' = \mathbf{b} - a\mathbf{u}</span> 变换的对象。</li>
+</ol>
+<p><strong>证明</strong> 将 <a href="#eq-operator-transform" class="quarto-xref">式&nbsp;<span>4.3</span></a> 代入 <span class="math inline">L</span> 展开、合并 <span class="math inline">\partial_{t'}</span> 与 <span class="math inline">\nabla'</span> 的系数即得 <a href="#eq-lemma-L" class="quarto-xref">式&nbsp;<span>4.4</span></a>。</p>
+<p><strong>推论（无波定理）</strong> 若走出路 1，则方程组中不含任何时间导数，四条方程退化为 <span class="math inline">\mathbb{R}^{3}</span> 上的纯空间约束，其解空间对 <span class="math inline">t</span> 是常值的——<strong>没有波解</strong>。要满足 (G2)，必须走出路 2。</p>
+</section>
+<section id="引入补偿速度-mathbfw" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="引入补偿速度-mathbfw"><span class="header-section-number">4.2.3</span> 引入补偿速度 <span class="math inline">\mathbf{w}</span></h3>
+<p><strong>定义 4（补偿速度与对流导数）</strong> 引入一个新对象 <span class="math inline">\mathbf{w}</span>，规定其变换规则为</p>
+<p><span id="eq-w-transform"><span class="math display">
+\mathbf{w}' = \mathbf{w} - \mathbf{u},
+\tag{4.5}</span></span></p>
+<p>并定义<strong>对流导数</strong></p>
+<p><span id="eq-convective-def"><span class="math display">
+\mathcal{D}_{t}^{(\mathbf{w})} \;\equiv\; \partial_{t} + \mathbf{w}\cdot\nabla .
+\tag{4.6}</span></span></p>
+<p><strong>引理 2（对流导数的形式不变性）</strong></p>
+<p><span id="eq-convective-proof"><span class="math display">
+\mathcal{D}_{t}^{(\mathbf{w})} = \mathcal{D}_{t'}^{(\mathbf{w}-\mathbf{u})}.
+\tag{4.7}</span></span></p>
+<p>即：<span class="math inline">\mathcal{D}_t^{(\mathbf{w})}</span> 作用在场上，与”在带撇坐标系中用 <span class="math inline">\mathbf{w}'=\mathbf{w}-\mathbf{u}</span> 写出的对流导数”是同一个算子。这正是引理 1 的出路 2：<strong><span class="math inline">\partial_t</span> 不变不了，就让 <span class="math inline">\mathbf{w}</span> 替它变。</strong></p>
+<p><strong>证明</strong> 将 <a href="#eq-operator-transform" class="quarto-xref">式&nbsp;<span>4.3</span></a> 与 <a href="#eq-w-transform" class="quarto-xref">式&nbsp;<span>4.5</span></a> 代入 <a href="#eq-convective-def" class="quarto-xref">式&nbsp;<span>4.6</span></a> 的右端：</p>
+<p><span class="math display">
+\partial_{t'} + \mathbf{w}'\cdot\nabla'
+= \left(\partial_{t} + \mathbf{u}\cdot\nabla\right) + \left(\mathbf{w}-\mathbf{u}\right)\cdot\nabla
+= \partial_{t} + \mathbf{w}\cdot\nabla
+</span></p>
+</section>
+<section id="一条硬约束mathbfw-必须是常向量" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="一条硬约束mathbfw-必须是常向量"><span class="header-section-number">4.2.4</span> 一条硬约束：<span class="math inline">\mathbf{w}</span> 必须是常向量</h3>
+<p><strong>引理 3（交换性）</strong> 对一切光滑场 <span class="math inline">\mathbf{F}</span>，</p>
+<p><span id="eq-commutation"><span class="math display">
+\nabla\times\left(\mathcal{D}_{t}^{(\mathbf{w})}\mathbf{F}\right)
+- \mathcal{D}_{t}^{(\mathbf{w})}\left(\nabla\times\mathbf{F}\right)
+= \sum_{i,j,k,l}\varepsilon_{ijk}\,\left(\partial_{j}w_{l}\right)\left(\partial_{l}F_{k}\right)\,\mathbf{e}_{i}.
+\tag{4.8}</span></span></p>
+<p>上式对一切 <span class="math inline">\mathbf{F}</span> 为零，当且仅当 <span class="math inline">\partial_{j}w_{l}=0</span> 对一切 <span class="math inline">j,l</span> 成立，即 <strong><span class="math inline">\mathbf{w}</span> 是常向量</strong>。</p>
+<p><strong>证明要点</strong> 展开两端，<span class="math inline">\mathbf{w}_l\partial_j\partial_l F_k</span> 一类的项因偏导数可交换而相消，只剩含 <span class="math inline">\partial_j w_l</span> 的项。若 <span class="math inline">\mathbf{w}</span> 非常值，取 <span class="math inline">\partial_l F_k</span> 为任意矩阵即可使 <a href="#eq-commutation" class="quarto-xref">式&nbsp;<span>4.8</span></a> 非零。</p>
+<p>这条约束的后果：<strong>本构造中 <span class="math inline">\mathbf{w}</span> 只能取常向量</strong>。若允许 <span class="math inline">\mathbf{w}=\mathbf{w}(\mathbf{x},t)</span>，则旋度方程与散度方程不再自洽地配对（齐次结构断裂），需要另行引入修正项——那是另一个模型，见 <a href="#sec-gal-boundary" class="quarto-xref"><span>小节 4.6</span></a> 的讨论。</p>
+</section>
+</section>
+<section id="sec-gal-construction" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-gal-construction"><span class="header-section-number">4.3</span> 构造：修改清单</h2>
+<p>构造只做<strong>一个动作</strong>：凡标准系统中出现 <span class="math inline">\partial_t</span> 的地方，全部换成 <span class="math inline">\mathcal{D}_t^{(\mathbf{w})}</span>。</p>
+<section id="修改后的方程组无源" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="修改后的方程组无源"><span class="header-section-number">4.3.1</span> 修改后的方程组（无源）</h3>
+<p><span id="eq-mod-div"><span class="math display">
+\nabla\cdot\mathbf{E} = 0,
+\qquad
+\nabla\cdot\mathbf{B} = 0,
+\tag{4.9}</span></span></p>
+<p><span id="eq-mod-curl"><span class="math display">
+\nabla\times\mathbf{E} = -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B},
+\qquad
+\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E}.
+\tag{4.10}</span></span></p>
+<p>与 <a href="#eq-standard-maxwell" class="quarto-xref">式&nbsp;<span>4.2</span></a> 逐条对照（完整清单见 <a href="#tbl-modification" class="quarto-xref">表&nbsp;<span>4.2</span></a>）：</p>
+<div id="tbl-modification" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;4.2: 修改清单：只换时间导数，散度方程不动
+</figcaption>
+<div aria-describedby="tbl-modification-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 33%">
+<col style="width: 26%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>方程</th>
+<th>标准系统</th>
+<th>修改后</th>
+<th>改动</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>高斯型 <span class="math inline">\nabla\cdot\mathbf{E}=0</span></td>
+<td><span class="math inline">\partial_t</span> 不出现</td>
+<td>同左</td>
+<td><strong>不动</strong>（<span class="math inline">\nabla</span> 是不变量）</td>
+</tr>
+<tr class="even">
+<td>磁高斯 <span class="math inline">\nabla\cdot\mathbf{B}=0</span></td>
+<td><span class="math inline">\partial_t</span> 不出现</td>
+<td>同左</td>
+<td><strong>不动</strong></td>
+</tr>
+<tr class="odd">
+<td>法拉第型</td>
+<td><span class="math inline">\partial_t\mathbf{B}</span></td>
+<td><span class="math inline">\mathcal{D}_t^{(\mathbf{w})}\mathbf{B}</span></td>
+<td>换导数</td>
+</tr>
+<tr class="even">
+<td>安培型</td>
+<td><span class="math inline">\partial_t\mathbf{E}</span></td>
+<td><span class="math inline">\mathcal{D}_t^{(\mathbf{w})}\mathbf{E}</span></td>
+<td>换导数</td>
+</tr>
+<tr class="odd">
+<td>势的定义</td>
+<td><span class="math inline">\mathbf{E}=-\nabla\phi-\partial_t\mathbf{A}</span></td>
+<td><span class="math inline">-\nabla\phi-\mathcal{D}_t^{(\mathbf{w})}\mathbf{A}</span></td>
+<td>同步换</td>
+</tr>
+<tr class="even">
+<td>规范变换</td>
+<td><span class="math inline">\phi\to\phi-\partial_t\chi</span></td>
+<td><span class="math inline">\phi\to\phi-\mathcal{D}_t^{(\mathbf{w})}\chi</span></td>
+<td>同步换</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><strong>势与规范</strong>。定义</p>
+<p><span id="eq-potentials"><span class="math display">
+\mathbf{B} = \nabla\times\mathbf{A},
+\qquad
+\mathbf{E} = -\nabla\phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{A},
+\tag{4.11}</span></span></p>
+<p>则 <a href="#eq-mod-div" class="quarto-xref">式&nbsp;<span>4.9</span></a> 的两条齐次方程自动成立；规范变换取</p>
+<p><span id="eq-gauge"><span class="math display">
+\mathbf{A} \to \mathbf{A} + \nabla\chi,
+\qquad
+\phi \to \phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\chi,
+\tag{4.12}</span></span></p>
+<p>它保持 <a href="#eq-potentials" class="quarto-xref">式&nbsp;<span>4.11</span></a> 不变，且与 <a href="#eq-gauge" class="quarto-xref">式&nbsp;<span>4.12</span></a> 一起构成修改后系统自带的规范自由度。这里必须同步替换的原因是：<span class="math inline">\nabla\times</span> 与 <span class="math inline">\mathcal{D}_t^{(\mathbf{w})}</span> 的可交换性（引理 3）正是”齐次方程 <span class="math inline">\Leftrightarrow</span> 存在势”这条等价性的支柱——<span class="math inline">\mathbf{w}</span> 取常向量时该等价性完整保留。</p>
+</section>
+<section id="有源情形源项必须同步修改" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="有源情形源项必须同步修改"><span class="header-section-number">4.3.2</span> 有源情形：源项必须同步修改</h3>
+<p>引入标量源 <span class="math inline">\rho</span> 与矢量源 <span class="math inline">\mathbf{J}</span>，把高斯型与安培型改为</p>
+<p><span id="eq-mod-source"><span class="math display">
+\nabla\cdot\mathbf{E} = \frac{\rho}{\varepsilon_{0}},
+\qquad
+\nabla\times\mathbf{B} = \mu_{0}\left(\mathbf{J} - \rho\,\mathbf{w}\right) + \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E},
+\tag{4.13}</span></span></p>
+<p>其中 <span class="math inline">c^{2}=1/(\mu_{0}\varepsilon_{0})</span>，<span class="math inline">\mu_{0},\varepsilon_{0}</span> 只是记号 convenience。</p>
+<p><strong>命题 1（相容性）</strong> <a href="#eq-mod-source" class="quarto-xref">式&nbsp;<span>4.13</span></a> 自洽的充要条件是源满足<strong>标准连续性方程</strong></p>
+<p><span id="eq-continuity"><span class="math display">
+\partial_{t}\rho + \nabla\cdot\mathbf{J} = 0,
+\tag{4.14}</span></span></p>
+<p>即 <a href="#eq-continuity" class="quarto-xref">式&nbsp;<span>4.14</span></a> 一个字不用改；代价是安培型的源必须是 <span class="math inline">\mathbf{J}-\rho\mathbf{w}</span>。</p>
+<p><strong>证明</strong> 对 <a href="#eq-mod-source" class="quarto-xref">式&nbsp;<span>4.13</span></a> 第二式取散度。左端恒为零；右端给出</p>
+<p><span class="math display">
+0 = \mu_{0}\,\nabla\cdot\left(\mathbf{J}-\rho\mathbf{w}\right) + \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\frac{\rho}{\varepsilon_{0}}
+= \mu_{0}\left[\nabla\cdot\mathbf{J} - \nabla\cdot(\rho\mathbf{w}) + \mathcal{D}_{t}^{(\mathbf{w})}\rho\right].
+</span></p>
+<p>由引理 3（<span class="math inline">\mathbf{w}</span> 为常向量），<span class="math inline">\nabla\cdot(\rho\mathbf{w}) = \mathbf{w}\cdot\nabla\rho</span>，故方括号内为</p>
+<p><span class="math display">
+\nabla\cdot\mathbf{J} - \mathbf{w}\cdot\nabla\rho + \partial_{t}\rho + \mathbf{w}\cdot\nabla\rho
+= \partial_{t}\rho + \nabla\cdot\mathbf{J}.
+</span></p>
+<p>两项对流贡献<strong>恰好相消</strong>。</p>
+<p>这个”恰好相消”不是巧合：<span class="math inline">\mathbf{J}-\rho\mathbf{w}</span> 正是”<span class="math inline">\mathbf{J}</span> 在以 <span class="math inline">\mathbf{w}</span> 运动的坐标网中的表现”，连续性方程的不变性由此自动成立。</p>
+</section>
+</section>
+<section id="sec-gal-covariance" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="sec-gal-covariance"><span class="header-section-number">4.4</span> 验证一：形式不变性</h2>
+<section id="定理与证明" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="定理与证明"><span class="header-section-number">4.4.1</span> 定理与证明</h3>
+<p><strong>定理 1（形式不变性）</strong> 在变换 <a href="#eq-gal-transform" class="quarto-xref">式&nbsp;<span>4.1</span></a> 与 <a href="#eq-w-transform" class="quarto-xref">式&nbsp;<span>4.5</span></a> 之下，方程组 <a href="#eq-mod-div" class="quarto-xref">式&nbsp;<span>4.9</span></a>–<a href="#eq-mod-source" class="quarto-xref">式&nbsp;<span>4.13</span></a> 保持形式：新系中的方程是把原方程中的 <span class="math inline">\mathbf{w}</span> 换成 <span class="math inline">\mathbf{w}' = \mathbf{w}-\mathbf{u}</span> 后的<strong>逐字相同</strong>的式子。</p>
+<p><strong>证明</strong> 以法拉第型为例（其余同理）。在带撇坐标系中，</p>
+<p><span class="math display">
+\nabla'\times\mathbf{E} = -\,\mathcal{D}_{t'}^{(\mathbf{w}')}\,\mathbf{B}
+\;\overset{\text{@eq-convective-proof}}{=}\; -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B},
+</span></p>
+<p>其中第一步是”同一方程在新坐标系中的写法”，第二步用了引理 2。即：带撇系中的方程与原方程逐字相同。散度方程不含 <span class="math inline">\partial_t</span>，而 <span class="math inline">\nabla'=\nabla</span>，自动不变。</p>
+</section>
+<section id="换元定理这组方程的全部解都是已知的" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="换元定理这组方程的全部解都是已知的"><span class="header-section-number">4.4.2</span> 换元定理：这组方程的全部解都是已知的</h3>
+<p><strong>定理 2（换元定理）</strong> 作变量替换</p>
+<p><span id="eq-change-of-variables"><span class="math display">
+\boldsymbol{\xi} = \mathbf{x} - \mathbf{w}t,
+\qquad
+\tau = t .
+\tag{4.15}</span></span></p>
+<p>则 <span class="math inline">\partial_{\tau} = \mathcal{D}_{t}^{(\mathbf{w})}</span>、<span class="math inline">\nabla_{\boldsymbol{\xi}} = \nabla</span>。于是 <span class="math inline">\left(\mathbf{E},\mathbf{B}\right)</span> 是修改后方程组的解，当且仅当 <span class="math inline">\left(\mathbf{E},\mathbf{B}\right)</span> 作为 <span class="math inline">\left(\boldsymbol{\xi},\tau\right)</span> 的函数是标准系统 <a href="#eq-standard-maxwell" class="quarto-xref">式&nbsp;<span>4.2</span></a> 的解。</p>
+<p><strong>证明</strong> 直接对 <a href="#eq-change-of-variables" class="quarto-xref">式&nbsp;<span>4.15</span></a> 求链式法则：<span class="math inline">\partial_t|_{\mathbf{x}} = \partial_{\tau}|_{\boldsymbol{\xi}} - \mathbf{w}\cdot\nabla_{\boldsymbol{\xi}}</span>，移项即 <span class="math inline">\mathcal{D}_t^{(\mathbf{w})} = \partial_\tau</span>。</p>
+<p><strong>定理 2 的含义说明</strong>：修改后方程组的解空间与标准系统的解空间之间只隔着一个<strong>伽利略换元</strong>——每一个解都是”标准解的剪切像”（把标准解沿速度 <span class="math inline">\mathbf{w}</span> 平移）。因此本构造<strong>没有制造新的数学内容</strong>，它做的是：把标准系统与伽利略群<strong>打包成一个整体</strong>，使形式不变性成为构造的自动性质而非事后检验。这正是①（逐字不变 + 补偿结构）的本质：<strong>把②所需要的表示变换外包给一个新对象 <span class="math inline">\mathbf{w}</span> 去承担。</strong></p>
+</section>
+</section>
+<section id="sec-gal-wave" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="sec-gal-wave"><span class="header-section-number">4.5</span> 验证二：波解与速度叠加</h2>
+<section id="波动方程与色散关系" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="波动方程与色散关系"><span class="header-section-number">4.5.1</span> 波动方程与色散关系</h3>
+<p>对 <a href="#eq-mod-curl" class="quarto-xref">式&nbsp;<span>4.10</span></a> 的安培型取旋度、用法拉第型消去 <span class="math inline">\mathbf{E}</span>（<span class="math inline">\mathbf{w}</span> 为常向量，引理 3 保证算子可自由交换）：</p>
+<p><span id="eq-wave-equation"><span class="math display">
+\nabla^{2}\mathbf{B} - \frac{1}{c^{2}}\left(\mathcal{D}_{t}^{(\mathbf{w})}\right)^{2}\mathbf{B} = \mathbf{0},
+\tag{4.16}</span></span></p>
+<p>对 <span class="math inline">\mathbf{E}</span> 同理。代入平面波 <span class="math inline">e^{i\left(\mathbf{k}\cdot\mathbf{x}-\omega t\right)}</span>：<span class="math inline">\nabla\to i\mathbf{k}</span>，<span class="math inline">\mathcal{D}_t^{(\mathbf{w})}\to -i\left(\omega-\mathbf{w}\cdot\mathbf{k}\right)</span>，得</p>
+<p><span id="eq-dispersion"><span class="math display">
+\left(\omega - \mathbf{w}\cdot\mathbf{k}\right)^{2} = c^{2}|\mathbf{k}|^{2}
+\quad\Longrightarrow\quad
+\boxed{\;\omega = c|\mathbf{k}| + \mathbf{w}\cdot\mathbf{k}\;}
+\tag{4.17}</span></span></p>
+<p>（取正向分支；负向分支对应反向传播。）这就是目标 (G2)：<strong>速度叠加不是假设，是从方程里掉出来的</strong>。</p>
+</section>
+<section id="相速度群速度叠加的两种表现" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="相速度群速度叠加的两种表现"><span class="header-section-number">4.5.2</span> 相速度、群速度：叠加的两种表现</h3>
+<p>由 <a href="#eq-dispersion" class="quarto-xref">式&nbsp;<span>4.17</span></a> 直接求导：</p>
+<p><span id="eq-phase-group"><span class="math display">
+v_{\mathrm{ph}} = \frac{\omega}{|\mathbf{k}|} = c + \mathbf{w}\cdot\hat{\mathbf{k}},
+\qquad
+\mathbf{v}_{\mathrm{g}} = \nabla_{\mathbf{k}}\,\omega = c\,\hat{\mathbf{k}} + \mathbf{w}.
+\tag{4.18}</span></span></p>
+<p>相速度与群速度都等于”<span class="math inline">c</span> 加上 <span class="math inline">\mathbf{w}</span> 在传播方向上的分量”——正是伽利略叠加公式。三个直接推论：</p>
+<ul>
+<li><strong>各向异性、非色散</strong>：<span class="math inline">v_{\mathrm{ph}}</span> 依赖方向 <span class="math inline">\hat{\mathbf{k}}</span>，但不依赖 <span class="math inline">|\mathbf{k}|</span>；</li>
+<li><strong>双程速度</strong>：记 <span class="math inline">w_{\parallel} = \mathbf{w}\cdot\hat{\mathbf{v}}</span>。沿 <span class="math inline">\hat{\mathbf{v}}</span> 往返一趟（单程长 <span class="math inline">L</span>）的平均速度为</li>
+</ul>
+<p><span id="eq-round-trip"><span class="math display">
+v_{\mathrm{rt}} = \frac{2L}{\dfrac{L}{c+w_{\parallel}} + \dfrac{L}{c-w_{\parallel}}}
+= \frac{c^{2}-w_{\parallel}^{2}}{c}
+= c\left(1-\frac{w_{\parallel}^{2}}{c^{2}}\right),
+\tag{4.19}</span></span></p>
+<p>即往返测得的等效速度与 <span class="math inline">c</span> 的偏差是<strong>二阶小量</strong>——单向测量与双向测量给出不同的答案，这是本模型可内部检验的特征； - <strong>平面波的变换</strong>：由 <span class="math inline">\nabla'=\nabla</span> 与 <span class="math inline">\partial_{t'}=\partial_t+\mathbf{u}\cdot\nabla</span>，</p>
+<p><span id="eq-galilean-wave-transform"><span class="math display">
+\mathbf{k}' = \mathbf{k},
+\qquad
+\omega' = \omega - \mathbf{u}\cdot\mathbf{k}.
+\tag{4.20}</span></span></p>
+<p>把 <a href="#eq-dispersion" class="quarto-xref">式&nbsp;<span>4.17</span></a> 代入 <a href="#eq-galilean-wave-transform" class="quarto-xref">式&nbsp;<span>4.20</span></a> 立得 <span class="math inline">\omega' = c|\mathbf{k}'| + (\mathbf{w}-\mathbf{u})\cdot\mathbf{k}'</span>——色散关系在变换下形式不变，与 <span class="math inline">\mathbf{w}'=\mathbf{w}-\mathbf{u}</span> 自洽。</p>
+</section>
+</section>
+<section id="sec-gal-boundary" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="sec-gal-boundary"><span class="header-section-number">4.6</span> 数学边界：走不通的路与自由参数</h2>
+<section id="注记为什么路线②走不通一阶计算" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="注记为什么路线②走不通一阶计算"><span class="header-section-number">4.6.1</span> 注记：为什么路线②走不通（一阶计算）</h3>
+<p>设仍要求场做非平凡变换 <span class="math inline">\mathbf{E}' = \mathbf{E} + a\,\mathbf{u}\times\mathbf{B}</span>、<span class="math inline">\mathbf{B}'=\mathbf{B}</span>（<span class="math inline">a</span> 待定），并要求标准系统 <a href="#eq-standard-maxwell" class="quarto-xref">式&nbsp;<span>4.2</span></a> 在伽利略变换下共变。用 <a href="#eq-operator-transform" class="quarto-xref">式&nbsp;<span>4.3</span></a> 逐条检验：</p>
+<p><strong>法拉第型</strong>要求 <span class="math inline">a=1</span>：</p>
+<p><span id="eq-nogo-faraday"><span class="math display">
+\underbrace{\nabla\times\left(\mathbf{E}+a\,\mathbf{u}\times\mathbf{B}\right)}_{\nabla\times\mathbf{E}-a\left(\mathbf{u}\cdot\nabla\right)\mathbf{B}}
+= -\left(\partial_{t}+\mathbf{u}\cdot\nabla\right)\mathbf{B}
+\;\Longrightarrow\; a = 1;
+\tag{4.21}</span></span></p>
+<p><strong>高斯型</strong>要求 <span class="math inline">a=0</span>：</p>
+<p><span id="eq-nogo-gauss"><span class="math display">
+\nabla\cdot\mathbf{E}' = \nabla\cdot\mathbf{E} - a\,\mathbf{u}\cdot\left(\nabla\times\mathbf{B}\right)
+= -a\,\frac{1}{c^{2}}\,\mathbf{u}\cdot\partial_{t}\mathbf{E}
+\;\overset{!}{=}\; 0
+\;\Longrightarrow\; a = 0.
+\tag{4.22}</span></span></p>
+<p><span class="math inline">a</span> 不能同时等于 <span class="math inline">0</span> 和 <span class="math inline">1</span>，矛盾。这就是 <a href="#tbl-form-invariance" class="quarto-xref">表&nbsp;<span>4.1</span></a> 中②被标为”不可能”的完整一阶论证（系统性的分类与不可能性定理见 Le Bellac–Lévy-Leblond 1973，<a href="#sec-gal-lineage" class="quarto-xref"><span>小节 4.7</span></a>）。<strong>因此引入补偿对象 <span class="math inline">\mathbf{w}</span>（路线①）不是诸多选项之一，而是保留波解的前提下最省的出路。</strong></p>
+</section>
+<section id="系数层修补为何不够" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="系数层修补为何不够"><span class="header-section-number">4.6.2</span> 系数层修补为何不够</h3>
+<p>一个自然的替代设想：不动算子，改系数——令 <span class="math inline">c</span> 依赖 <span class="math inline">\mathbf{w}</span>（即 <span class="math inline">c = c(\mathbf{w})</span>，相当于把 <span class="math inline">\mu\varepsilon</span> 当成速度的函数）。这在数学上被封死，三条独立理由：</p>
+<ol type="1">
+<li><strong>奇偶性</strong>：系数层给出的色散必为 <span class="math inline">\omega = c(\mathbf{w})|\mathbf{k}|</span>，它是 <span class="math inline">\mathbf{k}</span> 的<strong>偶函数</strong>且各向同性；而要求 <a href="#eq-dispersion" class="quarto-xref">式&nbsp;<span>4.17</span></a> 含奇部 <span class="math inline">\mathbf{w}\cdot\mathbf{k}</span>——奇偶性对不上。</li>
+<li><strong>方向依赖</strong>：<span class="math inline">\mathbf{w}\cdot\hat{\mathbf{k}}</span> 依赖传播方向，任何标量系数 <span class="math inline">c(\mathbf{w})</span> 只能给出各向同性的 <span class="math inline">|\mathbf{k}|</span>。</li>
+<li><strong>本构层面</strong>：要在本构关系中造出 <span class="math inline">\mathbf{w}\cdot\mathbf{k}</span>，关系式必须显含 <span class="math inline">\mathbf{k}</span> 的一次幂，即<strong>空间色散（非局域）</strong>。</li>
+</ol>
+<p>一句话：<strong>叠加是”算子层”的现象，不是”系数层”的现象。</strong> 这也解释了为什么构造只能动 <span class="math inline">\partial_t</span>。</p>
+</section>
+<section id="本构造的三个自由参数" class="level3" data-number="4.6.3">
+<h3 data-number="4.6.3" class="anchored" data-anchor-id="本构造的三个自由参数"><span class="header-section-number">4.6.3</span> 本构造的三个自由参数</h3>
+<p>数学给出的是<strong>一族</strong>模型，以下三项是外部输入，数学本身不决定它们：</p>
+<div id="tbl-free-parameters" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-free-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;4.3: 本构造的三个自由参数（外部输入）
+</figcaption>
+<div aria-describedby="tbl-free-parameters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 34%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>待定项</th>
+<th>选项</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">\mathbf{w}</span> 的取值</td>
+<td>每个解给定一个常向量</td>
+<td>决定该解的”剪切方向”</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>整体场 vs 可分介质</td>
+<td><span class="math inline">\mathbf{w}</span> 全局一个，或分区各自给定</td>
+<td>多源时速度贡献是<strong>叠加</strong>还是<strong>各自独立</strong></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>本构是否含剪切分量</td>
+<td>弹性张量含/不含剪切项</td>
+<td>决定方程是否支持横波解</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>第 2 项多说一句：若选”整体场”，多个源对 <span class="math inline">\mathbf{w}</span> 的贡献按某个权重<strong>叠加</strong>（相向对称的两源在正中恰好抵消）；若选”可分介质”，各区各自独立。两种都是自洽的数学模型，但<strong>是不同的模型</strong>——选定之前，“两列相向运动的载体之间 <span class="math inline">\mathbf{w}</span> 取什么”没有答案。</p>
+<p><strong>模型与理论的区别</strong>（本构造的定位）：输入 <span class="math inline">\mathbf{w}</span> 后，<a href="#eq-mod-div" class="quarto-xref">式&nbsp;<span>4.9</span></a>–<a href="#eq-mod-source" class="quarto-xref">式&nbsp;<span>4.13</span></a> 的每一条性质都是定理；但”<span class="math inline">\mathbf{w}</span> 本身服从什么方程”数学不回答。给它写一条演化方程、把”给定”变成”解出”，是把本模型升级为理论的下一步——那等于给 <span class="math inline">\mathbf{w}</span> 自己一个动力学。</p>
+</section>
+</section>
+<section id="sec-gal-lineage" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="sec-gal-lineage"><span class="header-section-number">4.7</span> 数学谱系注记</h2>
+<p>本构造的每个组成部分都有前人做过，其中一条与 <a href="#eq-mod-div" class="quarto-xref">式&nbsp;<span>4.9</span></a>–<a href="#eq-mod-source" class="quarto-xref">式&nbsp;<span>4.13</span></a> <strong>逐字相同</strong>。按时间顺序：</p>
+<p><strong>Hertz（1890）</strong>。Hertz 发表过一组运动介质的场方程：<span class="math inline">\partial_t</span> 换成 <span class="math inline">\partial_t+\mathbf{v}\cdot\nabla</span>，源项取 <span class="math inline">\mathbf{J}-\rho\mathbf{v}</span>，散度方程不动——与本构造完全一致（<span class="math inline">\mathbf{v}</span> 即此处的 <span class="math inline">\mathbf{w}</span>）：</p>
+<div id="tbl-hertz" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hertz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;4.4: 本构造与 Hertz 1890 方程的逐条对照
+</figcaption>
+<div aria-describedby="tbl-hertz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>本构造</th>
+<th>Hertz 1890</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\mathcal{D}_t^{(\mathbf{w})} = \partial_t+\mathbf{w}\cdot\nabla</span></td>
+<td>同</td>
+</tr>
+<tr class="even">
+<td>源项 <span class="math inline">\mu_0(\mathbf{J}-\rho\mathbf{w})</span></td>
+<td>同</td>
+</tr>
+<tr class="odd">
+<td>散度方程不动</td>
+<td>同</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\mathbf{w}</span>：带变换规则的补偿对象</td>
+<td><span class="math inline">\mathbf{v}</span>：被拖曳介质的速度（物理解释）</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>差别只在解释：Hertz 给 <span class="math inline">\mathbf{v}</span> 一个物理身份（被物质完全拖曳的介质），该解释后来被实验否定；本构造不给 <span class="math inline">\mathbf{w}</span> 任何身份，只规定变换规则——数学内容相同，承诺更少。</p>
+<p><strong>对流波动方程</strong>。声学中”风里的波”的标准写法</p>
+<p><span class="math display">
+\nabla^{2}\varphi - \frac{1}{c^{2}}\left(\partial_{t}+\mathbf{w}\cdot\nabla\right)^{2}\varphi = 0
+</span></p>
+<p>正是①型补偿结构在另一学科中的日常形态（气动声学的标准工程方程），风的变换规则同样是 <span class="math inline">\mathbf{w}'=\mathbf{w}-\mathbf{u}</span>。这说明①的数学结构本身完全体面。</p>
+<p><strong>Le Bellac–Lévy-Leblond（1973）</strong>。该文对”伽利略群下的电磁型方程”做了系统分类，结论：标准系统在伽利略群下只有 <span class="math inline">c\to\infty</span> 极限的两个退化版本（电极限、磁极限）能自洽；保留有限 <span class="math inline">c</span> 时路线②不可能。<a href="#sec-gal-boundary" class="quarto-xref"><span>小节 4.6</span></a> 的一阶计算是其最简版本。</p>
+<p><strong>Newton–Cartan 几何与 Hořava 引力（现代）</strong>。在当代非相对论场论中，“要让理论伽利略协变，就必须往背景里引入额外结构”已是标准操作：Newton–Cartan 几何需要一个”钟形式”（或等价地一个类时矢量场，文献通称 <strong>ether vector，以太矢量</strong>——正式术语）；Hořava 引力（2009）即为恢复伽利略式对称而显式引入该矢量场的当代实例。<span class="math inline">\mathbf{w}</span> 在这个框架里有精确的几何身份。</p>
+</section>
+<section id="sec-gal-interface" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="sec-gal-interface"><span class="header-section-number">4.8</span> 与现实世界的接口</h2>
+<p>本章自始至终没有做任何物理承诺：</p>
+<ul>
+<li><span class="math inline">c</span> 是参数。是否把它认同为现实世界中某个测量值，不是本章的前提；</li>
+<li><span class="math inline">\mathbf{w}</span> 是带变换规则的补偿对象。它是否对应任何可观察量，同样推迟；</li>
+<li><a href="#eq-round-trip" class="quarto-xref">式&nbsp;<span>4.19</span></a> 的二阶偏差、<a href="#eq-dispersion" class="quarto-xref">式&nbsp;<span>4.17</span></a> 的各向异性，在纯数学立场上只是模型内部的可检验特征，用于区分本模型与其他模型，不用于宣判对错。</li>
+</ul>
+<p>若日后需要与现实比对：比对的结果只会决定“是否为 <span class="math inline">\mathbf{w}</span> 另写一个版本（例如给它动力学、或改其变换规则）”，不影响本章任何定理的成立——定理的前提全部在数学内部。</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "已复制");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "已复制");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/maxwell-equations.html" class="pagination-link" aria-label="麦克斯韦方程组">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">麦克斯韦方程组</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/references.html" class="pagination-link" aria-label="参考文献">
+        <span class="nav-page-text">参考文献</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

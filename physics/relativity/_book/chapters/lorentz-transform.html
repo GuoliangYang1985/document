@@ -187,6 +187,12 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/galilean-electrodynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">伽利略协变的场方程组：一个纯数学构造</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">参考文献</span></a>
   </div>
@@ -205,16 +211,16 @@ window.Quarto = {
   <li><a href="#建立一般线性变换形式" id="toc-建立一般线性变换形式" class="nav-link" data-scroll-target="#建立一般线性变换形式"><span class="header-section-number">2.2</span> 建立一般线性变换形式</a>
   <ul class="collapse">
   <li><a href="#约束-1追踪-s-的原点" id="toc-约束-1追踪-s-的原点" class="nav-link" data-scroll-target="#约束-1追踪-s-的原点"><span class="header-section-number">2.2.1</span> 约束 1：追踪 <span class="math inline">S'</span> 的原点</a></li>
-  <li><a href="#约束-2相对性原理" id="toc-约束-2相对性原理" class="nav-link" data-scroll-target="#约束-2相对性原理"><span class="header-section-number">2.2.2</span> 约束 2：相对性原理</a></li>
+  <li><a href="#约束-2相对速度" id="toc-约束-2相对速度" class="nav-link" data-scroll-target="#约束-2相对速度"><span class="header-section-number">2.2.2</span> 约束 2：相对速度</a></li>
+  <li><a href="#约束-3不变速度" id="toc-约束-3不变速度" class="nav-link" data-scroll-target="#约束-3不变速度"><span class="header-section-number">2.2.3</span> 约束 3：不变速度</a></li>
+  <li><a href="#约束-4群结构" id="toc-约束-4群结构" class="nav-link" data-scroll-target="#约束-4群结构"><span class="header-section-number">2.2.4</span> 约束 4：群结构</a></li>
   </ul></li>
-  <li><a href="#引入恒定速度" id="toc-引入恒定速度" class="nav-link" data-scroll-target="#引入恒定速度"><span class="header-section-number">2.3</span> 引入恒定速度</a></li>
-  <li><a href="#确定参数-a" id="toc-确定参数-a" class="nav-link" data-scroll-target="#确定参数-a"><span class="header-section-number">2.4</span> 确定参数 <span class="math inline">A</span></a></li>
-  <li><a href="#最终形式" id="toc-最终形式" class="nav-link" data-scroll-target="#最终形式"><span class="header-section-number">2.5</span> 最终形式</a></li>
-  <li><a href="#sec-lorentz-4d" id="toc-sec-lorentz-4d" class="nav-link" data-scroll-target="#sec-lorentz-4d"><span class="header-section-number">2.6</span> 推广到四维时空</a>
+  <li><a href="#最终形式" id="toc-最终形式" class="nav-link" data-scroll-target="#最终形式"><span class="header-section-number">2.3</span> 最终形式</a></li>
+  <li><a href="#sec-lorentz-4d" id="toc-sec-lorentz-4d" class="nav-link" data-scroll-target="#sec-lorentz-4d"><span class="header-section-number">2.4</span> 推广到四维时空</a>
   <ul class="collapse">
-  <li><a href="#横向坐标不变对称性论证" id="toc-横向坐标不变对称性论证" class="nav-link" data-scroll-target="#横向坐标不变对称性论证"><span class="header-section-number">2.6.1</span> 横向坐标不变：对称性论证</a></li>
-  <li><a href="#四维洛伦兹变换" id="toc-四维洛伦兹变换" class="nav-link" data-scroll-target="#四维洛伦兹变换"><span class="header-section-number">2.6.2</span> 四维洛伦兹变换</a></li>
-  <li><a href="#讨论" id="toc-讨论" class="nav-link" data-scroll-target="#讨论"><span class="header-section-number">2.6.3</span> 讨论</a></li>
+  <li><a href="#横向坐标不变对称性论证" id="toc-横向坐标不变对称性论证" class="nav-link" data-scroll-target="#横向坐标不变对称性论证"><span class="header-section-number">2.4.1</span> 横向坐标不变：对称性论证</a></li>
+  <li><a href="#四维洛伦兹变换" id="toc-四维洛伦兹变换" class="nav-link" data-scroll-target="#四维洛伦兹变换"><span class="header-section-number">2.4.2</span> 四维洛伦兹变换</a></li>
+  <li><a href="#讨论" id="toc-讨论" class="nav-link" data-scroll-target="#讨论"><span class="header-section-number">2.4.3</span> 讨论</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -275,7 +281,7 @@ window.Quarto = {
 </section>
 <section id="建立一般线性变换形式" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="建立一般线性变换形式"><span class="header-section-number">2.2</span> 建立一般线性变换形式</h2>
-<p>设 <span class="math inline">S'</span> 系相对于 <span class="math inline">S</span> 系以速度 <span class="math inline">v</span> 沿 <span class="math inline">x</span> 轴正向运动，两系对应的坐标轴两两平行，且在 <span class="math inline">t = t' = 0</span> 时原点重合。两系的几何关系如图 <a href="#fig-lorentz-frames" class="quarto-xref">图&nbsp;<span>2.1</span></a> 所示。本节先在 <span class="math inline">x</span>–<span class="math inline">t</span> 平面内建立变换；横向坐标 <span class="math inline">y</span>、<span class="math inline">z</span> 保持不变这一结论将在 <a href="#sec-lorentz-4d" class="quarto-xref"><span>小节 2.6</span></a> 节中由对称性严格证明，届时将看到二维推导对四维变换是完全充分的。</p>
+<p>设 <span class="math inline">S'</span> 系相对于 <span class="math inline">S</span> 系以速度 <span class="math inline">v</span> 沿 <span class="math inline">x</span> 轴正向运动，两系对应的坐标轴两两平行，且在 <span class="math inline">t = t' = 0</span> 时原点重合。两系的几何关系如图 <a href="#fig-lorentz-frames" class="quarto-xref">图&nbsp;<span>2.1</span></a> 所示。本节先在 <span class="math inline">(t, x)</span> 平面内建立变换；横向坐标 <span class="math inline">y</span>、<span class="math inline">z</span> 保持不变这一结论将在 <a href="#sec-lorentz-4d" class="quarto-xref"><span>小节 2.4</span></a> 节中由对称性严格证明，届时将看到二维推导对四维变换是完全充分的。</p>
 <div id="fig-lorentz-frames" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lorentz-frames-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -286,206 +292,134 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<p>由于变换是线性的，<span class="math inline">x</span>–<span class="math inline">t</span> 平面内的通式可以写为：</p>
-<p><span id="eq-lin-x"><span class="math display">
-x' = Ax + Bt
+<p>由 <a href="#prp-homogeneity" class="quarto-xref">公理&nbsp;<span>2.1</span></a>，<span class="math inline">(t, x)</span> 平面内的线性变换必为</p>
+<p><span id="eq-lambda"><span class="math display">
+\begin{pmatrix} t' \\ x' \end{pmatrix}
+=
+\begin{pmatrix} A &amp; B \\ C &amp; D \end{pmatrix}
+\begin{pmatrix} t \\ x \end{pmatrix}
 \tag{2.1}</span></span></p>
+<p>即</p>
 <p><span id="eq-lin-t"><span class="math display">
-t' = Cx + Dt
+t' = A t + B x
 \tag{2.2}</span></span></p>
-<p>其中 <span class="math inline">A, B, C, D</span> 是待定的常数（只依赖于 <span class="math inline">v</span> 和 <span class="math inline">c</span>）。</p>
+<p><span id="eq-lin-x"><span class="math display">
+x' = C t + D x
+\tag{2.3}</span></span></p>
+<p>其中 <span class="math inline">A, B, C, D</span> 是只依赖于 <span class="math inline">v</span> 与 <span class="math inline">c</span> 的待定常数。</p>
 <section id="约束-1追踪-s-的原点" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="约束-1追踪-s-的原点"><span class="header-section-number">2.2.1</span> 约束 1：追踪 <span class="math inline">S'</span> 的原点</h3>
-<p><span class="math inline">S'</span> 的原点 <span class="math inline">x' = 0</span>，在 <span class="math inline">S</span> 系中对应 <span class="math inline">x = vt</span>。代入 <a href="#eq-lin-x" class="quarto-xref">式&nbsp;<span>2.1</span></a>：</p>
-<p><span class="math display">
-0 = A(vt) + Bt \quad \Longrightarrow \quad B = -Av
-</span></p>
-<p>于是 <a href="#eq-lin-x" class="quarto-xref">式&nbsp;<span>2.1</span></a> 变为 <a href="#eq-lin-x2" class="quarto-xref">式&nbsp;<span>2.3</span></a>。</p>
-<p><span id="eq-lin-x2"><span class="math display">
-x' = A(x - vt)
-\tag{2.3}</span></span></p>
-</section>
-<section id="约束-2相对性原理" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="约束-2相对性原理"><span class="header-section-number">2.2.2</span> 约束 2：相对性原理</h3>
-<p>由 <a href="#eq-lin-x2" class="quarto-xref">式&nbsp;<span>2.3</span></a> 和 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 得到变换矩阵为 <a href="#eq-lambda" class="quarto-xref">式&nbsp;<span>2.4</span></a>，它作用于列向量 <span class="math inline">(x, t)^{\mathsf{T}}</span>。</p>
-<p><span id="eq-lambda"><span class="math display">
-\Lambda =
-\begin{pmatrix}
-A &amp; -Av \\
-C &amp; D
-\end{pmatrix}
+<p><span class="math inline">S'</span> 的原点满足 <span class="math inline">x' = 0</span>，它在 <span class="math inline">S</span> 系中对应 <span class="math inline">x = vt</span>。代入 <a href="#eq-lin-x" class="quarto-xref">式&nbsp;<span>2.3</span></a>：</p>
+<p><span id="eq-constraint-origin"><span class="math display">
+0 = C t + D(vt) = (C + Dv)\,t
+\quad \Longrightarrow \quad
+C = -Dv
 \tag{2.4}</span></span></p>
-<p><span class="math inline">S</span> 系相对于 <span class="math inline">S'</span> 系以速度 <span class="math inline">-v</span> 运动。根据 <a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.3</span></a> 的群性质，从 <span class="math inline">S'</span> 到 <span class="math inline">S</span> 的逆变换必须具有相同的数学形式。</p>
-<p>首先计算一般线性变换的行列式为 <a href="#eq-det-lambda" class="quarto-xref">式&nbsp;<span>2.5</span></a>。</p>
-<p><span id="eq-det-lambda"><span class="math display">
-\det(\Lambda) = AD + AvC = A(D + vC)
+<p>于是 <a href="#eq-lin-x" class="quarto-xref">式&nbsp;<span>2.3</span></a> 变为 <a href="#eq-lin-x2" class="quarto-xref">式&nbsp;<span>2.5</span></a>。</p>
+<p><span id="eq-lin-x2"><span class="math display">
+x' = D(x - vt)
 \tag{2.5}</span></span></p>
-<p>设 <span class="math inline">\det(\Lambda) \neq 0</span>，否则变换不可逆，与群结构公理矛盾。<a href="#eq-lambda" class="quarto-xref">式&nbsp;<span>2.4</span></a> 的逆矩阵为 <a href="#eq-inv-lambda" class="quarto-xref">式&nbsp;<span>2.6</span></a>。</p>
-<p><span id="eq-inv-lambda"><span class="math display">
-\Lambda^{-1} = \frac{1}{\det(\Lambda)}
-\begin{pmatrix}
-D &amp; Av \\
--C &amp; A
-\end{pmatrix}
+</section>
+<section id="约束-2相对速度" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="约束-2相对速度"><span class="header-section-number">2.2.2</span> 约束 2：相对速度</h3>
+<p>由相对性原理（<a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.3</span></a>），<span class="math inline">S</span> 系在自己看来静止，而在 <span class="math inline">S'</span> 系中必须以速度 <span class="math inline">-v</span> 退行，即其原点 <span class="math inline">x = 0</span> 满足 <span class="math inline">x' = -v t'</span>。</p>
+<p>在 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 和 <a href="#eq-lin-x2" class="quarto-xref">式&nbsp;<span>2.5</span></a> 中令 <span class="math inline">x = 0</span>，得 <span class="math inline">t' = A t</span>、<span class="math inline">x' = -Dv\,t</span>，于是 <span class="math inline">x'/t' = -Dv/A</span>。要求它等于 <span class="math inline">-v</span>（<span class="math inline">v \neq 0</span>；<span class="math inline">v = 0</span> 时变换退化为恒等，<span class="math inline">A = D = 1</span> 自动成立）：</p>
+<p><span id="eq-constraint-velocity"><span class="math display">
+-\frac{Dv}{A} = -v
+\quad \Longrightarrow \quad
+D = A
 \tag{2.6}</span></span></p>
-<p>由此得到从 <span class="math inline">S'</span> 到 <span class="math inline">S</span> 的变换方程：</p>
-<p><span id="eq-transform-x"><span class="math display">
-x = \frac{D}{A(D + vC)} x' + \frac{Av}{A(D + vC)} t'
-\tag{2.7}</span></span></p>
-<p>由于 <span class="math inline">S</span> 系相对于 <span class="math inline">S'</span> 系以 <span class="math inline">-v</span> 运动，<span class="math inline">S</span> 系的原点（<span class="math inline">x = 0</span>）在 <span class="math inline">S'</span> 系中满足 <span class="math inline">x' = -v t'</span>。代入 <a href="#eq-transform-x" class="quarto-xref">式&nbsp;<span>2.7</span></a>：</p>
-<p><span id="eq-substitute"><span class="math display">
-0 = \frac{D}{A(D + vC)} (-v t') + \frac{Av}{A(D + vC)} t'
-\tag{2.8}</span></span></p>
-<p>消去公因子后得：</p>
-<p><span id="eq-result"><span class="math display">
--Dv + Av = 0 \quad \Longrightarrow \quad D = A
-\tag{2.9}</span></span></p>
-<p>现在，变换矩阵的形式缩小为：</p>
+<p>此时变换只剩下 <span class="math inline">A</span>、<span class="math inline">B</span> 两个参数，矩阵形式为</p>
 <p><span id="eq-matrix-form"><span class="math display">
-\begin{pmatrix}
-x' \\ t'
-\end{pmatrix}
-=
-\begin{pmatrix}
-A &amp; -Av \\
-C &amp; A
-\end{pmatrix}
-\begin{pmatrix}
-x \\ t
-\end{pmatrix}
-\tag{2.10}</span></span></p>
+\Lambda = \begin{pmatrix} A &amp; B \\ -Av &amp; A \end{pmatrix}
+\tag{2.7}</span></span></p>
 </section>
-</section>
-<section id="引入恒定速度" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="引入恒定速度"><span class="header-section-number">2.3</span> 引入恒定速度</h2>
-<p>我们要求存在一个速度 <span class="math inline">c</span>，在 <span class="math inline">S</span> 系中满足 <span class="math inline">x = ct</span>，且变换到 <span class="math inline">S'</span> 系后依然满足 <span class="math inline">x' = ct'</span>。 代入 <a href="#eq-lin-x2" class="quarto-xref">式&nbsp;<span>2.3</span></a> 和 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 的形式：</p>
+<section id="约束-3不变速度" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="约束-3不变速度"><span class="header-section-number">2.2.3</span> 约束 3：不变速度</h3>
+<p>由 <a href="#prp-invariant-speed" class="quarto-xref">公理&nbsp;<span>2.2</span></a>，要求 <span class="math inline">x = ct \Rightarrow x' = ct'</span>。取满足 <span class="math inline">x = ct</span> 的事件，用 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 和 <a href="#eq-lin-x2" class="quarto-xref">式&nbsp;<span>2.5</span></a> 直接构造组合 <span class="math inline">x' - ct'</span>：</p>
 <p><span class="math display">
-x' = A(ct - vt) = A(c - v)t
+x' - c t'
+= A(ct - vt) - c\,(At + Bct)
+= -\left(Av + Bc^{2}\right)t
 </span></p>
-<p><span class="math display">
-t' = C(ct) + At = (Cc + A)t
-</span></p>
-<p>因为要求 <span class="math inline">x' = ct'</span>，代入得到：</p>
-<p><span class="math display">
-A(c - v)t = c(Cc + A)t
-</span></p>
-<p>消去 <span class="math inline">t</span>（<span class="math inline">t &gt; 0</span>），得：</p>
-<p><span id="eq-C-constraint"><span class="math display">
-\begin{aligned}
-A(c - v) &amp;= c(Cc + A) \\
-Ac - Av &amp;= Cc^{2} + Ac \\
--Av &amp;= Cc^{2} \quad \Longrightarrow \quad C = -\frac{Av}{c^{2}}
-\end{aligned}
-\tag{2.11}</span></span></p>
-<p>对反向光信号 <span class="math inline">x = -ct</span>（此时要求 <span class="math inline">x' = -ct'</span>）作同样的计算，得到完全相同的约束，不产生新的限制。</p>
-<p>现在，变换只依赖最后一个参数 <span class="math inline">A</span>：</p>
+<p>要求该组合恒为零，即得</p>
+<p><span id="eq-constraint-light"><span class="math display">
+Av + Bc^{2} = 0
+\quad \Longrightarrow \quad
+B = -\frac{Av}{c^{2}}
+\tag{2.8}</span></span></p>
+<p>至此变换只剩一个参数 <span class="math inline">A</span>：</p>
+<p><span id="eq-t-final-1"><span class="math display">
+t' = A\left(t - \frac{v}{c^{2}}x\right)
+\tag{2.9}</span></span></p>
 <p><span id="eq-x-final-1"><span class="math display">
 x' = A(x - vt)
-\tag{2.12}</span></span></p>
-<p><span id="eq-t-final-1"><span class="math display">
-t' = A\left( t - \frac{v}{c^{2}}x \right)
-\tag{2.13}</span></span></p>
+\tag{2.10}</span></span></p>
 </section>
-<section id="确定参数-a" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="确定参数-a"><span class="header-section-number">2.4</span> 确定参数 <span class="math inline">A</span></h2>
-<p>我们需要确定最后一个参数 <span class="math inline">A</span>。由 <a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.3</span></a>，变换集合构成群：连续做一次速度为 <span class="math inline">v</span> 的变换与一次速度为 <span class="math inline">-v</span> 的变换，必须回到原坐标系，即逆变换等于速度反号的变换，<span class="math inline">\Lambda(v)^{-1} = \Lambda(-v)</span>。 从矩阵形式（作用于列向量 <span class="math inline">(x, t)^{\mathsf{T}}</span>）：</p>
+<section id="约束-4群结构" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="约束-4群结构"><span class="header-section-number">2.2.4</span> 约束 4：群结构</h3>
+<p>由 <a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.3</span></a>，变换集合构成群，故速度为 <span class="math inline">v</span> 的变换与速度为 <span class="math inline">-v</span> 的变换互逆：<span class="math inline">\Lambda(v)\,\Lambda(-v) = I</span>。</p>
+<p>把 <span class="math inline">v \to -v</span> 代入 <a href="#eq-matrix-form" class="quarto-xref">式&nbsp;<span>2.7</span></a>。由各向同性，<span class="math inline">A</span> 只依赖速率大小而与此方向无关，故 <span class="math inline">A(-v) = A(v) \equiv A</span>：</p>
 <p><span class="math display">
-\Lambda(v) =
-\begin{pmatrix}
-A &amp; -Av \\
--Av/c^{2} &amp; A
-\end{pmatrix}
+\Lambda(-v) = \begin{pmatrix} A &amp; Av/c^{2} \\ Av &amp; A \end{pmatrix}
 </span></p>
-<p>逆矩阵 <span class="math inline">\Lambda(v)^{-1}</span> 应该等于 <span class="math inline">\Lambda(-v)</span>：</p>
-<p><span class="math display">
-\Lambda(-v) =
-\begin{pmatrix}
-A &amp; Av \\
-Av/c^{2} &amp; A
-\end{pmatrix}
-</span></p>
-<p>计算 <span class="math inline">\Lambda(v)</span> 的逆矩阵（行列式 <span class="math inline">\det = A^{2} - A^{2}v^{2}/c^{2} = A^{2}(1 - v^{2}/c^{2})</span>）：</p>
-<p><span class="math display">
-\Lambda(v)^{-1}
-= \frac{1}{A^{2}(1 - v^{2}/c^{2})}
-\begin{pmatrix}
-A &amp; Av \\
-Av/c^{2} &amp; A
-\end{pmatrix}
-= \frac{1}{A(1 - v^{2}/c^{2})}
-\begin{pmatrix}
-1 &amp; v \\
-v/c^{2} &amp; 1
-\end{pmatrix}
-</span></p>
-<p>令 <span class="math inline">\Lambda(v)^{-1} = \Lambda(-v)</span>，即：</p>
-<p><span class="math display">
-\frac{1}{A(1 - v^{2}/c^{2})}
-\begin{pmatrix}
-1 &amp; v \\
-v/c^{2} &amp; 1
-\end{pmatrix}
-=
-\begin{pmatrix}
-A &amp; Av \\
-Av/c^{2} &amp; A
-\end{pmatrix}
-</span></p>
-<p>比较矩阵的左上角元素：</p>
-<p><span class="math display">
-\frac{1}{A(1 - v^{2}/c^{2})} = A \quad \Longrightarrow \quad A^{2}(1 - v^{2}/c^{2}) = 1
-</span></p>
-<p>解得：</p>
+<p>两者相乘，非对角元两两相消，对角元给出 <span class="math inline">A^{2} - A^{2}v^{2}/c^{2}</span>：</p>
+<p><span id="eq-boost-product"><span class="math display">
+\begin{aligned}
+\Lambda(v) \Lambda(-v) &amp;= \begin{pmatrix} A &amp; -Av/c^2 \\ -Av &amp; A \end{pmatrix} \begin{pmatrix} A &amp; Av/c^2 \\ Av &amp; A \end{pmatrix} \\
+&amp;= \begin{pmatrix} A^2 \left(1 - \frac{v^2}{c^2}\right) &amp; 0 \\ 0 &amp; A^2 \left(1 - \frac{v^2}{c^2}\right) \end{pmatrix} \\
+&amp;= A^2 \left(1 - \frac{v^2}{c^2}\right) \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \\
+&amp;= A^2 \left(1 - \frac{v^2}{c^2}\right) I
+\end{aligned}
+\tag{2.11}</span></span></p>
+<p>要求乘积为单位阵，得</p>
 <p><span id="eq-gamma-def"><span class="math display">
+A^{2}\left(1 - \frac{v^{2}}{c^{2}}\right) = 1
+\quad \Longrightarrow \quad
 A = \frac{1}{\sqrt{1 - v^{2}/c^{2}}} \equiv \gamma
-\tag{2.14}</span></span></p>
-<p>（这里取正号，因为要求 <span class="math inline">v = 0</span> 时变换退化为恒等变换 <span class="math inline">A = 1</span>。）</p>
+\tag{2.12}</span></span></p>
+<p>根号取正号：<span class="math inline">v \to 0</span> 时变换必须连续地退化为恒等变换，<span class="math inline">A \to 1</span>。</p>
 </section>
-<section id="最终形式" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="最终形式"><span class="header-section-number">2.5</span> 最终形式</h2>
-<p>将 <span class="math inline">A = \gamma</span> 代入 <a href="#eq-x-final-1" class="quarto-xref">式&nbsp;<span>2.12</span></a> 与 <a href="#eq-t-final-1" class="quarto-xref">式&nbsp;<span>2.13</span></a>，我们得到 <span class="math inline">x</span>–<span class="math inline">t</span> 平面内的洛伦兹变换。为与下一节四维形式的变量顺序约定 <span class="math inline">(t, x, y, z)</span> 保持一致，这里按 <span class="math inline">t'</span>、<span class="math inline">x'</span> 的顺序汇总：</p>
+</section>
+<section id="最终形式" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="最终形式"><span class="header-section-number">2.3</span> 最终形式</h2>
+<p>将 <span class="math inline">A = \gamma</span> 代入 <a href="#eq-t-final-1" class="quarto-xref">式&nbsp;<span>2.9</span></a> 与 <a href="#eq-x-final-1" class="quarto-xref">式&nbsp;<span>2.10</span></a>，得到 <span class="math inline">(t, x)</span> 平面内的洛伦兹变换：</p>
 <p><span id="eq-final-t"><span class="math display">
 t' = \gamma\left( t - \frac{v}{c^{2}}x \right)
-\tag{2.15}</span></span></p>
+\tag{2.13}</span></span></p>
 <p><span id="eq-final-x"><span class="math display">
 x' = \gamma(x - vt)
-\tag{2.16}</span></span></p>
-<p>写成矩阵形式 <a href="#eq-final-matrix" class="quarto-xref">式&nbsp;<span>2.17</span></a>，列向量相应按 <span class="math inline">(t, x)</span> 的顺序排列，其左上角 <span class="math inline">2 \times 2</span> 块与下一节四维形式 <a href="#eq-lorentz-4d-mat" class="quarto-xref">式&nbsp;<span>2.21</span></a> 完全一致。</p>
+\tag{2.14}</span></span></p>
+<p>写成矩阵形式 <a href="#eq-final-matrix" class="quarto-xref">式&nbsp;<span>2.15</span></a>：</p>
 <p><span id="eq-final-matrix"><span class="math display">
-\begin{pmatrix}
-t' \\ x'
-\end{pmatrix}
+\begin{pmatrix} t' \\ x' \end{pmatrix}
 =
-\begin{pmatrix}
-\gamma &amp; -\gamma v/c^{2} \\
--\gamma v &amp; \gamma
-\end{pmatrix}
-\begin{pmatrix}
-t \\ x
-\end{pmatrix}
-\tag{2.17}</span></span></p>
+\begin{pmatrix} \gamma &amp; -\gamma v/c^{2} \\ -\gamma v &amp; \gamma \end{pmatrix}
+\begin{pmatrix} t \\ x \end{pmatrix}
+\tag{2.15}</span></span></p>
+<p>由于 <span class="math inline">t</span> 与 <span class="math inline">x</span> 的量纲相差一个 <span class="math inline">c</span>，<a href="#eq-final-matrix" class="quarto-xref">式&nbsp;<span>2.15</span></a> 并非对称矩阵；取 <span class="math inline">x^{0} = ct</span> 消去量纲差后即化为对称形式（见 <a href="#eq-lorentz-4d-beta" class="quarto-xref">式&nbsp;<span>2.20</span></a>）。其左上角 <span class="math inline">2 \times 2</span> 块与下一节四维形式 <a href="#eq-lorentz-4d-mat" class="quarto-xref">式&nbsp;<span>2.19</span></a> 完全一致。</p>
 </section>
-<section id="sec-lorentz-4d" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="sec-lorentz-4d"><span class="header-section-number">2.6</span> 推广到四维时空</h2>
-<p>前几节在 <span class="math inline">x</span>–<span class="math inline">t</span> 平面内完成了推导。本节补齐四维图景：先由对称性证明横向坐标 <span class="math inline">y</span>、<span class="math inline">z</span> 在变换下不变，再给出完整的四维洛伦兹变换及其矩阵形式，最后验证时空间隔的不变性。</p>
-<section id="横向坐标不变对称性论证" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="横向坐标不变对称性论证"><span class="header-section-number">2.6.1</span> 横向坐标不变：对称性论证</h3>
-<p>设两系坐标轴对应平行。<span class="math inline">y</span>、<span class="math inline">z</span> 坐标的一般线性变换可写为 <a href="#eq-yz-general" class="quarto-xref">式&nbsp;<span>2.18</span></a>（系数只依赖于 <span class="math inline">v</span> 与 <span class="math inline">c</span>）。</p>
+<section id="sec-lorentz-4d" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-lorentz-4d"><span class="header-section-number">2.4</span> 推广到四维时空</h2>
+<p>前几节在 <span class="math inline">(t, x)</span> 平面内完成了推导。本节补齐四维图景：先由对称性证明横向坐标 <span class="math inline">y</span>、<span class="math inline">z</span> 在变换下不变，再给出完整的四维洛伦兹变换及其矩阵形式，最后验证时空间隔的不变性。</p>
+<section id="横向坐标不变对称性论证" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="横向坐标不变对称性论证"><span class="header-section-number">2.4.1</span> 横向坐标不变：对称性论证</h3>
+<p>设两系坐标轴对应平行。<span class="math inline">y</span>、<span class="math inline">z</span> 坐标的一般线性变换可写为 <a href="#eq-yz-general" class="quarto-xref">式&nbsp;<span>2.16</span></a>（系数只依赖于 <span class="math inline">v</span> 与 <span class="math inline">c</span>）：</p>
 <p><span id="eq-yz-general"><span class="math display">
 \begin{aligned}
-y' &amp;= a y + b z + \alpha x + \eta t \\
-z' &amp;= c y + d z + \mu x + \nu t
+y' &amp;= p\,y + q\,z + \alpha x + \eta t \\
+z' &amp;= r\,y + s\,z + \mu x + \nu t
 \end{aligned}
-\tag{2.18}</span></span></p>
+\tag{2.16}</span></span></p>
 <p><strong>第一步（<span class="math inline">x</span> 轴映到 <span class="math inline">x'</span> 轴）。</strong> 由各向同性，<span class="math inline">x</span> 轴在变换下必须映到 <span class="math inline">x'</span> 轴：位于 <span class="math inline">x</span> 轴上的点（<span class="math inline">y = z = 0</span>）在 <span class="math inline">S'</span> 系中的横向坐标必须为零。于是对任意 <span class="math inline">x</span>、<span class="math inline">t</span> 有 <span class="math inline">\alpha x + \eta t = 0</span> 与 <span class="math inline">\mu x + \nu t = 0</span>，故</p>
 <p><span class="math display">
 \alpha = \eta = \mu = \nu = 0
 </span></p>
-<p><strong>第二步（反射对称性）。</strong> 将两系的 <span class="math inline">y</span> 轴同时反向（<span class="math inline">y \to -y</span>，<span class="math inline">y' \to -y'</span>），物理情境不变，变换形式应保持不变。在反射后的坐标下 <span class="math inline">-y' = -ay + bz</span>，即 <span class="math inline">y' = ay - bz</span>，与原式 <span class="math inline">y' = ay + bz</span> 比较得 <span class="math inline">b = 0</span>；同理，由 <span class="math inline">z \to -z</span> 的反射对称性得 <span class="math inline">c = 0</span>。于是</p>
+<p><strong>第二步（反射对称性）。</strong> 将两系的 <span class="math inline">y</span> 轴同时反向（<span class="math inline">y \to -y</span>，<span class="math inline">y' \to -y'</span>），物理情境不变，变换形式应保持不变。在反射后的坐标下 <span class="math inline">-y' = -py + qz</span>，即 <span class="math inline">y' = py - qz</span>，与原式 <span class="math inline">y' = py + qz</span> 比较得 <span class="math inline">q = 0</span>；同理，由 <span class="math inline">z \to -z</span> 的反射对称性得 <span class="math inline">r = 0</span>。于是</p>
 <p><span class="math display">
-y' = a y, \qquad z' = d z
+y' = p\,y, \qquad z' = s\,z
 </span></p>
-<p><strong>第三步（确定横向比例因子）。</strong> 由 <span class="math inline">y</span>、<span class="math inline">z</span> 两个横向方向的等价性，<span class="math inline">a = d</span>，记为 <span class="math inline">a(v)</span>。</p>
+<p><strong>第三步（确定横向比例因子）。</strong> 由 <span class="math inline">y</span>、<span class="math inline">z</span> 两个横向方向的等价性，<span class="math inline">p = s</span>，记为 <span class="math inline">a(v)</span>。</p>
 <ul>
 <li>一方面，对上式求逆（即把 <span class="math inline">v</span> 换成 <span class="math inline">-v</span> 的变换）得 <span class="math inline">y = a(-v)\,y'</span>，故</li>
 </ul>
@@ -498,11 +432,11 @@ a(v)\,a(-v) = 1
 <p>于是 <span class="math inline">a(v)^{2} = 1</span>；再由 <span class="math inline">v \to 0</span> 时变换连续地退化为恒等变换（<span class="math inline">a \to 1</span>），得</p>
 <p><span id="eq-yz-invariant"><span class="math display">
 y' = y, \qquad z' = z
-\tag{2.19}</span></span></p>
-<p>即<strong>横向坐标在洛伦兹变换下不变</strong>。因此四维变换在 <span class="math inline">(t, x)</span> 与 <span class="math inline">(y, z)</span> 子空间上是分块对角的，前几节在 <span class="math inline">x</span>–<span class="math inline">t</span> 平面内的推导对四维变换完全充分。</p>
+\tag{2.17}</span></span></p>
+<p>即<strong>横向坐标在洛伦兹变换下不变</strong>。因此四维变换在 <span class="math inline">(t, x)</span> 与 <span class="math inline">(y, z)</span> 子空间上是分块对角的，前几节在 <span class="math inline">(t, x)</span> 平面内的推导对四维变换完全充分。</p>
 </section>
-<section id="四维洛伦兹变换" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="四维洛伦兹变换"><span class="header-section-number">2.6.2</span> 四维洛伦兹变换</h3>
+<section id="四维洛伦兹变换" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="四维洛伦兹变换"><span class="header-section-number">2.4.2</span> 四维洛伦兹变换</h3>
 <p>综合以上结果，得到四维洛伦兹变换（变量按 <span class="math inline">(t, x, y, z)</span> 的顺序排列）：</p>
 <p><span id="eq-lorentz-4d"><span class="math display">
 \left\{\begin{aligned}
@@ -511,8 +445,8 @@ y' = y, \qquad z' = z
 &amp; y' = y \\
 &amp; z' = z
 \end{aligned} \right.
-\tag{2.20}</span></span></p>
-<p>其矩阵形式为 <a href="#eq-lorentz-4d-mat" class="quarto-xref">式&nbsp;<span>2.21</span></a>。</p>
+\tag{2.18}</span></span></p>
+<p>其矩阵形式为 <a href="#eq-lorentz-4d-mat" class="quarto-xref">式&nbsp;<span>2.19</span></a>。</p>
 <p><span id="eq-lorentz-4d-mat"><span class="math display">
 \begin{pmatrix}
 t' \\ x' \\ y' \\ z'
@@ -527,8 +461,8 @@ t' \\ x' \\ y' \\ z'
 \begin{pmatrix}
 t \\ x \\ y \\ z
 \end{pmatrix}
-\tag{2.21}</span></span></p>
-<p>取 <span class="math inline">x^{0} = ct</span> 并记 <span class="math inline">\beta = v/c</span>，四个分量具有相同的长度量纲，矩阵化为对称形式 <a href="#eq-lorentz-4d-beta" class="quarto-xref">式&nbsp;<span>2.22</span></a>。</p>
+\tag{2.19}</span></span></p>
+<p>取 <span class="math inline">x^{0} = ct</span> 并记 <span class="math inline">\beta = v/c</span>，四个分量具有相同的长度量纲，<a href="#eq-final-matrix" class="quarto-xref">式&nbsp;<span>2.15</span></a> 的 <span class="math inline">2 \times 2</span> 块化为对称形式 <a href="#eq-lorentz-4d-beta" class="quarto-xref">式&nbsp;<span>2.20</span></a>。</p>
 <p><span id="eq-lorentz-4d-beta"><span class="math display">
 \begin{pmatrix}
 ct' \\ x' \\ y' \\ z'
@@ -543,10 +477,10 @@ ct' \\ x' \\ y' \\ z'
 \begin{pmatrix}
 ct \\ x \\ y \\ z
 \end{pmatrix}
-\tag{2.22}</span></span></p>
+\tag{2.20}</span></span></p>
 </section>
-<section id="讨论" class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="讨论"><span class="header-section-number">2.6.3</span> 讨论</h3>
+<section id="讨论" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="讨论"><span class="header-section-number">2.4.3</span> 讨论</h3>
 <p>整个推导只使用了三条公理——线性性、不变速度的存在与群结构——而未借助电磁学或光的任何具体性质。</p>
 
 
