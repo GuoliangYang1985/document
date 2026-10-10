@@ -4,7 +4,8 @@ project:
   execute-dir: project
 
 book:
-  title: "狭义相对论"
+  title: "测量的边界"
+  subtitle: "演化速率耦合场论"
   author: "杨国梁"
   # HTML 版页面右上角提供 PDF 下载按钮
   downloads: pdf
@@ -14,6 +15,7 @@ book:
     - chapters/transform-derivation.qmd
     - chapters/maxwell-equations.qmd
     - chapters/galilean-electrodynamics.qmd
+    - chapters/clock-coupling.qmd
     - chapters/references.qmd
 
 csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl

@@ -1,0 +1,356 @@
+# 演化速率耦合框架 {#sec-clock-coupling}
+
+本章只做数学。它研究一个对象：**在给定的背景场 $\Phi$ 下，多类演化系统各自的速率如何由一族响应函数 $f_i$ 给出。** 本章不含与运动速度相关的项（那属于另一章的题材），也不涉及任何测量结果。
+
+内容分两部分。**几何部分**（@sec-cc-data 至 @sec-cc-degenerations）在 $\Phi$ 给定的前提下刻画 $\omega_i=f_i(\Phi)\,dt$ 的结构，并给出类别映射 $i\mapsto f_i$ 的三种退化；**动力学部分**（@sec-cc-field、@sec-cc-quantum）让 $\Phi$ 自身承担方程，并把它接入量子力学。先给出全章的分层总览：
+
+| 层 | 数学对象 | 该层已确定的 | 该层仍自由的 |
+|----|----------|--------------|--------------|
+| 一形式层 | $\omega_i = f_i(\Phi)\,dt$ | 叶状结构、精确性判据 | 无 |
+| 规范化层 | $\mathbb{R}_{>0}$ 的作用与模空间 | 不变量与协变量的分离 | 无 |
+| 射流层 | $j^{n}_{0}f_i \in \mathcal{J}^{n}$ | 一阶数据的线性性 | 高阶系数 |
+| 变分层 | 作用量 $S[\Phi,\psi_i]$ | 耦合在两侧同时出现 | 势 $V$ 与初值 |
+| 算子层 | 协变 POVM $E_i$ | 下半有界障碍、联合可测性 | 编序约定、时钟子系统 |
+
+: 五个层次的自由度分布 {#tbl-layers}
+
+## 基本数据 {#sec-cc-data}
+
+取流形 $M = \mathbb{R}^{n}\times\mathbb{R}$，坐标记为 $(x,t)$，$x\in\mathbb{R}^{n}$。$t$ 是 $M$ 上一个固定的、处处非奇的时间函数，其水平集 $\{t = \text{const}\}$ 给出一个余维 $1$ 的叶状结构。
+
+**基本数据**由四件东西组成：
+
+1. 一个给定函数 $\Phi \in C^{\infty}(M)$，称为**背景场**；
+2. 一个指标集 $I$，其元素 $i$ 标记“演化系统的类别”；
+3. 对每个 $i\in I$，一个**响应函数** $f_i \in C^{\infty}(\mathbb{R})$，满足
+$$
+f_i > 0,
+\qquad
+f_i(0) = 1
+$$ {#eq-response-conditions}
+4. 对每个 $i$，定义 $1$-形式
+$$
+\omega_i := f_i(\Phi)\,dt \in \Omega^{1}(M)
+$$ {#eq-omega}
+及其沿路径 $\gamma:[0,1]\to M$ 的**累积泛函**
+$$
+\tau_i(\gamma) := \int_{\gamma}\omega_i
+$$ {#eq-tau-path}
+
+::: {#prp-data}
+## 基本命题
+
+$\tau_i$ 是路径的加性泛函：对路径的拼接有 $\tau_i(\gamma_1 * \gamma_2) = \tau_i(\gamma_1)+\tau_i(\gamma_2)$。若 $\gamma$ 满足 $dt > 0$（即处处沿 $t$ 增加方向），则由 @eq-response-conditions 的 $f_i>0$ 得 $\tau_i(\gamma) > 0$，故 $\tau_i$ 是一个沿 $\gamma$ 单调递增的标度。
+:::
+
+这里必须先说明一件容易被跳过的事：**在 @sec-cc-data 至 @sec-cc-jets 的全部内容中，$\Phi$ 只是一个给定的自变量**。它出现在 @eq-omega 的右边，但没有任何方程决定它，也没有任何对象依赖它的导数或它的源。此处得到的全部结论（叶状结构、模空间、射流塔、余循环）**不依赖 $\Phi$ 的具体形式**，只依赖 $f_i$ 与 $dt$ 的乘积结构。
+
+让 $\Phi$ 承担真正的数学内容，需要给它一个变分原理——那是 @sec-cc-field 的内容。在此之前，说“框架描述了背景场怎样改变演化速率”是把参数化误当成理论。
+
+## 背景场的两类标准情形 {#sec-cc-fields}
+
+@sec-cc-data 允许 $\Phi$ 是任意 $C^{\infty}$ 函数。本框架关心的背景场有两类，它们给出互相独立的例子，也界定了全章结论的射程。
+
+**静态场。** 取 $\Phi=\Phi(x)$，与 $t$ 无关，即 $\partial_{t}\Phi=0$。由 @eq-domega，只要 $\nabla\Phi\neq0$ 且 $f_i'\neq0$，就有 $d\omega_i=f_i'(\Phi)\,d\Phi\wedge dt\neq0$，于是 $\tau_i$ 是真正的路径泛函，不能写成 $M$ 上的单个函数。
+
+**线性场。** 取
+
+$$
+\Phi(x)=\mathbf{a}\cdot x=\sum_{a=1}^{n}a_{a}x^{a},
+\qquad
+\mathbf{a}\in\mathbb{R}^{n}
+$$ {#eq-linear-field}
+
+$\mathbf{a}$ 为常向量。此时 $\partial_{a}\partial_{b}\Phi=0$：场的一阶导数为常数、二阶以上全为零，“梯度处处相同”这一性质正是均匀背景的数学刻画。代入 @eq-omega 得
+
+$$
+\omega_i=f_i(\mathbf{a}\cdot x)\,dt
+$$ {#eq-omega-linear}
+
+由于 $d\Phi=\mathbf{a}\cdot dx$ 是常系数 $1$-形式，精确性判据在此化为更硬的结论：由 @eq-domega，$\omega_i$ 闭 $\iff f_i'(\Phi)\,\mathbf{a}=0\iff f_i'\equiv0$ 或 $\mathbf{a}=0\iff f_i\equiv1$。**除退化情形 $f_i\equiv1$ 外，线性场下的累积量一律路径依赖。**
+
+两类场的差别只落在 $d\omega_i$ 的取值与精确性结论上，叶本身不受影响：命题 3 的 $\ker\omega_i=\ker dt$ 只用到 $f_i>0$，与 $\Phi$ 的具体形式无关。
+
+| 背景场 | $\Phi$ | $\omega_i$ | $\omega_i$ 闭的条件 |
+|--------|--------|-----------|---------------------|
+| 静态场 | $\Phi(x)$ | $f_i(\Phi(x))\,dt$ | $f_i\equiv1$ 或 $\nabla\Phi=0$ |
+| 线性场 | $\mathbf{a}\cdot x$ | $f_i(\mathbf{a}\cdot x)\,dt$ | $f_i\equiv1$ |
+
+: 两类标准背景场 {#tbl-fields}
+
+两类场的来源：静态场即静引力场下的背景势，线性场即恒加速下的势（势对坐标为线性）。二者在本框架中只是 $\Phi$ 的两种选取，不改变任何一层的一般结论。除此两类之外，本章不指定 $\Phi$ 的其它形式。
+
+## 一形式层：叶状结构与精确性判据 {#sec-cc-foliation}
+
+$\omega_i$ 是本章唯一的核心对象。它的两个基本微分性质给出全部几何结论。
+
+**命题 1（精确性判据）。** 由 @eq-omega，
+
+$$
+d\omega_i = f_i'(\Phi)\,d\Phi\wedge dt
+$$ {#eq-domega}
+
+因此 $\omega_i$ 闭（$d\omega_i = 0$）当且仅当下面两条件之一成立：$f_i$ 为常数（即 $f_i\equiv1$），或 $\Phi$ 不依赖 $x$（即 $\Phi = \Phi(t)$）。
+
+**推论.** 只要 $\Phi$ 含有横向依赖且 $f_i$ 非常数，$\omega_i$ 就不闭，于是不存在 $M$ 上的单值函数 $\tau_i$ 使 $d\tau_i = \omega_i$：累积量只能是 @eq-tau-path 那样的路径泛函。此时 $\tau_i$ 的值依赖于终点之间的路径，这正是 @prp-data 的加性泛函区别于函数的全部内容。
+
+**命题 2（Frobenius 判据自动成立）。** 对任意 $f_i$ 与任意 $\Phi$，
+
+$$
+\omega_i \wedge d\omega_i = f_i f_i'\,dt\wedge d\Phi\wedge dt = 0
+$$ {#eq-frobenius}
+
+故分布 $\ker\omega_i$ 恒可积，叶总是局部存在的。
+
+命题 1 与命题 2 刻画的是两件**互相独立**的事：Frobenius 管叶是否存在（恒存在），精确性管叶上的标度标签是否单值（一般不单值）。混同这两者会导致错误的结论。
+
+**命题 3（叶状结构唯一）。** 由 @eq-response-conditions 的 $f_i>0$ 得 $\omega_i$ 与 $dt$ 处处成比例，故
+
+$$
+\ker\omega_i = \ker dt
+\qquad \text{对一切 } i\in I
+$$ {#eq-same-foliation}
+
+即所有类别给出**同一个**叶状结构；其叶空间为一维，可由 $t$ 标识。类别之间的差异不体现在叶上，只体现在横截方向上乘的那个函数 $f_i$。
+
+这条命题有一个值得注意的地位：它说明“所有类别共享同一套等时叶”在本框架中**不是一条额外假设**，而是 $f_i>0$ 与 $\omega_i\propto dt$ 的自动推论。若要摆脱它，必须放弃 $\omega_i$ 只含 $dt$ 的写法，改为一般的 $1$-形式
+
+$$
+\omega_i = f_i(\Phi)\,dt + \sum_{a=1}^{n}g_{ia}(\Phi)\,dx^{a}
+$$ {#eq-omega-general}
+
+此时命题 2 不再自动成立，$\omega_i\wedge d\omega_i = 0$ 成为对 $(f_i,g_{ia})$ 的**真正约束**，Frobenius 定理开始起作用。这是本框架最自然的推广方向：把“共享等时叶”从推论变成可选项。
+
+## 规范化层：不变量与协变量的分离 {#sec-cc-gauge}
+
+$\tau_i$ 只有作为“读数的标度”才有意义，而标度的整体选择不是数据的一部分。这给出一个一参数规范作用。
+
+**命题 4（规范作用）。** 设 $\kappa>0$。变换
+
+$$
+f_i \longmapsto \kappa f_i
+\qquad (\text{对一切 } i\in I \text{ 同时施加})
+$$ {#eq-gauge}
+
+与 $\tau_i \mapsto \kappa\tau_i$ 相应，它不改变任何类别之间的比较。故数据应视为
+
+$$
+\mathscr{M} := \mathrm{Map}\big(I\times\mathbb{R},\ \mathbb{R}_{>0}\big)\big/\mathbb{R}_{>0}^{\ \mathrm{diag}}
+$$ {#eq-moduli}
+
+@eq-response-conditions 中的 $f_i(0)=1$ 正是固定这个一参数自由的规范条件。
+
+**命题 5（可比较量的分类）。** 定义**比值函数**与**两点比较**：
+
+$$
+X_{ij} := \frac{f_i}{f_j},
+\qquad
+Q_{ij}(\Phi_1,\Phi_2) := \frac{X_{ij}(\Phi_1)}{X_{ij}(\Phi_2)}
+$$ {#eq-ratio}
+
+$$
+P_i(\Phi_1,\Phi_2) := \frac{f_i(\Phi_1)}{f_i(\Phi_2)}
+$$ {#eq-two-point}
+
+则 $Q_{ij}$ 在 @eq-gauge 下不变（它定义在 $\mathscr{M}$ 上、不落在 $\mathrm{Map}(I\times\mathbb{R},\mathbb{R}_{>0})$ 上），而 $P_i$ 依赖规范。二者是**不同类型**的对象：前者是类别之间的相对量，后者是单一类别在两个场值之间的比值，只有先固定标度约定才有意义。
+
+把 $f_i$ 在 $\Phi = 0$ 附近作一阶展开（细节见 @sec-cc-jets），代入 @eq-ratio，得 $Q_{ij}$ 的一阶形式
+
+$$
+Q_{ij}(\Phi_1,\Phi_2) = 1 + \left(\alpha_i-\alpha_j\right)\left(\Phi_1-\Phi_2\right) + O\left((\Phi_1-\Phi_2)^{2}\right)
+$$ {#eq-Q-first}
+
+即：**一阶的类别依赖完全由 $\alpha_i-\alpha_j$ 承担。**
+
+## 射流层：泰勒展开即射流投影 {#sec-cc-jets}
+
+$f_i$ 的泰勒展开在数学上不是“近似技巧”，而是**到 $n$ 阶射流的投影**。
+
+$$
+f_i(\Phi) = 1 + \alpha_i\Phi + \beta_i\Phi^{2} + O\left(\Phi^{3}\right),
+\qquad
+\alpha_i = f_i'(0),\quad \beta_i = \tfrac{1}{2}f_i''(0)
+$$ {#eq-taylor}
+
+**命题 6（截断 = 射流）。** 记 $j^{n}_{0}f_i \in \mathcal{J}^{n}$ 为 $f_i$ 在 $0$ 处的 $n$-射流。$n$ 阶截断下的全部数据是映射
+
+$$
+\mathbf{j}^{n}:\ I \longrightarrow \mathcal{J}^{n},
+\qquad
+i \longmapsto j^{n}_{0}f_i
+$$ {#eq-jet-map}
+
+“只保留一阶项”就是把 @eq-jet-map 复合上投影 $\mathcal{J}^{n}\to\mathcal{J}^{1}$。
+
+**命题 7（对数一阶线性化）。** 由 @eq-taylor，
+
+$$
+\log f_i(\Phi) = \alpha_i\Phi + \left(\beta_i-\tfrac{1}{2}\alpha_i^{2}\right)\Phi^{2} + O\left(\Phi^{3}\right)
+$$ {#eq-log}
+
+因此 $\log X_{ij} = \left(\alpha_i-\alpha_j\right)\Phi + O(\Phi^{2})$：一阶层次的类别依赖是**线性**的，且其“斜率”正是 $\alpha_i-\alpha_j$。
+
+**命题 8（余循环结构）。** $X_{ij}$ 满足
+
+$$
+X_{ii} = 1,
+\qquad
+X_{ij}X_{jk} = X_{ik},
+\qquad
+X_{ij} = X_{ji}^{-1}
+$$ {#eq-cocycle}
+
+即 $\{X_{ij}\}$ 是指标集 $I$ 上取值于乘法群 $C^{\infty}(\mathbb{R};\mathbb{R}_{>0})$ 的 $1$-余循环（把 $I$ 视为离散群胚）。于是有精确的对应：
+
+$$
+\text{“普适”} \iff \{X_{ij}\} \text{ 为平凡余循环} \iff f \text{ 经 } \mathbb{R}\to\mathrm{Map}(I\times\mathbb{R},\mathbb{R}_{>0}) \text{ 分解}
+$$ {#eq-universality}
+
+一阶层次上，@eq-universality 化为最简形式：**普适 $\iff$ 映射 $i\mapsto\alpha_i$ 为常值映射。** 于是“类别依赖”的全部一阶内容，就是实值映射 $\alpha:I\to\mathbb{R}$ 偏离常值映射的程度。
+
+## 三种退化情形 {#sec-cc-degenerations}
+
+@eq-jet-map 的像由映射 $i\mapsto f_i$ 完全决定。按“类别依赖”的强弱，这个映射只有三种定性可能。
+
+**（一）无改变：绝对时间。** 若 $f_i\equiv1$ 对一切 $i$ 成立，则 @eq-omega 给出 $\omega_i=dt$：所有类别的读数都等于 $t$ 本身，$\Phi$ 不出现在任何 $\omega_i$ 中。此时 $X_{ij}\equiv1$（@eq-ratio）、$\alpha_i-\alpha_j\equiv0$（@eq-Q-first），类别之间的比较没有任何内容。这是“背景场不改变任何类别速率”的数学形式，即绝对时间。
+
+**（二）共同改变：单一读数。** 若 $f_i=f$ 与 $i$ 无关，则所有类别的 $\omega_i$ 相同，$\{X_{ij}\}$ 平凡（@eq-universality），一阶上 $\alpha_i\equiv\alpha$ 为同一常数。此时 @eq-omega 的整体形状 $\omega=f(\Phi)\,dt$ 对一切类别一致，可用**单个**几何对象（共同的刻度场 $f(\Phi)$）编码，类别之间不存在可比较的差异。这正是相对论性引力理论所处的位置：所有物质结构以同一函数响应背景场，于是背景场的作用可被整体吸收进一个共同的几何描述。
+
+**（三）分类别改变：类别依赖。** 若 $i\mapsto f_i$ 非常值，则 $X_{ij}\neq1$、$\alpha_i-\alpha_j$ 不全为零，@eq-Q-first 给出非平凡的类别比较。此时不存在能同时编码全部 $\omega_i$ 的单个几何对象：@eq-omega 中乘的 $f_i$ 依赖 $i$，任何“共同几何”的写法都必须额外指定 $I$ 上的一族函数。**（二）是本情形的特例**，而（一）又是（二）的特例，三者链式嵌套：
+
+$$
+\text{（一）}\ \subseteq\ \text{（二）}\ \subseteq\ \text{（三）}
+$$ {#eq-nesting}
+
+| 情形 | 条件 | $f_i$ | 类别依赖 | 位置 |
+|------|------|-------|----------|------|
+| （一）绝对时间 | $f_i\equiv1$，$\forall i$ | 常值 $1$ | 无 | $\Phi$ 不改变速率 |
+| （二）普适 | $f_i=f$，与 $i$ 无关 | 单个函数 | 无（余循环平凡） | 相对论性引力理论 |
+| （三）类别依赖 | $i\mapsto f_i$ 非常值 | 多个函数 | $\alpha_i-\alpha_j\neq0$ | 一般框架，含（二）为特例 |
+
+: 类别映射的三种退化 {#tbl-degenerations}
+
+判据只有一条：**看映射 $i\mapsto\alpha_i$。** 它与 @eq-universality 的余循环判据一致——精确层面看 $\{X_{ij}\}$ 是否平凡，一阶层面看 $\alpha_i$ 是否恒为同一常数；$\alpha_i\equiv0$ 则是（一）。
+
+## 变分层：让 $\Phi$ 承担动力学 {#sec-cc-field}
+
+@sec-cc-data 至 @sec-cc-jets 里 $\Phi$ 是给定的。本节补上决定它的那一层，这也是整个框架此前唯一缺失的部分。
+
+设 $M$ 上另有一个固定背景度规 $g$。取总作用量
+
+$$
+S\big[\Phi,\{\psi_i\}\big]
+=
+\int_{M}
+\left[
+\frac{1}{2}\,g^{ab}\partial_{a}\Phi\,\partial_{b}\Phi - V(\Phi)
++ \sum_{i\in I}\Big(\mathcal{L}_{i,0}(\psi_i) + \lambda_i\,\Phi\,\mathcal{O}_i(\psi_i)\Big)
+\right] d\mu_g
+$$ {#eq-action}
+
+**命题 9（耦合二重出现）。** 对 $\Phi$ 变分得
+
+$$
+\square\Phi + V'(\Phi) - \sum_{i\in I}\lambda_i\,\mathcal{O}_i = 0
+$$ {#eq-field-eq}
+
+对 $\psi_i$ 变分所得的方程中含 $\lambda_i\Phi$ 项。因此**同一组 $\lambda_i$ 同时出现在场方程与物质方程中**：$\alpha_i$ 由 $\partial\ln\nu_i/\partial\Phi$ 确定，而 $\nu_i$ 的场依赖由 $\lambda_i\Phi\mathcal{O}_i$ 项给出；给定一侧即约束另一侧。这是“$\alpha_i$ 不是自由参数”的变分形式——它是一条数学结论，不是假设。
+
+**命题 10（射流塔就是耦合的射流塔）。** 把 $\mathcal{O}_i$ 在背景 $\Phi$ 附近展开并按 $\Phi$ 幂次整理，$\mathcal{O}_i$ 的 $n$ 阶背景项给出 $f_i$ 的 $n$ 阶系数。故 @eq-jet-map 不是任意的射流映射，而是耦合项射流塔的像。
+
+**命题 11（隐式方程与可解性）。** 若物质的拉氏量自身含 $\Phi$（例如通过 @eq-omega 进入时间标度），则 $\mathcal{O}_i = \mathcal{O}_i(\Phi,\psi_i)$ 依赖 $\Phi$，@eq-field-eq 变为**隐式**：$\Phi$ 同时以自变量与未知函数的身份出现。此时可解性要求 $\square + V''(\Phi) - \sum_i\lambda_i\,\partial_{\Phi}\mathcal{O}_i$ 在相应函数空间上满足 Fredholm 型条件；不满足则 @eq-field-eq 无解。这是从“参数化”升级为“理论”必须付出的代价。
+
+## 算子层：与量子力学的相容性 {#sec-cc-quantum}
+
+本节回答一个可判定的是非题：**本框架与量子力学是否相容。** 答案是**相容**。前提是 $\Phi$ 为经典背景场，这正是 @sec-cc-data 的设定；唯一会破坏相容性的操作是把 $\Phi$ 本身量子化，那超出本章范围。相容的构造是初等的——因为 $f_i>0$，把时间参数 $t$ 换成读数 $\tau_i=\int f_i(\Phi)\,dt$ 是一一的重参数化，而重参数化后的生成元仍自伴，酉性保持。本节真正的技术内容不在于“是否相容”，而在于说明 $\tau_i$ 只能是**读数**，不能是单一子系统上的可观测量。
+
+### 参数化层：相容性成立
+
+**命题 12（Stone）。** 强连续单参数酉群 $U:\mathbb{R}\to\mathcal{U}(\mathcal{H})$ 与其自伴生成元 $A$（即 $U(t)=e^{-itA}$）一一对应。
+
+**命题 13（重参数化给出自伴生成元）。** 设 $f_i\in C^{1}$、$f_i>0$，读数 $\tau_i(t)=\int_{0}^{t}f_i(\Phi(\cdot,t'))\,dt'$。若某系统在参数 $t$ 下的演化由自伴生成元 $A$ 给出（$\mathrm{i}\,\partial_{t}\psi=A\psi$），则同一演化以 $\tau_i$ 为参数满足
+
+$$
+\mathrm{i}\,\partial_{\tau_i}\psi=\frac{1}{f_i(\Phi)}\,A\,\psi
+$$ {#eq-reparam-generator}
+
+右端的 $A/f_i(\Phi)$ 在两种情形下都给出良定义的自伴生成元，故演化对 $\tau_i$ 始终酉：（a）$\Phi=\Phi(t)$ 时 $f_i(\Phi)$ 是 $c$-数，$A/f_i$ 只是 $A$ 的 $c$-数标度；（b）$\Phi$ 含空间依赖时见下一小节。注意此处**不能**把 $\tau$ 代回收缩成 $U\circ\tau^{-1}$ 并断言它仍是酉群——$\tau^{-1}$ 一般不可加，$U\circ\tau^{-1}$ 只是酉算子族而非群同态。正确的对象是 @eq-reparam-generator 中的生成元 $A/f_i(\Phi)$。
+
+**推论.** 用 @eq-omega 的 $f_i(\Phi)\,dt$ 替换 $dt$，在参数化层**不产生障碍，也不产生新内容**：不同类别恰好对应同一 $A$ 的不同的 $c$-数标度 $1/f_i$。相容性在此层成立，且是初等的。
+
+### 算子层：空间依赖与编序
+
+$\Phi$ 本身可以是经典 $c$-数函数，但只要它含空间依赖，进入算子的就是复合 $\Phi(\hat x)$。由 Borel 函数演算，$f_i(\Phi(\hat x))=\int f_i(\Phi(\lambda))\,dE_{\hat x}(\lambda)$ 在 $f_i\circ\Phi$ 有界时给出有界正算子。
+
+**命题 14（编序不可回避）。** $f_i(\Phi(\hat x))$ 与 $A$ 一般不可交换，故乘积 $f_i(\Phi(\hat x))\,A$ 与 $A\,f_i(\Phi(\hat x))$ 相差 $\left[f_i(\Phi(\hat x)),A\right]$，不为零。因此“$\mathrm{i}\,\partial_{\tau_i}\psi=(A/f_i)$”在空间依赖情形下**不是一个定义良好的算子方程**：必须另给一条编序约定（例如 Weyl 编序 $\tfrac{1}{2}\{f_i(\Phi(\hat x)),A\}_{+}^{-1}$）。不同约定给出不同的自伴生成元，其差不能被 @eq-gauge 的重参数化吸收。这是 @eq-reparam-generator 从情形（a）推广到情形（b）必须补的**第一项数据**。补上后演化仍酉——编序只影响生成元的具体形式，不影响酉性。
+
+**命题 15（下半有界障碍）。** 设 $A$ 自伴且下半有界（$\exists\,c:\ A\ge cI$）。则不存在自伴算子 $T$ 使 $[T,A]=i$。
+
+*证明.* 由 $[T,A]=i$ 得 $e^{-isT}Ae^{isT} = A+s$ 对一切 $s\in\mathbb{R}$。酉共轭保持谱，故 $\mathrm{spec}(A)+s = \mathrm{spec}(A)$，即谱集对一切平移不变；自伴算子的谱非空，故 $\mathrm{spec}(A)=\mathbb{R}$，与下半有界矛盾。∎
+
+**推论（时间算子不存在，时钟必须是关系的）。** 若生成元是下半有界的（这是最常见的情形），则不存在自伴 $T$ 满足对易关系。同一论证可推广到**协变 POVM**：不存在满足
+
+$$
+E(X+s) = e^{-isA}E(X)\,e^{isA}
+\qquad (X\in\mathcal{B}(\mathbb{R}),\ s\in\mathbb{R})
+$$ {#eq-covariant}
+
+的 POVM $E$。因此“时钟”不能是实现于单一子系统上的算子，只能是两个子系统之间的**相对量**。这是升级到算子层必须补的**第二项数据**。
+
+### 关系性结构：正确的载体
+
+取 $\mathcal{H} = \mathcal{H}_{R}\otimes\mathcal{H}_{C}$，约束算子
+
+$$
+K := A_{R}\otimes 1 - 1\otimes A_{C},
+\qquad
+\mathcal{H}_{\mathrm{phys}} := \ker K
+$$ {#eq-constraint}
+
+对 $\Psi\in\ker K$ 与时钟子系统的协变 POVM $E_C$，以读数 $\tau$ 为条件给出的 $\mathcal{H}_R$ 上的条件态随 $\tau$ 演化。框架中的族 $\{f_i\}_{i\in I}$ 在这一层对应为：**同一群作用的不同协变 POVM**，等价地对应不同的时钟生成元 $A_C^{(i)}$。
+
+**命题 16（联合可测性）。** 两个协变 POVM $E_1,E_2$ **相容**，指存在联合 POVM $E$ 以 $E_1,E_2$ 为边缘。成立：
+
+- $E_1,E_2$ 处处可交换 $\Longrightarrow$ 相容（取 $E(X\times Y):=E_1(X)E_2(Y)$）；
+- 相容 $\not\Longrightarrow$ 可交换（非锐化可以挽救不相容，故相容性严格弱于可交换性）；
+- $E_1,E_2$ 均为**投影值**测度时：相容 $\iff$ 可交换。
+
+**推论.** $Q_{ij}$ 的定义（@eq-ratio）需要**同时**取两类系统的读数，因此 $Q_{ij}$ 的可实现性要求 $E_i,E_j$ 相容。由命题 16，当 $E_i,E_j$ 由不可交换的生成元给出时，$Q_{ij}$ 只能以加噪（unsharp）版本实现，所需的最小噪度由 $\left[A_C^{(i)},A_C^{(j)}\right]$ 控制。这是升级到算子层必须补的**第三项数据**：一个加噪预算。
+
+**命题 17（读数精度与生成元展宽）。** 由 Mandelstam–Tamm 不等式（取 $\hbar=1$）：对任意自伴 $X$ 与状态 $\varrho$，令 $\Delta t := \Delta X\left/\left|\frac{d}{dt}\langle X\rangle_{\varrho}\right|\right.$，则
+
+$$
+\Delta t \cdot \Delta A \ \ge\ \frac{1}{2}
+$$ {#eq-mt}
+
+**推论（量级形式）.** 若两类系统的读数分辨率分别受 $\Delta t_i\gtrsim 1/(2\Delta A_i)$ 限制，则比较量 $Q_{ij}$ 的分辨率不低于 $\Delta t_i+\Delta t_j$ 量级，于是 $\alpha_i-\alpha_j$ 的可分辨下界由两类系统生成元的展宽之**倒数和**控制。这是本框架与量子力学之间能写成不等式的联系。
+
+### 算子层的结论
+
+判定的答案是：
+
+> **本框架与量子力学相容。** 参数化层：相容，构造初等（@eq-reparam-generator）。算子层：$\Phi$ 的空间依赖引入编序（命题 14），不构成障碍；$\tau_i$ 只能是读数而非单一子系统上的可观测量（命题 15–17），这与框架把 $\tau_i$ 当作读数的设定一致。唯一会使相容性失效的操作是把 $\Phi$ 本身量子化——背景场不再经典，@eq-omega 的形式需重建，这超出本章范围。
+
+## 工具清单 {#sec-cc-conclusion}
+
+把各层用到的数学工具与所得结论并列：
+
+| 层 | 工具 | 出处 | 结论 |
+|----|------|------|------|
+| 背景场 | 两类标准场与精确性判据 | 微分几何 | 静态场／线性场下的路径依赖（@sec-cc-fields） |
+| 一形式层 | 外微分、Frobenius 定理 | 微分几何 | 叶状结构唯一定理（命题 1–3） |
+| 规范化层 | 群作用与模空间 | 范畴/群论 | 不变量的分类（命题 4–5） |
+| 射流层 | 射流丛、余循环 | 微分代数、同调代数 | 截断即投影、普适性判据（命题 6–8） |
+| 退化情形 | 余循环平凡性判据 | 群论 | 绝对时间／普适／类别依赖三分（@sec-cc-degenerations） |
+| 变分层 | 变分法、隐函数定理 | 分析 | 耦合二重出现、隐式可解性（命题 9–11） |
+| 算子层 | 函数演算、Stone 定理、POVM | 泛函分析 | 相容性成立、重参数化生成元、关系性读数（命题 12–17） |
+
+: 各层的数学工具与结论 {#tbl-toolkit}
+
+三点总结：
+
+1. **$\Phi$ 是否承担内容，是可以判定的。** 在 @sec-cc-foliation 与 @sec-cc-jets 中它不承担：那里的结论只用到 $f_i$ 与 $dt$ 的乘积结构（@eq-omega）。只有在 @sec-cc-field 给它作用量之后，它才开始出现在方程中；也从此开始，@eq-field-eq 的隐式性成为一个必须处理的技术问题。
+2. **框架的“类别依赖”被精确地定位在一个余循环上。** @eq-cocycle 与 @eq-universality 把它归结为映射 $i\mapsto\alpha_i$ 偏离常值的程度；@eq-Q-first 给出它在两点比较中的可比较形式。@sec-cc-degenerations 把这条判据展开成三个层次：绝对时间（$f_i\equiv1$）、普适（$f_i$ 与 $i$ 无关）、类别依赖（一般情形），后两者由 @eq-nesting 链式包含。
+3. **与量子力学相容。** 判定的答案是肯定的：重参数化给出自伴生成元 $A/f_i(\Phi)$（@eq-reparam-generator），酉性保持。$\Phi$ 的空间依赖需要编序约定（命题 14），$\tau_i$ 需要关系性实现（命题 15–17）——两者都不构成障碍。只有把 $\Phi$ 量子化才会破坏相容性。
+
+本章的一般情形是 @sec-cc-degenerations 的（三）。它与 @prp-invariant-time 所设公理（即情形（一），一条与变换无关的刻度）的关系是包含关系（@eq-nesting）：把“单一刻度”放宽为“一族与背景场取值有关的刻度”，本章给出这一放宽在每一层应付出的数学代价。
