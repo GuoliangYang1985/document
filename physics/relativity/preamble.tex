@@ -1,3 +1,6 @@
+\newcommand{\bookname}{测量的边界}
+\newcommand{\booksubtitle}{演化速率耦合场论}
+
 % ===== 抑制 Quarto 默认 \maketitle（自定义封面代行）=====
 \let\maketitle\relax
 \AtBeginDocument{\let\maketitle\relax}
@@ -21,8 +24,7 @@
 % 公理/定义环境已改用 Quarto 原生定理 div（::: {#prp-*} / ::: {#def-*}），
 % 其 LaTeX 环境由 Quarto 自动定义，此处不再 \newtheorem，避免重复定义冲突。
 \fancyhf{}
-\fancyhead[LE]{\thepage\quad\textit{狭义相对论}}
-\fancyhead[RO]{\textit{狭义相对论}\quad\thepage}
+\fancyhead[L]{\small\textit{\bookname}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}

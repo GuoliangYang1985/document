@@ -2,17 +2,17 @@
 
 ## 公理设定
 
-本章的全部结果都从三条前提推出：坐标变换的线性性、一个“不变对象”的存在，以及变换集合的群结构。前两条与群结构为两种变换所共有；真正决定结论的，是“不变对象”取什么——它把推导分成两支，一支给出伽利略变换，一支给出洛伦兹变换。
+本章的全部结果都从三条前提推出：坐标变换的线性性、一个“不变对象”的存在，以及变换集合的群结构。前两条与群结构为两种变换所共有；真正决定结论的，是“不变对象”取什么——它把推导分成两支，一支给出伽利略变换，一支给出洛伦兹变换。这条不预设光速不变、仅由时空均匀性、各向同性与群结构导出变换的路线，在文献中已有系统论述 [@levyleblond1976; @berzigorini1969]。
 
 **公共公理**
 
-::: {#prp-homogeneity}
+::: {#cnj-homogeneity}
 ## 均匀性假设（线性变换）
 
 空间是均匀的，时间是均匀的。因此，两个惯性系 $S$ 和 $S'$ 之间的坐标变换必须是线性变换（齐次线性变换加平移，这里取原点重合的齐次部分）。
 :::
 
-::: {#prp-covariance}
+::: {#cnj-covariance}
 ## 协变性（群结构）
 
 所有的空间方向是对称的（各向同性），且变换构成的集合必须形成“群”：即连续做两次变换等于做一次变换，且存在逆变换回到原坐标系。
@@ -20,13 +20,13 @@
 
 **第三条公理：不变对象（二选一）**
 
-::: {#prp-invariant-time}
+::: {#cnj-invariant-time}
 ## 存在不变时间（绝对同时性）
 
 存在一个在所有惯性系中取值相同的时间刻度，即同时性与参考系无关，等时面在变换下不变。形式地：若 $t = 0$，则在 $S'$ 中必有 $t' = 0$。
 :::
 
-::: {#prp-invariant-speed}
+::: {#cnj-invariant-speed}
 ## 存在不变速度
 
 存在一个恒定的特征速度 $c$，在任何参考系中，沿任意方向测量该速度都恒为 $c$。形式地：若 $x = ct$，则在 $S'$ 中必有 $x' = ct'$；若 $x = -ct$，则 $x' = -ct'$。
@@ -34,7 +34,7 @@
 
 两条第三公理互为对偶：一条把**时间轴**定为不变量，另一条把**速度轴**定为不变量。
 
-| | @prp-invariant-time（→ 伽利略） | @prp-invariant-speed（→ 洛伦兹） |
+| | @cnj-invariant-time（→ 伽利略） | @cnj-invariant-speed（→ 洛伦兹） |
 |------|------|------|
 | 不变对象 | 等时面 $t = 0$ | 特征射线 $x = ct$ |
 | 形式条件 | $t = 0 \Rightarrow t' = 0$ | $x = ct \Rightarrow x' = ct'$ |
@@ -48,7 +48,7 @@
 
 ![两惯性系的坐标变换示意：惯性系 $S$ 与 $S'$ 坐标轴对应平行，$S'$ 系以速度 $v$ 沿 $x$ 轴正向相对 $S$ 系运动，同一事件 $P$ 在两系中的横坐标分别为 $x$ 与 $x'$，纵坐标 $y' = y$](images/lorentz-frames.png){#fig-lorentz-frames width=60%}
 
-本节的坐标列向量**统一按 $(t, x)$ 排列**：时间分量在前、空间分量在后，与 @sec-lorentz-4d 的四维顺序 $(t, x, y, z)$ 完全一致。由 @prp-homogeneity，$(t, x)$ 平面内的线性变换必为
+本节的坐标列向量**统一按 $(t, x)$ 排列**：时间分量在前、空间分量在后，与 @sec-lorentz-4d 的四维顺序 $(t, x, y, z)$ 完全一致。由 @cnj-homogeneity，$(t, x)$ 平面内的线性变换必为
 
 $$
 \begin{pmatrix} t' \\ x' \end{pmatrix}
@@ -103,7 +103,7 @@ $$ {#eq-after-origin}
 
 ### 约束 2：相对速度
 
-由相对性原理（@prp-covariance），$S$ 系在自己看来静止，而在 $S'$ 系中必须以速度 $-v$ 退行，即其原点 $x = 0$ 满足 $x' = -v t'$。
+由相对性原理（@cnj-covariance），$S$ 系在自己看来静止，而在 $S'$ 系中必须以速度 $-v$ 退行，即其原点 $x = 0$ 满足 $x' = -v t'$。
 
 在 @eq-after-origin 中令 $x = 0$，得 $t' = A t$、$x' = -Dv\,t$，于是 $x'/t' = -Dv/A$。要求它等于 $-v$（$v \neq 0$；$v = 0$ 时变换退化为恒等，$A = D = 1$ 自动成立）：
 
@@ -125,7 +125,7 @@ $$ {#eq-matrix-form}
 
 ### 约束 3G：不变时间
 
-由 @prp-invariant-time，$t = 0 \Rightarrow t' = 0$。在 @eq-lin-t 中令 $t = 0$，得 $t' = Bx$；要求它对一切 $x$ 为零，故
+由 @cnj-invariant-time，$t = 0 \Rightarrow t' = 0$。在 @eq-lin-t 中令 $t = 0$，得 $t' = Bx$；要求它对一切 $x$ 为零，故
 
 $$
 B = 0
@@ -135,7 +135,7 @@ $$ {#eq-constraint-time}
 
 ### 约束 4G：群结构
 
-由 @prp-covariance，变换集合构成群，故速度为 $v$ 的变换与速度为 $-v$ 的变换互逆：$\Lambda(v)\,\Lambda(-v) = I$。
+由 @cnj-covariance，变换集合构成群，故速度为 $v$ 的变换与速度为 $-v$ 的变换互逆：$\Lambda(v)\,\Lambda(-v) = I$。
 
 把 $v \to -v$ 代入 @eq-matrix-form（此时 $B = 0$）；由各向同性，$A$ 只依赖速率大小而与此方向无关，故 $A(-v) = A(v) \equiv A$：
 
@@ -196,9 +196,11 @@ $$
 
 ## 洛伦兹变换
 
+爱因斯坦以“光速不变原理”为前提 [@einstein1905]；本节的推导不引入任何具体物理对象，只用 @cnj-invariant-speed 这一条关于变换形式的约束。
+
 ### 约束 3L：不变速度
 
-由 @prp-invariant-speed，要求 $x = ct \Rightarrow x' = ct'$。取满足 $x = ct$ 的事件；由 @eq-constraint-velocity 有 $D = A$，故 @eq-after-origin 给出 $x' = A(x - vt)$。用它和 @eq-lin-t 构造组合 $x' - ct'$：
+由 @cnj-invariant-speed，要求 $x = ct \Rightarrow x' = ct'$。取满足 $x = ct$ 的事件；由 @eq-constraint-velocity 有 $D = A$，故 @eq-after-origin 给出 $x' = A(x - vt)$。用它和 @eq-lin-t 构造组合 $x' - ct'$：
 
 $$
 x' - c t'
@@ -218,7 +220,7 @@ $$ {#eq-constraint-light}
 
 ### 约束 4L：群结构
 
-与伽利略一支同样的理由（@prp-covariance）：$\Lambda(v)\,\Lambda(-v) = I$。由各向同性，$A(-v) = A(v) \equiv A$，故
+与伽利略一支同样的理由（@cnj-covariance）：$\Lambda(v)\,\Lambda(-v) = I$。由各向同性，$A(-v) = A(v) \equiv A$，故
 
 $$
 \Lambda(v) = \begin{pmatrix} A & -Av/c^{2} \\ -Av & A \end{pmatrix},
@@ -275,13 +277,13 @@ $$
 \end{aligned}
 $$
 
-根据速度合成定理，令 \(V\) 为：
+根据速度合成定理，令 $V$ 为：
 
 $$
 V = \frac{v_1 + v_2}{1 + v_1v_2/c^2}
 $$
 
-最终将 \(V\) 代入上式，得到结果：
+最终将 $V$ 代入上式，得到结果：
 
 $$
 \Lambda(v_1)\Lambda(v_2) = \gamma_1\gamma_2 \left(1 + \frac{v_1v_2}{c^2}\right) \begin{pmatrix} 1 & -V/c^2 \\ -V & 1 \end{pmatrix}
@@ -293,7 +295,7 @@ $$
 \begin{aligned}
 \gamma(V) &= \frac{1}{\sqrt{1 - V^2/c^2}} \\
 &= \frac{1}{\sqrt{1 - \frac{1}{c^2} \left( \frac{v_1 + v_2}{1 + v_1v_2/c^2} \right)^2}} \\
-&= \frac{1}{\sqrt{\frac{c^2(1 + v_1v_2/c^2)^2 - (v_1 + v_2)^2}{c^2(1 + v_1v_2/c^2)^2}}} 
+&= \frac{1}{\sqrt{\frac{c^2(1 + v_1v_2/c^2)^2 - (v_1 + v_2)^2}{c^2(1 + v_1v_2/c^2)^2}}}
 \end{aligned}
 $$
 
@@ -340,7 +342,7 @@ $$
 
 > **伽利略变换是洛伦兹变换在 $c \to \infty$ 下的极限。**
 
-这与两条第三公理的对偶性一致：$c$ 取有限值对应“存在不变速度”，$c$ 取无穷则意味着不存在有限的不变速度——那正是 @prp-invariant-time 所陈述的内容。所以两条公理并非两个互不相干的前提，而是同一条陈述在有限与无限两处的取值。
+这与两条第三公理的对偶性一致：$c$ 取有限值对应“存在不变速度”，$c$ 取无穷则意味着不存在有限的不变速度——那正是 @cnj-invariant-time 所陈述的内容。所以两条公理并非两个互不相干的前提，而是同一条陈述在有限与无限两处的取值。
 
 **3. 群结构**
 
@@ -381,7 +383,7 @@ $$
 a(v)\,a(-v) = 1
 $$
 
-- 另一方面，考虑两个由相对性原理（@prp-covariance）联系起来的实验：$S'$ 系测量静止于 $S$ 系的横向标尺，由于 $y'$ 只依赖于 $y$（与同时性无关），测得长度为原来的 $a(v)$ 倍；$S$ 系测量静止于 $S'$ 系的同一根标尺，测得长度为原来的 $a(-v)$ 倍。两个实验的物理地位完全对等（交换两系即可互换），比例因子必须相同，故 $a(v) = a(-v)$。
+- 另一方面，考虑两个由相对性原理（@cnj-covariance）联系起来的实验：$S'$ 系测量静止于 $S$ 系的横向标尺，由于 $y'$ 只依赖于 $y$（与同时性无关），测得长度为原来的 $a(v)$ 倍；$S$ 系测量静止于 $S'$ 系的同一根标尺，测得长度为原来的 $a(-v)$ 倍。两个实验的物理地位完全对等（交换两系即可互换），比例因子必须相同，故 $a(v) = a(-v)$。
 
 于是 $a(v)^{2} = 1$；再由 $v \to 0$ 时变换连续地退化为恒等变换（$a \to 1$），得
 
@@ -492,7 +494,7 @@ c^{2}t'^{2} - x'^{2}
 \end{aligned}
 $$ {#eq-interval-verify}
 
-第步用了 $\gamma^{2}\left(1 - \beta^{2}\right) = 1$（@eq-gamma-def）。横向分量不参与运算（$y' = y$、$z' = z$），故 @eq-interval 整体不变：
+末步用了 $\gamma^{2}\left(1 - \beta^{2}\right) = 1$（@eq-gamma-def）。横向分量不参与运算（$y' = y$、$z' = z$），故 @eq-interval 整体不变：
 
 $$
 c^{2}t'^{2} - x'^{2} - y'^{2} - z'^{2}

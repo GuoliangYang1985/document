@@ -28,7 +28,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -284,24 +304,24 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<div id="prp-symmetry" class="theorem proposition">
+<div id="cnj-symmetry" class="theorem conjecture">
 <p><span class="theorem-title"><strong>公理 1.1 (对称性公理)</strong></span> 根据实验设定，路径 <span class="math inline">O \rightarrow P \rightarrow M</span> 与 <span class="math inline">O \rightarrow Q \rightarrow M</span> 关于中心轴 <span class="math inline">OM</span> 完美镜像对称。即：<span class="math inline">A</span> 和 <span class="math inline">B</span> 的物理经历在空间几何与动力学上完全等价。这一对称性在逻辑上确立了 <span class="math inline">A</span> 与 <span class="math inline">B</span> 的身份平等与可互换性。</p>
 </div>
 </section>
 <section id="钟慢效应" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="钟慢效应"><span class="header-section-number">1.2</span> 钟慢效应</h2>
 <p>本章只研究路径分段（<a href="#def-path-segments" class="quarto-xref">定义&nbsp;<span>1.2</span></a>）中第 2 阶段直线段的惯性运动过程。</p>
-<p>在 <span class="math inline">A</span> 的静止参考系 <span class="math inline">S_A</span> 中，<span class="math inline">B</span> 以相对速度 <span class="math inline">v_{B/A}</span> 运动。根据洛伦兹变换，<span class="math inline">A</span> 测量 <span class="math inline">B</span> 的时间会发生膨胀 <a href="#eq-time-dilation-A" class="quarto-xref">式&nbsp;<span>1.1</span></a>。</p>
+<p>在 <span class="math inline">A</span> 的静止参考系 <span class="math inline">S_A</span> 中，<span class="math inline">B</span> 以相对速度 <span class="math inline">v_{B/A}</span> 运动。按洛伦兹变换<span class="citation" data-cites="einstein1905"><sup>[<a href="references.html#ref-einstein1905" role="doc-biblioref">1</a>]</sup></span>（推导见 <a href="transform-derivation.html" class="quarto-xref"><span>章节 2</span></a>），<span class="math inline">A</span> 测量 <span class="math inline">B</span> 的时间会发生膨胀 <a href="#eq-time-dilation-A" class="quarto-xref">式&nbsp;<span>1.1</span></a>。</p>
 <p><span id="eq-time-dilation-A"><span class="math display">
 \Delta t_A = \gamma \left( \Delta t_B + \frac{v_{B/A} \Delta x_B}{c^2} \right)
 \quad \Longrightarrow \quad
 \Delta t_B = \frac{1}{\gamma} \Delta t_A
 \tag{1.1}</span></span></p>
-<p><a href="#eq-time-dilation-A" class="quarto-xref">式&nbsp;<span>1.1</span></a> 中，<span class="math inline">B</span> 的静止位置处<span class="math inline">\Delta x_B = 0</span>，<span class="math inline">\Delta t_B</span> 是 <span class="math inline">A</span> 在 <span class="math inline">S_A</span> 系中通过洛伦兹变换计算出的时间， 揭示了<span class="math inline">A</span> 测量 <span class="math inline">B</span> 的时间流逝更慢。同理，在 <span class="math inline">B</span> 的静止参考系 <span class="math inline">S_B</span> 中，<span class="math inline">B</span> 也会得出 <span class="math inline">A</span> 的时间流逝更慢的结论。</p>
+<p>在 <a href="#eq-time-dilation-A" class="quarto-xref">式&nbsp;<span>1.1</span></a> 中，<span class="math inline">B</span> 在其自身静止系 <span class="math inline">S_B</span> 中位置不变，故 <span class="math inline">\Delta x_B = 0</span>；<span class="math inline">\Delta t_B</span> 是 <span class="math inline">A</span> 在 <span class="math inline">S_A</span> 系中由洛伦兹变换算出的 <span class="math inline">B</span> 的时间，它表明 <span class="math inline">A</span> 测得的 <span class="math inline">B</span> 的时间流逝更慢。同理，在 <span class="math inline">B</span> 的静止系 <span class="math inline">S_B</span> 中，<span class="math inline">B</span> 也会得出 <span class="math inline">A</span> 的时间流逝更慢的结论。</p>
 </section>
 <section id="对称性约束" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="对称性约束"><span class="header-section-number">1.3</span> 对称性约束</h2>
-<p>根据 <a href="#prp-symmetry" class="quarto-xref">公理&nbsp;<span>1.1</span></a>（对称性公理），<span class="math inline">A</span> 和 <span class="math inline">B</span> 经历了完全镜像对称的物理过程。在 <span class="math inline">M</span> 点相遇时，两者随身时钟时相等，即 <a href="#eq-AQB" class="quarto-xref">式&nbsp;<span>1.2</span></a> 。</p>
+<p>根据 <a href="#cnj-symmetry" class="quarto-xref">公理&nbsp;<span>1.1</span></a>（对称性公理），<span class="math inline">A</span> 和 <span class="math inline">B</span> 经历了完全镜像对称的物理过程。在 <span class="math inline">M</span> 点相遇时，两者随身时钟的读数相等，即 <a href="#eq-AQB" class="quarto-xref">式&nbsp;<span>1.2</span></a>。</p>
 <p><span id="eq-AQB"><span class="math display">
 \tau_{A} = \tau_{B}
 \tag{1.2}</span></span></p>
@@ -311,6 +331,11 @@ window.Quarto = {
 <p>在满足狭义相对论条件的前提下，狭义相对论测量时得到的“时间不一致”，与对称性确定的“随身时钟时相等”发生了冲突。这说明：狭义相对论测量出的时间差异，并不等同于物理上时钟实际经历的差异。“钟慢效应”是特定理论下的测量结果，它不等同于随身时钟读数的物理过程的真实发生。</p>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-einstein1905" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">EINSTEIN A. Zur Elektrodynamik bewegter K<span>ö</span>rper[J/OL]. Annalen der Physik, 1905, 322(10): 891-921. DOI:<a href="https://doi.org/10.1002/andp.19053221004">10.1002/andp.19053221004</a>.</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

@@ -21,17 +21,17 @@
 
 ![对称双生子实验](images/symmetric.png){#fig-twins width=95%}
 
-::: {#prp-symmetry}
+::: {#cnj-symmetry}
 ## 对称性公理
 
 根据实验设定，路径 $O \rightarrow P \rightarrow M$ 与 $O \rightarrow Q \rightarrow M$ 关于中心轴 $OM$ 完美镜像对称。即：$A$ 和 $B$ 的物理经历在空间几何与动力学上完全等价。这一对称性在逻辑上确立了 $A$ 与 $B$ 的身份平等与可互换性。
 :::
 
-
 ## 钟慢效应
+
 本章只研究路径分段（@def-path-segments）中第 2 阶段直线段的惯性运动过程。
 
-在 $A$ 的静止参考系 $S_A$ 中，$B$ 以相对速度 $v_{B/A}$ 运动。根据洛伦兹变换，$A$ 测量 $B$ 的时间会发生膨胀 @eq-time-dilation-A。
+在 $A$ 的静止参考系 $S_A$ 中，$B$ 以相对速度 $v_{B/A}$ 运动。按洛伦兹变换 [@einstein1905]（推导见 @sec-transform-derivation），$A$ 测量 $B$ 的时间会发生膨胀 @eq-time-dilation-A。
 
 $$
 \Delta t_A = \gamma \left( \Delta t_B + \frac{v_{B/A} \Delta x_B}{c^2} \right)
@@ -39,15 +39,16 @@ $$
 \Delta t_B = \frac{1}{\gamma} \Delta t_A
 $$ {#eq-time-dilation-A}
 
-@eq-time-dilation-A 中，$B$ 的静止位置处$\Delta x_B = 0$，$\Delta t_B$ 是 $A$ 在 $S_A$ 系中通过洛伦兹变换计算出的时间， 揭示了$A$ 测量 $B$ 的时间流逝更慢。同理，在 $B$ 的静止参考系 $S_B$ 中，$B$ 也会得出 $A$ 的时间流逝更慢的结论。
+在 @eq-time-dilation-A 中，$B$ 在其自身静止系 $S_B$ 中位置不变，故 $\Delta x_B = 0$；$\Delta t_B$ 是 $A$ 在 $S_A$ 系中由洛伦兹变换算出的 $B$ 的时间，它表明 $A$ 测得的 $B$ 的时间流逝更慢。同理，在 $B$ 的静止系 $S_B$ 中，$B$ 也会得出 $A$ 的时间流逝更慢的结论。
 
 ## 对称性约束
 
-根据 @prp-symmetry（对称性公理），$A$ 和 $B$ 经历了完全镜像对称的物理过程。在 $M$ 点相遇时，两者随身时钟时相等，即 @eq-AQB 。
+根据 @cnj-symmetry（对称性公理），$A$ 和 $B$ 经历了完全镜像对称的物理过程。在 $M$ 点相遇时，两者随身时钟的读数相等，即 @eq-AQB。
 
 $$
 \tau_{A} = \tau_{B}
 $$ {#eq-AQB}
 
 ## 实验结论
+
 在满足狭义相对论条件的前提下，狭义相对论测量时得到的“时间不一致”，与对称性确定的“随身时钟时相等”发生了冲突。这说明：狭义相对论测量出的时间差异，并不等同于物理上时钟实际经历的差异。“钟慢效应”是特定理论下的测量结果，它不等同于随身时钟读数的物理过程的真实发生。

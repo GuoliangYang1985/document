@@ -1,6 +1,6 @@
 # 麦克斯韦方程组 {#sec-maxwell-equations}
 
-## 问题的提出 
+## 问题的提出
 
 在经典力学中，惯性系 $S$ 和 $S'$（其中 $S'$ 以恒定速度 $v$ 沿 $x$ 轴相对 $S$ 运动）之间的坐标变换由伽利略变换描述为 @eq-galileo。
 
@@ -141,11 +141,11 @@ $$ {#eq-lorentz-inv}
 
 ## 麦克斯韦方程组
 
-本节将麦克斯韦方程组改写为四维时空中的张量形式。采用闵可夫斯基度规 $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)$；时空指标取 $\mu,\nu = 0,1,2,3$，空间指标取 $i,j = 1,2,3$，重复的上下指标按爱因斯坦求和约定求和。
+本节将麦克斯韦方程组改写为四维时空中的张量形式 [@landaulifshitz1975]。采用闵可夫斯基度规 $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)$；时空指标取 $\mu,\nu = 0,1,2,3$，空间指标取 $i,j = 1,2,3$，重复的上下指标按爱因斯坦求和约定求和。
 
 ### 四维势与电磁场张量
 
-电磁场张量 $F^{\mu\nu}$ 由四维势定义为 @eq-F-tensor，它统一了电场和磁场。
+电磁场张量 $F^{\mu\nu}$ 由四维势定义为 @eq-F-tensor，它统一了电场和磁场 [@jackson1999]。
 
 $$
 F^{\mu\nu} = \partial^{\mu}A^{\nu} - \partial^{\nu}A^{\mu}
@@ -176,21 +176,21 @@ A_x & A_y & A_z
 \end{vmatrix}
 $$ {#eq-B}
 
-其中 $\mathbf{e}_x$、$\mathbf{e}_y$、$\mathbf{e}_z$ 为直角坐标系的单位矢量。@eq-E 的分量形式为 @eq-E_i，@eq-B 的分量形式 [@feynman2020vol2]（第 173 页）为 @eq-B_x、@eq-B_y、@eq-B_z。
+其中 $\mathbf{e}_x$、$\mathbf{e}_y$、$\mathbf{e}_z$ 为直角坐标系的单位矢量。@eq-E 的分量形式为 @eq-E-i，@eq-B 的分量形式 [@feynman2020vol2]（第 173 页）为 @eq-B-x、@eq-B-y、@eq-B-z。
 
-$$ E_{i} = - \frac{\partial\phi}{\partial x^{i}} - \frac{\partial A^i}{\partial t}$$ {#eq-E_i}
+$$ E_{i} = - \frac{\partial\phi}{\partial x^{i}} - \frac{\partial A^i}{\partial t}$$ {#eq-E-i}
 
 $$
 B_x = (\boldsymbol{\nabla} \times \mathbf{A})_x = \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}
-$$ {#eq-B_x}
+$$ {#eq-B-x}
 
 $$
 B_y = (\boldsymbol{\nabla} \times \mathbf{A})_y = \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}
-$$ {#eq-B_y}
+$$ {#eq-B-y}
 
 $$
 B_z = (\boldsymbol{\nabla} \times \mathbf{A})_z = \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}
-$$ {#eq-B_z}
+$$ {#eq-B-z}
 
 ### 计算矩阵形式
 
@@ -206,7 +206,7 @@ $$ {#eq-F-ii}
 
 #### 时间-空间分量
 
-$\mu = 0$，$\nu = i$ 代入 @eq-F-tensor，化简后代入 @eq-E_i 得到 @eq-F-0i。
+$\mu = 0$，$\nu = i$ 代入 @eq-F-tensor，化简后代入 @eq-E-i 得到 @eq-F-0i。
 
 $$
 \begin{aligned}
@@ -222,13 +222,13 @@ $$ {#eq-F-0i}
 
 #### 空间-空间分量
 
-$\mu = i,\nu = j$ 代入 @eq-F-tensor 得到 @eq-F_ij， 其中 $i,j = 1,2,3$。
+$\mu = i,\nu = j$ 代入 @eq-F-tensor 得到 @eq-F-ij， 其中 $i,j = 1,2,3$。
 
 $$
 F^{ij} = \partial^{i}A^j - \partial^{j}A^i= -\frac{\partial A^j}{\partial x^{i}} + \frac{\partial A^i}{\partial x^{j}}
-$$ {#eq-F_ij}
+$$ {#eq-F-ij}
 
-计算 $F^{12}$，代入 @eq-F_ij，得到 @eq-B-field-1。
+计算 $F^{12}$，代入 @eq-F-ij，得到 @eq-B-field-1。
 
 $$
 F^{12} = -\frac{\partial A^2}{\partial x^{1}} + \frac{\partial A^1}{\partial x^{2}}
@@ -236,7 +236,7 @@ F^{12} = -\frac{\partial A^2}{\partial x^{1}} + \frac{\partial A^1}{\partial x^{
  = -B_z
 $$ {#eq-B-field-1}
 
-计算 $F^{13}$，代入 @eq-F_ij，得到 @eq-B-field-2。
+计算 $F^{13}$，代入 @eq-F-ij，得到 @eq-B-field-2。
 
 $$
 F^{13} = -\frac{\partial A^3}{\partial x^{1}} + \frac{\partial A^1}{\partial x^{3}}
@@ -244,7 +244,7 @@ F^{13} = -\frac{\partial A^3}{\partial x^{1}} + \frac{\partial A^1}{\partial x^{
  = B_y
 $$ {#eq-B-field-2}
 
-计算 $F^{23}$，代入 @eq-F_ij，得到 @eq-F-23。
+计算 $F^{23}$，代入 @eq-F-ij，得到 @eq-F-23。
 
 $$
 F^{23} = -\frac{\partial A^3}{\partial x^{2}} + \frac{\partial A^2}{\partial x^{3}}
@@ -301,7 +301,7 @@ $$ {#eq-gauss-step2}
 
 $$
 \boldsymbol{\nabla} \cdot \mathbf{E} = \frac{\rho}{\epsilon_{0}}
-$${#eq-gauss-E}
+$$ {#eq-gauss-E}
 
 #### 安培-麦克斯韦定律
 
@@ -380,14 +380,14 @@ $$ {#eq-ampere}
 
 #### 对应关系
 
-@tbl-tab-sourceful 中对 4 维与 3 维的对应关系做了总结：1 个 4 维张量方程包含了 2 个 3 维矢量方程。
-
-: 有源项 4 维 3 维对应关系 {#tbl-tab-sourceful tbl-colwidths="[34,38,28]"}
+@tbl-sourceful 中对 4 维与 3 维的对应关系做了总结：1 个 4 维张量方程包含了 2 个 3 维矢量方程。
 
 | 4 维形式 | 3 维形式 | 物理定律 |
 |:---------|:---------|:---------|
-| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu \ $，$\nu = 0$ | $\nabla \cdot \mathbf{E} = \rho/\epsilon_0$ | 高斯电场定律 |
-| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu \ $，$\nu = 1,2,3$ | $\boldsymbol{\nabla} \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \partial_t \mathbf{E}$ | 安培-麦克斯韦定律 |
+| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 0$ | $\boldsymbol{\nabla} \cdot \mathbf{E} = \rho/\epsilon_0$ | 高斯电场定律 |
+| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 1,2,3$ | $\boldsymbol{\nabla} \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \partial_t \mathbf{E}$ | 安培-麦克斯韦定律 |
+
+: 有源项：4 维与 3 维的对应关系 {#tbl-sourceful tbl-colwidths="[34,38,28]"}
 
 时间分量（$\nu = 0$）对应高斯电场定律，空间分量（$\nu = 1,2,3$）对应安培-麦克斯韦定律。
 
@@ -458,17 +458,17 @@ $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(- B_x \right) - \frac{\partial}{\partial y}\left(\frac{E_z}{c} \right) - \frac{\partial}{\partial z}\left(- \frac{E_y}{c} \right) = 0
 $$ {#eq-hom-023-sub}
 
-将 @eq-hom-023-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E_x。
+将 @eq-hom-023-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E-x。
 
 $$
 - \frac{\partial B_x}{\partial t} - \frac{\partial E_z}{\partial y} + \frac{\partial E_y}{\partial z} = 0
-$$ {#eq-m-nabla-times-E_x}
+$$ {#eq-m-nabla-times-E-x}
 
-将 @eq-curl-Ex 代入 @eq-m-nabla-times-E_x 得到 @eq-nabla-times-E_x。
+将 @eq-curl-Ex 代入 @eq-m-nabla-times-E-x 得到 @eq-nabla-times-E-x。
 
 $$
 \left(\boldsymbol{\nabla} \times \mathbf{E} \right)_{x} = -\frac{\partial B_x}{\partial t}
-$$ {#eq-nabla-times-E_x}
+$$ {#eq-nabla-times-E-x}
 
 y-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-hom-031。
 
@@ -482,17 +482,17 @@ $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(- B_y \right) - \frac{\partial}{\partial z}\left(\frac{E_x}{c} \right) - \frac{\partial}{\partial x}\left(- \frac{E_z}{c} \right) = 0
 $$ {#eq-hom-031-sub}
 
-将 @eq-hom-031-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E_y。
+将 @eq-hom-031-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E-y。
 
 $$
 - \frac{\partial B_y}{\partial t} - \frac{\partial E_x}{\partial z} + \frac{\partial E_z}{\partial x} = 0
-$$ {#eq-m-nabla-times-E_y}
+$$ {#eq-m-nabla-times-E-y}
 
-将 @eq-curl-Ey 代入 @eq-m-nabla-times-E_y 得到 @eq-nabla-times-E_y。
+将 @eq-curl-Ey 代入 @eq-m-nabla-times-E-y 得到 @eq-nabla-times-E-y。
 
 $$
 \left(\boldsymbol{\nabla} \times \mathbf{E} \right)_{y} = -\frac{\partial B_y}{\partial t}
-$$ {#eq-nabla-times-E_y}
+$$ {#eq-nabla-times-E-y}
 
 z-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-hom-012。
 
@@ -506,32 +506,32 @@ $$
 \frac{1}{c}\frac{\partial}{\partial t}\left(- B_z \right) - \frac{\partial}{\partial x}\left(\frac{E_y}{c} \right) - \frac{\partial}{\partial y}\left(- \frac{E_x}{c} \right) = 0
 $$ {#eq-hom-012-sub}
 
-将 @eq-hom-012-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E_z。
+将 @eq-hom-012-sub 乘 $c$ 整理后得到 @eq-m-nabla-times-E-z。
 
 $$
 - \frac{\partial B_z}{\partial t} - \frac{\partial E_y}{\partial x} + \frac{\partial E_x}{\partial y} = 0
-$$ {#eq-m-nabla-times-E_z}
+$$ {#eq-m-nabla-times-E-z}
 
-将 @eq-curl-Ez 代入 @eq-m-nabla-times-E_z 得到 @eq-nabla-times-E_z。
+将 @eq-curl-Ez 代入 @eq-m-nabla-times-E-z 得到 @eq-nabla-times-E-z。
 
 $$
 \left(\boldsymbol{\nabla} \times \mathbf{E} \right)_{z} = -\frac{\partial B_z}{\partial t}
-$$ {#eq-nabla-times-E_z}
+$$ {#eq-nabla-times-E-z}
 
-合并三个分量方程 @eq-nabla-times-E_x、@eq-nabla-times-E_y、@eq-nabla-times-E_z 得到法拉第电磁感应定律 @eq-farad。
+合并三个分量方程 @eq-nabla-times-E-x、@eq-nabla-times-E-y、@eq-nabla-times-E-z 得到法拉第电磁感应定律 @eq-farad。
 
 $$\boldsymbol{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#eq-farad}
 
 #### 对应关系
 
-@tbl-tab-sourceless 中对 4 维与 3 维的对应关系做了总结：1 个 4 维张量方程包含了 2 个 3 维矢量方程。
+@tbl-sourceless 中对 4 维与 3 维的对应关系做了总结：1 个 4 维张量方程包含了 2 个 3 维矢量方程。
 
-| 4维形式 | 3维形式 | 物理定律 |
-|-----|--|---|
-|$\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\nabla \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
-|$\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in\{(0,2,3),(0,3,1),(0,1,2)\}$| $\boldsymbol{\nabla} \times \mathbf{E} = - \frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
+| 4 维形式 | 3 维形式 | 物理定律 |
+|:---------|:---------|:---------|
+| $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\boldsymbol{\nabla} \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
+| $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in\{(0,2,3),(0,3,1),(0,1,2)\}$ | $\boldsymbol{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
 
-: 无源项4维3维对应关系 {#tbl-tab-sourceless tbl-colwidths="[57,18,25]"}
+: 无源项：4 维与 3 维的对应关系 {#tbl-sourceless tbl-colwidths="[57,18,25]"}
 
 ## 协变性与电磁场的变换
 
@@ -679,7 +679,7 @@ F'^{\mu\nu} = \begin{pmatrix}
  \end{pmatrix}
 $$ {#eq-F-mat-to-mu-nu}
 
-根据电磁场张量的变换法则 @eq-F-to-formula，可以推导出三维空间中电场和磁场分量的显式变换关系。
+根据电磁场张量的变换法则 @eq-F-to-formula，可以推导出三维空间中电场和磁场分量的显式变换关系 [@griffiths2025]。
 
 #### $E'_x$ 与 $F'^{01}$ 分量
 
@@ -710,9 +710,9 @@ $$
 \end{aligned}
 $$ {#eq-F-to-01}
 
-@eq-F-to-01 两边同乘以 $-c$，得到 @eq-E_to_x。
+@eq-F-to-01 两边同乘以 $-c$，得到 @eq-E-to-x。
 
-####  $E'_y$ 与 $F'^{02}$ 分量
+#### $E'_y$ 与 $F'^{02}$ 分量
 
 @eq-F-to-formula 中取 $\mu = 0$，$\nu = 2$。由于 $\Lambda_{\sigma}^{2}$ 只有在 $\sigma = 2$ 时为 1，其它为 0，得到 @eq-m-F-to-02。
 
@@ -731,7 +731,7 @@ $$
 \end{aligned}
 $$ {#eq-F-to-02}
 
-@eq-F-to-02 两边同乘以 $-c$，并代入 @eq-beta，得到 @eq-E_to_y。
+@eq-F-to-02 两边同乘以 $-c$，并代入 @eq-beta，得到 @eq-E-to-y。
 
 #### $E'_z$ 与 $F'^{03}$ 分量
 
@@ -753,7 +753,7 @@ $$
 \end{aligned}
 $$ {#eq-F-to-03}
 
-@eq-F-to-03 两边同乘以 $-c$，并代入 @eq-beta，得到 @eq-E_to_z。
+@eq-F-to-03 两边同乘以 $-c$，并代入 @eq-beta，得到 @eq-E-to-z。
 
 #### $B'_x$ 与 $F'^{23}$ 分量
 
@@ -767,9 +767,9 @@ $$
 \end{aligned}
 $$ {#eq-F-to-23}
 
-整理 @eq-F-to-23 得到 @eq-B_to_x。
+整理 @eq-F-to-23 得到 @eq-B-to-x。
 
-####  $B'_y$ 与 $F'^{13}$ 分量
+#### $B'_y$ 与 $F'^{13}$ 分量
 
 @eq-F-to-formula 中取 $\mu = 1$，$\nu = 3$。由于 $\Lambda_{\sigma}^{3}$ 只有在 $\sigma = 3$ 时为 1，其它为 0，得到 @eq-m-F-to-13。
 
@@ -789,7 +789,7 @@ B'_y
 \end{aligned}
 $$ {#eq-F-to-13}
 
-将 @eq-beta 代入 @eq-F-to-13，得到 @eq-B_to_y。
+将 @eq-beta 代入 @eq-F-to-13，得到 @eq-B-to-y。
 
 #### $B'_z$ 与 $F'^{12}$ 分量
 
@@ -811,33 +811,33 @@ $$
 \end{aligned}
 $$ {#eq-F-to-12}
 
-@eq-F-to-12 两边同乘以 $-1$，并将 @eq-beta 代入 @eq-F-to-12，得到 @eq-B_to_z。
+@eq-F-to-12 两边同乘以 $-1$，并将 @eq-beta 代入 @eq-F-to-12，得到 @eq-B-to-z。
 
-对于沿 $x$ 轴方向的 boost 变换（$S'$ 系相对于 $S$ 系以速度 $v$ 运动），电场分量的变换为 @eq-E_to_x、@eq-E_to_y、@eq-E_to_z，磁场分量的变换为 @eq-B_to_x、@eq-B_to_y、@eq-B_to_z。
+对于沿 $x$ 轴方向的 boost 变换（$S'$ 系相对于 $S$ 系以速度 $v$ 运动），电场分量的变换为 @eq-E-to-x、@eq-E-to-y、@eq-E-to-z，磁场分量的变换为 @eq-B-to-x、@eq-B-to-y、@eq-B-to-z。
 
 $$
 E'_x = E_x
-$$ {#eq-E_to_x}
+$$ {#eq-E-to-x}
 
 $$
 E'_y = \gamma\left(E_y - v B_z \right)
-$$ {#eq-E_to_y}
+$$ {#eq-E-to-y}
 
 $$
 E'_z = \gamma\left(E_z + v B_y \right)
-$$ {#eq-E_to_z}
+$$ {#eq-E-to-z}
 
 $$
 B'_x = B_x
-$$ {#eq-B_to_x}
+$$ {#eq-B-to-x}
 
 $$
 B'_y = \gamma\left(B_y + \frac{v}{c^{2}} E_z \right)
-$$ {#eq-B_to_y}
+$$ {#eq-B-to-y}
 
 $$
 B'_z = \gamma\left(B_z - \frac{v}{c^{2}} E_y \right)
-$$ {#eq-B_to_z}
+$$ {#eq-B-to-z}
 
 #### 矢量形式
 
@@ -849,7 +849,7 @@ $$
 \mathbf{E}'_\parallel = \mathbf{E}_\parallel, \qquad \mathbf{B}'_\parallel = \mathbf{B}_\parallel
 $$ {#eq-EB-parallel-proof}
 
-垂直分量发生电与磁的混合。由分量变换式 @eq-E_to_y 和 @eq-E_to_z，可写出垂直分量的矢量形式 @eq-E-perp-proof。
+垂直分量发生电与磁的混合。由分量变换式 @eq-E-to-y 和 @eq-E-to-z，可写出垂直分量的矢量形式 @eq-E-perp-proof。
 
 $$
 \begin{aligned}
@@ -869,7 +869,7 @@ $$
 = v(B_y\mathbf{e}_z - B_z\mathbf{e}_y)
 $$ {#eq-v-cross-B-proof}
 
-同理，由分量变换式 @eq-B_to_y 和 @eq-B_to_z 可写出 @eq-B-perp-proof。
+同理，由分量变换式 @eq-B-to-y 和 @eq-B-to-z 可写出 @eq-B-perp-proof。
 
 $$
 \begin{aligned}

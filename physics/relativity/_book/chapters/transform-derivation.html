@@ -28,7 +28,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -287,19 +307,19 @@ window.Quarto = {
 
 <section id="公理设定" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="公理设定"><span class="header-section-number">2.1</span> 公理设定</h2>
-<p>本章的全部结果都从三条前提推出：坐标变换的线性性、一个“不变对象”的存在，以及变换集合的群结构。前两条与群结构为两种变换所共有；真正决定结论的，是“不变对象”取什么——它把推导分成两支，一支给出伽利略变换，一支给出洛伦兹变换。</p>
+<p>本章的全部结果都从三条前提推出：坐标变换的线性性、一个“不变对象”的存在，以及变换集合的群结构。前两条与群结构为两种变换所共有；真正决定结论的，是“不变对象”取什么——它把推导分成两支，一支给出伽利略变换，一支给出洛伦兹变换。这条不预设光速不变、仅由时空均匀性、各向同性与群结构导出变换的路线，在文献中已有系统论述<span class="citation" data-cites="levyleblond1976 berzigorini1969"><sup>[<a href="references.html#ref-levyleblond1976" role="doc-biblioref">1</a>,<a href="references.html#ref-berzigorini1969" role="doc-biblioref">2</a>]</sup></span>。</p>
 <p><strong>公共公理</strong></p>
-<div id="prp-homogeneity" class="theorem proposition">
+<div id="cnj-homogeneity" class="theorem conjecture">
 <p><span class="theorem-title"><strong>公理 2.1 (均匀性假设（线性变换）)</strong></span> 空间是均匀的，时间是均匀的。因此，两个惯性系 <span class="math inline">S</span> 和 <span class="math inline">S'</span> 之间的坐标变换必须是线性变换（齐次线性变换加平移，这里取原点重合的齐次部分）。</p>
 </div>
-<div id="prp-covariance" class="theorem proposition">
+<div id="cnj-covariance" class="theorem conjecture">
 <p><span class="theorem-title"><strong>公理 2.2 (协变性（群结构）)</strong></span> 所有的空间方向是对称的（各向同性），且变换构成的集合必须形成“群”：即连续做两次变换等于做一次变换，且存在逆变换回到原坐标系。</p>
 </div>
 <p><strong>第三条公理：不变对象（二选一）</strong></p>
-<div id="prp-invariant-time" class="theorem proposition">
+<div id="cnj-invariant-time" class="theorem conjecture">
 <p><span class="theorem-title"><strong>公理 2.3 (存在不变时间（绝对同时性）)</strong></span> 存在一个在所有惯性系中取值相同的时间刻度，即同时性与参考系无关，等时面在变换下不变。形式地：若 <span class="math inline">t = 0</span>，则在 <span class="math inline">S'</span> 中必有 <span class="math inline">t' = 0</span>。</p>
 </div>
-<div id="prp-invariant-speed" class="theorem proposition">
+<div id="cnj-invariant-speed" class="theorem conjecture">
 <p><span class="theorem-title"><strong>公理 2.4 (存在不变速度)</strong></span> 存在一个恒定的特征速度 <span class="math inline">c</span>，在任何参考系中，沿任意方向测量该速度都恒为 <span class="math inline">c</span>。形式地：若 <span class="math inline">x = ct</span>，则在 <span class="math inline">S'</span> 中必有 <span class="math inline">x' = ct'</span>；若 <span class="math inline">x = -ct</span>，则 <span class="math inline">x' = -ct'</span>。</p>
 </div>
 <p>两条第三公理互为对偶：一条把<strong>时间轴</strong>定为不变量，另一条把<strong>速度轴</strong>定为不变量。</p>
@@ -318,8 +338,8 @@ window.Quarto = {
 <thead>
 <tr class="header">
 <th></th>
-<th><a href="#prp-invariant-time" class="quarto-xref">公理&nbsp;<span>2.3</span></a>（→ 伽利略）</th>
-<th><a href="#prp-invariant-speed" class="quarto-xref">公理&nbsp;<span>2.4</span></a>（→ 洛伦兹）</th>
+<th><a href="#cnj-invariant-time" class="quarto-xref">公理&nbsp;<span>2.3</span></a>（→ 伽利略）</th>
+<th><a href="#cnj-invariant-speed" class="quarto-xref">公理&nbsp;<span>2.4</span></a>（→ 洛伦兹）</th>
 </tr>
 </thead>
 <tbody>
@@ -357,7 +377,7 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
-<p>本节的坐标列向量<strong>统一按 <span class="math inline">(t, x)</span> 排列</strong>：时间分量在前、空间分量在后，与 <a href="#sec-lorentz-4d" class="quarto-xref"><span>小节 2.7</span></a> 的四维顺序 <span class="math inline">(t, x, y, z)</span> 完全一致。由 <a href="#prp-homogeneity" class="quarto-xref">公理&nbsp;<span>2.1</span></a>，<span class="math inline">(t, x)</span> 平面内的线性变换必为</p>
+<p>本节的坐标列向量<strong>统一按 <span class="math inline">(t, x)</span> 排列</strong>：时间分量在前、空间分量在后，与 <a href="#sec-lorentz-4d" class="quarto-xref"><span>小节 2.7</span></a> 的四维顺序 <span class="math inline">(t, x, y, z)</span> 完全一致。由 <a href="#cnj-homogeneity" class="quarto-xref">公理&nbsp;<span>2.1</span></a>，<span class="math inline">(t, x)</span> 平面内的线性变换必为</p>
 <p><span id="eq-lambda"><span class="math display">
 \begin{pmatrix} t' \\ x' \end{pmatrix}
 =
@@ -439,7 +459,7 @@ x' &amp;= D(x - vt)
 </section>
 <section id="约束-2相对速度" class="level3" data-number="2.3.2">
 <h3 data-number="2.3.2" class="anchored" data-anchor-id="约束-2相对速度"><span class="header-section-number">2.3.2</span> 约束 2：相对速度</h3>
-<p>由相对性原理（<a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>），<span class="math inline">S</span> 系在自己看来静止，而在 <span class="math inline">S'</span> 系中必须以速度 <span class="math inline">-v</span> 退行，即其原点 <span class="math inline">x = 0</span> 满足 <span class="math inline">x' = -v t'</span>。</p>
+<p>由相对性原理（<a href="#cnj-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>），<span class="math inline">S</span> 系在自己看来静止，而在 <span class="math inline">S'</span> 系中必须以速度 <span class="math inline">-v</span> 退行，即其原点 <span class="math inline">x = 0</span> 满足 <span class="math inline">x' = -v t'</span>。</p>
 <p>在 <a href="#eq-after-origin" class="quarto-xref">式&nbsp;<span>2.5</span></a> 中令 <span class="math inline">x = 0</span>，得 <span class="math inline">t' = A t</span>、<span class="math inline">x' = -Dv\,t</span>，于是 <span class="math inline">x'/t' = -Dv/A</span>。要求它等于 <span class="math inline">-v</span>（<span class="math inline">v \neq 0</span>；<span class="math inline">v = 0</span> 时变换退化为恒等，<span class="math inline">A = D = 1</span> 自动成立）：</p>
 <p><span id="eq-constraint-velocity"><span class="math display">
 -\frac{Dv}{A} = -v
@@ -457,7 +477,7 @@ D = A
 <h2 data-number="2.4" class="anchored" data-anchor-id="伽利略变换"><span class="header-section-number">2.4</span> 伽利略变换</h2>
 <section id="约束-3g不变时间" class="level3" data-number="2.4.1">
 <h3 data-number="2.4.1" class="anchored" data-anchor-id="约束-3g不变时间"><span class="header-section-number">2.4.1</span> 约束 3G：不变时间</h3>
-<p>由 <a href="#prp-invariant-time" class="quarto-xref">公理&nbsp;<span>2.3</span></a>，<span class="math inline">t = 0 \Rightarrow t' = 0</span>。在 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 中令 <span class="math inline">t = 0</span>，得 <span class="math inline">t' = Bx</span>；要求它对一切 <span class="math inline">x</span> 为零，故</p>
+<p>由 <a href="#cnj-invariant-time" class="quarto-xref">公理&nbsp;<span>2.3</span></a>，<span class="math inline">t = 0 \Rightarrow t' = 0</span>。在 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 中令 <span class="math inline">t = 0</span>，得 <span class="math inline">t' = Bx</span>；要求它对一切 <span class="math inline">x</span> 为零，故</p>
 <p><span id="eq-constraint-time"><span class="math display">
 B = 0
 \tag{2.8}</span></span></p>
@@ -465,7 +485,7 @@ B = 0
 </section>
 <section id="约束-4g群结构" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="约束-4g群结构"><span class="header-section-number">2.4.2</span> 约束 4G：群结构</h3>
-<p>由 <a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>，变换集合构成群，故速度为 <span class="math inline">v</span> 的变换与速度为 <span class="math inline">-v</span> 的变换互逆：<span class="math inline">\Lambda(v)\,\Lambda(-v) = I</span>。</p>
+<p>由 <a href="#cnj-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>，变换集合构成群，故速度为 <span class="math inline">v</span> 的变换与速度为 <span class="math inline">-v</span> 的变换互逆：<span class="math inline">\Lambda(v)\,\Lambda(-v) = I</span>。</p>
 <p>把 <span class="math inline">v \to -v</span> 代入 <a href="#eq-matrix-form" class="quarto-xref">式&nbsp;<span>2.7</span></a>（此时 <span class="math inline">B = 0</span>）；由各向同性，<span class="math inline">A</span> 只依赖速率大小而与此方向无关，故 <span class="math inline">A(-v) = A(v) \equiv A</span>：</p>
 <p><span class="math display">
 \Lambda(-v) = \begin{pmatrix} A &amp; 0 \\ Av &amp; A \end{pmatrix}
@@ -513,9 +533,10 @@ x' = x - vt
 </section>
 <section id="洛伦兹变换" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="洛伦兹变换"><span class="header-section-number">2.5</span> 洛伦兹变换</h2>
+<p>爱因斯坦以“光速不变原理”为前提<span class="citation" data-cites="einstein1905"><sup>[<a href="references.html#ref-einstein1905" role="doc-biblioref">3</a>]</sup></span>；本节的推导不引入任何具体物理对象，只用 <a href="#cnj-invariant-speed" class="quarto-xref">公理&nbsp;<span>2.4</span></a> 这一条关于变换形式的约束。</p>
 <section id="约束-3l不变速度" class="level3" data-number="2.5.1">
 <h3 data-number="2.5.1" class="anchored" data-anchor-id="约束-3l不变速度"><span class="header-section-number">2.5.1</span> 约束 3L：不变速度</h3>
-<p>由 <a href="#prp-invariant-speed" class="quarto-xref">公理&nbsp;<span>2.4</span></a>，要求 <span class="math inline">x = ct \Rightarrow x' = ct'</span>。取满足 <span class="math inline">x = ct</span> 的事件；由 <a href="#eq-constraint-velocity" class="quarto-xref">式&nbsp;<span>2.6</span></a> 有 <span class="math inline">D = A</span>，故 <a href="#eq-after-origin" class="quarto-xref">式&nbsp;<span>2.5</span></a> 给出 <span class="math inline">x' = A(x - vt)</span>。用它和 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 构造组合 <span class="math inline">x' - ct'</span>：</p>
+<p>由 <a href="#cnj-invariant-speed" class="quarto-xref">公理&nbsp;<span>2.4</span></a>，要求 <span class="math inline">x = ct \Rightarrow x' = ct'</span>。取满足 <span class="math inline">x = ct</span> 的事件；由 <a href="#eq-constraint-velocity" class="quarto-xref">式&nbsp;<span>2.6</span></a> 有 <span class="math inline">D = A</span>，故 <a href="#eq-after-origin" class="quarto-xref">式&nbsp;<span>2.5</span></a> 给出 <span class="math inline">x' = A(x - vt)</span>。用它和 <a href="#eq-lin-t" class="quarto-xref">式&nbsp;<span>2.2</span></a> 构造组合 <span class="math inline">x' - ct'</span>：</p>
 <p><span class="math display">
 x' - c t'
 = A(ct - vt) - c\,(At + Bct)
@@ -531,7 +552,7 @@ B = -\frac{Av}{c^{2}}
 </section>
 <section id="约束-4l群结构" class="level3" data-number="2.5.2">
 <h3 data-number="2.5.2" class="anchored" data-anchor-id="约束-4l群结构"><span class="header-section-number">2.5.2</span> 约束 4L：群结构</h3>
-<p>与伽利略一支同样的理由（<a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>）：<span class="math inline">\Lambda(v)\,\Lambda(-v) = I</span>。由各向同性，<span class="math inline">A(-v) = A(v) \equiv A</span>，故</p>
+<p>与伽利略一支同样的理由（<a href="#cnj-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>）：<span class="math inline">\Lambda(v)\,\Lambda(-v) = I</span>。由各向同性，<span class="math inline">A(-v) = A(v) \equiv A</span>，故</p>
 <p><span class="math display">
 \Lambda(v) = \begin{pmatrix} A &amp; -Av/c^{2} \\ -Av &amp; A \end{pmatrix},
 \qquad
@@ -576,11 +597,11 @@ x' = \gamma(x - vt)
 &amp;= \gamma_1\gamma_2 \left(1 + \frac{v_1v_2}{c^2}\right) \begin{pmatrix} 1 &amp; -\frac{v_1+v_2}{c^2(1 + v_1v_2/c^2)} \\ -\frac{v_1+v_2}{1 + v_1v_2/c^2} &amp; 1 \end{pmatrix}
 \end{aligned}
 </span></p>
-<p>根据速度合成定理，令 (V) 为：</p>
+<p>根据速度合成定理，令 <span class="math inline">V</span> 为：</p>
 <p><span class="math display">
 V = \frac{v_1 + v_2}{1 + v_1v_2/c^2}
 </span></p>
-<p>最终将 (V) 代入上式，得到结果：</p>
+<p>最终将 <span class="math inline">V</span> 代入上式，得到结果：</p>
 <p><span class="math display">
 \Lambda(v_1)\Lambda(v_2) = \gamma_1\gamma_2 \left(1 + \frac{v_1v_2}{c^2}\right) \begin{pmatrix} 1 &amp; -V/c^2 \\ -V &amp; 1 \end{pmatrix}
 </span></p>
@@ -671,7 +692,7 @@ V = \frac{v_1 + v_2}{1 + v_1v_2/c^2}
 <blockquote class="blockquote">
 <p><strong>伽利略变换是洛伦兹变换在 <span class="math inline">c \to \infty</span> 下的极限。</strong></p>
 </blockquote>
-<p>这与两条第三公理的对偶性一致：<span class="math inline">c</span> 取有限值对应“存在不变速度”，<span class="math inline">c</span> 取无穷则意味着不存在有限的不变速度——那正是 <a href="#prp-invariant-time" class="quarto-xref">公理&nbsp;<span>2.3</span></a> 所陈述的内容。所以两条公理并非两个互不相干的前提，而是同一条陈述在有限与无限两处的取值。</p>
+<p>这与两条第三公理的对偶性一致：<span class="math inline">c</span> 取有限值对应“存在不变速度”，<span class="math inline">c</span> 取无穷则意味着不存在有限的不变速度——那正是 <a href="#cnj-invariant-time" class="quarto-xref">公理&nbsp;<span>2.3</span></a> 所陈述的内容。所以两条公理并非两个互不相干的前提，而是同一条陈述在有限与无限两处的取值。</p>
 <p><strong>3. 群结构</strong></p>
 <p>两支各自闭合（合成律见各自的一致性检验）。在群论上，伽利略群是洛伦兹群在 <span class="math inline">c \to \infty</span> 下的 Inönü–Wigner 收缩；单就群本身而言，洛伦兹群是“更大”的那一个，伽利略群是它在收缩极限下的退化结果。</p>
 </section>
@@ -703,7 +724,7 @@ y' = p\,y, \qquad z' = s\,z
 a(v)\,a(-v) = 1
 </span></p>
 <ul>
-<li>另一方面，考虑两个由相对性原理（<a href="#prp-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>）联系起来的实验：<span class="math inline">S'</span> 系测量静止于 <span class="math inline">S</span> 系的横向标尺，由于 <span class="math inline">y'</span> 只依赖于 <span class="math inline">y</span>（与同时性无关），测得长度为原来的 <span class="math inline">a(v)</span> 倍；<span class="math inline">S</span> 系测量静止于 <span class="math inline">S'</span> 系的同一根标尺，测得长度为原来的 <span class="math inline">a(-v)</span> 倍。两个实验的物理地位完全对等（交换两系即可互换），比例因子必须相同，故 <span class="math inline">a(v) = a(-v)</span>。</li>
+<li>另一方面，考虑两个由相对性原理（<a href="#cnj-covariance" class="quarto-xref">公理&nbsp;<span>2.2</span></a>）联系起来的实验：<span class="math inline">S'</span> 系测量静止于 <span class="math inline">S</span> 系的横向标尺，由于 <span class="math inline">y'</span> 只依赖于 <span class="math inline">y</span>（与同时性无关），测得长度为原来的 <span class="math inline">a(v)</span> 倍；<span class="math inline">S</span> 系测量静止于 <span class="math inline">S'</span> 系的同一根标尺，测得长度为原来的 <span class="math inline">a(-v)</span> 倍。两个实验的物理地位完全对等（交换两系即可互换），比例因子必须相同，故 <span class="math inline">a(v) = a(-v)</span>。</li>
 </ul>
 <p>于是 <span class="math inline">a(v)^{2} = 1</span>；再由 <span class="math inline">v \to 0</span> 时变换连续地退化为恒等变换（<span class="math inline">a \to 1</span>），得</p>
 <p><span id="eq-yz-invariant"><span class="math display">
@@ -800,7 +821,7 @@ c^{2}t'^{2} - x'^{2}
 &amp;= c^{2}t^{2} - x^{2}
 \end{aligned}
 \tag{2.28}</span></span></p>
-<p>第步用了 <span class="math inline">\gamma^{2}\left(1 - \beta^{2}\right) = 1</span>（<a href="#eq-gamma-def" class="quarto-xref">式&nbsp;<span>2.16</span></a>）。横向分量不参与运算（<span class="math inline">y' = y</span>、<span class="math inline">z' = z</span>），故 <a href="#eq-interval" class="quarto-xref">式&nbsp;<span>2.27</span></a> 整体不变：</p>
+<p>末步用了 <span class="math inline">\gamma^{2}\left(1 - \beta^{2}\right) = 1</span>（<a href="#eq-gamma-def" class="quarto-xref">式&nbsp;<span>2.16</span></a>）。横向分量不参与运算（<span class="math inline">y' = y</span>、<span class="math inline">z' = z</span>），故 <a href="#eq-interval" class="quarto-xref">式&nbsp;<span>2.27</span></a> 整体不变：</p>
 <p><span id="eq-interval-invariance"><span class="math display">
 c^{2}t'^{2} - x'^{2} - y'^{2} - z'^{2}
 =
@@ -819,6 +840,17 @@ c^{2}t^{2} - x^{2} - y^{2} - z^{2}
 <p>整个推导只使用了三条公理——线性性、不变对象的存在与群结构——而未借助电磁学或光的任何具体性质；“不变速度”在此只是一条关于变换形式的约束，与任何具体物理对象无关。</p>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-levyleblond1976" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">LÉVY-LEBLOND J M. One more derivation of the Lorentz transformation[J/OL]. American Journal of Physics, 1976, 44(3): 271-277. DOI:<a href="https://doi.org/10.1119/1.10490">10.1119/1.10490</a>.</div>
+</div>
+<div id="ref-berzigorini1969" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">BERZI V, GORINI V. Reciprocity Principle and the Lorentz Transformations[J/OL]. Journal of Mathematical Physics, 1969, 10(8): 1518-1524. DOI:<a href="https://doi.org/10.1063/1.1665000">10.1063/1.1665000</a>.</div>
+</div>
+<div id="ref-einstein1905" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">EINSTEIN A. Zur Elektrodynamik bewegter K<span>ö</span>rper[J/OL]. Annalen der Physik, 1905, 322(10): 891-921. DOI:<a href="https://doi.org/10.1002/andp.19053221004">10.1002/andp.19053221004</a>.</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

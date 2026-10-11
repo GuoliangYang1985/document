@@ -23,10 +23,17 @@ bibliography: chapters/references.bib
 
 lang: zh-CN
 
-# 将定理类环境 prp（命题）的显示标签改为"公理"，
-# 使 @prp-* 交叉引用在 PDF 与 HTML 中均渲染为"公理 N"
+# 定理类环境的中文标签。Quarto 只识别内建键（thm/lem/cor/prp/cnj/def/…），
+# 其中无「公理」键，故约定：cnj 作「公理」，prp 作「命题」。
+# 这样 @cnj-* / @prp-* / @def-* / @thm-* / @lem-* / @cor-* 在 PDF 与 HTML 中
+# 分别渲染为「公理 N」「命题 N」「定义 N」「定理 N」「引理 N」「推论 N」。
 language:
-  crossref-prp-title: "公理"
+  crossref-cnj-title: "公理"
+  crossref-prp-title: "命题"
+  crossref-def-title: "定义"
+  crossref-thm-title: "定理"
+  crossref-lem-title: "引理"
+  crossref-cor-title: "推论"
 
 author:
   - name: "杨国梁"
