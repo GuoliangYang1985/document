@@ -287,10 +287,10 @@ $$ {#eq-action}
 ::: {#prp-double-coupling}
 ## 耦合二重出现
 
-对 $\Phi$ 变分得
+对 $\Phi$ 变分并分部积分（$\nabla^{a}\nabla_{a}$ 是 $(M,g)$ 上的 Laplace–Beltrami 算子）得
 
 $$
-\square\Phi + V'(\Phi) - \sum_{i\in I}\lambda_i\,\mathcal{O}_i = 0
+\nabla^{a}\nabla_{a}\Phi + V'(\Phi) - \sum_{i\in I}\lambda_i\,\mathcal{O}_i = 0
 $$ {#eq-field-eq}
 
 对 $\psi_i$ 变分所得的方程中含 $\lambda_i\Phi$ 项。因此**同一组 $\lambda_i$ 同时出现在场方程与物质方程中**：$\alpha_i$ 由 $\partial\ln\nu_i/\partial\Phi$ 确定，而 $\nu_i$ 的场依赖由 $\lambda_i\Phi\mathcal{O}_i$ 项给出；给定一侧即约束另一侧。这是“$\alpha_i$ 不是自由参数”的变分形式——它是一条数学结论，不是假设。
@@ -305,7 +305,7 @@ $$ {#eq-field-eq}
 ::: {#prp-implicit}
 ## 隐式方程与可解性
 
-若物质的拉氏量自身含 $\Phi$（例如通过 @eq-omega 进入时间标度），则 $\mathcal{O}_i = \mathcal{O}_i(\Phi,\psi_i)$ 依赖 $\Phi$，@eq-field-eq 变为**隐式**：$\Phi$ 同时以自变量与未知函数的身份出现。此时可解性要求 $\square + V''(\Phi) - \sum_i\lambda_i\,\partial_{\Phi}\mathcal{O}_i$ 在相应函数空间上满足 Fredholm 型条件；不满足则 @eq-field-eq 无解。这是从“参数化”升级为“理论”必须付出的代价。
+若物质的拉氏量自身含 $\Phi$（例如通过 @eq-omega 进入时间标度），则 $\mathcal{O}_i = \mathcal{O}_i(\Phi,\psi_i)$ 依赖 $\Phi$，@eq-field-eq 变为**隐式**：$\Phi$ 同时以自变量与未知函数的身份出现。此时可解性要求 $\nabla^{a}\nabla_{a} + V''(\Phi) - \sum_i\lambda_i\,\partial_{\Phi}\mathcal{O}_i$ 在相应函数空间上满足 Fredholm 型条件；不满足则 @eq-field-eq 无解。这是从“参数化”升级为“理论”必须付出的代价。
 :::
 
 ## 算子层：与量子力学的相容性 {#sec-cc-quantum}

@@ -1,0 +1,467 @@
+# 平直时空上的引力场 {#sec-flat-space-gravity}
+
+@sec-maxwell-equations 把麦克斯韦方程组写在平直闵可夫斯基时空的坐标上，并把场强组织为规范不变的张量 $F^{\mu\nu}$。@sec-galilean-electrodynamics 把变换群换成伽利略群，证明那套手法在那里失效。两章都以**平直时空**为底空间，也都没有引入引力的几何化。
+
+本章问一个不同的问题。如果始终不引入“时空弯曲”这一几何设定，只在平直时空 $(\mathbb{R}^{4},\eta)$ 上增加一个对称张量场 $h_{\mu\nu}$，把引力全部放进这个场里，那么由此得到的场论，与以度规 $g_{\mu\nu}$ 描述时空弯曲的广义相对论，是不是同一套理论？
+
+答案分三层，本章逐层建立。
+
+1. **线性层可以做到。** 规范不变性、洛伦兹协变、至多二阶导这三条几乎唯一地决定线性理论（@prp-fierz-pauli），其牛顿极限自动给出泊松方程（@prp-newtonian-limit）。
+2. **线性层不自洽。** 线性方程的左端恒等地守恒，而耦合使源不再守恒，于是必须把场自身的能量动量也算作源；这个级数封闭于完整的爱因斯坦方程（@prp-bootstrap）。
+3. **两套语言逐字对应。** 由 $g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}$，两套表述的场方程、解集与坐标不变量相同（@thm-equivalence）。
+
+但“等效”必须先界定清楚。@thm-equivalence 说的是**动力学与可观测量**层面的等同，它既不蕴含“时空实际上是平直的”，也不蕴含其否定。恰恰相反：@sec-fsg-flatness 会说明，在等效成立的范围内，背景 $\eta$ 是**不可观测**的。要让它变成可观测的，必须破坏使等效成立的条件之一（@sec-fsg-breaking）。
+
+本章取 $c=1$（即 $x^{0}=t$），号差沿用 @sec-maxwell-equations 的 $(+,-,-,-)$：$\eta_{\mu\nu}=\mathrm{diag}(+1,-1,-1,-1)$。指标 $\mu,\nu,\rho,\sigma=0,1,2,3$，空间指标 $i,j=1,2,3$，重复的上下指标按爱因斯坦约定求和。另约定四个简写：$\partial_{(\mu}A_{\nu)}:=\partial_{\mu}A_{\nu}+\partial_{\nu}A_{\mu}$（**不带** $1/2$，以省去下文反复出现的系数 $2$）；$\partial^{2}:=\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}$（达朗贝尔算子，静态时 $\partial^{2}=-\nabla^{2}$）；$\partial\cdot\xi:=\partial_{\mu}\xi^{\mu}$；对称张量场的迹 $h:=\eta^{\alpha\beta}h_{\alpha\beta}$。
+
+## 平直背景上的引力场 {#sec-fsg-field}
+
+::: {#def-flat-background}
+## 平直背景与引力场
+
+底空间固定为 $M=\mathbb{R}^{4}$，其上固定一个平直度规 $\eta$，$\eta_{\mu\nu}=\mathrm{diag}(+1,-1,-1,-1)$。**引力场**是 $M$ 上一个光滑对称二阶张量场
+
+$$
+h_{\mu\nu}=h_{\nu\mu}
+$$ {#eq-grav-field}
+
+其指标由 $\eta$ 升降。由 $h$ 定义一个度规
+
+$$
+g_{\mu\nu} := \eta_{\mu\nu}+h_{\mu\nu}
+$$ {#eq-def-g}
+
+@eq-def-g 只是一个定义，不含任何假设：任一对称二阶张量场都可以这样写成“背景 + 场”。
+:::
+
+按 @def-flat-background，一切几何量都可以**两种方式**计算：一种只看 $h$ 与 $\eta$，另一种只看 $g$。本章要比较的，就是这两种算法给出的是不是同一套物理。
+
+::: {#def-linear-gauge}
+## 线性化规范变换
+
+对任一向量场 $\xi^{\mu}$，定义 $h$ 的变分
+
+$$
+\delta_{\xi}h_{\mu\nu} := \partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu},
+\qquad
+\xi_{\nu} := \eta_{\nu\rho}\xi^{\rho}
+$$ {#eq-linear-gauge}
+
+它对应坐标变换 $x^{\mu}\mapsto x^{\mu}-\xi^{\mu}$ 在 $h$、$\xi$ 线性阶的作用。称 $\delta_{\xi}$ 为**规范变换**，$\xi$ 为规范参数。
+:::
+
+与 @sec-maxwell-equations 的 $U(1)$ 情形相比，@eq-linear-gauge 的规范参数是一个**向量场**而不是一个函数：这里的规范群是微分同胚群，而不是内部的相因子群。这个差别是本章全部内容的来源。
+
+::: {#prp-linearized-curvature}
+## 线性化曲率是规范不变量
+
+按 $\eta$ 定义线性化黎曼张量
+
+$$
+R^{(1)}_{\mu\nu\rho\sigma}[h]
+= \frac{1}{2}\left(
+\partial_{\nu}\partial_{\rho}h_{\mu\sigma}
++\partial_{\mu}\partial_{\sigma}h_{\nu\rho}
+-\partial_{\mu}\partial_{\rho}h_{\nu\sigma}
+-\partial_{\nu}\partial_{\sigma}h_{\mu\rho}
+\right)
+$$ {#eq-lin-riemann}
+
+并令
+
+$$
+R^{(1)}_{\mu\nu} = \eta^{\rho\sigma}R^{(1)}_{\mu\rho\nu\sigma},
+\qquad
+R^{(1)} = \eta^{\mu\nu}R^{(1)}_{\mu\nu},
+\qquad
+G^{(1)}_{\mu\nu}[h] = R^{(1)}_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}R^{(1)}
+$$ {#eq-lin-einstein}
+
+则对 @eq-linear-gauge 的任意 $\xi$，
+
+$$
+R^{(1)}_{\mu\nu\rho\sigma}[\delta_{\xi}h] = 0
+$$ {#eq-lin-gauge-invariance}
+
+即 $R^{(1)}_{\mu\nu\rho\sigma}$、$R^{(1)}_{\mu\nu}$、$G^{(1)}_{\mu\nu}$ 都是规范不变量。
+:::
+
+**证明.** 记 $u_{\mu\nu}:=\delta_{\xi}h_{\mu\nu}$。把 $u$ 代入 @eq-lin-riemann 并展开，利用混合偏导可交换把每项的三个求导指标排成同一顺序：
+
+$$
+\begin{aligned}
+2R^{(1)}_{\mu\nu\rho\sigma}[u]
+={}&\partial_{\mu}\partial_{\nu}\partial_{\rho}\xi_{\sigma}
++\partial_{\nu}\partial_{\rho}\partial_{\sigma}\xi_{\mu}
++\partial_{\mu}\partial_{\nu}\partial_{\sigma}\xi_{\rho}
++\partial_{\mu}\partial_{\rho}\partial_{\sigma}\xi_{\nu}\\
+&-\partial_{\mu}\partial_{\nu}\partial_{\rho}\xi_{\sigma}
+-\partial_{\nu}\partial_{\rho}\partial_{\sigma}\xi_{\mu}
+-\partial_{\mu}\partial_{\nu}\partial_{\sigma}\xi_{\rho}
+-\partial_{\mu}\partial_{\rho}\partial_{\sigma}\xi_{\nu}\\
+={}&0
+\end{aligned}
+$$
+
+八项按 $\xi$ 的下标分成四对，逐对相消，得 @eq-lin-gauge-invariance。由 $R^{(1)}_{\mu\nu}$ 与 $G^{(1)}_{\mu\nu}$ 是 $R^{(1)}_{\mu\nu\rho\sigma}$ 的 $\eta$-缩并，规范不变性随之成立。$\blacksquare$
+
+于是 $R^{(1)}_{\mu\nu\rho\sigma}$ 是 $h$ 的“场强”，地位等同于 @sec-maxwell-equations 中的 $F_{\mu\nu}$：它只依赖 $h$，且对规范变换不敏感，因此是 $h$ 所携带的**可测量内容**。$h$ 本身不是。
+
+## 线性理论：无质量自旋 2 的场方程 {#sec-fsg-linear}
+
+线性理论要求场方程对 $h$ 是线性的。下面把“线性、规范不变”这一要求推到尽头。
+
+::: {#prp-fierz-pauli}
+## 无质量线性规范不变方程的完整分类
+
+设 $h\mapsto E_{\mu\nu}[h]$ 是一个线性映射，满足
+
+1. **常系数、至多二阶导**：$E_{\mu\nu}$ 是 $h$ 及其一、二阶导数的线性组合，系数为常数；
+2. **张量性**：$E_{\mu\nu}$ 洛伦兹协变，且 $E_{\mu\nu}=E_{\nu\mu}$；
+3. **规范不变**：$E_{\mu\nu}[\delta_{\xi}h]=0$ 对一切 $\xi$ 成立。
+
+则存在常数 $\alpha,\beta$ 使
+
+$$
+E_{\mu\nu}[h]
+= \alpha\,G^{(1)}_{\mu\nu}[h]
++\beta\left(R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}\right)
+$$ {#eq-fp-general}
+
+其中 $G^{(1)}$、$R^{(1)}$ 见 @eq-lin-einstein。于是 $E=0$ 只有三种可能：
+
+- $\alpha\neq0$ 且 $\alpha+\beta\neq0$：$E=0\iff G^{(1)}_{\mu\nu}=0$，即**线性化爱因斯坦方程**；
+- $\alpha=0$：$E=0\iff R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}=0$，即线性化的**无迹方程**，其解集真包含上一情形；
+- $\alpha+\beta=0$ 且 $\alpha\neq0$：$E=0\iff R^{(1)}=0$，只是一个标量方程，不足以充当 $h$ 的场方程。
+
+特别地，规范不变性强制无质量：一切零阶项（如 $m^{2}h_{\mu\nu}$）都被 @eq-linear-gauge 排除。
+:::
+
+**证明.** 满足条件 1、2 的最一般表达式是
+
+$$
+E_{\mu\nu}
+= a\,h_{\mu\nu}
++g\,\eta_{\mu\nu}h
++b\,\partial^{2} h_{\mu\nu}
++c\,\partial_{(\mu}\partial^{\alpha}h_{\nu)\alpha}
++d\,\partial_{\mu}\partial_{\nu}h
++e\,\eta_{\mu\nu}\partial^{2} h
++f\,\eta_{\mu\nu}\partial^{\alpha}\partial^{\beta}h_{\alpha\beta}
+$$ {#eq-general-linear}
+
+七个待定系数，且这是全部：零阶导的对称协变结构只有 $h_{\mu\nu}$ 与 $\eta_{\mu\nu}h$ 两项；一阶导的结构不存在（单独一个导数指标无处缩并）；二阶导恰为上列五项。
+
+对 $u_{\mu\nu}=\delta_{\xi}h_{\mu\nu}$ 逐项计算（用到 $\partial^{2}u_{\mu\nu}=\partial_{\mu}\partial^{2}\xi_{\nu}+\partial_{\nu}\partial^{2}\xi_{\mu}$、$\partial^{\alpha}u_{\nu\alpha}=\partial_{\nu}(\partial\cdot\xi)+\partial^{2}\xi_{\nu}$、$\partial^{\alpha}\partial^{\beta}u_{\alpha\beta}=2\partial^{2}(\partial\cdot\xi)$）：
+
+$$
+\begin{aligned}
+E_{\mu\nu}[u]
+={}&a\left(\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}\right)
++2g\,\eta_{\mu\nu}\,\partial\cdot\xi
++(b+c)\left(\partial_{\mu}\partial^{2}\xi_{\nu}+\partial_{\nu}\partial^{2}\xi_{\mu}\right)\\
+&+2(c+d)\,\partial_{\mu}\partial_{\nu}(\partial\cdot\xi)
++2(e+f)\,\eta_{\mu\nu}\,\partial^{2}(\partial\cdot\xi)
+\end{aligned}
+$$ {#eq-gauge-variation}
+
+这五个结构对 $(\xi,\mu,\nu)$ 线性无关（取 $\xi\propto e^{\mathrm{i}kx}$，分 $k^{2}=0$ 与 $k^{2}\neq0$ 两步即可判定），故条件 3 等价于
+
+$$
+a = 0,
+\qquad
+g = 0,
+\qquad
+b = -c,
+\qquad
+d = -c,
+\qquad
+e = -f
+$$
+
+代回 @eq-general-linear，并记 $A_{\mu\nu}:=\partial_{(\mu}\partial^{\alpha}h_{\nu)\alpha}-\partial^{2} h_{\mu\nu}-\partial_{\mu}\partial_{\nu}h$、$B:=\partial^{\alpha}\partial^{\beta}h_{\alpha\beta}-\partial^{2} h$，得
+
+$$
+E_{\mu\nu} = c\,A_{\mu\nu}+f\,\eta_{\mu\nu}B
+$$ {#eq-fp-reduced}
+
+由 @eq-lin-riemann 与 @eq-lin-einstein 直接缩并得 $A_{\mu\nu}=2G^{(1)}_{\mu\nu}+\eta_{\mu\nu}B$ 与 $B=R^{(1)}$，代入 @eq-fp-reduced：
+
+$$
+E_{\mu\nu} = 2c\,G^{(1)}_{\mu\nu}+(c+f)\eta_{\mu\nu}R^{(1)}
+$$ {#eq-fp-reduced-2}
+
+再用 $R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}-G^{(1)}_{\mu\nu}=\frac{1}{4}\eta_{\mu\nu}R^{(1)}$，即 $\eta_{\mu\nu}R^{(1)}=4S_{\mu\nu}-4G^{(1)}_{\mu\nu}$，其中 $S_{\mu\nu}:=R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}$。代入 @eq-fp-reduced-2：
+
+$$
+E_{\mu\nu}
+= 2c\,G^{(1)}_{\mu\nu}+4(c+f)\left(S_{\mu\nu}-G^{(1)}_{\mu\nu}\right)
+= \left(2c-4(c+f)\right)G^{(1)}_{\mu\nu}+4(c+f)\,S_{\mu\nu}
+$$ {#eq-fp-final}
+
+即 @eq-fp-general，其中 $\alpha=-2c-4f$，$\beta=4(c+f)$。
+
+最后是三种情形。第一种：$\eta^{\mu\nu}G^{(1)}_{\mu\nu}=-R^{(1)}$，故对 $E=0$ 取迹得 $-\alpha R^{(1)}=0$，于是 $R^{(1)}=0$，从而 $S_{\mu\nu}=R^{(1)}_{\mu\nu}$、$G^{(1)}_{\mu\nu}=R^{(1)}_{\mu\nu}$，方程化为 $(\alpha+\beta)R^{(1)}_{\mu\nu}=0$，与 $G^{(1)}_{\mu\nu}=0$ 同解。第二种：$\alpha=0$ 时 $E=\beta\left(R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}\right)$，迹恒为零，是 9 个独立方程，不约束 $R^{(1)}$。第三种：$\alpha+\beta=0$ 时 $E=\alpha\left(G^{(1)}_{\mu\nu}-S_{\mu\nu}\right)=-\frac{\alpha}{4}\eta_{\mu\nu}R^{(1)}$，退化为单个标量方程 $R^{(1)}=0$。$\blacksquare$
+
+**注记（关于“唯一性”）。** 上述命题的经典形式只保留第一种情形，并把结论表述为“无质量自旋 2 场的线性方程唯一地是线性化爱因斯坦方程”（见 [@fierzpauli1939; @gupta1954; @weinberg1964; @ortin2015]）。上面的计算说明这一表述需要两处限定：其一，需要附加一个**非退化**要求以排除第三种情形；其二，$\alpha=0$ 的第二种情形（线性化单模引力）与第一种有相同的规范不变性，只是不约束迹部分。自耦合分析会保留同一分支结构：逐阶自耦合给出广义相对论**或**单模引力二者之一 [@barcelo2014]。本章以下只走第一种情形，因为只有它在有源时给出完整的十个场方程。
+
+**注记（历史与方法）。** 把引力建成平直时空上的无质量自旋 2 场，这条路线由 Rosen [@rosen1940]、Gupta [@gupta1954]、Kraichnan [@kraichnan1955] 与 Feynman [@feynman1995] 分别发展。Weinberg 后来给出一个不同的入口：从引力子的散射振幅出发，由洛伦兹不变性直接推出普适耦合与引力质量、惯性质量的相等 [@weinberg1964]。据 @prp-fierz-pauli，二次作用量在差一个全散度下就是 $\sqrt{-g}R$ 在 $g=\eta+h$ 处展开的二次项；换言之，**线性理论的唯一性不是偶然的，它是被截断的完整理论留下的痕迹**。
+
+## 弱场极限与牛顿势 {#sec-fsg-newton}
+
+取第一种情形，把耦合常数写出来：$h$ 的场方程为
+
+$$
+G^{(1)}_{\mu\nu}[h] = 8\pi G\,T_{\mu\nu}
+$$ {#eq-fsg-field-eq}
+
+$G$ 是牛顿常数（$c=1$ 下量纲已固定）。在求解之前，先把 $G^{(1)}$ 写成一个更方便的形式。
+
+::: {#prp-harmonic-gauge}
+## 谐和规范与达朗贝尔方程
+
+由迹 $h$ 构造**迹反转场**
+
+$$
+\bar h_{\mu\nu} := h_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}h
+$$ {#eq-trace-reverse}
+
+称条件 $\partial^{\mu}\bar h_{\mu\nu}=0$ 为**谐和规范**。任一 $h$ 都可以通过 @eq-linear-gauge 的规范变换落入谐和规范（因为 $\partial^{2}\xi_{\nu}=-\partial^{\mu}\bar h_{\mu\nu}$ 总有解）。在谐和规范下
+
+$$
+G^{(1)}_{\mu\nu}[h] = -\frac{1}{2}\partial^{2}\bar h_{\mu\nu}
+$$ {#eq-harmonic-g}
+
+于是 @eq-fsg-field-eq 成为
+
+$$
+\partial^{2}\bar h_{\mu\nu} = -16\pi G\,T_{\mu\nu}
+$$ {#eq-wave-eq-fsg}
+
+特别地，源外 $T_{\mu\nu}=0$ 时，$\bar h$ 的每个分量都满足达朗贝尔方程。
+:::
+
+**证明.** 由 @eq-lin-riemann 缩并得
+
+$$
+R^{(1)}_{\mu\nu}=\frac{1}{2}\left(\partial_{\rho}\partial_{\mu}h^{\rho}{}_{\nu}
++\partial_{\rho}\partial_{\nu}h^{\rho}{}_{\mu}
+-\partial^{2} h_{\mu\nu}
+-\partial_{\mu}\partial_{\nu}h\right)
+$$ {#eq-lin-ricci}
+
+谐和条件等价于 $\partial_{\rho}h^{\rho}{}_{\nu}=\frac{1}{2}\partial_{\nu}h$，代入 @eq-lin-ricci 得 $R^{(1)}_{\mu\nu}=-\frac{1}{2}\partial^{2} h_{\mu\nu}$，取迹得 $R^{(1)}=-\frac{1}{2}\partial^{2} h$。代入 @eq-lin-einstein：
+
+$$
+G^{(1)}_{\mu\nu}
+= -\frac{1}{2}\partial^{2} h_{\mu\nu}+\frac{1}{4}\eta_{\mu\nu}\partial^{2} h
+= -\frac{1}{2}\partial^{2}\left(h_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}h\right)
+= -\frac{1}{2}\partial^{2}\bar h_{\mu\nu}
+$$
+
+即 @eq-harmonic-g。
+
+可达性：由 @eq-linear-gauge，迹反转量的变分为
+
+$$
+\delta_{\xi}\bar h_{\mu\nu} = \partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}-\eta_{\mu\nu}\,\partial^{\alpha}\xi_{\alpha}
+$$ {#eq-gauge-trace-reverse}
+
+于是 $\partial^{\mu}\bar h'_{\mu\nu}=\partial^{\mu}\bar h_{\mu\nu}+\partial^{2}\xi_{\nu}$，其中 $\bar h'=\bar h+\delta_{\xi}\bar h$。要求它为零即得 $\partial^{2}\xi_{\nu}=-\partial^{\mu}\bar h_{\mu\nu}$。这是 $\xi$ 的线性双曲型方程，给定初值总有解，故谐和规范总可达到（可达性只在无穷远处受边界条件限制）。$\blacksquare$
+
+::: {#prp-fsg-waves}
+## 源外的平面波只有两个偏振态
+
+源外 $T_{\mu\nu}=0$，@eq-wave-eq-fsg 给出 $\partial^{2}\bar h_{\mu\nu}=0$，其平面波解为
+
+$$
+\bar h_{\mu\nu} = \varepsilon_{\mu\nu}\,e^{\mathrm{i}k_{\lambda}x^{\lambda}},
+\qquad
+k_{\lambda}k^{\lambda}=0
+$$ {#eq-plane-wave-fsg}
+
+谐和规范条件给出横向性
+
+$$
+k^{\mu}\varepsilon_{\mu\nu}=0
+$$ {#eq-transverse}
+
+残余规范（$\partial^{2}\xi_{\nu}=0$，仍非平凡）可再用于把迹消为零：由 @eq-gauge-trace-reverse，迹的变分为 $\delta\bar h=-2\,\partial^{\alpha}\xi_{\alpha}$，故取满足 $\partial^{\alpha}\xi_{\alpha}=\frac{1}{2}\bar h$ 的 $\xi$ 即可（与 $\partial^{2}\xi_{\nu}=0$ 相容，因为两边都满足波动方程）。此后 $\varepsilon^{\mu}_{\ \mu}=0$ 且 $\bar h_{\mu\nu}=h_{\mu\nu}$。这就是**横向无迹规范**。取波沿 $z$ 轴传播，$k^{\lambda}\propto(1,0,0,1)$，则独立的偏振张量只有两个：
+
+$$
+\varepsilon^{(+)}_{\mu\nu}=
+\begin{pmatrix}
+0&0&0&0\\
+0&1&0&0\\
+0&0&-1&0\\
+0&0&0&0
+\end{pmatrix},
+\qquad
+\varepsilon^{(\times)}_{\mu\nu}=
+\begin{pmatrix}
+0&0&0&0\\
+0&0&1&0\\
+0&1&0&0\\
+0&0&0&0
+\end{pmatrix}
+$$ {#eq-polarizations}
+
+相速度为 $|k^{0}|/|\mathbf{k}|=1$。计数与此一致：对称张量 $\bar h_{\mu\nu}$ 有 $10$ 个分量，谐和规范 @eq-transverse 消去 $4$ 个；真空中的残余规范（$\partial^{2}\xi_{\nu}=0$）仍有 $4$ 个自由度，恰好足以把迹也消为零。剩 $2$ 个，与无质量自旋 2 的表示论计数相同：只有螺旋度 $+2$ 与 $-2$ 两个态。
+:::
+
+**与 @sec-galilean-electrodynamics 对照**：那里证明了二阶双曲型波解在伽利略群下不可能存在（@cor-no-wave）。因此“存在以不变量速度传播的场扰动”这件事本身，是洛伦兹群而非伽利略群的性质，与场是矢量还是张量无关。
+
+::: {#prp-newtonian-limit}
+## 牛顿极限
+
+取 $h$ 静态（$\partial_{0}h_{\mu\nu}=0$）、弱（$|h_{\mu\nu}|\ll1$），源为静质量密度 $\rho$（$T_{00}=\rho$，其余分量为零），并取谐和规范。则 @eq-wave-eq-fsg 的 $00$ 分量给出
+
+$$
+\nabla^{2}\Phi = 4\pi G\,\rho
+$$ {#eq-poisson-fsg}
+
+其中 $\Phi$ 由 $g_{00}=1+2\Phi$ 定义。沿 $g$ 的测地线运动在非相对论极限下给出
+
+$$
+\ddot{\mathbf{x}} = -\nabla\Phi,
+\qquad
+\ddot{\mathbf{x}}:=\frac{d^{2}\mathbf{x}}{dt^{2}}
+$$ {#eq-newton-force}
+
+即牛顿引力。
+:::
+
+**证明.** 静态时 $\partial^{2}=-\nabla^{2}$，@eq-wave-eq-fsg 的 $00$ 分量给出 $\nabla^{2}\bar h_{00}=16\pi G\rho$。静态无压源的其余分量为零给出 $\partial^{2}\bar h_{ij}=0$，配合无穷远衰减条件得 $\bar h_{ij}=0$。记 $\bar h:=\eta^{\mu\nu}\bar h_{\mu\nu}$（由 @eq-trace-reverse 得 $\bar h=-h$），则 $\bar h=\bar h_{00}$，且由 $h_{\mu\nu}=\bar h_{\mu\nu}+\frac{1}{2}\eta_{\mu\nu}h$ 得
+
+$$
+\bar h = \eta^{\mu\nu}\bar h_{\mu\nu} = \bar h_{00},
+\qquad
+h_{00} = \bar h_{00}-\frac{1}{2}\eta_{00}\bar h = \frac{1}{2}\bar h_{00},
+\qquad
+h_{ij} = -\frac{1}{2}\eta_{ij}\bar h = \frac{1}{2}\bar h_{00}\,\delta_{ij}
+$$
+
+令 $\bar h_{00}=4\Phi$，则 $h_{00}=2\Phi$、$h_{ij}=2\Phi\,\delta_{ij}$，即 $h_{\mu\nu}=2\Phi\,\delta_{\mu\nu}$，于是 $g_{00}=1+2\Phi$ 且 $\nabla^{2}\Phi=4\pi G\rho$，这就是 @eq-poisson-fsg。
+
+测地线方程 $\ddot x^{i}+\Gamma^{i}_{00}=0$（非相对论极限下只保留 $00$ 项），而 $\Gamma^{i}_{00}=\frac{1}{2}\eta^{ij}(-\partial_{j}g_{00})=\partial_{i}\Phi$，故 $\ddot{x}^{i}=-\Gamma^{i}_{00}=-\partial_{i}\Phi$，即 @eq-newton-force。$\blacksquare$
+
+注意 @prp-newtonian-limit 同时用到 $h_{00}$ 与 $h_{ij}$：静态无压源的谐和规范解不是“只有 $h_{00}$”，而是 $h_{\mu\nu}=2\Phi\,\delta_{\mu\nu}$。迹 $h=-4\Phi$ 不为零，这一点在后文（@sec-fsg-relations）还要用到。
+
+## 自耦合：非线性被强制 {#sec-fsg-bootstrap}
+
+@eq-fsg-field-eq 有一个立即可见的困难。线性化比安基恒等式
+
+$$
+\partial^{\mu}G^{(1)}_{\mu\nu}[h] \equiv 0
+$$ {#eq-lin-bianchi}
+
+对 @eq-lin-ricci 取散度即得 @eq-lin-bianchi：第一项与第三项在 $\partial^{\mu}$ 下相消，剩下 $\partial^{\mu}R^{(1)}_{\mu\nu}=\frac{1}{2}\partial_{\nu}R^{(1)}$，与 $G^{(1)}$ 的定义合并即恒为零。因此 @eq-fsg-field-eq 的左端恒等守恒，它**要求**源满足
+
+$$
+\partial^{\mu}T_{\mu\nu} = 0
+$$ {#eq-source-conservation}
+
+而 @eq-source-conservation 是**平直度规意义上的**守恒：它等价于源的自由运动。但按 @prp-newtonian-limit，源在 $h$ 中并不做自由运动（@eq-newton-force）。于是线性理论与自己的源方程冲突：**源的运动由它产生的场决定，而线性方程要求源做自由运动。**
+
+出路只有一条。物质在 $h$ 中的运动说明，物质自身的能动张量（用 $\eta$ 度量）不再守恒；逐阶展开后，其不守恒量在最低阶恰好被场的能动张量的负散度抵消，$\partial^{\mu}T_{\mu\nu}=-\partial^{\mu}t^{(1)}_{\mu\nu}[h]$。因此源必须换成**总**能动张量，即把场的能量动量也计入。
+
+::: {#prp-bootstrap}
+## 自耦合的封闭性
+
+设自由理论由 @eq-fsg-field-eq 的齐次形式给出，耦合常数为 $\kappa:=8\pi G$。要求场方程与源的守恒律自洽，唯一做法是把源替换为总能动张量（物质 + 场本身）：
+
+$$
+G^{(1)}_{\mu\nu}[h]
+= \kappa\left(T_{\mu\nu}+t^{(1)}_{\mu\nu}[h]+t^{(2)}_{\mu\nu}[h]+\cdots\right)
+$$ {#eq-bootstrap}
+
+其中 $t^{(n)}_{\mu\nu}$ 取自作用量的 $n+2$ 次项。则
+
+1. **逐阶唯一**：第 $n$ 阶的非线性项由低阶项与规范不变性唯一确定；
+2. **级数封闭**：级数的和恰好是完整爱因斯坦方程
+
+$$
+G_{\mu\nu}[g] = \kappa\,T_{\mu\nu},
+\qquad
+g_{\mu\nu} = \eta_{\mu\nu}+h_{\mu\nu}
+$$ {#eq-einstein-fsg}
+
+其中 $G_{\mu\nu}[g]$ 是 $g$ 的爱因斯坦张量（精确、非微扰）；等价地，作用量的和恰是 $\frac{1}{2\kappa}\int d^{4}x\sqrt{-g}\,R$ 在 $g=\eta+h$ 处的展开。
+:::
+
+这里不给完整证明（第 1 条是一个逐阶的有限计算，第 2 条需要把无穷级数求和）。要点在于**为什么非线性是不可避免的**、以及**为什么它恰好停在爱因斯坦方程上**。
+
+- 一阶形式（Palatini 形式）把这件事化简为一个闭式的三步计算：自由作用量写成 $\sqrt{-\eta}\,\eta^{\mu\nu}\mathrm{Ric}^{(2)}_{\mu\nu}(\Gamma)+h^{\mu\nu}\mathrm{Ric}^{(1)}_{\mu\nu}(\Gamma)$，其能动张量恰为 $\mathrm{Ric}^{(2)}(\Gamma)$，因此三次自耦合项把作用量补成 $(g_{0}+h)\mathrm{Ric}^{(2)}(\Gamma)+\mathrm{Ric}^{(1)}(\Gamma)=g\,\mathrm{Ric}(\Gamma)$，即完整的 Palatini 爱因斯坦作用量，求和至此停止 [@deser1970; @deser2010]。
+- “不得不自耦合”与“恰好停在爱因斯坦方程”是同一件事的两面。普适耦合——场以同一个常数与一切能动张量（物质的 $T_{\mu\nu}$ 与自身的 $t_{\mu\nu}$）耦合——在逐阶自洽中被强制出来，而普适耦合就是等效原理的场论表述。
+
+**注记（该论证的地位）。** “自耦合唯一地给出广义相对论”这一结论被反复讨论。[@padmanabhan2008] 给出批评性审查，[@deser2010] 与 [@butcher2009] 作出回应并给出逐步核对的版本，[@barcelo2014] 显式解出迭代格式并指出解族中还存在单模引力分支（与 @prp-fierz-pauli 的第二种情形对应）。本章不予裁断，只使用该论证的**方向性**内容：一个无质量自旋 2 场若要与守恒源自洽耦合，就不可能停留在线性。
+
+## 等效定理 {#sec-fsg-equivalence}
+
+::: {#thm-equivalence}
+## 两套语言给出同一套可观测量
+
+固定平直度规 $\eta$，令 $g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}$（$h$ **不要求小**）。则“平直背景 + 场 $h$”的表述（@prp-bootstrap 的级数求和）与“以 $g$ 为基本变量的弯曲时空”表述满足
+
+1. **场方程相同**：两者的场方程都是 @eq-einstein-fsg，逐字相同；
+2. **解集相同**：给定相同的物质源与相同的初末条件，两者解集相同；
+3. **不变量相同**：任一仅依赖 $g$ 的坐标标量——例如固有时 $\int\sqrt{|g_{\mu\nu}dx^{\mu}dx^{\nu}|}$、光锥结构、由 $g$ 构造的曲率标量——在两种表述中取相同的值；换言之，两种表述给出相同的事件重合关系。
+:::
+
+**证明.** (1) 由 @prp-bootstrap 的第 2 条直接得到。(2) $h$ 与 $g$ 只差一个固定的 $\eta$，故 $h\mapsto g$ 是一一对应；方程相同则解集相同。(3) $\eta$ 固定，$g$ 由 $h$ 唯一决定，反之亦然；所有只依赖 $g$ 的构造在两种表述下是同一个对象。$\blacksquare$
+
+**注记（等效不包含什么）。** @thm-equivalence 说的是**动力学**的等同，不是几何的等同。它不蕴含“宇宙实际上是平直的”，也不蕴含其否定。下面一节说明为什么这个区分在等效成立的范围内**无法被观测检验**。
+
+## 平直性到哪里去了 {#sec-fsg-flatness}
+
+::: {#prp-split-not-unique}
+## 分解不唯一，只有 $g$ 是可观测的
+
+设 $\eta'$ 是 $M$ 上任一与 $\eta$ 同号的平直度规，并令 $h':=g-\eta'$。则 $(\eta',h')$ 与 $(\eta,h)$ 给出同一个 $g$，因而在 @thm-equivalence 的意义下给出完全相同的一切可观测量。
+
+特别地，“$h$ 是平直背景上的一个小量”这一陈述依赖分解的选取：一般地 $\eta'$ 可以选得使 $|h'|$ 在给定点任意大。
+:::
+
+**证明.** $g$ 固定，故 $h'-h=\eta-\eta'$。两种分解下的所有坐标不变量都只是 $g$ 的函数，而 $g$ 相同，故可观测量相同。取 $\eta'=\varphi_{*}\eta$（$\varphi$ 为微分同胚）即可使 $|h'|$ 任意大，第二个陈述成立。$\blacksquare$
+
+**注记（Kretschmann 式论证）。** @prp-split-not-unique 是 Kretschmann 1917 年那个著名论证 [@kretschmann1917] 在场论语言里的版本。Kretschmann 的原始论点是：广义协变这个要求本身不筛选理论，因为任何理论都可以改成广义协变的形式。翻译到这里：**“时空是弯曲的”与“时空是平直的、只是存在一个张量场”不是两个可被实验区分的陈述**——因为一切观测最终都是事件之间的重合，而重合关系在两种语言中相同（@thm-equivalence 的第 3 条）。把无质量自旋 2 场论与广义相对论作为同一理论的两个表述来处理的系统论述见 [@wald1986]。
+
+**注记（一个必要的澄清）。** 不应由此得出“平直背景是多余的”。$\eta$ 在构造中是一个**固定的**结构：它定义了指标升降、定义了 @prp-fierz-pauli 中“线性”这一概念、也定义了 @eq-wave-eq-fsg 的动能项。只是因为最终理论恰好一般协变（微分同胚不变），这个固定结构才被规范掉了。一旦理论失去微分同胚不变性，$\eta$ 立刻成为物理的（@sec-fsg-breaking）。因此准确的说法是：**在等效理论内部，平直背景不可观测；在等效被破坏的地方，它可观测。**
+
+## 什么会使等效失效 {#sec-fsg-breaking}
+
+@prp-bootstrap 与 @thm-equivalence 依赖三条要求。改动任一条，$\eta$ 就获得可观测内容，“平直时空 + 引力场”与广义相对论不再是同一套理论。
+
+| 改动 | 得到的理论 | 背景 $\eta$ 的地位 |
+|:-----|:-----------|:-------------------|
+| 给 $h$ 加质量项 $m^{2}h_{\mu\nu}$ | 有质量引力；规范不变性失效，$m\to0$ 极限不连续 [@vandam1970] | 质量项把它变成物理的：传播中多出标量与矢量模式 |
+| 允许 $\eta$ 优选一个类时方向 | 各向异性标度（Lifshitz 型引力）[@horava2009] | 优选坐标系成为物理的 |
+| 允许四阶导数（高阶曲率） | 二次曲率引力；不能由通常意义的线性化 bootstrap 得到 [@deser2017] | 展开的起点不再是该理论 |
+| 让 $\eta$ 也动力学化（两个度规都动力学） | 双度规引力 [@hassanrosen2012] | 两个度规都是物理的 |
+
+: 破坏等效的四条途径 {#tbl-fsg-breaking}
+
+这四类改动有一个共同特征：它们的可观测量**不能**由 $g$ 单独表达。这正是它们成为“平直时空 + 场”这一表述的**真内容**所在之处——也是唯一能把“平直”与“弯曲”变成一个可检验问题的所在。
+
+**注记（与本书主题的接口）。** 本章的结论可以压成一句：**只要等效成立，“时空是否弯曲”就不是一个可观测量问题。** 要在两种语言之间做出区分，必须指出一个破坏等效的具体机制——一个只能写在平直时空语言里、不能改写为 $g$ 的泛函的项。这不是哲学分歧，而是一个可以被写下来的数学要求。
+
+## 与本书其它章节的关系 {#sec-fsg-relations}
+
+**与 @sec-maxwell-equations 的关系：同一种方法，不同的结局。** 两章都把场论写在平直时空上，都用规范不变的“场强”刻画可测内容。差别在于**是否自耦合**：$F_{\mu\nu}$ 不带电荷，光子不携带自身的守恒荷，所以麦克斯韦理论在线性层就是终点；而 $h$ 携带能量动量，@prp-bootstrap 表明线性层不是终点。这正是 Deser 所说的“最线性”与“最非线性”的两端 [@deser1970]。
+
+**与 @sec-galilean-electrodynamics 的关系：波要求洛伦兹群。** 那里证明伽利略群下不存在二阶双曲型波解（@cor-no-wave）；这里的线性理论自动给出波（@prp-fsg-waves），且只有两个偏振。因此“以不变量速度传播的场扰动”不是场的性质，而是变换群的性质。
+
+**与 @sec-clock-coupling 的关系：一个判定点。** 那一章把每一类系统的读数定义为一族给定响应函数 $f_{i}$ 沿路径的累积，$\omega_{i}=f_{i}(\Phi)\,dt$（@eq-omega），并定义类间比较量 $X_{ij}=f_{i}/f_{j}$ 与 $Q_{ij}=X_{ij}(\Phi_{1})/X_{ij}(\Phi_{2})$（@eq-ratio）。若把那个背景场具体化为弱引力场，则按 @prp-newtonian-limit 有 $\Phi=h_{00}/2$，即 $h_{\mu\nu}=2\Phi\,\delta_{\mu\nu}$。两者的交点落在一个可判定的问题上：
+
+- 若 $f_{i}$ 对一切 $i$ **相同**，即 $f_{i}\equiv f$，则 $X_{ij}\equiv1$、$Q_{ij}\equiv1$：所有类别以同一速率演化。这正是本章的**普适耦合**，也就是等效原理的内容。
+- 若存在 $i,j$ 使 $f_{i}\neq f_{j}$，则演化速率依赖系统的物质结构。按 @sec-fsg-breaking，这样的耦合项**不能**改写为 $g$ 的泛函，因此它落在本章等效理论之外。
+
+于是 @sec-clock-coupling 的问题在本章有一个明确的分界点：不是“是否多加了一项”，而是“这一项能否写成 $g$ 的泛函”。
+
+## 小结 {#sec-fsg-summary}
+
+1. **线性层可行。** 常系数、至多二阶导、洛伦兹协变、规范不变，这四条把线性场方程限制到一个两项族 @eq-fp-general；去掉退化情形后，与线性化爱因斯坦方程同解的只有一条路（@prp-fierz-pauli）。牛顿极限自动成立（@prp-newtonian-limit）。
+2. **线性层不自洽。** 方程左端恒等守恒（@eq-lin-bianchi）而耦合使源不再守恒，因此必须加入场自身的能量动量；级数封闭于完整爱因斯坦方程（@prp-bootstrap）。
+3. **两套语言逐字对应。** 由 $g_{\mu\nu}=\eta_{\mu\nu}+h_{\mu\nu}$，两套表述的场方程、解集与坐标不变量相同（@thm-equivalence）。
+4. **因此“平直时空 + 引力场”不是广义相对论的替代方案，而是同一理论的另一种写法。** 背景 $\eta$ 在等效成立的范围内不可观测（@prp-split-not-unique）。
+5. **要让它成为不同的理论，必须破坏等效成立的条件之一**（@sec-fsg-breaking）。这是本章给出的判别标准。

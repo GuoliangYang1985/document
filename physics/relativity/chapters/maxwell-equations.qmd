@@ -372,7 +372,7 @@ $$
 \left(\boldsymbol{\nabla} \times \mathbf{B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial E_z}{\partial t} = \mu_{0} J_{z}
 $$ {#eq-amp-z}
 
-合并三个分量方程 @eq-amp-x、@eq-amp-y、@eq-amp-z 为矢量形式 @eq-ampere，此方程给出安培-麦克斯韦定律。 
+合并三个分量方程 @eq-amp-x、@eq-amp-y、@eq-amp-z 为矢量形式 @eq-ampere，此方程给出安培-麦克斯韦定律。
 
 $$
 \boldsymbol{\nabla} \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}
