@@ -14,8 +14,8 @@ book:
     - chapters/symmetric-twins.qmd
     - chapters/transform-derivation.qmd
     - chapters/maxwell-equations.qmd
-    - chapters/flat-space-gravity.qmd
     - chapters/galilean-electrodynamics.qmd
+    - chapters/flat-space-gravity.qmd
     - chapters/clock-coupling.qmd
     - chapters/references.qmd
 
