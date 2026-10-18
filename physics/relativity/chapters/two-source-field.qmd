@@ -604,6 +604,190 @@ $$
 
 而 $\varphi_{A},\varphi_{B}$ 分别为右端 $Q_{A}\delta(\tau)\delta^{3}(\mathbf{x}-\mathbf{a})$、$Q_{B}\delta(\tau)\delta^{3}(\mathbf{x}-\mathbf{b})$ 的推迟解。
 
+## 同时性的测量程序 {#sec-tsf-measurement}
+
+本节回答一个具体的可计算性问题：能否给出一个程序，使地面观测者与火车观测者各自只用自己的记录，就对“两个发射事件是否同时”得到同一个判定。
+
+### 问题的提法
+
+两位观测者，其世界线在静系中分别为
+
+$$
+\mathbf{x}_{G}(t)=\mathbf{g}\quad(\text{常向量}),\qquad \mathbf{x}_{T}(t)=\mathbf{x}_{0}+\mathbf{u}t
+$$
+
+两个瞬时发射事件分别为 $E_{A}=\bigl(\mathbf{a},\tau_{A}\bigr)$ 与 $E_{B}=\bigl(\mathbf{p}_{B}(\tau_{B}),\tau_{B}\bigr)$，其中 $\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$。
+
+第 $i$ 位观测者（$i=G,T$）用自己的钟记录两次接收时刻，记为 $t^{(i)}_{A}$、$t^{(i)}_{B}$，其接收事件为
+
+$$
+R^{(i)}_{A}=\bigl(\mathbf{x}_{i}(t^{(i)}_{A}),\,t^{(i)}_{A}\bigr),\qquad
+R^{(i)}_{B}=\bigl(\mathbf{x}_{i}(t^{(i)}_{B}),\,t^{(i)}_{B}\bigr)
+$$
+
+**待求**：一个程序 $\mathcal{P}$，输入第 $i$ 位观测者的自有记录，输出两个数 $\widehat{\tau}^{(i)}_{A}$、$\widehat{\tau}^{(i)}_{B}$，使得判定
+
+$$
+\widehat{\tau}^{(i)}_{A}=\widehat{\tau}^{(i)}_{B}
+$$
+
+对 $i=G$ 与 $i=T$ 同时成立或同时不成立。
+
+### 已知数据与待求量
+
+| 类别 | 内容 | 来源 |
+|------|------|------|
+| 已知 | 公理 A1、A2 | @cnj-propagation、@cnj-galilei-transform |
+| 已知 | 观测者自身的世界线 $\mathbf{x}_{i}(t)$，含其相对静系的速度 $\mathbf{u}_{i}$（$\mathbf{u}_{G}=\mathbf{0}$，$\mathbf{u}_{T}=\mathbf{u}$） | 给定数据 |
+| 已知 | 两条发射者世界线 $\mathbf{p}_{A}(\tau)=\mathbf{a}$、$\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$ | 给定数据 |
+| 测得 | 两次接收时刻 $t^{(i)}_{A}$、$t^{(i)}_{B}$ | 观测者的钟 |
+| 待求 | 两次发射时刻 $\widehat{\tau}^{(i)}_{A}$、$\widehat{\tau}^{(i)}_{B}$ | 由程序算出 |
+
+: 测量程序的输入与输出 {#tbl-measurement-data}
+
+### 引理：单次接收的欠定性
+
+一次接收只给出**一个**方程
+
+$$
+\bigl|\mathbf{x}_{i}(t^{(i)})- \mathbf{p}\bigr|=c\bigl(t^{(i)}-\tau\bigr)
+$$
+
+而未知量为 $(\tau,\mathbf{p})\in\mathbb{R}\times\mathbb{R}^{3}$，共四个。故单靠一次接收无法定出 $\tau$。
+
+这说明：补充“发射者世界线”不是外加的假设，而是把问题变为可解的**必要条件**；补充之后未知量只剩 $\tau$ 一个。
+
+### 程序 $\mathcal{P}$
+
+对第 $i$ 位观测者与第 $k$ 个源（$k=A,B$），执行：
+
+1. 记录接收时刻 $t^{(i)}_{k}$（钟读数取坐标时）；
+2. 由自身世界线算出接收事件在静系中的坐标 $\bigl(\mathbf{x}_{i}(t^{(i)}_{k}),\,t^{(i)}_{k}\bigr)$；
+3. 把发射点写成 $\mathbf{p}=\mathbf{p}_{k}(\tau)$，未知量只剩 $\tau$；
+4. 解方程
+
+$$
+\bigl|\mathbf{x}_{i}(t^{(i)}_{k})-\mathbf{p}_{k}(\tau)\bigr|=c\bigl(t^{(i)}_{k}-\tau\bigr)
+$$ {#eq-measure-core}
+
+5. 输出解 $\widehat{\tau}^{(i)}_{k}$。
+
+### 两种源的显式解
+
+**静止源（$k=A$）** $\mathbf{p}_{A}\equiv\mathbf{a}$，@eq-measure-core 对 $\tau$ 是线性的：
+
+$$
+\widehat{\tau}^{(i)}_{A}=t^{(i)}_{A}-\frac{\bigl|\mathbf{x}_{i}(t^{(i)}_{A})-\mathbf{a}\bigr|}{c}
+$$ {#eq-measure-A}
+
+**运动源（$k=B$）** 令 $s:=t^{(i)}_{B}-\tau$、$\mathbf{d}:=\mathbf{x}_{i}(t^{(i)}_{B})-\mathbf{b}-\mathbf{v}t^{(i)}_{B}$，则 @eq-measure-core 化为 @eq-quadratic：
+
+$$
+(c^{2}-v^{2})s^{2}-2(\mathbf{d}\cdot\mathbf{v})s-|\mathbf{d}|^{2}=0
+$$
+
+由 @tbl-roots 取正根 $s_{+}$（$v<c$ 时唯一），输出
+
+$$
+\widehat{\tau}^{(i)}_{B}=t^{(i)}_{B}-s_{+}
+$$ {#eq-measure-B}
+
+### 定理：程序输出的观测者无关性
+
+::: {#prp-measurement-invariance}
+## 输出与观测者无关
+
+设 $v<c$，两位观测者 $G$、$T$ 各自执行程序 $\mathcal{P}$，则
+
+$$
+\widehat{\tau}^{(G)}_{A}=\widehat{\tau}^{(T)}_{A},\qquad
+\widehat{\tau}^{(G)}_{B}=\widehat{\tau}^{(T)}_{B}
+$$
+
+因此判定“$\widehat{\tau}_{A}=\widehat{\tau}_{B}$”对两位观测者同时成立或同时不成立
+:::
+
+**证明** 只看第 $k$ 个源，记其真实发射事件为 $E_{k}=\bigl(\mathbf{p}_{k}(\tau_{k}),\tau_{k}\bigr)$。
+
+第一步（$\tau_{k}$ 是 @eq-measure-core 的解）。由 A1，从 $E_{k}$ 发出的扰动在静系中沿直线以速率 $c$ 传播，故它在时刻 $t$ 到达位于 $\mathbf{x}_{i}(t)$ 的观测者，当且仅当
+
+$$
+\bigl|\mathbf{x}_{i}(t)-\mathbf{p}_{k}(\tau_{k})\bigr|=c\,(t-\tau_{k})
+$$
+
+而 $t^{(i)}_{k}$ 正是这个方程关于 $t$ 的解（即波前与观测者世界线相交的时刻），把 $t=t^{(i)}_{k}$ 代回即得 @eq-measure-core 在 $\tau=\tau_{k}$ 时成立。
+
+第二步（解的唯一性）。$k=A$ 时 @eq-measure-core 对 $\tau$ 线性，解唯一；$k=B$ 时化为 @eq-quadratic，由 @tbl-roots，在 $v<c$ 时正根唯一。故程序输出
+
+$$
+\widehat{\tau}^{(i)}_{k}=\tau_{k}=t(E_{k})
+$$
+
+第三步（坐标无关性）。$\tau_{k}=t(E_{k})$ 是点 $E_{k}\in M$ 的静系时间坐标。由 A2，$t'=t$，故这个数值在用 $S_{0}$ 还是用 $S_{\mathbf{u}}$ 的坐标去读时相同。
+
+于是两位观测者的输出相等，判定一致。 $\square$
+
+::: {#rem-measurement-supersonic}
+## $v>c$ 的情形
+
+此时 @eq-quadratic 可能有两个正根（@tbl-roots），程序输出的是一个**集合** $\{\widehat{\tau}_{B}\}$。该集合同样只由 $M$ 中的对象（接收事件、世界线、常数 $c$）决定，故两位观测者输出同一个集合；判据相应地改为比较两个集合是否相等。
+:::
+
+### 方向数据的用法
+
+若观测者还能测出扰动到达时的方向（本系中的单位向量 $\mathbf{m}$），则它可与程序结果相互校验。由速度合成，若 $\mathbf{n}$ 是该射线在静系中的单位方向、$\lambda>0$ 是它在本系中的速率，则
+
+$$
+c\,\mathbf{n}=\mathbf{u}_{i}+\lambda\mathbf{m}
+$$
+
+两边取模平方，由 $|\mathbf{n}|=1$、$|\mathbf{m}|=1$：
+
+$$
+\lambda^{2}+2(\mathbf{m}\cdot\mathbf{u}_{i})\lambda+|\mathbf{u}_{i}|^{2}-c^{2}=0
+$$
+
+取正根（当 $|\mathbf{u}_{i}|<c$ 时判别式恒正且仅一根为正）：
+
+$$
+\lambda=-(\mathbf{m}\cdot\mathbf{u}_{i})+\sqrt{(\mathbf{m}\cdot\mathbf{u}_{i})^{2}+c^{2}-|\mathbf{u}_{i}|^{2}}
+$$ {#eq-direction-inversion}
+
+$$
+\mathbf{n}=\frac{\mathbf{u}_{i}+\lambda\mathbf{m}}{c}
+$$
+
+把它与程序算出的 $\bigl(\mathbf{x}_{i}(t^{(i)}_{k})-\mathbf{p}_{k}(\widehat{\tau})\bigr)/\bigl|\mathbf{x}_{i}(t^{(i)}_{k})-\mathbf{p}_{k}(\widehat{\tau})\bigr|$ 比较，两者应当相等。
+
+### 一致性检验
+
+取 @sec-tsf-total 的设定：两源都在 $\tau=0$ 时刻发出瞬时扰动。
+
+**地面观测者，静止源**：接收时刻由 $|\mathbf{g}-\mathbf{a}|=c\,t^{(G)}_{A}$ 定出，代入 @eq-measure-A：
+
+$$
+\widehat{\tau}^{(G)}_{A}=t^{(G)}_{A}-\frac{|\mathbf{g}-\mathbf{a}|}{c}=t^{(G)}_{A}-\frac{c\,t^{(G)}_{A}}{c}=0
+$$
+
+**火车观测者，静止源**：接收时刻由 $|\mathbf{x}_{T}(t^{(T)}_{A})-\mathbf{a}|=c\,t^{(T)}_{A}$ 定出，代入 @eq-measure-A：
+
+$$
+\widehat{\tau}^{(T)}_{A}=t^{(T)}_{A}-\frac{|\mathbf{x}_{T}(t^{(T)}_{A})-\mathbf{a}|}{c}=t^{(T)}_{A}-\frac{c\,t^{(T)}_{A}}{c}=0
+$$
+
+**运动源**：对任一位观测者，$s=t^{(i)}_{B}$ 满足 @eq-quadratic，因为
+
+$$
+\bigl|\mathbf{d}+\mathbf{v}t^{(i)}_{B}\bigr|
+=\bigl|\mathbf{x}_{i}(t^{(i)}_{B})-\mathbf{b}-\mathbf{v}t^{(i)}_{B}+\mathbf{v}t^{(i)}_{B}\bigr|
+=\bigl|\mathbf{x}_{i}(t^{(i)}_{B})-\mathbf{b}\bigr|
+=c\,t^{(i)}_{B}
+$$
+
+最后一步用的是 $\tau_{B}=0$ 时 $\mathbf{p}_{B}(0)=\mathbf{b}$ 与 A1。故 $\widehat{\tau}^{(i)}_{B}=t^{(i)}_{B}-s=0$。
+
+**结论**：两位观测者都得到 $\widehat{\tau}_{A}=\widehat{\tau}_{B}=0$，都判定为同时——尽管他们的两个接收时刻一般并不相等：$t^{(T)}_{A}\neq t^{(T)}_{B}$。接收时刻之差被 @eq-measure-A、@eq-measure-B 精确扣除。
+
 ## 结果汇总 {#sec-tsf-summary}
 
 | 对象 | 表达式 | 出处 |
@@ -617,5 +801,6 @@ $$
 | 双源总场（瞬时） | 两球面 $\delta$ 脉冲之和，$\mathbf{v}$ 不出现 | @eq-total-impulse |
 | 双源总场（连续） | 两式之和，$\mathbf{v}$ 出现在 $\tau^{*}$ 与 Jacobian 因子中 | @eq-total-continuous |
 | 运动系中的方程 | $(\partial_{t'}-\mathbf{u}\cdot\nabla')^{2}\varphi-c^{2}\nabla'^{2}\varphi=0$ | @eq-moving-pde |
+| 测量程序 | 由接收时刻反解发射时刻；输出与观测者无关 | @prp-measurement-invariance |
 
 : 本章结果汇总 {#tbl-summary}
