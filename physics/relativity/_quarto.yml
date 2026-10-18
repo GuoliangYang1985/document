@@ -15,6 +15,7 @@ book:
     - chapters/transform-derivation.qmd
     - chapters/maxwell-equations.qmd
     - chapters/galilean-electrodynamics.qmd
+    - chapters/two-source-field.qmd
     - chapters/flat-space-gravity.qmd
     - chapters/clock-coupling.qmd
     - chapters/references.qmd
