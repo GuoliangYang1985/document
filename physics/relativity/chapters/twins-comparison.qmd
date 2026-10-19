@@ -1,0 +1,348 @@
+# 对称双生子：三种算法的对照 {#sec-twins-comparison}
+
+## 本章做什么 {#sec-tc-scope}
+
+第 @sec-symmetric-twins 章用对称双生子实验给出了一个结论：洛伦兹变换测得的「时间不一致」，与对称性确定的「随身时钟读数相等」不是同一件事。本章把这个结论做成**可对照的数字**。
+
+做法是：对同一个问题，分别用三种互不依赖的输入各算一遍，然后把三个答案并排放在一起。
+
+**同一个问题**是：在直线段上，A 的钟走了一小段 $\mathrm{d}\tau_A$ 时，B 的钟走了多少 $\mathrm{d}\tau_B$？即求比值
+
+$$
+\frac{\mathrm{d}\tau_B}{\mathrm{d}\tau_A}
+$$
+
+三种输入是：
+
+- **对称**（实验本身的结构）；
+- **洛伦兹变换**；
+- **伽利略变换**（第 @sec-two-source-field 章的公设 A2）。
+
+三者彼此独立：对称不依赖任何变换；洛伦兹变换不依赖对称；伽利略变换既不依赖对称也不依赖洛伦兹。
+
+## 实验设定 {#sec-tc-setup}
+
+沿用第 @sec-symmetric-twins 章的实验：
+
+![对称双生子实验](images/symmetric.png){#fig-twins-comparison width=92%}
+
+- 在事件 $O$ 处，A 与 B 相遇并对表，两者随身钟读数相同；
+- 此后 A 经弧线到 $P$、B 经镜像弧线到 $Q$（这两段含加速与转向）；
+- 自 $P$ 起，A 沿直线以恒定速度向 $M$ 运动；自 $Q$ 起，B 沿镜像直线以同样速率向 $M$ 运动；
+- 二者在 $M$ 再次相遇。
+
+**本章只研究直线段 $P\to M$ 与 $Q\to M$**，即两段惯性运动。这是为了只使用匀速运动的变换公式，不引入加速情形的额外假设。
+
+### 坐标系
+
+取使两条直线段镜像对称的坐标系（$x$ 轴水平，$x=0$ 为对称轴），并把直线段的起点时刻记为 $t=0$。设 $P=(-d,\,0)$、$Q=(+d,\,0)$、$M=(0,\,d/v)$，其中 $v$ 为直线段上的速率。
+
+于是直线段上的两条轨迹为
+
+$$
+\text{A：}\ x_A(t)=-d+vt,\qquad \text{B：}\ x_B(t)=+d-vt
+$$ {#eq-trajectories}
+
+镜像映射 $\iota(t,x):=(t,-x)$ 把 A 的轨迹映为 B 的轨迹：
+
+$$
+\iota\bigl(t,\,-d+vt\bigr)=\bigl(t,\,d-vt\bigr)
+$$ {#eq-iota-lines}
+
+**@eq-iota-lines 中两事件的时间分量相同，都是 $t$。这就是「对称对同时」。** 这句话的全部内容是：$\iota$ 保持时间分量不变。它不需要任何外部参考系，也不需要任何观察者——时间方向是镜像对称自己挑出来的（$\iota$ 的 $+1$ 特征方向）。
+
+## 输入清单 {#sec-tc-inputs}
+
+三组输入彼此独立，本章分别使用，不混合。
+
+### 对称组（编号 S）
+
+**(S1) 直线段完全镜像对称。** 由 @eq-iota-lines 表达。
+
+**(S2) 起点读数相同。** 在 $O$ 处两只钟读数相同。
+
+**(S3) 钟的读数由该钟自身经历的过程决定。** 两只钟若经历完全相同的运动过程，其读数相同。
+
+### 洛伦兹组（编号 L）
+
+**(L1) 洛伦兹变换。** 相对速度 $u$ 的两系之间（$\gamma_u:=1/\sqrt{1-u^{2}/c^{2}}$）：
+
+$$
+t'=\gamma_u\Bigl(t-\frac{u\,x}{c^{2}}\Bigr),\qquad x'=\gamma_u\,(x-ut)
+$$ {#eq-L1}
+
+**(L2)** 静止于某惯性系的钟，其读数等于该系的坐标时。
+
+### 伽利略组（编号 G）
+
+**(G1) 伽利略变换。** 相对速度 $u$ 的两系之间：
+
+$$
+t'=t,\qquad x'=x-ut
+$$ {#eq-G1}
+
+**(G2)** 与 (L2) 相同：静止于某惯性系的钟，其读数等于该系的坐标时。
+
+**注意 (G1) 与 (L1) 的差别只在第一式**：一个说 $t'=t$，一个说 $t'=\gamma_u(t-ux/c^{2})$。本章的全部差别都从这一条产生。
+
+## 第一种算法：只用对称 {#sec-tc-symmetry}
+
+::: {#prp-tc-equal}
+
+## 对称对上两只钟读数相同
+
+设 $e_A$ 与 $e_B$ 是直线段上的一对对称对（即 $\iota(e_A)=e_B$），则 $\tau_A(e_A)=\tau_B(e_B)$
+:::
+
+**证明** 分三步。
+
+**第一步**：由 (S1) 与 @eq-iota-lines，$\iota$ 把 A 从 $P$ 到 $e_A$ 的整段过程映为 B 从 $Q$ 到 $e_B$ 的整段过程，两段过程的运动情形（速率大小、持续时间）逐一对应相同——反射只改变空间方向，不改变运动的任何其他内容。
+
+**第二步**：由 (S3)，经历相同过程的两只钟，读数增量相同：
+
+$$
+\tau_A(e_A)-\tau_A(P)=\tau_B(e_B)-\tau_B(Q)
+$$ {#eq-tc-inc}
+
+**第三步**：由 (S2)，A 在 $O$ 与 B 在 $O$ 读数相同；而 $O\to P$ 与 $O\to Q$ 两段弧线亦互为镜像，同理（重复使用第二步与第三步）得 $\tau_A(P)=\tau_B(Q)$。把它代入 @eq-tc-inc，左端减左端、右端减右端：
+
+$$
+\begin{aligned}
+\bigl[\tau_A(e_A)-\tau_A(P)\bigr]-\bigl[\tau_B(e_B)-\tau_B(Q)\bigr]&=0\\[4pt]
+\tau_A(e_A)-\tau_B(e_B)-\bigl[\tau_A(P)-\tau_B(Q)\bigr]&=0\\[4pt]
+\tau_A(e_A)-\tau_B(e_B)&=0
+\end{aligned}
+$$
+
+即 $\tau_A(e_A)=\tau_B(e_B)$。 $\square$
+
+### 跨系可知
+
+@prp-tc-equal 的直接后果：**A 只要在本地读出自己的钟，就知道 B 的钟读的是什么数**——同一个数。这不是测量，不需要通信，不需要比对，也不需要第三者。
+
+### 比值
+
+由 @prp-tc-equal，在对称对上 $\tau_A=\tau_B$ 逐点成立，故沿直线段取微分：
+
+$$
+\boxed{\dfrac{\mathrm{d}\tau_B}{\mathrm{d}\tau_A}=1}
+$$ {#eq-tc-ratio-S}
+
+## 第二种算法：只用洛伦兹变换 {#sec-tc-lorentz}
+
+本节不使用 (S1)—(S3)，只用 (L1)、(L2)。
+
+### 第一步：A 与 B 的相对速度
+
+由 @eq-L1 推出速度合成公式（标准推论，推导见 @sec-transform-derivation）：两者相向运动、速率各为 $v$ 时，相对速度大小为
+
+$$
+w=\frac{2v}{1+\dfrac{v^{2}}{c^{2}}},\qquad
+\gamma_w=\frac{1}{\sqrt{1-\dfrac{w^{2}}{c^{2}}}}
+=\frac{1+\dfrac{v^{2}}{c^{2}}}{1-\dfrac{v^{2}}{c^{2}}}
+$$ {#eq-tc-w}
+
+### 第二步：B 的钟的两个相邻事件
+
+取 B 的钟上的两个相邻事件。在 B 的静止系中，B 的位置不变，故
+
+$$
+\mathrm{d}x_B=0,\qquad \mathrm{d}t_B=\mathrm{d}\tau_B\quad\text{（由 L2）}
+$$ {#eq-tc-dxB}
+
+### 第三步：换到 A 系
+
+把这两个事件从 B 系换到 A 系。A 看 B 以速率 $w$ 运动，由 @eq-L1 的第一式（取 $u$ 为 A 系相对 B 系的速度，$\gamma=\gamma_w$）：
+
+$$
+\mathrm{d}t_A=\gamma_w\Bigl(\mathrm{d}t_B+\frac{w\,\mathrm{d}x_B}{c^{2}}\Bigr)
+$$ {#eq-tc-dtA}
+
+代入 @eq-tc-dxB 的第二式与第一式：
+
+$$
+\mathrm{d}t_A=\gamma_w\Bigl(\mathrm{d}\tau_B+\frac{w\cdot 0}{c^{2}}\Bigr)=\gamma_w\,\mathrm{d}\tau_B
+$$ {#eq-tc-dtA2}
+
+即
+
+$$
+\mathrm{d}\tau_B=\frac{\mathrm{d}t_A}{\gamma_w}
+$$ {#eq-tc-tauB-L}
+
+### 第四步：A 自己的钟
+
+A 在 A 系中静止，由 (L2)，A 的钟读数等于 A 系坐标时：
+
+$$
+\mathrm{d}\tau_A=\mathrm{d}t_A
+$$ {#eq-tc-tauA-L}
+
+### 第五步：比值
+
+把 @eq-tc-tauA-L 代入 @eq-tc-tauB-L：
+
+$$
+\boxed{\dfrac{\mathrm{d}\tau_B}{\mathrm{d}\tau_A}=\dfrac{1}{\gamma_w}}
+$$ {#eq-tc-ratio-L}
+
+由 @eq-tc-w，$v\neq0$ 时 $\gamma_w>1$，故此比值小于 1。这就是「A 测得 B 的钟变慢」在洛伦兹框架中的数学内容。
+
+## 第三种算法：只用伽利略变换 {#sec-tc-galilei}
+
+本节不使用 (S1)—(S3)，也不使用 (L1)，只用 (G1)、(G2)。
+
+### 第一步：时间坐标是全局的
+
+由 @eq-G1 的第一式，$t'=t$。**任意两个惯性系的时间坐标相同**，故所有系共享同一个时间坐标 $t$。
+
+### 第二步：两只钟的读数
+
+由 (G2)，静止于某惯性系的钟，其读数等于该系的坐标时。
+
+- A 的钟静止于 A 系，故 $\mathrm{d}\tau_A=\mathrm{d}t_A$；而由 @eq-G1，$\mathrm{d}t_A=\mathrm{d}t$。
+- B 的钟静止于 B 系，故 $\mathrm{d}\tau_B=\mathrm{d}t_B$；而由 @eq-G1，$\mathrm{d}t_B=\mathrm{d}t$。
+
+于是
+
+$$
+\mathrm{d}\tau_A=\mathrm{d}t=\mathrm{d}\tau_B
+$$ {#eq-tc-tau-G}
+
+### 第三步：比值
+
+$$
+\boxed{\dfrac{\mathrm{d}\tau_B}{\mathrm{d}\tau_A}=1}
+$$ {#eq-tc-ratio-G}
+
+## 三个答案并排 {#sec-tc-table}
+
+同一个问题：**A 的钟走一小段 $\mathrm{d}\tau_A$ 时，B 的钟走多少？**
+
+| | 输入 | 配对规则 | $\mathrm{d}\tau_B/\mathrm{d}\tau_A$ |
+|------|------|------|------|
+| 对称 | S1、S2、S3 | 对称对 $\iota(e_A)=e_B$ | $1$ |
+| 伽利略变换 | G1、G2 | 同一全局时间 $t$ | $1$ |
+| 洛伦兹变换 | L1、L2 | A 系同一坐标时 $t_A$ | $1/\gamma_w$ |
+
+: 三个答案 {#tbl-tc-ratios}
+
+**对称与伽利略给出同一个数（$1$），洛伦兹给出另一个数（$1/\gamma_w$）。**
+
+### 数值对照
+
+取 $v=0.6c$。由 @eq-tc-w：
+
+$$
+w=\frac{2\times0.6c}{1+0.36}=0.8824c,\qquad
+\gamma_w=\frac{1+0.36}{1-0.36}=2.125
+$$
+
+| | $\mathrm{d}\tau_B/\mathrm{d}\tau_A$ | A 走 $1$ 秒时 B 走 |
+|------|------|------|
+| 对称 | $1$ | $1$ 秒 |
+| 伽利略变换 | $1$ | $1$ 秒 |
+| 洛伦兹变换 | $1/2.125=0.4706$ | $0.4706$ 秒 |
+
+: $v=0.6c$ 时的三个数 {#tbl-tc-numeric}
+
+### 对称对在 A 系中的坐标时差
+
+三个答案的差别还可以从另一处直接看出：**同一对对称对，在 A 系中的时间坐标是否相同？**
+
+由 @eq-trajectories，对称对为 $e_A=(t,\,-d+vt)$ 与 $e_B=(t,\,+d-vt)$。
+
+**伽利略变换下**（$t_A=t$）：
+
+$$
+t_A(e_B)-t_A(e_A)=t-t=0
+$$ {#eq-tc-diff-G}
+
+**洛伦兹变换下**（$t_A=\gamma_v(t-vx/c^{2})$，A 沿 $+x$ 运动，故 $u=+v$）：
+
+$$
+\begin{aligned}
+t_A(e_A)&=\gamma_v\Bigl(t-\frac{v(-d+vt)}{c^{2}}\Bigr)=\gamma_v\Bigl(t+\frac{vd}{c^{2}}-\frac{v^{2}t}{c^{2}}\Bigr)\\[4pt]
+t_A(e_B)&=\gamma_v\Bigl(t-\frac{v(+d-vt)}{c^{2}}\Bigr)=\gamma_v\Bigl(t-\frac{vd}{c^{2}}+\frac{v^{2}t}{c^{2}}\Bigr)
+\end{aligned}
+$$
+
+两式相减，逐项相减：
+
+$$
+\begin{aligned}
+t_A(e_B)-t_A(e_A)
+&=\gamma_v\Bigl(t-\frac{vd}{c^{2}}+\frac{v^{2}t}{c^{2}}\Bigr)-\gamma_v\Bigl(t+\frac{vd}{c^{2}}-\frac{v^{2}t}{c^{2}}\Bigr)\\[4pt]
+&=\gamma_v\Bigl[\Bigl(t-t\Bigr)+\Bigl(-\frac{vd}{c^{2}}-\frac{vd}{c^{2}}\Bigr)+\Bigl(\frac{v^{2}t}{c^{2}}+\frac{v^{2}t}{c^{2}}\Bigr)\Bigr]\\[4pt]
+&=\gamma_v\Bigl(-\frac{2vd}{c^{2}}+\frac{2v^{2}t}{c^{2}}\Bigr)\\[4pt]
+&=\frac{2\gamma_v v}{c^{2}}\,(vt-d)
+\end{aligned}
+$$ {#eq-tc-diff-L}
+
+**检验**：在 $t=d/v$（即 $M$ 处，由 @eq-trajectories 两者位置都是 $x=0$），@eq-tc-diff-L 给出 $0$——两事件在 $M$ 处重合，坐标时必然相同，与计算一致。
+
+**结论**：
+
+| 变换 | 对称对在 A 系中的坐标时差 |
+|------|------|
+| 伽利略 | $0$（同时性不随参考系改变） |
+| 洛伦兹 | $\dfrac{2\gamma_v v}{c^{2}}(vt-d)$，一般非零（$t\neq d/v$ 时） |
+
+: 同时性是否随参考系改变 {#tbl-tc-simultaneity}
+
+## 只用变换能推出什么 {#sec-tc-only-transform}
+
+作为对照：如果**完全不使用对称**，只使用变换与 (L2)/(G2)，能推出什么？
+
+记 $\Delta\tau_A$ 为 A 的钟在 $P\to M$ 上的读数增量，$\Delta\tau_B$ 为 B 的钟在 $Q\to M$ 上的读数增量。
+
+**洛伦兹情形**：由第 @sec-lorentz-only 节的方法（此处不再重复），只用 (L1)、(L2) 得到的全部约束是
+
+$$
+t_A^{P}-t_A^{Q}=\gamma\,\Delta\tau_B-\Delta\tau_A
+$$ {#eq-tc-key}
+
+其中 $t_A^{P}$、$t_A^{Q}$ 是 $P$、$Q$ 两事件在 A 系中的时间坐标。要由此得到 $\Delta\tau_A=\Delta\tau_B$，需要右端为零，即 $\Delta\tau_A=\gamma\Delta\tau_B$——**这个等式不属于 (L1)，也不属于 (L2)**。
+
+**伽利略情形**：由 @eq-tc-tau-G，$\mathrm{d}\tau_A=\mathrm{d}t=\mathrm{d}\tau_B$ 直接成立，积分得
+
+$$
+\Delta\tau_A=\Delta\tau_B
+$$ {#eq-tc-equal-G}
+
+这是 (G1)、(G2) 的推论，**不需要借助对称**。
+
+**结论**：
+
+| | 只用变换能否推出 $\Delta\tau_A=\Delta\tau_B$ |
+|------|------|
+| 洛伦兹变换 | **不能**（还差一个条件 $\Delta\tau_A=\gamma\Delta\tau_B$） |
+| 伽利略变换 | **能**（$t'=t$ 的直接推论） |
+
+: 只用变换能推出什么 {#tbl-tc-only}
+
+## 结论 {#sec-tc-conclusion}
+
+| 命题 | 依据 |
+|------|------|
+| 对称对上 $\mathrm{d}\tau_B/\mathrm{d}\tau_A=1$ | S1、S2、S3（@prp-tc-equal） |
+| A 本地读数即知 B 的读数 | 上一条的推论，不需要测量 |
+| 伽利略变换给出 $\mathrm{d}\tau_B/\mathrm{d}\tau_A=1$ | G1、G2（@eq-tc-ratio-G） |
+| 洛伦兹变换给出 $\mathrm{d}\tau_B/\mathrm{d}\tau_A=1/\gamma_w$ | L1、L2（@eq-tc-ratio-L） |
+| 只用洛伦兹变换推不出 $\Delta\tau_A=\Delta\tau_B$ | @eq-tc-key |
+| 只用伽利略变换能推出 $\Delta\tau_A=\Delta\tau_B$ | @eq-tc-equal-G |
+
+: 各命题及其依据 {#tbl-tc-conclusion}
+
+**三个数：**
+
+$$
+\text{对称：}\ 1\qquad\qquad
+\text{伽利略变换：}\ 1\qquad\qquad
+\text{洛伦兹变换：}\ \frac{1}{\gamma_w}
+$$
+
+**本章到此为止，不评判三者中哪一个为真。** 需要说明的只有两点：
+
+1. **配对规则不同。** 对称用的配对是对称对 $\iota(e_A)=e_B$，它由实验结构决定；洛伦兹用的配对是「A 系坐标时相等」，那是变换内部的约定。**用变换给出的配对去检验变换的结论，是循环**——故本章把对称的配对作为独立的一路列出。
+2. **对称与伽利略在这一点上给出同一个数，洛伦兹给出另一个数。** 差别全部来自 (G1) 与 (L1) 的第一式之差：$t'=t$ 与 $t'=\gamma_u(t-ux/c^{2})$。前者使同时性不随参考系改变（@eq-tc-diff-G），后者使同时性随参考系改变（@eq-tc-diff-L）。其余全部结论都从这一条推出。

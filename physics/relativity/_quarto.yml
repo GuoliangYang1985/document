@@ -18,6 +18,7 @@ book:
     - chapters/two-source-field.qmd
     - chapters/flat-space-gravity.qmd
     - chapters/clock-coupling.qmd
+    - chapters/twins-comparison.qmd
     - chapters/references.qmd
 
 csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl
