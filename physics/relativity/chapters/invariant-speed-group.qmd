@@ -511,7 +511,7 @@ $$ {#eq-isg-carroll}
 | 命题 | 依据 |
 |---|---|
 | 变换构成以 $K$ 为参数的群族 | A1—A4（@eq-isg-final） |
-| $t'=t$ 是 $K=\infty$ 的推论，不是独立公设 | @eq-isg-galilei |
+| $t'=t$ 是 $K=\infty$ 的推论 | @eq-isg-galilei |
 | $K=\infty$ 是真取 $\infty$，不是拿 $c$ 充当无穷 | $\gamma\to1$ 与 $v/K^{2}\to0$ 同时成立 |
 | 恒速群是族，狭义洛伦兹变换是族中一点 | @prp-isg-superposition |
 | 量子力学的两类方程分别对应 $K=\infty$ 与 $K=c$ | 群表示与收缩 |
