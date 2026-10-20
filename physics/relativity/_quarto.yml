@@ -14,6 +14,7 @@ book:
     - chapters/symmetric-twins.qmd
     - chapters/transform-derivation.qmd
     - chapters/invariant-speed-group.qmd
+    - chapters/invariant-speed-field.qmd
     - chapters/maxwell-equations.qmd
     - chapters/galilean-electrodynamics.qmd
     - chapters/two-source-field.qmd
