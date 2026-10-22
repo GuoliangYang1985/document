@@ -1,5 +1,8 @@
-\newcommand{\bookname}{测量的边界}
-\newcommand{\booksubtitle}{演化速率耦合场论}
+% ===== 书名命令 =====
+% 书名单点定义于此，与 _quarto.yml 的 book.title 保持一致（书名页、PDF 元数据
+% 由 Quarto 从 yml 生成，页眉与封面由 \bookname 生成，两处须同步修改）。
+% 用 \providecommand 以兼容"单章独立编译"（单行本 qmd 无冲突风险）。
+\providecommand{\bookname}{理论测量的边界}
 
 % ===== 抑制 Quarto 默认 \maketitle（自定义封面代行）=====
 \let\maketitle\relax

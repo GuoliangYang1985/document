@@ -4,10 +4,8 @@ project:
   execute-dir: project
 
 book:
-  title: "测量的边界"
-  subtitle: "演化速率耦合场论"
+  title: "理论测量的边界"
   author: "杨国梁"
-  # HTML 版页面右上角提供 PDF 下载按钮
   downloads: pdf
   chapters:
     - index.qmd
@@ -15,6 +13,9 @@ book:
     - chapters/transform-derivation.qmd
     - chapters/invariant-speed-group.qmd
     - chapters/invariant-speed-field.qmd
+    - chapters/invariant-speed-dynamics.qmd
+    - chapters/invariant-speed-geometry.qmd
+    - chapters/quantum-phase.qmd
     - chapters/maxwell-equations.qmd
     - chapters/galilean-electrodynamics.qmd
     - chapters/two-source-field.qmd
@@ -47,10 +48,13 @@ author:
 subject: "理论物理 · 相对论"
 keywords:
   - 相对论
-  - 麦克斯韦方程组
   - 洛伦兹变换
-  - 协变性
-  - 电磁场张量
+  - 伽利略变换
+  - 同时性
+  - 恒速群
+  - 对称双生子
+  - 固有时
+  - 麦克斯韦方程组
 
 format:
   pdf:
@@ -91,4 +95,3 @@ format:
     link-citations: true
     # 图片自适应缩放
     fig-responsive: true
-
