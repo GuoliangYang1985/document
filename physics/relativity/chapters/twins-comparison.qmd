@@ -290,6 +290,84 @@ $$ {#eq-tc-diff-L}
 
 : 同时性是否随参考系改变 {#tbl-tc-simultaneity}
 
+## 闵氏几何图：三种视角 {#sec-tc-geometry}
+
+上一节的三个数来自代数。本节把同一件事画在闵氏几何图上：三个视角各画一张，再看伽利略极限下图形如何退化。
+
+### 一个构造上的修正
+
+本章配图的初稿曾用「以 $O$ 为圆心、$OM_t$ 为半径的圆弧」在对称点之间定位。这个做法需要修正：在 A 视角的标准闵氏图中，**欧氏圆不是任何钟的读数轨迹**。正确的轨迹是下面的校准双曲线（@prp-tc-hyperbola）。修正只改变图中对称点与投影点的**位置**，不改变本章的任何结论：对称配对上读数相同（@prp-tc-equal）、洛伦兹配对给出 $1/\gamma_w$（@eq-tc-ratio-L）、两套配对是不同的配对（@tbl-tc-ratios），全部保持。
+
+### 等固有读数点的轨迹
+
+::: {#prp-tc-hyperbola}
+
+## 等固有读数点的轨迹是校准双曲线
+
+设不变量速度为 $K$（第 @sec-invariant-speed-group 章；$K=c$ 为洛伦兹，$K=\infty$ 为伽利略）。在对齐后的 A 视角图中，A 静止于 $x=0$，B 以速度 $-w$ 运动。从 $O$ 出发、以恒定速度 $u$ 运动的钟到达事件 $(t,\,x=ut)$ 时读数为 $t\sqrt{1-u^{2}/K^{2}}$。故读数等于 $\tau$ 的全部事件满足
+
+$$
+t^{2}-\frac{x^{2}}{K^{2}}=\tau^{2}
+$$ {#eq-tc-hyperbola}
+
+且该曲线与 B 的世界线 $x=-wt$ 交于 B 读数恰为 $\tau$ 的一点，其 A 系坐标时为 $\gamma_w\tau$。
+
+:::
+
+**证明**：由 $x=ut$ 得 $u=x/t$，代入读数式 $t\sqrt{1-u^{2}/K^{2}}=\tau$，两边平方即得 @eq-tc-hyperbola。取 $u=-w$：$t\sqrt{1-w^{2}/K^{2}}=\tau$，即 $t=\gamma_w\tau$，且该点的 B 读数为 $\tau$。 $\square$
+
+**与圆弧的对照**：欧氏圆 $t^{2}+x^{2}=\tau^{2}$ 与 @eq-tc-hyperbola 仅在 $u=0$（即 $M_t$ 本身）相触。圆弧与 B 世界线的交点上，B 的读数是
+
+$$
+\tau\sqrt{\frac{1-w^{2}/K^{2}}{1+w^{2}/K^{2}}}\ \neq\ \tau,
+$$
+
+故圆弧交点**不是**对称点：它把对称点画近了。
+
+::: {#cor-tc-projection}
+
+## 投影时与对称读数
+
+过 B 读 $\tau$ 的对称点作 A 系同时线（水平线），交 A 的世界线于 A 系坐标时 $\gamma_w\tau$ 处：**投影时 $=\gamma_w\tau>\tau$，投影点在 $M_t$ 上方**。反过来，过 A 读 $\tau$ 的事件作水平线，交 B 世界线于 B 读 $\tau/\gamma_w$ 处。两个数之比 $\gamma_w$ 全部来自「用哪条线配对」的选择，不来自任何一只钟的内部。
+
+:::
+
+### 三视角对照
+
+![对称双生子的三视角闵氏几何图（$v=0.6c$，$w=0.8824c$，$\gamma_w=2.125$）](images/twins-three-views.png){#fig-tc-three-views width=100%}
+
+@fig-tc-three-views 的三个面板使用同一组数值（@tbl-tc-numeric 的 $v=0.6c$）。
+
+**左：A 视角。** A 静止，B 以 $w=0.8824c$ 沿 $-x$ 运动。等固有读数轨迹是双曲线 @eq-tc-hyperbola（蓝虚线）。对称点 $M_{t'}$（B 读 $\tau$）在双曲线上，A 系坐标时为 $\gamma_w\tau=2.125\tau$；过它的水平线（A 系同时线）交 A 世界线于投影点 $M'$。反过来，过 $M_t$ 的水平线交 B 世界线于 B 读 $0.47\tau= \tau/\gamma_w$ 处——这正是 @eq-tc-ratio-L 的几何形式。**同一张图里有两套配对：双曲线（对称配对，$\tau\leftrightarrow\tau$）与水平线（洛伦兹配对，$\tau\leftrightarrow\tau/\gamma_w$），两者不重合。**
+
+**中：B 视角。** 与左图关于 $t$ 轴镜像：B 静止，A 以 $w$ 沿 $+x$ 运动，双曲线、投影、比值逐一相同。这就是「身份互换，效果等价」的几何内容：把左图的 $x$ 换成 $-x$、A 换成 B，得到同一张图。
+
+**右：地球视角。** 即本章 @sec-tc-setup 的镜像对称系：A、B 各以 $\pm v$ 运动。由 @eq-iota-lines，对称对 $\iota(e_A)=e_B$ 的时间分量相同——**在这一系里，对称配对与地球系的同时配对（水平线）重合**，双曲线弧（以 $P$、$Q$ 为心）分别过两个对称点。同一水平线上，A 与 B 的读数增量都是 $t/\gamma_v$（两者相同），地球钟是 $t$：地球视角中的「钟慢」是 A、B 各自相对地球，而不是 A 与 B 相互。A 系的同时线在这一系里是倾斜的（斜率 $v/c^{2}$，由 @eq-L1 第一式 $t_A=\gamma_v(t-vx/c^{2})=$ 常数），它与 B 世界线的交点为
+
+$$
+t'=\frac{t\bigl(1-v^{2}/c^{2}\bigr)+2vd/c^{2}}{1+v^{2}/c^{2}},
+$$ {#eq-tc-tprime}
+
+$t\to\infty$ 时 B 与 A 的读数增量比趋于 $(1-v^{2}/c^{2})/(1+v^{2}/c^{2})=1/\gamma_w$，与 @eq-tc-ratio-L 一致（符号核验：$v=0.6c$ 时该比为 $(15d+8t)/(17t)$，极限 $8/17$）。有限 $t$ 处的偏差来自 $P\neq Q$——两钟的读数在弧线段上已有偏移，这正是 @eq-tc-ratio-L 采用微分形式的原因。
+
+## 伽利略极限：曲线如何退化 {#sec-tc-galilean-geometry}
+
+@eq-tc-hyperbola 含有参数 $K$。令 $K$ 变化，就得到从洛伦兹到伽利略的连续过渡：
+
+![洛伦兹与伽利略的对照：等读数轨迹从双曲线退化为水平直线](images/twins-galilean-compare.png){#fig-tc-galilean width=100%}
+
+**双曲线的退化。** $K\to\infty$ 时 @eq-tc-hyperbola 中 $x^{2}/K^{2}\to0$，曲线退化为水平直线 $t=\tau$——**与参考系无关的绝对同时面**。对称点的 A 系坐标时 $\gamma_w\tau\to\tau$：投影时与对称读数重合，@cor-tc-projection 中的两个配对合一。这与 @eq-tc-diff-G（伽利略下对称对坐标时差为 $0$）是同一件事的两种说法。
+
+**$\gamma_w$ 随 $K$ 的变化**（固定 $w=0.8824c$）：
+
+| $K$ | $\infty$ | $3c$ | $1.5c$ | $c$ |
+|------|------|------|------|------|
+| $\gamma_w$ | $1$ | $1.046$ | $1.237$ | $2.125$ |
+
+: 投影分歧随不变量速度 $K$ 的变化 {#tbl-tc-gamma}
+
+**结论**：投影分歧 $\gamma_w-1$ 全部来自 @eq-tc-hyperbola 中的 $1/K^{2}$ 项。$K$ 有限时等读数轨迹是双曲线，各系的同时线互不平行，配对分离（@fig-tc-galilean 左）；$K\to\infty$ 时曲线拉平为直线，所有系共享同一同时面，配对重合（@fig-tc-galilean 右）。这与第 @sec-invariant-speed-group 章的群收缩（结构常数 $1/K^{2}\to0$）和第 @sec-quantum-phase 章量子相态的条件（$K\to\infty$ 且 $\vec\nabla K=0$）是同一个极限。
+
 ## 只用变换能推出什么 {#sec-tc-only-transform}
 
 作为对照：如果**完全不使用对称**，只使用变换与 (L2)/(G2)，能推出什么？
@@ -331,6 +409,10 @@ $$ {#eq-tc-equal-G}
 | 洛伦兹变换给出 $\mathrm{d}\tau_B/\mathrm{d}\tau_A=1/\gamma_w$ | L1、L2（@eq-tc-ratio-L） |
 | 只用洛伦兹变换推不出 $\Delta\tau_A=\Delta\tau_B$ | @eq-tc-key |
 | 只用伽利略变换能推出 $\Delta\tau_A=\Delta\tau_B$ | @eq-tc-equal-G |
+| 等固有读数点的轨迹是校准双曲线，不是欧氏圆 | @prp-tc-hyperbola |
+| 投影时 $=\gamma_w\tau>\tau$；投影差全部来自配对规则 | @cor-tc-projection |
+| 地球视角中对称配对与同时配对重合；A、B 相互无钟慢 | @fig-tc-three-views |
+| $K\to\infty$ 时双曲线退化为水平线，各配对重合 | @sec-tc-galilean-geometry、@tbl-tc-gamma |
 
 : 各命题及其依据 {#tbl-tc-conclusion}
 
@@ -346,3 +428,4 @@ $$
 
 1. **配对规则不同。** 对称用的配对是对称对 $\iota(e_A)=e_B$，它由实验结构决定；洛伦兹用的配对是「A 系坐标时相等」，那是变换内部的约定。**用变换给出的配对去检验变换的结论，是循环**——故本章把对称的配对作为独立的一路列出。
 2. **对称与伽利略在这一点上给出同一个数，洛伦兹给出另一个数。** 差别全部来自 (G1) 与 (L1) 的第一式之差：$t'=t$ 与 $t'=\gamma_u(t-ux/c^{2})$。前者使同时性不随参考系改变（@eq-tc-diff-G），后者使同时性随参考系改变（@eq-tc-diff-L）。其余全部结论都从这一条推出。
+3. **几何上，分歧表现为配对曲线的形状。** 等固有读数轨迹是双曲线 @eq-tc-hyperbola；洛伦兹的「钟慢」是投影时 $\gamma_w\tau$ 与对称读数 $\tau$ 之差，它随 $K\to\infty$ 一起消失（@tbl-tc-gamma）。基于狭义相对论钟慢效应的「时空旅行」论证，把这个投影差当成了两只钟读数的真实之差——在本章的清单里，它属于配对规则，不属于 (S) 组的任何一条。
