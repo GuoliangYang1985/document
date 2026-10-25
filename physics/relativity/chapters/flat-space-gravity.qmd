@@ -168,7 +168,7 @@ $$
 a_{\rho},b_{\rho\nu}\ \text{为常数},\quad b_{\rho\nu}=-b_{\nu\rho}
 $$
 
-自由参数 $4+6=10$ 个。反之，对每个这样的 $\xi$ 有 $\delta_{\xi}h_{\mu\nu}=b_{\nu\mu}+b_{\mu\nu}=0$。故 $\dim\ker\delta=10$。$\blacksquare$
+自由参数 $4+6=10$ 个。反之，对每个这样的 $\xi$ 有 $\delta_{\xi}h_{\mu\nu}=b_{\nu\mu}+b_{\mu\nu}=0$。故 $\dim\ker\delta=10$。
 
 与 @sec-maxwell-equations 的 $U(1)$ 情形相比，@eq-linear-gauge 的参数是一个**向量场**而不是一个函数：那里的规范群是阿贝尔群 $U(1)$，这里的参数由向量场充当。线性层上 $\delta_{\xi}$ 关于 $\xi$ 仍然是线性的，故线性层的规范变换整体仍构成一个阿贝尔群；参数上的李括号结构要到非线性完备化时才进入（@sec-fsg-bootstrap）。
 
@@ -265,7 +265,7 @@ $$
 \end{aligned}
 $$ {#eq-gauge-invariance-expansion}
 
-八项按 $\xi$ 的下标分成四对，逐对相消：第 1 项与第 5 项（指标集 $\{\nu,\rho,\mu\}$ 相同）、第 2 项与第 8 项（$\{\nu,\rho,\sigma\}$）、第 3 项与第 7 项（$\{\mu,\sigma,\nu\}$）、第 4 项与第 6 项（$\{\mu,\sigma,\rho\}$）各自相消，得 @eq-lin-gauge-invariance。由 $R^{(1)}_{\mu\nu}$、$R^{(1)}$、$G^{(1)}_{\mu\nu}$ 是 $R^{(1)}_{\mu\nu\rho\sigma}$ 的 $\eta$-缩并，规范不变性随之成立。$\blacksquare$
+八项按 $\xi$ 的下标分成四对，逐对相消：第 1 项与第 5 项（指标集 $\{\nu,\rho,\mu\}$ 相同）、第 2 项与第 8 项（$\{\nu,\rho,\sigma\}$）、第 3 项与第 7 项（$\{\mu,\sigma,\nu\}$）、第 4 项与第 6 项（$\{\mu,\sigma,\rho\}$）各自相消，得 @eq-lin-gauge-invariance。由 $R^{(1)}_{\mu\nu}$、$R^{(1)}$、$G^{(1)}_{\mu\nu}$ 是 $R^{(1)}_{\mu\nu\rho\sigma}$ 的 $\eta$-缩并，规范不变性随之成立。
 
 **注记（一条不依赖展开的证明）。** @eq-lin-riemann 是 $g$ 的黎曼张量在 $g=\eta$ 处的一阶项，而 $g=\eta$ 处曲率为零。按 @eq-tensor-change，黎曼张量的分量在坐标改变下的变化量正比于“$\xi$ 与曲率本身”的乘积；曲率为零，故该变化量的最低阶（关于 $h$ 的一阶）项必为零，即 $R^{(1)}[\delta_{\xi}h]=0$。@eq-gauge-invariance-expansion 是这个论证的逐项兑现。
 
@@ -482,7 +482,7 @@ $$ {#eq-alpha-beta}
 
 *情形（ii）* $\alpha=0$（即 $f=-c/2$，此时 $c\neq0$ 才使 $E$ 不恒为零）：$E=\beta S_{\mu\nu}$，而 $S_{\mu\nu}$ 无迹，迹方程自动满足；$E=0\iff S_{\mu\nu}=0$ 是 $10-1=9$ 个独立方程，不含 $R^{(1)}$ 的约束。
 
-*情形（iii）* $\alpha+\beta=0$（即 $c=0$，此时 $\alpha=-4f$）：由 @eq-R-from-SG，$E=\alpha\left(G^{(1)}_{\mu\nu}-S_{\mu\nu}\right)=-\frac{\alpha}{4}\eta_{\mu\nu}R^{(1)}$，退化为单个标量方程 $R^{(1)}=0$。$\blacksquare$
+*情形（iii）* $\alpha+\beta=0$（即 $c=0$，此时 $\alpha=-4f$）：由 @eq-R-from-SG，$E=\alpha\left(G^{(1)}_{\mu\nu}-S_{\mu\nu}\right)=-\frac{\alpha}{4}\eta_{\mu\nu}R^{(1)}$，退化为单个标量方程 $R^{(1)}=0$。
 
 **注记（情形（ii）的解集确实更大）。** 取
 
@@ -603,7 +603,7 @@ $$
 \partial^{2}\xi_{\nu}=-\partial^{\mu}\bar h_{\mu\nu}
 $$ {#eq-harmonic-equation}
 
-这是 $\xi$ 的四分量线性双曲型方程：给定某个坐标面上的初值，无约束地向前演化即得一解，故谐和规范总可达到（可达性只在无穷远处的边界条件上受限）。$\blacksquare$
+这是 $\xi$ 的四分量线性双曲型方程：给定某个坐标面上的初值，无约束地向前演化即得一解，故谐和规范总可达到（可达性只在无穷远处的边界条件上受限）。
 
 **注记（谐和规范的残余自由度）。** @eq-harmonic-equation 只是 $\xi$ 的一个方程，故使 $h$ 落入谐和规范的 $\xi$ 不唯一：若 $\xi$ 是一个解，则 $\xi+\zeta$ 也是解当且仅当 $\partial^{2}\zeta_{\nu}=0$。故谐和规范内仍保留一个由“满足达朗贝尔方程的向量场”构成的规范自由度，它在下一节用于进一步化简。
 
@@ -680,7 +680,7 @@ $$
 \begin{pmatrix}0&1\\1&0\end{pmatrix}
 $$
 
-（分别取 $\varepsilon_{11}=1$ 与 $\varepsilon_{12}=1$，其余为零。）把这两个 $2\times2$ 块嵌入第 $1,2$ 行与列，其余分量为零，即 @eq-polarizations 的两个矩阵。直接代回可见二者都满足 $k^{\mu}\varepsilon_{\mu\nu}=0$（它们的非零分量只落在 $1,2$ 方向，而 $k$ 只有 $0,3$ 分量）与 $\varepsilon^{\mu}_{\ \mu}=1+(-1)=0$（$+$）或 $0$（$\times$）。最后 $k^{2}=0$ 给出 $|k^{0}|=|\mathbf{k}|$，相速度为 $1$。$\blacksquare$
+（分别取 $\varepsilon_{11}=1$ 与 $\varepsilon_{12}=1$，其余为零。）把这两个 $2\times2$ 块嵌入第 $1,2$ 行与列，其余分量为零，即 @eq-polarizations 的两个矩阵。直接代回可见二者都满足 $k^{\mu}\varepsilon_{\mu\nu}=0$（它们的非零分量只落在 $1,2$ 方向，而 $k$ 只有 $0,3$ 分量）与 $\varepsilon^{\mu}_{\ \mu}=1+(-1)=0$（$+$）或 $0$（$\times$）。最后 $k^{2}=0$ 给出 $|k^{0}|=|\mathbf{k}|$，相速度为 $1$。
 
 **与 @sec-galilean-electrodynamics 对照**：那里证明了二阶双曲型波解在伽利略群下不可能存在（@cor-no-wave）。因此“存在以不变量速度传播的二阶双曲型解”这件事本身，是洛伦兹群而非伽利略群的性质，与基本场是 1-形式还是对称二阶张量无关。
 
@@ -733,7 +733,7 @@ $$
 =0
 $$
 
-即 @eq-lin-bianchi。对 @eq-fsg-field-eq 取散度并代入 @eq-lin-bianchi，得 $\kappa\,\partial^{\mu}J_{\mu\nu}=0$；$\kappa\neq0$ 故 @eq-source-conservation 成立。$\blacksquare$
+即 @eq-lin-bianchi。对 @eq-fsg-field-eq 取散度并代入 @eq-lin-bianchi，得 $\kappa\,\partial^{\mu}J_{\mu\nu}=0$；$\kappa\neq0$ 故 @eq-source-conservation 成立。
 
 **注记（这条恒等式的含义）。** @prp-bianchi 说明算子 $G^{(1)}$ 的像落在“无散度的对称张量场”这一子空间内，它给出一个 Fredholm 型的相容性条件：若 $J$ 事先给定，@eq-source-conservation 只是对 $J$ 的一个限制，方程组本身无矛盾；但若要求方程组对一切 $J$ 可解、或 $J$ 的一部分由 $h$ 自身构成（下一节），线性方程就少了一组可自由指定的方程，必须补入高阶项。
 
@@ -807,7 +807,7 @@ $$ {#eq-partial-divergence}
 
 （推导：$\nabla^{\mu}G_{\mu\nu}=\partial^{\mu}G_{\mu\nu}+\Gamma^{\mu}{}_{\mu\lambda}G^{\lambda}{}_{\nu}-\Gamma^{\lambda}{}_{\mu\nu}G^{\mu}{}_{\lambda}$；把末项按 $\Gamma^{\lambda}{}_{\mu\nu}=\Gamma^{\lambda}{}_{\nu\mu}$ 与 $G$ 的对称性改写并移项即得上式。）@eq-partial-divergence 的右端是 $\ge2$ 次的局部项，**并不**为零。正因为如此，各级的 $t^{(n)}$ 才必须出现；而它们在每一级上的取值又被低阶项与规范不变性卡住。
 
-*（6）计算的省略.* （iii）所断言的“唯一确定”是一个逐阶的有限计算（每一阶解一个有限的线性代数问题），其逐步核对的版本见 [@deser1970; @deser2010; @butcher2009]。本节不作这一步计算。$\blacksquare$
+*（6）计算的省略.* （iii）所断言的“唯一确定”是一个逐阶的有限计算（每一阶解一个有限的线性代数问题），其逐步核对的版本见 [@deser1970; @deser2010; @butcher2009]。本节不作这一步计算。
 
 **化归（一阶形式）.** 上述逐阶计算可以用 Palatini 形式写成闭式的三步。把二次泛函写成
 
@@ -844,7 +844,7 @@ $$
 3. **不变量相同**：任一仅依赖 $g$ 的坐标标量——例如由 $g$ 构造的曲率标量与体积元——在两种表述中取相同的值；换言之，两种表述给出相同的坐标不变量代数。
 :::
 
-**证明.** (1) 由 @prp-bootstrap 直接得到。(2) $h$ 与 $g$ 只差一个固定的 $\eta$，故 $h\mapsto g$ 是一一对应（@def-flat-background）；方程相同，初末条件相同，则解集相同。(3) 所有只依赖 $g$ 的构造在两种表述下是同一个对象：把 $g$ 写成 $\eta+h$ 只是对它作了一次重参数化，而 $\eta$ 是常数张量、不含自由参数。$\blacksquare$
+**证明.** (1) 由 @prp-bootstrap 直接得到。(2) $h$ 与 $g$ 只差一个固定的 $\eta$，故 $h\mapsto g$ 是一一对应（@def-flat-background）；方程相同，初末条件相同，则解集相同。(3) 所有只依赖 $g$ 的构造在两种表述下是同一个对象：把 $g$ 写成 $\eta+h$ 只是对它作了一次重参数化，而 $\eta$ 是常数张量、不含自由参数。
 
 **注记（等价表述了什么、不表述什么）。** @thm-equivalence 是一个关于**方程与不变量**的等同，不是关于“哪一套变量更基本”的断定。它既不蕴含“可以把 $\eta$ 取为零”，也不蕴含其否定：$\eta$ 在构造中始终是一个固定张量（它定义了指标升降、@prp-fierz-pauli 中“线性”的含义、以及 @eq-wave-eq-fsg 中 $\partial^{2}$ 的定义）。下面两节说明这个固定张量在多大程度上可见。
 
@@ -858,7 +858,7 @@ $$
 特别地，“$h$ 在给定点处是小量”这一陈述依赖分解的选取：一般地 $\eta'$ 可以选得使 $|h'|$ 在给定点任意大。
 :::
 
-**证明.** $g$ 固定，故 $h'-h=\eta-\eta'$。@thm-equivalence 的第 3 条说，两种分解下的所有坐标不变量都只是 $g$ 的函数，而 $g$ 相同，故不变量相同。对第二个陈述：取 $\eta'=\varphi_{*}\eta$（$\eta$ 沿微分同胚 $\varphi$ 的拉回），则 $\eta'$ 仍平直（平直性的拉回仍平直），而 $h'=g-\eta'$ 中含 $\varphi$ 的导数，取 $\varphi$ 的导数足够大即可使 $|h'|$ 在给定点任意大。$\blacksquare$
+**证明.** $g$ 固定，故 $h'-h=\eta-\eta'$。@thm-equivalence 的第 3 条说，两种分解下的所有坐标不变量都只是 $g$ 的函数，而 $g$ 相同，故不变量相同。对第二个陈述：取 $\eta'=\varphi_{*}\eta$（$\eta$ 沿微分同胚 $\varphi$ 的拉回），则 $\eta'$ 仍平直（平直性的拉回仍平直），而 $h'=g-\eta'$ 中含 $\varphi$ 的导数，取 $\varphi$ 的导数足够大即可使 $|h'|$ 在给定点任意大。
 
 **注记（一个必要的澄清）。** 不应由此得出“$\eta$ 是多余的”。$\eta$ 在构造中是一个**固定的**结构；只是因为最终由它导出的理论恰好对微分同胚不变，这个固定结构才被规范掉。一旦理论失去微分同胚不变性（@sec-fsg-breaking），$\eta$ 立刻进入不变量。因此准确的说法是：**在 @thm-equivalence 成立的范围内，$\eta$ 不出现在任何不变量中；在该等同被破坏的地方，它进入不变量。**
 

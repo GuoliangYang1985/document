@@ -63,7 +63,7 @@ $$
 即伽利略变换。
 :::
 
-**证明**：$\sqrt{1-v^{2}/K^{2}}\to1$；$\dfrac{vx}{K^{2}}\to0$。故 $t'\to t$、$x'\to x-vt$。$\square$
+**证明**：$\sqrt{1-v^{2}/K^{2}}\to1$；$\dfrac{vx}{K^{2}}\to0$。故 $t'\to t$、$x'\to x-vt$。
 
 符号核验（向量场层面）：boost 生成元 $B=-\dfrac{x}{K^{2}}\partial_t-t\partial_x$ 在 $K\to\infty$ 下给出 $(0,-t)$，即 $-t\partial_x$；且 $[B,P]$ 的极限为 $(0,0)$。输出：
 
@@ -215,7 +215,7 @@ $$
 所得的代数**不是** @eq-qp-gal，而是带中央扩张的 **Bargmann 代数**。
 :::
 
-**证明**：第一式用 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 代入 @eq-qp-algK；第二式用 $[mK^{2}\mathbf 1,\cdot]=0$。极限中 $\hat H_{\text{nr}}/K^{2}\to0$。$\square$
+**证明**：第一式用 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 代入 @eq-qp-algK；第二式用 $[mK^{2}\mathbf 1,\cdot]=0$。极限中 $\hat H_{\text{nr}}/K^{2}\to0$。
 
 **收敛核验**：由 @eq-qp-m2 与 $\hat H=mK^{2}+\hat H_{\text{nr}}$，
 
@@ -313,7 +313,7 @@ $$ {#eq-qp-cocycle}
 - $(\hat H,\hat B_i,\hat P_j)$：$[\hat H,\beta\delta_{ij}\hat M]+[\hat B_i,0]+[\hat P_j,-i\hbar\hat P_i]=0$；
 - $(\hat B_i,\hat B_j,\hat P_l)$、$(\hat B_i,\hat P_j,\hat P_l)$：$\hat M$ 为中心，全为零。
 
-上边界形如 $c_f(X,Y)=f([X,Y])$（$f$ 为线性泛函）。但 $[\hat B_i,\hat P_j]=0$，故对任何 $f$ 都有 $c_f(\hat B_i,\hat P_j)=f(0)=0\neq\beta\delta_{ij}$。故 $\beta\neq0$ 时该上闭链**不是上边界**，上同调类非平凡。$\square$
+上边界形如 $c_f(X,Y)=f([X,Y])$（$f$ 为线性泛函）。但 $[\hat B_i,\hat P_j]=0$，故对任何 $f$ 都有 $c_f(\hat B_i,\hat P_j)=f(0)=0\neq\beta\delta_{ij}$。故 $\beta\neq0$ 时该上闭链**不是上边界**，上同调类非平凡。
 
 **符号核验**（$10$ 生成元、$45$ 个待定分量、$120$ 个 Jacobi 方程，逐一解出）：
 
@@ -429,7 +429,7 @@ $$ {#eq-qp-casimirG}
 
 此时 **$\hat M$ 本身是中心元素，不是任何算符的函数**：它不能由 $\hat H,\hat P_i,\hat B_i,\hat J_i$ 表出（@thm-qp-extension 的第四步），而是代数的一个独立方向。真正作为"本征值"出现的量换成了**内能** $\hat E_{\text{int}}$。
 
-**推论（Bargmann 超选择规则）**。$\hat M$ 中心 $\Rightarrow$ 由 Schur 引理，在不可约表示上 $\hat M=m\mathbf 1$；不同 $m$ 的表示之间不存在把它们耦合起来的代数元素，故**不同质量的态不能相干叠加**——这是质量作为中央荷的可检验后果。相反，在 (a) 中 $m$ 只是 Casimir 本征值，不同质量的态可以叠加。**"质量是中央荷"不是措辞，是有判别力的命题。**$\square$
+**推论（Bargmann 超选择规则）**。$\hat M$ 中心 $\Rightarrow$ 由 Schur 引理，在不可约表示上 $\hat M=m\mathbf 1$；不同 $m$ 的表示之间不存在把它们耦合起来的代数元素，故**不同质量的态不能相干叠加**——这是质量作为中央荷的可检验后果。相反，在 (a) 中 $m$ 只是 Casimir 本征值，不同质量的态可以叠加。**"质量是中央荷"不是措辞，是有判别力的命题。**
 
 | 相态 | $m$ 的代数身份 | 可否叠加不同 $m$ |
 |---|---|---|
@@ -462,13 +462,13 @@ $$
 =\frac{1}{m}\,i\hbar\delta_{ij}\,m\mathbf 1=i\hbar\delta_{ij}\mathbf 1
 $$
 
-（用到 $[\hat P_i,\hat P_j]=0$。）$\square$
+（用到 $[\hat P_i,\hat P_j]=0$。）
 
 **显式算子核验**（$\hat B=mx+i\hbar t\partial_x$、$\hat P=-i\hbar\partial_x$、$\hat q=x$）：
 
 ```
-[K,P] f = I*hbar*m*f(X, T)     期望 i hbar m f
-[q,P] f = I*hbar*f(X, T)       期望 i hbar f
+[K,P] f = I*hbar*m*f(X, T) 期望 i hbar m f
+[q,P] f = I*hbar*f(X, T) 期望 i hbar f
 ```
 
 **反之，若中央荷为零**（@thm-qp-contraction 的朴素收缩）：$[\hat B_i,\hat P_j]=0$，于是 $[\hat q_i,\hat P_j]=0$。此时 $\hat q$ 与 $\hat P$ 可同时对角化：**没有不确定性原理，没有不可对易的观测量，量子化无从谈起**。这正是"伽利略代数本身 $[x,p]=0$、无法支撑量子化"的严格形式——缺的不是某个技巧，缺的是中央扩张。

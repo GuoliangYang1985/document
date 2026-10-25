@@ -23,6 +23,7 @@ book:
     - chapters/flat-space-gravity.qmd
     - chapters/clock-coupling.qmd
     - chapters/twins-comparison.qmd
+    - chapters/notation.qmd
     - chapters/references.qmd
 
 csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl
@@ -75,7 +76,7 @@ format:
     secnumdepth: 3
     number-sections: true
     lot: true
-    lof: false
+    lof: true
     colorlinks: true
     linkcolor: "blue!50!black"
     citecolor: "blue!50!black"

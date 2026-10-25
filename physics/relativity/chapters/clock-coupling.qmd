@@ -62,7 +62,7 @@ $$
 =\tau_i(\gamma_1)+\tau_i(\gamma_2)
 $$
 
-（第二个等号：在 $[0,1]$ 上被积函数就是 $\omega_i(\dot\gamma_1\circ s)$，在 $[1,2]$ 上作变量替换 $s'=s-1$ 即回到 $\gamma_2$ 的积分。）单调性：设 $dt(\dot\gamma)>0$ 处处成立，则被积函数 $\omega_i(\dot\gamma)=f_i(\Phi(\gamma))\,dt(\dot\gamma)>0$（$f_i>0$），故积分严格为正；两端点固定而路径反向时积分变号，即 $\tau_i(\gamma^{-1})=-\tau_i(\gamma)$。$\blacksquare$
+（第二个等号：在 $[0,1]$ 上被积函数就是 $\omega_i(\dot\gamma_1\circ s)$，在 $[1,2]$ 上作变量替换 $s'=s-1$ 即回到 $\gamma_2$ 的积分。）单调性：设 $dt(\dot\gamma)>0$ 处处成立，则被积函数 $\omega_i(\dot\gamma)=f_i(\Phi(\gamma))\,dt(\dot\gamma)>0$（$f_i>0$），故积分严格为正；两端点固定而路径反向时积分变号，即 $\tau_i(\gamma^{-1})=-\tau_i(\gamma)$。
 :::
 
 这里必须先说明一件容易被跳过的事：**在 @sec-cc-data 至 @sec-cc-jets 的全部内容中，$\Phi$ 只是一个给定的自变量**。它出现在 @eq-omega 的右边，但没有任何方程决定它，也没有任何对象依赖它的导数或它的源。此处得到的全部结论（叶状结构、模空间、射流塔、余循环）**不依赖 $\Phi$ 的具体形式**，只依赖 $f_i$ 与 $dt$ 的乘积结构。
@@ -250,7 +250,12 @@ $$
 P_i(\Phi_1,\Phi_2) := \frac{f_i(\Phi_1)}{f_i(\Phi_2)}
 $$ {#eq-two-point}
 
-则 $Q_{ij}$ 在 @eq-gauge 下不变（它定义在 $\mathscr{M}$ 上、不落在 $\mathrm{Map}(I\times\mathbb{R},\mathbb{R}_{>0})$ 上），而 $P_i$ 依赖规范。二者是**不同类型**的对象：前者是类别之间的相对量，后者是单一类别在两个场值之间的比值，只有先固定标度约定才有意义。
+则 $Q_{ij}$ 落在 $\mathscr{M}$ 上（只依赖等价类，不依赖代表），$P_i$ 落在 $\mathrm{Map}(I\times\mathbb{R},\mathbb{R}_{>0})$ 上（依赖代表 $f_i$ 的选择）。二者的差别在**两类变换**下分别显现：
+
+- 在 @eq-gauge 的**对角作用**下，$Q_{ij}$ 与 $P_i$ **都不变**；
+- 在更细的**单类别缩放** @eq-gauge-single 下，$P_i\mapsto\kappa_i P_i$（协变），而 $Q_{ij}$ 一般改变。
+
+二者是**不同类型**的对象：前者是类别之间的相对量，后者是单一类别在两个场值之间的比值，只有先固定标度约定才有意义。
 
 **证明.** 先看 $Q_{ij}$。由 @eq-ratio 与 $X_{ij}[\kappa f]=X_{ij}[f]$（@prp-gauge-action），
 
@@ -270,7 +275,7 @@ P_i[\kappa f](\Phi_1,\Phi_2)
 =P_i[f](\Phi_1,\Phi_2)
 $$
 
-**注意 $P_i$ 其实也约去了 $\kappa$。** 因此 $P_i$ 与 $Q_{ij}$ 在 @eq-gauge 下**都**不变——原文所说的「$P_i$ 依赖规范」并不成立。二者的真正区别不在规范变换下，而在**它们的自变量与可加性**：$Q_{ij}$ 只依赖 $\Phi_1-\Phi_2$ 的差（一阶上），而$P_i$ 依赖两个场值本身；更准确地说，$P_i$ 不落在 $\mathscr{M}$ 上而依赖 $f_i$ 这一代表的选择是在**更细的变换**之下——见下面的注记。
+**注意 $P_i$ 其实也约去了 $\kappa$。** 因此 $P_i$ 与 $Q_{ij}$ 在 @eq-gauge 的**对角作用**下**都不变**。二者的区别不在这里，而在**更细的单类别缩放** @eq-gauge-single 之下：$P_i\mapsto\kappa_i P_i$（协变），$Q_{ij}$ 一般改变。可加性上的差别同样出自这一层——$Q_{ij}$ 只依赖两个场值之差（一阶上），$P_i$ 依赖两个场值本身。详见下面的注记。
 :::
 
 **注记（$P_i$ 真正依赖什么）。** 使 $P_i$ 改变而 $Q_{ij}$ 不变的变换，是把**单个**类别 $i$ 的 $f_i$ 乘上非零常数 $\kappa_i$（不同类别各乘各的）：
@@ -317,7 +322,7 @@ Q_{ij}(\Phi_1,\Phi_2)
 \end{aligned}
 $$ {#eq-Q-first}
 
-其中 $\Delta:=\Phi_1-\Phi_2$。即：**一阶的类别依赖完全由 $\alpha_i-\alpha_j$ 承担。** 由于 $Q_{ij}$ 在 @eq-gauge 下不变而 $\Phi_1-\Phi_2$ 也不变，@eq-Q-first 的两端在规范变换下一致。$\blacksquare$
+其中 $\Delta:=\Phi_1-\Phi_2$。即：**一阶的类别依赖完全由 $\alpha_i-\alpha_j$ 承担。** 由于 $Q_{ij}$ 在 @eq-gauge 下不变而 $\Phi_1-\Phi_2$ 也不变，@eq-Q-first 的两端在规范变换下一致。
 
 ## 射流层：泰勒展开即射流投影 {#sec-cc-jets}
 
@@ -400,7 +405,7 @@ $$
 f_i=X_{ii_0}\,f_{i_0}=\frac{h_i}{h_{i_0}}\,f_{i_0}=\Bigl(\frac{f_{i_0}}{h_{i_0}}\Bigr)h_i
 $$
 
-右端括号内是与 $i$ 无关的常数。也就是说，$f_i$ 与 $h_i$ 只差一个与 $i$ 无关的正因子。由 @prp-gauge-action，这个整体因子可被规范条件 $f_i(0)=1$ 吸收；吸收之后 $f_i=h_i/h_{i}(0)$（设 $h_{i}(0)\neq0$），而 $h$ 的具体形式与 $i$ 无关时即得 $f_i=f$。$\blacksquare$
+右端括号内是与 $i$ 无关的常数。也就是说，$f_i$ 与 $h_i$ 只差一个与 $i$ 无关的正因子。由 @prp-gauge-action，这个整体因子可被规范条件 $f_i(0)=1$ 吸收；吸收之后 $f_i=h_i/h_{i}(0)$（设 $h_{i}(0)\neq0$），而 $h$ 的具体形式与 $i$ 无关时即得 $f_i=f$。
 
 一阶层次上，@eq-universality 化为最简形式：**普适 $\iff$ 映射 $i\mapsto\alpha_i$ 为常值映射。** 事实上由 @eq-log-X，$\log X_{ij}=\left(\alpha_i-\alpha_j\right)\Phi+O(\Phi^{2})$，其一阶项恒为零当且仅当 $\alpha_i=\alpha_j$ 对一切 $i,j$ 成立。于是“类别依赖”的全部一阶内容，就是实值映射 $\alpha:I\to\mathbb{R}$ 偏离常值映射的程度。
 :::
@@ -500,7 +505,7 @@ $$
 +\Bigl(\text{含 }\partial_{\psi_i}\nu_i\ \text{与}\ \frac{d^{j}\psi_i[\Phi]}{d\Phi^{j}}(0)\ (j\le k)\ \text{的项}\Bigr)
 $$
 
-右端每一项都由 $\mathcal{O}_i$ 在背景附近 Taylor 展开的系数与低阶系数组成。故 $\mathcal{O}_i$ 的 $n$ 阶背景项给出 $f_i$ 的 $n$ 阶系数。于是 $j^{n}_{0}f_i$ 由耦合一侧的数据（$\mathcal{L}_{i,0}$、$\mathcal{O}_i$、$\lambda_i$ 的相应展开系数）唯一决定：@eq-jet-map 不是任意的射流映射，而是耦合项射流塔的像。$\blacksquare$
+右端每一项都由 $\mathcal{O}_i$ 在背景附近 Taylor 展开的系数与低阶系数组成。故 $\mathcal{O}_i$ 的 $n$ 阶背景项给出 $f_i$ 的 $n$ 阶系数。于是 $j^{n}_{0}f_i$ 由耦合一侧的数据（$\mathcal{L}_{i,0}$、$\mathcal{O}_i$、$\lambda_i$ 的相应展开系数）唯一决定：@eq-jet-map 不是任意的射流映射，而是耦合项射流塔的像。
 :::
 
 ::: {#prp-implicit}
@@ -559,7 +564,7 @@ $$
 
 **注意**此处**不能**把 $\tau$ 代回收缩成 $U\circ\tau^{-1}$ 并断言它仍是酉群：$\tau^{-1}$ 一般不可加（$\tau(t_1+t_2)\neq\tau(t_1)+\tau(t_2)$ 除非 $f_i$ 为常数），故 $U\circ\tau^{-1}$ 只是酉算子族而非群同态。正确的对象是 @eq-reparam-generator 中的生成元 $A/f_i(\Phi)$。
 
-**情形 (b)：$\Phi$ 含空间依赖。** 此时 $\Phi$ 进入算子后写作 $\Phi(\hat x)$，$f_i(\Phi(\hat x))$ 是正算子而不再是 $c$-数标度，$A/f_i(\Phi(\hat x))$ 的写法本身就不唯一（乘积次序未定）。这一情形**不**由上式覆盖，其完备处理见下一小节的 @prp-ordering：正确陈述是「需要附加一条编序约定之后，@eq-reparam-generator 才有良定义的形式」，而非「右端在两种情形下都良定义」。$\blacksquare$
+**情形 (b)：$\Phi$ 含空间依赖。** 此时 $\Phi$ 进入算子后写作 $\Phi(\hat x)$，$f_i(\Phi(\hat x))$ 是正算子而不再是 $c$-数标度，$A/f_i(\Phi(\hat x))$ 的写法本身就不唯一（乘积次序未定）。这一情形**不**由上式覆盖，其完备处理见下一小节的 @prp-ordering：正确陈述是「需要附加一条编序约定之后，@eq-reparam-generator 才有良定义的形式」，而非「右端在两种情形下都良定义」。
 :::
 
 ::: {#cor-param-compatible}
@@ -604,7 +609,7 @@ G:=\frac{1}{2}\left(G_{L}+G_{R}^{\dagger}\right)
 =\frac{1}{2}\left(f_i(\Phi(\hat x))^{-1}A+A\,f_i(\Phi(\hat x))^{-1}\right)
 $$ {#eq-weyl-ordering}
 
-（注意 $G_R^{\dagger}=f_i^{-1}A$ 只在 $f_i$ 与 $A$ 的适当条件下成立；一般情形应直接对 $\frac{1}{2}\left(G_L+G_L^{\dagger}\right)$ 取对称化。）不同约定给出不同的自伴生成元，其差不能被 @eq-gauge 的重参数化吸收（重参数化只改变 $f_i$ 的整体常数倍，而这里差出的是 $\left[f_i,A\right]$ 这一算子量）。这是 @eq-reparam-generator 从情形 (a) 推广到情形 (b) 必须补的**第一项数据**。补上后演化仍酉——编序只影响生成元的具体形式，不影响酉性。$\blacksquare$
+（注意 $G_R^{\dagger}=f_i^{-1}A$ 只在 $f_i$ 与 $A$ 的适当条件下成立；一般情形应直接对 $\frac{1}{2}\left(G_L+G_L^{\dagger}\right)$ 取对称化。）不同约定给出不同的自伴生成元，其差不能被 @eq-gauge 的重参数化吸收（重参数化只改变 $f_i$ 的整体常数倍，而这里差出的是 $\left[f_i,A\right]$ 这一算子量）。这是 @eq-reparam-generator 从情形 (a) 推广到情形 (b) 必须补的**第一项数据**。补上后演化仍酉——编序只影响生成元的具体形式，不影响酉性。
 :::
 
 ::: {#prp-downbounded}
@@ -633,7 +638,7 @@ $$
 \qquad \forall s\in\mathbb{R}
 $$ {#eq-spectrum-invariant}
 
-即谱集对一切平移不变。自伴算子的谱非空（自伴算子必有实谱），故 $\mathrm{spec}(A)=\mathbb{R}$。但下半有界 $A\ge cI$ 蕴含 $\mathrm{spec}(A)\subseteq[c,+\infty)$，与 $\mathrm{spec}(A)=\mathbb{R}$ 矛盾。$\blacksquare$
+即谱集对一切平移不变。自伴算子的谱非空（自伴算子必有实谱），故 $\mathrm{spec}(A)=\mathbb{R}$。但下半有界 $A\ge cI$ 蕴含 $\mathrm{spec}(A)\subseteq[c,+\infty)$，与 $\mathrm{spec}(A)=\mathbb{R}$ 矛盾。
 :::
 
 ::: {#cor-no-time-operator}
@@ -658,12 +663,14 @@ $$ {#eq-covariant}
 取 $\mathcal{H} = \mathcal{H}_{R}\otimes\mathcal{H}_{C}$（$R$ 为系统，$C$ 为时钟），约束算子
 
 $$
-K := A_{R}\otimes 1 - 1\otimes A_{C},
+\mathscr{C} := A_{R}\otimes 1 - 1\otimes A_{C},
 \qquad
-\mathcal{H}_{\mathrm{phys}} := \ker K
+\mathcal{H}_{\mathrm{phys}} := \ker \mathscr{C}
 $$ {#eq-constraint}
 
-对 $\Psi\in\ker K$ 与时钟子系统的协变 POVM $E_C$，以读数 $\tau$ 为条件给出的 $\mathcal{H}_R$ 上的条件态随 $\tau$ 演化。这正是关系性时钟的构造方式 [@pagewootters1983]：约束算子 $K$ 的核给出物理态，读数由时钟子系统的 POVM 给出，条件态对系统的依赖就是“演化”。框架中的族 $\{f_i\}_{i\in I}$ 在这一层对应为：**同一群作用的不同协变 POVM**，等价地对应不同的时钟生成元 $A_C^{(i)}$。
+（用 $\mathscr{C}$ 而非 $K$：全书 $K$ 保留给恒速场，此处为约束算子，二者无关。）
+
+对 $\Psi\in\ker \mathscr{C}$ 与时钟子系统的协变 POVM $E_C$，以读数 $\tau$ 为条件给出的 $\mathcal{H}_R$ 上的条件态随 $\tau$ 演化。这正是关系性时钟的构造方式 [@pagewootters1983]：约束算子 $\mathscr{C}$ 的核给出物理态，读数由时钟子系统的 POVM 给出，条件态对系统的依赖就是“演化”。框架中的族 $\{f_i\}_{i\in I}$ 在这一层对应为：**同一群作用的不同协变 POVM**，等价地对应不同的时钟生成元 $A_C^{(i)}$。
 
 ::: {#prp-joint-meas}
 ## 联合可测性
@@ -699,7 +706,7 @@ $$
 \Delta t \cdot \Delta A \ \ge\ \frac{1}{2}
 $$ {#eq-mt}
 
-其中 $\Delta t:=\Delta X\left/\left|\frac{d}{dt}\langle X\rangle_{\varrho}\right|\right.$ 是 $X$ 的期望值变化一个标准差所需的时间。（@eq-mt 的证明：由 $\mathrm{i}\partial_{t}\langle X\rangle=\langle[X,A]\rangle$ 与 Robertson 不等式 $\Delta X\,\Delta A\ge\frac{1}{2}\left|\langle[X,A]\rangle\right|$ 相除即得。）$\blacksquare$
+其中 $\Delta t:=\Delta X\left/\left|\frac{d}{dt}\langle X\rangle_{\varrho}\right|\right.$ 是 $X$ 的期望值变化一个标准差所需的时间。（@eq-mt 的证明：由 $\mathrm{i}\partial_{t}\langle X\rangle=\langle[X,A]\rangle$ 与 Robertson 不等式 $\Delta X\,\Delta A\ge\frac{1}{2}\left|\langle[X,A]\rangle\right|$ 相除即得。）
 :::
 
 ::: {#cor-mt-relative}
@@ -717,7 +724,7 @@ $$
 \Delta t_{ij}\ \gtrsim\ \Delta t_i+\Delta t_j\ \ge\ \frac{1}{2}\left(\frac{1}{\Delta A_i}+\frac{1}{\Delta A_j}\right)
 $$ {#eq-mt-sum}
 
-即：$\alpha_i-\alpha_j$ 的可分辨下界由两类系统生成元展宽的**倒数之和** $\frac{1}{2}\left(\Delta A_i^{-1}+\Delta A_j^{-1}\right)$ 控制。（若两读数独立，组合误差按平方和开方给出 $\sqrt{\Delta t_i^{2}+\Delta t_j^{2}}$；无论哪种方式，下界都随 $\Delta A_i^{-1}+\Delta A_j^{-1}$ 增大。）这是本框架与量子力学之间能写成不等式的联系。$\blacksquare$
+即：$\alpha_i-\alpha_j$ 的可分辨下界由两类系统生成元展宽的**倒数之和** $\frac{1}{2}\left(\Delta A_i^{-1}+\Delta A_j^{-1}\right)$ 控制。（若两读数独立，组合误差按平方和开方给出 $\sqrt{\Delta t_i^{2}+\Delta t_j^{2}}$；无论哪种方式，下界都随 $\Delta A_i^{-1}+\Delta A_j^{-1}$ 增大。）这是本框架与量子力学之间能写成不等式的联系。
 :::
 
 ### 算子层的结论

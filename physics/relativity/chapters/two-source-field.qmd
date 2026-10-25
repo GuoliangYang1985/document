@@ -184,7 +184,7 @@ $$
 -\frac{a_{s}}{a_{0}}=c^{2}\quad\Longrightarrow\quad a_{s}=-c^{2}a_{0}
 $$
 
-故 $L=a_{0}(\partial_{t}^{2}-c^{2}\nabla^{2})$。取归一化 $\alpha=a_{0}=1$。 $\square$
+故 $L=a_{0}(\partial_{t}^{2}-c^{2}\nabla^{2})$。取归一化 $\alpha=a_{0}=1$。
 
 本章以下取
 
@@ -285,7 +285,7 @@ $$
 =\frac{1}{4\pi c^{2}t}\int_{|\mathbf{y}-\mathbf{x}|=ct}\psi(\mathbf{y})\,dS(\mathbf{y})
 $$
 
-即 @eq-kirchhoff。 $\square$
+即 @eq-kirchhoff。
 
 ## 非齐次方程的推迟解 {#sec-tsf-retarded}
 
@@ -725,7 +725,7 @@ $$
 
 第三步（坐标无关性）。$\tau_{k}=t(E_{k})$ 是点 $E_{k}\in M$ 的静系时间坐标。由 A2，$t'=t$，故这个数值在用 $S_{0}$ 还是用 $S_{\mathbf{u}}$ 的坐标去读时相同。
 
-于是两位观测者的输出相等，判定一致。 $\square$
+于是两位观测者的输出相等，判定一致。
 
 ::: {#rem-measurement-supersonic}
 ## $v>c$ 的情形

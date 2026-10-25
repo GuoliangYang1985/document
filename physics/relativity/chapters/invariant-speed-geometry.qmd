@@ -45,7 +45,7 @@ $$
 g_{\mu\nu}=K^{2}\eta_{\mu\nu}
 $$
 
-这是共形平坦度规。Weyl 张量在共形变换下不变，而 Minkowski 的 Weyl 张量为零，故 $C^{\rho}{}_{\sigma\mu\nu}\equiv0$。$\square$
+这是共形平坦度规。Weyl 张量在共形变换下不变，而 Minkowski 的 Weyl 张量为零，故 $C^{\rho}{}_{\sigma\mu\nu}\equiv0$。
 
 **推论**：局部洛伦兹变换（即恒速群 $G_{K(p)}$ 的全部内容）**不携带任何几何信息**。恒定群只固定光锥的形状，不固定尺度，也不固定潮汐效应。若标架只由 $G_{K(p)}$ 生成，得到的必然是第 5 章那种 Weyl$\equiv0$ 的残缺几何。
 
