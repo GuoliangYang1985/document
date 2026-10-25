@@ -6,6 +6,7 @@ project:
 book:
   title: "理论测量的边界"
   author: "杨国梁"
+  version: "1.0"
   downloads: pdf
   chapters:
     - index.qmd
@@ -22,7 +23,6 @@ book:
     - chapters/flat-space-gravity.qmd
     - chapters/clock-coupling.qmd
     - chapters/twins-comparison.qmd
-    - chapters/twins-absolute-time.qmd
     - chapters/references.qmd
 
 csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl
