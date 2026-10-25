@@ -1,0 +1,271 @@
+# 非惯性系下的对称双生子 {#sec-twins-noninertial}
+
+## 本章的范围 {#sec-tn-scope}
+
+第 @sec-twins-comparison 章的推导都在惯性坐标中进行。本章把坐标换成**沿曲线 A（或曲线 B）自身建立的坐标**——坐标非惯性——在 $K=c$ 与 $K=\infty$ 两支下分别画出 A 视角与 B 视角的时空图，并沿图上的像计算读数。
+
+**输入清单**（全部是数学对象）：
+
+| 编号 | 对象 | 内容 |
+|------|------|------|
+| (M1) | 底空间与二次型 | $\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/K^{2}$，$K=c$ 或 $K=\infty$ |
+| (M2) | 两条曲线 | $\gamma_A$、$\gamma_B$：从 $O$ 到 $M$，各分两段——弧线段（$O\to P$、$O\to Q$）与直线段（$P\to M$、$Q\to M$） |
+| (M3) | 映射 $\iota$ | $\iota(t,x)=(t,-x)$；$\iota(\gamma_A)=\gamma_B$，$\iota(O)=O$，$\iota(M)=M$ |
+| (M4) | 读数定义 | $s[\gamma]=\displaystyle\int_{\gamma}\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/K^{2}}$ |
+
+**两条纪律**：
+
+1. **不引入第三个坐标系**。全程只出现 A 视角坐标与 B 视角坐标；$K=c$ 支中两系之间的变换是洛伦兹变换（它本身只连接两个坐标系）。
+2. **$\iota$ 只作几何输入**。(M3) 定义了曲线对的镜像关系；本章不在任何计算步骤中用“因为镜像，所以读数相等”来替代或改动计算。所有读数都由积分算出；镜像能推出什么，由 @prp-tn-isometry 的证明给出。
+
+**不使用的内容**：本章不引用任何实验、不引入任何物理机制、不使用任何物理直觉；所有结论由代数与积分给出。
+
+## 数学准备 {#sec-tn-math}
+
+### 镜像映射保持二次型
+
+::: {#prp-tn-isometry}
+
+## $\iota$ 保持 $\mathrm{d}s^{2}_{K}$
+
+对 $K=c$ 与 $K=\infty$，$\iota(t,x)=(t,-x)$ 满足 $\iota^{*}\mathrm{d}s^{2}_{K}=\mathrm{d}s^{2}_{K}$。
+:::
+
+**证明**：$\iota^{*}\mathrm{d}t=\mathrm{d}t$，$\iota^{*}\mathrm{d}x=-\mathrm{d}x$，故 $\iota^{*}\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-(-\mathrm{d}x)^{2}/K^{2}=\mathrm{d}s^{2}_{K}$。
+
+::: {#cor-tn-length}
+
+## 两条曲线的读数相等
+
+$s[\gamma_B]=s[\gamma_A]$，对 $K=c$ 与 $K=\infty$ 都成立。
+:::
+
+**证明**：曲线在等距映射下的长度不变（换元 $y=\iota(x)$，被积式与积分域都被 $\iota$ 保形搬移，积分值不变）。$\gamma_B=\iota(\gamma_A)$，故 $s[\gamma_B]=s[\gamma_A]$。
+
+@cor-tn-length 是 (M3) 与 (M4) 的直接推论，全程未使用任何变换公式。它给出**整段读数**（从 $O$ 到 $M$）的关系。本章其余部分把读数**分段、分视角**地算出来，并检查图上的像。
+
+### 两支的变换与读数因子
+
+$K=c$ 支中，相对速率 $w$ 的两个坐标系之间：
+
+$$
+t'=\gamma_w\Bigl(t-\frac{u\,x}{c^{2}}\Bigr),\qquad x'=\gamma_u(x-ut),\qquad
+\gamma_u=\frac{1}{\sqrt{1-u^{2}/c^{2}}}
+$$ {#eq-tn-lorentz}
+
+$K=\infty$ 支中：
+
+$$
+t'=t,\qquad x'=x-ut
+$$ {#eq-tn-galilei}
+
+两支合起来可写为 $\gamma_u(K)=1/\sqrt{1-u^{2}/K^{2}}$：$K=c$ 时即洛伦兹因子，$K=\infty$ 时 $\gamma_u(\infty)=1$。
+
+## A 视角坐标的构造 {#sec-tn-construct}
+
+设曲线 $\gamma_A$ 以弧长参数（读数）$\tau$ 描写，其一维情形下由快度 $\theta(\tau)$ 给出（$\mathrm{d}\theta/\mathrm{d}\tau=a(\tau)$ 为曲率，直线上 $a=0$）。**A 视角坐标**定义为
+
+$$
+t=T(\tau)+x_A\sinh\theta(\tau),\qquad
+x=X(\tau)+x_A\cosh\theta(\tau),
+$$ {#eq-tn-fermi}
+
+其中 $T(\tau)=\int_0^{\tau}\cosh\theta(u)\,\mathrm{d}u$，$X(\tau)=\int_0^{\tau}\sinh\theta(u)\,\mathrm{d}u$。几何意义：从 $\gamma_A$ 上参数为 $\tau$ 的点出发，沿该点的正交单位方向移动距离 $x_A$。$\gamma_A$ 在此坐标中是 $x_A=0$，且 $t_A=\tau_A$（纵轴即参数本身）。
+
+::: {#prp-tn-metric}
+
+## A 视角坐标中的线元（$K=c$）
+
+$$
+\mathrm{d}s^{2}=\bigl(1+a(\tau)\,x_A\bigr)^{2}\,\mathrm{d}\tau^{2}-\mathrm{d}x_A^{2}
+$$ {#eq-tn-metric-c}
+:::
+
+**证明**：对 @eq-tn-fermi 求偏导：$\partial_\tau T=(1+a x_A)\cosh\theta$，$\partial_{x_A}T=\sinh\theta$，$\partial_\tau X=(1+a x_A)\sinh\theta$，$\partial_{x_A}X=\cosh\theta$。代入 $\mathrm{d}t^{2}-\mathrm{d}x^{2}$，用 $\cosh^{2}\theta-\sinh^{2}\theta=1$ 逐项化简即得。该式对任意 $a(\tau)$ **精确成立**，不是近似。
+
+::: {#prp-tn-metric-inf}
+
+## A 视角坐标中的线元（$K=\infty$）
+
+$$
+\mathrm{d}s^{2}=\mathrm{d}\tau^{2}
+$$ {#eq-tn-metric-inf}
+:::
+
+**证明**：$K=\infty$ 支的变换 @eq-tn-galilei 中 $t$ 不变，取 A 视角坐标 $t_A=t$、$x_A=x-X(t)$（沿 $\gamma_A$ 的横移），代入 $\mathrm{d}s^{2}=\mathrm{d}t^{2}$ 得 $\mathrm{d}s^{2}=\mathrm{d}t_A^{2}$；加速轨迹 $X(t)$ 不出现在结果中。
+
+两式并排：
+
+| | $K=c$ | $K=\infty$ |
+|------|------|------|
+| A 视角线元 | $\bigl(1+a(\tau)x_A\bigr)^{2}\mathrm{d}\tau^{2}-\mathrm{d}x_A^{2}$ | $\mathrm{d}\tau^{2}$ |
+| 线元是否含 $x_A$ | 含（$a\neq0$ 时） | 不含 |
+| 曲率 $a(\tau)$ 是否进入线元 | 进入 | 不进入 |
+
+: A 视角线元的两支对照 {#tbl-tn-metric}
+
+![A 视角坐标画在 $(t,x)$ 平面上：左为 $K=c$ 支，$x_A=$常数 是双曲线，$t_A=$常数 是过 $(-c^{2}/a,0)$ 的直线，线元随位置改变；右为 $K=\infty$ 支，线元不变，$t_A=$常数 仍是水平线](images/twins-noninertial-compare.png){#fig-tn-compare width=100%}
+
+## 坐标映射为单射的条件 {#sec-tn-injective}
+
+一张视角图要能画，坐标映射 $(\tau,x_A)\mapsto(t,x)$ 须在该处一一对应。两支的条件不同。
+
+::: {#prp-tn-domain}
+
+## $K=c$ 支的单射条件
+
+映射 @eq-tn-fermi 在点 $(\tau,x_A)$ 附近一一对应，当且仅当
+
+$$
+1+\frac{a(\tau)\,x_A}{c^{2}}>0 .
+$$ {#eq-tn-condition-c}
+:::
+
+**证明**：$g_{\tau\tau}=(1+a x_A/c^{2})^{2}$ 在 $x_A=-c^{2}/a$ 处为零。几何上，$t_A=\text{常数}$ 的线在 $(t,x)$ 平面中是直线 $t=\bigl(x+c^{2}/a\bigr)\tanh(a t_A/c)$（$a$ 为常数时），它们**全部过点** $(-c^{2}/a,\,0)$。该点是这族直线的公共交点：越过它，不同的 $(\tau,x_A)$ 对应同一事件，映射不再一一对应。公共交点位于 $\gamma_A$ 的曲率反方向、距离 $c^{2}/a$ 处。
+
+::: {#prp-tn-domain-inf}
+
+## $K=\infty$ 支的单射条件
+
+映射 $t_A=t$、$x_A=x-X(t)$ 的雅可比行列式为 $1$，处处非零；条件 @eq-tn-condition-c 在该支**没有对应的限制**，映射在全体 $(t,x)$ 上一一对应。
+:::
+
+**证明**：$\partial(t_A,x_A)/\partial(t,x)=\det\begin{pmatrix}1&0\\-X'(t)&1\end{pmatrix}=1$。
+
+## $K=c$ 支：对称双生子的 A 视角与 B 视角 {#sec-tn-lorentz}
+
+### 直线段：两视角的读数计算
+
+直线段上 $a=0$，线元为 $\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$，坐标映射处处单射。设 A、B 的相对速率为 $w$（两坐标系之间由 @eq-tn-lorentz 直接连接）。
+
+**A 视角**。取直线段起点为原点。$\gamma_A$：$x_A=0$；$\gamma_B$：$x_A=-w\,t_A$。
+
+沿 $\gamma_B$ 取读数增量为 $\mathrm{d}\tau_B$ 的两个相邻事件，用 @eq-tn-lorentz 换到 A 坐标（B 在自己的坐标中位置不变，$\mathrm{d}x_B=0$）：
+
+$$
+\mathrm{d}t_A=\gamma_w\,\mathrm{d}\tau_B
+\qquad\Longrightarrow\qquad
+\boxed{\ \mathrm{d}\tau_B=\frac{\mathrm{d}t_A}{\gamma_w}\ }
+$$ {#eq-tn-ratio-A}
+
+**B 视角**。同一计算，A 与 B 互换（$\gamma_B$：$x_B=0$；$\gamma_A$：$x_B=+w\,t_B$；换算时 $w\to-w$，$\gamma_w$ 不变）：
+
+$$
+\boxed{\ \mathrm{d}\tau_A=\frac{\mathrm{d}t_B}{\gamma_w}\ }
+$$ {#eq-tn-ratio-B}
+
+@eq-tn-ratio-A 与 @eq-tn-ratio-B 是**两个独立的计算**：前者把 $\gamma_B$ 上的事件对换到 A 坐标，后者把 $\gamma_A$ 上的事件对换到 B 坐标；两组事件对不同，两个关系式分别成立，二者之间没有矛盾。两个式子互为镜像（把 A、B 互换即得对方）——这一条由 @eq-tn-lorentz 在 $u\to-u$ 下的不变性给出，是计算的性质，不是外加的假设。
+
+**图上的两条线**（@fig-tn-views 上行）：
+
+- **等读数线**：从原点出发、以任意恒定速率运动的曲线，读数为 $\tau$ 的事件满足 $t^{2}-x^{2}/c^{2}=\tau^{2}$（把 $u=x/t$ 代入读数式即得）。$\gamma_A$ 上读 $\tau$ 的事件 $(\tau,0)$ 与 $\gamma_B$ 上读 $\tau$ 的事件 $(\gamma_w\tau,-w\gamma_w\tau)$ 在同一条曲线上。
+- **本系同时线**：$t_A=\text{常数}$，水平线。过 $(\tau,0)$ 的水平线与 $\gamma_B$ 交于 $t_A=\tau$ 处，由 @eq-tn-ratio-A 该点的 B 读数为 $\tau/\gamma_w$。
+
+### 弧线段：像的定义域
+
+弧线段上 $a\neq0$，A 视角坐标的线元由 @eq-tn-metric-c 给出，单射条件由 @prp-tn-domain 给出。取解析可解的镜像曲线对——$\gamma_A$ 以固定曲率 $+a$ 弯曲、$\gamma_B$ 以 $-a$ 镜像弯曲（$c=1$）——求 $\gamma_B$ 在 A 视角坐标中的像。
+
+$\gamma_B$ 上参数为 $u=a\tau_A$ 的事件在 A 视角坐标中满足（记 $\rho=1+x_A$）：
+
+$$
+\rho\sinh(a\tau')=\sinh u,\qquad \rho\cosh(a\tau')=2-\cosh u,
+$$
+
+两式平方相减消去 $\tau'$：
+
+$$
+\rho^{2}=5-4\cosh u .
+$$ {#eq-tn-rho}
+
+实像存在当且仅当 $\rho^{2}>0$：
+
+$$
+\cosh u<\frac54
+\qquad\Longleftrightarrow\qquad
+u<\operatorname{arccosh}\tfrac54=\ln 2 .
+$$ {#eq-tn-ln2}
+
+::: {#cor-tn-domain-ln2}
+
+## 镜像弯曲曲线对的像区间
+
+$K=c$ 支中，A 视角坐标里 $\gamma_B$ 的像存在的条件是
+
+$$
+a\,\tau_A<\ln 2\approx0.693 .
+$$
+
+临界处 $\rho=\sqrt{5-4\cosh(\ln 2)}=0$，即 $x_A=-c^{2}/a$：$\gamma_B$ 的像恰好到达 @eq-tn-condition-c 的边界。$a\tau_A\geq\ln2$ 时该处**没有实像**——图上该段无法表示 $\gamma_B$。
+:::
+
+![$K=c$ 支：镜像弯曲曲线对中 $\gamma_B$ 在 A 视角坐标中的像。$a\tau_A<\ln2$ 时像存在；临界处像到达 $x_A=-c^{2}/a$；其后（点线）没有实像](images/twins-noninertial-domain.png){#fig-tn-domain width=82%}
+
+**数值标度**（$c=1$ 时 $a\tau$ 无量纲；恢复 $c$ 后 $\tau_A<(c/a)\ln2$）：
+
+| $a$ | $c^{2}/a$ | $\tau_A^{*}=(c/a)\ln2$ |
+|------|------|------|
+| $9.8\,\mathrm{m/s^{2}}$ | $0.97$ 光年 | $0.67$ 年 |
+| $0.98\,\mathrm{m/s^{2}}$ | $9.7$ 光年 | $6.7$ 年 |
+| $0.098\,\mathrm{m/s^{2}}$ | $97$ 光年 | $67$ 年 |
+
+: $K=c$ 支像区间的数值标度 {#tbl-tn-scale}
+
+### B 视角
+
+B 视角坐标由同一个构造沿 $\gamma_B$ 建立。@prp-tn-isometry 的镜像映射把 $(\gamma_A,a,+x)$ 换为 $(\gamma_B,a,-x)$，故 @eq-tn-rho、@cor-tn-domain-ln2 与 @tbl-tn-scale 对 B 视角**逐字成立**（把 $x_A$ 换为 $x_B$、$\gamma_A$ 换为 $\gamma_B$）——这一条由 $\iota$ 保形搬移全部等式给出，是代数性质。
+
+### 整段读数
+
+由 @cor-tn-length：$s[\gamma_A]=s[\gamma_B]$。分段看：直线段上 A 视角与 B 视角各自的计算（@eq-tn-ratio-A、@eq-tn-ratio-B）给出的是**对方读数与本系坐标时的关系**，不是整段读数的比较；整段读数由积分 @eq-tn-rho 所属的同一套线元沿两条曲线分别积分，其相等由 @cor-tn-length 保证。
+
+## $K=\infty$ 支：对称双生子的 A 视角与 B 视角 {#sec-tn-galilean}
+
+### 线元与像
+
+A 视角线元为 $\mathrm{d}s^{2}=\mathrm{d}\tau^{2}$（@prp-tn-metric-inf），坐标映射处处单射（@prp-tn-domain-inf）。$\gamma_B$ 在 A 视角坐标中的像：设 $\gamma_B$ 为 $x=\xi(t)$，则像为
+
+$$
+t_A=t,\qquad x_A=\xi(t)-X(t),
+$$ {#eq-tn-image-inf}
+
+对任意 $\xi$ 存在，无定义域限制。沿像的读数：
+
+$$
+\mathrm{d}\tau_B=\mathrm{d}t_A
+\qquad\Longrightarrow\qquad
+s[\gamma_B]=t_A(M)-t_A(O).
+$$ {#eq-tn-read-inf}
+
+右端只含端点的 $t_A$ 坐标，与 $\xi$ 的形状无关。$\gamma_A$ 同理：$s[\gamma_A]=t_A(M)-t_A(O)$。
+
+### B 视角
+
+同一构造沿 $\gamma_B$ 建立：$t_B=t$，$x_B=x-\Xi(t)$（$\Xi$ 为 $\gamma_B$ 的轨迹）。雅可比同样恒为 $1$，线元同样为 $\mathrm{d}s^{2}=\mathrm{d}t_B^{2}$，读数同样只由端点给出。A 视角与 B 视角的两个时间坐标相等（@eq-tn-galilei 的第一式），故两视角给出同一个数。
+
+### 图（@fig-tn-views 下行）
+
+$K=\infty$ 支的等读数线与同时线重合，都是水平直线 $t=\tau$；A 视角与 B 视角互为镜像，两条曲线上的等读数点落在同一条水平线上。
+
+## 两支对照 {#sec-tn-compare}
+
+| | $K=c$ | $K=\infty$ |
+|------|------|------|
+| A 视角线元 | $\bigl(1+a(\tau)x_A\bigr)^{2}\mathrm{d}\tau^{2}-\mathrm{d}x_A^{2}$ | $\mathrm{d}\tau^{2}$ |
+| 直线段：对方读数与本系坐标时 | $\mathrm{d}\tau_B=\mathrm{d}t_A/\gamma_w$（A 视角）；$\mathrm{d}\tau_A=\mathrm{d}t_B/\gamma_w$（B 视角） | $\mathrm{d}\tau_B=\mathrm{d}t_A$；$\mathrm{d}\tau_A=\mathrm{d}t_B$ |
+| 弧线段：坐标映射单射条件 | $1+a x_A/c^{2}>0$ | 恒成立（雅可比 $=1$） |
+| 弧线段：$\gamma_B$ 在 A 视角中的像 | 存在当且仅当 $a\tau_A<\ln2$（镜像弯曲曲线对） | 处处存在 |
+| 整段读数 | $s[\gamma_A]=s[\gamma_B]$ | $s[\gamma_A]=s[\gamma_B]$，且都等于端点 $t$ 之差 |
+
+: 两支对照 {#tbl-tn-summary}
+
+![A 视角与 B 视角（$w=0.6c$，$\gamma_w=1.25$；每个面板只含所画视角的坐标与两条曲线）。上行 $K=c$：等读数线为 $t^{2}-x^{2}/c^{2}=\tau^{2}$，本系同时线为水平线，两线不同；下行 $K=\infty$：等读数线与同时线重合，均为 $t=\tau$。两支中 B 视角都是 A 视角的镜像](images/twins-ab-views.png){#fig-tn-views width=100%}
+
+## 结果 {#sec-tn-results}
+
+本章推导得出的结果，逐条列出：
+
+1. **镜像映射保持读数**（@prp-tn-isometry、@cor-tn-length）：$s[\gamma_A]=s[\gamma_B]$，两支都成立。依据是 $\iota$ 保二次型与曲线长度在等距映射下不变，未使用任何变换公式。
+2. **$K=c$ 支，直线段**（@eq-tn-ratio-A、@eq-tn-ratio-B）：A 视角算得 $\mathrm{d}\tau_B=\mathrm{d}t_A/\gamma_w$；B 视角算得 $\mathrm{d}\tau_A=\mathrm{d}t_B/\gamma_w$。两式互为镜像，分别关于不同的事件对。
+3. **$K=c$ 支，弧线段**（@prp-tn-metric、@prp-tn-domain、@cor-tn-domain-ln2）：A 视角线元为 $\bigl(1+a x_A/c^{2}\bigr)^{2}\mathrm{d}\tau^{2}-\mathrm{d}x_A^{2}$；坐标映射的单射条件为 $1+a x_A/c^{2}>0$；镜像弯曲曲线对中 $\gamma_B$ 的像存在当且仅当 $a\tau_A<\ln2$，临界处像到达 $x_A=-c^{2}/a$，其后没有实像。B 视角逐字相同。
+4. **$K=\infty$ 支**（@prp-tn-metric-inf、@prp-tn-domain-inf、@eq-tn-read-inf）：A 视角线元为 $\mathrm{d}\tau^{2}$，加速轨迹不进入；坐标映射处处单射；$\gamma_B$ 的像处处存在；读数只由端点的 $t$ 坐标给出，与路径形状无关。B 视角相同。
+5. **对比**（@tbl-tn-summary、@fig-tn-views）：两支的差别集中在弧线段——$K=c$ 支的 A 视角（及 B 视角）坐标对另一条曲线的像有区间限制，$K=\infty$ 支没有；直线段上，$K=c$ 支的两视角各给出一个 $1/\gamma_w$ 因子，$K=\infty$ 支给出 $1$。

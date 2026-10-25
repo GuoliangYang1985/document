@@ -557,51 +557,7 @@ $$
 
 表 @tbl-tc-ratios 中“对称与伽利略给出同一个数 $1$、洛伦兹给出 $1/\gamma_w$”这一点，在这一支里的对应说法是：对称判据所用的配对（起点相同 + 过程对称 ⟹ 同时）是绝对同时的配对，正是 $K=\infty$ 这一支的水平同时面；而 @prp-ta-equal 表明，在这一支里该结论不需要对称这个前提。
 
-### 非惯性坐标下的读数尺度 {#sec-ta-noninertial}
-
-前面的图都画在惯性坐标里。把坐标换成**加速观者自带的坐标**（非惯性坐标），两支的表现不同。
-
-![非惯性坐标下的两支对照：左为匀加速观者的坐标（Rindler），度规含位置因子；右为同一加速观者在绝对时间支下的坐标，度规不变](images/twins-noninertial-compare.png){#fig-ta-noninertial width=100%}
-
-**$K=c$ 支**：匀加速观者自带的坐标（Rindler 坐标）为
-
-$$
-t=\Bigl(\frac{1}{a}+x'\Bigr)\sinh(at'),\qquad
-x=\Bigl(\frac{1}{a}+x'\Bigr)\cosh(at')-\frac{1}{a}
-$$ {#eq-ta-rindler}
-
-代入 $\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$（取 $c=1$）：
-
-$$
-\mathrm{d}s^{2}=(1+ax')^{2}\,\mathrm{d}t'^{2}-\mathrm{d}x'^{2}
-$$ {#eq-ta-rindler-metric}
-
-度规出现依赖位置 $x'$ 的因子。惯性坐标里度规是常数 $\mathrm{diag}(1,-1)$；此处不再是。图（左）中 $t'=\text{常数}$ 是从 $-1/a$ 发出的斜线，其间距随位置改变。
-
-**$K=\infty$ 支**：设加速观者的位置为 $\xi(t)$，取其自带坐标
-
-$$
-t'=t,\qquad x'=x-\xi(t)
-$$ {#eq-ta-accel-coord}
-
-代入 $\mathrm{d}s^{2}=\mathrm{d}t^{2}$：
-
-$$
-\mathrm{d}s^{2}=\mathrm{d}t'^{2}
-$$ {#eq-ta-accel-metric}
-
-加速轨迹 $\xi$ 不出现在结果中，度规不含位置因子。图（右）中 $t'=\text{常数}$ 仍是水平线，与惯性系共享；$x'=\text{常数}$ 是被 $\xi(t)$ 推移的曲线。
-
-| | $K=c$ | $K=\infty$ |
-|------|------|------|
-| 非惯性坐标下的度规 | $(1+ax')^{2}\mathrm{d}t'^{2}-\mathrm{d}x'^{2}$，含位置因子 | $\mathrm{d}t'^{2}$，不含位置因子 |
-| 加速轨迹是否进入度规 | 进入 | 不进入 |
-| $t'=\text{常数}$ 线的形状 | 从 $-1/a$ 发出的斜线 | 水平线（与惯性系共享） |
-| 同一张图上一格代表的读数 | 随位置改变 | 处处相同 |
-
-: 非惯性坐标下的两支 {#tbl-ta-noninertial}
-
-这与 @prp-ta-equal 第 1 点是同一件事的两种说法：在 $K=\infty$ 支里，加速不进入读数——不仅在“掉头段历时趋于零”的意义上不进入，在“换到加速者自己的坐标去算”的意义上同样不进入。
+（坐标非惯性时的处理，见第 @sec-twins-noninertial 章。）
 
 ### 适用域 {#sec-ta-domain}
 
@@ -639,7 +595,7 @@ $$ {#eq-ta-accel-metric}
 | $K\to\infty$ 时双曲线变为水平线，各配对重合 | @sec-tc-galilean-geometry、@tbl-tc-gamma |
 | 地球版双生子：$K=c$ 下 $\Delta\tau_D=T$、$\Delta\tau_G=T/\gamma$ | @prp-ta-lorentz-result |
 | 地球版双生子：$K=\infty$ 下 $\Delta\tau_D=\Delta\tau_G=T$ | @prp-ta-equal |
-| 非惯性坐标下：$K=c$ 度规含位置因子，$K=\infty$ 不含 | @tbl-ta-noninertial |
+| 非惯性坐标下的线元与成立条件 | 第 @sec-twins-noninertial 章 |
 
 : 各命题及其依据 {#tbl-tc-conclusion}
 
