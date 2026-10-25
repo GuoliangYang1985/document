@@ -260,17 +260,17 @@
 \newcommand*\listoflistings{\listof{codelisting}{列表索引}}
 \usepackage{amsthm}
 \theoremstyle{plain}
-\newtheorem{lemma}{引理}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{定义}[chapter]
-\theoremstyle{plain}
-\newtheorem{theorem}{定理}[chapter]
-\theoremstyle{plain}
 \newtheorem{proposition}{命题}[chapter]
 \theoremstyle{plain}
 \newtheorem{corollary}{推论}[chapter]
 \theoremstyle{plain}
+\newtheorem{theorem}{定理}[chapter]
+\theoremstyle{plain}
+\newtheorem{lemma}{引理}[chapter]
+\theoremstyle{plain}
 \newtheorem{conjecture}{公理}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{定义}[chapter]
 \theoremstyle{remark}
 \AtBeginDocument{\renewcommand*{\proofname}{证明}}
 \newtheorem*{remark}{注记}
@@ -350,7 +350,7 @@
 \begin{itemize}
 \tightlist
 \item
-  章节~\ref{sec-symmetric-twins}：设计一个完全镜像对称的双生子实验，以对称性约束检验``钟慢效应''的测量解释与随身时钟物理过程之间的区分；
+  章节~\ref{sec-symmetric-twins}：设计一个完全镜像对称的双生子实验，以对称性约束检验``钟慢效应''的测量解释与随身时钟物理过程之间的区分；并区分两个不同的量------随配对规则改变的数，与钟面读数（匀速相对运动不对随身时钟施加任何操作）；
 \item
   章节~\ref{sec-transform-derivation}：不预设``光''这一具体物理对象，仅从线性性、不变对象的存在与群结构三条弱前提出发，严格导出伽利略变换与洛伦兹变换；
 \item
@@ -359,7 +359,7 @@
   章的全部算式，仅更换其解读方式------把伽利略变换与洛伦兹变换不看作两个并列理论，而看作同一个以恒速
   \(K\in(0,\infty]\) 为参数的群族的两个退化端点，并给出
   \(K\to\infty\)（伽利略）与
-  \(K\to0\)（Carroll）两个极限，最后指出「事件视界」意义上的黑洞只在
+  \(K\to0\)（Carroll）两个极限，最后指出``事件视界''意义上的黑洞只在
   \(K\) 有限时存在；
 \item
   章节~\ref{sec-invariant-speed-field-group}：把常数 \(K\)
@@ -367,19 +367,19 @@
   \(K(p)\)，证明逐点的群仍在而跨点的复合失效（需要额外的联络）；在受限的对角约定下算出
   Ricci 标量 \(R=2\Delta K/K\)
   与真空解，同时给出两条硬边界（\(G_{00}\equiv0\)、自由度
-  \(1<6\)），并说明「质量」这个参数只在 \(K=\infty\)
+  \(1<6\)），并说明''质量``这个参数只在 \(K=\infty\)
   一端是李代数的中央荷；
 \item
   章节~\ref{sec-invariant-speed-dynamics}：放弃刚性的空间度规，改用
   tetrad 约定 \(g_{\mu\nu}=K^{2}\eta_{\mu\nu}\)，严格算出 Christoffel
   闭式、Ricci 标量 \(R=-6\Box_\eta K/K^{3}\) 与非零的
   \(G_{00}=\frac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}\)，给出正能量密度的球对称例子；同时给出波动力学一端的结果------变系数
-  Klein--Gordon 方程，以及「非相对论极限只在 \(\vec\nabla K=0\)
-  处存在」这一严格结论；
+  Klein--Gordon 方程，以及``非相对论极限只在 \(\vec\nabla K=0\)
+  处存在''这一严格结论；
 \item
   章节~\ref{sec-invariant-speed-geometry}：把恒速场 \(K\)
-  从「唯一的几何自由度」降为完备标架中的一个约束参数------先证明「标架
-  \(=K\times\) 局部洛伦兹变换」必然给出共形平坦度规、Weyl
+  从''唯一的几何自由度``降为完备标架中的一个约束参数------先证明``标架
+  \(=K\times\) 局部洛伦兹变换''必然给出共形平坦度规、Weyl
   张量恒为零（因而装不下黑洞），再补上拖曳 \(\beta^{i}\) 与空间度规
   \(h_{ij}\)，达到 \(1+3+6=10\) 个自由度的完备分解；在含非对角拖曳项
   \(g_{03}=-r^{2}s^{2}\Omega\) 的计算族中列出全部 \(15\) 个 Christoffel
@@ -421,7 +421,10 @@
   章节~\ref{sec-twins-comparison}：回到第 章节~\ref{sec-symmetric-twins}
   章的实验，对同一个问题（A 的钟走一小段时 B
   的钟走多少）分别用对称、伽利略变换、洛伦兹变换各算一遍，把三个答案并排对照，并指出全部差别来自两条变换第一式之差
-  \(t'=t\) 与 \(t'=\gamma_u(t-ux/c^{2})\)；
+  \(t'=t\) 与
+  \(t'=\gamma_u(t-ux/c^{2})\)；再给出一条一般命题：协变性不蕴含读数诠释------\(K=c\)
+  与 \(K=\infty\)
+  两支的二次型都在各自的群作用下形式不变，而读数诠释不同；由此把随配对改变的量与不随配对改变的量分开；
 \item
   章节~\ref{sec-twins-noninertial}：把坐标换成沿曲线 A（或
   B）自身建立的非惯性坐标，在 \(K=c\) 与 \(K=\infty\) 两支下分别画出 A
@@ -547,6 +550,21 @@ DeepSeek 的深度协助，特此致谢。同时需要声明的是，鉴于 AI
 \section{实验结论}\label{ux5b9eux9a8cux7ed3ux8bba}
 
 在满足洛伦兹变换的条件的前提下，洛伦兹变换测量得到的``时间不一致''，对称性确定的``随身时钟时相等''。这说明：洛伦兹变换测量出的时间差异，并不等同于物理上时钟实际经历的差异。``钟慢效应''是特定理论下的测量结果，它不等同于随身时钟读数的物理过程的真实发生。
+
+由此得到两条区分，它们贯穿全书：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{匀速相对运动不施加任何作用}：式~\ref{eq-time-dilation-A} 中的
+  \(\Delta t_B\) 是 A 系对 B 的两个事件算出的坐标时差，它来自 A
+  所选用的那套同时面，即来自配对规则；它不涉及对 B
+  的随身时钟的任何操作。换一套配对，这个数就变，而 B 的钟面读数不变。
+\item
+  \textbf{两个量不共用同一个名字}：随配对规则改变的数，与钟面读数，是两个不同的量；它们在教材与文献中常共用``时间''一名。第
+  小节~\ref{sec-tc-covariance} 节给出这一区分的一般陈述。
+\end{enumerate}
 
 \bookmarksetup{startatroot}
 
@@ -12182,6 +12200,79 @@ t_A^{P}-t_A^{Q}=\gamma_w\,\Delta\tau_B-\Delta\tau_A
 伽利略变换 & \textbf{能}（\(t'=t\) 的直接推论） \\
 \end{longtable}
 
+\section{协变性与读数诠释}\label{sec-tc-covariance}
+
+上一节的问题是：只用变换能推出什么。本节的问题再一般一层------\textbf{协变性本身，能否决定``钟的读数''指的是什么？}
+
+\begin{proposition}[协变性不蕴含读数诠释]\protect\hypertarget{prp-tc-covariance}{}\label{prp-tc-covariance}
+
+设 \(\mathcal{G}\) 是一个变换群，设某个对象（二次型或一组方程）在
+\(\mathcal{G}\)
+的作用下形式不变。则这一形式不变性不决定读数是由路径决定还是由端点决定。
+
+\end{proposition}
+
+\textbf{证明}（在同一族结构内比较）。取恒速群 \(G_K\)（第
+章节~\ref{sec-invariant-speed-group} 章）的两个取值。二次型
+
+\[
+\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\frac{\mathrm{d}x^{2}}{K^{2}}
+\]
+
+在 \(G_K\) 的作用下形式不变------这对 \(K\) 的每一个取值都成立，\(K=c\)
+与 \(K=\infty\)
+都包含在内。于是协变性（此处即该二次型在群作用下的形式不变性）在两支中\textbf{同时成立}。而两支的读数诠释不同：
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(K=c\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(K=\infty\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+二次型在群作用下形式不变 & 是 & 是 \\
+读数尺度 & \(\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}\) &
+\(\mathrm{d}s^{2}=\mathrm{d}t^{2}\) \\
+读数由什么决定 & 由路径决定 & 由端点决定（\(t(R)-t(O)\)） \\
+\end{longtable}
+}
+
+既然同一条性质在两支中都成立而读数诠释不同，该性质就不是读数诠释的来源。
+
+\textbf{层级}：协变性是一个关于\textbf{对象在群作用下如何变换}的陈述；读数诠释是一个关于\textbf{被变换的记号指向什么}的陈述。前者规定变换规则，后者规定符号的所指。二者不在同一层，前者不推出后者。
+
+\textbf{旁证（方程层面）}：第 章节~\ref{sec-maxwell-equations}
+章给出一组在洛伦兹群下协变的方程；第
+章节~\ref{sec-galilean-electrodynamics}
+章给出一组在伽利略群下形式不变的方程（两种含义的区别见该章
+表~\ref{tbl-form-invariance}）。两套方程各在自己的群下形式不变，所属两支的读数诠释不同------与上面的结论一致。
+
+\textbf{由此得到的两条区分}（本章其余部分已在使用）：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{配对层的量}：随配对规则的选取而改变，例如
+  \(\mathrm{d}\tau_B/\mathrm{d}\tau_A=1/\gamma_w\)（表~\ref{tbl-tc-ratios}、小节~\ref{sec-tc-geometry}）。
+\item
+  \textbf{对象层的量}：不随配对规则的选取而改变，即曲线读数（第
+  章节~\ref{sec-twins-noninertial} 章的读数定义）。
+\end{enumerate}
+
+两者在教材与文献中常共用``时间''一名。上一节的 式~\ref{eq-tc-key}
+说明：只在变换层内走，到不了
+\(\Delta\tau_A=\Delta\tau_B\)；本节说明：即使再加上协变性这一层，仍然到不了。
+
 \section{地球版双生子}\label{sec-twins-absolute}
 
 \subsection{本节做什么}\label{sec-ta-scope}
@@ -12463,6 +12554,12 @@ A 80 岁时 B 也 80 岁（对称）；A 的洛伦兹测量给 \(80/\gamma_w\)�
 命题~\ref{prp-ta-lorentz-result} \\
 地球版双生子：\(K=\infty\) 下 \(\Delta\tau_D=\Delta\tau_G=T\) &
 命题~\ref{prp-ta-equal} \\
+协变性不蕴含读数诠释：两支都协变，读数诠释不同 &
+命题~\ref{prp-tc-covariance} \\
+配对层的量随配对改变；对象层的量不随配对改变 &
+小节~\ref{sec-tc-covariance} \\
+对称实验中，两段惯性段对读数之差的贡献恒为 \(0\) & 第
+章节~\ref{sec-twins-noninertial} 章 \\
 非惯性坐标下的线元与成立条件 & 第 章节~\ref{sec-twins-noninertial} 章 \\
 \end{longtable}
 

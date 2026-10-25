@@ -452,6 +452,43 @@ $$ {#eq-tc-equal-G}
 
 : 只用变换能推出什么 {#tbl-tc-only}
 
+## 协变性与读数诠释 {#sec-tc-covariance}
+
+上一节的问题是：只用变换能推出什么。本节的问题再一般一层——**协变性本身，能否决定“钟的读数”指的是什么？**
+
+:::: {#prp-tc-covariance}
+## 协变性不蕴含读数诠释
+
+设 $\mathcal{G}$ 是一个变换群，设某个对象（二次型或一组方程）在 $\mathcal{G}$ 的作用下形式不变。则这一形式不变性不决定读数是由路径决定还是由端点决定。
+::::
+
+**证明**（在同一族结构内比较）。取恒速群 $G_K$（第 @sec-invariant-speed-group 章）的两个取值。二次型
+
+$$
+\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\frac{\mathrm{d}x^{2}}{K^{2}}
+$$
+
+在 $G_K$ 的作用下形式不变——这对 $K$ 的每一个取值都成立，$K=c$ 与 $K=\infty$ 都包含在内。于是协变性（此处即该二次型在群作用下的形式不变性）在两支中**同时成立**。而两支的读数诠释不同：
+
+| | $K=c$ | $K=\infty$ |
+|------|------|------|
+| 二次型在群作用下形式不变 | 是 | 是 |
+| 读数尺度 | $\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$ | $\mathrm{d}s^{2}=\mathrm{d}t^{2}$ |
+| 读数由什么决定 | 由路径决定 | 由端点决定（$t(R)-t(O)$） |
+
+既然同一条性质在两支中都成立而读数诠释不同，该性质就不是读数诠释的来源。
+
+**层级**：协变性是一个关于**对象在群作用下如何变换**的陈述；读数诠释是一个关于**被变换的记号指向什么**的陈述。前者规定变换规则，后者规定符号的所指。二者不在同一层，前者不推出后者。
+
+**旁证（方程层面）**：第 @sec-maxwell-equations 章给出一组在洛伦兹群下协变的方程；第 @sec-galilean-electrodynamics 章给出一组在伽利略群下形式不变的方程（两种含义的区别见该章 @tbl-form-invariance）。两套方程各在自己的群下形式不变，所属两支的读数诠释不同——与上面的结论一致。
+
+**由此得到的两条区分**（本章其余部分已在使用）：
+
+1. **配对层的量**：随配对规则的选取而改变，例如 $\mathrm{d}\tau_B/\mathrm{d}\tau_A=1/\gamma_w$（@tbl-tc-ratios、@sec-tc-geometry）。
+2. **对象层的量**：不随配对规则的选取而改变，即曲线读数（第 @sec-twins-noninertial 章的读数定义）。
+
+两者在教材与文献中常共用“时间”一名。上一节的 @eq-tc-key 说明：只在变换层内走，到不了 $\Delta\tau_A=\Delta\tau_B$；本节说明：即使再加上协变性这一层，仍然到不了。
+
 ## 地球版双生子 {#sec-twins-absolute}
 
 ### 本节做什么 {#sec-ta-scope}
@@ -595,6 +632,9 @@ $$
 | $K\to\infty$ 时双曲线变为水平线，各配对重合 | @sec-tc-galilean-geometry、@tbl-tc-gamma |
 | 地球版双生子：$K=c$ 下 $\Delta\tau_D=T$、$\Delta\tau_G=T/\gamma$ | @prp-ta-lorentz-result |
 | 地球版双生子：$K=\infty$ 下 $\Delta\tau_D=\Delta\tau_G=T$ | @prp-ta-equal |
+| 协变性不蕴含读数诠释：两支都协变，读数诠释不同 | @prp-tc-covariance |
+| 配对层的量随配对改变；对象层的量不随配对改变 | @sec-tc-covariance |
+| 对称实验中，两段惯性段对读数之差的贡献恒为 $0$ | 第 @sec-twins-noninertial 章 |
 | 非惯性坐标下的线元与成立条件 | 第 @sec-twins-noninertial 章 |
 
 : 各命题及其依据 {#tbl-tc-conclusion}
