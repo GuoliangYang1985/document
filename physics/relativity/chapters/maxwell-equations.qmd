@@ -372,7 +372,7 @@ $$
 \left(\boldsymbol{\nabla} \times \mathbf{B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial E_z}{\partial t} = \mu_{0} J_{z}
 $$ {#eq-amp-z}
 
-合并三个分量方程 @eq-amp-x、@eq-amp-y、@eq-amp-z 为矢量形式 @eq-ampere，此方程给出安培-麦克斯韦定律。
+合并三个分量方程 @eq-amp-x、@eq-amp-y、@eq-amp-z 为矢量形 @eq-ampere，此方程给出安培-麦克斯韦定律。
 
 $$
 \boldsymbol{\nabla} \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}
@@ -849,7 +849,7 @@ $$
 \mathbf{E}'_\parallel = \mathbf{E}_\parallel, \qquad \mathbf{B}'_\parallel = \mathbf{B}_\parallel
 $$ {#eq-EB-parallel-proof}
 
-垂直分量发生电与磁的混合。由分量变换式 @eq-E-to-y 和 @eq-E-to-z，可写出垂直分量的矢量形式 @eq-E-perp-proof。
+垂直分量发生电与磁的混合。由分量变换 @eq-E-to-y 和 @eq-E-to-z，可写出垂直分量的矢量形式 @eq-E-perp-proof。
 
 $$
 \begin{aligned}
@@ -869,7 +869,7 @@ $$
 = v(B_y\mathbf{e}_z - B_z\mathbf{e}_y)
 $$ {#eq-v-cross-B-proof}
 
-同理，由分量变换式 @eq-B-to-y 和 @eq-B-to-z 可写出 @eq-B-perp-proof。
+同理，由分量变换 @eq-B-to-y 和 @eq-B-to-z 可写出 @eq-B-perp-proof。
 
 $$
 \begin{aligned}

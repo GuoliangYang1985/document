@@ -10,6 +10,7 @@ book:
   downloads: pdf
   chapters:
     - index.qmd
+    - chapters/reading-guide.qmd
     - chapters/symmetric-twins.qmd
     - chapters/transform-derivation.qmd
     - chapters/invariant-speed-group.qmd
@@ -25,6 +26,7 @@ book:
     - chapters/twins-comparison.qmd
     - chapters/twins-noninertial.qmd
     - chapters/notation.qmd
+    - chapters/term-index.qmd
     - chapters/references.qmd
 
 csl: csl/china-national-standard-gb-t-7714-2015-numeric.csl
@@ -38,6 +40,8 @@ lang: zh-CN
 # 分别渲染为「公理 N」「命题 N」「定义 N」「定理 N」「引理 N」「推论 N」。
 language:
   crossref-cnj-title: "公理"
+  crossref-ch-prefix: "第"
+  crossref-sec-prefix: "小节"
   crossref-prp-title: "命题"
   crossref-def-title: "定义"
   crossref-thm-title: "定理"

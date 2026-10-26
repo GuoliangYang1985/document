@@ -2,7 +2,7 @@
 
 ## 本章做什么 {#sec-tc-scope}
 
-第 @sec-symmetric-twins 章用对称双生子实验给出了一个结论：洛伦兹变换测得的“时间不一致”，与对称性确定的“随身时钟读数相等”不是同一件事。本章把这个结论做成**可对照的数字**。
+@sec-symmetric-twins 章用对称双生子实验给出了一个结论：洛伦兹变换测得的“时间不一致”，与对称性确定的“随身时钟读数相等”不是同一件事。本章把这个结论做成**可对照的数字**。
 
 做法是：对同一个问题，分别用三种互不依赖的输入各算一遍，然后把三个答案并排放在一起。
 
@@ -16,13 +16,13 @@ $$
 
 - **对称**（实验本身的结构）；
 - **洛伦兹变换**；
-- **伽利略变换**（第 @sec-two-source-field 章的公设 A2）。
+- **伽利略变换**（@sec-two-source-field 章的公设 A2）。
 
 三者彼此独立：对称不依赖任何变换；洛伦兹变换不依赖对称；伽利略变换既不依赖对称也不依赖洛伦兹。
 
 ## 实验设定 {#sec-tc-setup}
 
-沿用第 @sec-symmetric-twins 章的实验：
+沿用 @sec-symmetric-twins 章的实验：
 
 ![对称双生子实验](images/symmetric.png){#fig-twins-comparison width=92%}
 
@@ -134,7 +134,7 @@ $$ {#eq-tc-ratio-S}
 
 ### 第一步：A 与 B 的相对速度
 
-由 @eq-L1 推出速度合成公式（标准推论，推导见 @sec-transform-derivation）：两者相向运动、速率各为 $v$ 时，相对速度大小为
+由 @eq-L1 推出速度合成公式（标准推论，推导见 @sec-transform-derivation 章）：两者相向运动、速率各为 $v$ 时，相对速度大小为
 
 $$
 w=\frac{2v}{1+\dfrac{v^{2}}{c^{2}}},\qquad
@@ -324,7 +324,7 @@ $$ {#eq-tc-Bclock}
 
 现在问一个只涉及几何的问题：从 $O$ 出发、以任意恒定速度 $u$ 运动的钟，当它读数为 $\tau$ 时，它所在的事件在图上构成什么曲线？
 
-由 (L2) 与 (L1)（与 @eq-tc-Bclock 同样的计算）：这个钟的读数是 $t\sqrt{1-u^{2}/K^{2}}$，其中 $K$ 是不变量速度（第 @sec-invariant-speed-group 章；$K=c$ 为洛伦兹，$K=\infty$ 为伽利略）。令读数等于 $\tau$，得 $t=\tau\big/\sqrt{1-u^{2}/K^{2}}$。事件坐标是 $(t,\,x=ut)$，故 $u=x/t$，代入：
+由 (L2) 与 (L1)（与 @eq-tc-Bclock 同样的计算）：这个钟的读数是 $t\sqrt{1-u^{2}/K^{2}}$，其中 $K$ 是不变量速度（@sec-invariant-speed-group 章；$K=c$ 为洛伦兹，$K=\infty$ 为伽利略）。令读数等于 $\tau$，得 $t=\tau\big/\sqrt{1-u^{2}/K^{2}}$。事件坐标是 $(t,\,x=ut)$，故 $u=x/t$，代入：
 
 ::: {#prp-tc-hyperbola}
 
@@ -413,7 +413,7 @@ $t\to\infty$ 时 B 与 A 的读数增量比趋于 $(1-v^{2}/c^{2})/(1+v^{2}/c^{2
 
 : 投影分歧随不变量速度 $K$ 的变化 {#tbl-tc-gamma}
 
-**结论**：投影分歧 $\gamma_w-1$ 全部来自 @eq-tc-hyperbola 中的 $1/K^{2}$ 项。$K$ 有限时等读数轨迹是双曲线，各系的同时线互不平行，配对分离（@fig-tc-galilean 左）；$K\to\infty$ 时曲线拉平为直线，所有系共享同一同时面，配对重合（@fig-tc-galilean 右）。$K\to\infty$ 时 @sec-tc-lifespan 中两套配对的两个数合一，差为零（@fig-tc-galilean 右）。这与第 @sec-invariant-speed-group 章的群收缩（结构常数 $1/K^{2}\to0$）和第 @sec-quantum-phase 章量子相态的条件（$K\to\infty$ 且 $\vec\nabla K=0$）是同一个极限。
+**结论**：投影分歧 $\gamma_w-1$ 全部来自 @eq-tc-hyperbola 中的 $1/K^{2}$ 项。$K$ 有限时等读数轨迹是双曲线，各系的同时线互不平行，配对分离（@fig-tc-galilean 左）；$K\to\infty$ 时曲线拉平为直线，所有系共享同一同时面，配对重合（@fig-tc-galilean 右）。$K\to\infty$ 时 @sec-tc-lifespan 中两套配对的两个数合一，差为零（@fig-tc-galilean 右）。这与 @sec-invariant-speed-group 章的群收缩（结构常数 $1/K^{2}\to0$）和 @sec-quantum-phase 章量子相态的条件（$K\to\infty$ 且 $\vec\nabla K=0$）是同一个极限。
 
 ## 只用变换能推出什么 {#sec-tc-only-transform}
 
@@ -462,7 +462,7 @@ $$ {#eq-tc-equal-G}
 设 $\mathcal{G}$ 是一个变换群，设某个对象（二次型或一组方程）在 $\mathcal{G}$ 的作用下形式不变。则这一形式不变性不决定读数是由路径决定还是由端点决定。
 ::::
 
-**证明**（在同一族结构内比较）。取恒速群 $G_K$（第 @sec-invariant-speed-group 章）的两个取值。二次型
+**证明**（在同一族结构内比较）。取恒速群 $G_K$（@sec-invariant-speed-group 章）的两个取值。二次型
 
 $$
 \mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\frac{\mathrm{d}x^{2}}{K^{2}}
@@ -480,12 +480,12 @@ $$
 
 **层级**：协变性是一个关于**对象在群作用下如何变换**的陈述；读数诠释是一个关于**被变换的记号指向什么**的陈述。前者规定变换规则，后者规定符号的所指。二者不在同一层，前者不推出后者。
 
-**旁证（方程层面）**：第 @sec-maxwell-equations 章给出一组在洛伦兹群下协变的方程；第 @sec-galilean-electrodynamics 章给出一组在伽利略群下形式不变的方程（两种含义的区别见该章 @tbl-form-invariance）。两套方程各在自己的群下形式不变，所属两支的读数诠释不同——与上面的结论一致。
+**旁证（方程层面）**：@sec-maxwell-equations 章给出一组在洛伦兹群下协变的方程；@sec-galilean-electrodynamics 章给出一组在伽利略群下形式不变的方程（两种含义的区别见该章 @tbl-form-invariance）。两套方程各在自己的群下形式不变，所属两支的读数诠释不同——与上面的结论一致。
 
 **由此得到的两条区分**（本章其余部分已在使用）：
 
 1. **配对层的量**：随配对规则的选取而改变，例如 $\mathrm{d}\tau_B/\mathrm{d}\tau_A=1/\gamma_w$（@tbl-tc-ratios、@sec-tc-geometry）。
-2. **对象层的量**：不随配对规则的选取而改变，即曲线读数（第 @sec-twins-noninertial 章的读数定义）。
+2. **对象层的量**：不随配对规则的选取而改变，即曲线读数（@sec-twins-noninertial 章的读数定义）。
 
 两者在教材与文献中常共用“时间”一名。上一节的 @eq-tc-key 说明：只在变换层内走，到不了 $\Delta\tau_A=\Delta\tau_B$；本节说明：即使再加上协变性这一层，仍然到不了。
 
@@ -505,7 +505,7 @@ $$
 在地球系中，弟弟 $D$ 始终停留在 $x=0$；哥哥 $G$ 以速率 $v$ 沿直线飞离到 $x=d$，掉头后以同样速率飞回，在事件 $R$ 与 $D$ 重逢。记 $O$ 为分离事件，取地球系全程时间 $T=2d/v$。
 :::
 
-与第 @sec-symmetric-twins 章的镜像实验相比，差别只有一条：**掉头的只有一个人**。$D$ 的世界线是一条直线，$G$ 的世界线是一条折线，两者不互为镜像。
+与 @sec-symmetric-twins 章的镜像实验相比，差别只有一条：**掉头的只有一个人**。$D$ 的世界线是一条直线，$G$ 的世界线是一条折线，两者不互为镜像。
 
 ### 第一支：$K=c$ {#sec-ta-branch-c}
 
@@ -592,9 +592,9 @@ $$
 - **$K=c$**：等固有读数轨迹是校准双曲线 $t^{2}-x^{2}/c^{2}=\tau^{2}$（见 @sec-tc-geometry），同时面随参考系倾斜。
 - **$K=\infty$**：该双曲线变为水平直线 $t=\tau$，与同时面重合，所有参考系共享。
 
-表 @tbl-tc-ratios 中“对称与伽利略给出同一个数 $1$、洛伦兹给出 $1/\gamma_w$”这一点，在这一支里的对应说法是：对称判据所用的配对（起点相同 + 过程对称 ⟹ 同时）是绝对同时的配对，正是 $K=\infty$ 这一支的水平同时面；而 @prp-ta-equal 表明，在这一支里该结论不需要对称这个前提。
+@tbl-tc-ratios 中“对称与伽利略给出同一个数 $1$、洛伦兹给出 $1/\gamma_w$”这一点，在这一支里的对应说法是：对称判据所用的配对（起点相同 + 过程对称 ⟹ 同时）是绝对同时的配对，正是 $K=\infty$ 这一支的水平同时面；而 @prp-ta-equal 表明，在这一支里该结论不需要对称这个前提。
 
-（坐标非惯性时的处理，见第 @sec-twins-noninertial 章。）
+（坐标非惯性时的处理，见 @sec-twins-noninertial 章。）
 
 ### 适用域 {#sec-ta-domain}
 
@@ -634,8 +634,8 @@ $$
 | 地球版双生子：$K=\infty$ 下 $\Delta\tau_D=\Delta\tau_G=T$ | @prp-ta-equal |
 | 协变性不蕴含读数诠释：两支都协变，读数诠释不同 | @prp-tc-covariance |
 | 配对层的量随配对改变；对象层的量不随配对改变 | @sec-tc-covariance |
-| 对称实验中，两段惯性段对读数之差的贡献恒为 $0$ | 第 @sec-twins-noninertial 章 |
-| 非惯性坐标下的线元与成立条件 | 第 @sec-twins-noninertial 章 |
+| 对称实验中，两段惯性段对读数之差的贡献恒为 $0$ | @sec-twins-noninertial |
+| 非惯性坐标下的线元与成立条件 | @sec-twins-noninertial |
 
 : 各命题及其依据 {#tbl-tc-conclusion}
 

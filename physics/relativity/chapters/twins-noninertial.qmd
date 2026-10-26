@@ -2,7 +2,7 @@
 
 ## 本章的范围 {#sec-tn-scope}
 
-第 @sec-twins-comparison 章的推导都在惯性坐标中进行。本章把坐标换成**沿曲线 A（或曲线 B）自身建立的坐标**——坐标非惯性——在 $K=c$ 与 $K=\infty$ 两支下分别画出 A 视角与 B 视角的时空图，并沿图上的像计算读数；最后沿三段结构（直线段—转向段—直线段）用校验线切割逐段比较两侧读数（@sec-tn-cut）。
+@sec-twins-comparison 章的推导都在惯性坐标中进行。本章把坐标换成**沿曲线 A（或曲线 B）自身建立的坐标**——坐标非惯性——在 $K=c$ 与 $K=\infty$ 两支下分别画出 A 视角与 B 视角的时空图，并沿图上的像计算读数；最后沿三段结构（直线段—转向段—直线段）用校验线切割逐段比较两侧读数（@sec-tn-cut）。
 
 **输入清单**（全部是数学对象）：
 
@@ -309,7 +309,7 @@ $$ {#eq-tn-calibration-m}
 $K=\infty$ 支中，校验线为 $t=t_O+\tau$ 与 $t=t_M-\sigma$。
 :::
 
-$K=c$ 支的校验线即 @fig-tn-views 中的等读数线（$t^{2}-x^{2}/c^{2}=\tau^{2}$），也就是第 @sec-twins-comparison 章的**校准双曲线**（@eq-tc-hyperbola）：落在 $\Lambda_O(\tau)$ 上当且仅当该事件由 $O$ 出发的读数为 $\tau$。本节把它用作切割工具。$K=\infty$ 支的校验线是水平线（等读数线与同时线重合，见 @sec-tn-galilean）。
+$K=c$ 支的校验线即 @fig-tn-views 中的等读数线（$t^{2}-x^{2}/c^{2}=\tau^{2}$），也就是 @sec-twins-comparison 章的**校准双曲线**（@eq-tc-hyperbola）：落在 $\Lambda_O(\tau)$ 上当且仅当该事件由 $O$ 出发的读数为 $\tau$。本节把它用作切割工具。$K=\infty$ 支的校验线是水平线（等读数线与同时线重合，见 @sec-tn-galilean）。
 
 ::: {#prp-tn-calibration}
 

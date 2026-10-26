@@ -1,0 +1,62 @@
+# 关键词索引 {.unnumbered #sec-term-index}
+
+本索引由 tools/build_index.py 从各章「术语说明」的词条生成，页码为正文页；
+若后续改动版式，重跑该脚本即可刷新。
+
+| 词条 | 首次出现的章/节来源 | 页码 |
+|---|---|---|
+| Bargmann 代数 |  | 76、80 |
+| Bargmann 群 | invariant-speed-dynamics.qmd | 26、28、30、43、44、46、58、59 等 |
+| Carroll 结构 | invariant-speed-group.qmd | 30 |
+| Casimir 算符 | quantum-phase.qmd | 44、58、85、95 |
+| Christoffel 符号 | invariant-speed-field.qmd | 36、37、38、46、48、64、65、76 |
+| Einstein 张量 | invariant-speed-field.qmd | 40、46、47、50、61、67、142、155 等 |
+| Inönü–Wigner 收缩 |  | 12、80、95 |
+| Newton–Cartan 几何 | invariant-speed-group.qmd | 27、28、30、123 |
+| Ricci 张量 / Ricci 标量 | invariant-speed-field.qmd | 46 |
+| Schwarzschild |  | 5、54、59、61、63、70、71、72 等 |
+| Weyl 不变量 | invariant-speed-geometry.qmd | 61、71、75 |
+| Weyl 张量 | invariant-speed-dynamics.qmd | 5、53、54、59、60、62、68、71 等 |
+| lapse $K$ | invariant-speed-geometry.qmd | 75 |
+| shift $\beta^{i}$ | invariant-speed-geometry.qmd | 62、75、217、222 |
+| tetrad / 标架 | invariant-speed-dynamics.qmd | 60、222 |
+| 上闭链 / 上边界 | quantum-phase.qmd | 95、222 |
+| 不变对象 | transform-derivation.qmd | 4、5、6、15、16、21、22、222 |
+| 中央扩张 | invariant-speed-field.qmd | 5、26、30、43、44、46、58、59 等 |
+| 中央荷 |  | 5、28、43、44、45、58、76、77 等 |
+| 中央荷 $\hat M$ | quantum-phase.qmd | 5、28、43、44、45、58、76、77 等 |
+| 事件视界 | invariant-speed-geometry.qmd | 5、27、28、30、71、75、222 |
+| 共形平坦 | invariant-speed-dynamics.qmd | 5、54、60、61、62、74、222 |
+| 剪切 | invariant-speed-geometry.qmd | 62、63、67、75、119、122、222 |
+| 单射条件 |  | 202、203、204、213、215、222 |
+| 同时面 |  | 192、194、195、196、197、207、213、215 等 |
+| 对称双生子 |  | 1、29、180、181、190、199、203、206 等 |
+| 对角约定 | invariant-speed-field.qmd | 5、36、41、42、43、45、46、47 等 |
+| 射影表示 | quantum-phase.qmd | 5、76、83、85、89、91、95、222 |
+| 射线表示 |  | 28、80、222 |
+| 恒速 $K$ | invariant-speed-group.qmd | 1、4、5、16、17、30、222 |
+| 恒速场 | invariant-speed-field.qmd | 1、5、31、32、36、41、42、43 等 |
+| 恒速群 |  | 5、16、20、23、24、25、26、30 等 |
+| 恒速群 $G_K$ | invariant-speed-group.qmd | 25、26、30、62、64、76、77、193 等 |
+| 惯性系 $S$、$S'$ | transform-derivation.qmd | 4、5、15、17、96、106、113、124 等 |
+| 拖曳 |  | 5、61、62、63、64、67、69、71 等 |
+| 术语 | invariant-speed-dynamics.qmd | 15、29、30、46、60、75、93、94 等 |
+| 李代数丛 | invariant-speed-field.qmd | 34、46、223 |
+| 李代数收缩 |  | 5、76、223 |
+| 标架 |  | 5、42、47、48、60、61、62、74 等 |
+| 校验线 |  | 6、199、207、208、209、210、211、212 等 |
+| 相对速度 $v$ | transform-derivation.qmd | 2、15、17、223 |
+| 相态参数 | quantum-phase.qmd | 76、77、92、93、94、223 |
+| 纤维 | invariant-speed-field.qmd | 32、34、35、45、46、223 |
+| 线性性 | transform-derivation.qmd | 4、5、6、15、17、32、134、147 等 |
+| 群丛 | invariant-speed-field.qmd | 32、36、45、46、223 |
+| 群收缩 | invariant-speed-group.qmd | 22、24、26、28、29、30、34、44 等 |
+| 群结构 | transform-derivation.qmd | 4、5、6、7、8、9、11、12 等 |
+| 联络 | invariant-speed-field.qmd | 5、31、35、36、43、45、46、63 等 |
+| 读数 | invariant-speed-group.qmd | 1、2、3、4、6、29、30、137 等 |
+| 质量超选择 |  | 5、80、94、224 |
+| 超选择规则 | quantum-phase.qmd | 80、85、95、224 |
+| 配对 |  | 1、2、3、29、117、176、185、187 等 |
+| 重整化收缩 | quantum-phase.qmd | 80、94、95、224 |
+| 静止限 | invariant-speed-geometry.qmd | 71、75、224 |
+| 非相对论极限 | invariant-speed-dynamics.qmd | 2、5、29、47、56、58、59、60 等 |

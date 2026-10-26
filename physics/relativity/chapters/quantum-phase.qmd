@@ -45,7 +45,7 @@ $$
 
 ### 恒速群的 $K\to\infty$ 极限
 
-第 @sec-invariant-speed-group 章的恒速群 $G_K$（取 $1+1$ 维，空间部分同理）：
+@sec-invariant-speed-group 章的恒速群 $G_K$（取 $1+1$ 维，空间部分同理）：
 
 $$
 t'=\frac{t-\dfrac{vx}{K^{2}}}{\sqrt{1-\dfrac{v^{2}}{K^{2}}}},\qquad
@@ -106,7 +106,7 @@ $$
 
 ### $\vec\nabla K=0$ 不是简化假设，而是前提
 
-第 @sec-invariant-speed-field-group 章已证明：当 $K$ 随点变化时，逐点的 $G_{K(p)}$ 各自成群，但**跨点的复合不再是群运算**——复合多出 $\propto\partial_\mu K/K$ 的项。
+@sec-invariant-speed-field-group 章已证明：当 $K$ 随点变化时，逐点的 $G_{K(p)}$ 各自成群，但**跨点的复合不再是群运算**——复合多出 $\propto\partial_\mu K/K$ 的项。
 
 **本章第二部分要做的事是"表示论"**：表示论的对象是**一个群**。因此：
 
@@ -160,7 +160,7 @@ $$
 [\hat H,\hat P_i]=[\hat P_i,\hat P_j]=[\hat B_i,\hat B_j]=0
 $$ {#eq-qp-algK}
 
-全部结构常数中 $K$ 只以 $1/K^{2}$ 出现（第 @sec-invariant-speed-group 章的结论）。
+全部结构常数中 $K$ 只以 $1/K^{2}$ 出现（@sec-invariant-speed-group 章的结论）。
 
 ::: {#thm-qp-contraction}
 ## 朴素收缩
@@ -186,7 +186,7 @@ E=\sqrt{m^{2}K^{4}+\lvert\mathbf{p}\rvert^{2}K^{2}}
 =mK^{2}+\frac{\lvert\mathbf{p}\rvert^{2}}{2m}+O\!\left(\frac{1}{K^{2}}\right)
 $$ {#eq-qp-expE}
 
-即 $\hat H$ **不保持有限**：$\hat H/K^{2}\to m\cdot\mathbf 1$。$\hat H$ 发散而结构常数 $1/K^{2}$ 消失，两者相乘留下有限的非零极限。这就是 Inönü–Wigner 收缩中的**重整化收缩**。
+即 $\hat H$ **不保持有限**：$\hat H/K^{2}\to m\cdot\mathbf 1$。$\hat H$ 发散而结构常数 $1/K^{2}$ 消失，两者相乘留下有限的非零极限。这就是 Inönü–Wigner 收缩中的**重整化收缩**（该方法与它在表示上的后果见 [@inonuwigner1953]，其中已指出伽利略群的“差一个因子”表示在薛定谔方程中出现）。
 
 ::: {#thm-qp-central}
 ## 中央荷的诞生
@@ -214,6 +214,8 @@ $$
 
 所得的代数**不是** @eq-qp-gal，而是带中央扩张的 **Bargmann 代数**。
 :::
+
+**出处**：伽利略群的射线表示、质量以中央荷的身份出现、以及由此而来的质量超选择规则，原始处理见 Bargmann 1954 [@bargmann1954]；本章用 (M1)—(M4) 重做这条链，目的是把它的**定义域条件**（$K\to\infty$ 且 $\vec\nabla K=0$）显式写出来，见 @sec-qp-scope-limit。
 
 **证明**：第一式用 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 代入 @eq-qp-algK；第二式用 $[mK^{2}\mathbf 1,\cdot]=0$。极限中 $\hat H_{\text{nr}}/K^{2}\to0$。
 
@@ -632,7 +634,7 @@ $$
 
 ### 第一层：群层面——根本没有可供表示的群
 
-第 @sec-invariant-speed-field-group 章已证明：$K=K(p)$ 时逐点 $G_{K(p)}$ 各自成群，但跨点复合多出 $\propto\partial_\mu K/K$ 的项，**不构成群**。而第二部分的全部工具（李代数、上同调 $H^{2}$、射影表示、Schur 引理）都以"存在一个李群"为前提。
+@sec-invariant-speed-field-group 章已证明：$K=K(p)$ 时逐点 $G_{K(p)}$ 各自成群，但跨点复合多出 $\propto\partial_\mu K/K$ 的项，**不构成群**。而第二部分的全部工具（李代数、上同调 $H^{2}$、射影表示、Schur 引理）都以"存在一个李群"为前提。
 
 $$
 \vec\nabla K\neq0\ \Longrightarrow\ \text{无全局群}\ \Longrightarrow\ \text{第二部分的对象不存在}
@@ -709,7 +711,7 @@ $$ {#eq-qp-residual}
 
 ### 黑洞视界处
 
-第 @sec-invariant-speed-geometry 章给出：Schwarzschild 解 $K(r)=\sqrt{1-\dfrac{2M}{r}}$，视界 $r\to r_s=2M$ 处
+@sec-invariant-speed-geometry 章给出：Schwarzschild 解 $K(r)=\sqrt{1-\dfrac{2M}{r}}$，视界 $r\to r_s=2M$ 处
 
 $$
 K\to0,\qquad \lvert\nabla K\rvert=\frac{M}{r^{2}\sqrt{1-\frac{2M}{r}}}\to\infty
@@ -746,7 +748,7 @@ $$
 
 第三层要成立，需要外加一条前提：$G_K$ 框架是任何关于量子与引力的理论都必须落到的底层结构。这条前提本章没有给出——它不来自 @thm-qp-jacobi，也不来自 @eq-qp-residual，因为那两条的**输入**就是 $(G_K,\ \vec\nabla K)$ 这一套处置；用它们去推出 (C)，等于用一个结构的成员身份去否认该结构之外成员的存在。
 
-本书自己在第 @sec-invariant-speed-group 章把恒速群写成一整个参数族 $G_K$，$K=c$ 只是其中一个取值，同一章还列出至少三套自洽的输入（对称、伽利略、洛伦兹）给出不同的答案。既然框架本身是族中的一元，本书就没有据它去宣称“唯一真理”的资格——这一条与前言的立场是同一条。
+本书自己在 @sec-invariant-speed-group 章把恒速群写成一整个参数族 $G_K$，$K=c$ 只是其中一个取值，同一章还列出至少三套自洽的输入（对称、伽利略、洛伦兹）给出不同的答案。既然框架本身是族中的一元，本书就没有据它去宣称“唯一真理”的资格——这一条与前言的立场是同一条。
 
 具体地说，以下进路**不以 (A) 的前提为出发点**，因此本节的结论对它们既不支持也不反对：弯曲时空上的量子场论（不以非相对论极限为前提）、半经典引力 $G_{\mu\nu}=8\pi G\,\langle T_{\mu\nu}\rangle$、广义相对论的有效场论处理、弦论、圈量子引力。它们是否成立是与本节不同的问题；本框架没有裁判它们所需要的术语，也没有裁判它们所需要的结论。
 

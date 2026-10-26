@@ -2,9 +2,9 @@
 
 ## 本章的范围 {#sec-isd-scope}
 
-**一句话**：把第 @sec-invariant-speed-field-group 章的「对角约定」换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
+**一句话**：把 @sec-invariant-speed-field-group 章的「对角约定」换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
 
-**与上一章的关系**：第 @sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$。本章说明那是**约定的后果，不是恒速场群的固有性质**——换用 tetrad 约定后 $G_{00}\neq0$。
+**与上一章的关系**：@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$。本章说明那是**约定的后果，不是恒速场群的固有性质**——换用 tetrad 约定后 $G_{00}\neq0$。
 
 **本章的方法声明**：以下每个闭式都由符号计算逐项核验（脚本 `images/conformal-curvature.py`）：先把闭式与直接由 Christoffel 算出的结果相减，再判定差值是否恒为零。脚本输出的核验结果为：Christoffel 闭式 OK、Ricci 标量闭式 True、$G_{00}$ 闭式 True、$u=\ln K$ 形式 True、$G_{\mu\nu}$ 通式 OK。不做任何近似，不省略任何项。
 
@@ -55,7 +55,7 @@ $$
 g_{00}=K^{2},\qquad g_{ij}=-K^{2}\delta_{ij},\qquad g_{0i}=0
 $$ {#eq-isd-g-comp}
 
-**空间部分不再是常数**：$g_{ij}=-K^{2}\delta_{ij}$ 随 $K(t,\mathbf{x})$ 变形。这是对第 @sec-invariant-speed-field-group 章那个约定的唯一改动。
+**空间部分不再是常数**：$g_{ij}=-K^{2}\delta_{ij}$ 随 $K(t,\mathbf{x})$ 变形。这是对 @sec-invariant-speed-field-group 章那个约定的唯一改动。
 
 逆度规与行列式：
 
@@ -70,7 +70,7 @@ $$ {#eq-isd-det}
 
 ### 与前一章的一致性检验
 
-取 $K$ 为常数时，@eq-isd-g 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$，与第 @sec-invariant-speed-group 章的 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$ 一致。✓
+取 $K$ 为常数时，@eq-isd-g 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$，与 @sec-invariant-speed-group 章的 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$ 一致。✓
 
 ## Christoffel 符号 {#sec-isd-christoffel}
 
@@ -304,7 +304,7 @@ $$
 T_{00}=\frac{1}{\kappa}G_{00}=\frac{\alpha^{2}}{\kappa\,r^{2}(K_0r+\alpha)^{2}}>0
 $$
 
-即**该 $K$ 场对应一个正的能量密度分布**。这与第 @sec-invariant-speed-field-group 章对角约定下 $G_{00}\equiv0$ 的结论相反——那个零是约定造成的。
+即**该 $K$ 场对应一个正的能量密度分布**。这与 @sec-invariant-speed-field-group 章对角约定下 $G_{00}\equiv0$ 的结论相反——那个零是约定造成的。
 
 ### 同一个例子的 Ricci 标量
 
@@ -336,7 +336,7 @@ $$
 
 | 约定 | 度规 | $G_{00}$ | Weyl 张量 | 能容纳什么 |
 |---|---|---|---|---|
-| 对角（第 @sec-invariant-speed-field-group 章） | $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ | $\equiv0$ | 一般非零 | 曲率，但无能量密度 |
+| 对角（@sec-invariant-speed-field-group 章） | $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ | $\equiv0$ | 一般非零 | 曲率，但无能量密度 |
 | 共形 / tetrad（本章） | $K^{2}\eta_{\mu\nu}$ | **非零**（@eq-isd-G00） | $\equiv0$ | 能量密度，但无真空外解 |
 | 一般度规（3+1 维） | $g_{\mu\nu}$，$10$ 个分量 | 任意 | 任意 | 全部 |
 
@@ -346,7 +346,7 @@ $$
 
 ### 逐点的李代数
 
-在第 @sec-invariant-speed-field-group 章已建立 1+1 维的情形。推广到 3+1 维，$p$ 点的 boost 生成元 $B_i$、时间平移 $H$、空间平移 $P_i$ 满足（$K$ 视为该点的常数 $K(p)$）：
+在 @sec-invariant-speed-field-group 章已建立 1+1 维的情形。推广到 3+1 维，$p$ 点的 boost 生成元 $B_i$、时间平移 $H$、空间平移 $P_i$ 满足（$K$ 视为该点的常数 $K(p)$）：
 
 $$
 [B_i,H]=P_i,\qquad [B_i,P_j]=\delta_{ij}\frac{1}{K(p)^{2}}\,H,\qquad [H,P_i]=0
@@ -365,7 +365,7 @@ $$
 \frac{1}{K^{2}}\longrightarrow0\qquad (K\to\infty)
 $$
 
-一句话完成收缩。这仍是第 @sec-invariant-speed-field-group 章的结论，此处只补上 3+1 维的显式括号。
+一句话完成收缩。这仍是 @sec-invariant-speed-field-group 章的结论，此处只补上 3+1 维的显式括号。
 
 ## 波动力学之二：变系数波动方程 {#sec-isd-wave}
 
