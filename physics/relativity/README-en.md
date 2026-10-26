@@ -30,7 +30,7 @@ The book's stance: **list the conclusions of each layer separately, each with it
 | Part | Ch. | Title | Role |
 |------|-----|-------|------|
 | Preface | — | Preface | Problem, method, roadmap |
-| **Main line** | 1 | The symmetric-twins experiment | Symmetry criterion: same start + symmetric process ⟹ equal readings |
+| **Main line** | 1 | The symmetric-twins experiment | A formula-free opening: mirror symmetry ⟹ equal readings; Lorentz pairing gives another number; the two sit at different layers |
 | | 2 | Deriving the Galilean and Lorentz transformations | One derivation; the split sits in the third axiom |
 | | 3 | The constant-speed group | The parametrised family $G_K$, structure constant $1/K^2$ |
 | | 4 | The constant-speed field group | Promoting $K$ from a constant to a field |
@@ -42,7 +42,8 @@ The book's stance: **list the conclusions of each layer separately, each with it
 | | 10 | Propagation and two-source fields under the Galilean postulate | Pure mathematical consequences of axioms A1 + A2 |
 | | 11 | Symmetric tensor fields on flat spacetime | Equivalence and breakdown of the $(\eta,h)$ and $g$ bookkeepings |
 | **Extensions** | 12 | The clock-coupling framework | Rate functions, moduli space, uplift to the operator level |
-| | 13 | The symmetric twins revisited | Three inputs side by side; the Earth-version twins under both sets of axioms |
+| | 13 | The symmetric twins revisited | Three inputs side by side; the criterion separating covariance from the clock-reading scale; the Earth-version twins under both sets of axioms |
+| | 14 | The symmetric twins in non-inertial coordinates | Both viewpoints, the condition for the coordinate map to be injective, and the calibration-line cut: the two inertial segments contribute exactly $0$ to the difference of readings |
 | **Appendix** | — | Notation and conventions | Symbol registry, curvature convention, house style |
 | | — | References | — |
 
@@ -53,6 +54,7 @@ The book's stance: **list the conclusions of each layer separately, each with it
 1. **Comparable numbers.** The same question ("how much does B's clock advance while A's advances by one second?") is answered three times — using symmetry only, the Lorentz transformation only, and the Galilean transformation only — and the three answers are placed side by side (Chapter 13, Table 13.1).
 2. **Symbolic computation kept in step with the text.** Every closed-form result (Ricci and Weyl components, central extensions, twin ratios) is produced term by term with sympy in `chapters/images/*.py`; the script output matches the text one-for-one. Changing a formula means changing its script.
 3. **Two branches side by side, without adjudication.** Chapter 13 places the Earth-version twins in both the $K=c$ and the $K=\infty$ branch, gives the axioms and results of each, and leaves the choice open.
+4. **Conclusions stated as checkable criteria.** Every statement in the twins chapters is given as a mathematical criterion — a piecewise cut along calibration lines, the choice of a pairing rule, the condition for the coordinate map to be injective — with no claim reaching beyond what the derivation yields. Chapter 1 deliberately carries no formulas: it sets out the two threads and the difference in their level.
 
 ---
 
@@ -112,7 +114,7 @@ _deliver/              standalone single-chapter versions
 
 | Version | Notes |
 |---------|-------|
-| 1.0 | First release: 13 chapters plus the notation appendix; the two twins chapters merged; quotation marks unified throughout; version number added to the title page |
+| 1.0 | First release: 14 chapters plus the notation appendix; Chapter 1 rewritten as a formula-free opening; conclusions in the twins chapters stated as mathematical criteria; "Covariance and clock-reading interpretation" added to Chapter 13, the calibration-line cut and the injectivity condition added to Chapter 14; quotation marks unified throughout; version number added to the title page |
 
 ---
 
