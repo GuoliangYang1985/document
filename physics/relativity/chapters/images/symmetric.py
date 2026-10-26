@@ -61,6 +61,30 @@ ax.text(center_x, straight_y_top + 0.4, r'M', fontsize=14, ha='center', color='b
 ax.plot(center_x, straight_y_bottom, '*', markersize=15, color='gold', markeredgecolor='orange', markeredgewidth=1.5)
 ax.text(center_x, straight_y_bottom - 0.6, r'O', fontsize=14, ha='center', color='black')
 
+# 4.5 两条对称轴与镜像对应点（便于严谨表述"逐点对应"）
+# --- 竖轴 OM：左右镜像对称（A 与 B 互换） ---
+ax.plot([center_x, center_x], [straight_y_bottom, straight_y_top], '--', color='#888888', linewidth=1.4, zorder=1)
+ax.text(center_x + 0.20, -1.15, '镜像轴 OM（左右对称）', fontsize=11, color='#666666', ha='left', va='center')
+
+# --- 横轴：上下镜像对称（P 与 S、Q 与 S′、M 与 O） ---
+ax.plot([-7.4, 7.4], [0, 0], '--', color='#888888', linewidth=1.4, zorder=1)
+ax.text(-4.55, 0.30, '对称横轴（上下对称）', fontsize=11, color='#666666', ha='left', va='bottom')
+
+# 左右对称的一对：R / R′（两点都落在横轴上）
+r_pair_y = 0.0
+ax.plot([-7.0], [r_pair_y], 'o', markersize=7, color='#444444', zorder=5)
+ax.plot([7.0], [r_pair_y], 'o', markersize=7, color='#444444', zorder=5)
+ax.text(-7.45, r_pair_y, r"R", fontsize=15, ha='center', va='center', color='#333333', fontweight='bold')
+ax.text(7.45, r_pair_y, r"R'", fontsize=15, ha='center', va='center', color='#333333', fontweight='bold')
+
+# 上下对称的两对：P 与 S、Q 与 S′（竖虚线为各自的对称连线）
+for xv in (left_x, right_x):
+    ax.plot([xv, xv], [straight_y_bottom, straight_y_top], '--', color='#bbbbbb', linewidth=1.2, zorder=1)
+ax.plot([left_x], [straight_y_bottom], 'o', markersize=7, color='#444444', zorder=5)
+ax.plot([right_x], [straight_y_bottom], 'o', markersize=7, color='#444444', zorder=5)
+ax.text(left_x, straight_y_bottom - 0.55, r"S", fontsize=15, ha='center', color='#333333', fontweight='bold')
+ax.text(right_x, straight_y_bottom - 0.55, r"S'", fontsize=15, ha='center', color='#333333', fontweight='bold')
+
 # 5. 添加速度箭头
 ax.arrow(-4, straight_y_top, 1.5, 0, head_width=0.3, head_length=0.4, fc=a_color, ec=a_color, linewidth=2)
 ax.arrow(4, straight_y_top, -1.5, 0, head_width=0.3, head_length=0.4, fc=b_color, ec=b_color, linewidth=2)

@@ -9,7 +9,7 @@
 | 编号 | 对象 | 内容 |
 |------|------|------|
 | (M1) | 底空间与二次型 | $\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/K^{2}$，$K=c$ 或 $K=\infty$ |
-| (M2) | 两条曲线 | $\gamma_A$、$\gamma_B$：从 $O$ 到 $M$ 的分段光滑类时曲线，每段或为直线段（曲率恒为零）或为曲线段（曲率不恒为零）；记号沿用：第一段 $O\to P$、$O\to Q$，末段 $P\to M$、$Q\to M$；@sec-tn-cut 使用三段结构（直线段—转向段—直线段） |
+| (M2) | 两条曲线 | $\gamma_A$、$\gamma_B$：从 $O$ 到 $M$ 的分段光滑类时曲线，每段或为直线段（曲率恒为零）或为曲线段（曲率不恒为零）。分段记法在各节自明：直线段与弧线段的环节沿用 $O\to P$、$O\to Q$ 与 $P\to M$、$Q\to M$（@sec-symmetric-twins 的记号，两阶段）；@sec-tn-cut 用三段结构 (S)（直线段—转向段—直线段），其分点记为 $E_A,E_B,F_A,F_B$，段记为段 I、段 II、段 III——与 $P$、$Q$ 不混用 |
 | (M3) | 映射 $\iota$ | $\iota(t,x)=(t,-x)$；$\iota(\gamma_A)=\gamma_B$，$\iota(O)=O$，$\iota(M)=M$ |
 | (M4) | 读数定义 | $s[\gamma]=\displaystyle\int_{\gamma}\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/K^{2}}$ |
 
@@ -47,17 +47,17 @@ $s[\gamma_B]=s[\gamma_A]$，对 $K=c$ 与 $K=\infty$ 都成立。
 $K=c$ 支中，相对速率 $w$ 的两个坐标系之间：
 
 $$
-t'=\gamma_w\Bigl(t-\frac{u\,x}{c^{2}}\Bigr),\qquad x'=\gamma_u(x-ut),\qquad
-\gamma_u=\frac{1}{\sqrt{1-u^{2}/c^{2}}}
+t'=\gamma_w\Bigl(t-\frac{w\,x}{c^{2}}\Bigr),\qquad x'=\gamma_w\bigl(x-wt\bigr),\qquad
+\gamma_w=\frac{1}{\sqrt{1-w^{2}/c^{2}}}
 $$ {#eq-tn-lorentz}
 
 $K=\infty$ 支中：
 
 $$
-t'=t,\qquad x'=x-ut
+t'=t,\qquad x'=x-wt
 $$ {#eq-tn-galilei}
 
-两支合起来可写为 $\gamma_u(K)=1/\sqrt{1-u^{2}/K^{2}}$：$K=c$ 时即洛伦兹因子，$K=\infty$ 时 $\gamma_u(\infty)=1$。
+两支合起来可写为 $\gamma_w(K)=1/\sqrt{1-w^{2}/K^{2}}$：$K=c$ 时即洛伦兹因子，$K=\infty$ 时 $\gamma_w(\infty)=1$。本章通篇用 $w$ 记两视角之间的相对速率，$u$ 只在校准引理中表示直线的斜率（见 @prp-tn-calibration），两者不混。
 
 ## A 视角坐标的构造 {#sec-tn-construct}
 
@@ -161,19 +161,39 @@ $$ {#eq-tn-ratio-B}
 
 ### 弧线段：像的定义域
 
-弧线段上 $a\neq0$，A 视角坐标的线元由 @eq-tn-metric-c 给出，单射条件由 @prp-tn-domain 给出。取解析可解的镜像曲线对——$\gamma_A$ 以固定曲率 $+a$ 弯曲、$\gamma_B$ 以 $-a$ 镜像弯曲（$c=1$）——求 $\gamma_B$ 在 A 视角坐标中的像。
-
-$\gamma_B$ 上参数为 $u=a\tau_A$ 的事件在 A 视角坐标中满足（记 $\rho=1+x_A$）：
+弧线段上 $a\neq0$，A 视角坐标的线元由 @eq-tn-metric-c 给出，单射条件由 @prp-tn-domain 给出。取解析可解的镜像曲线对。先取 $c=1$，末尾再恢复 $c$：$\gamma_A$ 为固有曲率 $+a$ 的标准双曲运动
 
 $$
-\rho\sinh(a\tau')=\sinh u,\qquad \rho\cosh(a\tau')=2-\cosh u,
+\gamma_A:\quad t=\frac{1}{a}\sinh(a\tau_A),\qquad x=\frac{1}{a}\bigl(\cosh(a\tau_A)-1\bigr),
 $$
 
-两式平方相减消去 $\tau'$：
+$\gamma_B$ 是它关于 $x=0$ 的镜像（曲率随之变为 $-a$）
+
+$$
+\gamma_B:\quad t=\frac{1}{a}\sinh(a\tau_B),\qquad x=-\frac{1}{a}\bigl(\cosh(a\tau_B)-1\bigr).
+$$
+
+两者同起于 $O=(0,0)$，在 $O$ 处速率同为 $0$，之后曲率反号，正是 (M3) 要求的镜像对。
+
+记 $\gamma_B$ 上读数为 $\tau_B$ 的事件在 A 视角坐标中的坐标为 $(\tau',x_A)$，并记
+
+$$
+u=a\tau_B,\qquad \rho=1+a\,x_A .
+$$
+
+把 $\gamma_B$ 的参数式代入 @eq-tn-fermi 并用正交条件消去 $\gamma_A$ 的参数，得到关于 $(\tau',x_A)$ 的两条关系：
+
+$$
+\rho\sinh(a\tau')=\sinh u,\qquad \rho\cosh(a\tau')=2-\cosh u .
+$$ {#eq-tn-image-arc}
+
+（$\rho$ 与 @eq-tn-condition-c 左端是同一个量，故 $\rho>0$ 与坐标映射的一一对应同一步伐。）两式平方相减消去 $\tau'$：
 
 $$
 \rho^{2}=5-4\cosh u .
 $$ {#eq-tn-rho}
+
+两式相除则给出像的 A 视角时间坐标：$\tanh(a\tau')=\dfrac{\sinh u}{2-\cosh u}$。
 
 实像存在当且仅当 $\rho^{2}>0$：
 
@@ -183,6 +203,8 @@ $$
 u<\operatorname{arccosh}\tfrac54=\ln 2 .
 $$ {#eq-tn-ln2}
 
+注意这里的 $u=a\tau_B$ 是 **$\gamma_B$ 自身读数**的无量纲化，不是 A 视角的时间坐标。
+
 ::: {#cor-tn-domain-ln2}
 
 ## 镜像弯曲曲线对的像区间
@@ -190,17 +212,17 @@ $$ {#eq-tn-ln2}
 $K=c$ 支中，A 视角坐标里 $\gamma_B$ 的像存在的条件是
 
 $$
-a\,\tau_A<\ln 2\approx0.693 .
+\frac{a\,\tau_B}{c}<\ln 2\approx0.693 .
 $$
 
-临界处 $\rho=\sqrt{5-4\cosh(\ln 2)}=0$，即 $x_A=-c^{2}/a$：$\gamma_B$ 的像恰好到达 @eq-tn-condition-c 的边界。$a\tau_A\geq\ln2$ 时该处**没有实像**——图上该段无法表示 $\gamma_B$。
+即 $\gamma_B$ 自身读数越过 $(c/a)\ln2$ 之后的部分，在 A 视角坐标中**没有实像**——图上该段不再表示 $\gamma_B$。临界处 $\rho=\sqrt{5-4\cosh(\ln 2)}=0$，即 $x_A=-c^{2}/a$：像恰好到达 @eq-tn-condition-c 的边界；同一步伐上 $\tanh(a\tau'/c)\to1$，A 视角的时间坐标 $\tau'$ 发散。所以这条上界只能写在 $\tau_B$ 上——$\tau_A$ 沿像可以取任意大的值，它没有上界。
 :::
 
-![$K=c$ 支：镜像弯曲曲线对中 $\gamma_B$ 在 A 视角坐标中的像。$a\tau_A<\ln2$ 时像存在；临界处像到达 $x_A=-c^{2}/a$；其后（点线）没有实像](images/twins-noninertial-domain.png){#fig-tn-domain width=82%}
+![$K=c$ 支：镜像弯曲曲线对中 $\gamma_B$ 在 A 视角坐标中的像。$a\tau_B/c<\ln2$ 时像存在；临界处像到达 $x_A=-c^{2}/a$（同一处 A 视角时间坐标发散）；其后（点线）没有实像](images/twins-noninertial-domain.png){#fig-tn-domain width=82%}
 
-**数值标度**（$c=1$ 时 $a\tau$ 无量纲；恢复 $c$ 后 $\tau_A<(c/a)\ln2$）：
+**数值标度**（恢复 $c$ 后 $u=a\tau_B/c$ 无量纲，条件是 $\tau_B<(c/a)\ln2$；表中的 $c^{2}/a$ 是 @eq-tn-condition-c 的边界距离）：
 
-| $a$ | $c^{2}/a$ | $\tau_A^{*}=(c/a)\ln2$ |
+| $a$ | $c^{2}/a$ | $\tau_B^{\,*}=(c/a)\ln2$ |
 |------|------|------|
 | $9.8\,\mathrm{m/s^{2}}$ | $0.97$ 光年 | $0.67$ 年 |
 | $0.98\,\mathrm{m/s^{2}}$ | $9.7$ 光年 | $6.7$ 年 |
@@ -210,11 +232,11 @@ $$
 
 ### B 视角
 
-B 视角坐标由同一个构造沿 $\gamma_B$ 建立。@prp-tn-isometry 的镜像映射把 $(\gamma_A,a,+x)$ 换为 $(\gamma_B,a,-x)$，故 @eq-tn-rho、@cor-tn-domain-ln2 与 @tbl-tn-scale 对 B 视角**逐字成立**（把 $x_A$ 换为 $x_B$、$\gamma_A$ 换为 $\gamma_B$）——这一条由 $\iota$ 保形搬移全部等式给出，是代数性质。
+B 视角坐标由同一个构造沿 $\gamma_B$ 建立。@prp-tn-isometry 的镜像映射把 $(\gamma_A,\,+a,\,+x_A)$ 换为 $(\gamma_B,\,-a,\,-x_B)$——曲线换成对方、曲率变号、横向坐标也变号。故 @eq-tn-image-arc、@eq-tn-rho、@cor-tn-domain-ln2 与 @tbl-tn-scale 对 B 视角**逐字成立**（把 $\gamma_A$ 换为 $\gamma_B$、把 $\tau_B$ 换为 $\tau_A$、把 $x_A$ 换为 $x_B$）：在 B 视角中，条件写成 $a\tau_A/c<\ln2$。这一条由 $\iota$ 保形搬移全部等式给出，是代数性质，不是重新假设。
 
 ### 整段读数
 
-由 @cor-tn-length：$s[\gamma_A]=s[\gamma_B]$。分段看：直线段上 A 视角与 B 视角各自的计算（@eq-tn-ratio-A、@eq-tn-ratio-B）给出的是**对方读数与本系坐标时的关系**，不是整段读数的比较；整段读数由积分 @eq-tn-rho 所属的同一套线元沿两条曲线分别积分，其相等由 @cor-tn-length 保证。
+由 @cor-tn-length：$s[\gamma_A]=s[\gamma_B]$。分段看：直线段上两视角各自算出的 @eq-tn-ratio-A、@eq-tn-ratio-B 给出的是**对方读数与本系坐标时的关系**，不是整段读数的比较；整段读数由 (M4) 沿两条曲线分别积分，其相等由 @cor-tn-length 给出。
 
 ## $K=\infty$ 支：对称双生子的 A 视角与 B 视角 {#sec-tn-galilean}
 
@@ -247,6 +269,20 @@ $K=\infty$ 支的等读数线与同时线重合，都是水平直线 $t=\tau$；
 ## 校验线切割：惯性段的读数贡献 {#sec-tn-cut}
 
 前两节分别给出了每支里两视角各自的计算。本节回到 (M1)—(M4)，回答一个更细的问题：把两条曲线分成对应的段，逐段比较两侧读数，**差从哪些段来**。本节只使用 (M1)—(M4) 已有的坐标描述与映射 $\iota$，不引入新的坐标系。
+
+### 主要思路
+
+先给结论：**在对称双生子实验中，惯性运动部分不贡献任何时间变慢。**本节把这句话拆成四步核对；每一步都能在 @fig-tn-cut 上排左图（A 视角）上走出来。先把图上的元素认一遍：纵轴是 A 自己，轴上的高度就是 A 的读数；从 $O$ 出发、向右鼓出、回到 $M$ 的那条曲线是 B 在 A 纸面上的像——离开纵轴之后，高度只是坐标、不是读数，B 的读数要沿像按线元积分得出；橙色是 B 的像的中间段；两条绿色虚线是校验线，各自连接一对绿色切割点——纵轴上的 $E_A$、$F_A$，像上的 $E_B$、$F_B$。
+
+第一步，看转向段。两条曲线互为镜像（$\gamma_B=\iota(\gamma_A)$）：A 怎么转，B 就怎么转，转向段的形状、长短、快慢两侧完全对称。对称的部分自己不产生两侧读数的差别——这不靠计算，$\iota$ 保线元直接给出（@thm-tn-cut 第 3 条）：图上橙色的中间段，两侧读数相同。
+
+第二步，切两刀。校验线是“等读数线”：以 $O$ 为心的双曲线上，从 $O$ 出发沿直线走过来的人，无论快慢，跨线处的读数都是同一个数（校准引理）。于是图上每条绿虚线连起的两个绿点读数相同：$E_A$ 与 $E_B$ 同为 $\tau_1$，$F_A$ 与 $F_B$ 同为 $\sigma_1$——尽管这两对点在纸面上的高度各不相同。刀落在哪里都行；若两刀正好落在转向段的两端，被搬走的首尾段就是各自完整的两段惯性段，剩下的中间部分恰是转向段本身。
+
+第三步，比剩下的部分。读数相同的首尾段（$\tau_1$、$\sigma_1$）在两侧总读数中是同一个数，相减时自行消去（@cor-tn-legs）；剩下的中间段两侧读数相等（@thm-tn-cut 第 3 条）。特别地，两段惯性段对两侧总读数之差的贡献恒为 $0$：A 的两段惯性段与 B 的两段惯性段逐段同读数、总长相等。
+
+第四步，换一把刀再试。前两节用本系同时面配对——画在 A 纸面上，就是用水平线去配事件——直线段上读出 $1/\gamma_w$，一侧显现“慢”（即按洛伦兹变换切同时面的做法）。这把刀换的是**事件对**，不是读数：同一张纸上的水平线配出的是另一对点，因子随配对的出现而出现；而曲线的读数由 (M4) 沿曲线积分给出，不经任何配对，故配对怎么换，两侧的总读数都不变（@thm-tn-cut 第 4、5 条）。
+
+四步合起来：转向段两侧相等，惯性段贡献为 $0$，总读数两侧相同——“变慢”的因子是配对层的现象；惯性运动部分在这个实验中没有贡献任何时间变慢。
 
 ### 三段结构
 
@@ -317,7 +353,28 @@ $K=c$ 支中，设事件 $X$ 由 $O$ 出发沿直线段（任意恒定速率 $|u
 
 ## 惯性段的贡献
 
-段 I 与段 III 对两侧总读数之差的贡献为 $0$；此贡献与切割位置无关（@thm-tn-cut 第 5 条），与两段上的速率取值无关（校准引理）。两侧读数的全部共同部分由中间段给出，而中间段两侧读数相等（@thm-tn-cut 第 3 条）。
+在结构 (S) 与任一容许切割 $\tau_1,\sigma_1$ 下，@thm-tn-cut 第 4 条把两侧总读数写成三项之和：
+
+$$
+s[\gamma_A]=\tau_1+s[E_A\to F_A]+\sigma_1,\qquad
+s[\gamma_B]=\tau_1+s[E_B\to F_B]+\sigma_1 .
+$$
+
+这里的 $\tau_1$（段 I）与 $\sigma_1$（段 III）在两式中是**同一个数**——不是“两侧各有一个数值相等的数”。因此相减时它们自行消去：
+
+$$
+\begin{aligned}
+s[\gamma_A]-s[\gamma_B]
+&=(\tau_1-\tau_1)+\bigl(s[E_A\to F_A]-s[E_B\to F_B]\bigr)+(\sigma_1-\sigma_1)\\[2pt]
+&=0+\bigl(s[E_A\to F_A]-s[E_B\to F_B]\bigr)+0 .
+\end{aligned}
+$$
+
+也就是说：**把两侧取值相同的部分搬走之后，剩下要比较的只有中间段。** 段 I 与段 III 对两侧总读数之差的贡献恒为 $0$；此贡献与切割位置无关（@thm-tn-cut 第 5 条），与两段上的速率取值无关（校准引理）。中间段两侧读数相等（第 3 条），故两侧总读数之差为 $0$。
+
+两支皆然：$K=c$ 支用 @eq-tn-calibration 的双曲校验线；$K=\infty$ 支用水平线 $t=t_O+\tau_1$、$t=t_M-\sigma_1$，同一条水平线上每点的读数同为 $\tau_1$、$\sigma_1$，逐字重复同一论证。
+
+注：两支的差别只在第 3 条的来源——$K=c$ 支由镜像 $\iota$ 保线元给出，$K=\infty$ 支不需要镜像性（该支读数只由端点 $t$ 之差给出，与路径形状无关）。段 I 与段 III 的结论在两支中都**不用对称性**。
 :::
 
 ### 显式算例
@@ -350,7 +407,13 @@ A、B 两侧逐段相同（镜像）。
 
 切割：取 $\tau_1=\sigma_1=0.4$。$E_A=(0.5,-0.3)$、$E_B=(0.5,0.3)$：核对 $0.5^{2}-0.3^{2}=0.16=0.4^{2}$；$F_A=(3.5,-0.3)$、$F_B=(3.5,0.3)$：核对 $(4-3.5)^{2}-0.3^{2}=0.16$。中间段读数为 $3.4725-0.4-0.4=2.6725$，两侧相同。把 $\tau_1,\sigma_1$ 换为 $0.2,0.6,0.8$ 逐项重算，段 I、段 III 两侧之差在每种取法下均为 $0$。以上数值由符号计算与高精度积分逐项核验。
 
-![对称双生子的三段结构与校验线切割。左：$K=c$，切割线为以 $O$、$M$ 为心的双曲校验线；右：$K=\infty$，切割线为水平线（该支读数即 $t$ 之差，同一切点的读数值相应为 $0.5$）。$E_A,E_B$ 与 $F_A,F_B$ 处两侧读数相同](images/twins-calibration-cut.png){#fig-tn-cut width=100%}
+![同一结构的两种画法之一：**承载坐标 $(x,ct)$ 纸面**——纸面用的是 (M1) 的坐标，不是任何一方的视角坐标。左：$K=c$，切割线为以 $O$、$M$ 为心的双曲校验线；右：$K=\infty$，切割线为水平线（该支读数即 $t$ 之差，切点读数为 $0.5$）。$E_A,E_B$ 与 $F_A,F_B$ 处两侧读数相同](images/twins-calibration-cut.png){#fig-tn-cut-carrier width=100%}
+
+![同一结构的两种画法之二：**视角自己的坐标纸面**——横轴为视角自己的空间坐标 $x_A$（右列 $x_B$），纵轴为视角自己的读数坐标 $\tau_A$（右列 $\tau_B$），不把任何一方的坐标画到另一方的纸上。上排 $K=c$：左为 A 视角、右为 B 视角（互为镜像），校验线为双曲线并全程画出，同一条线连接两个切割点；下排 $K=\infty$：校验线为水平线 $t=0.5$ 与 $t=3.5$，贯穿整个面板。每幅中曲线自身是纵轴，另一条曲线的像由视角坐标的构造逐点给出；橙色为中间段（两侧读数相同）](images/twins-calibration-cut-aview.png){#fig-tn-cut width=100%}
+
+同一这张纸还给出 @cor-tn-legs 的一处直接对照。以本节的显式算例在 A 视角纸面上读：$E_A$ 位于 $(\tau_A,x_A)=(0.4,\,0)$，$E_B$ 位于 $(0.827,\,0.7492)$——**两个事件的读数同为 $\tau_1=0.4$，但它们在 A 纸面上的高度不同**。曲线自身（纵轴）上的高度就等于它的读数；离开纵轴之后，高度是多出来的坐标信息，不再等于该处的读数。所以在视角自己的纸上，另一条曲线的读数要沿 @eq-tn-fermi 构造出的线元积分读出，不能从纸面的高低直接比。改用 A 自己的同时线（纸面上的水平线）去配对，取出的是另一对事件，那是另一套配对陈述（下一小节）。
+
+两张图互相补充：@fig-tn-cut-carrier 把切割的定义摆在最省事的坐标里——$E_A$、$E_B$ 落在同一条双曲线上这件事一眼可见；@fig-tn-cut 把同一件事画进每一方自己的纸面——这时两条世界线不再是对称的形状，但同样的结论仍然成立，因为读数由 (M4) 给出，不随纸面改变。
 
 ### 与同时面配对的关系
 
@@ -375,13 +438,13 @@ A、B 两侧逐段相同（镜像）。
 | A 视角线元 | $\bigl(1+a(\tau)x_A\bigr)^{2}\mathrm{d}\tau^{2}-\mathrm{d}x_A^{2}$ | $\mathrm{d}\tau^{2}$ |
 | 直线段：对方读数与本系坐标时 | $\mathrm{d}\tau_B=\mathrm{d}t_A/\gamma_w$（A 视角）；$\mathrm{d}\tau_A=\mathrm{d}t_B/\gamma_w$（B 视角） | $\mathrm{d}\tau_B=\mathrm{d}t_A$；$\mathrm{d}\tau_A=\mathrm{d}t_B$ |
 | 弧线段：坐标映射单射条件 | $1+a x_A/c^{2}>0$ | 恒成立（雅可比 $=1$） |
-| 弧线段：$\gamma_B$ 在 A 视角中的像 | 存在当且仅当 $a\tau_A<\ln2$（镜像弯曲曲线对） | 处处存在 |
+| 弧线段：$\gamma_B$ 在 A 视角中的像 | 存在当且仅当 $a\tau_B/c<\ln2$（镜像弯曲曲线对，@cor-tn-domain-ln2） | 处处存在 |
 | 校验线切割后的惯性段读数 | 两侧相同（@thm-tn-cut） | 两侧相同（@thm-tn-cut） |
 | 整段读数 | $s[\gamma_A]=s[\gamma_B]$ | $s[\gamma_A]=s[\gamma_B]$，且都等于端点 $t$ 之差 |
 
 : 两支对照 {#tbl-tn-summary}
 
-![A 视角与 B 视角（$w=0.6c$，$\gamma_w=1.25$；每个面板只含所画视角的坐标与两条曲线）。上行 $K=c$：等读数线为 $t^{2}-x^{2}/c^{2}=\tau^{2}$，本系同时线为水平线，两线不同；下行 $K=\infty$：等读数线与同时线重合，均为 $t=\tau$。两支中 B 视角都是 A 视角的镜像](images/twins-ab-views.png){#fig-tn-views width=100%}
+![A 视角与 B 视角（$w=0.6c$，$\gamma_w=1.25$；每个面板只含所画视角的坐标与两条曲线）。该图画在 **$(x,ct)$ 承载平面**上：直线段上 A 视角坐标与它重合，B 视角坐标由 @eq-tn-lorentz 给出，故图上两条线可直接比读。上行 $K=c$：等读数线为 $t^{2}-x^{2}/c^{2}=\tau^{2}$，本系同时线为水平线，两线不同；下行 $K=\infty$：等读数线与同时线重合，均为 $t=\tau$。两支中 B 视角都是 A 视角的镜像。含转向段的情形不能这样画——那时纸面必须是视角自己的坐标，见 @fig-tn-cut](images/twins-ab-views.png){#fig-tn-views width=100%}
 
 ## 结果 {#sec-tn-results}
 
@@ -389,7 +452,7 @@ A、B 两侧逐段相同（镜像）。
 
 1. **镜像映射保持读数**（@prp-tn-isometry、@cor-tn-length）：$s[\gamma_A]=s[\gamma_B]$，两支都成立。依据是 $\iota$ 保二次型与曲线长度在等距映射下不变，未使用任何变换公式。
 2. **$K=c$ 支，直线段**（@eq-tn-ratio-A、@eq-tn-ratio-B）：A 视角算得 $\mathrm{d}\tau_B=\mathrm{d}t_A/\gamma_w$；B 视角算得 $\mathrm{d}\tau_A=\mathrm{d}t_B/\gamma_w$。两式互为镜像，分别关于不同的事件对。
-3. **$K=c$ 支，弧线段**（@prp-tn-metric、@prp-tn-domain、@cor-tn-domain-ln2）：A 视角线元为 $\bigl(1+a x_A/c^{2}\bigr)^{2}\mathrm{d}\tau^{2}-\mathrm{d}x_A^{2}$；坐标映射的单射条件为 $1+a x_A/c^{2}>0$；镜像弯曲曲线对中 $\gamma_B$ 的像存在当且仅当 $a\tau_A<\ln2$，临界处像到达 $x_A=-c^{2}/a$，其后没有实像。B 视角逐字相同。
+3. **$K=c$ 支，弧线段**（@prp-tn-metric、@prp-tn-domain、@cor-tn-domain-ln2）：A 视角线元为 $\bigl(1+a x_A/c^{2}\bigr)^{2}\mathrm{d}\tau^{2}-\mathrm{d}x_A^{2}$；坐标映射的单射条件为 $1+a x_A/c^{2}>0$；镜像弯曲曲线对中 $\gamma_B$ 的像存在当且仅当 $a\tau_B/c<\ln2$（上界写在 $\gamma_B$ 自身的读数上；同一临界处 A 视角时间坐标发散、$x_A=-c^{2}/a$），其后没有实像。B 视角逐字相同（角色互换后条件写成 $a\tau_A/c<\ln2$）。
 4. **$K=\infty$ 支**（@prp-tn-metric-inf、@prp-tn-domain-inf、@eq-tn-read-inf）：A 视角线元为 $\mathrm{d}\tau^{2}$，加速轨迹不进入；坐标映射处处单射；$\gamma_B$ 的像处处存在；读数只由端点的 $t$ 坐标给出，与路径形状无关。B 视角相同。
 5. **对比**（@tbl-tn-summary、@fig-tn-views）：两支的差别集中在弧线段——$K=c$ 支的 A 视角（及 B 视角）坐标对另一条曲线的像有区间限制，$K=\infty$ 支没有；直线段上，$K=c$ 支的两视角各给出一个 $1/\gamma_w$ 因子，$K=\infty$ 支给出 $1$。
-6. **分段与配对**（@prp-tn-calibration、@thm-tn-cut、@cor-tn-legs）：以 $O$、$M$ 为心的校验线切割三段结构后，两段惯性段对读数之差的贡献恒为 $0$——与切割位置无关、与速率无关；中间段两侧读数相等；总读数 $s[\gamma_A]=s[\gamma_B]$ 与切割位置无关。$1/\gamma_w$ 因子与本节的 $1$ 是两套配对各自的结果（见 @sec-tn-cut “与同时面配对的关系”一节）。
+6. **分段与配对**（@prp-tn-calibration、@thm-tn-cut、@cor-tn-legs）：以 $O$、$M$ 为心的校验线切割三段结构后，两段惯性段对读数之差的贡献恒为 $0$——与切割位置无关、与速率无关；中间段两侧读数相等；总读数 $s[\gamma_A]=s[\gamma_B]$ 与切割位置无关。$1/\gamma_w$ 因子与本节的 $1$ 是两套配对各自的结果（见 @sec-tn-cut “与同时面配对的关系”一节）。同一结论在两种纸面上都成立：@fig-tn-cut-carrier 用承载坐标，@fig-tn-cut 用每一方自己的视角坐标。

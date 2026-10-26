@@ -19,12 +19,14 @@
 2. **直线段 $P \rightarrow M$ 与 $Q \rightarrow M$**：设 $A$ 到达 $P$ 点后，从点 $P$ 开始以恒定速度 $v$ 沿直线向 $M$ 运动，$B$ 到达 $Q$ 点后，从点 $Q$ 开始以恒定速度 $-v$ 沿直线向 $M$ 运动。
 :::
 
-![对称双生子实验](images/symmetric.png){#fig-twins width=95%}
+![对称双生子实验：两条路径 $O \rightarrow P \rightarrow M$ 与 $O \rightarrow Q \rightarrow M$ 关于竖轴 $OM$ 左右镜像；同一图形关于横轴上下对称，在这一对称下 $P$ 与 $S$ 成对、$Q$ 与 $S'$ 成对、$M$ 与 $O$ 成对；$R$ 与 $R'$ 是落在横轴上的一对左右镜像点](images/symmetric.png){#fig-twins width=95%}
 
 ::: {#cnj-symmetry}
 ## 对称性公理
 
 根据实验设定，路径 $O \rightarrow P \rightarrow M$ 与 $O \rightarrow Q \rightarrow M$ 关于中心轴 $OM$ 完美镜像对称。即：$A$ 和 $B$ 的物理经历在空间几何与动力学上完全等价。这一对称性在逻辑上确立了 $A$ 与 $B$ 的身份平等与可互换性。
+
+此外，图形还关于横轴上下对称：$S$ 与 $S'$ 分别是 $A$、$B$ 路径上与 $P$、$Q$ 关于横轴对称的点。沿横轴翻转时，$P$ 与 $S$ 互换、$Q$ 与 $S'$ 互换、$M$ 与 $O$ 互换；于是 $A$ 的直线段 $P \rightarrow M$ 与 $A$ 出发时的直线段 $O \rightarrow S$ 互为镜像（$B$ 侧同理）。
 :::
 
 ## 钟慢效应
