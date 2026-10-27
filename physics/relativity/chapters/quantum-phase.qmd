@@ -18,7 +18,7 @@ $$
 
 1. **不出现弯曲度规**。本章全程 $K$ 为常数，只用恒速群的不变二次型 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$ 及其对偶算符；不用任何 $g_{\mu\nu}(x)$、不用 Christoffel 符号、不做度规量子化。
 2. **不出现引力**。$\vec\nabla K\neq0$ 只在第四部分作为**反证法的假设**出现，且立即导致矛盾。
-3. **不出现"量子引力"**。本章不构造任何"引力的量子理论"。第四部分的结论恰恰是：那样的对象在本框架内没有定义域。这一结论的范围限定见 @sec-qp-scope-limit。
+3. **不出现“量子引力”**。本章不构造任何“引力的量子理论”。第四部分的结论恰恰是：那样的对象在本框架内没有定义域。这一结论的范围限定见 @sec-qp-scope-limit。
 
 ### 禁止预设清单
 
@@ -92,7 +92,7 @@ $$
 \boxed{\Delta t\ \text{不变},\qquad \lvert\Delta\mathbf{x}\rvert\ \text{不变}}
 $$ {#eq-qp-two-invariants}
 
-**这就是"绝对时间 + 绝对空间"的严格含义**：时空不再是带单一度规的整体，而是 $\mathbb{R}\times\mathbb{R}^{3}$ 上分别带时间尺度与欧氏尺度的一对结构。@eq-qp-two-invariants 是本章全部推导的几何输入。
+**这就是“绝对时间 + 绝对空间”的严格含义**：时空不再是带单一度规的整体，而是 $\mathbb{R}\times\mathbb{R}^{3}$ 上分别带时间尺度与欧氏尺度的一对结构。@eq-qp-two-invariants 是本章全部推导的几何输入。
 
 ### 零锥的退化
 
@@ -102,19 +102,19 @@ $$
 \lvert\mathrm{d}\mathbf{x}/\mathrm{d}t\rvert=\infty\quad\Longleftrightarrow\quad t=\text{常数}
 $$
 
-即：**零曲面退化为同时超曲面**，信号速度无上界。这正是伽利略时空"瞬时传播"的严格表述，也是后面非相对论极限中"不存在不变波速"的几何根源。
+即：**零曲面退化为同时超曲面**，信号速度无上界。这正是伽利略时空“瞬时传播”的严格表述，也是后面非相对论极限中“不存在不变波速”的几何根源。
 
 ### $\vec\nabla K=0$ 不是简化假设，而是前提
 
 @sec-invariant-speed-field-group 章已证明：当 $K$ 随点变化时，逐点的 $G_{K(p)}$ 各自成群，但**跨点的复合不再是群运算**——复合多出 $\propto\partial_\mu K/K$ 的项。
 
-**本章第二部分要做的事是"表示论"**：表示论的对象是**一个群**。因此：
+**本章第二部分要做的事是“表示论”**：表示论的对象是**一个群**。因此：
 
 $$
 \vec\nabla K\neq0\ \Longrightarrow\ \text{不存在可供表示的全局群}\ \Longrightarrow\ \text{第二部分全部失效}
 $$
 
-这不是"为了算得动而设的简化"，而是**定义域条件**：量子相态的定义本身就包含 $\vec\nabla K=0$。第四部分会把这一点写成反证法的第一层。
+这不是“为了算得动而设的简化”，而是**定义域条件**：量子相态的定义本身就包含 $\vec\nabla K=0$。第四部分会把这一点写成反证法的第一层。
 
 ### 不变算符与色散关系
 
@@ -269,7 +269,7 @@ $$
 [X,Y]_{\text{ext}}=[X,Y]+c(X,Y)\,\hat M,\qquad [\hat M,\cdot]=0
 $$
 
-其中 $c$ 为反对称双线性形。则 Jacobi 恒等式与"模去上边界"之后，解空间为
+其中 $c$ 为反对称双线性形。则 Jacobi 恒等式与“模去上边界”之后，解空间为
 
 $$
 \boxed{H^{2}(\mathfrak g,\mathbb R)=\mathbb R\ (\text{一维})}
@@ -402,7 +402,7 @@ $$
 \widetilde\psi(\mathbf x,t,\zeta)=e^{\frac{i}{\hbar}m\zeta}\,\psi(\mathbf x,t)
 $$
 
-由 $\widetilde\psi(gP)=\widetilde\psi(P)$ 反解，恰好回到 @eq-qp-Ug。**故"带相位的量子波函数"="Bargmann 群中心方向上的等变函数"**，中央荷 $m$ 就是该中心方向的本征值。
+由 $\widetilde\psi(gP)=\widetilde\psi(P)$ 反解，恰好回到 @eq-qp-Ug。**故“带相位的量子波函数”=“Bargmann 群中心方向上的等变函数”**，中央荷 $m$ 就是该中心方向的本征值。
 
 ### 质量的身份：中心元，而非本征值 {#sec-qp-mass}
 
@@ -419,7 +419,7 @@ $$
 \hat C:=\frac{\hat H^{2}}{K^{2}}-\lvert\hat{\mathbf P}\rvert^{2}=m^{2}K^{2}\mathbf 1
 $$
 
-$\hat C$ 与所有生成元对易，是 Casimir 算符；$m^{2}$ 是它的**本征值**。质量在这里是"由生成元算出来的一个数"：$\hat C$ 由 $\hat H,\hat{\mathbf P}$ 构造，$m$ 由 $\hat C$ 决定。**没有任何中心扩张**（$H^{2}(\mathfrak{iso}(1,3),\mathbb R)=0$，庞加莱群的射影表示等价于其万有覆盖的真表示）。
+$\hat C$ 与所有生成元对易，是 Casimir 算符；$m^{2}$ 是它的**本征值**。质量在这里是“由生成元算出来的一个数”：$\hat C$ 由 $\hat H,\hat{\mathbf P}$ 构造，$m$ 由 $\hat C$ 决定。**没有任何中心扩张**（$H^{2}(\mathfrak{iso}(1,3),\mathbb R)=0$，庞加莱群的射影表示等价于其万有覆盖的真表示）。
 
 **(b) $K\to\infty$**。取极限后 $\hat C=m^{2}K^{2}\to\infty$ 退化，@eq-qp-casimir-contract 给出存活的 Casimir
 
@@ -429,9 +429,9 @@ $$ {#eq-qp-casimirG}
 
 （校核：$[\hat B_l,\hat C_{\text{G}}]=2\hat M[\hat B_l,\hat H_{\text{nr}}]-[\hat B_l,\lvert\hat{\mathbf P}\rvert^{2}]=2\hat M(i\hbar\hat P_l)-2i\hbar\hat M\hat P_l=0$。）
 
-此时 **$\hat M$ 本身是中心元素，不是任何算符的函数**：它不能由 $\hat H,\hat P_i,\hat B_i,\hat J_i$ 表出（@thm-qp-extension 的第四步），而是代数的一个独立方向。真正作为"本征值"出现的量换成了**内能** $\hat E_{\text{int}}$。
+此时 **$\hat M$ 本身是中心元素，不是任何算符的函数**：它不能由 $\hat H,\hat P_i,\hat B_i,\hat J_i$ 表出（@thm-qp-extension 的第四步），而是代数的一个独立方向。真正作为“本征值”出现的量换成了**内能** $\hat E_{\text{int}}$。
 
-**推论（Bargmann 超选择规则）**。$\hat M$ 中心 $\Rightarrow$ 由 Schur 引理，在不可约表示上 $\hat M=m\mathbf 1$；不同 $m$ 的表示之间不存在把它们耦合起来的代数元素，故**不同质量的态不能相干叠加**——这是质量作为中央荷的可检验后果。相反，在 (a) 中 $m$ 只是 Casimir 本征值，不同质量的态可以叠加。**"质量是中央荷"不是措辞，是有判别力的命题。**
+**推论（Bargmann 超选择规则）**。$\hat M$ 中心 $\Rightarrow$ 由 Schur 引理，在不可约表示上 $\hat M=m\mathbf 1$；不同 $m$ 的表示之间不存在把它们耦合起来的代数元素，故**不同质量的态不能相干叠加**——这是质量作为中央荷的可检验后果。相反，在 (a) 中 $m$ 只是 Casimir 本征值，不同质量的态可以叠加。**“质量是中央荷”不是措辞，是有判别力的命题。**
 
 | 相态 | $m$ 的代数身份 | 可否叠加不同 $m$ |
 |---|---|---|
@@ -440,7 +440,7 @@ $$ {#eq-qp-casimirG}
 
 ### 位置–动量对易关系的导出 {#sec-qp-ccr}
 
-由 @eq-qp-Kclass，boost 生成元在 $t=0$ 时等于"$m\times$位置"。据此**定义**位置算符：
+由 @eq-qp-Kclass，boost 生成元在 $t=0$ 时等于“$m\times$位置”。据此**定义**位置算符：
 
 $$
 \hat q_i:=\frac{1}{m}\bigl(\hat B_i+t\,\hat P_i\bigr)\qquad\Bigl(\text{即 } \hat B_i=m\hat q_i-t\hat P_i\Bigr)
@@ -473,9 +473,9 @@ $$
 [q,P] f = I*hbar*f(X, T) 期望 i hbar f
 ```
 
-**反之，若中央荷为零**（@thm-qp-contraction 的朴素收缩）：$[\hat B_i,\hat P_j]=0$，于是 $[\hat q_i,\hat P_j]=0$。此时 $\hat q$ 与 $\hat P$ 可同时对角化：**没有不确定性原理，没有不可对易的观测量，量子化无从谈起**。这正是"伽利略代数本身 $[x,p]=0$、无法支撑量子化"的严格形式——缺的不是某个技巧，缺的是中央扩张。
+**反之，若中央荷为零**（@thm-qp-contraction 的朴素收缩）：$[\hat B_i,\hat P_j]=0$，于是 $[\hat q_i,\hat P_j]=0$。此时 $\hat q$ 与 $\hat P$ 可同时对角化：**没有不确定性原理，没有不可对易的观测量，量子化无从谈起**。这正是“伽利略代数本身 $[x,p]=0$、无法支撑量子化”的严格形式——缺的不是某个技巧，缺的是中央扩张。
 
-**推论（不确定性）**：由 @eq-qp-ccr 与 Cauchy–Schwarz，$\Delta q_i\,\Delta P_i\geq\dfrac{\hbar}{2}$。$\hbar$ 在此第一次以"不可对易性的尺度"出现。
+**推论（不确定性）**：由 @eq-qp-ccr 与 Cauchy–Schwarz，$\Delta q_i\,\Delta P_i\geq\dfrac{\hbar}{2}$。$\hbar$ 在此第一次以“不可对易性的尺度”出现。
 
 ## 第三部分　波动力学方程的生成 {#sec-qp-part3}
 
@@ -493,7 +493,7 @@ $$
 i\hbar\partial_t\psi=-\frac{\hbar^{2}}{2m}\nabla^{2}\psi
 $$ {#eq-qp-schrodinger}
 
-**这就是薛定谔方程**——它是"$\hat H_{\text{nr}}$ 由 $\hat{\mathbf P}$ 与 $\hat M$ 经 Casimir 决定"这一表示论事实的解析表达。
+**这就是薛定谔方程**——它是“$\hat H_{\text{nr}}$ 由 $\hat{\mathbf P}$ 与 $\hat M$ 经 Casimir 决定”这一表示论事实的解析表达。
 
 ### 路线二：从不变波动方程取极限（相位抽取，完整计算）
 
@@ -541,7 +541,7 @@ $$ {#eq-qp-preSch}
 **两点说明**：
 
 1. 相位 $e^{-imK^{2}t/\hbar}$ 的选择 = 正能支的选择；反号则取负能支。$K\to\infty$ 时两支被无穷大的静能间隙隔开，**反粒子在极限中消失**——这是相态边界的另一条痕迹。
-2. 静能 $mK^{2}$ 本身在极限中不收敛，它没有可观测量对应；它的"残余"正是中央荷 $\hat M=m\mathbf 1$。@thm-qp-central 与这里的相消是同一件事的代数版与分析版。
+2. 静能 $mK^{2}$ 本身在极限中不收敛，它没有可观测量对应；它的“残余”正是中央荷 $\hat M=m\mathbf 1$。@thm-qp-central 与这里的相消是同一件事的代数版与分析版。
 
 ### 路线三：德布罗意关系与色散关系（波粒二象性的代数化）
 
@@ -585,7 +585,7 @@ $$
 
 故 $\psi$ 满足 @eq-qp-schrodinger。**三条路线给出同一个方程。**
 
-**波速**：群速度 $\nabla_{\mathbf k}\omega=\dfrac{\hbar\mathbf k}{m}=\dfrac{\mathbf p}{m}$（牛顿关系）；相速度 $\dfrac{\omega}{\lvert\mathbf k\rvert}=\dfrac{\hbar\lvert\mathbf k\rvert}{2m}$。**两者不等，且不存在与波源无关的不变波速**——这与第一部分"零锥退化为 $t=$ 常数"相呼应：$K=\infty$ 的时空里没有 $K$ 可供波速去等于。
+**波速**：群速度 $\nabla_{\mathbf k}\omega=\dfrac{\hbar\mathbf k}{m}=\dfrac{\mathbf p}{m}$（牛顿关系）；相速度 $\dfrac{\omega}{\lvert\mathbf k\rvert}=\dfrac{\hbar\lvert\mathbf k\rvert}{2m}$。**两者不等，且不存在与波源无关的不变波速**——这与第一部分“零锥退化为 $t=$ 常数”相呼应：$K=\infty$ 的时空里没有 $K$ 可供波速去等于。
 
 ### 概率守恒与幺正性
 
@@ -597,7 +597,7 @@ $$
 \mathbf j=\frac{\hbar}{m}\,\mathrm{Im}\!\left(\psi^{*}\nabla\psi\right)
 $$
 
-故 $\int\lvert\psi\rvert^{2}\mathrm d^{3}x$ 守恒，演化酉。这与第二部分的出发点完全一致：**正是"概率守恒 $\Rightarrow$ 态是射线 $\Rightarrow$ 射影表示 $\Rightarrow$ 中央扩张"这条链，把 $m$ 送进了代数。**
+故 $\int\lvert\psi\rvert^{2}\mathrm d^{3}x$ 守恒，演化酉。这与第二部分的出发点完全一致：**正是“概率守恒 $\Rightarrow$ 态是射线 $\Rightarrow$ 射影表示 $\Rightarrow$ 中央扩张”这条链，把 $m$ 送进了代数。**
 
 ### 协变性校核
 
@@ -634,13 +634,13 @@ $$
 
 ### 第一层：群层面——根本没有可供表示的群
 
-@sec-invariant-speed-field-group 章已证明：$K=K(p)$ 时逐点 $G_{K(p)}$ 各自成群，但跨点复合多出 $\propto\partial_\mu K/K$ 的项，**不构成群**。而第二部分的全部工具（李代数、上同调 $H^{2}$、射影表示、Schur 引理）都以"存在一个李群"为前提。
+@sec-invariant-speed-field-group 章已证明：$K=K(p)$ 时逐点 $G_{K(p)}$ 各自成群，但跨点复合多出 $\propto\partial_\mu K/K$ 的项，**不构成群**。而第二部分的全部工具（李代数、上同调 $H^{2}$、射影表示、Schur 引理）都以“存在一个李群”为前提。
 
 $$
 \vec\nabla K\neq0\ \Longrightarrow\ \text{无全局群}\ \Longrightarrow\ \text{第二部分的对象不存在}
 $$
 
-**这不是"算不出来"，而是"没有对象可算"。**
+**这不是“算不出来”，而是“没有对象可算”。**
 
 ### 第二层：代数层面——Jacobi 恒等式强迫 $\vec\nabla K=0$
 
@@ -670,7 +670,7 @@ $$
 Jacobi 恒等式 $(\hat P_k,\hat B_i,\hat P_j)$ 在 $\hat H\neq0$ 时成立，当且仅当 $\partial_kK=0$。等价地：中央荷 $\hat M$ 是中心元素，当且仅当 $\vec\nabla K=0$。
 :::
 
-**即：中央扩张（第二部分的全部内容）与"恒速场不均匀"互斥。** 质量作为中央荷的存在条件，正好是 $\vec\nabla K=0$。
+**即：中央扩张（第二部分的全部内容）与“恒速场不均匀”互斥。** 质量作为中央荷的存在条件，正好是 $\vec\nabla K=0$。
 
 ### 第三层：动力学层面——残留项发散且破坏幺正性
 
@@ -717,7 +717,7 @@ $$
 K\to0,\qquad \lvert\nabla K\rvert=\frac{M}{r^{2}\sqrt{1-\frac{2M}{r}}}\to\infty
 $$
 
-此时残留项 C 不仅随 $K_0$ 发散，还因 $\lvert\nabla K\rvert\to\infty$ 而**双重发散**。量子力学的代数框架在此不是"遇到困难"，而是**没有定义的对象**：没有群、没有中央荷、没有自伴的 Hamiltonian、没有概率守恒。
+此时残留项 C 不仅随 $K_0$ 发散，还因 $\lvert\nabla K\rvert\to\infty$ 而**双重发散**。量子力学的代数框架在此不是“遇到困难”，而是**没有定义的对象**：没有群、没有中央荷、没有自伴的 Hamiltonian、没有概率守恒。
 
 ### 相态对偶表
 
@@ -730,7 +730,7 @@ $$
 | 幺正性 | 保持 | 破坏（残留项反 Hermite） |
 | 典型对象 | 原子、凝聚态、散射 | Schwarzschild 解、黑洞视界 |
 
-**这就是"严禁强行量子引力"的数学内容**：两个相态由**相态参数**$(K,\vec\nabla K)$ 的不同区域定义；它们的定义域不相交。所谓"量子引力"的困难，在本框架里不是一道待解的题，而是一个**范畴错误**——它要求在 $\vec\nabla K\neq0$ 处求解一个只在 $\vec\nabla K=0$ 处才有定义的方程。
+**这就是“严禁强行量子引力”的数学内容**：两个相态由**相态参数**$(K,\vec\nabla K)$ 的不同区域定义；它们的定义域不相交。所谓“量子引力”的困难，在本框架里不是一道待解的题，而是一个**范畴错误**——它要求在 $\vec\nabla K\neq0$ 处求解一个只在 $\vec\nabla K=0$ 处才有定义的方程。
 
 @fig-qp-phase 给出相态图与静能的分离。
 
@@ -776,7 +776,7 @@ $$
 
 : 本章各命题及其依据 {#tbl-qp-conclusion}
 
-**一句话**：取定相态参数 $K\to\infty$、$\vec\nabla K=0$ 后，恒速群的李代数经重整化收缩（静能发散与结构常数消失相抵）产生唯一的中央扩张，中央荷即质量 $m$；由此解出 $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$，并由 Casimir 或德布罗意色散关系生成薛定谔方程；而 Jacobi 恒等式反过来要求 $\vec\nabla K=0$——量子力学与引力是两个不相交的相态，二者的强行耦合在本框架内无定义。
+**一句话**：取定相态参数 $K\to\infty$、$\vec\nabla K=0$ 后，恒速群的李代数经重整化收缩（静能发散与结构常数消失相抵）产生唯一的中央扩张，中央荷即质量 $m$；由此解出 $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$，并由 Casimir 或德布罗意色散关系生成薛定谔方程；而 Jacobi 恒等式反过来要求 $\vec\nabla K=0$——量子力学与引力是两个不相交的相态，二者的强行耦合在本框架内无定义。本章是同一底座上两条派生路线中量子路线的那一端，与引力路线的逐项对照见全书导览。
 
 ## 术语说明 {#sec-qp-terms}
 

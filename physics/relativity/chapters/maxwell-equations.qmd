@@ -387,7 +387,7 @@ $$ {#eq-ampere}
 | $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 0$ | $\boldsymbol{\nabla} \cdot \mathbf{E} = \rho/\epsilon_0$ | 高斯电场定律 |
 | $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 1,2,3$ | $\boldsymbol{\nabla} \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \partial_t \mathbf{E}$ | 安培-麦克斯韦定律 |
 
-: 有源项：4 维与 3 维的对应关系 {#tbl-sourceful tbl-colwidths="[34,38,28]"}
+: 有源项：4 维与 3 维的对应关系 {#tbl-sourceful tbl-colwidths=“[34,38,28]”}
 
 时间分量（$\nu = 0$）对应高斯电场定律，空间分量（$\nu = 1,2,3$）对应安培-麦克斯韦定律。
 
@@ -531,7 +531,7 @@ $$\boldsymbol{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}
 | $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\boldsymbol{\nabla} \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
 | $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in\{(0,2,3),(0,3,1),(0,1,2)\}$ | $\boldsymbol{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
 
-: 无源项：4 维与 3 维的对应关系 {#tbl-sourceless tbl-colwidths="[57,18,25]"}
+: 无源项：4 维与 3 维的对应关系 {#tbl-sourceless tbl-colwidths=“[57,18,25]”}
 
 ## 协变性与电磁场的变换
 
