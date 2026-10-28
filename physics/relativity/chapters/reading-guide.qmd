@@ -7,13 +7,13 @@
 
 | 部分 | 章 | 页数 | 作用 |
 |---|---|---|---|
-| 主线 | 第 1—6 章 | 约 90 页 | 严格导出变换（第 1 章）→ 把它读作同一个群族的两端并给出公设（第 2 章）→ 把参数升级为场（第 3 章）→ 动力学与几何后果（第 4、5 章）→ 量子相态的代数生成（第 6 章）。这是本书新意所在的部分 |
-| 校准案例与旁支 | 第 7—11 章 | 约 57 页 | 把主线的符号与口径对到读者熟悉的标准结果上（第 7、10 章），或把同一套分层方法用到相邻问题上（第 8、9、11 章）。它们的价值在**可核对**，不在新结论 |
-| 收束 | 第 12—14 章 | 约 40 页 | 用双生子实验把前面各章的工具用上去：先设计镜像对称的实验并给出三套算法的对照（第 12 章），再把坐标换成非惯性坐标逐段核出读数（第 13 章），最后换用非对称设定（第 14 章） |
+| 主线 | @sec-transform-derivation 章—@sec-quantum-phase 章 | 约 90 页 | 严格导出变换（@sec-transform-derivation 章）→ 把它读作同一个群族的两端并给出公设（@sec-invariant-speed-group 章）→ 把参数升级为场（@sec-invariant-speed-field-group 章）→ 动力学与几何后果（@sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章）→ 量子相态的代数生成（@sec-quantum-phase 章）。这是本书新意所在的部分 |
+| 校准案例与旁支 | @sec-maxwell-equations 章—@sec-clock-coupling 章 | 约 57 页 | 把主线的符号与口径对到读者熟悉的标准结果上（@sec-maxwell-equations 章、@sec-flat-space-gravity 章），或把同一套分层方法用到相邻问题上（@sec-galilean-electrodynamics 章、@sec-two-source-field 章、@sec-clock-coupling 章）。它们的价值在**可核对**，不在新结论 |
+| 收束 | @sec-twins-comparison 章—@sec-asymmetric-twins 章 | 约 40 页 | 用双生子实验把前面各章的工具用上去：先设计镜像对称的实验并给出三套算法的对照（@sec-twins-comparison 章），再把坐标换成非惯性坐标逐段核出读数（@sec-twins-noninertial 章），最后换用非对称设定（@sec-asymmetric-twins 章） |
 
-**关于校准案例**：第 7 章（麦克斯韦方程组的四维形式与协变性）与第 10 章（平直时空上的线性引力算子分类）通篇是标准材料的重算。把它们放进书里有两个理由——本书后续使用它们确立的符号与算子口径；以及读者可以先在读得懂的地方核对本书有没有算错，再决定是否相信主线里那些不那么熟悉的推导。**只想追主线可以直接跳过这两章，第 6 章到第 12 章之间没有依赖它们的概念跳跃。** 第 8、9、11 章各自独立：第 8 章回答一个纯数学问题（伽利略世界能否有自洽的场方程组），第 9 章是作者早年基于两条公设的双源场推导，第 11 章把“多类演化系统如何共享同一个背景场”拆成独立的层次。
+**关于校准案例**：@sec-maxwell-equations 章（麦克斯韦方程组的四维形式与协变性）与 @sec-flat-space-gravity 章（平直时空上的线性引力算子分类）通篇是标准材料的重算。把它们放进书里有两个理由——本书后续使用它们确立的符号与算子口径；以及读者可以先在读得懂的地方核对本书有没有算错，再决定是否相信主线里那些不那么熟悉的推导。**只想追主线可以直接跳过这两章，@sec-quantum-phase 章到 @sec-twins-comparison 章之间没有依赖它们的概念跳跃。** @sec-galilean-electrodynamics 章、@sec-two-source-field 章、@sec-clock-coupling 章各自独立：@sec-galilean-electrodynamics 章回答一个纯数学问题（伽利略世界能否有自洽的场方程组），@sec-two-source-field 章是作者早年基于两条公设的双源场推导，@sec-clock-coupling 章把“多类演化系统如何共享同一个背景场”拆成独立的层次。
 
-## 招牌：第 12 章的三个数
+## 招牌：@sec-twins-comparison 章的三个数
 
 如果只读一页，读 @tbl-tc-ratios。那里对同一个问题（A 的钟走一小段时 B 的钟走多少）用三套各自自洽的输入各算一遍：
 
@@ -23,7 +23,7 @@
 | 伽利略变换 | $1$ |
 | 洛伦兹变换 | $1/\gamma_w$ |
 
-三个答案并列在同一张表上。这不是“其中两个错了”，而是三套输入各自的正确输出；@sec-twins-comparison 逐行指出差别的全部来源是两条变换第一式之差 $t'=t$ 与 $t'=\gamma_u(t-ux/c^{2})$。第 12 章由此提炼出全书的关键限定（@prp-tc-covariance）：**协变性不蕴含读数诠释**——同一个二次型在两支下形式都不变，而读数诠释不同。同一句话在第 12 章末也会被明确说出来，因为那是最容易被误读的地方。
+三个答案并列在同一张表上。这不是“其中两个错了”，而是三套输入各自的正确输出；@sec-twins-comparison 逐行指出差别的全部来源是两条变换第一式之差 $t'=t$ 与 $t'=\gamma_u(t-ux/c^{2})$。@sec-twins-comparison 章由此提炼出全书的关键限定（@prp-tc-covariance）：**协变性不蕴含读数诠释**——同一个二次型在两支下形式都不变，而读数诠释不同。同一句话在 @sec-twins-comparison 章末也会被明确说出来，因为那是最容易被误读的地方。
 
 ## 招牌：同一底座上的两条派生路线
 
@@ -65,10 +65,10 @@
 
 | 想做的事 | 读这些章 |
 |---|---|
-| 只要主线 | 第 1—6 章，再接第 12—14 章 |
-| 只关心量子与引力的边界 | 第 2、3、5、6 章（第 3 章把 $K$ 升级为场，第 6 章 @sec-qp-scope-limit 给出结论范围），总括见上面的「两条派生路线」 |
-| 只想知道双生子问题怎么收场 | 第 12 章 @tbl-tc-ratios、第 13 章 @cor-tn-legs、第 14 章 |
-| 想先核对符号与口径 | 第 7 章、第 10 章，以及书末的「符号与约定」附录与 @sec-isg-known |
+| 只要主线 | @sec-transform-derivation 章—@sec-quantum-phase 章，再接 @sec-twins-comparison 章—@sec-asymmetric-twins 章 |
+| 只关心量子与引力的边界 | @sec-invariant-speed-group 章、@sec-invariant-speed-field-group 章、@sec-invariant-speed-geometry 章、@sec-quantum-phase 章（@sec-invariant-speed-field-group 章把 $K$ 升级为场，@sec-quantum-phase 章 @sec-qp-scope-limit 给出结论范围），总括见上面的「两条派生路线」 |
+| 只想知道双生子问题怎么收场 | @sec-twins-comparison 章 @tbl-tc-ratios、@sec-twins-noninertial 章 @cor-tn-legs、@sec-asymmetric-twins 章 |
+| 想先核对符号与口径 | @sec-maxwell-equations 章、@sec-flat-space-gravity 章，以及书末的「符号与约定」附录与 @sec-isg-known |
 
 ```{=latex}
 \newpage

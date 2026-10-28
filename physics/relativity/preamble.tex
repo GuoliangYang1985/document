@@ -60,6 +60,20 @@
     {\normalsize\bfseries\color{blue!20!black}}
     {\thesubsubsection}{0.6em}{}
 
+% ===== 页码体系：全书连续阿拉伯数字，目录页码 = PDF 物理页码 =====
+% ctexbook 的 \frontmatter / \mainmatter / \backmatter 除了切换 \@mainmatter
+% 语义（决定 \chapter 是否编号），还会切换页码体系（roman ↔ arabic）并把
+% page 计数器清零。Quarto 会在正文第一章之前额外插入一次 \mainmatter，
+% 于是清零发生两次：目录里「前言」与「第 1 章」各自从 1 开始，出现两组
+% 不同的第 1 页，读者按目录数字无法定位。
+% 此处保留三者的 \@mainmatter 语义与 \cleardoublepage，去掉页码体系切换
+% 与清零，使目录中的数字与 PDF 阅读器的跳转页号逐页对齐。
+\makeatletter
+\renewcommand{\frontmatter}{\cleardoublepage\@mainmatterfalse}
+\renewcommand{\mainmatter}{\cleardoublepage\@mainmattertrue}
+\renewcommand{\backmatter}{\cleardoublepage\@mainmatterfalse}
+\makeatother
+
 % ===== 5、6 级标题（段落头 + runin）：必须补齐，
 %        否则一旦文档里出现 ##### ###### 就会报
 %        "Package titlesec Error: No format for this command." =====

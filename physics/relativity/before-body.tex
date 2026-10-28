@@ -12,5 +12,8 @@
     {\large 2026 年 10 月}\\[0.5cm]
     \end{center}
 \end{titlepage}
+% 封面（titlepage 环境）会把 page 计数器复位为 1，其后第一页（PDF 物理第 2 页）
+% 的页脚仍显示 1，全书页码比物理页号小 1。补一步使两者逐页一致，
+\addtocounter{page}{1}
 \cleardoublepage
 \frontmatter
