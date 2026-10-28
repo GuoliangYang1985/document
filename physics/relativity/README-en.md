@@ -3,8 +3,8 @@
 A book manuscript on **measurement, symmetry, and the structure of physical theories**. The whole book turns on a single axis: the invariant-speed group $G_K$, in which the invariant speed is written as a parameter $K$. The Lorentz transformation ($K=c$), the Galilean transformation ($K=\infty$), and the Carrollian limit ($K=0$) then appear as three values of one and the same family of structures. The manuscript asks, value by value, which conclusions depend on $K$ and which do not.
 
 - **Author**: Guoliang Yang (Jinan, Shandong)
-- **Version**: 1.0
-- **Typesetting**: Quarto book + XeLaTeX (`ctexbook`), A4, Chinese text
+- **Version**: 1.0 (revision 2026-10-28)
+- **Typesetting**: Quarto book + XeLaTeX (`ctexbook`), A4, Chinese text, 256 pages
 - **Output**: `_book/理论测量的边界.pdf`
 
 ---
@@ -21,7 +21,7 @@ To separate the two, "measurement" is split into layers that can be checked inde
 | Pairing (simultaneity) rule | whose event is compared with whose | **yes** |
 | Transformation formulas and coordinate quantities | coordinate time, projected time | yes |
 
-The book's stance: **list the conclusions of each layer separately, each with its own premises, and never present a difference at the pairing layer as a difference at the object layer.** The twin analyses of Chapter 13 give the fullest demonstration of this method.
+The book's stance: **list the conclusions of each layer separately, each with its own premises, and never present a difference at the pairing layer as a difference at the object layer.** The twin analyses of Chapters 12–14 give the fullest demonstration of this method.
 
 ---
 
@@ -30,31 +30,35 @@ The book's stance: **list the conclusions of each layer separately, each with it
 | Part | Ch. | Title | Role |
 |------|-----|-------|------|
 | Preface | — | Preface | Problem, method, roadmap |
-| **Main line** | 1 | The symmetric-twins experiment | A formula-free opening: mirror symmetry ⟹ equal readings; Lorentz pairing gives another number; the two sit at different layers |
-| | 2 | Deriving the Galilean and Lorentz transformations | One derivation; the split sits in the third axiom |
-| | 3 | The constant-speed group | The parametrised family $G_K$, structure constant $1/K^2$ |
-| | 4 | The constant-speed field group | Promoting $K$ from a constant to a field |
-| | 5 | Dynamics of the constant-speed field group | The conformal ansatz and its hard limits |
-| | 6 | The complete geometry of the constant-speed field | Adding shift and spatial metric: the full 10 degrees of freedom |
-| | 7 | Algebraic generation of the quantum phase | Lie-algebra contraction, projective representations, mass as a central charge |
-| **Field-theory cases** | 8 | Maxwell's equations | The standard case in the $K=c$ branch |
-| | 9 | Galilean-covariant field equations | Its counterpart in the $K=\infty$ branch |
-| | 10 | Propagation and two-source fields under the Galilean postulate | Pure mathematical consequences of axioms A1 + A2 |
-| | 11 | Symmetric tensor fields on flat spacetime | Equivalence and breakdown of the $(\eta,h)$ and $g$ bookkeepings |
-| **Extensions** | 12 | The clock-coupling framework | Rate functions, moduli space, uplift to the operator level |
-| | 13 | The symmetric twins revisited | Three inputs side by side; the criterion separating covariance from the clock-reading scale; the Earth-version twins under both sets of axioms |
-| | 14 | The symmetric twins in non-inertial coordinates | Both viewpoints, the condition for the coordinate map to be injective, and the calibration-line cut: the two inertial segments contribute exactly $0$ to the difference of readings |
-| **Appendix** | — | Notation and conventions | Symbol registry, curvature convention, house style |
+| Guide | — | Reading guide | Structure of the book, two signature demonstrations, chapter summaries, suggested routes |
+| **Main line** | 1 | Deriving the Galilean and Lorentz transformations | One four-step elimination of unknowns; the split sits only in the third axiom (is the invariant object time or speed?) |
+| | 2 | The constant-speed group | The parametrised family $G_K$: Galilean and Lorentz as two endpoints of one family, Carroll as the third |
+| | 3 | The constant-speed field group | Promoting $K$ from a constant to a field $K(p)$: a group at each point, composition across points fails |
+| | 4 | Dynamics of the constant-speed field group | Curvature and the Einstein tensor under the tetrad ansatz $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$; the non-relativistic limit |
+| | 5 | The complete geometry of the constant-speed field | Adding shift $\beta^i$ and spatial metric $h_{ij}$: the full 10 degrees of freedom; the Schwarzschild specialisation |
+| | 6 | Algebraic generation of the quantum phase | Lie-algebra contraction, projective representations, mass as a central charge |
+| **Calibration cases and side branches** | 7 | Maxwell's equations | The standard case in the $K=c$ branch |
+| | 8 | Galilean-covariant field equations | Its counterpart in the $K=\infty$ branch |
+| | 9 | Propagation and two-source fields under the Galilean postulate | Pure mathematical consequences of axioms A1 + A2 |
+| | 10 | Symmetric tensor fields on flat spacetime | Equivalence and breakdown of the $(\eta,h)$ and $g$ bookkeepings |
+| | 11 | The clock-coupling framework | Rate functions, moduli space, uplift to the operator level |
+| **Closing** | 12 | The symmetric-twins experiment and three algorithms | A mirror-symmetric experiment; symmetry, Galilean and Lorentz inputs side by side; covariance does not entail a reading interpretation |
+| | 13 | The symmetric twins in non-inertial coordinates | Spacetime diagrams in both branches, the condition for the coordinate map to be injective, and the calibration-line cut: comparing the readings of the two sides segment by segment |
+| | 14 | The asymmetric-twins experiment | Reading difference $2t_1(1-1/\gamma)+(\Delta-\varepsilon)$: the turnaround contributes the constant term, the duration and speed of inertial flight set the change; the $K=\infty$ branch gives $0$; a third world line in the same scenario |
+| **Appendix** | — | Notation and conventions | Symbol registry (ambiguous symbols distinguished by chapter), curvature convention, house style |
+| | — | Keyword index | Terms with physical page numbers, generated by script |
 | | — | References | — |
+
+The division into three parts, and the dependencies among chapters, are described in the in-book reading guide.
 
 ---
 
 ## 3. Features
 
-1. **Comparable numbers.** The same question ("how much does B's clock advance while A's advances by one second?") is answered three times — using symmetry only, the Lorentz transformation only, and the Galilean transformation only — and the three answers are placed side by side (Chapter 13, Table 13.1).
+1. **Comparable numbers.** The same question ("how much does B's clock advance while A's advances by one second?") is answered three times — using symmetry only, the Lorentz transformation only, and the Galilean transformation only — and the three answers are placed side by side (Chapter 12).
 2. **Symbolic computation kept in step with the text.** Every closed-form result (Ricci and Weyl components, central extensions, twin ratios) is produced term by term with sympy in `chapters/images/*.py`; the script output matches the text one-for-one. Changing a formula means changing its script.
-3. **Two branches side by side, without adjudication.** Chapter 13 places the Earth-version twins in both the $K=c$ and the $K=\infty$ branch, gives the axioms and results of each, and leaves the choice open.
-4. **Conclusions stated as checkable criteria.** Every statement in the twins chapters is given as a mathematical criterion — a piecewise cut along calibration lines, the choice of a pairing rule, the condition for the coordinate map to be injective — with no claim reaching beyond what the derivation yields. Chapter 1 deliberately carries no formulas: it sets out the two threads and the difference in their level.
+3. **Two branches side by side, without adjudication.** Chapter 14 places the asymmetric (Earth-version) twins in both the $K=c$ and the $K=\infty$ branch, gives the postulates and results of each, and leaves the choice open.
+4. **Conclusions stated as checkable criteria.** Every statement in the twins chapters is given as a mathematical criterion — a piecewise cut along calibration lines, the choice of a pairing rule, the condition for the coordinate map to be injective, an explicit formula for the reading difference — with no claim reaching beyond what the derivation yields.
 
 ---
 
@@ -64,7 +68,7 @@ The book's stance: **list the conclusions of each layer separately, each with it
 
 - [Quarto](https://quarto.org) (≥ 1.4)
 - A TeX distribution (TinyTeX or TeX Live) providing `xelatex` and the `ctex` bundle
-- Python 3.13 (figures only) with `sympy`, `matplotlib`, `numpy`
+- Python 3.13 (figures and index only) with `sympy`, `matplotlib`, `numpy`, `pypdf`
 
 ### Commands
 
@@ -76,37 +80,49 @@ quarto render --to pdf
 quarto render --to html
 ```
 
-### Figures
+### Figures and index
 
 Figure scripts live in `chapters/images/`; each script writes a PNG of the same name:
 
 ```bash
 cd chapters/images
-python twins-earth-two-branches.py      # writes twins-earth-two-branches.png
+python twins-calibration-cut-ends.py    # writes twins-calibration-cut-ends.png
 ```
 
-Every script begins with a sympy verification block and prints the key identities to stdout (for example `gamma(K) = 1/sqrt(1 - v**2/K**2)`, `K -> oo : 1`).
+Every script begins with a sympy verification block and prints the key identities to stdout.
+
+The keyword index is extracted from each chapter's "terms" section and keyed to the rendered PDF's page numbers:
+
+```bash
+quarto render --to pdf          # render first
+python tools/build_index.py     # refresh page numbers in chapters/term-index.qmd
+quarto render --to pdf          # render again to include the index
+```
 
 ### Layout
 
 ```
-_quarto.yml            book configuration (chapter order, theorem labels, formats)
-preamble.tex           LaTeX preamble (book name, layout, headers and footers)
-before-body.tex        custom title page (with version number)
-chapters/*.qmd         the chapters
-chapters/images/*.py   figure scripts (each with symbolic verification)
+_quarto.yml              book configuration (chapter order, theorem labels, formats)
+preamble.tex             LaTeX preamble (book name, layout, page-number scheme, headers)
+before-body.tex          custom title page (with version number) and page-number alignment
+chapters/*.qmd           the chapters
+chapters/images/*.py     figure and symbolic-computation scripts (each with verification)
 chapters/references.bib  bibliography
-_deliver/              standalone single-chapter versions
+tools/build_index.py     keyword-index generator (run after render)
+tools/dynref_chapters.py one-shot script: hard-coded chapter numbers → dynamic cross-references
+tools/neutralize_terms.py  one-shot script: neutral-wording replacements
+_deliver/                standalone single-chapter versions
 ```
 
 ---
 
 ## 5. House style
 
+- Page numbers run continuously in Arabic numerals through the whole book: **the number printed in the table of contents is the jump target in a PDF viewer**; no roman/arabic switch between front matter and main text.
 - Theorem-like environments are numbered per chapter: axiom, definition, proposition, theorem, lemma, corollary.
-- Equations are numbered consecutively per chapter; cross-references are hyperlinks, never hand-written numbers.
+- Equations are numbered per chapter; all cross-references are dynamic (`@sec-*`, `@eq-*`, …), never hand-written numbers.
 - No end-of-proof symbol is used.
-- Symbol clashes and multiple meanings are registered in the "Notation and conventions" chapter (in particular the roles of $K$, $h$, and $c$).
+- Symbol clashes and multiple meanings are registered in the "Notation and conventions" chapter (in particular the roles of $K$, $h$, $c$, and $a$).
 
 ---
 
@@ -114,7 +130,8 @@ _deliver/              standalone single-chapter versions
 
 | Version | Notes |
 |---------|-------|
-| 1.0 | First release: 14 chapters plus the notation appendix; Chapter 1 rewritten as a formula-free opening; conclusions in the twins chapters stated as mathematical criteria; "Covariance and clock-reading interpretation" added to Chapter 13, the calibration-line cut and the injectivity condition added to Chapter 14; quotation marks unified throughout; version number added to the title page |
+| 1.0 | First release: 14 chapters plus the notation appendix; conclusions in the twins chapters stated as mathematical criteria; quotation marks unified; version number on the title page |
+| 1.0 revision (2026-10-28) | Structure: the former Chapter 1 (a formula-free opening) is retired, its content merged into the symmetric-twins chapter; a new Chapter 14 (the asymmetric-twins experiment) consolidates the former §13.13 and §14.9; chapter numbers renumbered throughout. Typesetting: page numbering switched to continuous Arabic numerals with TOC page numbers aligned to physical PDF pages; 97 hard-coded chapter numbers converted to dynamic cross-references; keyword-index page numbers regenerated; the ambiguous symbol $a$ properly registered |
 
 ---
 
