@@ -4,7 +4,7 @@
 
 设定：弟弟留在地球（x=0），哥哥以 v 飞离到 d 后折返，在 R 重逢。
 K = 无穷 时：
-  等读数轨迹   t^2 - x^2/K^2 = tau^2   退化为水平直线  t = tau
+  等读数轨迹   t^2 - x^2/K^2 = tau^2   在 K->oo 时成为水平直线  t = tau
   钟慢因子     gamma(K) = 1/sqrt(1-v^2/K^2) = 1
 故两条形状完全不同的世界线，处处读数相同，重逢时同龄。
 """
@@ -19,7 +19,7 @@ K, v, tau = sp.symbols("K v tau", positive=True)
 gam = 1 / sp.sqrt(1 - v ** 2 / K ** 2)
 print("gamma(K)   =", gam)
 print("K -> oo    =", sp.limit(gam, K, sp.oo))
-print("等读数曲线 t^2 - x^2/K^2 = tau^2 在 K->oo 时退化为 t = tau（水平直线）")
+print("等读数曲线 t^2 - x^2/K^2 = tau^2 在 K->oo 时成为 t = tau（水平直线）")
 
 # 数值设定
 vn = 0.6                 # 飞船速率（c=1）

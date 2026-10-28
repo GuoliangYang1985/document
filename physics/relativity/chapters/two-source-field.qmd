@@ -425,7 +425,7 @@ $$
 s_{\pm}=\frac{\mathbf{d}\cdot\mathbf{v}\pm\sqrt{(\mathbf{d}\cdot\mathbf{v})^{2}+(c^{2}-v^{2})|\mathbf{d}|^{2}}}{c^{2}-v^{2}}
 $$ {#eq-roots}
 
-当 $v=c$ 时，@eq-quadratic 退化为一次方程 $2(\mathbf{d}\cdot\mathbf{v})s+|\mathbf{d}|^{2}=0$。
+当 $v=c$ 时，@eq-quadratic 成为一次方程 $2(\mathbf{d}\cdot\mathbf{v})s+|\mathbf{d}|^{2}=0$。
 
 ### 正根的判定
 

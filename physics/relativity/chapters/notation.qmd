@@ -37,14 +37,14 @@
 2. **ADM 分解中的 lapse** —— 第 6 章。该章明确取 lapse 即恒速场，故与第 1 条是**同一对象**，不是符号冲突。
 3. **约束算子** —— 第 12 章曾用 $K:=A_{R}\otimes 1-1\otimes A_{C}$，与恒速场无关；现改用 $\mathscr{C}$，避免混淆。
 
-**定义域**：$K$ 的参数空间取 $(0,\infty]$；$K=0$（Carroll）与 $K=\infty$（伽利略）作为边界/极限点处理。第 6 章 Schwarzschild 视界处 $K\to0$，按退化边界理解，不作为 $K$ 的正则取值。
+**定义域**：$K$ 的参数空间取 $(0,\infty]$；$K=0$（Carroll）与 $K=\infty$（伽利略）作为边界/极限点处理。第 6 章 Schwarzschild 视界处 $K\to0$，按边界点理解，不作为 $K$ 的正则取值。
 
 ## 读数、几何与曲率 {#sec-notation-geometry}
 
 | 符号 | 含义 | 主要出处 |
 |------|------|------|
 | $\tau$ | 随身钟的读数（沿世界线累积） | 第 1、13 章 |
-| $\mathrm{d}s^{2}$ | 读数尺度；$K=c$ 时 $\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$，$K=\infty$ 时退化为 $\mathrm{d}t^{2}$ | 第 3、13 章 |
+| $\mathrm{d}s^{2}$ | 读数尺度；$K=c$ 时 $\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$，$K=\infty$ 时取 $\mathrm{d}t^{2}$ | 第 3、13 章 |
 | $\int\mathrm{d}s$ | 沿世界线的累积读数 | 第 13 章 |
 | $\iota$ | 镜像映射 $(t,x)\mapsto(t,-x)$ | 第 13 章 |
 | $R^{\mu}{}_{\nu\rho\sigma}$、$R_{\mu\nu}$、$R$ | 黎曼张量、Ricci 张量、Ricci 标量 | 第 4—6、11 章 |

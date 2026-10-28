@@ -35,7 +35,7 @@
 | **附加公理一** | 标架完备化：除 $K$ 外补进拖曳 $\beta^{i}$ 与剪切 $h_{ij}$，共 $1+3+6=10$ 个自由度（@sec-invariant-speed-geometry 章） | 取定相态参数 $K\to\infty$、$\vec\nabla K=0$（@sec-quantum-phase 章） |
 | **附加公理二** | 真空场方程 $G_{\mu\nu}=0$ | 态是射线（射影表示）、幺正性与概率守恒；收缩取重整化收缩 |
 | **推出什么** | Weyl 张量非零（Schwarzschild 处 $C_{abcd}C^{abcd}=48M^{2}/r^{6}$）、$K^{2}=1-2M/r$、视界由 $K=0$ 定出为 $r_s=2M$ | 唯一中央扩张（$H^{2}(\mathfrak{gal},\mathbb R)=\mathbb R$），中央荷即质量 $m$，$m$ 是中心元而非 Casimir 本征值（质量超选择），$[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$，薛定谔方程（三条独立路线） |
-| **定义域** | $\vec\nabla K\neq0$——$K$ 无梯度时度规退化为 Minkowski，没有引力可言 | $\vec\nabla K=0$——由 Jacobi 恒等式反推：中央扩张成立**当且仅当** $\vec\nabla K=0$ |
+| **定义域** | $\vec\nabla K\neq0$——$K$ 无梯度时度规成为 Minkowski 度规，没有引力可言 | $\vec\nabla K=0$——由 Jacobi 恒等式反推：中央扩张成立**当且仅当** $\vec\nabla K=0$ |
 
 两条路在定义域上正交：引力侧的解恰恰要求 $\vec\nabla K\neq0$，量子侧的中央扩张恰恰要求 $\vec\nabla K=0$。于是在这个底座上，“把两个理论合起来”不是“尚未做到”，而是**没有指称的对象**——这就是 @sec-quantum-phase 章末 (A) 层陈述的由来，其范围限定见 @sec-qp-scope-limit。
 
@@ -48,13 +48,13 @@
 
 - @sec-symmetric-twins 章：设计一个完全镜像对称的双生子实验，不加算式地把两条线索摆出来——镜像对称直接给出“两只钟读数相同”，洛伦兹变换给出“各自看对方慢”；指出这两个数说的不是同一件事，具体算式留给后续各章；
 - @sec-transform-derivation 章：仅从线性性、不变对象的存在与群结构三条前提出发，严格导出伽利略变换与洛伦兹变换；
-- @sec-invariant-speed-group 章：保留 @sec-transform-derivation 的全部算式，仅更换其解读方式——把伽利略变换与洛伦兹变换不看作两个并列理论，而看作同一个以恒速 $K\in(0,\infty]$ 为参数的群族的两个退化端点，并给出 $K\to\infty$（伽利略）与 $K\to0$（Carroll）两个极限，最后指出“事件视界”意义上的黑洞只在 $K$ 有限时存在；@sec-isg-known 另把已有分类与本书新增的部分分成两张清单；
+- @sec-invariant-speed-group 章：保留 @sec-transform-derivation 的全部算式，仅更换其解读方式——把伽利略变换与洛伦兹变换不看作两个并列理论，而看作同一个以恒速 $K\in(0,\infty]$ 为参数的群族的两个端点，并给出 $K\to\infty$（伽利略）与 $K\to0$（Carroll）两个极限，最后指出“事件视界”意义上的黑洞只在 $K$ 有限时存在；@sec-isg-known 另把已有分类与本书新增的部分分成两张清单；
 - @sec-invariant-speed-field-group 章：把常数 $K$ 升级为时空上的恒速场 $K(p)$，证明逐点的群仍在而跨点的复合不成立（需要额外的联络）；在受限的对角约定下算出 Ricci 标量 $R=2\Delta K/K$ 与真空解，同时给出两条硬边界（$G_{00}\equiv0$、自由度 $1<6$），并说明“质量”这个参数只在 $K=\infty$ 一端是李代数的中央荷；
 - @sec-invariant-speed-dynamics 章：放弃刚性的空间度规，改用 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，严格算出 Christoffel 闭式、Ricci 标量 $R=-6\Box_\eta K/K^{3}$ 与非零的 $G_{00}=\frac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$，给出正能量密度的球对称例子；同时给出波动力学一端的结果——变系数 Klein–Gordon 方程，以及“非相对论极限只在 $\vec\nabla K=0$ 处存在”这一严格结论；
 - @sec-invariant-speed-geometry 章：把恒速场 $K$ 从“唯一的几何自由度”降为完备标架中的一个约束参数——先证明“标架 $=K\times$ 局部洛伦兹变换”必然给出共形平坦度规、Weyl 张量恒为零（因而装不下黑洞），再补上拖曳 $\beta^{i}$ 与空间度规 $h_{ij}$，达到 $1+3+6=10$ 个自由度的完备分解；以 Schwarzschild 特化完成硬证明——$R_{\mu\nu}=0$、$G_{\mu\nu}=0$、$C_{abcd}C^{abcd}=48M^{2}/r^{6}$；真空方程直接给出 $K^{2}=1-2M/r$，视界由 $K=0$ 定出为 $r_s=2M$；最后声明 $\vec\nabla K\neq0$ 时非相对论极限不存在——该结论的主语是本书由非相对论极限导出的那套薛定谔结构，适用范围见 @sec-qp-scope-limit；
 - @sec-quantum-phase 章：只走纯量子相态——取定 $K\to\infty$、$\vec\nabla K=0$，从恒速群出发，经李代数收缩、射影表示与中央扩张推出量子力学的核心骨架：中央荷即质量 $m$（中心元素而非 Casimir 本征值，由此得质量超选择），解出 $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$；再由三条独立路线生成薛定谔方程；最后以反证法收口——$\vec\nabla K\neq0$ 时相位抽取的残留项按 $K_0^{2}$ 发散并破坏幺正性。这是 (A) 层陈述，三层区分见 @sec-qp-scope-limit；
 - @sec-maxwell-equations 章：将麦克斯韦方程组改写为四维张量形式，逐分量验证其与三维矢量方程的对应关系，证明其在洛伦兹变换下的协变性，并导出电场与磁场的变换关系；
-- @sec-galilean-electrodynamics 章：为一个假想的伽利略世界构造一套自洽的场方程组，回答“能否构造一组在伽利略变换下形式不变的偏微分方程、且当补偿速度取零时退化为标准麦克斯韦方程组”这一纯数学问题；
+- @sec-galilean-electrodynamics 章：为一个假想的伽利略世界构造一套自洽的场方程组，回答“能否构造一组在伽利略变换下形式不变的偏微分方程、且当补偿速度取零时成为标准麦克斯韦方程组”这一纯数学问题；
 - @sec-two-source-field 章：在静系中由球面前沿唯一确定演化算子，经傅里叶变换导出 Kirchhoff 公式与推迟积分，对静止源与运动源分别解出推迟时间与 Jacobian 因子，给出两源同时发出瞬时扰动时的总场表达式，并证明总场在运动系中仍由同一线性方程支配；
 - @sec-flat-space-gravity 章：在平直时空上取一个对称二阶张量场 $h_{\mu\nu}$，完整分类满足“常系数、至多二阶导、洛伦兹协变、规范不变”的线性算子，解出谐和规范下的达朗贝尔方程与两个独立模式，最后给出 $(\eta,h)$ 与 $g=\eta+h$ 两套表述的等价定理，以及破坏该等价的四类修改；
 - @sec-clock-coupling 章：在给定的背景场下，把“多类演化系统的速率如何由一族响应函数给出”拆成若干彼此独立的层次，逐层给出定义、可判定的命题与该层尚缺的数据，并判定这一框架与量子力学的相容性；

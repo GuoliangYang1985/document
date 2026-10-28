@@ -2,7 +2,7 @@
 
 本章只做数学。它研究一个对象：**在给定的背景场 $\Phi$ 下，多类演化系统各自的速率如何由一族响应函数 $f_i$ 给出。** 本章不含与运动速度相关的项（那属于另一章的题材），也不涉及任何测量结果。
 
-内容分两部分。**几何部分**（@sec-cc-data 至 @sec-cc-degenerations）在 $\Phi$ 给定的前提下刻画 $\omega_i=f_i(\Phi)\,dt$ 的结构，并给出类别映射 $i\mapsto f_i$ 的三种退化；**动力学部分**（@sec-cc-field、@sec-cc-quantum）让 $\Phi$ 自身承担方程，并把它接入量子力学。先给出全章的分层总览：
+内容分两部分。**几何部分**（@sec-cc-data 至 @sec-cc-degenerations）在 $\Phi$ 给定的前提下刻画 $\omega_i=f_i(\Phi)\,dt$ 的结构，并给出类别映射 $i\mapsto f_i$ 的三种情形；**动力学部分**（@sec-cc-field、@sec-cc-quantum）让 $\Phi$ 自身承担方程，并把它接入量子力学。先给出全章的分层总览：
 
 | 层 | 数学对象 | 该层已确定的 | 该层仍自由的 |
 |----|----------|--------------|--------------|
@@ -73,7 +73,7 @@ $$
 
 @sec-cc-data 允许 $\Phi$ 是任意 $C^{\infty}$ 函数。本框架关心的背景场有两类，它们给出互相独立的例子，也界定了全章结论的射程。
 
-**静态场。** 取 $\Phi=\Phi(x)$，与 $t$ 无关，即 $\partial_{t}\Phi=0$。此时 $\nabla\Phi$ 是 $M$ 上的 $n$ 个函数（$\partial_{a}\Phi$，$a=1,\dots,n$）。由 @eq-closed-criterion，$\omega_i$ 闭 $\iff f_i'(\Phi)\,\nabla\Phi=0$。于是在「$\nabla\Phi\neq0$ 于某点」且「$f_i'$ 在 $\Phi$ 的像上不恒为零」这两个条件下，$d\omega_i\neq0$，$\tau_i$ 是真正的路径泛函，不能写成 $M$ 上的单个函数。反过来，若 $\nabla\Phi\equiv0$（即 $\Phi$ 为常数，静态场的退化解），则 $d\Phi=0$，$\omega_i=f_i(\text{const})\,dt$ 是闭的（事实上恰当），路径依赖消失。
+**静态场。** 取 $\Phi=\Phi(x)$，与 $t$ 无关，即 $\partial_{t}\Phi=0$。此时 $\nabla\Phi$ 是 $M$ 上的 $n$ 个函数（$\partial_{a}\Phi$，$a=1,\dots,n$）。由 @eq-closed-criterion，$\omega_i$ 闭 $\iff f_i'(\Phi)\,\nabla\Phi=0$。于是在「$\nabla\Phi\neq0$ 于某点」且「$f_i'$ 在 $\Phi$ 的像上不恒为零」这两个条件下，$d\omega_i\neq0$，$\tau_i$ 是真正的路径泛函，不能写成 $M$ 上的单个函数。反过来，若 $\nabla\Phi\equiv0$（即 $\Phi$ 为常数），则 $d\Phi=0$，$\omega_i=f_i(\text{const})\,dt$ 是闭的（事实上恰当），路径依赖消失。
 
 **线性场。** 取
 
@@ -97,7 +97,7 @@ d\omega_i=0
 \iff \bigl(f_i'(\Phi)\equiv0\bigr)\ \text{或}\ \bigl(\mathbf{a}=0\bigr)
 $$ {#eq-closed-linear}
 
-（$f_i'$ 是 $\Phi$ 的函数而 $\mathbf{a}$ 是常数向量，故 $f_i'(\Phi)\,\mathbf{a}\equiv0$ 要求两者至少一个恒为零。）再由 $f_i>0$、$f_i(0)=1$，$f_i'\equiv0$ 给出 $f_i\equiv1$；而 $\mathbf{a}=0$ 使 $\Phi\equiv0$，同样给出 $\omega_i=f_i(0)\,dt=dt$。**故除退化情形 $f_i\equiv1$（等价地 $\omega_i=dt$）外，线性场下的累积量一律路径依赖。**
+（$f_i'$ 是 $\Phi$ 的函数而 $\mathbf{a}$ 是常数向量，故 $f_i'(\Phi)\,\mathbf{a}\equiv0$ 要求两者至少一个恒为零。）再由 $f_i>0$、$f_i(0)=1$，$f_i'\equiv0$ 给出 $f_i\equiv1$；而 $\mathbf{a}=0$ 使 $\Phi\equiv0$，同样给出 $\omega_i=f_i(0)\,dt=dt$。**故除 $f_i\equiv1$（等价地 $\omega_i=dt$）这一情形外，线性场下的累积量一律路径依赖。**
 
 两类场的差别只落在 $d\omega_i$ 的取值与精确性结论上，叶本身不受影响：@prp-same-foliation 的 $\ker\omega_i=\ker dt$ 只用到 $f_i>0$，与 $\Phi$ 的具体形式无关。
 
@@ -410,13 +410,13 @@ $$
 一阶层次上，@eq-universality 化为最简形式：**普适 $\iff$ 映射 $i\mapsto\alpha_i$ 为常值映射。** 事实上由 @eq-log-X，$\log X_{ij}=\left(\alpha_i-\alpha_j\right)\Phi+O(\Phi^{2})$，其一阶项恒为零当且仅当 $\alpha_i=\alpha_j$ 对一切 $i,j$ 成立。于是“类别依赖”的全部一阶内容，就是实值映射 $\alpha:I\to\mathbb{R}$ 偏离常值映射的程度。
 :::
 
-## 三种退化情形 {#sec-cc-degenerations}
+## 三种特殊情形 {#sec-cc-degenerations}
 
 @eq-jet-map 的像由映射 $i\mapsto f_i$ 完全决定。按“类别依赖”的强弱，这个映射只有三种定性可能。
 
 **（一）无改变：单一刻度。** 若 $f_i\equiv1$ 对一切 $i$ 成立，则 @eq-omega 给出 $\omega_i=dt$：所有类别的读数都等于 $t$ 本身，$\Phi$ 不出现在任何 $\omega_i$ 中。此时 $X_{ij}\equiv1$（@eq-ratio）、$\alpha_i-\alpha_j\equiv0$（@eq-Q-first），类别之间的比较没有任何内容。这是“背景场不改变任何类别速率”的数学形式；其几何特征是全部 $\omega_i$ 重合为同一个 $dt$。
 
-**（二）共同改变：单一读数。** 若 $f_i=f$ 与 $i$ 无关，则所有类别的 $\omega_i$ 相同，$\{X_{ij}\}$ 平凡（@eq-universality），一阶上 $\alpha_i\equiv\alpha$ 为同一常数。此时 @eq-omega 的整体形状 $\omega=f(\Phi)\,dt$ 对一切类别一致，可用**单个**几何对象（共同的刻度场 $f(\Phi)$）编码，类别之间不存在可比较的差异：$f_i=f_j$ 使 $X_{ij}\equiv1$，一切类别依赖的量都退化。这一情形是（三）在「刻度与类别无关」这一附加条件下的特例。
+**（二）共同改变：单一读数。** 若 $f_i=f$ 与 $i$ 无关，则所有类别的 $\omega_i$ 相同，$\{X_{ij}\}$ 平凡（@eq-universality），一阶上 $\alpha_i\equiv\alpha$ 为同一常数。此时 @eq-omega 的整体形状 $\omega=f(\Phi)\,dt$ 对一切类别一致，可用**单个**几何对象（共同的刻度场 $f(\Phi)$）编码，类别之间不存在可比较的差异：$f_i=f_j$ 使 $X_{ij}\equiv1$，一切依赖类别的量都取同一值。这一情形是（三）在「刻度与类别无关」这一附加条件下的特例。
 
 **（三）分类别改变：类别依赖。** 若 $i\mapsto f_i$ 非常值，则 $X_{ij}\neq1$、$\alpha_i-\alpha_j$ 不全为零，@eq-Q-first 给出非平凡的类别比较。此时不存在能同时编码全部 $\omega_i$ 的单个几何对象：@eq-omega 中乘的 $f_i$ 依赖 $i$，任何“共同几何”的写法都必须额外指定 $I$ 上的一族函数。**（二）是本情形的特例**，而（一）又是（二）的特例，三者链式嵌套：
 
@@ -430,7 +430,7 @@ $$ {#eq-nesting}
 | （二）共同改变 | $f_i=f$，与 $i$ 无关 | 单个函数 | 无（余循环平凡） | $\alpha_i\equiv\alpha$（同一常数） |
 | （三）类别依赖 | $i\mapsto f_i$ 非常值 | 多个函数 | $\alpha_i-\alpha_j\neq0$ | $\alpha:I\to\mathbb{R}$ 非常值 |
 
-: 类别映射的三种退化 {#tbl-degenerations}
+: 类别映射的三种情形 {#tbl-degenerations}
 
 判据只有一条：**看映射 $i\mapsto\alpha_i$。** 它与 @eq-universality 的余循环判据一致——精确层面看 $\{X_{ij}\}$ 是否平凡（即是否存在 $i$ 无关的 $f$ 使 $X_{ij}=f/f=1$），一阶层面看 $\alpha_i$ 是否恒为同一常数；$\alpha_i\equiv0$ 且 $f_i\equiv1$ 则是（一）。注意（一）与（二）在**一阶**判据上是否重合，取决于规范条件：在对角规范 @eq-gauge 下，$\alpha_i\equiv\alpha$ 可经 $\kappa$ 缩放把 $\alpha$ 变为任意值，但 $f_i\equiv1$ 是全阶陈述，一阶判据只能给出 $\alpha_i\equiv0$ 这一必要条件。
 
@@ -743,7 +743,7 @@ $$ {#eq-mt-sum}
 | 一形式层 | 外微分、Frobenius 定理、庞加莱引理 | 微分几何 | 叶状结构唯一（@prp-exactness、@prp-frobenius、@prp-same-foliation） |
 | 规范化层 | 群作用与模空间、规范条件 | 范畴/群论 | 对角不变量与单类别协变量的分离（@prp-gauge-action、@prp-comparables） |
 | 射流层 | 射流丛、余循环、幂级数展开 | 微分代数、同调代数 | 截断即投影、普适性判据（@prp-truncation、@prp-log-linear、@prp-cocycle） |
-| 退化情形 | 余循环平凡性判据 | 群论 | 单一刻度／共同改变／类别依赖三分（@sec-cc-degenerations） |
+| 特殊情形 | 余循环平凡性判据 | 群论 | 单一刻度／共同改变／类别依赖三分（@sec-cc-degenerations） |
 | 变分层 | 变分法、Fredholm 二择一 | 分析 | 耦合二重出现、隐式可解性（@prp-double-coupling、@prp-jet-tower、@prp-implicit） |
 | 算子层 | 函数演算、Stone 定理、POVM | 泛函分析 | 相容性成立、重参数化生成元、关系性读数（@prp-reparam、@prp-ordering、@prp-downbounded、@prp-joint-meas、@prp-mt） |
 
@@ -755,4 +755,4 @@ $$ {#eq-mt-sum}
 2. **框架的“类别依赖”被精确地定位在一个余循环上。** @eq-cocycle 与 @eq-universality 把它归结为映射 $i\mapsto\alpha_i$ 偏离常值的程度；@eq-Q-first 给出它在两点比较中的可比较形式。@sec-cc-degenerations 把这条判据展开成三个层次：单一刻度（$f_i\equiv1$）、共同改变（$f_i$ 与 $i$ 无关）、类别依赖（一般情形），后者依次包含前者（@eq-nesting）。
 3. **与量子力学相容。** 判定的答案是肯定的：在 $\Phi$ 无空间依赖（$c$-数）时重参数化给出自伴生成元 $A/f_i(\Phi)$（@eq-reparam-generator），酉性保持。$\Phi$ 的空间依赖需要编序约定（@prp-ordering），$\tau_i$ 需要关系性实现（@cor-no-time-operator、@cor-joint-noise、@cor-mt-relative）——两者都不构成障碍。只有把 $\Phi$ 量子化才会破坏相容性。
 
-本章的一般情形是 @sec-cc-degenerations 的（三）。它与 @cnj-invariant-time 所设公理（即情形（一），一条与变换无关的刻度）的关系是包含关系（@eq-nesting）：把“单一刻度”放宽为“一族与背景场取值有关的刻度”，本章给出这一放宽在每一层应付出的数学代价。需要指出，@cnj-invariant-time 是一条关于坐标变换的约束，本章的 $\tau_i$ 则是沿路径的累积量，二者不是同一类对象；它们的联系在于：当（一）成立时全部 $\omega_i$ 重合为 $dt$，本章的读数 $\tau_i$ 退化为 $t$ 本身，即 @cnj-invariant-time 所要求的那个与类别无关的刻度。
+本章的一般情形是 @sec-cc-degenerations 的（三）。它与 @cnj-invariant-time 所设公理（即情形（一），一条与变换无关的刻度）的关系是包含关系（@eq-nesting）：把“单一刻度”放宽为“一族与背景场取值有关的刻度”，本章给出这一放宽在每一层应付出的数学代价。需要指出，@cnj-invariant-time 是一条关于坐标变换的约束，本章的 $\tau_i$ 则是沿路径的累积量，二者不是同一类对象；它们的联系在于：当（一）成立时全部 $\omega_i$ 重合为 $dt$，本章的读数 $\tau_i$ 成为 $t$ 本身，即 @cnj-invariant-time 所要求的那个与类别无关的刻度。

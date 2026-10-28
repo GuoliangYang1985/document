@@ -72,7 +72,7 @@ K->oo 后 boost 生成元 B = (0, -t)
 K->oo 后 [B,P] = (0, 0)
 ```
 
-### 不变量的退化：从 $1$ 个到 $2$ 个
+### 不变量的个数：从 $1$ 个到 $2$ 个
 
 恒速群的不变量为
 
@@ -94,7 +94,7 @@ $$ {#eq-qp-two-invariants}
 
 **这就是“绝对时间 + 绝对空间”的严格含义**：时空不再是带单一度规的整体，而是 $\mathbb{R}\times\mathbb{R}^{3}$ 上分别带时间尺度与欧氏尺度的一对结构。@eq-qp-two-invariants 是本章全部推导的几何输入。
 
-### 零锥的退化
+### 零锥的形状
 
 零锥 $\lvert\mathrm{d}\mathbf{x}/\mathrm{d}t\rvert=K$ 在 $K\to\infty$ 时张开为
 
@@ -102,7 +102,7 @@ $$
 \lvert\mathrm{d}\mathbf{x}/\mathrm{d}t\rvert=\infty\quad\Longleftrightarrow\quad t=\text{常数}
 $$
 
-即：**零曲面退化为同时超曲面**，信号速度无上界。这正是伽利略时空“瞬时传播”的严格表述，也是后面非相对论极限中“不存在不变波速”的几何根源。
+即：**零曲面成为同时超曲面**，信号速度无上界。这正是伽利略时空“瞬时传播”的严格表述，也是后面非相对论极限中“不存在不变波速”的几何根源。
 
 ### $\vec\nabla K=0$ 不是简化假设，而是前提
 
@@ -342,7 +342,7 @@ $$ {#eq-qp-projective}
 
 即**射影表示**。上同调分类（@thm-qp-extension）告诉我们：$\omega$ 的非平凡部分只有一个参数。
 
-**理由二（真表示不够用）**。若坚持 $\omega\equiv1$（真表示），则中央荷 $\hat M=0$，后果有三（见 @sec-qp-ccr）：位置算符无从定义；$\hat H_{\text{nr}}=\lvert\hat{\mathbf P}\rvert^{2}/2\hat M$ 无意义；且波方程在 boost 下不协变——符号核验给出：去掉相位后
+**理由二（真表示不够用）**。若坚持 $\omega\equiv1$（真表示），则中央荷 $\hat M=0$，后果有三（见 @sec-qp-ccr）：位置算符无从定义；$\hat H_{\text{nr}}=\lvert\hat{\mathbf P}\rvert^{2}/2\hat M$ 不可定义；且波方程在 boost 下不协变——符号核验给出：去掉相位后
 
 $$
 i\hbar\partial_t\Phi+\frac{\hbar^{2}}{2m}\partial_x^{2}\Phi
@@ -421,7 +421,7 @@ $$
 
 $\hat C$ 与所有生成元对易，是 Casimir 算符；$m^{2}$ 是它的**本征值**。质量在这里是“由生成元算出来的一个数”：$\hat C$ 由 $\hat H,\hat{\mathbf P}$ 构造，$m$ 由 $\hat C$ 决定。**没有任何中心扩张**（$H^{2}(\mathfrak{iso}(1,3),\mathbb R)=0$，庞加莱群的射影表示等价于其万有覆盖的真表示）。
 
-**(b) $K\to\infty$**。取极限后 $\hat C=m^{2}K^{2}\to\infty$ 退化，@eq-qp-casimir-contract 给出存活的 Casimir
+**(b) $K\to\infty$**。取极限后 $\hat C=m^{2}K^{2}\to\infty$ 不给出有限值，@eq-qp-casimir-contract 给出存活的 Casimir
 
 $$
 \hat C_{\text{G}}:=2\hat M\hat H_{\text{nr}}-\lvert\hat{\mathbf P}\rvert^{2}=2m\,\hat E_{\text{int}}
@@ -585,7 +585,7 @@ $$
 
 故 $\psi$ 满足 @eq-qp-schrodinger。**三条路线给出同一个方程。**
 
-**波速**：群速度 $\nabla_{\mathbf k}\omega=\dfrac{\hbar\mathbf k}{m}=\dfrac{\mathbf p}{m}$（牛顿关系）；相速度 $\dfrac{\omega}{\lvert\mathbf k\rvert}=\dfrac{\hbar\lvert\mathbf k\rvert}{2m}$。**两者不等，且不存在与波源无关的不变波速**——这与第一部分“零锥退化为 $t=$ 常数”相呼应：$K=\infty$ 的时空里没有 $K$ 可供波速去等于。
+**波速**：群速度 $\nabla_{\mathbf k}\omega=\dfrac{\hbar\mathbf k}{m}=\dfrac{\mathbf p}{m}$（牛顿关系）；相速度 $\dfrac{\omega}{\lvert\mathbf k\rvert}=\dfrac{\hbar\lvert\mathbf k\rvert}{2m}$。**两者不等，且不存在与波源无关的不变波速**——这与第一部分“零锥成为 $t=$ 常数”相呼应：$K=\infty$ 的时空里没有 $K$ 可供波速去等于。
 
 ### 概率守恒与幺正性
 
@@ -759,15 +759,15 @@ $$
 | 命题 | 依据 |
 |---|---|
 | $K\to\infty$ 逐项给出伽利略变换 | @prp-qp-galileo |
-| 不变量退化为 $\Delta t$ 与 $\lvert\Delta\mathbf{x}\rvert$ 两个 | @eq-qp-two-invariants |
-| 零锥退化为 $t=$ 常数 | @sec-qp-part1 |
+| 不变量成为 $\Delta t$ 与 $\lvert\Delta\mathbf{x}\rvert$ 两个 | @eq-qp-two-invariants |
+| 零锥成为 $t=$ 常数 | @sec-qp-part1 |
 | 恒速代数 $[\hat B_i,\hat P_j]=\frac{i\hbar}{K^{2}}\delta_{ij}\hat H$ 的收缩 | @eq-qp-algK、@thm-qp-contraction |
 | 静能 $mK^{2}$ 发散与 $1/K^{2}$ 相抵 ⟹ 中央荷 $\hat M=m\mathbf 1$ | @thm-qp-central |
 | 经典实现 $\{K_i,p_j\}=m\delta_{ij}$ 已带中央荷 | @eq-qp-poisson |
 | $H^{2}(\mathfrak{gal},\mathbb R)=\mathbb R$，唯一代表元 $c(\hat B_i,\hat P_j)=\delta_{ij}$ | @thm-qp-extension |
 | 上闭链 $\xi=\mathbf v_2\cdot R_2\mathbf a_1+\frac12\lvert\mathbf v_2\rvert^{2}b_1$；Bargmann 群 | @eq-qp-cocycle-explicit |
 | $m$ 是**中心元**（非 Casimir 本征值）⟹ 质量超选择 | @thm-qp-mass |
-| $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$；$\hat M=0$ 时退化为 $0$ | @thm-qp-ccr |
+| $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$；$\hat M=0$ 时为 $0$ | @thm-qp-ccr |
 | 薛定谔方程的三条独立导出路线 | @eq-qp-schrodinger |
 | 静能项严格相消，余项 $O(K^{-2})$ | @eq-qp-preSch |
 | 协变性当且仅当带 $m$ 相位 | @eq-qp-boost |

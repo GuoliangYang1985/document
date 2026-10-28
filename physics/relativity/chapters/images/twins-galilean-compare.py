@@ -5,7 +5,7 @@
 同一构造（A 视角，B 以 w 运动，A 读 tau）：
   等固有读数轨迹  t^2 - x^2/K^2 = tau^2
   对称点坐标时    t = tau / sqrt(1 - w^2/K^2) = gamma_w * tau
-K -> 无穷 时双曲线退化为水平直线 t = tau，gamma_w -> 1，各配对重合。
+K -> 无穷 时双曲线成为水平直线 t = tau，gamma_w -> 1，各配对重合。
 """
 import numpy as np
 import matplotlib
