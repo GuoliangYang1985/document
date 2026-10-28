@@ -537,7 +537,7 @@ $$ {#eq-isg-carroll}
 | **把 $K$ 由常数升级为时空上的场 $K(p)$；逐点的 $G_{K(p)}$ 仍成群，跨点复合则不成立** | 本书 | @sec-invariant-speed-field-group 章 |
 | **$\vec\nabla K\neq0$ 时非相对论极限不存在**（相位抽取的残留项按 $K_0^{2}$ 发散且非 Hermitian，幺正性与概率守恒不再成立） | 本书 | @sec-invariant-speed-dynamics |
 | **协变性不蕴含读数诠释**（同二次型在两支下形式不变，读数诠释不同） | 本书 | @sec-twins-comparison |
-| 对称双生子的逐段读数核算与“读数 / 配对”两层的分离 | 本书 | @sec-symmetric-twins、@sec-twins-noninertial 章 |
+| 对称双生子的逐段读数核算与“读数 / 配对”两层的分离 | 本书 | @sec-twins-comparison、@sec-twins-noninertial 章 |
 
 关键在于中间那条分界线。上述分类定理的前提里含有**齐次性**——参数是常数，群在整个时空上作用；一旦 $K$ 逐点取值，这一条前提不再满足，于是“构成群”这件事本身成为逐点成立、跨点不成立。由此产生的结果（非相对论极限在 $\vec\nabla K\neq0$ 处不存在）与该分类并不冲突：它落在那些定理的**前提之外**，而不是它们的结论之内。
 
