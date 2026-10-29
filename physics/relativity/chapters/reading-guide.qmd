@@ -9,7 +9,7 @@
 |---|---|---|---|
 | 主线 | @sec-transform-derivation 章—@sec-quantum-phase 章 | 约 90 页 | 严格导出变换（@sec-transform-derivation 章）→ 把它读作同一个群族的两端并给出公设（@sec-invariant-speed-group 章）→ 把参数升级为场（@sec-invariant-speed-field-group 章）→ 动力学与几何后果（@sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章）→ 量子相态的代数生成（@sec-quantum-phase 章）。这是本书新意所在的部分 |
 | 校准案例与旁支 | @sec-maxwell-equations 章—@sec-clock-coupling 章 | 约 85 页 | 把主线的符号与口径对到读者熟悉的标准结果上（@sec-maxwell-equations 章、@sec-flat-space-gravity 章），或把同一套分层方法用到相邻问题上（@sec-galilean-electrodynamics 章、@sec-two-source-field 章、@sec-clock-coupling 章）。它们的价值在**可核对**，不在新结论 |
-| 收束 | @sec-twins-comparison 章—@sec-asymmetric-twins 章 | 约 40 页 | 用双生子实验把前面各章的工具用上去：先设计镜像对称的实验并给出三套算法的对照（@sec-twins-comparison 章），再把坐标换成非惯性坐标逐段核出读数（@sec-twins-noninertial 章），最后换用非对称设定（@sec-asymmetric-twins 章） |
+| 收束 | @sec-twins-comparison 章—@sec-asymmetric-twins 章 | 约 40 页 | 用双生子实验把前面各章的工具用上去：先设计镜像对称的实验并给出三套算法的对照（@sec-twins-comparison 章），再把坐标换成非惯性坐标逐段核出线长（@sec-twins-noninertial 章），最后换用非对称设定（@sec-asymmetric-twins 章） |
 
 **关于校准案例**：@sec-maxwell-equations 章（麦克斯韦方程组的四维形式与协变性）与 @sec-flat-space-gravity 章（平直时空上的线性引力算子分类）通篇是标准材料的重算。把它们放进书里有两个理由——本书后续使用它们确立的符号与算子口径；以及读者可以先在读得懂的地方核对本书有没有算错，再决定是否相信主线里那些不那么熟悉的推导。**只想追主线可以直接跳过这两章，@sec-quantum-phase 章到 @sec-twins-comparison 章之间没有依赖它们的概念跳跃。** @sec-galilean-electrodynamics 章、@sec-two-source-field 章、@sec-clock-coupling 章各自独立：@sec-galilean-electrodynamics 章回答一个纯数学问题（伽利略世界能否有自洽的场方程组），@sec-two-source-field 章是作者早年基于两条公设的双源场推导，@sec-clock-coupling 章把“多类演化系统如何共享同一个背景场”拆成独立的层次。
 
@@ -57,9 +57,9 @@
 - @sec-two-source-field 章：在静系中由球面前沿唯一确定演化算子，经傅里叶变换导出 Kirchhoff 公式与推迟积分，对静止源与运动源分别解出推迟时间与 Jacobian 因子，给出两源同时发出瞬时扰动时的总场表达式，并证明总场在运动系中仍由同一线性方程支配；
 - @sec-flat-space-gravity 章：在平直时空上取一个对称二阶张量场 $h_{\mu\nu}$，完整分类满足“常系数、至多二阶导、洛伦兹协变、规范不变”的线性算子，解出谐和规范下的达朗贝尔方程与两个独立模式，最后给出 $(\eta,h)$ 与 $g=\eta+h$ 两套表述的等价定理，以及破坏该等价的四类修改；
 - @sec-clock-coupling 章：在给定的背景场下，把“多类演化系统的速率如何由一族响应函数给出”拆成若干彼此独立的层次，逐层给出定义、可判定的命题与该层尚缺的数据，并判定这一框架与量子力学的相容性；
-- @sec-twins-comparison 章：设计一个完全镜像对称的双生子实验——两人镜像飞离、镜像折返；对同一个问题（A 的钟走一小段时 B 的钟走多少）分别用对称、伽利略变换、洛伦兹变换各算一遍，把三个答案并排对照（@tbl-tc-ratios）；指出“读数相同”与“各自看对方慢”这两个数说的不是同一件事，并给出全书的关键限定：协变性不蕴含读数诠释；
-- @sec-twins-noninertial 章：把坐标换成沿曲线 A（或 B）自身建立的非惯性坐标，在 $K=c$ 与 $K=\infty$ 两支下分别画出 A 视角与 B 视角的时空图，给出坐标映射为单射的条件；再用以 $O$、$M$ 为心的校验线把三段结构（惯性段—转向段—惯性段）切开——两刀落在转向段两端——逐段比较两侧读数，三段的读数两侧各自相等；
-- @sec-asymmetric-twins 章：换用非对称设定（一侧全程惯性、另一侧惯性—转向—惯性，又称地球版双生子），在两支下各列公设、各推结果：给出两侧读数之差 $2t_1(1-1/\gamma)+(\Delta-\varepsilon)$，其中 $(\Delta-\varepsilon)$ 由转向段给出；转向段固定时，差的改变量随惯性飞行的时长与速率线性变化；$K=\infty$ 一支差为 $0$。另给出同一场景中第三条世界线（留在原地的人）与三种两两配对的对照。
+- @sec-twins-comparison 章：设计一个完全镜像对称的双生子实验——两人镜像飞离、镜像折返；对同一个问题（按某种配对，A 的读数走一小段时与之配对的 B 的读数走了多少）分别用对称、伽利略变换、洛伦兹变换各算一遍，把三个答案并排对照（@tbl-tc-ratios）；指出“读数相同”与“各自测得对方的时间进程慢于自己的坐标时”这两个数说的不是同一件事，并给出全书的关键限定：协变性不蕴含读数诠释；
+- @sec-twins-noninertial 章：把坐标换成沿曲线 A（或 B）自身建立的非惯性坐标，在 $K=c$ 与 $K=\infty$ 两支下分别画出 A 视角与 B 视角的时空图，给出坐标映射为单射的条件；再用以 $O$、$M$ 为心的校验线把三段结构（惯性段—转向段—惯性段）切开——两刀落在转向段两端——逐段比较两侧线长，三段的线长两侧各自相等；
+- @sec-asymmetric-twins 章：换用非对称设定（一侧全程惯性、另一侧惯性—转向—惯性，又称地球版双生子），在两支下各列公设、各推结果：给出两侧线长之差 $2t_1(1-1/\gamma)+(\Delta-\varepsilon)$，其中 $(\Delta-\varepsilon)$ 由转向段给出；转向段固定时，差的改变量随惯性飞行的时长与速率线性变化；$K=\infty$ 一支差为 $0$。另给出同一场景中第三条世界线（留在原地的人）与三种两两配对的对照。
 
 ## 建议的阅读路线
 

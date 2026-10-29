@@ -27,7 +27,7 @@
 | $u$ | 坐标变换（boost）的变换速度参数 | @sec-transform-derivation 章、@sec-invariant-speed-group 章 |
 | $v$ | 两系相对速度，或源相对介质的速度（按章在首次使用时说明） | @sec-transform-derivation 章、@sec-two-source-field 章 |
 | $w$ | 合成速度；@sec-twins-comparison 章 $w=\dfrac{2v}{1+v^{2}/c^{2}}$ | @sec-twins-comparison 章 |
-| $\gamma_{u}$ | $\bigl(1-u^{2}/K^{2}\bigr)^{-1/2}$；$K=c$ 时为通常的 $\gamma$ | @sec-transform-derivation 章、@sec-twins-comparison 章 |
+| $\gamma_{u}$ | 变换因子，$\bigl(1-u^{2}/K^{2}\bigr)^{-1/2}$；$K=c$ 时为通常的 $\gamma$，$K=\infty$ 时恒等于 $1$ | @sec-transform-derivation 章、@sec-twins-comparison 章 |
 | $\gamma_{w}$ | @sec-twins-comparison 章中 $w$ 对应的因子 $=\dfrac{1+v^{2}/c^{2}}{1-v^{2}/c^{2}}$ | @sec-twins-comparison 章 |
 | $\beta^{i}$、$h_{ij}$ | ADM 分解中的 shift 与空间度规 | @sec-invariant-speed-geometry 章 |
 
@@ -39,13 +39,15 @@
 
 **定义域**：$K$ 的参数空间取 $(0,\infty]$；$K=0$（Carroll）与 $K=\infty$（伽利略）作为边界/极限点处理。@sec-invariant-speed-geometry 章 Schwarzschild 视界处 $K\to0$，按边界点理解，不作为 $K$ 的正则取值。
 
-## 读数、几何与曲率 {#sec-notation-geometry}
+## 线长、几何与曲率 {#sec-notation-geometry}
 
 | 符号 | 含义 | 主要出处 |
 |------|------|------|
-| $\tau$ | 随身钟的读数（沿世界线累积） | @sec-twins-comparison 章—@sec-asymmetric-twins 章 |
-| $\mathrm{d}s^{2}$ | 读数尺度；$K=c$ 时 $\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$，$K=\infty$ 时取 $\mathrm{d}t^{2}$ | @sec-invariant-speed-group 章、@sec-twins-comparison 章 |
-| $\int\mathrm{d}s$ | 沿世界线的累积读数 | @sec-twins-comparison 章 |
+| $\tau$ | 随身时钟的读数；由 @sec-twins-comparison 章的对称条件直接约束，不预设它与任何积分相等 | @sec-twins-comparison 章 |
+| $s[\gamma]$、$s$、$\Delta s$ | 世界线长度（简称线长）；沿曲线对线元积分所得的量（定义见 @sec-twins-noninertial 章的输入 (M4)） | @sec-twins-noninertial 章—@sec-asymmetric-twins 章 |
+| $\mathrm{d}s^{2}$ | 线元；$K=c$ 时 $\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$，$K=\infty$ 时取 $\mathrm{d}t^{2}$ | @sec-invariant-speed-group 章、@sec-twins-noninertial 章 |
+
+上表前两行的 $\tau$ 与 $s$ 是两个记号，定义各自独立，全书不预设二者取同一个值：@sec-twins-noninertial 章与 @sec-asymmetric-twins 章只使用 @sec-twins-noninertial 章的输入 (M1)—(M4)，只算 $s$；@sec-twins-comparison 章按各组输入分别计算 $\tau$，其中洛伦兹组（@sec-tc-only-transform）复现的是该变换下的既有证明，按该证明的设定取值。除这类就地标明口径的场合外，二者的相等不作为前提使用。
 | $\iota$ | 镜像映射 $(t,x)\mapsto(t,-x)$ | @sec-twins-comparison 章 |
 | $R^{\mu}{}_{\nu\rho\sigma}$、$R_{\mu\nu}$、$R$ | 黎曼张量、Ricci 张量、Ricci 标量 | @sec-invariant-speed-dynamics 章—@sec-quantum-phase 章、@sec-clock-coupling 章 |
 | $G_{\mu\nu}$ | Einstein 张量 $R_{\mu\nu}-\tfrac12 g_{\mu\nu}R$ | @sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章、@sec-flat-space-gravity 章 |
@@ -106,7 +108,7 @@ $$
 | $O$、$R$、$M$ | 分离事件、重逢事件、中间事件 |
 | $P$、$Q$ | 两条世界线上的对称点 |
 | $d$ | 单程距离；@sec-asymmetric-twins 章中 $d=vt_1$ |
-| $t_1$、$\Delta$、$\varepsilon$ | 惯性段的坐标时、转向段占的坐标时、转向段的读数（@sec-asymmetric-twins 章） |
+| $t_1$、$\Delta$、$\varepsilon$ | 惯性段的坐标时、转向段占的坐标时、转向段的线长（@sec-asymmetric-twins 章） |
 | $T$ | 全程坐标时；@sec-asymmetric-twins 章中 $T=2t_1+\Delta$ |
 
 ## 体例约定 {#sec-notation-style}
