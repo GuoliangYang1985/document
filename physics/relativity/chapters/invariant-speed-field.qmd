@@ -514,7 +514,7 @@ $$
 G_{ij}=\frac{\Delta K\,\delta_{ij}-\partial_i\partial_jK}{K}}
 $$
 
-### 真空解
+### 真空解 {#sec-ifg-vacuum}
 
 由 @eq-ifg-G，真空要求 $G_{ij}=0$，即
 
@@ -537,6 +537,10 @@ $$
 $$ {#eq-ifg-vacuum}
 
 即：在对角约定下，真空解只允许 $K$ 在空间上线性（其系数可依赖 $t$）。
+
+**推论：这一类真空解全部是平坦的。** $\partial_i\partial_jK=0$ 使一切含二阶空间导数的曲率分量归零，而 @sec-invariant-speed-dynamics 章 @eq-isd-g 的共形论证给出同一结论（Weyl 张量恒零）；再配上 $R_{\mu\nu}=0$，Riemann 张量恒为零。用 sympy 对 $K=a(t)+b_i(t)x^{i}$ 直接算全部 $R^{\mu}{}_{\nu\rho\sigma}$，非零分量为 $0$。
+
+这一条比“$K$ 对空间坐标是仿射的”更有用：**对角约定 $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ 装不下任何非平凡的真空解**，能装下的只有 $K$ 在空间上变化的非真空情形（此时 $G_{00}\equiv0$，有曲率而没有能量密度）。它反过来是下一章必须补齐 $\beta^{i}$ 与 $h_{ij}$ 的最强理由——缺的不是解，是自由度。
 
 ## 与广义相对论：能给出什么，给不出什么 {#sec-ifg-gr}
 

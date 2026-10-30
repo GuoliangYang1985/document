@@ -3,8 +3,8 @@
 第 14 章配图：地球版双生子，在两支公设下的世界线对照。
 
 同一个设定：弟弟留在 x=0，哥哥以 v 飞离到 d 后折返，在 R 重逢（v=0.6, T=100, d=30）。
-  左 K=c   : 纸面长度与闵氏长度分离；两条世界线闵氏长度不同（100 与 80）
-  右 K=oo  : 等读数线成为水平直线；两条世界线读数相同（都是 100）
+  左 K=c   : 纸面长度与线长分离；两条世界线线长不同（100 与 80）
+  右 K=oo  : 等长线成为水平直线；两条世界线线长相同（都是 100）
 """
 import numpy as np
 import matplotlib
@@ -22,9 +22,9 @@ T = 100.0                # 地球系往返总时间
 d = vn * T / 2           # 单程距离 30
 
 euclid_bro = 2 * np.hypot(T / 2, d)              # 纸面长度
-mink_bro_c = 2 * np.sqrt((T / 2) ** 2 - d ** 2)  # 闵氏长度（K=c）
-print("弟弟：纸面 %.1f，闵氏(K=c) %.1f，闵氏(K=oo) %.1f" % (T, T, T))
-print("哥哥：纸面 %.1f，闵氏(K=c) %.1f，闵氏(K=oo) %.1f" % (euclid_bro, mink_bro_c, T))
+mink_bro_c = 2 * np.sqrt((T / 2) ** 2 - d ** 2)  # 线长（K=c）
+print("弟弟：纸面 %.1f，线长(K=c) %.1f，线长(K=oo) %.1f" % (T, T, T))
+print("哥哥：纸面 %.1f，线长(K=c) %.1f，线长(K=oo) %.1f" % (euclid_bro, mink_bro_c, T))
 
 plt.rcParams["font.sans-serif"] = ["SimHei", "Microsoft YaHei", "Arial Unicode MS"]
 plt.rcParams["axes.unicode_minus"] = False
@@ -57,16 +57,16 @@ def frame(ax, title):
 
 # ============================================================ 左：K = c
 ax = axes[0]
-frame(ax, "$K=c$：两条世界线的闵氏长度不同")
-ax.text(-5.5, 92, "弟弟：纸面 $100$，闵氏 $100$\n哥哥：纸面 $116.6$，闵氏 $80$",
-        fontsize=12, color="0.15")
-ax.text(-5.5, 20, "纸面更长的一条，\n闵氏长度反而更短", fontsize=11.5, color="0.15")
-ax.text(-5.5, 8, "读数 $=\\int\\!\\sqrt{\\mathrm{d}t^2-\\mathrm{d}x^2/c^2}$",
+frame(ax, "$K=c$：两条世界线的线长不同")
+ax.text(14, 96, "弟弟：线长 $100$\n哥哥：纸面 $116.6$，线长 $80$",
+        fontsize=11.5, color="0.15")
+ax.text(13, 16, "纸面更长的一条，\n线长反而更短", fontsize=11.5, color="0.15")
+ax.text(14, 5, "线长 $=\\int\\!\\sqrt{\\mathrm{d}t^2-\\mathrm{d}x^2/c^2}$",
         fontsize=11, color="0.25")
 
 # ============================================================ 右：K = 无穷
 ax = axes[1]
-frame(ax, "$K=\\infty$：两条世界线的读数相同")
+frame(ax, "$K=\\infty$：两条世界线的线长相同")
 for tt in [25.0, 50.0, 75.0, 100.0]:
     ax.plot([-5.5, 34.5], [tt, tt], "--", color=GREY, lw=1.1, zorder=1)
     ax.text(35.2, tt, "%d" % int(tt), fontsize=11, va="center", color="0.25")
@@ -74,12 +74,12 @@ for tt, xg in [(25.0, vn * 25.0), (50.0, d), (75.0, vn * 25.0)]:
     ax.plot([0], [tt], "o", color=BLUE, ms=6, zorder=5)
     ax.plot([xg], [tt], "o", color=RED, ms=6, zorder=5)
 ax.plot([-5.5, 34.5], [50.0, 50.0], "--", color=GREY, lw=1.8, zorder=1,
-        label="等读数线（同时线）$t=\\tau$")
-ax.text(-5.5, 92, "弟弟：$100$\n哥哥：$100$", fontsize=12, color="0.15")
-ax.text(-5.5, 20, "每条水平线上\n两人读数相同", fontsize=11.5, color="0.15")
-ax.text(-5.5, 8, "读数 $=\\int\\!\\mathrm{d}t=\\Delta t$（与形状无关）",
+        label="等长线（水平线）")
+ax.text(14, 90, "弟弟：线长 $100$\n哥哥：线长 $100$", fontsize=11.5, color="0.15")
+ax.text(13, 14, "每条水平线上，两人线长相同", fontsize=11.5, color="0.15")
+ax.text(14, 4, "线长 $=\\int\\!\\mathrm{d}t=\\Delta t$（与形状无关）",
         fontsize=11, color="0.25")
-ax.legend(loc="lower right", fontsize=10.5, framealpha=0.96)
+ax.text(8.5, 42.5, "等长线（水平线）", fontsize=10.5, color=GREY)
 
 plt.tight_layout()
 plt.savefig("twins-earth-two-branches.png", dpi=200, facecolor="white")

@@ -152,13 +152,16 @@ $$
 [B_i,P_j]=\frac{\delta_{ij}}{K^{2}}H,\qquad [B_i,H]=P_i,\qquad [H,P_i]=0
 $$
 
-换成 Hermitian 算符（$[\hat X,\hat Y]=i\hbar[X,Y]_{\text{vf}}$）：
+换成 Hermitian 算符（$[\hat X,\hat Y]=i\hbar[X,Y]_{\text{vf}}$）。这里比 $1+1$ 维多一项：三个方向的 boost 彼此不对易，直接对上面的向量场求对易子得 $[B_i,B_j]=\dfrac{1}{K^{2}}\bigl(x_i\partial_j-x_j\partial_i\bigr)$。于是
 
 $$
 [\hat B_i,\hat P_j]=\frac{i\hbar}{K^{2}}\delta_{ij}\hat H,\qquad
 [\hat B_i,\hat H]=i\hbar\hat P_i,\qquad
-[\hat H,\hat P_i]=[\hat P_i,\hat P_j]=[\hat B_i,\hat B_j]=0
+[\hat H,\hat P_i]=[\hat P_i,\hat P_j]=0,\qquad
+[\hat B_i,\hat B_j]=-\frac{i\hbar}{K^{2}}\hat J_{ij}
 $$ {#eq-qp-algK}
+
+其中 $\hat J_{ij}=\hat q_i\hat P_j-\hat q_j\hat P_i$。**最后一项不能省**：两族 boost 的复合差一个转动，系数与 $[\hat B_i,\hat P_j]$ 同阶，都是 $1/K^{2}$。去掉它，$(B,B,P)$ 三元组的 Jacobi 恒等式也不闭合。$K$ 有限时 @eq-qp-algK 是洛伦兹—庞加莱型的代数；$K\to\infty$ 时这两项一同消失，才落到伽利略型。
 
 全部结构常数中 $K$ 只以 $1/K^{2}$ 出现（@sec-invariant-speed-group 章的结论）。
 
@@ -167,7 +170,7 @@ $$ {#eq-qp-algK}
 若在 @eq-qp-algK 中令 $K\to\infty$ 而保持 $\hat H$ 有限，则
 
 $$
-[\hat B_i,\hat P_j]\to0
+[\hat B_i,\hat P_j]\to0,\qquad [\hat B_i,\hat B_j]\to0
 $$
 
 所得的正是**无中央扩张的伽利略代数**（$10$ 个生成元 $\hat H,\hat P_i,\hat B_i,\hat J_i$）：
@@ -650,20 +653,32 @@ $$
 [\hat B_i,\hat P_j]=i\hbar\delta_{ij}\,\hat H\,\hat K(\mathbf x)^{-2}
 $$
 
-中央扩张要求 $[\hat B_i,\hat P_j]$ 与一切生成元对易（$\hat M$ 为中心）。取 Jacobi 恒等式 $(\hat P_k,\hat B_i,\hat P_j)$：
+中央扩张要求 $[\hat B_i,\hat P_j]$ 与一切生成元对易（$\hat M$ 为中心）。取 Jacobi 恒等式 $(\hat P_k,\hat B_i,\hat P_j)$，三项中只有中间一项由 $[\hat P_j,\hat P_k]=0$ 消失，另两项都要留：
 
 $$
-[\hat P_k,[\hat B_i,\hat P_j]]+\underbrace{[\hat B_i,[\hat P_j,\hat P_k]]}_{=0}+\underbrace{[\hat P_j,[\hat P_k,\hat B_i]]}_{\text{同类项}}=0
+[\hat P_k,[\hat B_i,\hat P_j]]
++\underbrace{[\hat B_i,[\hat P_j,\hat P_k]]}_{=0}
++[\hat P_j,[\hat P_k,\hat B_i]]=0
 $$
 
-而
+其中 $[\hat B_i,\hat P_j]=i\hbar\delta_{ij}\hat H\hat K^{-2}$，$[\hat P_k,\hat B_i]=-i\hbar\delta_{ik}\hat H\hat K^{-2}$，而
 
 $$
-[\hat P_k,\,i\hbar\delta_{ij}\hat H\hat K^{-2}]
-=i\hbar\delta_{ij}[\hat P_k,\hat K^{-2}]\hat H
-=i\hbar\delta_{ij}\,(-i\hbar)\,\partial_k\!\bigl(K^{-2}\bigr)\hat H
-=2\hbar^{2}\delta_{ij}\frac{\partial_kK}{K^{3}}\,\hat H\neq0
+[\hat P_k,\hat K^{-2}]=-i\hbar\,\partial_k\!\bigl(K^{-2}\bigr)
+=2i\hbar\,\frac{\partial_kK}{K^{3}}
 $$
+
+（注意符号：$\partial_k(K^{-2})=-2K^{-3}\partial_kK$，两个负号相消后取正。）代入两项，得
+
+$$
+\text{Jacobi}
+=i\hbar\Bigl(\delta_{ij}\,[\hat P_k,\hat H\hat K^{-2}]
+-\delta_{ik}\,[\hat P_j,\hat H\hat K^{-2}]\Bigr)
+=-2\hbar^{2}\frac{\hat H}{K^{3}}
+\Bigl(\delta_{ij}\,\partial_kK-\delta_{ik}\,\partial_jK\Bigr)
+$$
+
+取 $i=j$、$k\neq i$，括号内只剩 $\partial_kK$，于是 $\partial_kK=0$。**第三项若当作零处理，这一支就被漏掉了**——恰恰是它把 $\delta_{ik}$ 那一份带进来，使最终条件成为 $\vec\nabla K=0$ 而不是某个单一方向的条件。
 
 ::: {#thm-qp-jacobi}
 ## 中央扩张存在 $\Longleftrightarrow$ $\vec\nabla K=0$

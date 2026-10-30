@@ -81,3 +81,11 @@
     {\normalsize\bfseries}{}{0pt}{}
 \titleformat{\subparagraph}[runin]
     {\normalsize\itshape}{}{0pt}{}
+
+% ===== 图索引 / 表索引 进目录 =====
+% \listoffigures 与 \listoftables 生成的是无编号章（chapter*），默认不写目录，
+% 于是目录里能看到「符号与约定」「关键词索引」「参考文献」，却看不到实际存在的
+% 图索引与表索引。用 etoolbox 在这两条命令执行前补写一条目录项。
+\usepackage{etoolbox}
+\pretocmd{\listoffigures}{\phantomsection\addcontentsline{toc}{chapter}{图索引}}{}{}
+\pretocmd{\listoftables}{\phantomsection\addcontentsline{toc}{chapter}{表索引}}{}{}
