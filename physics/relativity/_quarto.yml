@@ -25,6 +25,7 @@ book:
     - chapters/twins-comparison.qmd
     - chapters/twins-noninertial.qmd
     - chapters/asymmetric-twins.qmd
+    - chapters/draft-layers.qmd
     - chapters/notation.qmd
     - chapters/term-index.qmd
     - chapters/references.qmd
