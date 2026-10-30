@@ -1,6 +1,6 @@
 # 符号与约定 {#sec-notation .unnumbered}
 
-本书跨十四章、涉及群论、微分几何、量子力学与场论，同一个字母在不同章可能承担不同角色。本表登记全书主要符号及其角色，供查阅。
+本书跨十五章、涉及群论、微分几何、量子力学与场论，同一个字母在不同章可能承担不同角色。本表登记全书主要符号及其角色，供查阅。
 
 ## 时空、坐标与指标 {#sec-notation-coords}
 
@@ -46,13 +46,13 @@
 | $\tau$ | 随身时钟的读数；由 @sec-twins-comparison 章的对称条件直接约束，不预设它与任何积分相等 | @sec-twins-comparison 章 |
 | $s[\gamma]$、$s$、$\Delta s$ | 世界线长度（简称线长）；沿曲线对线元积分所得的量（定义见 @sec-twins-noninertial 章的输入 (M4)） | @sec-twins-noninertial 章—@sec-asymmetric-twins 章 |
 | $\mathrm{d}s^{2}$ | 线元；$K=c$ 时 $\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$，$K=\infty$ 时取 $\mathrm{d}t^{2}$ | @sec-invariant-speed-group 章、@sec-twins-noninertial 章 |
-
-上表前两行的 $\tau$ 与 $s$ 是两个记号，定义各自独立，全书不预设二者取同一个值：@sec-twins-noninertial 章与 @sec-asymmetric-twins 章只使用 @sec-twins-noninertial 章的输入 (M1)—(M4)，只算 $s$；@sec-twins-comparison 章按各组输入分别计算 $\tau$，其中洛伦兹组（@sec-tc-only-transform）复现的是该变换下的既有证明，按该证明的设定取值。除这类就地标明口径的场合外，二者的相等不作为前提使用。
 | $\iota$ | 镜像映射 $(t,x)\mapsto(t,-x)$ | @sec-twins-comparison 章 |
 | $R^{\mu}{}_{\nu\rho\sigma}$、$R_{\mu\nu}$、$R$ | 黎曼张量、Ricci 张量、Ricci 标量 | @sec-invariant-speed-dynamics 章—@sec-quantum-phase 章、@sec-clock-coupling 章 |
 | $G_{\mu\nu}$ | Einstein 张量 $R_{\mu\nu}-\tfrac12 g_{\mu\nu}R$ | @sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章、@sec-flat-space-gravity 章 |
 | $C_{\mu\nu\rho\sigma}$ | Weyl 张量 | @sec-invariant-speed-geometry 章 |
 | $\kappa$ | 引力耦合常数；@sec-invariant-speed-dynamics 章取 $\kappa=8\pi G/K_{0}^{4}$ | @sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章、@sec-flat-space-gravity 章 |
+
+上表前两行的 $\tau$ 与 $s$ 是两个记号，定义各自独立，全书不预设二者取同一个值：@sec-twins-noninertial 章与 @sec-asymmetric-twins 章只使用 @sec-twins-noninertial 章的输入 (M1)—(M4)，只算 $s$；@sec-twins-comparison 章按各组输入分别计算 $\tau$，其中洛伦兹组（@sec-tc-only-transform）复现的是该变换下的既有证明，按该证明的设定取值。除这类就地标明口径的场合外，二者的相等不作为前提使用。这一区分在 @sec-layers 章登记为 (P3)。
 
 **曲率约定**（各章一致，由 `chapters/images/` 下的符号计算脚本按此式逐项给出）：
 
@@ -102,7 +102,7 @@ $$
 
 | 符号 | 含义 |
 |------|------|
-| $A$、$B$ | 两个对称的观者（@sec-twins-comparison 章、@sec-twins-noninertial 章） |
+| $A$、$B$ | 两个对称的参与方（@sec-twins-comparison 章、@sec-twins-noninertial 章） |
 | $D$、$G$ | 非对称双生子实验（地球版）中的留在原地者与飞行者（@sec-asymmetric-twins 章） |
 | $C$ | 同一场景中留在原地、全程惯性的第三条世界线（@sec-asymmetric-twins 章） |
 | $O$、$R$、$M$ | 分离事件、重逢事件、中间事件 |
@@ -117,3 +117,4 @@ $$
 2. **公式编号**按章连续；交叉引用使用超链接，不用手写式号。
 3. **证明结束**不另加结束符号。
 4. **计算来源**：各章闭式由 `chapters/images/` 下的符号计算脚本给出，脚本与正文同源；改动公式须同步改动脚本。
+5. **分层登记**：哪些量由几何给定、哪些是外加输入，见 @sec-layers 章。该章把不在几何里的四项记为 (P1)—(P4)：$K$ 的取定、谁在哪条曲线上、线长是否等于钟的读数、哪两个事件配成一对。除 @sec-twins-comparison 章就地标明口径的场合外，$\tau$ 与 $s$ 的相等不作为前提使用。

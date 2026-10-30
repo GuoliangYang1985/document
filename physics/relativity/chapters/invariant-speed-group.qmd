@@ -555,7 +555,7 @@ $$ {#eq-isg-carroll}
 | Carroll 结构 | $K\to0$ 端的结构：零锥成为 $t=$ 常数 |
 | Newton–Cartan 几何 | $K=\infty$ 端对应的度规形式：度规不可逆，时间一形式（秩 $1$）与空间度规（秩 $3$）分为两个对象 |
 | Bargmann 群 | 伽利略群的中央扩张，多一个中心坐标；@sec-quantum-phase 章由其导出质量 |
-| 世界线长度（线长）$s[\gamma]$ | 沿曲线由线元积分得到的量；它不随坐标描述改变（见 @prp-tc-covariance）。$K$ 有限时被积量为 $\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/K^{2}}$，结果依赖路径形状；$K=\infty$ 时被积量为 $\mathrm{d}t$，积分等于端点时间之差，与路径无关（见 @sec-tc-reading-integral） |
+| 世界线长度（线长）$s[\gamma]$ | 沿曲线由线元积分得到的量（定义见 @sec-twins-noninertial 章 (M4)）；积分沿曲线进行，不随坐标图改变。$K$ 有限时被积量为 $\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/K^{2}}$，结果依赖路径形状；$K=\infty$ 时被积量为 $\mathrm{d}t$，积分等于端点时间之差，与路径无关（见 @sec-tc-reading-integral）。它是否等于某只钟的读数，是另一项外加输入（@sec-layers 章 (P3)） |
 
 ## 结论 {#sec-isg-conclusion}
 
