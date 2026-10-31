@@ -35,7 +35,7 @@ ax.annotate("$Q$ (6, 10) 固定", (xQ, tQ), textcoords="offset points",
 
 # tau_Q 的刻度（外出段读数）
 ax.plot([-0.12, 0.12], [tauQ, tauQ], color="#555555", lw=2.0)
-ax.annotate(rf"$\tau_Q={tauQ:.0f}$（外出段读数）", (0, tauQ),
+ax.annotate(rf"$s_Q={tauQ:.0f}$（外出段线长）", (0, tauQ),
             textcoords="offset points", xytext=(-12, -4), ha="right",
             color="#555555", fontsize=10.5)
 

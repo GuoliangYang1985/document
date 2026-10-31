@@ -4,7 +4,7 @@
 三次飞行 v=0.6（c=1，gamma=1.25）不变，t1=5/10/20，即 tbl-at-scan 的三行。
 转向事件 Q 沿外出直线外移 (3,5)->(6,10)->(12,20)，重逢事件 M=10/20/40；
 以各 M 为心、过该次 Q 的校验线与 t 轴的交点 = 6/12/24，tau=t1/gamma=4/8/16，
-读数差 = 交点 - tau = 2t1(1-1/gamma) = 2/4/8。
+长度差 = 交点 - s = 2t1(1-1/gamma) = 2/4/8。
 """
 import numpy as np
 import matplotlib
@@ -24,9 +24,9 @@ trips = [dict(idx=1, t1=5.0,  col=BLUE),
 for tr in trips:
     tr["Q"] = (v * tr["t1"], tr["t1"])   # 转向事件
     tr["M"] = 2 * tr["t1"]               # 重逢事件高度
-    tr["tau"] = tr["t1"] / gam           # 外出段读数 = 返程段读数（速率不变）
+    tr["tau"] = tr["t1"] / gam           # 外出段线长 = 返程段线长（速率不变）
     tr["cut"] = tr["M"] - tr["tau"]      # 校验线（以 M 为心、过 Q）与 t 轴的交点
-    tr["diff"] = tr["cut"] - tr["tau"]   # 读数差
+    tr["diff"] = tr["cut"] - tr["tau"]   # 长度差
 
 fig, ax = plt.subplots(figsize=(9.6, 8.4))
 ax.axhline(0, color="#bbbbbb", lw=0.8)
@@ -72,8 +72,8 @@ ax.text(4.6, 41.6,
         "飞行距离 $t_1$ 变长、速率不变：\n"
         "$Q$ 沿外出直线外移 $(3,5)\\to(6,10)\\to(12,20)$\n"
         "交点随之上移：$6\\to12\\to24$\n"
-        "$\\tau$ 也上移：$4\\to8\\to16$\n\n"
-        "读数差 $=$ 交点 $-\\ \\tau$：\n"
+        "$s$ 也上移：$4\\to8\\to16$\n\n"
+        "长度差 $=$ 交点 $-\ s$：\n"
         "$6-4=2$，$12-8=4$，$24-16=8$\n"
         "即 $2t_1(1-1/\\gamma)$，随惯性飞行变长而变大",
         fontsize=11, color="0.15", va="top",
@@ -84,7 +84,7 @@ ax.set_ylim(-1.5, 43)
 ax.set_xlabel("x")
 ax.set_ylabel("t")
 ax.set_title("速率不变、飞行距离变长：三次飞行各有自己的 $Q$ 与自己的校验线\n"
-             "交点上移，交点与 $\\tau$ 之间的缺口就是读数差", fontsize=12.5)
+             "交点上移，交点与 $s$ 之间的缺口就是长度差", fontsize=12.5)
 fig.tight_layout()
 fig.savefig("twins-asym-extend.png", dpi=200, facecolor="white")
 for tr in trips:

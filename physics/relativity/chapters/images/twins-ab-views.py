@@ -9,7 +9,7 @@
 每个面板画：
   · 静止者的世界线（纵轴）
   · 运动者的世界线 x = -w t
-  · 等读数线（K=c：校准双曲线；K=oo：水平直线）
+  · 等线长线（K=c：校准双曲线；K=oo：水平直线）
   · 本系同时线（水平线），并标出它与运动者世界线的交点
 
 全程只用 A、B 两者的坐标，不出现第三个坐标系。
@@ -26,19 +26,19 @@ plt.rcParams["axes.unicode_minus"] = False
 # ------------------------------------------------------------------ 符号核验
 t, x, w, tau, c, K = sp.symbols("t x w tau c K", positive=True)
 gam = 1 / sp.sqrt(1 - w ** 2 / c ** 2)
-# 运动者世界线 x = -w t 上，本系坐标时 t 处的读数
+# 运动者世界线 x = -w t 上，本系坐标时 t 处的累积线长
 tau_moving = sp.simplify(sp.sqrt(t ** 2 - (w * t) ** 2 / c ** 2))
-print("K=c  运动者世界线上、本系坐标时 t 处的读数 :", tau_moving,
+print("K=c  运动者世界线上、本系坐标时 t 处的累积线长 :", tau_moving,
       "  == t/gamma_w :", sp.simplify(tau_moving - t / gam) == 0)
-# 运动者读数为 tau 的事件，本系坐标时
+# 运动者累积线长为 tau 的事件，本系坐标时
 t_at_tau = sp.simplify(tau / sp.sqrt(1 - w ** 2 / c ** 2))
-print("K=c  运动者读数为 tau 的事件，本系坐标时 :", t_at_tau,
+print("K=c  运动者累积线长为 tau 的事件，本系坐标时 :", t_at_tau,
       "  == gamma_w*tau :", sp.simplify(t_at_tau - gam * tau) == 0)
-# 等读数线：t^2 - x^2/K^2 = tau^2
-print("K=c  等读数线 t^2 - x^2/c^2 = tau^2 ；代入 (gamma_w tau, -w gamma_w tau) 残差 :",
+# 等线长线：t^2 - x^2/K^2 = tau^2
+print("K=c  等线长线 t^2 - x^2/c^2 = tau^2 ；代入 (gamma_w tau, -w gamma_w tau) 残差 :",
       sp.simplify((gam * tau) ** 2 - (w * gam * tau) ** 2 / c ** 2 - tau ** 2))
 # K -> oo 的极限
-print("K->oo  等读数线 t^2 - x^2/K^2 = tau^2 的极限 :",
+print("K->oo  等线长线 t^2 - x^2/K^2 = tau^2 的极限 :",
       sp.limit(t ** 2 - x ** 2 / K ** 2, K, sp.oo), "= tau^2  ==>  t = tau（水平直线）")
 print("K->oo  gamma_w(K) =", sp.limit(1 / sp.sqrt(1 - w ** 2 / K ** 2), K, sp.oo))
 
@@ -59,19 +59,19 @@ def panel(ax, K_inf, view, title):
     ax.plot(np.zeros_like(tt), tt, color=BLACK, lw=3.0, zorder=4)
     ax.plot(sgn * W * tt, tt, color=RED, lw=2.6, zorder=4)
 
-    if K_inf:                                # K = oo：等读数线 = 水平线
+    if K_inf:                                # K = oo：等线长线 = 水平线
         for tv in TAUS:
             xs = np.linspace(-1.0, 1.0, 50)
             ax.plot(xs, np.full_like(xs, tv), color=BLUE, lw=1.6, ls="-", alpha=0.95)
         ax.text(0.10 if view == "A" else -0.98, TAUS[0] + 0.05,
-                "等读数线＝同时线\n$t=\\tau$", fontsize=9.5, color=BLUE, ha="left")
-    else:                                    # K = c：等读数线为校准双曲线
+                "等线长线＝同时线\n$t=s_0$", fontsize=9.5, color=BLUE, ha="left")
+    else:                                    # K = c：等线长线为校准双曲线
         for tv in TAUS:
             xs = np.linspace(-1.0, 1.0, 400)
             yy = np.sqrt(tv ** 2 + xs ** 2)
             ax.plot(xs, yy, color=BLUE, lw=1.5, alpha=0.95)
         ax.text(-0.98 if view == "A" else 0.02, 0.06,
-                "等读数线\n$t^{2}-x^{2}/c^{2}=\\tau^{2}$",
+                "等线长线\n$t^{2}-x^{2}/c^{2}=s_0^{2}$",
                 fontsize=9.5, color=BLUE, ha="left")
         # 本系同时线（水平）示例
         tv = TAUS[1]
@@ -85,13 +85,13 @@ def panel(ax, K_inf, view, title):
     ax.plot([0], [tv], "o", color=BLACK, ms=7, zorder=5)
     if K_inf:
         ax.plot([sgn * W * tv], [tv], "o", color=RED, ms=7, zorder=5)
-        ax.annotate("读数相同", xy=(sgn * W * tv, tv), xytext=(-0.98, tv + 0.28),
+        ax.annotate("线长相同", xy=(sgn * W * tv, tv), xytext=(-0.98, tv + 0.28),
                     fontsize=9.5, color="#2e7d32", ha="left",
                     arrowprops=dict(arrowstyle="->", color="#2e7d32", lw=1.0))
     else:
         tmv = GAM * tv
         ax.plot([sgn * W * tmv], [tmv], "o", color=RED, ms=7, zorder=5)
-        ax.annotate("读数相同\n$t=\\gamma_w\\tau$", xy=(sgn * W * tmv, tmv),
+        ax.annotate("线长相同\n$t=\gamma_w s_0$", xy=(sgn * W * tmv, tmv),
                     xytext=(-0.98, tmv + 0.10), fontsize=9.5, color="#2e7d32",
                     ha="left",
                     arrowprops=dict(arrowstyle="->", color="#2e7d32", lw=1.0))

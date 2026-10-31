@@ -6,7 +6,7 @@
 中：B 视角（身份互换的镜像）
 右：地球视角（本章的镜像对称系：A、B 各以 ±v 运动）
 
-统一结论：等固有读数点的轨迹是校准双曲线 t^2 - x^2/K^2 = tau^2，不是欧氏圆。
+统一结论：等线长点的轨迹是校准双曲线 t^2 - x^2/K^2 = s_0^2，不是欧氏圆。
 """
 import numpy as np
 import matplotlib
@@ -21,18 +21,18 @@ gw = 1 / sp.sqrt(1 - w ** 2 / K ** 2)
 # 对称点：B 读 tau 的事件在 A 系中的坐标时
 t_s = gw * tau
 x_s = -w * gw * tau
-print("核验 1 对称点在等读数双曲线上 t^2-x^2/K^2=tau^2:",
+print("核验 1 对称点在等线长双曲线上 t^2-x^2/K^2=s_0^2:",
       sp.simplify(t_s ** 2 - x_s ** 2 / K ** 2 - tau ** 2) == 0)
-print("核验 2 对称点处 B 的读数 = tau:",
+print("核验 2 对称点处 B 的线长 = tau:",
       sp.simplify(t_s * sp.sqrt(1 - w ** 2 / K ** 2) - tau) == 0)
-# 圆弧（欧氏圆）交点的读数
+# 圆弧（欧氏圆）交点的线长
 t_c = tau / sp.sqrt(1 + w ** 2 / K ** 2)
-print("核验 3 圆弧交点处 B 的读数 = tau*sqrt((1-w^2/K^2)/(1+w^2/K^2)):",
+print("核验 3 圆弧交点处 B 的线长 = tau*sqrt((1-w^2/K^2)/(1+w^2/K^2)):",
       sp.simplify(t_c * sp.sqrt(1 - w ** 2 / K ** 2)
                   - tau * sp.sqrt((1 - w ** 2 / K ** 2) / (1 + w ** 2 / K ** 2))) == 0)
 # 伽利略极限
 print("核验 4 伽利略极限 K->oo: gamma_w ->",
-      sp.limit(gw, K, sp.oo), "；等读数曲线 t^2-x^2/K^2=tau^2 -> t^2=tau^2")
+      sp.limit(gw, K, sp.oo), "；等线长曲线 t^2-x^2/K^2=s_0^2 -> t^2=tau^2")
 
 # ------------------------------------------------------------------ 数值参数
 vn = 0.6                                   # 地球系中 A、B 各自速率（c=1）
@@ -41,7 +41,7 @@ wn = 2 * vn / (1 + vn ** 2)                # 0.8823529
 gwn = (1 + vn ** 2) / (1 - vn ** 2)        # 2.125
 print("v=%.4f  w=%.4f  gamma_v=%.4f  gamma_w=%.4f" % (vn, wn, gv, gwn))
 
-# 地球视角下「A 系配对」给出的读数增量比（含出发间隔 d 的偏移项）
+# 地球视角下「A 系配对」给出的线长增量比（含出发间隔 d 的偏移项）
 rv = sp.Rational(3, 5)                       # v = 0.6c
 ts_, ds_ = sp.symbols("t d", positive=True)
 r_lim = (ts_ * (1 - rv ** 2) + 2 * rv * ds_) / (ts_ * (1 + rv ** 2))
@@ -85,10 +85,10 @@ ax.annotate("", xy=(-wn * 2.40, 2.40), xytext=(-wn * 2.30, 2.30),
             arrowprops=dict(arrowstyle="-|>", color="k", lw=1.4), zorder=3)
 ax.text(-wn * 2.40 - 0.30, 2.34, "$B$", fontsize=12)
 
-# 等读数双曲线
+# 等线长双曲线
 tt = np.linspace(1.0, 2.30, 400)
 ax.plot(-np.sqrt(tt ** 2 - 1), tt, "--", color=BLUE, lw=1.9, zorder=2,
-        label="等固有读数轨迹 $t^2-x^2/K^2=\\tau^2$")
+        label="等线长轨迹 $t^2-x^2/K^2=s_0^2$")
 
 # A 系同时线（水平）
 ax.plot([-wn * gwn, 0.05], [gwn, gwn], "--", color=RED, lw=1.2, zorder=2,
@@ -100,11 +100,11 @@ ax.plot(-wn * gwn, gwn, "o", color=RED, ms=6, zorder=5)
 ax.plot(0, gwn, "s", color=RED, mfc="white", mec=RED, ms=7, zorder=5)
 ax.plot(-wn, 1.0, "o", mfc="white", mec="0.35", ms=6.5, zorder=5)
 
-ax.text(0.10, 0.80, "$M_t$：A 读 $\\tau$", fontsize=11)
-ax.text(0.10, 2.14, "$M'$：投影时 $=2.125\\,\\tau$", fontsize=11, color=RED)
-ax.text(-wn * gwn - 0.06, gwn - 0.20, "$M_{t'}$：B 读 $\\tau$",
+ax.text(0.10, 0.80, "$M_t$：A 侧累积 $s_0$", fontsize=11)
+ax.text(-0.06, 2.14, "$M'$：该处累积 $=2.125\,s_0$", fontsize=11, color=RED, ha="right")
+ax.text(-wn * gwn - 0.06, gwn - 0.20, "$M_{t'}$：B 侧累积 $s_0$",
         fontsize=11, color=RED, ha="right")
-ax.text(-wn - 0.08, 0.72, "B 读 $0.47\\tau$", fontsize=10.5,
+ax.text(-wn - 0.08, 0.72, "B 侧累积 $0.47s_0$", fontsize=10.5,
         color="0.30", ha="right")
 ax.text(-0.17, -0.20, "$O$", fontsize=11)
 
@@ -129,12 +129,12 @@ ax.plot(wn * gwn, gwn, "o", color=GREEN, ms=6, zorder=5)
 ax.plot(0, gwn, "s", color=GREEN, mfc="white", mec=GREEN, ms=7, zorder=5)
 ax.plot(wn, 1.0, "o", mfc="white", mec="0.35", ms=6.5, zorder=5)
 
-ax.text(-0.10, 0.80, "$M_t$：B 读 $\\tau$", fontsize=11, ha="right")
-ax.text(-0.10, 2.14, "$M'$：投影时 $=2.125\\,\\tau$", fontsize=11,
+ax.text(-0.10, 0.80, "$M_t$：B 侧累积 $s_0$", fontsize=11, ha="right")
+ax.text(-0.10, 2.14, "$M'$：该处累积 $=2.125\,s_0$", fontsize=11,
         color=GREEN, ha="right")
-ax.text(wn * gwn + 0.06, gwn - 0.20, "$M_{t'}$：A 读 $\\tau$",
+ax.text(wn * gwn + 0.06, gwn - 0.20, "$M_{t'}$：A 侧累积 $s_0$",
         fontsize=11, color=GREEN)
-ax.text(wn + 0.08, 0.72, "A 读 $0.47\\tau$", fontsize=10.5, color="0.30")
+ax.text(wn + 0.08, 0.72, "A 侧累积 $0.47s_0$", fontsize=10.5, color="0.30")
 ax.text(0.05, -0.20, "$O$", fontsize=11)
 
 # ============================================================== 右：地球视角
@@ -150,7 +150,7 @@ xA, xB = -d + vn * t0, d - vn * t0          # -0.52, +0.52
 # A 系同时线：dt/dx = v ；与 B 世界线交于 tBp
 tBp = (t0 * (1 - vn ** 2) + 2 * vn * d) / (1 + vn ** 2)
 xBp = d - vn * tBp
-# 以 P、Q 为心的等读数双曲线（增量 s = t0/gamma_v）
+# 以 P、Q 为心的等线长双曲线（增量 s = t0/gamma_v）
 s = t0 / gv                                 # 0.64
 tp = np.linspace(s, s * 1.42, 300)
 ax.plot(-d + np.sqrt(tp ** 2 - s ** 2), tp, "--", color=BLUE, lw=1.6, zorder=2)
@@ -173,9 +173,9 @@ ax.text(-d - 0.06, -0.20, "$P$", fontsize=11)
 ax.text(d + 0.02, -0.20, "$Q$", fontsize=11)
 ax.text(0.05, tM + 0.04, "$M$", fontsize=11)
 ax.text(0.0, t0 + 0.06, "对称对（水平）", fontsize=10.5, ha="center")
-ax.text(xBp + 0.10, tBp - 0.16, "A 的配对", fontsize=10.5, color=RED)
-ax.text(-d - 0.30, 1.30, "A 读数增量 $=t/\\gamma_v$", fontsize=10.5)
-ax.text(d + 0.05, 1.30, "B 读数增量 $=t/\\gamma_v$", fontsize=10.5)
+ax.text(xBp + 0.14, tBp - 0.34, "A 的配对", fontsize=10.5, color=RED, ha="left")
+ax.text(-d - 0.30, 1.30, "A 线长增量 $=t/\\gamma_v$", fontsize=10.5)
+ax.text(d + 0.05, 1.30, "B 线长增量 $=t/\\gamma_v$", fontsize=10.5)
 
 handles, labels = axes[0].get_legend_handles_labels()
 h2, l2 = axes[2].get_legend_handles_labels()
