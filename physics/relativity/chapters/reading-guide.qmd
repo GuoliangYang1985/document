@@ -9,8 +9,8 @@
 |---|---|---|---|
 | 主线 | @sec-transform-derivation 章—@sec-quantum-phase 章 | 约 90 页 | 严格导出变换（@sec-transform-derivation 章）→ 把它读作同一个群族的两端并给出公设（@sec-invariant-speed-group 章）→ 把参数升级为场（@sec-invariant-speed-field-group 章）→ 动力学与几何后果（@sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章）→ 量子相态的代数生成（@sec-quantum-phase 章）。这是本书新意所在的部分 |
 | 校准案例与旁支 | @sec-maxwell-equations 章—@sec-clock-coupling 章 | 约 85 页 | 把主线的符号与口径对到读者熟悉的标准结果上（@sec-maxwell-equations 章、@sec-flat-space-gravity 章），或把同一套分层方法用到相邻问题上（@sec-galilean-electrodynamics 章、@sec-two-source-field 章、@sec-clock-coupling 章）。它们的价值在**可核对**，不在新结论 |
-| 收束 | @sec-twins-comparison 章—@sec-asymmetric-twins 章 | 约 35 页 | 用双生子实验把前面各章的工具用上去，三章各换一样东西：@sec-twins-comparison 章换配对（同一个几何读出三个不同的比值），@sec-twins-noninertial 章换坐标（长度不变，图能核对一部分、读不出全部），@sec-asymmetric-twins 章换设定（非对称，两支各一个长度之差） |
-| 登记 | @sec-layers 章 | 约 6 页 | 把上面三章用到的每一项按来源分开登记：(P1) 取哪个 $K$、(P2) 谁在哪条曲线上、(P3) 线长与读数的关系（分弱式 (P3a) 与强式 (P3b)，本书不采用后者）、(P4) 哪两个事件配成一对。想判断某个结论的强度时读这一章。第 2 步另有边界：几何层对改换 (P2) 不设防，身份由几何之外的那一层定 |
+| 收束 | @sec-twins-comparison 章—@sec-asymmetric-twins 章 | 约 55 页 | 用双生子实验把前面各章的工具用上去，三章各换一样东西：@sec-twins-comparison 章换配对（同一个几何读出三个不同的比值），@sec-twins-noninertial 章换坐标（长度不变，图能核对一部分、读不出全部），@sec-asymmetric-twins 章换设定（非对称，两支各一个长度之差） |
+| 登记 | @sec-layers 章 | 约 14 页 | 把上面三章用到的每一项按来源分开登记：(P1) 取哪个 $K$、(P2) 谁在哪条曲线上、(P3) 线长与读数的关系（分弱式 (P3a) 与强式 (P3b)，本书不采用后者）、(P4) 哪两个事件配成一对。想判断某个结论的强度时读这一章。第 2 步另有边界：几何层对改换 (P2) 不设防，身份由几何之外的那一层定 |
 
 **关于校准案例**：@sec-maxwell-equations 章（麦克斯韦方程组的四维形式与协变性）与 @sec-flat-space-gravity 章（平直时空上的线性引力算子分类）通篇是标准材料的重算。把它们放进书里有两个理由——本书后续使用它们确立的符号与算子口径；以及读者可以先在读得懂的地方核对本书有没有算错，再决定是否相信主线里那些不那么熟悉的推导。**只想追主线可以直接跳过这两章，@sec-quantum-phase 章到 @sec-twins-comparison 章之间没有依赖它们的概念跳跃。** @sec-galilean-electrodynamics 章、@sec-two-source-field 章、@sec-clock-coupling 章各自独立：@sec-galilean-electrodynamics 章回答一个纯数学问题（伽利略世界能否有自洽的场方程组），@sec-two-source-field 章是作者早年基于两条公设的双源场推导，@sec-clock-coupling 章把“多类演化系统如何共享同一个背景场”拆成独立的层次。
 
@@ -24,7 +24,7 @@
 | 伽利略变换 | $1$ |
 | 洛伦兹变换 | $1/\gamma_w$ |
 
-三个答案并列在同一张表上。这不是“其中两个错了”，而是三种取法各自的正确输出；@sec-twins-comparison 章逐行指出，差别的全部来源只有两处——**配对怎么定**（按两条曲线之间的映射，还是按某族变换的同时面）、**$K$ 取哪个值**（决定 $s$ 由路径决定还是由端点决定）。三个数全是线长增量之比，一句也没有说到钟。@sec-twins-comparison 章由此提炼出全书的关键限定（@prp-tc-covariance）：**协变性不蕴含线长由什么决定**——同一个二次型在两支下形式都不变，而线长由路径还是由端点决定，是另一件事。至于要不要把线长读作读数，是更外面的一项（@sec-layers 章 (P3b)），本书不预设。
+三个答案并列在同一张表上，三种取法各自给出自己的输出；@sec-twins-comparison 章逐行指出，差别的全部来源只有两处——**配对怎么定**（按两条曲线之间的映射，还是按某族变换的同时面）、**$K$ 取哪个值**（决定 $s$ 由路径决定还是由端点决定）。三个数全是线长增量之比，一句也没有说到钟。@sec-twins-comparison 章由此提炼出全书的关键限定（@prp-tc-covariance）：**协变性不蕴含线长由什么决定**——同一个二次型在两支下形式都不变，而线长由路径还是由端点决定，是另一件事。至于要不要把线长读作读数，是更外面的一项（@sec-layers 章 (P3b)），其成立与否不改变上表的任何一个数。
 
 两个“$1$”的来源不同：过程对应的配对由两条曲线之间的映射给出，不依赖 $K$；伽利略的“$1$”来自全局时间，依赖 $K$。换成 $K=c$，前者仍是 $1$，后者不再属于该支。三套数字的来源并不相同——哪些由几何强制、哪些是外加输入，@sec-layers 章逐项登记（几何层在这三章里只出一句话：那两条曲线等长）。
 
