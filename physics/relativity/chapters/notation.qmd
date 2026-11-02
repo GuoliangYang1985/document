@@ -54,7 +54,7 @@
 
 | 符号 | 含义 | 主要出处 |
 |------|------|------|
-| $\tau$ | 随身时钟的读数；只在 @sec-twins-comparison 章 @sec-tc-weak 的弱式输入 (P3a) 中出现，用于“相等与否”的比较；全书不给它与线长 $s$ 之间的任何等式 | @sec-twins-comparison 章 |
+| $\tau$ | 随身时钟的读数；只在 @sec-twins-comparison 章 @sec-tc-weak 的弱式输入 (P3a) 中出现，用于“相等与否”的比较。$\tau$ 与线长 $s$ 的相等是外加的一项输入（(P3b)），本书不采用 | @sec-twins-comparison 章 |
 | $s[\gamma]$、$s$、$\Delta s$ | 世界线长度（简称线长）；沿曲线对线元积分所得的量（定义见 @sec-twins-noninertial 章的输入 (M4)） | @sec-twins-noninertial 章—@sec-asymmetric-twins 章 |
 | $\mathrm{d}s^{2}$ | 线元；$K=c$ 时 $\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$，$K=\infty$ 时取 $\mathrm{d}t^{2}$ | @sec-invariant-speed-group 章、@sec-twins-noninertial 章 |
 | $\iota$ | 镜像映射 $(t,x)\mapsto(t,-x)$ | @sec-twins-comparison 章 |
@@ -63,7 +63,7 @@
 | $C_{\mu\nu\rho\sigma}$ | Weyl 张量 | @sec-invariant-speed-geometry 章 |
 | $\kappa$ | 引力耦合常数；@sec-invariant-speed-dynamics 章取 $\kappa=8\pi G/K_{0}^{4}$ | @sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章、@sec-flat-space-gravity 章 |
 
-上表前两行的 $\tau$ 与 $s$ 是两个记号，定义各自独立，全书不预设二者取同一个值：@sec-twins-noninertial 章、@sec-asymmetric-twins 章，以及 @sec-twins-comparison 章的主体都只使用 @sec-twins-noninertial 章的输入 (M1)—(M4)，只算 $s$——那里出现的比值全是线长增量之比。要不要把 $s$ 接着读作钟的读数，是 @sec-layers 章登记的一项外加输入 (P3b)，本书不采用；另一项更弱的输入 (P3a) 只给“互为镜像的两段读数相同”，不给数值（见 @sec-twins-comparison 章 @sec-tc-weak）。二者的相等不作为前提使用。
+上表前两行的 $\tau$ 与 $s$ 是两个记号，定义各自独立，全书不预设二者取同一个值：@sec-twins-noninertial 章、@sec-asymmetric-twins 章，以及 @sec-twins-comparison 章的主体都只使用 @sec-twins-noninertial 章的输入 (M1)—(M4)，只算 $s$——那里出现的比值全是线长增量之比。要不要把 $s$ 接着读作钟的读数，是 @sec-layers 章登记的一项外加输入 (P3b)，本书不采用；另一项更弱的输入 (P3a) 只给出“互为镜像的两段读数相同”，不含数值（见 @sec-twins-comparison 章 @sec-tc-weak）。二者的相等不作为前提使用。
 
 **曲率约定**（各章一致，由 `chapters/images/` 下的符号计算脚本按此式逐项给出）：
 
