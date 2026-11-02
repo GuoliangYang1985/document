@@ -39,6 +39,17 @@
 
 **定义域**：$K$ 的参数空间取 $(0,\infty]$；$K=0$（Carroll）与 $K=\infty$（伽利略）作为边界/极限点处理。@sec-invariant-speed-geometry 章 Schwarzschild 视界处 $K\to0$，按边界点理解，不作为 $K$ 的正则取值。
 
+## Newton–Cartan 一节的符号 {#sec-notation-nc}
+
+以下四个符号只在 @sec-invariant-speed-group 章 @sec-isg-newton-cartan 一节内出现，不进入其余各章的算式：
+
+| 符号 | 含义 |
+|------|------|
+| $n_{\mu}$ | 时间一形式；常用记号是 $\tau_{\mu}$，本书 $\tau$ 已用于钟的读数，故改记 $n_{\mu}$。在适配坐标中 $n_{\mu}=N\delta^{0}_{\mu}$，$N$ 为 lapse |
+| $e^{a}{}_{\mu}$ | 空间标架；$e=\det e^{a}{}_{i}$ 为它的空间行列式，与 $N$ 一起给出积分测度 $Ne$ |
+| $\omega^{ab}{}_{\mu}$ | 转动与 boost 的联络 |
+| $m_{\mu}$ | 质量规范场，对应伽利略代数的中央扩张（@sec-quantum-phase 章） |
+
 ## 线长、几何与曲率 {#sec-notation-geometry}
 
 | 符号 | 含义 | 主要出处 |
