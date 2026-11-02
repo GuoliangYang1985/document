@@ -45,7 +45,7 @@ $$
 ## 第一支：$K=c$ {#sec-at-branch-c}
 
 ::: {#cnj-ta-lorentz}
-## 洛伦兹公设（$K=c$）
+## 洛伦兹公理（$K=c$）
 
 恒速群取 $K=c$，即存在有限的不变速度 $c$。据此：
 
@@ -55,7 +55,7 @@ $$
 :::
 
 ::: {#prp-ta-lorentz-result}
-## 在该公设下：线长沿各自的路径累积
+## 在该公理下：线长沿各自的路径累积
 
 $$
 \Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}}
@@ -143,7 +143,7 @@ $$
 ## 第二支：$K=\infty$ {#sec-at-branch-infty}
 
 ::: {#cnj-ta-absolute-time}
-## 绝对时间公设（$K=\infty$）
+## 绝对时间公理（$K=\infty$）
 
 恒速群取 $K=\infty$，即不变速度为无穷大（不存在有限的不变速度）。据此：
 
@@ -153,7 +153,7 @@ $$
 :::
 
 ::: {#prp-ta-equal}
-## 在该公设下：两条世界线的线长相同
+## 在该公理下：两条世界线的线长相同
 
 $$
 \Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\mathrm{d}t=t(M)-t(O)=T
@@ -228,7 +228,7 @@ $$
 
 两支的变换各有适用域：$K=c$ 一支要求 $v\le c$——$c$ 是该结构的不变速度，同时是它的速度上界；超出时 $\gamma$ 出虚数，该结构不再适用。$K=\infty$ 一支的变换 $t'=t$、$x'=x-vt$ 对 $v$ 没有限制，$v$ 取多大都成立。两行并入 @tbl-ta-conclusion 末行。
 
-## 两支公设及其结果 {#sec-at-conclusion}
+## 两支公理及其结果 {#sec-at-conclusion}
 
 | | $K=c$ | $K=\infty$ |
 |------|------|------|
@@ -241,6 +241,6 @@ $$
 | 转向段对长度之差 | 贡献 $(\Delta-\varepsilon)$；取瞬时转向时该项为 $0$ | 不贡献 |
 | 适用域 | $v\le c$ | 对 $v$ 无限制 |
 
-: 两支公设及其结果 {#tbl-ta-conclusion}
+: 两支公理及其结果 {#tbl-ta-conclusion}
 
-两列都由该支的公设给出，而本章得到的全部结果是**两条曲线的长度之差**。按 @sec-layers 章的登记，本章用到的是 (P1)（两支各自的公设：@cnj-ta-lorentz、@cnj-ta-absolute-time）、(P2)（谁留在原地、谁飞出去：@def-at-setup，以及 @sec-at-three 中加进来的第三条世界线）与第 3 步的几何计算；**未用的是 (P3a)、(P3b) 与 (P4)**——既不把线长读作钟的读数，也不把两条曲线上的事件配成对。要由上面的差进一步说出“谁的钟少走了多少”，缺的正是 (P3b)。
+两列都由该支的公理给出，而本章得到的全部结果是**两条曲线的长度之差**。按 @sec-layers 章的登记，本章用到的是 (P1)（两支各自的公理：@cnj-ta-lorentz、@cnj-ta-absolute-time）、(P2)（谁留在原地、谁飞出去：@def-at-setup，以及 @sec-at-three 中加进来的第三条世界线）与第 3 步的几何计算；**未用的是 (P3a)、(P3b) 与 (P4)**——既不把线长读作钟的读数，也不把两条曲线上的事件配成对。要由上面的差进一步说出“谁的钟少走了多少”，缺的正是 (P3b)。

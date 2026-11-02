@@ -106,5 +106,8 @@ ax.text(-2.15, 1.85, "$\\gamma_w=1$：两套配对合一\n投影值与对称值�
 ax.legend(loc="lower left", fontsize=9.5, framealpha=0.96)
 
 plt.tight_layout()
-plt.savefig("twins-galilean-compare.png", dpi=200, facecolor="white")
+# bbox_inches="tight" 裁掉 tight_layout 仍在画布四周（尤其下方）留下的
+# 白边；否则图与题注之间会出现一段明显空隙。
+plt.savefig("twins-galilean-compare.png", dpi=200, facecolor="white",
+            bbox_inches="tight", pad_inches=0.03)
 print("saved twins-galilean-compare.png")

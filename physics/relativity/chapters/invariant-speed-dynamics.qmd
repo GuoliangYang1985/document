@@ -257,7 +257,7 @@ $$ {#eq-isd-Gij}
 
 **核验**：符号计算输出的 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，与 @eq-isd-G0i 一致。✓
 
-## 能量密度：一个非零的显式例子 {#sec-isd-density}
+## $G_{00}>0$ 的一个显式例子 {#sec-isd-density}
 
 ### 球对称静态解
 
@@ -304,7 +304,7 @@ $$
 T_{00}=\frac{1}{\kappa}G_{00}=\frac{\alpha^{2}}{\kappa\,r^{2}(K_0r+\alpha)^{2}}>0
 $$
 
-即**该 $K$ 场对应一个正的能量密度分布**。这与 @sec-invariant-speed-field-group 章对角约定下 $G_{00}\equiv0$ 的结论相反——那个零是约定造成的。
+即**在外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$、并把 $T_{00}$ 读作能量密度之后，该 $K$ 场对应 $T_{00}>0$**。这与 @sec-invariant-speed-field-group 章对角约定下 $G_{00}\equiv0$ 的结论相反——那个零是约定造成的；两处的 $G_{00}$ 都是几何量，其正负不依赖物质侧假设。
 
 ### 同一个例子的 Ricci 标量
 
@@ -336,13 +336,13 @@ $$
 
 | 约定 | 度规 | $G_{00}$ | Weyl 张量 | 能容纳什么 |
 |---|---|---|---|---|
-| 对角（@sec-invariant-speed-field-group 章） | $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ | $\equiv0$ | 一般非零 | 曲率，但无能量密度 |
-| 共形 / tetrad（本章） | $K^{2}\eta_{\mu\nu}$ | **非零**（@eq-isd-G00） | $\equiv0$ | 能量密度，但无真空外解 |
+| 对角（@sec-invariant-speed-field-group 章） | $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ | $\equiv0$ | 一般非零 | 曲率，但 $G_{00}\equiv0$ |
+| 共形 / tetrad（本章） | $K^{2}\eta_{\mu\nu}$ | **非零**（@eq-isd-G00） | $\equiv0$ | $T_{00}>0$（须外加 $G=\kappa T$），但无真空外解 |
 | 一般度规（3+1 维） | $g_{\mu\nu}$，$10$ 个分量 | 任意 | 任意 | 全部 |
 
 表里对角那一行的“一般非零”说的是**非真空**的一般 $K$：Weyl 分量只由 $K$ 的二阶空间导数组成，$K$ 在空间上弯曲时它们不为零。但真空条件恰把二阶导数压成零（$\partial_i\partial_jK=0$，见 @sec-ifg-vacuum），此时 Weyl 随之恒零、度规本身平坦。两处不矛盾：**有曲率的 $K$ 一定不在真空里；在真空里的 $K$ 只作空间仿射。**
 
-**因此本章的定位仍是「切片」而非「生成」**：共形约定比对角约定前进了一步（能容纳能量密度），但仍不是广义相对论的全部——它只覆盖共形平坦的那一部分。
+**因此本章的定位仍是「切片」而非「生成」**：共形约定比对角约定前进了一步（$G_{00}$ 非零，外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 后可给出 $T_{00}>0$），但仍不是广义相对论的全部——它只覆盖共形平坦的那一部分。
 
 ## 波动力学之一：局域李代数 {#sec-isd-lie}
 
@@ -593,7 +593,7 @@ $$
 
 : 本章各命题及其依据 {#tbl-isd-conclusion}
 
-**一句话**：换用 tetrad 约定后，$K$ 场确实产生非零的能量密度，$G_{00}=\frac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$；但这类度规共形平坦、Weyl 张量恒为零，仍装不下真空外解。方程一端，变系数波动方程严格成立，而它的非相对论极限只在 $\vec\nabla K=0$ 处存在——恒速场的空间梯度与非相对论极限不相容。
+**一句话**：换用 tetrad 约定后，$K$ 场给出非零的 $G_{00}=\frac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$（外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 并把 $T_{00}$ 读作能量密度时，对应 $T_{00}>0$）；但这类度规共形平坦、Weyl 张量恒为零，仍装不下真空外解。方程一端，变系数波动方程严格成立，而它的非相对论极限只在 $\vec\nabla K=0$ 处存在——恒速场的空间梯度与非相对论极限不相容。
 
 ## 术语说明 {#sec-isd-terms}
 

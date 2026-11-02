@@ -353,7 +353,7 @@ G_{33}=\frac{r\,s^{2}}{4A^{2}F^{2}}\Bigl[
 \Bigr]
 $$ {#eq-isg2-G33}
 
-**能量密度**：由 $G_{00}=\kappa T_{00}$，$T_{00}=G_{00}/\kappa$，@eq-isg2-G00 给出能量密度的完整表达式。
+**能量密度（物质侧读法）**：外加 Einstein 方程 $G_{\mu\nu}=\kappa T_{\mu\nu}$、并把 $T_{00}$ 读作能量密度时，$T_{00}=G_{00}/\kappa$，@eq-isg2-G00 给出它的完整表达式；不加这一假设时，@eq-isg2-G00 只是 Einstein 张量 $00$ 分量的几何表达式。
 
 ## Weyl 张量：非零的证明 {#sec-isg2-weyl}
 

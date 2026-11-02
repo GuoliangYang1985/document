@@ -17,12 +17,19 @@
 \usepackage{indentfirst}       % 让 \chapter 后的第一段也跟着缩进
 \usepackage[a4paper, inner=2.5cm, outer=2.0cm, top=2.5cm, bottom=2.5cm]{geometry}
 \usepackage{setspace}
-\setstretch{1.35}
+% 行距统一由 _quarto.yml 的 linestretch 控制（当前 1.5）。此处不要再 \setstretch：
+% Quarto 在 include-in-header 之后才应用 linestretch，两者冲突时生效的是后者，
+% preamble 里写下的值成为无效代码，反而误导维护者。
 % ===== 书籍样式页眉页脚 =====
 \usepackage{fancyhdr}
 \usepackage{xcolor}
 \usepackage{titlesec}
 \pagestyle{fancy}
+% 页眉用 \small 排版，fancyhdr 要求 \headheight 不小于 13.6pt，而 ctexbook
+% 默认 12pt。不补这一条，每一页都会报 "headheight is too small"，且页眉基线
+% 被压到正文上沿附近。补 3pt 高度的同时把 \topmargin 减 3pt，正文位置不变。
+\setlength{\headheight}{15pt}
+\addtolength{\topmargin}{-3pt}
 \usepackage{amsthm}
 % 公理/定义环境已改用 Quarto 原生定理 div（::: {#prp-*} / ::: {#def-*}），
 % 其 LaTeX 环境由 Quarto 自动定义，此处不再 \newtheorem，避免重复定义冲突。
@@ -39,10 +46,11 @@
 }
 % ===== 章节标题美化 =====
 % 强制全局使用阿拉伯数字编号（第1章）
-\CTEXsetup[
-    name={第,章},
-    number=\arabic{chapter}
-]{chapter}
+% \CTEXsetup 在 ctex 2.x 已弃用，编译时逐次告警；改用 \ctexset。
+\ctexset{
+    chapter/name = {第,章},
+    chapter/number = \arabic{chapter}
+}
 % 章号自动改为"第N章"（ctexbook 内置），并按 display 样式居中。
 \titleformat{\chapter}
     {\Huge\bfseries\color{blue!50!black}\centering}
@@ -74,18 +82,93 @@
 \renewcommand{\backmatter}{\cleardoublepage\@mainmatterfalse}
 \makeatother
 
-% ===== 5、6 级标题（段落头 + runin）：必须补齐，
-%        否则一旦文档里出现 ##### ###### 就会报
-%        "Package titlesec Error: No format for this command." =====
-\titleformat{\paragraph}[runin]
-    {\normalsize\bfseries}{}{0pt}{}
-\titleformat{\subparagraph}[runin]
-    {\normalsize\itshape}{}{0pt}{}
+% ===== 5、6 级标题 =====
+% 这里原本用 \titleformat{\paragraph}[runin] / \titleformat{\subparagraph}
+% 定义，但 ctexbook 的 \paragraph 是非标准分节命令，titlesec 只报
+%   "Non standard sectioning command \paragraph detected.
+%    Using default spacing and no format."
+% 也就是说那两条格式根本没有生效，实际用的是 ctex 的默认样式。既然无效，
+% 就删掉，交给 ctex 自己处理（\paragraph 默认黑体独立成行，与现排版一致）。
 
 % ===== 图索引 / 表索引 进目录 =====
 % \listoffigures 与 \listoftables 生成的是无编号章（chapter*），默认不写目录，
 % 于是目录里能看到「符号与约定」「关键词索引」「参考文献」，却看不到实际存在的
-% 图索引与表索引。用 etoolbox 在这两条命令执行前补写一条目录项。
+% 图索引与表索引。
+%
+% 顺序很关键：这两条命令内部是先清页（\chapter* 开头的 \clearpage）再排标题。
+% 若把 \phantomsection\addcontentsline 放在命令之前（原来的 \pretocmd 写法），
+% 锚点与 \thepage 都落在上一页上——书签指向的页比实际页少 1，目录里印出的页码
+% 也少 1。这里改为「先清页 → 再登记 → 最后执行原命令」。
 \usepackage{etoolbox}
-\pretocmd{\listoffigures}{\phantomsection\addcontentsline{toc}{chapter}{图索引}}{}{}
-\pretocmd{\listoftables}{\phantomsection\addcontentsline{toc}{chapter}{表索引}}{}{}
+\let\origlistoffigures\listoffigures
+\let\origlistoftables\listoftables
+\renewcommand{\listoffigures}{%
+    \clearpage\phantomsection\addcontentsline{toc}{chapter}{图索引}\origlistoffigures}
+\renewcommand{\listoftables}{%
+    \clearpage\phantomsection\addcontentsline{toc}{chapter}{表索引}\origlistoftables}
+
+% ===== 目录：章一级条目补点线 =====
+% book 类默认的 \l@chapter 用 \hfil 而非 leaders，于是目录里只有节、小节带点线，
+% 章一级条目是「文字 ………… 页码」之间一片空白，同一份目录里两种引导线并存。
+% 改成 \leaders 后三级统一。
+\makeatletter
+\renewcommand*\l@chapter[2]{%
+    \ifnum \c@tocdepth >\m@ne
+        \addpenalty{-\@highpenalty}%
+        \vskip 1.0em \@plus\p@
+        \setlength\@tempdima{1.5em}%
+        \begingroup
+        \parindent \z@ \rightskip \@pnumwidth
+        \parfillskip -\@pnumwidth
+        \leavevmode \bfseries
+        \advance\leftskip\@tempdima
+        \hskip -\leftskip
+        #1\nobreak
+        \leaders\hbox{$\m@th\mkern\@dotsep mu\hbox{.}\mkern\@dotsep mu$}\hfill
+        \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+        \endgroup
+    \fi}
+\makeatother
+
+% ===== 段落级的断页质量 =====
+% 默认 \widowpenalty/\clubpenalty 只有 150，中文正文里不够用：逐页检查可见
+% 「上一段只剩一行被甩到本页顶端」与「本页末尾只留下一段的开头一行」各数十处。
+% 提到 10000 后禁止单行断页；\raggedbottom 让个别页面以底部少量留白收尾，
+% 而不是把行距拉开来凑满版心。
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+% ===== 行内长串与断行的宽容度 =====
+% 正文里有若干不可断的行内代码（脚本路径、符号表达式），TeX 只能靠拉伸同行
+% 来凑齐版心，编译时留下 4 处 badness 1701–10000 的 Underfull \hbox。
+% \emergencystretch 给 TeX 第三条路：宁可整行略松，也不要把某一行拉爆。
+\setlength{\emergencystretch}{2.5em}
+\tolerance=2000
+
+% ===== 图/表题注：中文习惯不用半角冒号 =====
+% caption 宏包默认 labelsep 是 ": "，中文书里应作「图 12.3　说明」。
+% caption 由 Quarto 模板在 preamble 之后加载，故用 \AtBeginDocument 延后设置。
+\AtBeginDocument{%
+    \raggedbottom
+    \captionsetup{labelsep=quad}%
+    % 公式上下间距：12pt 正文配 1.5 行距时，默认 10pt 的 abovedisplay/
+    % belowdisplayskip 显得过松——连续几个短公式会撑满一整页。
+    \setlength{\abovedisplayskip}{8pt plus 2pt minus 3pt}%
+    \setlength{\belowdisplayskip}{8pt plus 2pt minus 3pt}%
+    \setlength{\abovedisplayshortskip}{4pt plus 1pt}%
+    \setlength{\belowdisplayshortskip}{4pt plus 1pt}%
+}
+
+% ===== 参考文献 DOI 的断行 =====
+% 国标 CSL 把 DOI 排成 \href{https://doi.org/...}{10.1103/PhysRevD...}，
+% 第二参数是普通文本，TeX 会在 PhysRevD 这类长串里按英文断词规则插入
+% 连字符。CSLReferences 内的 \href 全部是 DOI 链接，故只在该环境内把
+% 显示文本交给 \nolinkurl：链接与颜色不变，断点改在 / . - 处且不插入
+% 连字符。前言的邮箱、网址链接不在该环境内，不受影响。
+\newcommand{\wbPatchHref}{%
+  \let\wbHrefOrig\href
+  \renewcommand{\href}[2]{\wbHrefOrig{##1}{\nolinkurl{##2}}}%
+}
+\AtBeginEnvironment{CSLReferences}{\wbPatchHref}

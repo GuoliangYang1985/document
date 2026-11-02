@@ -39,6 +39,8 @@
 
 **定义域**：$K$ 的参数空间取 $(0,\infty]$；$K=0$（Carroll）与 $K=\infty$（伽利略）作为边界/极限点处理。@sec-invariant-speed-geometry 章 Schwarzschild 视界处 $K\to0$，按边界点理解，不作为 $K$ 的正则取值。
 
+**量纲与规范身份**。主线写法中 $K$ 与速度同量纲（$[K]=LT^{-1}$），$c$ 是它的一个有限取值；取几何单位 $c=1$、以 $x^{0}=ct$ 计时，$K$ 记作无量纲比值 $K/c$，@sec-invariant-speed-geometry 章的 lapse 采用这一写法，两种写法相差一个单位换算，不改变任何比值结论。$K(p)$ 是 $M$ 上的**标量函数**（标量场），不是标量密度，也不是度规或联络的分量；把常数 $K$ 升级为场 $K(p)$ 时，这三项不变。逐项登记见 @sec-ifg-units。
+
 ## Newton–Cartan 一节的符号 {#sec-notation-nc}
 
 以下四个符号只在 @sec-invariant-speed-group 章 @sec-isg-newton-cartan 一节内出现，不进入其余各章的算式：

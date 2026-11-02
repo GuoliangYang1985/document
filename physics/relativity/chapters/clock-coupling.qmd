@@ -424,11 +424,11 @@ $$
 \text{（一）}\ \subseteq\ \text{（二）}\ \subseteq\ \text{（三）}
 $$ {#eq-nesting}
 
-| 情形 | 条件 | $f_i$ | 类别依赖 | 一阶判据 |
-|------|------|-------|----------|----------|
-| （一）单一刻度 | $f_i\equiv1$，$\forall i$ | 常值 $1$ | 无 | $\alpha_i\equiv0$ |
-| （二）共同改变 | $f_i=f$，与 $i$ 无关 | 单个函数 | 无（余循环平凡） | $\alpha_i\equiv\alpha$（同一常数） |
-| （三）类别依赖 | $i\mapsto f_i$ 非常值 | 多个函数 | $\alpha_i-\alpha_j\neq0$ | $\alpha:I\to\mathbb{R}$ 非常值 |
+| 情形 | 条件 | 类别依赖 | 一阶判据 |
+|------|------|----------|----------|
+| （一）单一刻度 | $f_i\equiv1$，$\forall i$ | 无 | $\alpha_i\equiv0$ |
+| （二）共同改变 | $f_i=f$，与 $i$ 无关 | 无（余循环平凡） | $\alpha_i\equiv\alpha$（同一常数） |
+| （三）类别依赖 | $i\mapsto f_i$ 非常值 | $\alpha_i-\alpha_j\neq0$ | $\alpha:I\to\mathbb{R}$ 非常值 |
 
 : 类别映射的三种情形 {#tbl-degenerations}
 
