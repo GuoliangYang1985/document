@@ -3,8 +3,8 @@
 A book manuscript on **measurement, symmetry, and the structure of physical theories**. The whole book turns on a single axis: the invariant-speed group $G_K$, in which the invariant speed is written as a parameter $K$. The Lorentz transformation ($K=c$), the Galilean transformation ($K=\infty$), and the Carrollian limit ($K=0$) then appear as three values of one and the same family of structures. The manuscript asks, value by value, which conclusions depend on $K$ and which do not.
 
 - **Author**: Guoliang Yang (Jinan, Shandong)
-- **Version**: 1.0 (revision 2026-10-28)
-- **Typesetting**: Quarto book + XeLaTeX (`ctexbook`), A4, Chinese text, 256 pages
+- **Version**: 1.0 (revision 2026-11-05)
+- **Typesetting**: Quarto book + XeLaTeX (`ctexbook`), A4, Chinese text, 276 pages
 - **Output**: `_book/理论测量的边界.pdf`
 
 ---
@@ -132,6 +132,8 @@ _deliver/                standalone single-chapter versions
 |---------|-------|
 | 1.0 | First release: 14 chapters plus the notation appendix; conclusions in the twins chapters stated as mathematical criteria; quotation marks unified; version number on the title page |
 | 1.0 revision (2026-10-28) | Structure: the former Chapter 1 (a formula-free opening) is retired, its content merged into the symmetric-twins chapter; a new Chapter 14 (the asymmetric-twins experiment) consolidates the former §13.13 and §14.9; chapter numbers renumbered throughout. Typesetting: page numbering switched to continuous Arabic numerals with TOC page numbers aligned to physical PDF pages; 97 hard-coded chapter numbers converted to dynamic cross-references; keyword-index page numbers regenerated; the ambiguous symbol $a$ properly registered |
+| 1.0 typesetting revision (2026-11-03) | Table column widths now allocated by `tools/table-widths.lua` according to content width (previously equal division by pandoc; all 97 tables re-laid-out); fixed a one-page offset in the list-of-figures / list-of-tables TOCs and PDF bookmarks; added `\headheight` (eliminating 259 fancyhdr warnings); removed half-width colons from captions; leader dots added to chapter-level TOC entries; `\clubpenalty`/`\widowpenalty` added to suppress club and widow lines; tightened vertical spacing around equations; `\CTEXsetup` replaced by `\ctexset`. Page count 272 to 269 |
+| 1.0 content revision (2026-11-05) | New Chapter 15 "The geometric layer and the physical layer" as the unifying capstone: the four physical-layer inputs (P1)-(P4) registered, (P3) split into a weak and a strong form (worldline length decoupled from clock readings; the strong form is not adopted anywhere in the book), and a five-step chain unifying Chapters 12-15; the twins chapters' rate conclusions rewritten as ratios of worldline-length increments. Content additions: a Newton-Cartan section in Chapter 2 (the geometry of the $K=\infty$ end); a "units, dimensions, and gauge identity" section in Chapter 3; the $G_{00}$ reading in Chapter 4 qualified by the matter-side assumption; Chapter 6 conclusions qualified ("the core skeleton of quantum mechanics" restated as "the algebraic structure of non-relativistic quantum mechanics"). Terminology unified: axiom/postulate/assumption all rendered as "axioms" (including unifying the axiom blocks of Chapter 1 and moving the formal conditions into the remarks after them); neutralised wording throughout. Typesetting details: Table 11.3 reduced to four columns; index entry leading; DOI line-breaking in the bibliography fixed; whitespace trimmed around Figure 12.3. Page count 269 to 276 |
 
 ---
 
