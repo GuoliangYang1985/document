@@ -51,14 +51,14 @@ $$
 2. **直线段 $P\to M$ 与 $Q\to M$**：$\gamma_A$ 过 $P$ 后以恒定速率 $v$ 沿直线到 $M$；$\gamma_B$ 过 $Q$ 后以恒定速率 $v$ 沿镜像直线到 $M$。
 :::
 
-![对称双生子实验：两条路径 $O\to P\to M$ 与 $O\to Q\to M$ 关于竖轴 $OM$ 左右镜像；同一图形关于横轴上下对称，在这一对称下 $P$ 与 $S$ 成对、$Q$ 与 $S'$ 成对、$M$ 与 $O$ 成对；$R$ 与 $R'$ 是落在横轴上的一对左右镜像点](images/symmetric.png){#fig-twins-comparison width=92%}
+![对称双生子实验](images/symmetric.png){#fig-twins-comparison width=92%}
 
 ::: {#cnj-symmetry}
 ## 对称性公理
 
 根据实验设定，路径 $O\to P\to M$ 与 $O\to Q\to M$ 关于中心轴 $OM$ 完全镜像对称。即：$\iota$ 把 $\gamma_A$ 映为 $\gamma_B$ 并保持二次型（(M3)），两条曲线在几何上彼此无从区分——几何对两者用的是同一套判据，不因叫 $\gamma_A$ 还是 $\gamma_B$ 而改变（@sec-layers 章）。这一条不牵涉“哪个参与方在哪条曲线上”：那是第 2 步的事，由几何之外定。
 
-此外，图形还关于横轴上下对称：$S$ 与 $S'$ 分别是 $\gamma_A$、$\gamma_B$ 上与 $P$、$Q$ 关于横轴对称的点。沿横轴翻转时，$P$ 与 $S$ 互换、$Q$ 与 $S'$ 互换、$M$ 与 $O$ 互换；于是 $\gamma_A$ 的直线段 $P\to M$ 与其出发时的直线段 $O\to S$ 互为镜像（$\gamma_B$ 侧同理）。
+此外，图形还关于横轴上下对称：$S$ 与 $S'$ 分别是 $\gamma_A$、$\gamma_B$ 上与 $P$、$Q$ 关于横轴对称的点。沿横轴翻转时，$P$ 与 $S$ 互换、$Q$ 与 $S'$ 互换、$M$ 与 $O$ 互换；于是 $\gamma_A$ 的直线段 $P\to M$ 与其出发时的直线段 $O\to S$ 互为镜像（$\gamma_B$ 侧同理）。图中 $R$ 与 $R'$ 是落在横轴上的一对左右镜像点。
 :::
 
 镜像轴同时经过 $O$ 与 $M$，故分离与重逢发生在同一地点（两个事件的空间坐标相同）。
@@ -368,7 +368,9 @@ $$ {#eq-tc-hyperbola}
 
 ### 三视角对照
 
-![对称双生子的三视角闵氏几何图（$v=0.6c$，$w=0.8824c$，$\gamma_w=2.125$）](images/twins-three-views.png){#fig-tc-three-views width=100%}
+三张图共用同一组参数：$v=0.6c$、$w=0.8824c$、$\gamma_w=2.125$。
+
+![对称双生子的三视角对照](images/twins-three-views.png){#fig-tc-three-views width=100%}
 
 **左：A 视角。** 图上同时画着两套配对线。蓝色虚线是校准双曲线 @eq-tc-hyperbola：$M_t$（A 侧累积 $s_0$）与 $M_{t'}$（B 侧累积 $s_0$）在同一条双曲线上——这是 S 组的配对，两边累积值相同，且一方在本地读出自己的累积值就知道另一方也是这个值，无需测量。红色虚线是水平线（A 系同时线）：过 $M_t$ 的水平线交 B 世界线于 B 侧累积 $0.47s_0=s_0/\gamma_w$ 处，过 $M_{t'}$ 的水平线交 A 世界线于投影点 $M'$（A 侧累积 $\gamma_w s_0=2.125s_0$）——这是 L 组的配对，B 侧少一个 $\gamma_w$ 因子，正是 @eq-tc-ratio-L 的几何形式。
 

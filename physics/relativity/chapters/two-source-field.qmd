@@ -389,6 +389,8 @@ $$ {#eq-field-A}
 
 ## 源 B：$\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$ {#sec-tsf-source-b}
 
+源 B 以恒速运动，其推迟时间是二次方程的根：本节给出代数解、判定正根、算 Jacobian 因子，末小节登记结果。
+
 ### 推迟时间的代数解
 
 此时 $R(\tau)=|\mathbf{x}-\mathbf{b}-\mathbf{v}\tau|$。令
@@ -490,6 +492,8 @@ $$
 当 $1-\hat{\mathbf{n}}\cdot\mathbf{v}/c=0$ 时 $g'(\tau^{*})=0$，@eq-retarded-sum 的换元公式在该处不适用。
 
 ## 双源总场 {#sec-tsf-total}
+
+两个源的场叠加即总场；本节分瞬时同时发射与连续发射两种情形。
 
 ### 瞬时同时发射
 
