@@ -43,7 +43,7 @@
 
 ## Newton–Cartan 一节的符号 {#sec-notation-nc}
 
-以下四个符号只在 @sec-invariant-speed-group 章 @sec-isg-newton-cartan 一节内出现，不进入其余各章的算式：
+以下四个符号只在 @sec-invariant-speed-group 章 @sec-isg-newton-cartan 内出现，不进入其余各章的算式：
 
 | 符号 | 含义 |
 |------|------|

@@ -162,7 +162,7 @@
 
 | 章 | 主要计算 | 用到的步骤 |
 |------|------|------|
-| @sec-twins-comparison 章 | 同一个问题的三个数（@tbl-tc-ratios） | (P1)、(P4) 与第 3 步的积分；三个数全是**线长增量之比**，不含关于钟的输入。(P2) 虽在（谁在 $\gamma_A$ 上），但本设定下换指定不产生新的情形（@sec-layers-swap-effect）。弱式 (P3a) 只在该章 @sec-tc-weak 一节作为可选读数被讨论 |
+| @sec-twins-comparison 章 | 同一个问题的三个数（@tbl-tc-ratios） | (P1)、(P4) 与第 3 步的积分；三个数全是**线长增量之比**，不含关于钟的输入。(P2) 虽在（谁在 $\gamma_A$ 上），但本设定下换指定不产生新的情形（@sec-layers-swap-effect）。弱式 (P3a) 只在该章 @sec-tc-weak 作为可选读数被讨论 |
 | @sec-twins-noninertial 章 | 换坐标核线长，再用校验线逐段切（@cor-tn-legs） | 只用第 3 步：全章只用 (M1)—(M4)，不补 (P3a)、(P3b) |
 | @sec-asymmetric-twins 章 | 非对称设定下两支各推结果（@tbl-ta-conclusion） | (P1)、(P2)、第 3 步；**未用 (P3a)、(P3b)、(P4)** |
 | 本章 | 登记 | —— |
