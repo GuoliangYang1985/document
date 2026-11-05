@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""恒速场群配图：左栏 局部零锥 + 恒速曲线；右栏 K(x) 与 Ricci 标量 R=2K''/K。"""
+"""恒速群丛配图：左栏 局部零锥 + 恒速曲线；右栏 K(x) 与 Ricci 标量 R=2K''/K。"""
 
 import numpy as np
 import matplotlib

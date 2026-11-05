@@ -36,9 +36,9 @@ bibliography: chapters/references.bib
 lang: zh-CN
 
 # 定理类环境的中文标签。Quarto 只识别内建键（thm/lem/cor/prp/cnj/def/…），
-# 其中无「公理」键，故约定：cnj 作「公理」，prp 作「命题」。
+# 其中无“公理”键，故约定：cnj 作“公理”，prp 作“命题”。
 # 这样 @cnj-* / @prp-* / @def-* / @thm-* / @lem-* / @cor-* 在 PDF 与 HTML 中
-# 分别渲染为「公理 N」「命题 N」「定义 N」「定理 N」「引理 N」「推论 N」。
+# 分别渲染为“公理 N”“命题 N”“定义 N”“定理 N”“引理 N”“推论 N”。
 language:
   crossref-cnj-title: "公理"
   crossref-ch-prefix: "第"
