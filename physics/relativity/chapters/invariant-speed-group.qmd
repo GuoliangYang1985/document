@@ -43,7 +43,7 @@
 
 **说明**：本章不预设 $K$ 的具体数值。$K$ 是一个待定参数，公理 (A4) 只断言其存在。
 
-**与第 1 章公理的对应**：(A1) 对应 @cnj-homogeneity；(A2) 与 (A3) 合起来对应 @cnj-covariance——第 1 章把各向同性与群结构合成一条陈述，本章拆开各占一条；(A4) 是两条“不变对象”公理的参数化：$K=c$ 对应 @cnj-invariant-speed，$K=\infty$ 时 @cnj-invariant-time 作为极限性质出现（@sec-isg-K）。
+**与 @sec-transform-derivation 章公理的对应**：(A1) 对应 @cnj-homogeneity；(A2) 与 (A3) 合起来对应 @cnj-covariance——@sec-transform-derivation 章把各向同性与群结构合成一条陈述，本章拆开各占一条；(A4) 是两条“不变对象”公理的参数化：$K=c$ 对应 @cnj-invariant-speed，$K=\infty$ 时 @cnj-invariant-time 作为极限性质出现（@sec-isg-K）。
 
 ## 推导 {#sec-isg-derivation}
 

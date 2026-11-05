@@ -1,4 +1,3 @@
-
 # 换坐标画图：能读到什么 {#sec-twins-noninertial}
 
 ## 本章在链条上的位置 {#sec-tn-scope}
