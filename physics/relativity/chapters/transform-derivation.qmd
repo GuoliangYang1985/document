@@ -366,12 +366,12 @@ $$
 
 $$
 \begin{aligned}
-y' &= p\,y + q\,z + \alpha x + \eta t \\
-z' &= r\,y + s\,z + \mu x + \nu t
+y' &= \eta t + \alpha x + p\,y + q\,z \\
+z' &= \nu t + \mu x + r\,y + s\,z
 \end{aligned}
 $$ {#eq-yz-general}
 
-**第一步（$x$ 轴映到 $x'$ 轴）。** 由各向同性，$x$ 轴在变换下必须映到 $x'$ 轴：位于 $x$ 轴上的点（$y = z = 0$）在 $S'$ 系中的横向坐标必须为零。于是对任意 $x$、$t$ 有 $\alpha x + \eta t = 0$ 与 $\mu x + \nu t = 0$，故
+**第一步（$x$ 轴映到 $x'$ 轴）。** 由各向同性，$x$ 轴在变换下必须映到 $x'$ 轴：位于 $x$ 轴上的点（$y = z = 0$）在 $S'$ 系中的横向坐标必须为零。于是对任意 $t$、$x$ 有 $\eta t + \alpha x = 0$ 与 $\nu t + \mu x = 0$，故
 
 $$
 \alpha = \eta = \mu = \nu = 0
