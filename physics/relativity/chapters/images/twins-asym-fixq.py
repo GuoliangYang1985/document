@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 第 14 章配图（方式二）：转向事件 Q 固定，只把重逢事件沿 t 轴推后（返程变慢）。
-Q 固定在 (6,10)（t1=10、v=0.6，c=1，tau_Q=8）；
+Q 固定在 (10,6)（t1=10、v=0.6，c=1，tau_Q=8）；
 重逢 M=20/30/50，返程速率依次 0.6/0.3/0.15；
 返程段读数 L=sqrt((M-tQ)^2-xQ^2)=8.00/19.08/39.55；
 以各 M 为心、过同一个 Q 的校验线与 t 轴的交点 = M-L = 12.00/10.92/10.45，
@@ -30,7 +30,7 @@ ax.axvline(0, color="#555555", lw=1.4)
 # 外出段 O -> Q
 ax.plot([0, xQ], [0, tQ], color="#888888", lw=2.0)
 ax.plot(xQ, tQ, "o", color="#8c1d18", ms=8, zorder=6)
-ax.annotate("$Q$ (6, 10) 固定", (xQ, tQ), textcoords="offset points",
+ax.annotate("$Q$ (10, 6) 固定", (xQ, tQ), textcoords="offset points",
             xytext=(10, -24), color="#8c1d18", fontsize=11)
 
 # tau_Q 的刻度（外出段读数）
