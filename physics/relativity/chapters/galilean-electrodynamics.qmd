@@ -10,7 +10,7 @@
 底空间为 $\mathbb{R}^{3}\times\mathbb{R}$，坐标记 $(\mathbf{x},t)$。变换群取**伽利略群** $G$：对每个常向量 $\mathbf{u}\in\mathbb{R}^{3}$，
 
 $$
-t' = t, \qquad \mathbf{x}' = \mathbf{x} - \mathbf{u}t
+t' = t, \qquad \mathbf{x}' = \mathbf{x} - \mathbf{u}t.
 $$ {#eq-gal-transform}
 :::
 
@@ -29,7 +29,7 @@ $$
 \nabla\cdot\mathbf{E} = 0, \qquad
 \nabla\cdot\mathbf{B} = 0, \qquad
 \nabla\times\mathbf{E} = -\partial_{t}\mathbf{B}, \qquad
-\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\partial_{t}\mathbf{E}
+\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\partial_{t}\mathbf{E}.
 $$ {#eq-standard-maxwell}
 :::
 
@@ -66,7 +66,7 @@ $$ {#eq-standard-maxwell}
 $$
 \nabla' = \nabla,
 \qquad
-\partial_{t'} = \partial_{t} + \mathbf{u}\cdot\nabla
+\partial_{t'} = \partial_{t} + \mathbf{u}\cdot\nabla.
 $$ {#eq-operator-transform}
 
 **梯度不变，时间偏导数不是。** 这一行是全部构造的起点。
@@ -79,7 +79,7 @@ $$ {#eq-operator-transform}
 设 $L = a\,\partial_{t} + \mathbf{b}\cdot\nabla$（$a$ 为常数，$\mathbf{b}$ 为某个待定的三维对象）。在 @eq-gal-transform 下，
 
 $$
-L = a\,\partial_{t'} + \left(\mathbf{b} - a\,\mathbf{u}\right)\cdot\nabla'
+L = a\,\partial_{t'} + \left(\mathbf{b} - a\,\mathbf{u}\right)\cdot\nabla'.
 $$ {#eq-lemma-L}
 
 于是 $L$ 保持形式只有两条出路：
@@ -104,13 +104,13 @@ $$ {#eq-lemma-L}
 引入一个新对象 $\mathbf{w}$，规定其变换规则为
 
 $$
-\mathbf{w}' = \mathbf{w} - \mathbf{u}
+\mathbf{w}' = \mathbf{w} - \mathbf{u},
 $$ {#eq-w-transform}
 
 并定义**对流导数**
 
 $$
-\mathcal{D}_{t}^{(\mathbf{w})} \;\equiv\; \partial_{t} + \mathbf{w}\cdot\nabla
+\mathcal{D}_{t}^{(\mathbf{w})} \;\equiv\; \partial_{t} + \mathbf{w}\cdot\nabla.
 $$ {#eq-convective-def}
 :::
 
@@ -118,7 +118,7 @@ $$ {#eq-convective-def}
 ## 对流导数的形式不变性
 
 $$
-\mathcal{D}_{t}^{(\mathbf{w})} = \mathcal{D}_{t'}^{(\mathbf{w}-\mathbf{u})}
+\mathcal{D}_{t}^{(\mathbf{w})} = \mathcal{D}_{t'}^{(\mathbf{w}-\mathbf{u})}.
 $$ {#eq-convective-proof}
 :::
 
@@ -129,7 +129,7 @@ $$ {#eq-convective-proof}
 $$
 \partial_{t'} + \mathbf{w}'\cdot\nabla'
 = \left(\partial_{t} + \mathbf{u}\cdot\nabla\right) + \left(\mathbf{w}-\mathbf{u}\right)\cdot\nabla
-= \partial_{t} + \mathbf{w}\cdot\nabla
+= \partial_{t} + \mathbf{w}\cdot\nabla.
 $$
 
 ### 一条硬约束：$\mathbf{w}$ 必须是常向量
@@ -142,7 +142,7 @@ $$
 $$
 \nabla\times\left(\mathcal{D}_{t}^{(\mathbf{w})}\mathbf{F}\right)
 - \mathcal{D}_{t}^{(\mathbf{w})}\left(\nabla\times\mathbf{F}\right)
-= \sum_{i,j,k,l}\varepsilon_{ijk}\,\left(\partial_{j}w_{l}\right)\left(\partial_{l}F_{k}\right)\,\mathbf{e}_{i}
+= \sum_{i,j,k,l}\varepsilon_{ijk}\,\left(\partial_{j}w_{l}\right)\left(\partial_{l}F_{k}\right)\,\mathbf{e}_{i}.
 $$ {#eq-commutation}
 
 上式对一切 $\mathbf{F}$ 为零，当且仅当 $\partial_{j}w_{l}=0$ 对一切 $j,l$ 成立，即 **$\mathbf{w}$ 是常向量**。
@@ -161,13 +161,13 @@ $$ {#eq-commutation}
 $$
 \nabla\cdot\mathbf{E} = 0,
 \qquad
-\nabla\cdot\mathbf{B} = 0
+\nabla\cdot\mathbf{B} = 0,
 $$ {#eq-mod-div}
 
 $$
 \nabla\times\mathbf{E} = -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B},
 \qquad
-\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E}
+\nabla\times\mathbf{B} = \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E},
 $$ {#eq-mod-curl}
 
 与 @eq-standard-maxwell 逐条对照（完整清单见 @tbl-modification）：
@@ -188,7 +188,7 @@ $$ {#eq-mod-curl}
 $$
 \mathbf{B} = \nabla\times\mathbf{A},
 \qquad
-\mathbf{E} = -\nabla\phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{A}
+\mathbf{E} = -\nabla\phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{A},
 $$ {#eq-potentials}
 
 则 @eq-mod-div 的两条齐次方程自动成立；规范变换取
@@ -196,7 +196,7 @@ $$ {#eq-potentials}
 $$
 \mathbf{A} \to \mathbf{A} + \nabla\chi,
 \qquad
-\phi \to \phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\chi
+\phi \to \phi - \mathcal{D}_{t}^{(\mathbf{w})}\,\chi.
 $$ {#eq-gauge-transform}
 
 它保持 @eq-potentials 不变，从而给出修改后系统自带的规范自由度。这里必须同步替换的原因是：$\nabla\times$ 与 $\mathcal{D}_t^{(\mathbf{w})}$ 的可交换性（@lem-commutation）正是“齐次方程 $\Leftrightarrow$ 存在势”这条等价性的支柱——$\mathbf{w}$ 取常向量时该等价性完整保留。
@@ -208,7 +208,7 @@ $$ {#eq-gauge-transform}
 $$
 \nabla\cdot\mathbf{E} = \frac{\rho}{\varepsilon_{0}},
 \qquad
-\nabla\times\mathbf{B} = \mu_{0}\left(\mathbf{J} - \rho\,\mathbf{w}\right) + \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E}
+\nabla\times\mathbf{B} = \mu_{0}\left(\mathbf{J} - \rho\,\mathbf{w}\right) + \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{E}.
 $$ {#eq-mod-source}
 
 其中 $c^{2}=1/(\mu_{0}\varepsilon_{0})$，$\mu_{0},\varepsilon_{0}$ 仅是记号上的便利。
@@ -219,7 +219,7 @@ $$ {#eq-mod-source}
 @eq-mod-source 自洽的充要条件是源满足**标准连续性方程**
 
 $$
-\partial_{t}\rho + \nabla\cdot\mathbf{J} = 0
+\partial_{t}\rho + \nabla\cdot\mathbf{J} = 0,
 $$ {#eq-continuity}
 
 即 @eq-continuity 一个字不用改；代价是安培型的源必须是 $\mathbf{J}-\rho\mathbf{w}$。
@@ -229,14 +229,14 @@ $$ {#eq-continuity}
 
 $$
 0 = \mu_{0}\,\nabla\cdot\left(\mathbf{J}-\rho\mathbf{w}\right) + \frac{1}{c^{2}}\,\mathcal{D}_{t}^{(\mathbf{w})}\,\frac{\rho}{\varepsilon_{0}}
-= \mu_{0}\left[\nabla\cdot\mathbf{J} - \nabla\cdot(\rho\mathbf{w}) + \mathcal{D}_{t}^{(\mathbf{w})}\rho\right]
+= \mu_{0}\left[\nabla\cdot\mathbf{J} - \nabla\cdot(\rho\mathbf{w}) + \mathcal{D}_{t}^{(\mathbf{w})}\rho\right].
 $$
 
 由 @lem-commutation（$\mathbf{w}$ 为常向量），$\nabla\cdot(\rho\mathbf{w}) = \mathbf{w}\cdot\nabla\rho$，故方括号内为
 
 $$
 \nabla\cdot\mathbf{J} - \mathbf{w}\cdot\nabla\rho + \partial_{t}\rho + \mathbf{w}\cdot\nabla\rho
-= \partial_{t}\rho + \nabla\cdot\mathbf{J}
+= \partial_{t}\rho + \nabla\cdot\mathbf{J}.
 $$
 
 两项对流贡献**恰好相消**。
@@ -259,7 +259,7 @@ $$
 
 $$
 \nabla'\times\mathbf{E} = -\,\mathcal{D}_{t'}^{(\mathbf{w}')}\,\mathbf{B}
-= -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B}
+= -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B}.
 $$
 
 其中第二个等号用了 @lem-convective-invariance。即：带撇系中的方程与原方程逐字相同。散度方程不含 $\partial_t$，而 $\nabla'=\nabla$，自动不变。
@@ -274,7 +274,7 @@ $$
 $$
 \boldsymbol{\xi} = \mathbf{x} - \mathbf{w}t,
 \qquad
-\tau = t
+\tau = t,
 $$ {#eq-change-of-variables}
 
 则 $\partial_{\tau} = \mathcal{D}_{t}^{(\mathbf{w})}$、$\nabla_{\boldsymbol{\xi}} = \nabla$。于是 $\left(\mathbf{E},\mathbf{B}\right)$ 是修改后方程组的解，当且仅当 $\left(\mathbf{E},\mathbf{B}\right)$ 作为 $\left(\boldsymbol{\xi},\tau\right)$ 的函数是标准系统 @eq-standard-maxwell 的解。
@@ -293,7 +293,7 @@ $$ {#eq-change-of-variables}
 对 @eq-mod-curl 的安培型取旋度、用法拉第型消去 $\mathbf{E}$（$\mathbf{w}$ 为常向量，@lem-commutation 保证算子可自由交换）：
 
 $$
-\nabla^{2}\mathbf{B} - \frac{1}{c^{2}}\left(\mathcal{D}_{t}^{(\mathbf{w})}\right)^{2}\mathbf{B} = \mathbf{0}
+\nabla^{2}\mathbf{B} - \frac{1}{c^{2}}\left(\mathcal{D}_{t}^{(\mathbf{w})}\right)^{2}\mathbf{B} = \mathbf{0}.
 $$ {#eq-wave-equation}
 
 对 $\mathbf{E}$ 同理。代入平面波 $e^{i\left(\mathbf{k}\cdot\mathbf{x}-\omega t\right)}$：$\nabla\to i\mathbf{k}$，$\mathcal{D}_t^{(\mathbf{w})}\to -i\left(\omega-\mathbf{w}\cdot\mathbf{k}\right)$，得
@@ -301,7 +301,7 @@ $$ {#eq-wave-equation}
 $$
 \left(\omega - \mathbf{w}\cdot\mathbf{k}\right)^{2} = c^{2}|\mathbf{k}|^{2}
 \quad\Longrightarrow\quad
-\boxed{\;\omega = c|\mathbf{k}| + \mathbf{w}\cdot\mathbf{k}\;}
+\boxed{\;\omega = c|\mathbf{k}| + \mathbf{w}\cdot\mathbf{k}\;}.
 $$ {#eq-dispersion}
 
 （取正向分支；负向分支对应反向传播。）这就是目标 (G2)：**速度叠加不是假设，是从方程里掉出来的**。
@@ -313,7 +313,7 @@ $$ {#eq-dispersion}
 $$
 v_{\mathrm{ph}} = \frac{\omega}{|\mathbf{k}|} = c + \mathbf{w}\cdot\hat{\mathbf{k}},
 \qquad
-\mathbf{v}_{\mathrm{g}} = \nabla_{\mathbf{k}}\,\omega = c\,\hat{\mathbf{k}} + \mathbf{w}
+\mathbf{v}_{\mathrm{g}} = \nabla_{\mathbf{k}}\,\omega = c\,\hat{\mathbf{k}} + \mathbf{w}.
 $$ {#eq-phase-group}
 
 相速度与群速度都等于“$c$ 加上 $\mathbf{w}$ 在传播方向上的分量”——正是伽利略叠加公式。三个直接推论：
@@ -324,7 +324,7 @@ $$ {#eq-phase-group}
 $$
 v_{\mathrm{rt}} = \frac{2L}{\dfrac{L}{c+w_{\parallel}} + \dfrac{L}{c-w_{\parallel}}}
 = \frac{c^{2}-w_{\parallel}^{2}}{c}
-= c\left(1-\frac{w_{\parallel}^{2}}{c^{2}}\right)
+= c\left(1-\frac{w_{\parallel}^{2}}{c^{2}}\right),
 $$ {#eq-round-trip}
 
   即往返测得的等效速度与 $c$ 的偏差是**二阶小量**——单向测量与双向测量给出不同的答案，这是本模型可内部检验的特征；
@@ -333,7 +333,7 @@ $$ {#eq-round-trip}
 $$
 \mathbf{k}' = \mathbf{k},
 \qquad
-\omega' = \omega - \mathbf{u}\cdot\mathbf{k}
+\omega' = \omega - \mathbf{u}\cdot\mathbf{k}.
 $$ {#eq-galilean-wave-transform}
 
   把 @eq-dispersion 代入 @eq-galilean-wave-transform 立得 $\omega' = c|\mathbf{k}'| + (\mathbf{w}-\mathbf{u})\cdot\mathbf{k}'$——色散关系在变换下形式不变，与 $\mathbf{w}'=\mathbf{w}-\mathbf{u}$ 自洽。
@@ -351,7 +351,7 @@ $$ {#eq-galilean-wave-transform}
 $$
 \underbrace{\nabla\times\left(\mathbf{E}+a\,\mathbf{u}\times\mathbf{B}\right)}_{\nabla\times\mathbf{E}-a\left(\mathbf{u}\cdot\nabla\right)\mathbf{B}}
 = -\left(\partial_{t}+\mathbf{u}\cdot\nabla\right)\mathbf{B}
-\;\Longrightarrow\; a = 1
+\;\Longrightarrow\; a = 1.
 $$ {#eq-nogo-faraday}
 
 **高斯型**要求 $a=0$：
@@ -360,7 +360,7 @@ $$
 \nabla\cdot\mathbf{E}' = \nabla\cdot\mathbf{E} - a\,\mathbf{u}\cdot\left(\nabla\times\mathbf{B}\right)
 = -a\,\frac{1}{c^{2}}\,\mathbf{u}\cdot\partial_{t}\mathbf{E}
 \;\overset{!}{=}\; 0
-\;\Longrightarrow\; a = 0
+\;\Longrightarrow\; a = 0.
 $$ {#eq-nogo-gauss}
 
 $a$ 不能同时等于 $0$ 和 $1$，矛盾。这就是 @tbl-form-invariance 中②被标为“不可能”的完整一阶论证（系统性的分类与不可能性定理见 Le Bellac–Lévy-Leblond 1973 [@lebellac1973]，另见 @sec-gal-lineage）。**因此引入补偿对象 $\mathbf{w}$（路线①）不是诸多选项之一，而是保留波解的前提下最省的出路。**
@@ -411,7 +411,7 @@ $a$ 不能同时等于 $0$ 和 $1$，矛盾。这就是 @tbl-form-invariance 中
 **对流波动方程**。声学中“风里的波”的标准写法
 
 $$
-\nabla^{2}\varphi - \frac{1}{c^{2}}\left(\partial_{t}+\mathbf{w}\cdot\nabla\right)^{2}\varphi = 0
+\nabla^{2}\varphi - \frac{1}{c^{2}}\left(\partial_{t}+\mathbf{w}\cdot\nabla\right)^{2}\varphi = 0.
 $$
 
 正是①型补偿结构在另一学科中的日常形态（气动声学的标准工程方程），风的变换规则同样是 $\mathbf{w}'=\mathbf{w}-\mathbf{u}$。这说明①的数学结构本身完全体面。

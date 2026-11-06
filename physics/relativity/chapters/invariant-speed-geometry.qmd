@@ -7,7 +7,7 @@
 **三步链条**：
 
 $$
-\text{恒速场 } K(x)\ \longrightarrow\ \text{洛伦兹变换}\ \longrightarrow\ \text{完备几何条件}\ \longrightarrow\ \text{完整度规}\ \longrightarrow\ \text{广义相对论与黑洞}
+\text{恒速场 } K(x)\ \longrightarrow\ \text{洛伦兹变换}\ \longrightarrow\ \text{完备几何条件}\ \longrightarrow\ \text{完整度规}\ \longrightarrow\ \text{广义相对论与黑洞}.
 $$
 
 **方法声明**：本章所有闭式由符号计算逐项得出（脚本 `images/full-tetrad-geometry.py` 与 `images/full-tetrad-weyl.py`）。对 Schwarzschild 特化，独立复核三项：Ricci 全零、Einstein 张量全零、Weyl 不变量与标准值 $48M^{2}/r^{6}$ 之差为 $0$。
@@ -27,7 +27,7 @@ $$
 若 tetrad 可分解为“共形因子 $\times$ 局部洛伦兹变换”，即
 
 $$
-e^{a}_{\ \mu}=K(x)\,\Lambda^{a}_{\ b}(x)\,\delta^{b}_{\ \mu},\qquad \Lambda(x)\in SO(1,3)
+e^{a}_{\ \mu}=K(x)\,\Lambda^{a}_{\ b}(x)\,\delta^{b}_{\ \mu},\qquad \Lambda(x)\in SO(1,3),
 $$
 
 则 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，从而 Weyl 张量恒为零。
@@ -38,13 +38,13 @@ $$
 $$
 g_{\mu\nu}=e^{a}_{\ \mu}e^{b}_{\ \nu}\eta_{ab}
 =K^{2}\,\Lambda^{a}_{\ \mu}\Lambda^{b}_{\ \nu}\eta_{ab}
-=K^{2}\,(\Lambda^{\mathsf{T}}\eta\Lambda)_{\mu\nu}
+=K^{2}\,(\Lambda^{\mathsf{T}}\eta\Lambda)_{\mu\nu}.
 $$
 
 由 $\Lambda\in SO(1,3)$ 的定义 $\Lambda^{\mathsf{T}}\eta\Lambda=\eta$，故
 
 $$
-g_{\mu\nu}=K^{2}\eta_{\mu\nu}
+g_{\mu\nu}=K^{2}\eta_{\mu\nu}.
 $$
 
 这是共形平坦度规。Weyl 张量在共形变换下不变，而 Minkowski 的 Weyl 张量为零，故 $C^{\rho}{}_{\sigma\mu\nu}\equiv0$。
@@ -63,7 +63,7 @@ $$
 
 $$
 \mathrm{d}s^{2}=K^{2}\mathrm{d}t^{2}
--h_{ij}\bigl(\mathrm{d}x^{i}+\beta^{i}\mathrm{d}t\bigr)\bigl(\mathrm{d}x^{j}+\beta^{j}\mathrm{d}t\bigr)
+-h_{ij}\bigl(\mathrm{d}x^{i}+\beta^{i}\mathrm{d}t\bigr)\bigl(\mathrm{d}x^{j}+\beta^{j}\mathrm{d}t\bigr).
 $$ {#eq-isg2-adm}
 
 其中 $K$ 为 lapse、$\beta^{i}$ 为 shift、$h_{ij}$ 为空间度规。
@@ -111,14 +111,14 @@ $$ {#eq-isg2-adm}
 
 $$
 \mathrm{d}s^{2}=F\,\mathrm{d}t^{2}-A\,\mathrm{d}r^{2}-r^{2}\mathrm{d}\theta^{2}
--r^{2}\sin^{2}\theta\,\bigl(\mathrm{d}\phi+\Omega\,\mathrm{d}t\bigr)^{2}
+-r^{2}\sin^{2}\theta\,\bigl(\mathrm{d}\phi+\Omega\,\mathrm{d}t\bigr)^{2},
 $$ {#eq-isg2-family}
 
 与 @eq-isg2-adm 的对应：
 
 $$
 K^{2}=F,\qquad h_{ij}=\mathrm{diag}\bigl(A,\ r^{2},\ r^{2}\sin^{2}\theta\bigr),\qquad
-\beta^{i}=(0,\ 0,\ \Omega)
+\beta^{i}=(0,\ 0,\ \Omega).
 $$
 
 **这个族包含 Schwarzschild 解**（$\Omega=0$、$F=1-2M/r$、$A=F^{-1}$），见 @sec-isg2-schwarzschild。
@@ -131,7 +131,7 @@ g_{03}=g_{30}=-r^{2}s^{2}\Omega,
 $$ {#eq-isg2-g00}
 
 $$
-g_{11}=-A,\qquad g_{22}=-r^{2},\qquad g_{33}=-r^{2}s^{2}
+g_{11}=-A,\qquad g_{22}=-r^{2},\qquad g_{33}=-r^{2}s^{2}.
 $$ {#eq-isg2-gij}
 
 **$g_{03}=-r^{2}s^{2}\Omega\neq0$ 即时空拖曳项（非对角项）。** 只要 $\Omega\neq0$，$g_{0i}$ 就不为零。
@@ -144,11 +144,11 @@ g^{11}=-\frac{1}{A},\qquad g^{22}=-\frac{1}{r^{2}},
 $$
 
 $$
-g^{33}=\frac{\Omega^{2}}{F}-\frac{1}{r^{2}s^{2}}
+g^{33}=\frac{\Omega^{2}}{F}-\frac{1}{r^{2}s^{2}},
 $$ {#eq-isg2-ginv}
 
 $$
-\det g=-r^{4}AF\,s^{2},\qquad \sqrt{-g}=r^{2}s\,\sqrt{AF}
+\det g=-r^{4}AF\,s^{2},\qquad \sqrt{-g}=r^{2}s\,\sqrt{AF}.
 $$ {#eq-isg2-det}
 
 ## $K$ 为常数时：回到全局恒速变换 {#sec-isg2-degenerate}
@@ -160,13 +160,13 @@ $K$ 为常数时，新度规应给出与前章一致的全局恒速变换；本�
 取
 
 $$
-K=\text{常数},\qquad \beta^{i}=0\ (\Omega=0),\qquad h_{ij}=\mathrm{diag}(1,r^{2},r^{2}s^{2})\ (A=1)
+K=\text{常数},\qquad \beta^{i}=0\ (\Omega=0),\qquad h_{ij}=\mathrm{diag}(1,r^{2},r^{2}s^{2})\ (A=1),
 $$
 
 即 $F=K^{2}$、$A=1$、$\Omega=0$。代入 @eq-isg2-family：
 
 $$
-\mathrm{d}s^{2}=K^{2}\mathrm{d}t^{2}-\mathrm{d}r^{2}-r^{2}\mathrm{d}\theta^{2}-r^{2}s^{2}\mathrm{d}\phi^{2}
+\mathrm{d}s^{2}=K^{2}\mathrm{d}t^{2}-\mathrm{d}r^{2}-r^{2}\mathrm{d}\theta^{2}-r^{2}s^{2}\mathrm{d}\phi^{2}.
 $$
 
 这是 Minkowski 度规（空间部分为球坐标下的欧氏度规）。
@@ -184,13 +184,13 @@ $$
 取 $F=1$、$A=1$、$\Omega=\omega$（非零常数）。此时 @eq-isg2-family 为
 
 $$
-\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}r^{2}-r^{2}\mathrm{d}\theta^{2}-r^{2}s^{2}(\mathrm{d}\phi+\omega\mathrm{d}t)^{2}
+\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}r^{2}-r^{2}\mathrm{d}\theta^{2}-r^{2}s^{2}(\mathrm{d}\phi+\omega\mathrm{d}t)^{2}.
 $$
 
 这恰是 Minkowski 度规在旋转坐标 $\phi'=\phi+\omega t$ 下的形式，故**应当平坦**。符号计算给出的结果与之相符：代入 $F=A=1$、$\Omega'=\Omega''=0$ 后全部 Weyl 分量归零，特别地
 
 $$
-C_{0101}\bigr|_{F=A=1,\ \Omega=\text{const}}=0
+C_{0101}\bigr|_{F=A=1,\ \Omega=\text{const}}=0.
 $$
 
 **这验证了本章全部曲率程序的正确性。**
@@ -201,48 +201,48 @@ $$
 
 $$
 \Gamma^{\rho}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}
-\bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr)
+\bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr).
 $$
 
 逐项代入 @eq-isg2-g00—@eq-isg2-ginv，得 $15$ 个非零分量（对 $\mu\nu$ 对称，此处每个只列一次）：
 
 $$
-\Gamma^{0}_{01}=\frac{F'-r^{2}s^{2}\Omega\,\Omega'}{2F}
+\Gamma^{0}_{01}=\frac{F'-r^{2}s^{2}\Omega\,\Omega'}{2F},
 $$
 
 $$
-\Gamma^{0}_{13}=-\frac{r^{2}s^{2}\,\Omega'}{2F}
+\Gamma^{0}_{13}=-\frac{r^{2}s^{2}\,\Omega'}{2F},
 $$
 
 $$
-\Gamma^{1}_{00}=\frac{1}{A}\left(\frac{F'}{2}-r\,s^{2}\Omega^{2}-r^{2}s^{2}\Omega\,\Omega'\right)
+\Gamma^{1}_{00}=\frac{1}{A}\left(\frac{F'}{2}-r\,s^{2}\Omega^{2}-r^{2}s^{2}\Omega\,\Omega'\right),
 $$
 
 $$
-\Gamma^{1}_{03}=-\frac{r\,s^{2}\bigl(r\,\Omega'+2\Omega\bigr)}{2A}
+\Gamma^{1}_{03}=-\frac{r\,s^{2}\bigl(r\,\Omega'+2\Omega\bigr)}{2A},
 $$
 
 $$
 \Gamma^{1}_{11}=\frac{A'}{2A},\qquad
 \Gamma^{1}_{22}=-\frac{r}{A},\qquad
-\Gamma^{1}_{33}=-\frac{r\,s^{2}}{A}
+\Gamma^{1}_{33}=-\frac{r\,s^{2}}{A},
 $$
 
 $$
 \Gamma^{2}_{00}=-\Omega^{2}sc,\qquad
 \Gamma^{2}_{03}=-\Omega\,sc,\qquad
 \Gamma^{2}_{12}=\frac{1}{r},\qquad
-\Gamma^{2}_{33}=-sc
+\Gamma^{2}_{33}=-sc,
 $$
 
 $$
-\Gamma^{3}_{01}=\frac{r^{2}s^{2}\Omega^{2}\Omega'}{2F}+\frac{\Omega'}{2}-\frac{\Omega\,F'}{2F}+\frac{\Omega}{r}
+\Gamma^{3}_{01}=\frac{r^{2}s^{2}\Omega^{2}\Omega'}{2F}+\frac{\Omega'}{2}-\frac{\Omega\,F'}{2F}+\frac{\Omega}{r},
 $$
 
 $$
 \Gamma^{3}_{02}=\Omega\cot\theta,\qquad
 \Gamma^{3}_{13}=\frac{r^{2}s^{2}\Omega\,\Omega'}{2F}+\frac{1}{r},\qquad
-\Gamma^{3}_{23}=\cot\theta
+\Gamma^{3}_{23}=\cot\theta.
 $$ {#eq-isg2-gamma}
 
 （另有对称项 $\Gamma^{0}_{10}=\Gamma^{0}_{01}$、$\Gamma^{1}_{30}=\Gamma^{1}_{03}$、$\Gamma^{2}_{21}=\Gamma^{2}_{12}$、$\Gamma^{3}_{10}=\Gamma^{3}_{01}$、$\Gamma^{3}_{31}=\Gamma^{3}_{13}$、$\Gamma^{3}_{32}=\Gamma^{3}_{23}$，共 $15$ 个独立非零分量。）
@@ -253,7 +253,7 @@ $$
 R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}_{\nu\sigma}
 -\partial_\nu\Gamma^{\rho}_{\rho\sigma}
 +\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{\nu\sigma}
--\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}
+-\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}.
 $$
 
 代入 @eq-isg2-gamma，$5$ 个独立非零分量：
@@ -264,7 +264,7 @@ R_{00}=&\ \frac{1}{4rA^{2}F}\Bigl[
 r\bigl(2r^{2}s^{2}\Omega\Omega'+2rs^{2}\Omega^{2}-F'\bigr)F\,A'\Bigr.\\[3pt]
 &+r\bigl(-2r^{4}s^{4}\Omega^{2}\Omega'^{2}+2r^{2}s^{2}\Omega\,F'\Omega'-2rs^{2}\Omega^{2}F'-F'^{2}\bigr)A\\[3pt]
 &+2r\bigl(-2r^{2}s^{2}\Omega\Omega''-r^{2}s^{2}\Omega'^{2}-8rs^{2}\Omega\Omega'-2s^{2}\Omega^{2}+F''\bigr)AF\\[3pt]
-&\Bigl.+4rA^{2}F\,s^{2}\Omega^{2}\Bigr]+\frac{A'F'}{4A^{2}}+\frac{F'}{rA}
+&\Bigl.+4rA^{2}F\,s^{2}\Omega^{2}\Bigr]+\frac{A'F'}{4A^{2}}+\frac{F'}{rA},
 \end{aligned}
 $$ {#eq-isg2-R00}
 
@@ -273,27 +273,27 @@ $$
 R_{03}=&\ \frac{s^{2}}{A^{2}F}\Bigl[
 -\frac{r^{4}A\Omega\Omega'^{2}}{2}-\frac{r^{2}AF\Omega''}{2}
 +\frac{r^{2}A\,F'\Omega'}{4}+\frac{r^{2}F A'\Omega'}{4}\Bigr.\\[3pt]
-&\Bigl.-2rAF\Omega'-\frac{rA\Omega F'}{2}+\frac{rF\Omega A'}{2}+A^{2}F\Omega-AF\Omega\Bigr]
+&\Bigl.-2rAF\Omega'-\frac{rA\Omega F'}{2}+\frac{rF\Omega A'}{2}+A^{2}F\Omega-AF\Omega\Bigr],
 \end{aligned}
 $$ {#eq-isg2-R03}
 
 $$
 R_{11}=\frac{r^{2}s^{2}\Omega'^{2}}{2F}-\frac{F''}{2F}+\frac{F'^{2}}{4F^{2}}
-+\frac{A'F'}{4AF}+\frac{A'}{rA}
++\frac{A'F'}{4AF}+\frac{A'}{rA},
 $$ {#eq-isg2-R11}
 
 $$
-R_{22}=-\frac{rF'}{2AF}+\frac{rA'}{2A^{2}}+1-\frac{1}{A}
+R_{22}=-\frac{rF'}{2AF}+\frac{rA'}{2A^{2}}+1-\frac{1}{A},
 $$ {#eq-isg2-R22}
 
 $$
-R_{33}=\frac{s^{2}}{2A^{2}F}\Bigl[-r^{4}A\,s^{2}\Omega'^{2}-rA\,F'+rF\,A'+2A^{2}F-2AF\Bigr]
+R_{33}=\frac{s^{2}}{2A^{2}F}\Bigl[-r^{4}A\,s^{2}\Omega'^{2}-rA\,F'+rF\,A'+2A^{2}F-2AF\Bigr].
 $$ {#eq-isg2-R33}
 
 ## Ricci 标量 {#sec-isg2-R}
 
 $$
-R=g^{\mu\nu}R_{\mu\nu}
+R=g^{\mu\nu}R_{\mu\nu}.
 $$
 
 代入 @eq-isg2-ginv 与 @eq-isg2-R00—@eq-isg2-R33（注意 $g^{03}\neq0$，故 $R_{03}$ 项亦参与）：
@@ -307,7 +307,7 @@ $$
 +\frac{2F'}{rAF}
 -\frac{2A'}{rA^{2}}
 -\frac{2}{r^{2}}
-+\frac{2}{r^{2}A}}
++\frac{2}{r^{2}A}}.
 $$ {#eq-isg2-Rscalar}
 
 **注意**：$\Omega$ 只通过 $\Omega'^{2}$ 进入 $R$；拖曳的偶数阶项不出现，这与拖曳是“类磁”效应一致。
@@ -315,7 +315,7 @@ $$ {#eq-isg2-Rscalar}
 ## Einstein 张量：全部非零分量 {#sec-isg2-einstein}
 
 $$
-G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}R\,g_{\mu\nu}
+G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}R\,g_{\mu\nu}.
 $$
 
 **$G_{00}$（完整表达式，含 $K$ 的梯度与拖曳）：**
@@ -328,7 +328,7 @@ G_{00}=\frac{1}{4r^{2}A^{2}F^{2}}\Bigl[
 &+2r^{3}\bigl(r\Omega'-\Omega\bigr)F^{2}\Omega\,s^{2}A'\\[3pt]
 &-r^{3}\bigl(4r\Omega\Omega''+r\Omega'^{2}+16\Omega\Omega'\bigr)AF^{2}s^{2}\\[3pt]
 &+r^{3}\bigl(-3r^{3}\Omega s^{2}\Omega'^{2}+2r\Omega F''+2rF'\Omega'+2\Omega F'\bigr)AF\,\Omega\,s^{2}\\[3pt]
-&\Bigl.+4rF^{3}A'+4A^{2}F^{3}-4AF^{3}\Bigr]
+&\Bigl.+4rF^{3}A'+4A^{2}F^{3}-4AF^{3}\Bigr].
 \end{aligned}
 $$ {#eq-isg2-G00}
 
@@ -341,24 +341,24 @@ $$
 G_{03}=\frac{r\,s^{2}}{4A^{2}F^{2}}\Bigl[
 &-3r^{3}AF\Omega\,\Omega'^{2}-2rAF^{2}\Omega''+2rAF\Omega F''+rAF\,F'\Omega'\Bigr.\\[3pt]
 &-rA\Omega F'^{2}+rF^{2}A'\Omega'-rF\Omega A'F'\\[3pt]
-&\Bigl.-8AF^{2}\Omega'+2AF\Omega F'-2F^{2}\Omega A'\Bigr]
+&\Bigl.-8AF^{2}\Omega'+2AF\Omega F'-2F^{2}\Omega A'\Bigr],
 \end{aligned}
 $$ {#eq-isg2-G03}
 
 $$
-G_{11}=\frac{1}{r^{2}F}\left(\frac{r^{4}s^{2}\Omega'^{2}}{4}+rF'-AF+F\right)
+G_{11}=\frac{1}{r^{2}F}\left(\frac{r^{4}s^{2}\Omega'^{2}}{4}+rF'-AF+F\right),
 $$ {#eq-isg2-G11}
 
 $$
 G_{22}=-\frac{r}{4A^{2}F^{2}}\Bigl[
 r\bigl(r^{2}s^{2}\Omega'^{2}-2F''\bigr)AF+rA\,F'^{2}+rF\,A'F'-2AF\,F'+2F^{2}A'
-\Bigr]
+\Bigr],
 $$ {#eq-isg2-G22}
 
 $$
 G_{33}=\frac{r\,s^{2}}{4A^{2}F^{2}}\Bigl[
 -3r^{3}AFs^{2}\Omega'^{2}+2rAF F''-rA\,F'^{2}-rF\,A'F'+2AF\,F'-2F^{2}A'
-\Bigr]
+\Bigr].
 $$ {#eq-isg2-G33}
 
 **能量密度（物质侧读法）**：外加 Einstein 方程 $G_{\mu\nu}=\kappa T_{\mu\nu}$、并把 $T_{00}$ 读作能量密度时，$T_{00}=G_{00}/\kappa$，@eq-isg2-G00 给出它的完整表达式；不加这一假设时，@eq-isg2-G00 只是 Einstein 张量 $00$ 分量的几何表达式。
@@ -372,7 +372,7 @@ $$ {#eq-isg2-G33}
 $$
 C_{abcd}=R_{abcd}
 -\bigl(g_{ac}R_{db}-g_{ad}R_{cb}-g_{bc}R_{da}+g_{bd}R_{ca}\bigr)
-+\frac{R}{6}\bigl(g_{ac}g_{db}-g_{ad}g_{cb}\bigr)
++\frac{R}{6}\bigl(g_{ac}g_{db}-g_{ad}g_{cb}\bigr).
 $$
 
 ### 分量（一般族，含拖曳）
@@ -384,7 +384,7 @@ C_{0101}=\frac{1}{6r^{2}AF^{2}}\Bigl[
 &+r^{2}\bigl(4r\Omega^{2}s^{2}-F'\bigr)F^{2}A'\\[3pt]
 &+r^{2}\bigl(r^{4}\Omega^{2}s^{4}\Omega'^{2}-2r^{2}\Omega^{2}s^{2}F''-r\Omega^{2}s^{2}F'-F'^{2}\bigr)AF\\[3pt]
 &+r^{2}\bigl(-r^{2}s^{2}\Omega'^{2}-6r\Omega s^{2}\Omega'+4A\Omega^{2}s^{2}-4\Omega^{2}s^{2}+2F''\bigr)AF^{2}\\[3pt]
-&\Bigl.+4rAF^{2}F'-4rF^{3}A'+2(A-1)AF^{3}\Bigr]
+&\Bigl.+4rAF^{2}F'-4rF^{3}A'+2(A-1)AF^{3}\Bigr],
 \end{aligned}
 $$ {#eq-isg2-C0101}
 
@@ -397,31 +397,31 @@ C_{0202}=\frac{1}{12A^{2}F^{2}}\Bigl[
 &+2r\bigl(3r^{3}\Omega s^{2}\Omega'+4r^{2}\Omega^{2}s^{2}-rF'-F\bigr)F^{2}A'\\[3pt]
 &+8\bigl(r^{2}\Omega^{2}s^{2}-F\bigr)A^{2}F^{2}\\[3pt]
 &+\bigl(-12r^{4}\Omega s^{2}\Omega''-5r^{4}s^{2}\Omega'^{2}-36r^{3}\Omega s^{2}\Omega'\bigr.\\[3pt]
-&\qquad\Bigl.-8r^{2}\Omega^{2}s^{2}+4r^{2}F''+8rF'+8F\bigr)AF^{2}\Bigr]
+&\qquad\Bigl.-8r^{2}\Omega^{2}s^{2}+4r^{2}F''+8rF'+8F\bigr)AF^{2}\Bigr],
 \end{aligned}
 $$ {#eq-isg2-C0202}
 
 $$
 C_{0303}=\frac{s^{2}}{6A^{2}F}\Bigl[
--r^{4}AFs^{2}\Omega'^{2}+2r^{2}AFF''-r^{2}A F'^{2}-r^{2}F A'F'
+-r^{4}AFs^{2}\Omega'^{2}+2r^{2}AFF''-r^{2}A F'^{2}-r^{2}F A'F',
 $$
 $$
-\qquad\qquad +4rAFF'-rF^{2}A'-4A^{2}F^{2}+4AF^{2}\Bigr]
+\qquad\qquad +4rAFF'-rF^{2}A'-4A^{2}F^{2}+4AF^{2}\Bigr],
 $$ {#eq-isg2-C0303}
 
 $$
 C_{1313}=\frac{s^{2}}{6AF^{2}}\Bigl[
-r^{4}AFs^{2}\Omega'^{2}-2r^{2}AFF''+r^{2}A F'^{2}+r^{2}F A'F'
+r^{4}AFs^{2}\Omega'^{2}-2r^{2}AFF''+r^{2}A F'^{2}+r^{2}F A'F',
 $$
 $$
-\qquad\qquad -rAFF'+4rF^{2}A'+4A^{2}F^{2}-4AF^{2}\Bigr]
+\qquad\qquad -rAFF'+4rF^{2}A'+4A^{2}F^{2}-4AF^{2}\Bigr],
 $$ {#eq-isg2-C1313}
 
 $$
 \begin{aligned}
 C_{0113}=\frac{s^{2}}{6AF^{2}}\Bigl[
 &-r^{4}AF\Omega\,\Omega'^{2}+2r^{2}AF\Omega F''-r^{2}A\Omega F'^{2}-r^{2}F\Omega A'F'\Bigr.\\[3pt]
-&\Bigl.+3rAF^{2}\Omega'+rAF\Omega F'-4rF^{2}\Omega A'-4A^{2}F^{2}\Omega+4AF^{2}\Omega\Bigr]
+&\Bigl.+3rAF^{2}\Omega'+rAF\Omega F'-4rF^{2}\Omega A'-4A^{2}F^{2}\Omega+4AF^{2}\Omega\Bigr],
 \end{aligned}
 $$ {#eq-isg2-C0113}
 
@@ -429,7 +429,7 @@ $$
 \begin{aligned}
 C_{2323}=\frac{r^{2}s^{2}}{12A^{2}F^{2}}\Bigl[
 &-7r^{4}AFs^{2}\Omega'^{2}+2r^{2}AFF''-r^{2}A F'^{2}-r^{2}F A'F'\Bigr.\\[3pt]
-&\Bigl.-8rAFF'+8rF^{2}A'+8A^{2}F^{2}-8AF^{2}\Bigr]
+&\Bigl.-8rAFF'+8rF^{2}A'+8A^{2}F^{2}-8AF^{2}\Bigr].
 \end{aligned}
 $$ {#eq-isg2-C2323}
 
@@ -437,7 +437,7 @@ $$ {#eq-isg2-C2323}
 
 $$
 C_{0303}=\frac{s^{2}}{6F}\Bigl[2r^{2}FF''-r^{2}F'^{2}+4rFF'-4F^{2}+4F^{2}\Bigr]
-=\frac{s^{2}}{6F}\Bigl[2r^{2}FF''-r^{2}F'^{2}+4rFF'\Bigr]
+=\frac{s^{2}}{6F}\Bigl[2r^{2}FF''-r^{2}F'^{2}+4rFF'\Bigr].
 $$
 
 只要 $F$ 非常数，此式一般不为零。
@@ -447,7 +447,7 @@ $$
 取
 
 $$
-\Omega=0,\qquad F=1-\frac{2M}{r},\qquad A=\frac{1}{F}=\left(1-\frac{2M}{r}\right)^{-1}
+\Omega=0,\qquad F=1-\frac{2M}{r},\qquad A=\frac{1}{F}=\left(1-\frac{2M}{r}\right)^{-1},
 $$
 
 即
@@ -455,7 +455,7 @@ $$
 $$
 K(r)=\sqrt{1-\frac{2M}{r}},\qquad
 \mathrm{d}s^{2}=\Bigl(1-\frac{2M}{r}\Bigr)\mathrm{d}t^{2}
--\Bigl(1-\frac{2M}{r}\Bigr)^{-1}\mathrm{d}r^{2}-r^{2}\mathrm{d}\Omega^{2}
+-\Bigl(1-\frac{2M}{r}\Bigr)^{-1}\mathrm{d}r^{2}-r^{2}\mathrm{d}\Omega^{2}.
 $$
 
 **符号计算的三项独立复核**：
@@ -479,13 +479,13 @@ $$ {#eq-isg2-Csch1}
 $$
 C_{1212}=\frac{M}{r-2M},\qquad
 C_{1313}=\frac{M\,s^{2}}{r-2M},\qquad
-C_{2323}=-2Mr\,s^{2}
+C_{2323}=-2Mr\,s^{2}.
 $$ {#eq-isg2-Csch2}
 
 **Weyl 不变量：**
 
 $$
-\boxed{C_{abcd}C^{abcd}=\frac{48M^{2}}{r^{6}}\neq0}
+\boxed{C_{abcd}C^{abcd}=\frac{48M^{2}}{r^{6}}\neq0}.
 $$ {#eq-isg2-I}
 
 符号计算输出 $48M^{2}/r^{6}$，与标准值之差经 `simplify` 后为 $0$。
@@ -505,7 +505,7 @@ $$ {#eq-isg2-I}
 由 @eq-isg2-adm：
 
 $$
-g_{00}=K^{2}-h_{ij}\beta^{i}\beta^{j}
+g_{00}=K^{2}-h_{ij}\beta^{i}\beta^{j}.
 $$
 
 在本章的族中 $h_{ij}\beta^{i}\beta^{j}=r^{2}s^{2}\Omega^{2}=:\lvert\beta\rvert^{2}_{h}$。
@@ -513,7 +513,7 @@ $$
 **(a) 静止限（无限红移面）**：
 
 $$
-g_{00}=0\quad\Longleftrightarrow\quad K^{2}=\lvert\beta\rvert^{2}_{h}\quad\Longleftrightarrow\quad \boxed{\lvert\beta\rvert_{h}=K}
+g_{00}=0\quad\Longleftrightarrow\quad K^{2}=\lvert\beta\rvert^{2}_{h}\quad\Longleftrightarrow\quad \boxed{\lvert\beta\rvert_{h}=K},
 $$ {#eq-isg2-staticlimit}
 
 即：**拖曳速度在空间度规下的模长等于局部光速时，出现静止限。** 这是一条只用 $K$ 与 $\beta$ 表述的判据。
@@ -521,7 +521,7 @@ $$ {#eq-isg2-staticlimit}
 **(b) 事件视界（Killing 视界）**：对静态情形，事件视界位于 $g^{rr}=0$，由 @eq-isg2-ginv 即
 
 $$
-g^{rr}=-\frac{1}{A}=0\quad\Longleftrightarrow\quad \boxed{A^{-1}=0}
+g^{rr}=-\frac{1}{A}=0\quad\Longleftrightarrow\quad \boxed{A^{-1}=0}.
 $$ {#eq-isg2-eventhorizon}
 
 ### Schwarzschild 情形：两者重合
@@ -529,19 +529,19 @@ $$ {#eq-isg2-eventhorizon}
 $\Omega=0$ 时 $\lvert\beta\rvert_{h}=0$，由 @eq-isg2-staticlimit 得 $K=0$；而 @eq-isg2-eventhorizon 给出 $A^{-1}=F=K^{2}=0$，同样得
 
 $$
-K=0
+K=0.
 $$
 
 **两条判据在 $\Omega=0$ 时给出同一个曲面。** 由 $K^{2}=1-\dfrac{2M}{r}$：
 
 $$
-K(r_s)=0\quad\Longrightarrow\quad 1-\frac{2M}{r_s}=0\quad\Longrightarrow\quad r_s=2M
+K(r_s)=0\quad\Longrightarrow\quad 1-\frac{2M}{r_s}=0\quad\Longrightarrow\quad r_s=2M.
 $$
 
 恢复量纲（$M\to GM/c^{2}$）：
 
 $$
-\boxed{r_s=\frac{2GM}{c^{2}},\qquad K(r)=\sqrt{1-\frac{2GM}{c^{2}r}}}
+\boxed{r_s=\frac{2GM}{c^{2}},\qquad K(r)=\sqrt{1-\frac{2GM}{c^{2}r}}}.
 $$ {#eq-isg2-rs}
 
 **这就是史瓦西半径，由恒速场 $K$ 的零点给出。**
@@ -551,32 +551,32 @@ $$ {#eq-isg2-rs}
 真空条件 + $A=1/F$（即 $g^{rr}=-F$ 的静态球对称真空形式）⟹ 由 @eq-isg2-R22：
 
 $$
-R_{22}=-\frac{rF'}{2AF}+\frac{rA'}{2A^{2}}+1-\frac{1}{A}
+R_{22}=-\frac{rF'}{2AF}+\frac{rA'}{2A^{2}}+1-\frac{1}{A}.
 $$
 
 代入 $A=1/F$，$A'=-F'/F^{2}$：
 
 $$
 R_{22}=-\frac{rF'}{2}+\frac{r}{2}\cdot\frac{-F'/F^{2}}{1/F^{2}}+1-F
-=-\frac{rF'}{2}-\frac{rF'}{2}+1-F=1-F-rF'
+=-\frac{rF'}{2}-\frac{rF'}{2}+1-F=1-F-rF'.
 $$
 
 真空要求 $R_{22}=0$：
 
 $$
-1-F-rF'=0\quad\Longleftrightarrow\quad rF'+F=1\quad\Longleftrightarrow\quad (rF)'=1
+1-F-rF'=0\quad\Longleftrightarrow\quad rF'+F=1\quad\Longleftrightarrow\quad (rF)'=1.
 $$
 
 积分：
 
 $$
-rF=r+C\quad\Longrightarrow\quad F=1+\frac{C}{r}
+rF=r+C\quad\Longrightarrow\quad F=1+\frac{C}{r}.
 $$
 
 取 $C=-2M$（使 $r\to\infty$ 时 $F\to1$，即渐近处 $K\to1$）：
 
 $$
-\boxed{F=K^{2}=1-\frac{2M}{r}}
+\boxed{F=K^{2}=1-\frac{2M}{r}}.
 $$ {#eq-isg2-derive}
 
 **链条闭合**：恒速场 $K$ 的真空方程 $\Longrightarrow$ $K^{2}=1-\frac{2M}{r}$ $\Longrightarrow$ 视界 $K=0$ $\Longrightarrow$ $r_s=2M$。
@@ -584,7 +584,7 @@ $$ {#eq-isg2-derive}
 ### 视界处的梯度
 
 $$
-\frac{\mathrm{d}K}{\mathrm{d}r}=\frac{M}{r^{2}\sqrt{1-\dfrac{2M}{r}}}
+\frac{\mathrm{d}K}{\mathrm{d}r}=\frac{M}{r^{2}\sqrt{1-\dfrac{2M}{r}}}.
 $$
 
 在 $r\to r_s=2M$ 处 $K\to0$ 而 $\mathrm{d}K/\mathrm{d}r\to\infty$：**视界处恒速场的梯度发散，$\vec\nabla K\neq0$ 且无界。**
@@ -596,13 +596,13 @@ $$
 由上一节，黑洞解满足
 
 $$
-\vec\nabla K\neq0,\qquad \text{且在 } r\to r_s \text{ 处 } \lvert\vec\nabla K\rvert\to\infty
+\vec\nabla K\neq0,\qquad \text{且在 } r\to r_s \text{ 处 } \lvert\vec\nabla K\rvert\to\infty,
 $$
 
 而前一章已严格证明：当 $\vec\nabla K\neq0$ 时，从变系数 Klein–Gordon 方程抽出快变相位 $\theta=-mK^{2}t/\hbar$ 后，残留项
 
 $$
-\frac{4m^{2}t^{2}}{\hbar^{2}}\lvert\vec\nabla K\rvert^{2}\varphi
+\frac{4m^{2}t^{2}}{\hbar^{2}}\lvert\vec\nabla K\rvert^{2}\varphi.
 $$
 
 在 $K\to\infty$ 的极限下按 $K_0^{2}$ 增长而**发散**，非相对论极限不存在。

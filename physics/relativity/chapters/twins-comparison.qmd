@@ -9,7 +9,7 @@
 **同一个问题**是：在直线段上，按某种配对把 $\gamma_B$ 上的一小段与 $\gamma_A$ 上的一小段配成一对，这两小段各自累积了多少线长？即求比值
 
 $$
-\frac{\mathrm{d}s_B}{\mathrm{d}s_A}
+\frac{\mathrm{d}s_B}{\mathrm{d}s_A}.
 $$
 
 其中 $\mathrm{d}s$ 是 @sec-twins-noninertial 章 (M4) 定义的那个量（线元沿曲线累积），本章从头到尾只与它打交道。
@@ -71,13 +71,13 @@ $$
 于是直线段上的两条轨迹为
 
 $$
-\text{A：}\ x_A(t)=-d+vt,\qquad \text{B：}\ x_B(t)=+d-vt
+\text{A：}\ x_A(t)=-d+vt,\qquad \text{B：}\ x_B(t)=+d-vt.
 $$ {#eq-trajectories}
 
 镜像映射 $\iota(t,x):=(t,-x)$ 把 A 的轨迹映为 B 的轨迹：
 
 $$
-\iota\bigl(t,\,-d+vt\bigr)=\bigl(t,\,d-vt\bigr)
+\iota\bigl(t,\,-d+vt\bigr)=\bigl(t,\,d-vt\bigr).
 $$ {#eq-iota-lines}
 
 **@eq-iota-lines 中两事件的时间分量相同，都是 $t$。** 这句话的全部内容是：$\iota$ 保持时间分量不变。它不需要任何外部参考系，也不需要任何参与方在场——时间方向是镜像对称自己挑出来的（$\iota$ 的 $+1$ 特征方向）。
@@ -104,7 +104,7 @@ $$ {#eq-iota-lines}
 **(L1) 洛伦兹变换。** 相对速度 $u$ 的两系之间（$\gamma_u:=1/\sqrt{1-u^{2}/c^{2}}$）：
 
 $$
-t'=\gamma_u\Bigl(t-\frac{u\,x}{c^{2}}\Bigr),\qquad x'=\gamma_u\,(x-ut)
+t'=\gamma_u\Bigl(t-\frac{u\,x}{c^{2}}\Bigr),\qquad x'=\gamma_u\,(x-ut).
 $$ {#eq-L1}
 
 本组取 $K=c$，故 (M4) 的被积量为 $\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}}$。(L1) 在本章只做两件事：把曲线换到指定参考系的坐标里；给出该参考系的同时面。
@@ -114,7 +114,7 @@ $$ {#eq-L1}
 **(G1) 伽利略变换。** 相对速度 $u$ 的两系之间：
 
 $$
-t'=t,\qquad x'=x-ut
+t'=t,\qquad x'=x-ut.
 $$ {#eq-G1}
 
 本组取 $K=\infty$，故 (M4) 的被积量为 $\mathrm{d}t$。
@@ -135,7 +135,7 @@ $$ {#eq-G1}
 **第一步**：$\iota$ 保二次型。由 $\iota(t,x)=(t,-x)$，时间分量不变而空间分量变号，故 $\mathrm{d}t^{2}$ 不变、$\mathrm{d}x^{2}$ 不变（方向变了，平方没变），于是
 
 $$
-\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\frac{\mathrm{d}x^{2}}{K^{2}}
+\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\frac{\mathrm{d}x^{2}}{K^{2}}.
 $$
 
 在 $\iota$ 下逐点不变——这对 $K$ 的每一个取值都成立。
@@ -143,7 +143,7 @@ $$
 **第二步**：由 (S1) 与 @eq-iota-lines，$\iota$ 把 $\gamma_A$ 上从 $P$ 到 $e_A$ 的整条弧一一映为 $\gamma_B$ 上从 $Q$ 到 $e_B$ 的整条弧。由第一步，$\iota$ 保二次型，故保线长，两段线长相等：
 
 $$
-s_A(e_A)-s_A(P)=s_B(e_B)-s_B(Q)
+s_A(e_A)-s_A(P)=s_B(e_B)-s_B(Q).
 $$ {#eq-tc-inc}
 
 **第三步**：$O\to P$ 与 $O\to Q$ 两段弧线亦互为镜像，同理得 $s_A(P)=s_B(Q)$。代入 @eq-tc-inc，左端减左端、右端减右端：
@@ -152,7 +152,7 @@ $$
 \begin{aligned}
 \bigl[s_A(e_A)-s_A(P)\bigr]-\bigl[s_B(e_B)-s_B(Q)\bigr]&=0\\[4pt]
 s_A(e_A)-s_B(e_B)-\bigl[s_A(P)-s_B(Q)\bigr]&=0\\[4pt]
-s_A(e_A)-s_B(e_B)&=0
+s_A(e_A)-s_B(e_B)&=0,
 \end{aligned}
 $$
 
@@ -165,7 +165,7 @@ $$
 由 @prp-tc-equal，在对称对上 $s_A=s_B$ 逐点成立，故沿直线段取微分：
 
 $$
-\boxed{\dfrac{\mathrm{d}s_B}{\mathrm{d}s_A}=1}
+\boxed{\dfrac{\mathrm{d}s_B}{\mathrm{d}s_A}=1}.
 $$ {#eq-tc-ratio-S}
 
 ### 若补一条关于钟的输入 {#sec-tc-weak}
@@ -196,14 +196,14 @@ $$ {#eq-tc-ratio-S}
 $$
 T_P=\gamma_v\frac{vd}{c^{2}},\qquad
 T_Q=-\gamma_v\frac{vd}{c^{2}},\qquad
-T_M=\gamma_v\frac{d}{v},
+T_M=\gamma_v\frac{d}{v}.
 $$
 
 于是
 
 $$
 T_M-T_P=\gamma_v d\Bigl(\frac{1}{v}-\frac{v}{c^{2}}\Bigr)=\frac{d}{v\,\gamma_v},\qquad
-T_M-T_Q=\gamma_v d\Bigl(\frac{1}{v}+\frac{v}{c^{2}}\Bigr)=\gamma_w\cdot\frac{d}{v\,\gamma_v},
+T_M-T_Q=\gamma_v d\Bigl(\frac{1}{v}+\frac{v}{c^{2}}\Bigr)=\gamma_w\cdot\frac{d}{v\,\gamma_v}.
 $$
 
 末步用 $\gamma_v\bigl(1+v^{2}/c^{2}\bigr)=\gamma_w/\gamma_v$。又 $T_P-T_Q=2\gamma_v vd/c^{2}>0$。
@@ -226,7 +226,7 @@ $$
 $$
 w=\frac{2v}{1+\dfrac{v^{2}}{c^{2}}},\qquad
 \gamma_w=\frac{1}{\sqrt{1-\dfrac{w^{2}}{c^{2}}}}
-=\frac{1+\dfrac{v^{2}}{c^{2}}}{1-\dfrac{v^{2}}{c^{2}}}
+=\frac{1+\dfrac{v^{2}}{c^{2}}}{1-\dfrac{v^{2}}{c^{2}}}.
 $$ {#eq-tc-w}
 
 把坐标换到 A 的静止系。A 的直线段在该系中是一条竖直直线（A 静止，$\mathrm{d}x_A=0$）；B 的直线段是联结 $Q$ 与 $M$ 的直线，斜率为 $-w$（B 以速率 $w$ 接近 A，$\mathrm{d}x_B=-w\,\mathrm{d}t_A$）。截距与原点的取法不进入下面的计算——用到的只有竖直与斜率。由 @prp-tc-coord，B 的一段在坐标时上先于 A 的一段开始（$T_Q<T_P$），两段在同一事件 $M$ 收尾。
@@ -238,14 +238,14 @@ $$ {#eq-tc-w}
 - **A 侧**：A 静止，$\mathrm{d}x_A=0$，于是
 
 $$
-\mathrm{d}s_A=\sqrt{\mathrm{d}t^{2}-0}=\mathrm{d}t
+\mathrm{d}s_A=\sqrt{\mathrm{d}t^{2}-0}=\mathrm{d}t.
 $$ {#eq-tc-dsA-L}
 
 - **B 侧**：斜率为 $-w$，即 $\mathrm{d}x_B=-w\,\mathrm{d}t$，于是
 
 $$
 \mathrm{d}s_B=\sqrt{\mathrm{d}t^{2}-\frac{w^{2}\mathrm{d}t^{2}}{c^{2}}}
-=\mathrm{d}t\sqrt{1-\frac{w^{2}}{c^{2}}}=\frac{\mathrm{d}t}{\gamma_w}
+=\mathrm{d}t\sqrt{1-\frac{w^{2}}{c^{2}}}=\frac{\mathrm{d}t}{\gamma_w}.
 $$ {#eq-tc-dsB-L}
 
 ### 第三步：配对，然后取比值
@@ -253,7 +253,7 @@ $$ {#eq-tc-dsB-L}
 (L1) 的同时面在 A 系中是 $t_A=$ 常数。按它配对时，$\gamma_A$ 上的一小段与 $\gamma_B$ 上配成对的那一小段**共享同一个 $\mathrm{d}t$**。于是由 @eq-tc-dsA-L 与 @eq-tc-dsB-L：
 
 $$
-\boxed{\dfrac{\mathrm{d}s_B}{\mathrm{d}s_A}=\dfrac{1}{\gamma_w}}
+\boxed{\dfrac{\mathrm{d}s_B}{\mathrm{d}s_A}=\dfrac{1}{\gamma_w}}.
 $$ {#eq-tc-ratio-L}
 
 由 @eq-tc-w，$v\neq0$ 时 $\gamma_w>1$，故此比值小于 1。它说的是这样一件事：**按 A 系同时面切开时，配对的两小段各自的线长增量之比是 $1/\gamma_w$。**
@@ -273,7 +273,7 @@ $$ {#eq-tc-ratio-L}
 $K=\infty$ 时 (M4) 的被积量为 $\mathrm{d}t$，与运动状态无关：
 
 $$
-\mathrm{d}s_A=\mathrm{d}t=\mathrm{d}s_B
+\mathrm{d}s_A=\mathrm{d}t=\mathrm{d}s_B.
 $$ {#eq-tc-ds-G}
 
 ### 第三步：配对，然后取比值
@@ -281,7 +281,7 @@ $$ {#eq-tc-ds-G}
 按全局时间配对时，配对的两小段共享同一个 $\mathrm{d}t$，由 @eq-tc-ds-G：
 
 $$
-\boxed{\dfrac{\mathrm{d}s_B}{\mathrm{d}s_A}=1}
+\boxed{\dfrac{\mathrm{d}s_B}{\mathrm{d}s_A}=1}.
 $$ {#eq-tc-ratio-G}
 
 ## 三个数并排 {#sec-tc-table}
@@ -306,7 +306,7 @@ $$ {#eq-tc-ratio-G}
 
 $$
 w=\frac{2\times0.6c}{1+0.36}=0.8824c,\qquad
-\gamma_w=\frac{1+0.36}{1-0.36}=2.125
+\gamma_w=\frac{1+0.36}{1-0.36}=2.125.
 $$
 
 | | $\mathrm{d}s_B/\mathrm{d}s_A$ | A 侧累积 $1$ 单位时 B 侧累积 |
@@ -438,7 +438,7 @@ $$
 再代入 A 在 A 系静止故 $\Delta s_A=t_A^{M}-t_A^{P}$，逐项相减，得到的**全部**约束是
 
 $$
-t_A^{P}-t_A^{Q}=\gamma_w\,\Delta s_B-\Delta s_A
+t_A^{P}-t_A^{Q}=\gamma_w\,\Delta s_B-\Delta s_A.
 $$ {#eq-tc-key}
 
 其中 $t_A^{P}$、$t_A^{Q}$ 是 $P$、$Q$ 两事件在 A 系中的时间坐标。要由此得到 $\Delta s_A=\Delta s_B$，需要两件事同时成立：$t_A^{P}=t_A^{Q}$，且 $\Delta s_A=\gamma_w\Delta s_B$。**两条都不属于 (L1)。**
@@ -446,7 +446,7 @@ $$ {#eq-tc-key}
 **伽利略情形**：由 @eq-tc-ds-G，沿任意曲线 $\mathrm{d}s=\mathrm{d}t$，故一段的线长只等于该段起讫的时间坐标之差，与这一段怎么走无关。在 @sec-tc-setup 的设定里，两段直线段的起点时间坐标相同（$t(P)=t(Q)$）、终点同为 $M$，故
 
 $$
-\Delta s_A=\Delta s_B
+\Delta s_A=\Delta s_B,
 $$ {#eq-tc-equal-G}
 
 即：这一支不需要 @cnj-symmetry 那样的镜像对称，只要两段起讫于同一全局时刻即可。
@@ -471,7 +471,7 @@ $$ {#eq-tc-equal-G}
 **证明**（在同一族结构内比较）。取恒速群 $G_K$（@sec-invariant-speed-group 章）的两个取值。二次型
 
 $$
-\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\frac{\mathrm{d}x^{2}}{K^{2}}
+\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-\frac{\mathrm{d}x^{2}}{K^{2}}.
 $$
 
 在 $G_K$ 的作用下形式不变——这对 $K$ 的每一个取值都成立，$K=c$ 与 $K=\infty$ 都包含在内。于是协变性（此处即该二次型在群作用下的形式不变性）在两支中**同时成立**。而两支的线长由什么决定不同：
@@ -539,7 +539,7 @@ $$
 $$
 \text{按映射配对：}\ 1\qquad\qquad
 \text{全局时间（伽利略）：}\ 1\qquad\qquad
-\text{本系同时面（洛伦兹）：}\ \frac{1}{\gamma_w}
+\text{本系同时面（洛伦兹）：}\ \frac{1}{\gamma_w}.
 $$
 
 ## 声明

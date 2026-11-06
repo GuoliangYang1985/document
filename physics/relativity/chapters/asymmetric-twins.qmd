@@ -20,7 +20,7 @@
 分段记法：$G$ 的段 I 为飞离的惯性段，占坐标时 $t_1$（其中 $d=vt_1$）；段 II 为转向段，占坐标时 $\Delta$，线长为 $\varepsilon$；段 III 为飞回的惯性段，占坐标时 $t_1$。于是
 
 $$
-T=2t_1+\Delta .
+T=2t_1+\Delta.
 $$
 :::
 
@@ -58,20 +58,20 @@ $$
 ## 在该公理下：线长沿各自的路径累积
 
 $$
-\Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}}
+\Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}}.
 $$
 
 对 $D$（$x\equiv0$，全程惯性）：$\Delta s_D=T=2t_1+\Delta$。对 $G$：两段惯性段的线长各由校准引理给出（@prp-tn-calibration），均为 $t_1/\gamma$，转向段的线长记为 $\varepsilon$，由 (M4) 沿该段积分给出。记 $\gamma=1/\sqrt{1-v^{2}/c^{2}}$，则
 
 $$
-\Delta s_D=2t_1+\Delta,\qquad \Delta s_G=\frac{2t_1}{\gamma}+\varepsilon .
+\Delta s_D=2t_1+\Delta,\qquad \Delta s_G=\frac{2t_1}{\gamma}+\varepsilon.
 $$
 :::
 
 两侧长度之差为
 
 $$
-\Delta s_D-\Delta s_G=2t_1\Bigl(1-\frac{1}{\gamma}\Bigr)+(\Delta-\varepsilon) .
+\Delta s_D-\Delta s_G=2t_1\Bigl(1-\frac{1}{\gamma}\Bigr)+(\Delta-\varepsilon).
 $$ {#eq-at-diff}
 
 ### 按运动类型归堆比较 {#sec-at-pile}
@@ -95,7 +95,7 @@ $$ {#eq-at-diff}
 把转向段理想化为瞬时（$\Delta\to0$、$\varepsilon\to0$）时，该项趋于 $0$，@eq-at-diff 成为
 
 $$
-\Delta s_D-\Delta s_G=T\Bigl(1-\frac{1}{\gamma}\Bigr),\qquad T=2t_1 .
+\Delta s_D-\Delta s_G=T\Bigl(1-\frac{1}{\gamma}\Bigr),\qquad T=2t_1.
 $$
 
 掉头段只通过它占用的 $\mathrm{d}t$ 进入积分；令掉头段历时趋于零，上式不变。取 $v=0.6c$、$T=100$ 年（$\gamma=1.25$）：$\Delta s_D=100$ 年、$\Delta s_G=80$ 年，差 $20$ 年。
@@ -115,7 +115,7 @@ $$
 三行的转向段是同一个（$\Delta=\varepsilon=0$，线长为 $0$），只有惯性飞行的时长不同；两侧长度之差随 $t_1$ 线性增长。一般地，由 @eq-at-diff 对 $t_1$ 求导：
 
 $$
-\frac{\partial}{\partial t_1}\bigl(\Delta s_D-\Delta s_G\bigr)=2\Bigl(1-\frac{1}{\gamma}\Bigr)>0 ,
+\frac{\partial}{\partial t_1}\bigl(\Delta s_D-\Delta s_G\bigr)=2\Bigl(1-\frac{1}{\gamma}\Bigr)>0.
 $$
 
 右端不含 $\Delta$ 与 $\varepsilon$。也就是说：**在转向段固定时，两侧长度之差的改变量由惯性飞行段决定**——改变惯性飞行的时长 $t_1$ 或速率 $v$，差随之改变。@eq-at-diff 的常数项 $(\Delta-\varepsilon)$ 由转向段给出，不随 $t_1$ 改变。
@@ -133,7 +133,7 @@ $$
 两张图的读法相同。校验线上每一点与 $M$ 的线长距离都等于返程段线长 $L$（校准引理），故它与 $t$ 轴的交点把 $L$ 切到 $D$ 的世界线上；于是
 
 $$
-\Delta s_D-\Delta s_G=t_M-(s_Q+L)=\text{交点}-s_Q ,
+\Delta s_D-\Delta s_G=t_M-(s_Q+L)=\text{交点}-s_Q.
 $$
 
 交点与 $s_Q$ 之间那段轴长就是两侧长度之差。方式一给出 $2\to4\to8$，随惯性飞行变长而变大；方式二给出 $4.00\to2.92\to2.45$，随返程拉长而缩小，趋于 $t_Q-s_Q=2$。两种方式共同说明：改变任何一段惯性运动，两侧长度之差都随之改变——惯性飞行对长度之差有贡献；差的变化方向由固定的是什么决定。
@@ -156,13 +156,13 @@ $$
 ## 在该公理下：两条世界线的线长相同
 
 $$
-\Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\mathrm{d}t=t(M)-t(O)=T
+\Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\mathrm{d}t=t(M)-t(O)=T.
 $$ {#eq-ta-integral}
 
 右端只含两端事件的时间坐标，与路径 $\gamma$ 的形状无关。$D$ 与 $G$ 的世界线都从 $O$ 到 $M$，故
 
 $$
-\Delta s_D=\Delta s_G=T
+\Delta s_D=\Delta s_G=T.
 $$
 :::
 
@@ -186,7 +186,7 @@ $$
 三条世界线的线长分别为 $s[A]=s[B]=2t_1/\gamma+\varepsilon$、$s[C]=2t_1+\Delta$；$v\neq0$ 时
 
 $$
-s[A]=s[B]\;<\;s[C] .
+s[A]=s[B]\;<\;s[C].
 $$
 
 本章的 $D$ 扮演的正是 $C$ 的角色，$G$ 扮演的正是 $A$（或 $B$）的角色。三点说明：

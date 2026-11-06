@@ -12,13 +12,13 @@
 
 $$
 \partial^{\mu}K:=\eta^{\mu\nu}\partial_\nu K,\qquad
-\Box_\eta:=\eta^{\mu\nu}\partial_\mu\partial_\nu=\partial_t^{2}-\nabla^{2}
+\Box_\eta:=\eta^{\mu\nu}\partial_\mu\partial_\nu=\partial_t^{2}-\nabla^{2},
 $$
 
 $$
 \nabla^{2}:=\delta^{ij}\partial_i\partial_j,\qquad
 \lvert\vec\nabla K\rvert^{2}:=\delta^{ij}\partial_iK\,\partial_jK,\qquad
-\lvert\nabla K\rvert^{2}_{\eta}:=\eta^{\mu\nu}\partial_{\mu}K\,\partial_{\nu}K
+\lvert\nabla K\rvert^{2}_{\eta}:=\eta^{\mu\nu}\partial_{\mu}K\,\partial_{\nu}K.
 $$
 
 拉丁指标 $i,j,k$ 取 $1,2,3$（空间），希腊指标取 $0,1,2,3$。
@@ -32,7 +32,7 @@ $$
 取局部标架
 
 $$
-e^{0}=K\,\mathrm{d}t,\qquad e^{i}=K\,\mathrm{d}x^{i}
+e^{0}=K\,\mathrm{d}t,\qquad e^{i}=K\,\mathrm{d}x^{i},
 $$ {#eq-isd-tetrad}
 
 即 $K$ 场同时控制局部时间尺度与局部空间尺度——这正是本章与对角约定的分野：对角约定中空间标架是刚性的 $e^{i}=\mathrm{d}x^{i}$。
@@ -40,7 +40,7 @@ $$ {#eq-isd-tetrad}
 写成 $e^{a}=e^{a}_{\ \mu}\,\mathrm{d}x^{\mu}$：
 
 $$
-e^{0}_{\ 0}=K,\qquad e^{i}_{\ j}=K\,\delta^{i}_{j},\qquad \text{其余为 }0
+e^{0}_{\ 0}=K,\qquad e^{i}_{\ j}=K\,\delta^{i}_{j},\qquad \text{其余为 }0.
 $$
 
 ### 度规分量
@@ -48,13 +48,13 @@ $$
 由 $g_{\mu\nu}=e^{a}_{\ \mu}\,e^{b}_{\ \nu}\,\eta_{ab}$：
 
 $$
-g_{\mu\nu}=K^{2}\,\eta_{\mu\nu}
+g_{\mu\nu}=K^{2}\,\eta_{\mu\nu}.
 $$ {#eq-isd-g}
 
 逐分量写出：
 
 $$
-g_{00}=K^{2},\qquad g_{ij}=-K^{2}\delta_{ij},\qquad g_{0i}=0
+g_{00}=K^{2},\qquad g_{ij}=-K^{2}\delta_{ij},\qquad g_{0i}=0.
 $$ {#eq-isd-g-comp}
 
 **空间部分不再是常数**：$g_{ij}=-K^{2}\delta_{ij}$ 随 $K(t,\mathbf{x})$ 变形。这是对 @sec-invariant-speed-field-group 章那个约定的唯一改动。
@@ -63,11 +63,11 @@ $$ {#eq-isd-g-comp}
 
 $$
 g^{\mu\nu}=K^{-2}\eta^{\mu\nu},\qquad
-g^{00}=\frac{1}{K^{2}},\qquad g^{ij}=-\frac{1}{K^{2}}\delta^{ij}
+g^{00}=\frac{1}{K^{2}},\qquad g^{ij}=-\frac{1}{K^{2}}\delta^{ij},
 $$ {#eq-isd-ginv}
 
 $$
-\det g=K^{8}\det\eta=-K^{8},\qquad \sqrt{-g}=K^{4}
+\det g=K^{8}\det\eta=-K^{8},\qquad \sqrt{-g}=K^{4}.
 $$ {#eq-isd-det}
 
 ### 与前一章的一致性检验
@@ -82,27 +82,27 @@ $$ {#eq-isd-det}
 
 $$
 \Gamma^{\rho}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}
-\bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr)
+\bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr).
 $$
 
 由 @eq-isd-g，$g_{\nu\sigma}=K^{2}\eta_{\nu\sigma}$，故 $\partial_\mu g_{\nu\sigma}=2K(\partial_{\mu}K)\eta_{\nu\sigma}$。代入：
 
 $$
 \Gamma^{\rho}_{\mu\nu}=\frac{1}{2}K^{-2}\eta^{\rho\sigma}\cdot 2K
-\bigl[(\partial_{\mu}K)\eta_{\nu\sigma}+(\partial_{\nu}K)\eta_{\mu\sigma}-(\partial_{\sigma}K)\eta_{\mu\nu}\bigr]
+\bigl[(\partial_{\mu}K)\eta_{\nu\sigma}+(\partial_{\nu}K)\eta_{\mu\sigma}-(\partial_{\sigma}K)\eta_{\mu\nu}\bigr].
 $$
 
 $\eta^{\rho\sigma}\eta_{\nu\sigma}=\delta^{\rho}_{\nu}$，$\eta^{\rho\sigma}\eta_{\mu\sigma}=\delta^{\rho}_{\mu}$，$\eta^{\rho\sigma}\partial_{\sigma}K=\partial^{\rho}K$，故
 
 $$
 \boxed{\Gamma^{\rho}_{\mu\nu}=\frac{1}{K}
-\Bigl(\delta^{\rho}_{\nu}\,\partial_{\mu}K+\delta^{\rho}_{\mu}\,\partial_{\nu}K-\eta_{\mu\nu}\,\partial^{\rho}K\Bigr)}
+\Bigl(\delta^{\rho}_{\nu}\,\partial_{\mu}K+\delta^{\rho}_{\mu}\,\partial_{\nu}K-\eta_{\mu\nu}\,\partial^{\rho}K\Bigr)}.
 $$ {#eq-isd-gamma}
 
 等价地，用 $u:=\ln K$（$\partial_\mu u=\partial_{\mu}K/K$）：
 
 $$
-\Gamma^{\rho}_{\mu\nu}=\delta^{\rho}_{\nu}\,\partial_\mu u+\delta^{\rho}_{\mu}\,\partial_\nu u-\eta_{\mu\nu}\,\partial^{\rho}u
+\Gamma^{\rho}_{\mu\nu}=\delta^{\rho}_{\nu}\,\partial_\mu u+\delta^{\rho}_{\mu}\,\partial_\nu u-\eta_{\mu\nu}\,\partial^{\rho}u.
 $$ {#eq-isd-gamma-u}
 
 ### 逐项验证（样本）
@@ -130,7 +130,7 @@ $$
 R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}_{\nu\sigma}
 -\partial_\nu\Gamma^{\rho}_{\rho\sigma}
 +\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{\nu\sigma}
--\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}
+-\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}.
 $$
 
 把 @eq-isd-gamma 代入并逐项化简，得
@@ -140,7 +140,7 @@ $$
 -\frac{2\,\partial_\mu\partial_{\nu}K}{K}
 +\frac{4\,\partial_{\mu}K\,\partial_{\nu}K}{K^{2}}
 -\eta_{\mu\nu}\frac{\Box_\eta K}{K}
--\eta_{\mu\nu}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}}
+-\eta_{\mu\nu}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}}.
 $$ {#eq-isd-ric}
 
 （此式即四维共形变换的标准公式在 $\phi=\ln K$、基底为 Minkowski 时的展开；本处由 Christoffel 直接计算得到，未引用该公式。）
@@ -148,7 +148,7 @@ $$ {#eq-isd-ric}
 ### Ricci 标量
 
 $$
-R=g^{\mu\nu}R_{\mu\nu}=K^{-2}\eta^{\mu\nu}R_{\mu\nu}
+R=g^{\mu\nu}R_{\mu\nu}=K^{-2}\eta^{\mu\nu}R_{\mu\nu}.
 $$
 
 由 @eq-isd-ric，注意 $\eta^{\mu\nu}\eta_{\mu\nu}=4$：
@@ -157,14 +157,14 @@ $$
 \eta^{\mu\nu}R_{\mu\nu}=
 -\frac{2\Box_\eta K}{K}+\frac{4\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
 -\frac{4\Box_\eta K}{K}-\frac{4\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
-=-\frac{6\Box_\eta K}{K}
+=-\frac{6\Box_\eta K}{K}.
 $$
 
 （含 $\lvert\nabla K\rvert^{2}_{\eta}$ 的两项精确抵消。）
 
 $$
 \boxed{R=-\frac{6\,\Box_\eta K}{K^{3}}
-=\frac{6\,\bigl(\nabla^{2}K-\partial_t^{2}K\bigr)}{K^{3}}}
+=\frac{6\,\bigl(\nabla^{2}K-\partial_t^{2}K\bigr)}{K^{3}}}.
 $$ {#eq-isd-R}
 
 **核验**：符号计算输出为 $\dfrac{6(-\partial_t^{2}K+\partial_x^{2}K+\partial_y^{2}K+\partial_z^{2}K)}{K^{3}}$，与 @eq-isd-R 的差恒为零。✓
@@ -180,7 +180,7 @@ $$ {#eq-isd-R}
 $$
 G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}R\,g_{\mu\nu}
 =R_{\mu\nu}-\frac{1}{2}\left(-\frac{6\Box_\eta K}{K^{3}}\right)K^{2}\eta_{\mu\nu}
-=R_{\mu\nu}+\frac{3\Box_\eta K}{K}\eta_{\mu\nu}
+=R_{\mu\nu}+\frac{3\Box_\eta K}{K}\eta_{\mu\nu}.
 $$
 
 代入 @eq-isd-ric：
@@ -190,7 +190,7 @@ G_{\mu\nu}=
 -\frac{2\partial_\mu\partial_{\nu}K}{K}
 +\frac{4\partial_{\mu}K\,\partial_{\nu}K}{K^{2}}
 +\eta_{\mu\nu}\frac{2\Box_\eta K}{K}
--\eta_{\mu\nu}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
+-\eta_{\mu\nu}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$ {#eq-isd-G}
 
 用 $u=\ln K$（$\partial_\mu\partial_{\nu}K/K=\partial_\mu\partial_\nu u+\partial_\mu u\,\partial_\nu u$）可写成更紧凑的形式：
@@ -199,7 +199,7 @@ $$
 \boxed{G_{\mu\nu}=
 -2\,\partial_\mu\partial_\nu u
 +2\,\partial_\mu u\,\partial_\nu u
-+\eta_{\mu\nu}\bigl(2\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}\bigr)}
++\eta_{\mu\nu}\bigl(2\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}\bigr)}.
 $$ {#eq-isd-G-u}
 
 **核验**：符号计算对全部 $16$ 个分量逐一相减，差值恒为零。✓
@@ -213,7 +213,7 @@ G_{00}=
 -\frac{2\partial_0^{2}K}{K}
 +\frac{4(\partial_0K)^{2}}{K^{2}}
 +\frac{2\Box_\eta K}{K}
--\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
+-\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$
 
 代入 $\Box_\eta K=\partial_0^{2}K-\nabla^{2}K$ 与 $\lvert\nabla K\rvert^{2}_{\eta}=(\partial_0K)^{2}-\lvert\vec\nabla K\rvert^{2}$：
@@ -222,13 +222,13 @@ $$
 G_{00}=
 \underbrace{-\frac{2\partial_0^{2}K}{K}+\frac{2\partial_0^{2}K}{K}}_{=\,0}
 -\frac{2\nabla^{2}K}{K}
-+\frac{4(\partial_0K)^{2}-(\partial_0K)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}
++\frac{4(\partial_0K)^{2}-(\partial_0K)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}},
 $$
 
 $$
 \boxed{G_{00}=
 \frac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}
--\frac{2\,\nabla^{2}K}{K}}
+-\frac{2\,\nabla^{2}K}{K}}.
 $$ {#eq-isd-G00}
 
 **这就是要的结果：$G_{00}$ 是非零函数，且显含 $K$ 的空间梯度。**
@@ -237,13 +237,13 @@ $$ {#eq-isd-G00}
 
 $$
 \boxed{G_{00}\bigr|_{\partial_tK=0}=
-\frac{\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\,\nabla^{2}K}{K}}
+\frac{\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\,\nabla^{2}K}{K}}.
 $$ {#eq-isd-G00-static}
 
 用 $u=\ln K$ 写（由 @eq-isd-G-u 或 @eq-isd-G00）：
 
 $$
-G_{00}=3(\partial_tu)^{2}-\lvert\vec\nabla u\rvert^{2}-2\nabla^{2}u
+G_{00}=3(\partial_tu)^{2}-\lvert\vec\nabla u\rvert^{2}-2\nabla^{2}u.
 $$ {#eq-isd-G00-u}
 
 ### $G_{0i}$ 与 $G_{ij}$
@@ -252,7 +252,7 @@ $$ {#eq-isd-G00-u}
 
 $$
 G_{0i}=-\frac{2\,\partial_0\partial_iK}{K}+\frac{4\,\partial_0K\,\partial_iK}{K^{2}}
-=\frac{2\bigl(2\,\partial_tK\,\partial_iK-K\,\partial_t\partial_iK\bigr)}{K^{2}}
+=\frac{2\bigl(2\,\partial_tK\,\partial_iK-K\,\partial_t\partial_iK\bigr)}{K^{2}},
 $$ {#eq-isd-G0i}
 
 $$
@@ -260,7 +260,7 @@ G_{ij}=
 -\frac{2\partial_i\partial_jK}{K}
 +\frac{4\partial_iK\,\partial_jK}{K^{2}}
 -\delta_{ij}\frac{2\Box_\eta K}{K}
-+\delta_{ij}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
++\delta_{ij}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$ {#eq-isd-Gij}
 
 **核验**：符号计算输出的 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，与 @eq-isd-G0i 一致。✓
@@ -274,7 +274,7 @@ $$ {#eq-isd-Gij}
 取
 
 $$
-K(r)=K_0+\frac{\alpha}{r},\qquad r=\sqrt{x^{2}+y^{2}+z^{2}}
+K(r)=K_0+\frac{\alpha}{r},\qquad r=\sqrt{x^{2}+y^{2}+z^{2}}.
 $$ {#eq-isd-example}
 
 其中 $K_0$、$\alpha$ 为常数。
@@ -282,28 +282,28 @@ $$ {#eq-isd-example}
 逐项计算。一阶导数：
 
 $$
-\partial_iK=-\frac{\alpha}{r^{2}}\cdot\frac{x_i}{r}=-\frac{\alpha\,x_i}{r^{3}}
+\partial_iK=-\frac{\alpha}{r^{2}}\cdot\frac{x_i}{r}=-\frac{\alpha\,x_i}{r^{3}},
 $$
 
 $$
-\lvert\vec\nabla K\rvert^{2}=\frac{\alpha^{2}}{r^{6}}\sum_i x_i^{2}=\frac{\alpha^{2}}{r^{4}}
+\lvert\vec\nabla K\rvert^{2}=\frac{\alpha^{2}}{r^{6}}\sum_i x_i^{2}=\frac{\alpha^{2}}{r^{4}}.
 $$
 
 二阶导数（利用 $\nabla^{2}(1/r)=0$，$r>0$）：
 
 $$
-\nabla^{2}K=K_0\underbrace{\nabla^{2}(1)}_{=\,0}+\alpha\underbrace{\nabla^{2}\!\left(\frac{1}{r}\right)}_{=\,0}=0
+\nabla^{2}K=K_0\underbrace{\nabla^{2}(1)}_{=\,0}+\alpha\underbrace{\nabla^{2}\!\left(\frac{1}{r}\right)}_{=\,0}=0.
 $$
 
 代入 @eq-isd-G00-static（$\partial_tK=0$）：
 
 $$
 G_{00}=\frac{\alpha^{2}/r^{4}}{\bigl(K_0+\alpha/r\bigr)^{2}}-0
-=\frac{\alpha^{2}}{r^{4}}\cdot\frac{r^{2}}{(K_0r+\alpha)^{2}}
+=\frac{\alpha^{2}}{r^{4}}\cdot\frac{r^{2}}{(K_0r+\alpha)^{2}},
 $$
 
 $$
-\boxed{G_{00}(r)=\frac{\alpha^{2}}{r^{2}\,(K_0r+\alpha)^{2}}>0\qquad(\alpha\neq0)}
+\boxed{G_{00}(r)=\frac{\alpha^{2}}{r^{2}\,(K_0r+\alpha)^{2}}>0\qquad(\alpha\neq0)}.
 $$ {#eq-isd-density}
 
 **这是严格正的，不含任何近似。**
@@ -311,7 +311,7 @@ $$ {#eq-isd-density}
 若写 Einstein 方程 $G_{\mu\nu}=\kappa T_{\mu\nu}$（$\kappa=8\pi G/K_0^{4}$ 或按量纲另定），则
 
 $$
-T_{00}=\frac{1}{\kappa}G_{00}=\frac{\alpha^{2}}{\kappa\,r^{2}(K_0r+\alpha)^{2}}>0
+T_{00}=\frac{1}{\kappa}G_{00}=\frac{\alpha^{2}}{\kappa\,r^{2}(K_0r+\alpha)^{2}}>0,
 $$
 
 即**在外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$、并把 $T_{00}$ 读作能量密度之后，该 $K$ 场对应 $T_{00}>0$**。这与 @sec-invariant-speed-field-group 章对角约定下 $G_{00}\equiv0$ 的结论相反——那个零是约定造成的；两处的 $G_{00}$ 都是几何量，其正负不依赖物质侧假设。
@@ -321,7 +321,7 @@ $$
 由 @eq-isd-R，静态且 $\nabla^{2}K=0$：
 
 $$
-R=\frac{6\,\nabla^{2}K}{K^{3}}=0
+R=\frac{6\,\nabla^{2}K}{K^{3}}=0,
 $$
 
 即此例 $R\equiv0$ 但 $R_{00}=G_{00}\neq0$：Ricci 张量非零而迹为零，两者不矛盾。
@@ -339,7 +339,7 @@ $$
 @eq-isd-g 的度规共形于 Minkowski：$g_{\mu\nu}=K^{2}\eta_{\mu\nu}$。Weyl 张量在共形变换下不变，而 Minkowski 的 Weyl 张量为零，故
 
 $$
-C^{\rho}{}_{\sigma\mu\nu}\equiv0
+C^{\rho}{}_{\sigma\mu\nu}\equiv0.
 $$
 
 **这不只是性质，而是硬限制**：一切真空外解（其 Weyl 张量非零）都不在这一类度规之内。特别地，Schwarzschild 解的 Weyl 张量非零，**因此 Schwarzschild 解不能由任何 $K$ 场给出**。
@@ -365,7 +365,7 @@ $$
 在 @sec-invariant-speed-field-group 章已建立 1+1 维的情形。推广到 3+1 维，$p$ 点的 boost 生成元 $B_i$、时间平移 $H$、空间平移 $P_i$ 满足（$K$ 视为该点的常数 $K(p)$）：
 
 $$
-[B_i,H]=P_i,\qquad [B_i,P_j]=\delta_{ij}\frac{1}{K(p)^{2}}\,H,\qquad [H,P_i]=0
+[B_i,H]=P_i,\qquad [B_i,P_j]=\delta_{ij}\frac{1}{K(p)^{2}}\,H,\qquad [H,P_i]=0.
 $$ {#eq-isd-lie}
 
 旋转生成元 $J_{ij}$ 满足的 $\mathfrak{so}(3)$ 括号与 $K$ 无关，不随收缩改变。
@@ -378,7 +378,7 @@ $$ {#eq-isd-lie}
 ### 群收缩即参数极限
 
 $$
-\frac{1}{K^{2}}\longrightarrow0\qquad (K\to\infty)
+\frac{1}{K^{2}}\longrightarrow0\qquad (K\to\infty).
 $$
 
 一句话完成收缩。这仍是 @sec-invariant-speed-field-group 章的结论，此处只补上 3+1 维的显式括号。
@@ -393,19 +393,19 @@ $$
 
 $$
 \Box_g\psi+\frac{m^{2}K^{2}}{\hbar^{2}}\psi=0,\qquad
-\Box_g:=g^{\mu\nu}\nabla_\mu\nabla_\nu
+\Box_g:=g^{\mu\nu}\nabla_\mu\nabla_\nu.
 $$
 
 **与标准形式的一致性检验**：$K$ 常数时 $\Box_g=K^{-2}\eta^{\mu\nu}\partial_\mu\partial_\nu=K^{-2}(\partial_t^{2}-\nabla^{2})$，方程化为
 
 $$
-\partial_t^{2}\psi-K^{2}\nabla^{2}\psi+\frac{m^{2}K^{4}}{\hbar^{2}}\psi=0
+\partial_t^{2}\psi-K^{2}\nabla^{2}\psi+\frac{m^{2}K^{4}}{\hbar^{2}}\psi=0.
 $$
 
 取 $K=c$ 并除以 $c^{2}$：
 
 $$
-\frac{1}{c^{2}}\partial_t^{2}\psi-\nabla^{2}\psi+\frac{m^{2}c^{2}}{\hbar^{2}}\psi=0
+\frac{1}{c^{2}}\partial_t^{2}\psi-\nabla^{2}\psi+\frac{m^{2}c^{2}}{\hbar^{2}}\psi=0,
 $$
 
 即标准 Klein–Gordon 方程。✓
@@ -417,20 +417,20 @@ $$
 $$
 \Box_g\psi=\frac{1}{\sqrt{-g}}\partial_\mu\Bigl(\sqrt{-g}\,g^{\mu\nu}\partial_\nu\psi\Bigr)
 =\frac{1}{K^{4}}\partial_\mu\Bigl(K^{4}\cdot K^{-2}\eta^{\mu\nu}\partial_\nu\psi\Bigr)
-=\frac{1}{K^{4}}\partial_\mu\Bigl(K^{2}\,\partial^{\mu}\psi\Bigr)
+=\frac{1}{K^{4}}\partial_\mu\Bigl(K^{2}\,\partial^{\mu}\psi\Bigr).
 $$
 
 展开（乘积求导，逐项）：
 
 $$
 \Box_g\psi=\frac{1}{K^{4}}\Bigl[2K(\partial_{\mu}K)\partial^{\mu}\psi+K^{2}\partial_\mu\partial^{\mu}\psi\Bigr]
-=\frac{2}{K^{3}}(\partial_{\mu}K)\partial^{\mu}\psi+\frac{1}{K^{2}}\Box_\eta\psi
+=\frac{2}{K^{3}}(\partial_{\mu}K)\partial^{\mu}\psi+\frac{1}{K^{2}}\Box_\eta\psi.
 $$
 
 代入方程并乘以 $K^{2}$，得**变系数 Klein–Gordon 方程**：
 
 $$
-\boxed{\Box_\eta\psi+\frac{2}{K}(\partial_{\mu}K)\,\partial^{\mu}\psi+\frac{m^{2}K^{4}}{\hbar^{2}}\psi=0}
+\boxed{\Box_\eta\psi+\frac{2}{K}(\partial_{\mu}K)\,\partial^{\mu}\psi+\frac{m^{2}K^{4}}{\hbar^{2}}\psi=0}.
 $$ {#eq-isd-kg}
 
 第二项 $\frac{2}{K}(\partial_{\mu}K)\partial^{\mu}\psi$ 是 $K$ 变场带来的附加项；$K$ 常数时它消失，方程回到上节的标准形式。
@@ -444,7 +444,7 @@ $$ {#eq-isd-kg}
 设 $K$ 为常数 $K_0$。方程为
 
 $$
-\frac{1}{K_0^{2}}\partial_t^{2}\psi-\nabla^{2}\psi+\frac{m^{2}K_0^{2}}{\hbar^{2}}\psi=0
+\frac{1}{K_0^{2}}\partial_t^{2}\psi-\nabla^{2}\psi+\frac{m^{2}K_0^{2}}{\hbar^{2}}\psi=0.
 $$
 
 （即上一节方程除以 $K_0^{2}$。）
@@ -452,20 +452,20 @@ $$
 **第一步：抽出快变相位。** 令
 
 $$
-\psi=e^{i\theta}\varphi,\qquad \theta:=-\frac{mK_0^{2}t}{\hbar}
+\psi=e^{i\theta}\varphi,\qquad \theta:=-\frac{mK_0^{2}t}{\hbar}.
 $$
 
 **第二步：逐项代入。**
 
 $$
 \partial_t\psi=e^{i\theta}\Bigl(\partial_t\varphi+i(\partial_t\theta)\varphi\Bigr)
-=e^{i\theta}\Bigl(\partial_t\varphi-\frac{imK_0^{2}}{\hbar}\varphi\Bigr)
+=e^{i\theta}\Bigl(\partial_t\varphi-\frac{imK_0^{2}}{\hbar}\varphi\Bigr),
 $$
 
 $$
 \partial_t^{2}\psi=e^{i\theta}\Bigl(\partial_t^{2}\varphi
 -\frac{2imK_0^{2}}{\hbar}\partial_t\varphi
--\frac{m^{2}K_0^{4}}{\hbar^{2}}\varphi\Bigr)
+-\frac{m^{2}K_0^{4}}{\hbar^{2}}\varphi\Bigr).
 $$
 
 空间导数为 $\nabla^{2}\psi=e^{i\theta}\nabla^{2}\varphi$（$K_0$ 常数，$\theta$ 与空间无关）。
@@ -477,13 +477,13 @@ $$
 -\frac{2im}{\hbar}\partial_t\varphi
 -\frac{m^{2}K_0^{2}}{\hbar^{2}}\varphi
 -\nabla^{2}\varphi
-+\frac{m^{2}K_0^{2}}{\hbar^{2}}\varphi=0
++\frac{m^{2}K_0^{2}}{\hbar^{2}}\varphi=0.
 $$
 
 含 $m^{2}K_0^{2}/\hbar^{2}$ 的两项精确抵消：
 
 $$
-\frac{1}{K_0^{2}}\partial_t^{2}\varphi-\frac{2im}{\hbar}\partial_t\varphi-\nabla^{2}\varphi=0
+\frac{1}{K_0^{2}}\partial_t^{2}\varphi-\frac{2im}{\hbar}\partial_t\varphi-\nabla^{2}\varphi=0.
 $$
 
 **第四步：取 $K_0\to\infty$。** 第一项 $\to0$：
@@ -491,13 +491,13 @@ $$
 $$
 -\frac{2im}{\hbar}\partial_t\varphi-\nabla^{2}\varphi=0
 \quad\Longrightarrow\quad
-\partial_t\varphi=\frac{i\hbar}{2m}\nabla^{2}\varphi
+\partial_t\varphi=\frac{i\hbar}{2m}\nabla^{2}\varphi,
 $$
 
 即
 
 $$
-\boxed{i\hbar\,\partial_t\varphi=-\frac{\hbar^{2}}{2m}\nabla^{2}\varphi}
+\boxed{i\hbar\,\partial_t\varphi=-\frac{\hbar^{2}}{2m}\nabla^{2}\varphi}.
 $$ {#eq-isd-sch}
 
 **薛定谔方程。** 这一步是严格的，未作任何近似。
@@ -509,14 +509,14 @@ $$ {#eq-isd-sch}
 仍取静态 $K=K(\mathbf{x})$（$\partial_tK=0$），目的是把空间梯度的效应隔离出来。令
 
 $$
-\psi=e^{i\theta}\varphi,\qquad \theta=-\frac{mK^{2}(\mathbf{x})\,t}{\hbar}
+\psi=e^{i\theta}\varphi,\qquad \theta=-\frac{mK^{2}(\mathbf{x})\,t}{\hbar}.
 $$
 
 此时 $\theta$ 依赖 $\mathbf{x}$，故
 
 $$
 \partial_t\theta=-\frac{mK^{2}}{\hbar},\qquad
-\partial_i\theta=-\frac{2mKt}{\hbar}\,\partial_iK
+\partial_i\theta=-\frac{2mKt}{\hbar}\,\partial_iK.
 $$ {#eq-isd-theta}
 
 注意 $\partial_i\theta$ **随 $t$ 线性增长**——这一项在常数 $K$ 情形中不存在，是全部麻烦的来源。
@@ -532,7 +532,7 @@ $$
 &\quad+\frac{4imt}{\hbar K}(\vec\nabla K)\!\cdot\!(\vec\nabla\varphi)
 +\frac{2imt}{\hbar K}\nabla^{2}K\,\varphi\\[4pt]
 &\quad+\frac{6imt}{\hbar K^{2}}\lvert\vec\nabla K\rvert^{2}\varphi
-+\frac{4m^{2}t^{2}}{\hbar^{2}}\lvert\vec\nabla K\rvert^{2}\varphi=0
++\frac{4m^{2}t^{2}}{\hbar^{2}}\lvert\vec\nabla K\rvert^{2}\varphi=0.
 \end{aligned}
 $$ {#eq-isd-nr-field}
 
@@ -543,7 +543,7 @@ $$ {#eq-isd-nr-field}
 $$
 \partial_iK=K_0\,\partial_if,\qquad
 \lvert\vec\nabla K\rvert^{2}=K_0^{2}\lvert\vec\nabla f\rvert^{2},\qquad
-\nabla^{2}K=K_0\nabla^{2}f
+\nabla^{2}K=K_0\nabla^{2}f.
 $$
 
 逐项看 @eq-isd-nr-field 在 $K_0\to\infty$ 时的行为：

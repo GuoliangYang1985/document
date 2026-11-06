@@ -26,15 +26,15 @@
 $$
 f_i > 0,
 \qquad
-f_i(0) = 1
+f_i(0) = 1.
 $$ {#eq-response-conditions}
 4. 对每个 $i$，定义 $1$-形式
 $$
-\omega_i := f_i(\Phi)\,dt \in \Omega^{1}(M)
+\omega_i := f_i(\Phi)\,dt \in \Omega^{1}(M),
 $$ {#eq-omega}
 及其沿路径 $\gamma:[0,1]\to M$ 的**累积泛函**
 $$
-\tau_i(\gamma) := \int_{\gamma}\omega_i
+\tau_i(\gamma) := \int_{\gamma}\omega_i.
 $$ {#eq-tau-path}
 
 ::: {#prp-data}
@@ -48,7 +48,7 @@ $$
 (\gamma_1*\gamma_2)(s)=
 \begin{cases}
 \gamma_1(s), & 0\le s\le1,\\
-\gamma_2(s-1), & 1\le s\le2
+\gamma_2(s-1), & 1\le s\le2.
 \end{cases}
 $$
 
@@ -59,7 +59,7 @@ $$
 =\int_{0}^{2}\omega_i\bigl(\dot\gamma(s)\bigr)\,ds
 =\int_{0}^{1}\omega_i\bigl(\dot\gamma_1(s)\bigr)\,ds
 +\int_{1}^{2}\omega_i\bigl(\dot\gamma_2(s-1)\bigr)\,ds
-=\tau_i(\gamma_1)+\tau_i(\gamma_2)
+=\tau_i(\gamma_1)+\tau_i(\gamma_2).
 $$
 
 （第二个等号：在 $[0,1]$ 上被积函数就是 $\omega_i(\dot\gamma_1\circ s)$，在 $[1,2]$ 上作变量替换 $s'=s-1$ 即回到 $\gamma_2$ 的积分。）单调性：设 $dt(\dot\gamma)>0$ 处处成立，则被积函数 $\omega_i(\dot\gamma)=f_i(\Phi(\gamma))\,dt(\dot\gamma)>0$（$f_i>0$），故积分严格为正；两端点固定而路径反向时积分变号，即 $\tau_i(\gamma^{-1})=-\tau_i(\gamma)$。
@@ -80,13 +80,13 @@ $$
 $$
 \Phi(x)=\mathbf{a}\cdot x=\sum_{a=1}^{n}a_{a}x^{a},
 \qquad
-\mathbf{a}\in\mathbb{R}^{n}
+\mathbf{a}\in\mathbb{R}^{n}.
 $$ {#eq-linear-field}
 
 $\mathbf{a}$ 为常向量。此时 $\partial_{a}\partial_{b}\Phi=0$：场的一阶导数为常数、二阶以上全为零，“梯度处处相同”这一性质正是均匀背景的数学刻画。代入 @eq-omega 得
 
 $$
-\omega_i=f_i(\mathbf{a}\cdot x)\,dt
+\omega_i=f_i(\mathbf{a}\cdot x)\,dt.
 $$ {#eq-omega-linear}
 
 由于 $d\Phi=\mathbf{a}\cdot dx$ 是常系数 $1$-形式，@eq-closed-criterion 化为更硬的结论：
@@ -94,7 +94,7 @@ $$ {#eq-omega-linear}
 $$
 d\omega_i=0
 \iff f_i'(\Phi)\,a_{a}=0\ \text{对一切 }a
-\iff \bigl(f_i'(\Phi)\equiv0\bigr)\ \text{或}\ \bigl(\mathbf{a}=0\bigr)
+\iff \bigl(f_i'(\Phi)\equiv0\bigr)\ \text{或}\ \bigl(\mathbf{a}=0\bigr).
 $$ {#eq-closed-linear}
 
 （$f_i'$ 是 $\Phi$ 的函数而 $\mathbf{a}$ 是常数向量，故 $f_i'(\Phi)\,\mathbf{a}\equiv0$ 要求两者至少一个恒为零。）再由 $f_i>0$、$f_i(0)=1$，$f_i'\equiv0$ 给出 $f_i\equiv1$；而 $\mathbf{a}=0$ 使 $\Phi\equiv0$，同样给出 $\omega_i=f_i(0)\,dt=dt$。**故除 $f_i\equiv1$（等价地 $\omega_i=dt$）这一情形外，线性场下的累积量一律路径依赖。**
@@ -121,7 +121,7 @@ $\omega_i$ 是本章唯一的核心对象。它的两个基本微分性质给出
 
 $$
 d\omega_i = d\bigl(f_i(\Phi)\bigr)\wedge dt + f_i(\Phi)\,d(dt)
-= f_i'(\Phi)\,d\Phi\wedge dt
+= f_i'(\Phi)\,d\Phi\wedge dt.
 $$ {#eq-domega}
 
 （第一项：链式法则给出 $d\bigl(f_i(\Phi)\bigr)=f_i'(\Phi)\,d\Phi$；第二项恒为零。这一步不假设 $\Phi$ 的任何具体形式。）
@@ -130,7 +130,7 @@ $$ {#eq-domega}
 
 $$
 d\Phi\wedge dt
-=\sum_{a=1}^{n}\partial_{a}\Phi\;dx^{a}\wedge dt
+=\sum_{a=1}^{n}\partial_{a}\Phi\;dx^{a}\wedge dt.
 $$
 
 （$\partial_{t}\Phi\,dt\wedge dt=0$，故纵向分量自动不出现。）由 $\{dx^{a}\wedge dt\}_{a=1}^{n}$ 线性无关，得
@@ -141,7 +141,7 @@ d\omega_i = 0
 f_i'(\Phi)\,\partial_{a}\Phi = 0
 \quad(\text{对一切 } a=1,\dots,n)
 \quad\Longleftrightarrow\quad
-f_i'(\Phi)\;\nabla\Phi = 0
+f_i'(\Phi)\;\nabla\Phi = 0,
 $$ {#eq-closed-criterion}
 
 即：$\omega_i$ 闭，当且仅当在 $\Phi$ 的像集上恒有 $f_i'\circ\Phi=0$，或 $\Phi$ 不含横向依赖（$\nabla\Phi=0$，即 $\Phi=\Phi(t)$）。**第一种情形恰是“$f_i$ 在 $\Phi$ 的像上为常数”**——特别地，由 @eq-response-conditions 的 $f_i>0$ 与 $f_i(0)=1$，若 $0$ 落在 $\Phi$ 的像内，则 $f_i$ 在像上为常数且取值 $1$，即 $f_i\equiv1$。这正是“背景场不改变该类别速率”的精确形式。
@@ -163,7 +163,7 @@ $$
 = f_i(\Phi)\,dt\wedge f_i'(\Phi)\,d\Phi\wedge dt
 = f_i f_i'\,dt\wedge d\Phi\wedge dt
 = -f_i f_i'\,d\Phi\wedge dt\wedge dt
-= 0
+= 0.
 $$ {#eq-frobenius}
 
 （第三步用 $dt\wedge d\Phi=-d\Phi\wedge dt$；第四步用 $dt\wedge dt=0$。注意这里**不需要** $f_i f_i'=0$：$\omega_i\wedge d\omega_i$ 只含一个 $dt$ 因子以外还有一个 $dt$，必为零。）故分布 $\ker\omega_i$ 恒可积，叶总是局部存在的。
@@ -177,14 +177,14 @@ $$ {#eq-frobenius}
 由 @eq-response-conditions 的 $f_i>0$，$f_i(\Phi)$ 处处不为零，故 $f_i(\Phi)$ 是一个处处可逆的乘性因子。设 $v\in T_{p}M$ 为任一向量，则
 
 $$
-\omega_i(v)=f_i(\Phi(p))\,dt(v)
+\omega_i(v)=f_i(\Phi(p))\,dt(v).
 $$
 
 两端相差一个非零因子，故 $\omega_i(v)=0\iff dt(v)=0$，即
 
 $$
 \ker\omega_i = \ker dt
-\qquad \text{对一切 } i\in I
+\qquad \text{对一切 } i\in I.
 $$ {#eq-same-foliation}
 
 （严格地说，这给出 $(\ker\omega_i)_{p}=(\ker dt)_{p}$ 对每个 $p\in M$ 成立，即两个分布逐点相等。）即所有类别给出**同一个**叶状结构；其叶空间为一维，可由 $t$ 标识（$\ker dt$ 的积分叶恰是水平集 $\{t=\text{const}\}$）。类别之间的差异不体现在叶上，只体现在横截方向上乘的那个函数 $f_i$。
@@ -193,7 +193,7 @@ $$ {#eq-same-foliation}
 关于 @prp-same-foliation 有一个值得注意的地位：它说明“所有类别共享同一套等时叶”在本框架中**不是一条额外假设**，而是 $f_i>0$ 与 $\omega_i\propto dt$ 的自动推论。若要摆脱它，必须放弃 $\omega_i$ 只含 $dt$ 的写法，改为一般的 $1$-形式
 
 $$
-\omega_i = f_i(\Phi)\,dt + \sum_{a=1}^{n}g_{ia}(\Phi)\,dx^{a}
+\omega_i = f_i(\Phi)\,dt + \sum_{a=1}^{n}g_{ia}(\Phi)\,dx^{a}.
 $$ {#eq-omega-general}
 
 此时 @prp-frobenius 不再自动成立，$\omega_i\wedge d\omega_i = 0$ 成为对 $(f_i,g_{ia})$ 的**真正约束**，Frobenius 定理开始起作用。这是本框架最自然的推广方向：把“共享等时叶”从推论变成可选项。
@@ -209,25 +209,25 @@ $\tau_i$ 只有作为“读数的标度”才有意义，而标度的整体选�
 
 $$
 f_i \longmapsto \kappa f_i
-\qquad (\text{对一切 } i\in I \text{ 同时施加})
+\qquad (\text{对一切 } i\in I \text{ 同时施加}),
 $$ {#eq-gauge}
 
 与 $\tau_i \mapsto \kappa\tau_i$ 相应：由 @eq-tau-path，
 
 $$
-\tau_i[\kappa f](\gamma)=\int_{\gamma}\kappa f_i(\Phi)\,dt=\kappa\int_{\gamma}f_i(\Phi)\,dt=\kappa\,\tau_i[f](\gamma)
+\tau_i[\kappa f](\gamma)=\int_{\gamma}\kappa f_i(\Phi)\,dt=\kappa\int_{\gamma}f_i(\Phi)\,dt=\kappa\,\tau_i[f](\gamma),
 $$
 
 故它把每个类别的读数整体缩放同一倍数。由于 @eq-ratio 的 $X_{ij}=f_i/f_j$ 是两个同类项之比，分子分母同时乘 $\kappa$ 而约去：
 
 $$
-X_{ij}[\kappa f]=\frac{\kappa f_i}{\kappa f_j}=\frac{f_i}{f_j}=X_{ij}[f]
+X_{ij}[\kappa f]=\frac{\kappa f_i}{\kappa f_j}=\frac{f_i}{f_j}=X_{ij}[f].
 $$
 
 故 @eq-gauge **不改变任何类别之间的比较**。它是一次作用：$\kappa(\kappa'f)=(\kappa\kappa')f$，且 $\mathbb{R}_{>0}$ 通过乘法作用，故数据应视为商空间
 
 $$
-\mathscr{M} := \mathrm{Map}\bigl(I\times\mathbb{R},\ \mathbb{R}_{>0}\bigr)\Big/\mathbb{R}_{>0}
+\mathscr{M} := \mathrm{Map}\bigl(I\times\mathbb{R},\ \mathbb{R}_{>0}\bigr)\Big/\mathbb{R}_{>0}.
 $$ {#eq-moduli}
 
 其中 $\mathbb{R}_{>0}$ 的（左）作用是 $(\kappa\cdot f)_i(\Phi):=\kappa\,f_i(\Phi)$。
@@ -243,11 +243,11 @@ $$ {#eq-moduli}
 $$
 X_{ij} := \frac{f_i}{f_j},
 \qquad
-Q_{ij}(\Phi_1,\Phi_2) := \frac{X_{ij}(\Phi_1)}{X_{ij}(\Phi_2)}
+Q_{ij}(\Phi_1,\Phi_2) := \frac{X_{ij}(\Phi_1)}{X_{ij}(\Phi_2)},
 $$ {#eq-ratio}
 
 $$
-P_i(\Phi_1,\Phi_2) := \frac{f_i(\Phi_1)}{f_i(\Phi_2)}
+P_i(\Phi_1,\Phi_2) := \frac{f_i(\Phi_1)}{f_i(\Phi_2)},
 $$ {#eq-two-point}
 
 则 $Q_{ij}$ 落在 $\mathscr{M}$ 上（只依赖等价类，不依赖代表），$P_i$ 落在 $\mathrm{Map}(I\times\mathbb{R},\mathbb{R}_{>0})$ 上（依赖代表 $f_i$ 的选择）。二者的差别在**两类变换**下分别显现：
@@ -263,7 +263,7 @@ $$
 Q_{ij}[\kappa f](\Phi_1,\Phi_2)
 =\frac{X_{ij}[\kappa f](\Phi_1)}{X_{ij}[\kappa f](\Phi_2)}
 =\frac{X_{ij}[f](\Phi_1)}{X_{ij}[f](\Phi_2)}
-=Q_{ij}[f](\Phi_1,\Phi_2)
+=Q_{ij}[f](\Phi_1,\Phi_2),
 $$
 
 即 $\kappa$ 在分子分母中约去，$Q_{ij}$ 只依赖 $\mathscr{M}$ 中的类，不依赖代表。再看 $P_i$：
@@ -272,7 +272,7 @@ $$
 P_i[\kappa f](\Phi_1,\Phi_2)
 =\frac{\kappa f_i(\Phi_1)}{\kappa f_i(\Phi_2)}
 =\frac{f_i(\Phi_1)}{f_i(\Phi_2)}
-=P_i[f](\Phi_1,\Phi_2)
+=P_i[f](\Phi_1,\Phi_2).
 $$
 
 **注意 $P_i$ 其实也约去了 $\kappa$。** 因此 $P_i$ 与 $Q_{ij}$ 在 @eq-gauge 的**对角作用**下**都不变**。二者的区别不在这里，而在**更细的单类别缩放** @eq-gauge-single 之下：$P_i\mapsto\kappa_i P_i$（协变），$Q_{ij}$ 一般改变。可加性上的差别同样出自这一层——$Q_{ij}$ 只依赖两个场值之差（一阶上），$P_i$ 依赖两个场值本身。详见下面的注记。
@@ -282,7 +282,7 @@ $$
 
 $$
 f_i\longmapsto \kappa_i f_i,
-\qquad \kappa_i>0\ \text{可依赖 } i
+\qquad \kappa_i>0\ \text{可依赖 } i.
 $$ {#eq-gauge-single}
 
 在这种变换下 $X_{ij}\mapsto(\kappa_i/\kappa_j)X_{ij}$，$Q_{ij}$ 一般**会**改变；而 $P_i\mapsto\kappa_i P_i$ 只被 $\kappa_i$ 缩放。反过来，@eq-gauge 的**对角**作用（所有 $\kappa_i$ 相等）使 $Q_{ij}$ 与 $P_i$ 都不变。因此
@@ -297,7 +297,7 @@ $$ {#eq-gauge-single}
 $$
 f_i(\Phi_1)=1+\alpha_i\Phi_1+O(\Phi_1^{2}),
 \qquad
-f_i(\Phi_2)=1+\alpha_i\Phi_2+O(\Phi_2^{2})
+f_i(\Phi_2)=1+\alpha_i\Phi_2+O(\Phi_2^{2}).
 $$ {#eq-P-first}
 
 由 @eq-two-point 与 $Q_{ij}(\Phi_1,\Phi_2)=P_i(\Phi_1,\Phi_2)/P_j(\Phi_1,\Phi_2)$，先算单个比值的展开：
@@ -307,7 +307,7 @@ $$
 \frac{f_i(\Phi_1)}{f_i(\Phi_2)}
 &=\frac{1+\alpha_i\Phi_1+O(\Phi_1^{2})}{1+\alpha_i\Phi_2+O(\Phi_2^{2})}
 =\bigl(1+\alpha_i\Phi_1+O(\Phi_1^{2})\bigr)\bigl(1-\alpha_i\Phi_2+O(\Phi_2^{2})\bigr)\\
-&=1+\alpha_i(\Phi_1-\Phi_2)+O\bigl((\Phi_1-\Phi_2)^{2}\bigr)
+&=1+\alpha_i(\Phi_1-\Phi_2)+O\bigl((\Phi_1-\Phi_2)^{2}\bigr).
 \end{aligned}
 $$
 
@@ -318,7 +318,7 @@ $$
 Q_{ij}(\Phi_1,\Phi_2)
 &=\frac{1+\alpha_i(\Phi_1-\Phi_2)+O(\cdot^{2})}{1+\alpha_j(\Phi_1-\Phi_2)+O(\cdot^{2})}\\
 &=\bigl(1+\alpha_i\,\Delta+O(\Delta^{2})\bigr)\bigl(1-\alpha_j\,\Delta+O(\Delta^{2})\bigr)
-=1+(\alpha_i-\alpha_j)\,\Delta+O(\Delta^{2})
+=1+(\alpha_i-\alpha_j)\,\Delta+O(\Delta^{2}).
 \end{aligned}
 $$ {#eq-Q-first}
 
@@ -331,7 +331,7 @@ $f_i$ 的泰勒展开在数学上不是“近似技巧”，而是**到 $n$ 阶�
 $$
 f_i(\Phi) = 1 + \alpha_i\Phi + \beta_i\Phi^{2} + O\left(\Phi^{3}\right),
 \qquad
-\alpha_i = f_i'(0),\quad \beta_i = \tfrac{1}{2}f_i''(0)
+\alpha_i = f_i'(0),\quad \beta_i = \tfrac{1}{2}f_i''(0).
 $$ {#eq-taylor}
 
 ::: {#prp-truncation}
@@ -342,13 +342,13 @@ $$ {#eq-taylor}
 $$
 \mathbf{j}^{n}:\ I \longrightarrow \mathcal{J}^{n},
 \qquad
-i \longmapsto j^{n}_{0}f_i
+i \longmapsto j^{n}_{0}f_i.
 $$ {#eq-jet-map}
 
 对 $n'\le n$，有自然的截断投影 $\pi^{n}_{n'}:\mathcal{J}^{n}\to\mathcal{J}^{n'}$（丢弃 $n'>n$ 的系数）。它与射流映射交换：
 
 $$
-\pi^{n}_{n'}\circ\mathbf{j}^{n}=\mathbf{j}^{n'}
+\pi^{n}_{n'}\circ\mathbf{j}^{n}=\mathbf{j}^{n'}.
 $$ {#eq-jet-project}
 
 特别地，“只保留一阶项”就是把 @eq-jet-map 复合上 $\pi^{n}_{1}$；由 @eq-taylor，$\mathcal{J}^{1}$ 中的元素由 $(\alpha_i)$ 一个实数完全决定（常数项被 $f_i(0)=1$ 固定为 $1$）。
@@ -363,14 +363,14 @@ $$
 \begin{aligned}
 \log f_i(\Phi)
 &=\Bigl(\alpha_i\Phi+\beta_i\Phi^{2}\Bigr)-\frac{1}{2}\Bigl(\alpha_i\Phi\Bigr)^{2}+O(\Phi^{3})\\
-&=\alpha_i\Phi+\Bigl(\beta_i-\frac{1}{2}\alpha_i^{2}\Bigr)\Phi^{2}+O(\Phi^{3})
+&=\alpha_i\Phi+\Bigl(\beta_i-\frac{1}{2}\alpha_i^{2}\Bigr)\Phi^{2}+O(\Phi^{3}).
 \end{aligned}
 $$ {#eq-log}
 
 （第二步：$u=O(\Phi)$ 时 $u^{2}=\alpha_i^{2}\Phi^{2}+O(\Phi^{3})$，$O(u^{3})=O(\Phi^{3})$。）由 $X_{ij}=f_i/f_j$ 与 $\log$ 的交换性，$\log X_{ij}=\log f_i-\log f_j$，两式相减得
 
 $$
-\log X_{ij}(\Phi) = \left(\alpha_i-\alpha_j\right)\Phi + \left[\left(\beta_i-\beta_j\right)-\tfrac{1}{2}\left(\alpha_i^{2}-\alpha_j^{2}\right)\right]\Phi^{2} + O(\Phi^{3})
+\log X_{ij}(\Phi) = \left(\alpha_i-\alpha_j\right)\Phi + \left[\left(\beta_i-\beta_j\right)-\tfrac{1}{2}\left(\alpha_i^{2}-\alpha_j^{2}\right)\right]\Phi^{2} + O(\Phi^{3}),
 $$ {#eq-log-X}
 
 即一阶层次的类别依赖是**线性**的，且其“斜率”正是 $\alpha_i-\alpha_j$；二阶项由 $\beta$ 与 $\alpha^{2}$ 的组合给出。
@@ -386,7 +386,7 @@ X_{ii} = \frac{f_i}{f_i}=1,
 \qquad
 X_{ij}X_{jk} = \frac{f_i}{f_j}\cdot\frac{f_j}{f_k}=\frac{f_i}{f_k}=X_{ik},
 \qquad
-X_{ij} = \frac{f_i}{f_j}=\left(\frac{f_j}{f_i}\right)^{-1}=X_{ji}^{-1}
+X_{ij} = \frac{f_i}{f_j}=\left(\frac{f_j}{f_i}\right)^{-1}=X_{ji}^{-1},
 $$ {#eq-cocycle}
 
 即 $\{X_{ij}\}$ 是指标集 $I$ 上取值于乘法群 $C^{\infty}(\mathbb{R};\mathbb{R}_{>0})$ 的 $1$-余循环（把 $I$ 视为离散群胚：态射为 $I\times I$，复合为 $(j,k)\circ(i,j)=(i,k)$）。于是有精确的对应：
@@ -395,14 +395,14 @@ $$
 \begin{aligned}
 &\{X_{ij}\}\ \text{平凡}\\
 &\iff \exists\,h:I\to C^{\infty}(\mathbb{R};\mathbb{R}_{>0}),\quad X_{ij}=\frac{h_i}{h_j}\\
-&\iff \exists\,f\in\mathrm{Map}(\mathbb{R},\mathbb{R}_{>0}),\quad f_i=f\ \text{对一切 }i
+&\iff \exists\,f\in\mathrm{Map}(\mathbb{R},\mathbb{R}_{>0}),\quad f_i=f\ \text{对一切 }i.
 \end{aligned}
 $$ {#eq-universality}
 
 **证明.** （$\Leftarrow$）若 $f_i=f$ 对一切 $i$，取 $h_i:=f$，则 $X_{ij}=f/f=h_i/h_j$，余循环平凡。（$\Rightarrow$）若 $X_{ij}=h_i/h_j$，则对任意固定的 $i_0\in I$（设 $I$ 非空），
 
 $$
-f_i=X_{ii_0}\,f_{i_0}=\frac{h_i}{h_{i_0}}\,f_{i_0}=\Bigl(\frac{f_{i_0}}{h_{i_0}}\Bigr)h_i
+f_i=X_{ii_0}\,f_{i_0}=\frac{h_i}{h_{i_0}}\,f_{i_0}=\Bigl(\frac{f_{i_0}}{h_{i_0}}\Bigr)h_i.
 $$
 
 右端括号内是与 $i$ 无关的常数。也就是说，$f_i$ 与 $h_i$ 只差一个与 $i$ 无关的正因子。由 @prp-gauge-action，这个整体因子可被规范条件 $f_i(0)=1$ 吸收；吸收之后 $f_i=h_i/h_{i}(0)$（设 $h_{i}(0)\neq0$），而 $h$ 的具体形式与 $i$ 无关时即得 $f_i=f$。
@@ -421,7 +421,7 @@ $$
 **（三）分类别改变：类别依赖。** 若 $i\mapsto f_i$ 非常值，则 $X_{ij}\neq1$、$\alpha_i-\alpha_j$ 不全为零，@eq-Q-first 给出非平凡的类别比较。此时不存在能同时编码全部 $\omega_i$ 的单个几何对象：@eq-omega 中乘的 $f_i$ 依赖 $i$，任何“共同几何”的写法都必须额外指定 $I$ 上的一族函数。**（二）是本情形的特例**，而（一）又是（二）的特例，三者链式嵌套：
 
 $$
-\text{（一）}\ \subseteq\ \text{（二）}\ \subseteq\ \text{（三）}
+\text{（一）}\ \subseteq\ \text{（二）}\ \subseteq\ \text{（三）}.
 $$ {#eq-nesting}
 
 | 情形 | 条件 | 类别依赖 | 一阶判据 |
@@ -447,7 +447,7 @@ S\big[\Phi,\{\psi_i\}\big]
 \left[
 \frac{1}{2}\,g^{ab}\partial_{a}\Phi\,\partial_{b}\Phi - V(\Phi)
 + \sum_{i\in I}\Big(\mathcal{L}_{i,0}(\psi_i) + \lambda_i\,\Phi\,\mathcal{O}_i(\psi_i)\Big)
-\right] d\mu_g
+\right] d\mu_g.
 $$ {#eq-action}
 
 ::: {#prp-double-coupling}
@@ -457,32 +457,32 @@ $$ {#eq-action}
 
 $$
 \delta\!\left(\frac{1}{2}g^{ab}\partial_{a}\Phi\,\partial_{b}\Phi\right)
-=g^{ab}\partial_{a}\Phi\,\partial_{b}(\delta\Phi)
+=g^{ab}\partial_{a}\Phi\,\partial_{b}(\delta\Phi).
 $$
 
 $V$ 与耦合项的变分分别为 $-V'(\Phi)\,\delta\Phi$ 与 $\sum_i\lambda_i\mathcal{O}_i\,\delta\Phi$。于是
 
 $$
-\delta S=\int_{M}\Bigl[\,g^{ab}\partial_{a}\Phi\,\partial_{b}(\delta\Phi)-V'(\Phi)\,\delta\Phi+\sum_{i}\lambda_i\mathcal{O}_i\,\delta\Phi\Bigr]d\mu_g
+\delta S=\int_{M}\Bigl[\,g^{ab}\partial_{a}\Phi\,\partial_{b}(\delta\Phi)-V'(\Phi)\,\delta\Phi+\sum_{i}\lambda_i\mathcal{O}_i\,\delta\Phi\Bigr]d\mu_g.
 $$
 
 对第一项作分部积分（体积元 $d\mu_g$ 与联络相容，故可把 $\partial_{a}$ 搬到另一因子并升为 $\nabla^{a}$；$\delta\Phi$ 紧支保证边界项为零）：
 
 $$
 \int_{M}g^{ab}\partial_{a}\Phi\,\partial_{b}(\delta\Phi)\,d\mu_g
-=-\int_{M}\bigl(\nabla^{a}\nabla_{a}\Phi\bigr)\,\delta\Phi\,d\mu_g
+=-\int_{M}\bigl(\nabla^{a}\nabla_{a}\Phi\bigr)\,\delta\Phi\,d\mu_g.
 $$
 
 要求 $\delta S=0$ 对一切 $\delta\Phi$ 成立，被积表达式须逐点为零（$\delta\Phi$ 任取），得
 
 $$
-\nabla^{a}\nabla_{a}\Phi + V'(\Phi) - \sum_{i\in I}\lambda_i\,\mathcal{O}_i = 0
+\nabla^{a}\nabla_{a}\Phi + V'(\Phi) - \sum_{i\in I}\lambda_i\,\mathcal{O}_i = 0.
 $$ {#eq-field-eq}
 
 **对 $\psi_i$ 变分。** 关于 $\psi_i$ 的 Euler–Lagrange 方程是
 
 $$
-\frac{\delta\mathcal{L}_{i,0}}{\delta\psi_i}+\lambda_i\Phi\,\frac{\delta\mathcal{O}_i}{\delta\psi_i}=0
+\frac{\delta\mathcal{L}_{i,0}}{\delta\psi_i}+\lambda_i\Phi\,\frac{\delta\mathcal{O}_i}{\delta\psi_i}=0.
 $$ {#eq-matter-eq}
 
 因此**同一组 $\lambda_i$ 同时出现在 @eq-field-eq 与 @eq-matter-eq 中**：$\lambda_i$ 既乘在物质方程中确定该类别对 $\Phi$ 的响应（由 @eq-matter-eq 解出 $\psi_i$ 是 $\Phi$ 的泛函，再代入 @eq-omega 定出 $f_i$），又乘在 @eq-field-eq 中充当 $\Phi$ 的源。给定一侧即约束另一侧。这是“$\lambda_i$ 不是自由参数”的变分形式——它是一条数学结论，不是假设。
@@ -494,7 +494,7 @@ $$ {#eq-matter-eq}
 **证明.** 设 @eq-matter-eq 的解可写成 $\psi_i=\psi_i[\Phi]$（把 $\Phi$ 当作给定外场），则 @eq-omega 中的 $f_i$ 由组合
 
 $$
-f_i(\Phi)=\nu_i\bigl(\Phi,\psi_i[\Phi]\bigr)
+f_i(\Phi)=\nu_i\bigl(\Phi,\psi_i[\Phi]\bigr),
 $$ {#eq-nu-composition}
 
 给出，其中 $\nu_i$ 是“物质系统在背景 $\Phi$ 下的时间标度”。要求 $\psi_i[\Phi]$ 光滑依赖 $\Phi$（这由 @eq-matter-eq 的椭圆性/双曲性保证，视 $\mathcal{L}_{i,0}$ 的符号而定）。对 @eq-nu-composition 用链式法则求 $k$ 阶导：
@@ -502,7 +502,7 @@ $$ {#eq-nu-composition}
 $$
 \frac{d^{k}f_i}{d\Phi^{k}}(0)
 =\frac{\partial^{k}\nu_i}{\partial\Phi^{k}}\Big|_{0}
-+\Bigl(\text{含 }\partial_{\psi_i}\nu_i\ \text{与}\ \frac{d^{j}\psi_i[\Phi]}{d\Phi^{j}}(0)\ (j\le k)\ \text{的项}\Bigr)
++\Bigl(\text{含 }\partial_{\psi_i}\nu_i\ \text{与}\ \frac{d^{j}\psi_i[\Phi]}{d\Phi^{j}}(0)\ (j\le k)\ \text{的项}\Bigr).
 $$
 
 右端每一项都由 $\mathcal{O}_i$ 在背景附近 Taylor 展开的系数与低阶系数组成。故 $\mathcal{O}_i$ 的 $n$ 阶背景项给出 $f_i$ 的 $n$ 阶系数。于是 $j^{n}_{0}f_i$ 由耦合一侧的数据（$\mathcal{L}_{i,0}$、$\mathcal{O}_i$、$\lambda_i$ 的相应展开系数）唯一决定：@eq-jet-map 不是任意的射流映射，而是耦合项射流塔的像。
@@ -514,13 +514,13 @@ $$
 若物质的拉氏量自身含 $\Phi$（例如 $\nu_i$ 通过 @eq-omega 进入时间标度，使 $\mathcal{O}_i=\mathcal{O}_i(\Phi,\psi_i)$ 显含 $\Phi$），则 @eq-field-eq 变为**隐式**：$\Phi$ 同时以自变量与未知函数的身份出现。此时把它写成
 
 $$
-F[\Phi]:=\nabla^{a}\nabla_{a}\Phi + V'(\Phi) - \sum_{i}\lambda_i\,\mathcal{O}_i(\Phi,\psi_i[\Phi])=0
+F[\Phi]:=\nabla^{a}\nabla_{a}\Phi + V'(\Phi) - \sum_{i}\lambda_i\,\mathcal{O}_i(\Phi,\psi_i[\Phi])=0.
 $$ {#eq-implicit}
 
 线性化算子为
 
 $$
-F'[\Phi]=\nabla^{a}\nabla_{a} + V''(\Phi) - \sum_{i}\lambda_i\,\partial_{\Phi}\mathcal{O}_i
+F'[\Phi]=\nabla^{a}\nabla_{a} + V''(\Phi) - \sum_{i}\lambda_i\,\partial_{\Phi}\mathcal{O}_i.
 $$ {#eq-implicit-linearization}
 
 在适当的函数空间（例如紧支光滑函数配 $L^{2}(M,g)$）上，$F'[\Phi]$ 是形式自伴的椭圆/双曲型算子。可解性由 **Fredholm 二择一**给出：$F'[\Phi]$ 或者是有界可逆的（此时由隐函数 @eq-implicit 在 $\Phi$ 的小邻域内有唯一解），或者有非平凡的核（此时解的存在要求右端与核正交——这一正交条件转化为对 $(\mathcal{O}_i,\lambda_i)$ 的约束）。**因此“无解”是二择一中的一支，而不是必然结论**：只有当核非平凡且正交条件不满足时，@eq-implicit 才无解。这是从“参数化”升级为“理论”必须付出的代价。
@@ -544,20 +544,20 @@ $$ {#eq-implicit-linearization}
 设 $f_i\in C^{1}$、$f_i>0$，读数 $\tau_i(t)=\int_{0}^{t}f_i(\Phi(\cdot,t'))\,dt'$。若某系统在参数 $t$ 下的演化由自伴生成元 $A$ 给出（$\mathrm{i}\,\partial_{t}\psi=A\psi$，即 $\psi(t)=e^{-\mathrm{i}tA}\psi(0)$），则同一演化以 $\tau_i$ 为参数满足
 
 $$
-\mathrm{i}\,\partial_{\tau_i}\psi=\frac{1}{f_i(\Phi)}\,A\,\psi
+\mathrm{i}\,\partial_{\tau_i}\psi=\frac{1}{f_i(\Phi)}\,A\,\psi.
 $$ {#eq-reparam-generator}
 
 **证明（情形 (a)：$\Phi=\Phi(t)$，$f_i(\Phi)$ 为 $c$-数）.** 由 @eq-response-conditions 的 $f_i>0$，$\tau_i:\mathbb{R}\to\mathbb{R}$ 满足 $\tau_i'=f_i(\Phi(t))>0$，故 $\tau_i$ 是严格单调的 $C^{1}$ 微分同胚，其逆 $\tau_i^{-1}$ 存在。把复合函数 $\psi(t)=\tilde\psi(\tau_i(t))$ 代入方程 $\mathrm{i}\partial_{t}\psi=A\psi$，用链式法则：
 
 $$
 \mathrm{i}\,\partial_{t}\psi=\mathrm{i}\,\tilde\psi'(\tau_i(t))\cdot\tau_i'(t)
-=\mathrm{i}\,f_i(\Phi(t))\,\partial_{\tau_i}\tilde\psi
+=\mathrm{i}\,f_i(\Phi(t))\,\partial_{\tau_i}\tilde\psi.
 $$
 
 要求它等于 $A\tilde\psi$，即得 @eq-reparam-generator 在 $c$-数情形下的形式
 
 $$
-\mathrm{i}\,\partial_{\tau_i}\tilde\psi=\frac{1}{f_i(\Phi)}\,A\,\tilde\psi
+\mathrm{i}\,\partial_{\tau_i}\tilde\psi=\frac{1}{f_i(\Phi)}\,A\,\tilde\psi.
 $$
 
 右端 $A/f_i(\Phi)$ 是自伴算子 $A$ 乘上正实数 $1/f_i(\Phi)$，自伴性保持（$(A/f)^{\dagger}=A^{\dagger}/f=A/f$，因 $f$ 为实且正）。由 @prp-stone，$A/f_i(\Phi)$ 通过 $\tilde\psi(\tau_i)=e^{-\mathrm{i}\tau_i A/f_i(\Phi)}\psi(0)$ 生成强连续单参数酉群，故演化对 $\tau_i$ 酉。
@@ -583,7 +583,7 @@ $\Phi$ 本身可以是经典 $c$-数函数，但只要它含空间依赖，进�
 设 $\Phi$ 含空间依赖，$\hat x$ 为位置算子。由 Borel 函数演算，$f_i(\Phi(\hat x))$ 定义为
 
 $$
-f_i(\Phi(\hat x))=\int_{\mathbb{R}}f_i(\Phi(\lambda))\,dE_{\hat x}(\lambda)
+f_i(\Phi(\hat x))=\int_{\mathbb{R}}f_i(\Phi(\lambda))\,dE_{\hat x}(\lambda).
 $$ {#eq-borel}
 
 其中 $E_{\hat x}$ 是 $\hat x$ 的谱测度；在 $f_i\circ\Phi$ 有界时 @eq-borel 给出有界正算子。（$\Phi$ 与 $\hat x$ 同为 $c$-数函数与算子的复合，故 @eq-borel 只用到 $\hat x$ 的谱分解。）
@@ -591,7 +591,7 @@ $$ {#eq-borel}
 $f_i(\Phi(\hat x))$ 与生成元 $A$ 一般不可交换，故两个乘积 $f_i(\Phi(\hat x))\,A$ 与 $A\,f_i(\Phi(\hat x))$ 相差
 
 $$
-f_i(\Phi(\hat x))\,A-A\,f_i(\Phi(\hat x))=\bigl[f_i(\Phi(\hat x)),A\bigr]\neq0
+f_i(\Phi(\hat x))\,A-A\,f_i(\Phi(\hat x))=\bigl[f_i(\Phi(\hat x)),A\bigr]\neq0.
 $$
 
 因此“$\mathrm{i}\,\partial_{\tau_i}\psi=A/f_i$”在空间依赖情形下**不是一个定义良好的算子方程**：必须在两个自然次序之外另给一条约定。常用的两条是
@@ -599,14 +599,14 @@ $$
 $$
 \text{（左）}\quad G_{L}:=f_i(\Phi(\hat x))^{-1}A,
 \qquad
-\text{（右）}\quad G_{R}:=A\,f_i(\Phi(\hat x))^{-1}
+\text{（右）}\quad G_{R}:=A\,f_i(\Phi(\hat x))^{-1}.
 $$ {#eq-two-orderings}
 
 二者的差为 $\left[f_i^{-1},A\right]=-f_i^{-1}\left[f_i,A\right]f_i^{-1}$，一般不为零；且 $G_L$ 与 $G_R$ 各自的伴随是对方的另一个次序，故**两者一般都不自伴**。要得到自伴生成元，可取对称化（Weyl 型）组合
 
 $$
 G:=\frac{1}{2}\left(G_{L}+G_{R}^{\dagger}\right)
-=\frac{1}{2}\left(f_i(\Phi(\hat x))^{-1}A+A\,f_i(\Phi(\hat x))^{-1}\right)
+=\frac{1}{2}\left(f_i(\Phi(\hat x))^{-1}A+A\,f_i(\Phi(\hat x))^{-1}\right).
 $$ {#eq-weyl-ordering}
 
 （注意 $G_R^{\dagger}=f_i^{-1}A$ 只在 $f_i$ 与 $A$ 的适当条件下成立；一般情形应直接对 $\frac{1}{2}\left(G_L+G_L^{\dagger}\right)$ 取对称化。）不同约定给出不同的自伴生成元，其差不能被 @eq-gauge 的重参数化吸收（重参数化只改变 $f_i$ 的整体常数倍，而这里差出的是 $\left[f_i,A\right]$ 这一算子量）。这是 @eq-reparam-generator 从情形 (a) 推广到情形 (b) 必须补的**第一项数据**。补上后演化仍酉——编序只影响生成元的具体形式，不影响酉性。
@@ -618,7 +618,7 @@ $$ {#eq-weyl-ordering}
 设 $A$ 自伴且下半有界（$\exists\,c:\ A\ge cI$）。则不存在自伴算子 $T$ 使对易关系
 
 $$
-[T,A]=\mathrm{i}I
+[T,A]=\mathrm{i}I.
 $$ {#eq-ccr}
 
 成立 [@busch1995]。
@@ -626,7 +626,7 @@ $$ {#eq-ccr}
 *证明.* 设 @eq-ccr 成立。由 $[T,A]=\mathrm{i}I$，对任意 $s\in\mathbb{R}$ 有 $\left[T,e^{isA}\right]=s\,\mathrm{i}\,e^{isA}$（这是 $[T,f(A)]=\mathrm{i}f'(A)$ 在 $f(\lambda)=e^{is\lambda}$ 处的特例），故
 
 $$
-e^{-\mathrm{i}sT}A\,e^{\mathrm{i}sT}=A+sI
+e^{-\mathrm{i}sT}A\,e^{\mathrm{i}sT}=A+sI.
 $$ {#eq-spectral-shift}
 
 具体地：$\frac{d}{ds}\left(e^{-\mathrm{i}sT}Ae^{\mathrm{i}sT}\right)=e^{-\mathrm{i}sT}\left(\mathrm{i}[A,T]\right)e^{\mathrm{i}sT}=\mathrm{i}e^{-\mathrm{i}sT}\left(-\mathrm{i}I\right)e^{\mathrm{i}sT}=I$，积分并用 $s=0$ 初值即得 @eq-spectral-shift。
@@ -635,7 +635,7 @@ $$ {#eq-spectral-shift}
 
 $$
 \mathrm{spec}(A)+s=\mathrm{spec}(A),
-\qquad \forall s\in\mathbb{R}
+\qquad \forall s\in\mathbb{R},
 $$ {#eq-spectrum-invariant}
 
 即谱集对一切平移不变。自伴算子的谱非空（自伴算子必有实谱），故 $\mathrm{spec}(A)=\mathbb{R}$。但下半有界 $A\ge cI$ 蕴含 $\mathrm{spec}(A)\subseteq[c,+\infty)$，与 $\mathrm{spec}(A)=\mathbb{R}$ 矛盾。
@@ -648,7 +648,7 @@ $$ {#eq-spectrum-invariant}
 
 $$
 E(X+s) = e^{-\mathrm{i}sA}E(X)\,e^{\mathrm{i}sA}
-\qquad (X\in\mathcal{B}(\mathbb{R}),\ s\in\mathbb{R})
+\qquad (X\in\mathcal{B}(\mathbb{R}),\ s\in\mathbb{R}),
 $$ {#eq-covariant}
 
 的 POVM $E$（即 $E$ 是平移群 $s\mapsto E(X+s)$ 的协变化），则由 $E$ 的第一矩 $\bar T:=\int\lambda\,dE(\lambda)$（在 $\bar T$ 有定义的域上）与 @eq-covariant 可得 $[\bar T,A]=\mathrm{i}I$ 的形式，与 @prp-downbounded 矛盾。因此**下半有界的生成元不存在协变 POVM 时间读数**。
@@ -665,7 +665,7 @@ $$ {#eq-covariant}
 $$
 \mathscr{C} := A_{R}\otimes 1 - 1\otimes A_{C},
 \qquad
-\mathcal{H}_{\mathrm{phys}} := \ker \mathscr{C}
+\mathcal{H}_{\mathrm{phys}} := \ker \mathscr{C}.
 $$ {#eq-constraint}
 
 （用 $\mathscr{C}$ 而非 $K$：全书 $K$ 保留给恒速场，此处为约束算子，二者无关。）
@@ -681,7 +681,7 @@ $$
 E(X\times\mathbb{R})=E_1(X),
 \qquad
 E(\mathbb{R}\times Y)=E_2(Y)
-\qquad (X,Y\in\mathcal{B}(\mathbb{R}))
+\qquad (X,Y\in\mathcal{B}(\mathbb{R})).
 $$ {#eq-joint-marginal}
 
 成立：
@@ -703,7 +703,7 @@ $Q_{ij}$ 的定义（@eq-ratio）需要**同时**取两类系统 $i,j$ 的读数
 由 Mandelstam–Tamm 不等式 [@mandelstamtamm1945]（取 $\hbar=1$）：对任意自伴 $X$ 与状态 $\varrho$，令 $\Delta X$ 为 $X$ 在该态上的标准差，$\Delta A$ 为生成元 $A$ 的标准差，则
 
 $$
-\Delta t \cdot \Delta A \ \ge\ \frac{1}{2}
+\Delta t \cdot \Delta A \ \ge\ \frac{1}{2}.
 $$ {#eq-mt}
 
 其中 $\Delta t:=\Delta X\left/\left|\frac{d}{dt}\langle X\rangle_{\varrho}\right|\right.$ 是 $X$ 的期望值变化一个标准差所需的时间。（@eq-mt 的证明：由 $\mathrm{i}\partial_{t}\langle X\rangle=\langle[X,A]\rangle$ 与 Robertson 不等式 $\Delta X\,\Delta A\ge\frac{1}{2}\left|\langle[X,A]\rangle\right|$ 相除即得。）
@@ -715,13 +715,13 @@ $$ {#eq-mt}
 设类别 $i$ 的读数由自伴量 $X_i$ 读出，其生成元为 $A_i$，则由 @eq-mt，
 
 $$
-\Delta t_i\ \gtrsim\ \frac{1}{2\,\Delta A_i}
+\Delta t_i\ \gtrsim\ \frac{1}{2\,\Delta A_i}.
 $$ {#eq-mt-i}
 
 比较量 $Q_{ij}$ 需要同时取两个读数，其分辨率是两个读数误差的组合，故不低于
 
 $$
-\Delta t_{ij}\ \gtrsim\ \Delta t_i+\Delta t_j\ \ge\ \frac{1}{2}\left(\frac{1}{\Delta A_i}+\frac{1}{\Delta A_j}\right)
+\Delta t_{ij}\ \gtrsim\ \Delta t_i+\Delta t_j\ \ge\ \frac{1}{2}\left(\frac{1}{\Delta A_i}+\frac{1}{\Delta A_j}\right),
 $$ {#eq-mt-sum}
 
 即：$\alpha_i-\alpha_j$ 的可分辨下界由两类系统生成元展宽的**倒数之和** $\frac{1}{2}\left(\Delta A_i^{-1}+\Delta A_j^{-1}\right)$ 控制。（若两读数独立，组合误差按平方和开方给出 $\sqrt{\Delta t_i^{2}+\Delta t_j^{2}}$；无论哪种方式，下界都随 $\Delta A_i^{-1}+\Delta A_j^{-1}$ 增大。）这是本框架与量子力学之间能写成不等式的联系。
@@ -742,7 +742,7 @@ $$ {#eq-mt-sum}
 由 @prp-gauge-action，$\alpha_i$ 依赖每个类别各自的标度约定（@eq-gauge-single），单独一个 $\alpha_i$ 不是可测量；对角规范不变的只有比值 $Q_{ij}$（@eq-ratio）。因此一次比较能给出的陈述，一律形如 @eq-Q-first 的右端：
 
 $$
-Q_{ij}-1=(\alpha_i-\alpha_j)\Delta+O(\Delta^{2})
+Q_{ij}-1=(\alpha_i-\alpha_j)\Delta+O(\Delta^{2}).
 $$ {#eq-measurable-signal}
 
 它给出的是 $\alpha_i-\alpha_j$ 的估计，不是 $\alpha_i$ 的估计，也不是 $f_i$ 的函数形式。这一事实决定了下面所有条件的形状：判据只关心**差**，故关于两个类别的任何**共有**效应都在差中消去，不构成障碍；反过来，任何**不共有**的效应都直接冒充信号。
@@ -768,7 +768,7 @@ $P_i$ 与 $Q_{ij}$ 是同一类别在两个场值处的**速率之比**（@eq-tw
 @sec-cc-data 中的 $\Phi$ 是一个 $C^{\infty}$ 函数，没有量纲，故 $\alpha_i$ 的数值本身无定义。本书取
 
 $$
-\Phi:=\frac{\Phi_{N}}{c^{2}}
+\Phi:=\frac{\Phi_{N}}{c^{2}}.
 $$ {#eq-phi-normalization}
 
 $\Phi_{N}$ 为远场取零的牛顿势。于是 $\Phi$ 与 $\Delta$ 无量纲，$\alpha_i$ 亦无量纲。这个约定只改变 $\alpha_i$ 的数值，不改变 @tbl-degenerations 的任何判据：三种情形按映射 $i\mapsto f_i$ 是否为常值划分，与标度无关。
@@ -834,7 +834,7 @@ $\alpha_i$ 是类别 $i$ 的速率对 $\Phi$ 的响应系数，可看作一个�
 由 @eq-measurable-signal，$\alpha_i-\alpha_j$ 的估计精度为
 
 $$
-\sigma(\alpha_i-\alpha_j)=\frac{\sigma(Q_{ij})}{\Delta}
+\sigma(\alpha_i-\alpha_j)=\frac{\sigma(Q_{ij})}{\Delta}.
 $$ {#eq-alpha-precision}
 
 给定 $\sigma(Q_{ij})$，精度由 $\Delta$ 决定，与类别无关。表中各行的稳定度相差多个量级，有的行目前 $\sigma(Q_{ij})$ 远大于 $\Delta$，其估计没有内容。这只是该方向上没有数据，与 $f_i$ 在该方向上是否为常值无关。

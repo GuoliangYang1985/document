@@ -12,7 +12,7 @@
 存在一个**被选定的**惯性参考系 $S_{0}$，本章称之为**静系**。在 $S_{0}$ 中，时刻 $\tau$ 自点 $\mathbf{p}$ 发出的扰动，其在时刻 $t>\tau$ 的波前为球面
 
 $$
-|\mathbf{x}-\mathbf{p}|=c(t-\tau)
+|\mathbf{x}-\mathbf{p}|=c(t-\tau).
 $$
 
 其中 $c>0$ 为常数，与 $\mathbf{p}$ 无关，也与发出该扰动者的运动状态无关
@@ -24,7 +24,7 @@ $$
 任意两个惯性系之间的坐标变换为伽利略变换
 
 $$
-t'=t,\qquad \mathbf{x}'=\mathbf{x}-\mathbf{u}t
+t'=t,\qquad \mathbf{x}'=\mathbf{x}-\mathbf{u}t.
 $$
 
 其中 $\mathbf{u}\in\mathbb{R}^{3}$ 为两系之间的相对速度
@@ -39,7 +39,7 @@ A1 只陈述波前的几何，A2 只陈述坐标之间的关系；两条公理�
 **已知数据（两条世界线）**
 
 $$
-\mathbf{p}_{A}(\tau)=\mathbf{a},\qquad \mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau
+\mathbf{p}_{A}(\tau)=\mathbf{a},\qquad \mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau.
 $$
 
 其中 $\mathbf{a},\mathbf{b},\mathbf{v}\in\mathbb{R}^{3}$ 为常向量，$\mathbf{v}\neq\mathbf{0}$。源 A 在静系中静止，源 B 在静系中作匀速运动。
@@ -63,7 +63,7 @@ $$
 -u^{1}&1&0&0\\
 -u^{2}&0&1&0\\
 -u^{3}&0&0&1
-\end{pmatrix}
+\end{pmatrix}.
 $$ {#eq-galilei-matrix}
 
 逐条验证其代数性质。
@@ -74,19 +74,19 @@ $$
 \bigl(\Gamma(\mathbf{u})\Gamma(\mathbf{w})\bigr)_{i0}
 =\sum_{k=0}^{3}\Gamma(\mathbf{u})_{ik}\,\Gamma(\mathbf{w})_{k0}
 =(-u^{i})\cdot 1+\sum_{k=1}^{3}\delta_{ik}(-w^{k})
-=-(u^{i}+w^{i})
+=-(u^{i}+w^{i}).
 $$
 
 第 $0$ 行与其余列元直接相乘即为单位矩阵，故
 
 $$
-\Gamma(\mathbf{u})\Gamma(\mathbf{w})=\Gamma(\mathbf{u}+\mathbf{w})
+\Gamma(\mathbf{u})\Gamma(\mathbf{w})=\Gamma(\mathbf{u}+\mathbf{w}).
 $$ {#eq-group-law}
 
 **（2）逆元** 在 @eq-group-law 中取 $\mathbf{w}=-\mathbf{u}$：
 
 $$
-\Gamma(\mathbf{u})^{-1}=\Gamma(-\mathbf{u})
+\Gamma(\mathbf{u})^{-1}=\Gamma(-\mathbf{u}).
 $$ {#eq-inverse}
 
 逆变换即 $t=t'$、$\mathbf{x}=\mathbf{x}'+\mathbf{u}t'$，与 $\Gamma(-\mathbf{u})$ 相符。
@@ -94,7 +94,7 @@ $$ {#eq-inverse}
 **（3）交换性** 由 @eq-group-law 与向量加法的交换性：
 
 $$
-\Gamma(\mathbf{u})\Gamma(\mathbf{w})=\Gamma(\mathbf{u}+\mathbf{w})=\Gamma(\mathbf{w}+\mathbf{u})=\Gamma(\mathbf{w})\Gamma(\mathbf{u})
+\Gamma(\mathbf{u})\Gamma(\mathbf{w})=\Gamma(\mathbf{u}+\mathbf{w})=\Gamma(\mathbf{w}+\mathbf{u})=\Gamma(\mathbf{w})\Gamma(\mathbf{u}),
 $$ {#eq-boost-commute}
 
 即两个方向任意的伽利略变换可交换。
@@ -102,7 +102,7 @@ $$ {#eq-boost-commute}
 **（4）行列式** $\Gamma(\mathbf{u})$ 是单位上三角（此处为下三角）且对角元全为 $1$，故
 
 $$
-\det\Gamma(\mathbf{u})=1
+\det\Gamma(\mathbf{u})=1.
 $$ {#eq-det}
 
 **（5）Jacobi 矩阵与导数变换** 由 $\mathbf{x}=\mathbf{x}'+\mathbf{u}t'$、$t=t'$，对 $\varphi(\mathbf{x},t)=\varphi'(\mathbf{x}',t')$ 用链式法则：
@@ -110,23 +110,23 @@ $$ {#eq-det}
 $$
 \partial_{t'}\Big|_{\mathbf{x}'}
 =\sum_{i=1}^{3}\frac{\partial x^{i}}{\partial t'}\partial_{x^{i}}+\frac{\partial t}{\partial t'}\partial_{t}
-=\sum_{i=1}^{3}u^{i}\partial_{x^{i}}+\partial_{t}
+=\sum_{i=1}^{3}u^{i}\partial_{x^{i}}+\partial_{t},
 $$
 
 $$
-\partial_{x'^{i}}\Big|_{t'}=\partial_{x^{i}}
+\partial_{x'^{i}}\Big|_{t'}=\partial_{x^{i}},
 $$
 
 即
 
 $$
-\nabla'=\nabla,\qquad \partial_{t'}=\partial_{t}+\mathbf{u}\cdot\nabla
+\nabla'=\nabla,\qquad \partial_{t'}=\partial_{t}+\mathbf{u}\cdot\nabla.
 $$ {#eq-derivative-transform}
 
 取逆（把 $\mathbf{u}$ 换成 $-\mathbf{u}$）：
 
 $$
-\nabla=\nabla',\qquad \partial_{t}=\partial_{t'}-\mathbf{u}\cdot\nabla'
+\nabla=\nabla',\qquad \partial_{t}=\partial_{t'}-\mathbf{u}\cdot\nabla'.
 $$ {#eq-derivative-inverse}
 
 **梯度不变、时间偏导数不变**，这是后面全部计算的起点。
@@ -151,7 +151,7 @@ A1 只给出波前的几何（球面），尚未给出方程。下面的命题�
 
 $$
 L=\sum_{\mu,\nu=0}^{3}A^{\mu\nu}\partial_{\mu}\partial_{\nu}
-+\sum_{\mu=0}^{3}B^{\mu}\partial_{\mu}+C,\qquad \partial_{0}:=\partial_{t}
++\sum_{\mu=0}^{3}B^{\mu}\partial_{\mu}+C,\qquad \partial_{0}:=\partial_{t}.
 $$
 
 其中 $A^{\mu\nu}=A^{\nu\mu}$。
@@ -161,13 +161,13 @@ $$
 第二步，条件 1 约束 $A^{\mu\nu}$：空间部分 $A^{ij}$ 必须是旋转不变的二阶张量，故 $A^{ij}=a_{s}\delta^{ij}$；混合分量 $A^{0i}$ 是一个空间向量，旋转不变的向量只有零向量，故 $A^{0i}=0$；记 $A^{00}=a_{0}$。于是
 
 $$
-L=a_{0}\,\partial_{t}^{2}+a_{s}\,\nabla^{2}
+L=a_{0}\,\partial_{t}^{2}+a_{s}\,\nabla^{2}.
 $$
 
 第三步，条件 3。取平面波 $e^{i(\boldsymbol{\xi}\cdot\mathbf{x}-\omega t)}$，有
 
 $$
-\partial_{t}^{2}\mapsto-\omega^{2},\qquad \nabla^{2}\mapsto-|\boldsymbol{\xi}|^{2}
+\partial_{t}^{2}\mapsto-\omega^{2},\qquad \nabla^{2}\mapsto-|\boldsymbol{\xi}|^{2}.
 $$
 
 代入 $L\varphi=0$ 得
@@ -175,13 +175,13 @@ $$
 $$
 -a_{0}\omega^{2}-a_{s}|\boldsymbol{\xi}|^{2}=0
 \quad\Longrightarrow\quad
-\omega^{2}=-\frac{a_{s}}{a_{0}}|\boldsymbol{\xi}|^{2}
+\omega^{2}=-\frac{a_{s}}{a_{0}}|\boldsymbol{\xi}|^{2}.
 $$
 
 相速度为 $|\omega|/|\boldsymbol{\xi}|=\sqrt{-a_{s}/a_{0}}$，要求它等于 $c>0$：
 
 $$
--\frac{a_{s}}{a_{0}}=c^{2}\quad\Longrightarrow\quad a_{s}=-c^{2}a_{0}
+-\frac{a_{s}}{a_{0}}=c^{2}\quad\Longrightarrow\quad a_{s}=-c^{2}a_{0}.
 $$
 
 故 $L=a_{0}(\partial_{t}^{2}-c^{2}\nabla^{2})$。取归一化 $\alpha=a_{0}=1$。
@@ -189,7 +189,7 @@ $$
 本章以下取
 
 $$
-L:=\partial_{t}^{2}-c^{2}\nabla^{2}
+L:=\partial_{t}^{2}-c^{2}\nabla^{2}.
 $$ {#eq-operator}
 
 **与 A1 的相容性**：$L$ 的平面波解满足 $\omega=\pm c|\boldsymbol{\xi}|$，相速度为 $c$，各方向相同；由旋转对称，其点源波前即以速率 $c$ 扩张的球面，与 A1 一致。
@@ -205,13 +205,13 @@ $$ {#eq-operator}
 
 $$
 \partial_{t}^{2}\varphi-c^{2}\nabla^{2}\varphi=0,\qquad
-\varphi(\mathbf{x},0)=0,\qquad \partial_{t}\varphi(\mathbf{x},0)=\psi(\mathbf{x})
+\varphi(\mathbf{x},0)=0,\qquad \partial_{t}\varphi(\mathbf{x},0)=\psi(\mathbf{x}),
 $$
 
 则
 
 $$
-\varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}t}\int_{|\mathbf{y}-\mathbf{x}|=ct}\psi(\mathbf{y})\,dS(\mathbf{y})
+\varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}t}\int_{|\mathbf{y}-\mathbf{x}|=ct}\psi(\mathbf{y})\,dS(\mathbf{y}).
 $$ {#eq-kirchhoff}
 :::
 
@@ -219,70 +219,70 @@ $$ {#eq-kirchhoff}
 
 $$
 \partial_{t}^{2}\widehat{\varphi}+c^{2}|\boldsymbol{\xi}|^{2}\widehat{\varphi}=0,\qquad
-\widehat{\varphi}(\boldsymbol{\xi},0)=0,\qquad \partial_{t}\widehat{\varphi}(\boldsymbol{\xi},0)=\widehat{\psi}(\boldsymbol{\xi})
+\widehat{\varphi}(\boldsymbol{\xi},0)=0,\qquad \partial_{t}\widehat{\varphi}(\boldsymbol{\xi},0)=\widehat{\psi}(\boldsymbol{\xi}).
 $$
 
 这是常微分方程，其解为
 
 $$
-\widehat{\varphi}(\boldsymbol{\xi},t)=\widehat{\psi}(\boldsymbol{\xi})\,\frac{\sin\bigl(c|\boldsymbol{\xi}|t\bigr)}{c|\boldsymbol{\xi}|}
+\widehat{\varphi}(\boldsymbol{\xi},t)=\widehat{\psi}(\boldsymbol{\xi})\,\frac{\sin\bigl(c|\boldsymbol{\xi}|t\bigr)}{c|\boldsymbol{\xi}|}.
 $$
 
 作逆变换，记
 
 $$
 h_{t}(\mathbf{z}):=\frac{1}{(2\pi)^{3}}\int_{\mathbb{R}^{3}}e^{i\boldsymbol{\xi}\cdot\mathbf{z}}\,
-\frac{\sin\bigl(c|\boldsymbol{\xi}|t\bigr)}{c|\boldsymbol{\xi}|}\,d^{3}\xi
+\frac{\sin\bigl(c|\boldsymbol{\xi}|t\bigr)}{c|\boldsymbol{\xi}|}\,d^{3}\xi,
 $$
 
 则 $\varphi(\cdot,t)=\psi*h_{t}$。计算 $h_{t}$：被积函数只依赖 $|\boldsymbol{\xi}|$，取 $\boldsymbol{\xi}$ 空间的球坐标，令 $k=|\boldsymbol{\xi}|$、$r=|\mathbf{z}|$，并把 $\mathbf{z}$ 取为极轴：
 
 $$
-\int_{S^{2}}e^{ikr\cos\theta}\,d\Omega=2\pi\int_{-1}^{1}e^{ikr\mu}\,d\mu=4\pi\,\frac{\sin(kr)}{kr}
+\int_{S^{2}}e^{ikr\cos\theta}\,d\Omega=2\pi\int_{-1}^{1}e^{ikr\mu}\,d\mu=4\pi\,\frac{\sin(kr)}{kr}.
 $$
 
 于是
 
 $$
 h_{t}(\mathbf{z})=\frac{1}{(2\pi)^{3}}\int_{0}^{\infty}k^{2}\frac{\sin(ckt)}{ck}\cdot 4\pi\frac{\sin(kr)}{kr}\,dk
-=\frac{1}{2\pi^{2}cr}\int_{0}^{\infty}\sin(ckt)\sin(kr)\,dk
+=\frac{1}{2\pi^{2}cr}\int_{0}^{\infty}\sin(ckt)\sin(kr)\,dk.
 $$
 
 用恒等式 $\int_{0}^{\infty}\sin(ak)\sin(bk)\,dk=\frac{\pi}{2}\delta(a-b)$（$a,b>0$），取 $a=ct$、$b=r$：
 
 $$
 h_{t}(\mathbf{z})=\frac{1}{2\pi^{2}cr}\cdot\frac{\pi}{2}\,\delta(ct-r)
-=\frac{\delta(ct-r)}{4\pi cr}
+=\frac{\delta(ct-r)}{4\pi cr},
 $$
 
 再用 $\delta(ct-r)=\dfrac{1}{c}\delta(t-r/c)$（对 $c>0$），得
 
 $$
-h_{t}(\mathbf{z})=\frac{\delta\bigl(t-|\mathbf{z}|/c\bigr)}{4\pi c^{2}|\mathbf{z}|}
+h_{t}(\mathbf{z})=\frac{\delta\bigl(t-|\mathbf{z}|/c\bigr)}{4\pi c^{2}|\mathbf{z}|}.
 $$
 
 代回卷积并在 $\mathbf{x}-\mathbf{y}$ 处取球坐标（$r=|\mathbf{x}-\mathbf{y}|$，$d^{3}y=r^{2}\,dr\,d\Omega$，且 $\mathbf{y}=\mathbf{x}-r\boldsymbol{\omega}$）：
 
 $$
-\varphi(\mathbf{x},t)=\int_{\mathbb{R}^{3}}\psi(\mathbf{y})\,\frac{\delta\bigl(t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{4\pi c^{2}|\mathbf{x}-\mathbf{y}|}\,d^{3}y
+\varphi(\mathbf{x},t)=\int_{\mathbb{R}^{3}}\psi(\mathbf{y})\,\frac{\delta\bigl(t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{4\pi c^{2}|\mathbf{x}-\mathbf{y}|}\,d^{3}y,
 $$
 
 $$
-=\frac{1}{4\pi c^{2}}\int_{0}^{\infty}\delta(t-r/c)\,r\,dr\int_{S^{2}}\psi(\mathbf{x}-r\boldsymbol{\omega})\,d\Omega
+=\frac{1}{4\pi c^{2}}\int_{0}^{\infty}\delta(t-r/c)\,r\,dr\int_{S^{2}}\psi(\mathbf{x}-r\boldsymbol{\omega})\,d\Omega.
 $$
 
 换元 $r=cu$，$dr=c\,du$：
 
 $$
 =\frac{1}{4\pi c^{2}}\int_{0}^{\infty}\delta(t-u)\,cu\cdot c\,du\int_{S^{2}}\psi(\mathbf{x}-cu\boldsymbol{\omega})\,d\Omega
-=\frac{t}{4\pi}\int_{S^{2}}\psi(\mathbf{x}-ct\boldsymbol{\omega})\,d\Omega
+=\frac{t}{4\pi}\int_{S^{2}}\psi(\mathbf{x}-ct\boldsymbol{\omega})\,d\Omega,
 $$
 
 而球面 $S_{ct}(\mathbf{x})$ 上的面积元为 $dS=(ct)^{2}d\Omega$，故
 
 $$
 \frac{t}{4\pi}\int_{S^{2}}\psi(\mathbf{x}-ct\boldsymbol{\omega})\,d\Omega
-=\frac{1}{4\pi c^{2}t}\int_{|\mathbf{y}-\mathbf{x}|=ct}\psi(\mathbf{y})\,dS(\mathbf{y})
+=\frac{1}{4\pi c^{2}t}\int_{|\mathbf{y}-\mathbf{x}|=ct}\psi(\mathbf{y})\,dS(\mathbf{y}),
 $$
 
 即 @eq-kirchhoff。
@@ -293,7 +293,7 @@ $$
 
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\int_{0}^{t}\frac{ds}{t-s}
-\int_{|\mathbf{y}-\mathbf{x}|=c(t-s)}f(\mathbf{y},s)\,dS(\mathbf{y})
+\int_{|\mathbf{y}-\mathbf{x}|=c(t-s)}f(\mathbf{y},s)\,dS(\mathbf{y}).
 $$ {#eq-duhamel}
 
 把它化成推迟形式。令 $r=c(t-s)$，则 $s=t-r/c$、$ds=-dr/c$、$(t-s)=r/c$，且 $dS=(c(t-s))^{2}d\Omega=r^{2}d\Omega$。$s$ 从 $0$ 到 $t$ 对应 $r$ 从 $ct$ 到 $0$：
@@ -301,18 +301,18 @@ $$ {#eq-duhamel}
 $$
 \varphi(\mathbf{x},t)
 =\frac{1}{4\pi c^{2}}\int_{ct}^{0}\Bigl(-\frac{dr}{c}\Bigr)\frac{c}{r}\,r^{2}
-\int_{S^{2}}f\bigl(\mathbf{x}-r\boldsymbol{\omega},\,t-r/c\bigr)\,d\Omega
+\int_{S^{2}}f\bigl(\mathbf{x}-r\boldsymbol{\omega},\,t-r/c\bigr)\,d\Omega,
 $$
 
 $$
-=\frac{1}{4\pi c^{2}}\int_{0}^{ct}r\,dr\int_{S^{2}}f\bigl(\mathbf{x}-r\boldsymbol{\omega},\,t-r/c\bigr)\,d\Omega
+=\frac{1}{4\pi c^{2}}\int_{0}^{ct}r\,dr\int_{S^{2}}f\bigl(\mathbf{x}-r\boldsymbol{\omega},\,t-r/c\bigr)\,d\Omega.
 $$
 
 由于 $d^{3}y=r^{2}dr\,d\Omega$、$|\mathbf{x}-\mathbf{y}|=r$，且被积函数在 $r>ct$ 时取 $f$ 的负时刻值（本章取 $f(\cdot,s)=0$ 对 $s<0$），可把上限延至 $\infty$：
 
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\int_{\mathbb{R}^{3}}
-\frac{f\bigl(\mathbf{y},\,t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{|\mathbf{x}-\mathbf{y}|}\,d^{3}y
+\frac{f\bigl(\mathbf{y},\,t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{|\mathbf{x}-\mathbf{y}|}\,d^{3}y.
 $$ {#eq-retarded}
 
 ::: {#prp-retarded-form}
@@ -326,13 +326,13 @@ $$ {#eq-retarded}
 取点源源项
 
 $$
-f(\mathbf{x},t)=q(t)\,\delta^{3}\bigl(\mathbf{x}-\mathbf{p}(t)\bigr)
+f(\mathbf{x},t)=q(t)\,\delta^{3}\bigl(\mathbf{x}-\mathbf{p}(t)\bigr).
 $$
 
 其中 $q$ 支撑在 $[0,\infty)$，$\mathbf{p}$ 为一条给定的曲线。代入 @eq-retarded 并插入
 
 $$
-1=\int_{-\infty}^{\infty}\delta\bigl(t-\tau-|\mathbf{x}-\mathbf{y}|/c\bigr)\,d\tau
+1=\int_{-\infty}^{\infty}\delta\bigl(t-\tau-|\mathbf{x}-\mathbf{y}|/c\bigr)\,d\tau.
 $$
 
 把 $\tau$ 积分移到外层：
@@ -341,27 +341,27 @@ $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\iint
 \delta\bigl(t-\tau-|\mathbf{x}-\mathbf{y}|/c\bigr)\,
 \delta^{3}\bigl(\mathbf{y}-\mathbf{p}(\tau)\bigr)\,q(\tau)\,
-\frac{d^{3}y\,d\tau}{|\mathbf{x}-\mathbf{y}|}
+\frac{d^{3}y\,d\tau}{|\mathbf{x}-\mathbf{y}|}.
 $$
 
 $\mathbf{y}$ 积分被 $\delta^{3}$ 固定在 $\mathbf{y}=\mathbf{p}(\tau)$，此时 $|\mathbf{x}-\mathbf{y}|=R(\tau)$。记
 
 $$
-g(\tau):=t-\tau-\frac{R(\tau)}{c},\qquad R(\tau):=|\mathbf{x}-\mathbf{p}(\tau)|
+g(\tau):=t-\tau-\frac{R(\tau)}{c},\qquad R(\tau):=|\mathbf{x}-\mathbf{p}(\tau)|.
 $$
 
 得
 
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\int_{-\infty}^{\infty}q(\tau)\,
-\frac{\delta\bigl(g(\tau)\bigr)}{R(\tau)}\,d\tau
+\frac{\delta\bigl(g(\tau)\bigr)}{R(\tau)}\,d\tau,
 $$ {#eq-retarded-integral}
 
 再用一维换元公式 $\delta\bigl(g(\tau)\bigr)=\sum_{g(\tau^{*})=0}\dfrac{\delta(\tau-\tau^{*})}{|g'(\tau^{*})|}$：
 
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\sum_{\tau^{*}}\,
-\frac{q(\tau^{*})}{R(\tau^{*})\,\bigl|g'(\tau^{*})\bigr|}
+\frac{q(\tau^{*})}{R(\tau^{*})\,\bigl|g'(\tau^{*})\bigr|}.
 $$ {#eq-retarded-sum}
 
 下面对两条世界线分别求出 $\tau^{*}$ 与 $|g'(\tau^{*})|$。
@@ -371,20 +371,20 @@ $$ {#eq-retarded-sum}
 此时 $R(\tau)\equiv R_{A}=|\mathbf{x}-\mathbf{a}|$ 与 $\tau$ 无关，故
 
 $$
-g(\tau)=t-\tau-\frac{R_{A}}{c},\qquad g'(\tau)\equiv-1
+g(\tau)=t-\tau-\frac{R_{A}}{c},\qquad g'(\tau)\equiv-1.
 $$
 
 方程 $g(\tau)=0$ 有唯一根
 
 $$
-\tau^{*}=t-\frac{R_{A}}{c}
+\tau^{*}=t-\frac{R_{A}}{c}.
 $$
 
 代入 @eq-retarded-sum：
 
 $$
 \varphi_{A}(\mathbf{x},t)=\frac{q_{A}\!\left(t-\dfrac{R_{A}}{c}\right)}{4\pi c^{2}R_{A}},
-\qquad R_{A}=|\mathbf{x}-\mathbf{a}|
+\qquad R_{A}=|\mathbf{x}-\mathbf{a}|.
 $$ {#eq-field-A}
 
 ## 源 B：$\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$ {#sec-tsf-source-b}
@@ -396,35 +396,35 @@ $$ {#eq-field-A}
 此时 $R(\tau)=|\mathbf{x}-\mathbf{b}-\mathbf{v}\tau|$。令
 
 $$
-s:=t-\tau,\qquad \mathbf{d}:=\mathbf{x}-\mathbf{b}-\mathbf{v}t
+s:=t-\tau,\qquad \mathbf{d}:=\mathbf{x}-\mathbf{b}-\mathbf{v}t,
 $$
 
 则
 
 $$
-\mathbf{x}-\mathbf{p}_{B}(\tau)=\mathbf{x}-\mathbf{b}-\mathbf{v}(t-s)=\mathbf{d}+\mathbf{v}s
+\mathbf{x}-\mathbf{p}_{B}(\tau)=\mathbf{x}-\mathbf{b}-\mathbf{v}(t-s)=\mathbf{d}+\mathbf{v}s.
 $$
 
 根条件 $R(\tau)=c(t-\tau)=cs$ 即
 
 $$
-|\mathbf{d}+\mathbf{v}s|^{2}=c^{2}s^{2}
+|\mathbf{d}+\mathbf{v}s|^{2}=c^{2}s^{2}.
 $$
 
 展开：
 
 $$
-|\mathbf{d}|^{2}+2s(\mathbf{d}\cdot\mathbf{v})+s^{2}|\mathbf{v}|^{2}=c^{2}s^{2}
+|\mathbf{d}|^{2}+2s(\mathbf{d}\cdot\mathbf{v})+s^{2}|\mathbf{v}|^{2}=c^{2}s^{2},
 $$
 
 $$
-(c^{2}-v^{2})s^{2}-2(\mathbf{d}\cdot\mathbf{v})s-|\mathbf{d}|^{2}=0
+(c^{2}-v^{2})s^{2}-2(\mathbf{d}\cdot\mathbf{v})s-|\mathbf{d}|^{2}=0.
 $$ {#eq-quadratic}
 
 其中 $v:=|\mathbf{v}|$。当 $v\neq c$ 时，其根为
 
 $$
-s_{\pm}=\frac{\mathbf{d}\cdot\mathbf{v}\pm\sqrt{(\mathbf{d}\cdot\mathbf{v})^{2}+(c^{2}-v^{2})|\mathbf{d}|^{2}}}{c^{2}-v^{2}}
+s_{\pm}=\frac{\mathbf{d}\cdot\mathbf{v}\pm\sqrt{(\mathbf{d}\cdot\mathbf{v})^{2}+(c^{2}-v^{2})|\mathbf{d}|^{2}}}{c^{2}-v^{2}}.
 $$ {#eq-roots}
 
 当 $v=c$ 时，@eq-quadratic 成为一次方程 $2(\mathbf{d}\cdot\mathbf{v})s+|\mathbf{d}|^{2}=0$。
@@ -434,7 +434,7 @@ $$ {#eq-roots}
 要求 $s>0$（$\tau^{*}=t-s$ 是过去的发射时刻）。记判别式
 
 $$
-\Delta:=(\mathbf{d}\cdot\mathbf{v})^{2}+(c^{2}-v^{2})|\mathbf{d}|^{2}
+\Delta:=(\mathbf{d}\cdot\mathbf{v})^{2}+(c^{2}-v^{2})|\mathbf{d}|^{2}.
 $$
 
 由韦达定理，两根之积 $=-|\mathbf{d}|^{2}/(c^{2}-v^{2})$，两根之和 $=2(\mathbf{d}\cdot\mathbf{v})/(c^{2}-v^{2})$。
@@ -459,17 +459,17 @@ $$
 \frac{d}{d\tau}|\mathbf{x}-\mathbf{b}-\mathbf{v}\tau|
 =-\frac{(\mathbf{x}-\mathbf{p}_{B}(\tau))\cdot\mathbf{v}}{|\mathbf{x}-\mathbf{p}_{B}(\tau)|}
 =-\hat{\mathbf{n}}\cdot\mathbf{v},
-\qquad \hat{\mathbf{n}}:=\frac{\mathbf{x}-\mathbf{p}_{B}(\tau)}{|\mathbf{x}-\mathbf{p}_{B}(\tau)|}
+\qquad \hat{\mathbf{n}}:=\frac{\mathbf{x}-\mathbf{p}_{B}(\tau)}{|\mathbf{x}-\mathbf{p}_{B}(\tau)|}.
 $$
 
 得
 
 $$
-g'(\tau)=-1-\frac{R'(\tau)}{c}=-1+\frac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c}
+g'(\tau)=-1-\frac{R'(\tau)}{c}=-1+\frac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c},
 $$
 
 $$
-\bigl|g'(\tau^{*})\bigr|=\left|1-\frac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c}\right|
+\bigl|g'(\tau^{*})\bigr|=\left|1-\frac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c}\right|.
 $$ {#eq-jacobian}
 
 当 $v<c$ 时由柯西–施瓦茨不等式 $\hat{\mathbf{n}}\cdot\mathbf{v}\le v<c$，绝对值号可去掉。
@@ -479,12 +479,12 @@ $$ {#eq-jacobian}
 取 $v<c$，$\tau^{*}=t-s_{+}$，代入 @eq-retarded-sum：
 
 $$
-\varphi_{B}(\mathbf{x},t)=\frac{q_{B}(\tau^{*})}{4\pi c^{2}\,R_{B}^{*}\left(1-\dfrac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c}\right)}
+\varphi_{B}(\mathbf{x},t)=\frac{q_{B}(\tau^{*})}{4\pi c^{2}\,R_{B}^{*}\left(1-\dfrac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c}\right)},
 $$ {#eq-field-B}
 
 $$
 R_{B}^{*}=|\mathbf{x}-\mathbf{b}-\mathbf{v}\tau^{*}|,\qquad
-\hat{\mathbf{n}}=\frac{\mathbf{x}-\mathbf{b}-\mathbf{v}\tau^{*}}{R_{B}^{*}}
+\hat{\mathbf{n}}=\frac{\mathbf{x}-\mathbf{b}-\mathbf{v}\tau^{*}}{R_{B}^{*}}.
 $$
 
 当 $v>c$ 且有两个正根时，@eq-retarded-sum 给出两项之和，每一项各用其自身的 $\tau^{*}$、$R_{B}^{*}$ 与 $\hat{\mathbf{n}}$ 代入 @eq-field-B 的右端。
@@ -500,13 +500,13 @@ $$
 取两个源都在 $\tau=0$ 时刻发出一次瞬时扰动：
 
 $$
-q_{A}(\tau)=Q_{A}\delta(\tau),\qquad q_{B}(\tau)=Q_{B}\delta(\tau)
+q_{A}(\tau)=Q_{A}\delta(\tau),\qquad q_{B}(\tau)=Q_{B}\delta(\tau).
 $$
 
 此时不必解 @eq-quadratic，直接在 @eq-retarded-integral 中令 $\tau=0$：
 
 $$
-R_{A}(0)=|\mathbf{x}-\mathbf{a}|,\qquad R_{B}(0)=|\mathbf{x}-\mathbf{b}|
+R_{A}(0)=|\mathbf{x}-\mathbf{a}|,\qquad R_{B}(0)=|\mathbf{x}-\mathbf{b}|,
 $$
 
 $$
@@ -514,7 +514,7 @@ $$
 \frac{\delta\!\left(t-\dfrac{|\mathbf{x}-\mathbf{a}|}{c}\right)}{|\mathbf{x}-\mathbf{a}|},
 \qquad
 \varphi_{B}(\mathbf{x},t)=\frac{Q_{B}}{4\pi c^{2}}\,
-\frac{\delta\!\left(t-\dfrac{|\mathbf{x}-\mathbf{b}|}{c}\right)}{|\mathbf{x}-\mathbf{b}|}
+\frac{\delta\!\left(t-\dfrac{|\mathbf{x}-\mathbf{b}|}{c}\right)}{|\mathbf{x}-\mathbf{b}|}.
 $$
 
 $L$ 是线性算子，故总场 $\varphi=\varphi_{A}+\varphi_{B}$ 为
@@ -522,7 +522,7 @@ $L$ 是线性算子，故总场 $\varphi=\varphi_{A}+\varphi_{B}$ 为
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\left[
 Q_{A}\frac{\delta\!\left(t-\dfrac{|\mathbf{x}-\mathbf{a}|}{c}\right)}{|\mathbf{x}-\mathbf{a}|}
-+Q_{B}\frac{\delta\!\left(t-\dfrac{|\mathbf{x}-\mathbf{b}|}{c}\right)}{|\mathbf{x}-\mathbf{b}|}
++Q_{B}\frac{\delta\!\left(t-\dfrac{|\mathbf{x}-\mathbf{b}|}{c}\right)}{|\mathbf{x}-\mathbf{b}|}.
 \right]
 $$ {#eq-total-impulse}
 
@@ -531,7 +531,7 @@ $$ {#eq-total-impulse}
 由 @eq-total-impulse，$\varphi(\cdot,t)$ 的支撑为两个球面的并：
 
 $$
-\operatorname{supp}\varphi(\cdot,t)=S_{ct}(\mathbf{a})\cup S_{ct}(\mathbf{b})
+\operatorname{supp}\varphi(\cdot,t)=S_{ct}(\mathbf{a})\cup S_{ct}(\mathbf{b}).
 $$
 
 ### 连续发射
@@ -541,7 +541,7 @@ $$
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\left[
 \frac{q_{A}\!\left(t-\dfrac{R_{A}}{c}\right)}{R_{A}}
-+\frac{q_{B}(\tau^{*})}{R_{B}^{*}\left(1-\dfrac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c}\right)}
++\frac{q_{B}(\tau^{*})}{R_{B}^{*}\left(1-\dfrac{\hat{\mathbf{n}}\cdot\mathbf{v}}{c}\right)}.
 \right]
 $$ {#eq-total-continuous}
 
@@ -552,7 +552,7 @@ $$ {#eq-total-continuous}
 把 @eq-derivative-inverse 代入 $L\varphi=0$：
 
 $$
-\bigl(\partial_{t'}-\mathbf{u}\cdot\nabla'\bigr)^{2}\varphi-c^{2}\nabla'^{2}\varphi=0
+\bigl(\partial_{t'}-\mathbf{u}\cdot\nabla'\bigr)^{2}\varphi-c^{2}\nabla'^{2}\varphi=0.
 $$ {#eq-moving-pde}
 
 $\varphi_{A}$ 与 $\varphi_{B}$ 在静系中各自满足 $L\varphi=0$；经同一坐标变换后，各自满足 @eq-moving-pde；由线性性，$\varphi_{A}+\varphi_{B}$ 也满足 @eq-moving-pde。
@@ -564,7 +564,7 @@ $\varphi_{A}$ 与 $\varphi_{B}$ 在静系中各自满足 $L\varphi=0$；经同�
 $$
 \varphi'(\mathbf{x}',t')=\frac{1}{4\pi c^{2}}\left[
 Q_{A}\frac{\delta\!\left(t'-\dfrac{|\mathbf{x}'+\mathbf{u}t'-\mathbf{a}|}{c}\right)}{|\mathbf{x}'+\mathbf{u}t'-\mathbf{a}|}
-+Q_{B}\frac{\delta\!\left(t'-\dfrac{|\mathbf{x}'+\mathbf{u}t'-\mathbf{b}|}{c}\right)}{|\mathbf{x}'+\mathbf{u}t'-\mathbf{b}|}
++Q_{B}\frac{\delta\!\left(t'-\dfrac{|\mathbf{x}'+\mathbf{u}t'-\mathbf{b}|}{c}\right)}{|\mathbf{x}'+\mathbf{u}t'-\mathbf{b}|}.
 \right]
 $$
 
@@ -573,7 +573,7 @@ $$
 **检验 1（静止极限）** 在 @eq-field-B 中令 $\mathbf{v}\to\mathbf{0}$。此时 $\mathbf{d}\to\mathbf{x}-\mathbf{b}$，由 @eq-roots 得 $s_{+}\to|\mathbf{x}-\mathbf{b}|/c$，故 $\tau^{*}\to t-|\mathbf{x}-\mathbf{b}|/c$，$R_{B}^{*}\to|\mathbf{x}-\mathbf{b}|$，因子 $\bigl(1-\hat{\mathbf{n}}\cdot\mathbf{v}/c\bigr)^{-1}\to 1$，于是
 
 $$
-\varphi_{B}\longrightarrow\frac{q_{B}\!\left(t-\dfrac{|\mathbf{x}-\mathbf{b}|}{c}\right)}{4\pi c^{2}|\mathbf{x}-\mathbf{b}|}
+\varphi_{B}\longrightarrow\frac{q_{B}\!\left(t-\dfrac{|\mathbf{x}-\mathbf{b}|}{c}\right)}{4\pi c^{2}|\mathbf{x}-\mathbf{b}|},
 $$
 
 与 @eq-field-A 在 $\mathbf{a}\to\mathbf{b}$ 时一致。
@@ -581,19 +581,19 @@ $$
 **检验 2（平面波与速度叠加）** 对 @eq-moving-pde 取平面波 $\varphi=e^{i(\mathbf{k}\cdot\mathbf{x}'-\omega't')}$：
 
 $$
-\bigl(\partial_{t'}-\mathbf{u}\cdot\nabla'\bigr)\mapsto-i(\omega'+\mathbf{u}\cdot\mathbf{k}),\qquad \nabla'^{2}\mapsto-|\mathbf{k}|^{2}
+\bigl(\partial_{t'}-\mathbf{u}\cdot\nabla'\bigr)\mapsto-i(\omega'+\mathbf{u}\cdot\mathbf{k}),\qquad \nabla'^{2}\mapsto-|\mathbf{k}|^{2},
 $$
 
 $$
 -(\omega'+\mathbf{u}\cdot\mathbf{k})^{2}+c^{2}|\mathbf{k}|^{2}=0
 \quad\Longrightarrow\quad
-\omega'=-\mathbf{u}\cdot\mathbf{k}\pm c|\mathbf{k}|
+\omega'=-\mathbf{u}\cdot\mathbf{k}\pm c|\mathbf{k}|.
 $$
 
 相速度为
 
 $$
-\frac{\omega'}{|\mathbf{k}|}=\pm c-\mathbf{u}\cdot\hat{\mathbf{k}}
+\frac{\omega'}{|\mathbf{k}|}=\pm c-\mathbf{u}\cdot\hat{\mathbf{k}},
 $$
 
 与 @cnj-galilei-transform 对速度矢量给出的 $\mathbf{w}'=\mathbf{w}-\mathbf{u}$（取 $|\mathbf{w}|=c$）在共线情形下完全一致。
@@ -603,7 +603,7 @@ $$
 **检验 4（叠加）** 由 @eq-total-impulse，$\varphi_{A}+\varphi_{B}$ 满足
 
 $$
-L(\varphi_{A}+\varphi_{B})=L\varphi_{A}+L\varphi_{B}
+L(\varphi_{A}+\varphi_{B})=L\varphi_{A}+L\varphi_{B},
 $$
 
 而 $\varphi_{A},\varphi_{B}$ 分别为右端 $Q_{A}\delta(\tau)\delta^{3}(\mathbf{x}-\mathbf{a})$、$Q_{B}\delta(\tau)\delta^{3}(\mathbf{x}-\mathbf{b})$ 的推迟解。
@@ -617,7 +617,7 @@ $$
 两位参与方，其世界线在静系中分别为
 
 $$
-\mathbf{x}_{G}(t)=\mathbf{g}\quad(\text{常向量}),\qquad \mathbf{x}_{T}(t)=\mathbf{x}_{0}+\mathbf{u}t
+\mathbf{x}_{G}(t)=\mathbf{g}\quad(\text{常向量}),\qquad \mathbf{x}_{T}(t)=\mathbf{x}_{0}+\mathbf{u}t.
 $$
 
 两个瞬时发射事件分别为 $E_{A}=\bigl(\mathbf{a},\tau_{A}\bigr)$ 与 $E_{B}=\bigl(\mathbf{p}_{B}(\tau_{B}),\tau_{B}\bigr)$，其中 $\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$。
@@ -626,13 +626,13 @@ $$
 
 $$
 R^{(i)}_{A}=\bigl(\mathbf{x}_{i}(t^{(i)}_{A}),\,t^{(i)}_{A}\bigr),\qquad
-R^{(i)}_{B}=\bigl(\mathbf{x}_{i}(t^{(i)}_{B}),\,t^{(i)}_{B}\bigr)
+R^{(i)}_{B}=\bigl(\mathbf{x}_{i}(t^{(i)}_{B}),\,t^{(i)}_{B}\bigr).
 $$
 
 **待求**：一个程序 $\mathcal{P}$，输入第 $i$ 位参与方的自有记录，输出两个数 $\widehat{\tau}^{(i)}_{A}$、$\widehat{\tau}^{(i)}_{B}$，使得判定
 
 $$
-\widehat{\tau}^{(i)}_{A}=\widehat{\tau}^{(i)}_{B}
+\widehat{\tau}^{(i)}_{A}=\widehat{\tau}^{(i)}_{B}.
 $$
 
 对 $i=G$ 与 $i=T$ 同时成立或同时不成立。
@@ -654,7 +654,7 @@ $$
 一次接收只给出**一个**方程
 
 $$
-\bigl|\mathbf{x}_{i}(t^{(i)})- \mathbf{p}\bigr|=c\bigl(t^{(i)}-\tau\bigr)
+\bigl|\mathbf{x}_{i}(t^{(i)})- \mathbf{p}\bigr|=c\bigl(t^{(i)}-\tau\bigr),
 $$
 
 而未知量为 $(\tau,\mathbf{p})\in\mathbb{R}\times\mathbb{R}^{3}$，共四个。故单靠一次接收无法定出 $\tau$。
@@ -671,7 +671,7 @@ $$
 4. 解方程
 
 $$
-\bigl|\mathbf{x}_{i}(t^{(i)}_{k})-\mathbf{p}_{k}(\tau)\bigr|=c\bigl(t^{(i)}_{k}-\tau\bigr)
+\bigl|\mathbf{x}_{i}(t^{(i)}_{k})-\mathbf{p}_{k}(\tau)\bigr|=c\bigl(t^{(i)}_{k}-\tau\bigr).
 $$ {#eq-measure-core}
 
 5. 输出解 $\widehat{\tau}^{(i)}_{k}$。
@@ -681,19 +681,19 @@ $$ {#eq-measure-core}
 **静止源（$k=A$）** $\mathbf{p}_{A}\equiv\mathbf{a}$，@eq-measure-core 对 $\tau$ 是线性的：
 
 $$
-\widehat{\tau}^{(i)}_{A}=t^{(i)}_{A}-\frac{\bigl|\mathbf{x}_{i}(t^{(i)}_{A})-\mathbf{a}\bigr|}{c}
+\widehat{\tau}^{(i)}_{A}=t^{(i)}_{A}-\frac{\bigl|\mathbf{x}_{i}(t^{(i)}_{A})-\mathbf{a}\bigr|}{c}.
 $$ {#eq-measure-A}
 
 **运动源（$k=B$）** 令 $s:=t^{(i)}_{B}-\tau$、$\mathbf{d}:=\mathbf{x}_{i}(t^{(i)}_{B})-\mathbf{b}-\mathbf{v}t^{(i)}_{B}$，则 @eq-measure-core 化为 @eq-quadratic：
 
 $$
-(c^{2}-v^{2})s^{2}-2(\mathbf{d}\cdot\mathbf{v})s-|\mathbf{d}|^{2}=0
+(c^{2}-v^{2})s^{2}-2(\mathbf{d}\cdot\mathbf{v})s-|\mathbf{d}|^{2}=0.
 $$
 
 由 @tbl-roots 取正根 $s_{+}$（$v<c$ 时唯一），输出
 
 $$
-\widehat{\tau}^{(i)}_{B}=t^{(i)}_{B}-s_{+}
+\widehat{\tau}^{(i)}_{B}=t^{(i)}_{B}-s_{+}.
 $$ {#eq-measure-B}
 
 ### 定理：程序输出的参与方无关性
@@ -705,7 +705,7 @@ $$ {#eq-measure-B}
 
 $$
 \widehat{\tau}^{(G)}_{A}=\widehat{\tau}^{(T)}_{A},\qquad
-\widehat{\tau}^{(G)}_{B}=\widehat{\tau}^{(T)}_{B}
+\widehat{\tau}^{(G)}_{B}=\widehat{\tau}^{(T)}_{B}.
 $$
 
 因此判定“$\widehat{\tau}_{A}=\widehat{\tau}_{B}$”对两位参与方同时成立或同时不成立
@@ -716,7 +716,7 @@ $$
 第一步（$\tau_{k}$ 是 @eq-measure-core 的解）。由 A1，从 $E_{k}$ 发出的扰动在静系中沿直线以速率 $c$ 传播，故它在时刻 $t$ 到达位于 $\mathbf{x}_{i}(t)$ 的参与方，当且仅当
 
 $$
-\bigl|\mathbf{x}_{i}(t)-\mathbf{p}_{k}(\tau_{k})\bigr|=c\,(t-\tau_{k})
+\bigl|\mathbf{x}_{i}(t)-\mathbf{p}_{k}(\tau_{k})\bigr|=c\,(t-\tau_{k}),
 $$
 
 而 $t^{(i)}_{k}$ 正是这个方程关于 $t$ 的解（即波前与参与方世界线相交的时刻），把 $t=t^{(i)}_{k}$ 代回即得 @eq-measure-core 在 $\tau=\tau_{k}$ 时成立。
@@ -724,7 +724,7 @@ $$
 第二步（解的唯一性）。$k=A$ 时 @eq-measure-core 对 $\tau$ 线性，解唯一；$k=B$ 时化为 @eq-quadratic，由 @tbl-roots，在 $v<c$ 时正根唯一。故程序输出
 
 $$
-\widehat{\tau}^{(i)}_{k}=\tau_{k}=t(E_{k})
+\widehat{\tau}^{(i)}_{k}=\tau_{k}=t(E_{k}).
 $$
 
 第三步（坐标无关性）。$\tau_{k}=t(E_{k})$ 是点 $E_{k}\in M$ 的静系时间坐标。由 A2，$t'=t$，故这个数值在用 $S_{0}$ 还是用 $S_{\mathbf{u}}$ 的坐标去读时相同。
@@ -742,23 +742,23 @@ $$
 若参与方还能测出扰动到达时的方向（本系中的单位向量 $\mathbf{m}$），则它可与程序结果相互校验。由速度合成，若 $\mathbf{n}$ 是该射线在静系中的单位方向、$\lambda>0$ 是它在本系中的速率，则
 
 $$
-c\,\mathbf{n}=\mathbf{u}_{i}+\lambda\mathbf{m}
+c\,\mathbf{n}=\mathbf{u}_{i}+\lambda\mathbf{m}.
 $$
 
 两边取模平方，由 $|\mathbf{n}|=1$、$|\mathbf{m}|=1$：
 
 $$
-\lambda^{2}+2(\mathbf{m}\cdot\mathbf{u}_{i})\lambda+|\mathbf{u}_{i}|^{2}-c^{2}=0
+\lambda^{2}+2(\mathbf{m}\cdot\mathbf{u}_{i})\lambda+|\mathbf{u}_{i}|^{2}-c^{2}=0.
 $$
 
 取正根（当 $|\mathbf{u}_{i}|<c$ 时判别式恒正且仅一根为正）：
 
 $$
-\lambda=-(\mathbf{m}\cdot\mathbf{u}_{i})+\sqrt{(\mathbf{m}\cdot\mathbf{u}_{i})^{2}+c^{2}-|\mathbf{u}_{i}|^{2}}
+\lambda=-(\mathbf{m}\cdot\mathbf{u}_{i})+\sqrt{(\mathbf{m}\cdot\mathbf{u}_{i})^{2}+c^{2}-|\mathbf{u}_{i}|^{2}},
 $$ {#eq-direction-inversion}
 
 $$
-\mathbf{n}=\frac{\mathbf{u}_{i}+\lambda\mathbf{m}}{c}
+\mathbf{n}=\frac{\mathbf{u}_{i}+\lambda\mathbf{m}}{c}.
 $$
 
 把它与程序算出的 $\bigl(\mathbf{x}_{i}(t^{(i)}_{k})-\mathbf{p}_{k}(\widehat{\tau})\bigr)/\bigl|\mathbf{x}_{i}(t^{(i)}_{k})-\mathbf{p}_{k}(\widehat{\tau})\bigr|$ 比较，两者应当相等。
@@ -770,13 +770,13 @@ $$
 **地面参与方，静止源**：接收时刻由 $|\mathbf{g}-\mathbf{a}|=c\,t^{(G)}_{A}$ 定出，代入 @eq-measure-A：
 
 $$
-\widehat{\tau}^{(G)}_{A}=t^{(G)}_{A}-\frac{|\mathbf{g}-\mathbf{a}|}{c}=t^{(G)}_{A}-\frac{c\,t^{(G)}_{A}}{c}=0
+\widehat{\tau}^{(G)}_{A}=t^{(G)}_{A}-\frac{|\mathbf{g}-\mathbf{a}|}{c}=t^{(G)}_{A}-\frac{c\,t^{(G)}_{A}}{c}=0.
 $$
 
 **火车参与方，静止源**：接收时刻由 $|\mathbf{x}_{T}(t^{(T)}_{A})-\mathbf{a}|=c\,t^{(T)}_{A}$ 定出，代入 @eq-measure-A：
 
 $$
-\widehat{\tau}^{(T)}_{A}=t^{(T)}_{A}-\frac{|\mathbf{x}_{T}(t^{(T)}_{A})-\mathbf{a}|}{c}=t^{(T)}_{A}-\frac{c\,t^{(T)}_{A}}{c}=0
+\widehat{\tau}^{(T)}_{A}=t^{(T)}_{A}-\frac{|\mathbf{x}_{T}(t^{(T)}_{A})-\mathbf{a}|}{c}=t^{(T)}_{A}-\frac{c\,t^{(T)}_{A}}{c}=0.
 $$
 
 **运动源**：对任一位参与方，$s=t^{(i)}_{B}$ 满足 @eq-quadratic，因为
@@ -785,7 +785,7 @@ $$
 \bigl|\mathbf{d}+\mathbf{v}t^{(i)}_{B}\bigr|
 =\bigl|\mathbf{x}_{i}(t^{(i)}_{B})-\mathbf{b}-\mathbf{v}t^{(i)}_{B}+\mathbf{v}t^{(i)}_{B}\bigr|
 =\bigl|\mathbf{x}_{i}(t^{(i)}_{B})-\mathbf{b}\bigr|
-=c\,t^{(i)}_{B}
+=c\,t^{(i)}_{B}.
 $$
 
 最后一步用的是 $\tau_{B}=0$ 时 $\mathbf{p}_{B}(0)=\mathbf{b}$ 与 A1。故 $\widehat{\tau}^{(i)}_{B}=t^{(i)}_{B}-s=0$。

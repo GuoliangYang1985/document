@@ -75,7 +75,7 @@ R_{\mu\nu}
 -\partial_{\nu}\Gamma^{\rho}_{\rho\mu}
 +\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{\nu\mu}
 -\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\mu},
-\qquad R=g^{\mu\nu}R_{\mu\nu}
+\qquad R=g^{\mu\nu}R_{\mu\nu}.
 $$
 
 ## 电磁场 {#sec-notation-em}

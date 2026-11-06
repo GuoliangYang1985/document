@@ -59,7 +59,7 @@ $s[\gamma_B]=s[\gamma_A]$，对 $K=c$ 与 $K=\infty$ 都成立。
 
 $$
 t=T(s)+x_A\sinh\theta(s),\qquad
-x=X(s)+x_A\cosh\theta(s),
+x=X(s)+x_A\cosh\theta(s).
 $$ {#eq-tn-fermi}
 
 其中 $T(s)=\int_0^{s}\cosh\theta(u)\,\mathrm{d}u$，$X(s)=\int_0^{s}\sinh\theta(u)\,\mathrm{d}u$。几何意义：从 $\gamma_A$ 上参数为 $s$ 的点出发，沿该点的正交单位方向移动距离 $x_A$。$\gamma_A$ 在此坐标中是 $x_A=0$，且 $t_A=s_A$（纵轴即参数本身）。
@@ -71,13 +71,13 @@ $$ {#eq-tn-fermi}
 $K=c$ 支：
 
 $$
-\mathrm{d}s^{2}=\bigl(1+a(s)\,x_A\bigr)^{2}\,\mathrm{d}s^{2}-\mathrm{d}x_A^{2}
+\mathrm{d}s^{2}=\bigl(1+a(s)\,x_A\bigr)^{2}\,\mathrm{d}s^{2}-\mathrm{d}x_A^{2}.
 $$ {#eq-tn-metric-c}
 
 $K=\infty$ 支：
 
 $$
-\mathrm{d}s^{2}=\mathrm{d}s^{2}
+\mathrm{d}s^{2}=\mathrm{d}s^{2}.
 $$ {#eq-tn-metric-inf}
 :::
 
@@ -110,13 +110,13 @@ $K=c$ 支直线段（$a=0$）上的换算可以直接写出。设 A、B 的相�
 $$
 \mathrm{d}t_A=\gamma_w\,\mathrm{d}s_B
 \qquad\Longrightarrow\qquad
-\mathrm{d}s_B=\frac{\mathrm{d}t_A}{\gamma_w},
+\mathrm{d}s_B=\frac{\mathrm{d}t_A}{\gamma_w}.
 $$ {#eq-tn-ratio-A}
 
 B 视角同理（$w\to-w$，$\gamma_w$ 不变）得 $\mathrm{d}s_A=\mathrm{d}t_B/\gamma_w$。两式是**两个独立的计算**，关于不同的事件对，分别成立、互不矛盾；它们与 @eq-tc-ratio-L 是同一件事的两种记法（那边按 A 系同时面配对，这边按另一侧的坐标换算；两边都用 (M4) 的 $s$）。$K=\infty$ 支中，同一换算给出
 
 $$
-\mathrm{d}s_B=\mathrm{d}t_A,
+\mathrm{d}s_B=\mathrm{d}t_A.
 $$ {#eq-tn-read-inf}
 
 右端只含端点的 $t_A$ 坐标，与两条曲线的形状无关；故该支 $s[\gamma_B]=t_A(M)-t_A(O)$。
@@ -132,7 +132,7 @@ $$ {#eq-tn-read-inf}
 $K=c$ 支：映射 @eq-tn-fermi 在点 $(s,x_A)$ 附近一一对应，当且仅当
 
 $$
-1+\frac{a(s)\,x_A}{c^{2}}>0 .
+1+\frac{a(s)\,x_A}{c^{2}}>0.
 $$ {#eq-tn-condition-c}
 
 $K=\infty$ 支：映射 $t_A=t$、$x_A=x-X(t)$ 的雅可比行列式为 $1$，处处非零；上式在该支**没有对应的限制**，映射在全体 $(t,x)$ 上一一对应。
@@ -145,7 +145,7 @@ $K=\infty$ 支：映射 $t_A=t$、$x_A=x-X(t)$ 的雅可比行列式为 $1$，�
 弧线段上 $a\neq0$，A 视角坐标的线元由 @eq-tn-metric-c 给出。取解析可解的镜像曲线对。先取 $c=1$，末尾再恢复 $c$：$\gamma_A$ 为固有曲率 $+a$ 的标准双曲运动
 
 $$
-\gamma_A:\quad t=\frac{1}{a}\sinh(as_A),\qquad x=\frac{1}{a}\bigl(\cosh(as_A)-1\bigr),
+\gamma_A:\quad t=\frac{1}{a}\sinh(as_A),\qquad x=\frac{1}{a}\bigl(\cosh(as_A)-1\bigr).
 $$
 
 $\gamma_B$ 是它关于 $x=0$ 的镜像（曲率随之变为 $-a$）
@@ -159,7 +159,7 @@ $$
 记 $\gamma_B$ 上线长为 $s_B$ 的事件在 A 视角坐标中的坐标为 $(\tau',x_A)$，并记 $u=as_B$、$\rho=1+a\,x_A$。把 $\gamma_B$ 的参数式代入 @eq-tn-fermi 并用正交条件消去 $\gamma_A$ 的参数，得到
 
 $$
-\rho\sinh(a\tau')=\sinh u,\qquad \rho\cosh(a\tau')=2-\cosh u .
+\rho\sinh(a\tau')=\sinh u,\qquad \rho\cosh(a\tau')=2-\cosh u.
 $$ {#eq-tn-image-arc}
 
 两式平方相减消去 $\tau'$，得 $\rho^{2}=5-4\cosh u$；实像存在当且仅当 $\rho^{2}>0$，即
@@ -167,7 +167,7 @@ $$ {#eq-tn-image-arc}
 $$
 \cosh u<\frac54
 \qquad\Longleftrightarrow\qquad
-u<\operatorname{arccosh}\tfrac54=\ln 2 .
+u<\operatorname{arccosh}\tfrac54=\ln 2.
 $$ {#eq-tn-ln2}
 
 注意这里的 $u=as_B$ 是 **$\gamma_B$ 自身线长**的无量纲化，不是 A 视角的时间坐标。
@@ -179,7 +179,7 @@ $$ {#eq-tn-ln2}
 $K=c$ 支中，A 视角坐标里 $\gamma_B$ 的像存在的条件是
 
 $$
-\frac{a\,s_B}{c}<\ln 2\approx0.693 .
+\frac{a\,s_B}{c}<\ln 2\approx0.693,
 $$
 
 即 $\gamma_B$ 自身线长越过 $(c/a)\ln2$ 之后的部分，在 A 视角坐标中**没有实像**——图上该段不再表示 $\gamma_B$。临界处 $\rho=\sqrt{5-4\cosh(\ln 2)}=0$，即 $x_A=-c^{2}/a$：像恰好到达 @eq-tn-condition-c 的边界；同一步伐上 $\tanh(a\tau'/c)\to1$，A 视角的时间坐标 $\tau'$ 发散。所以这条上界只能写在 $s_B$ 上——$s_A$ 沿像可以取任意大的值，它没有上界。
@@ -202,7 +202,7 @@ $$
 $K=\infty$ 支没有这个限制：设 $\gamma_B$ 为 $x=\xi(t)$，它在 A 视角坐标中的像为
 
 $$
-t_A=t,\qquad x_A=\xi(t)-X(t),
+t_A=t,\qquad x_A=\xi(t)-X(t).
 $$ {#eq-tn-image-inf}
 
 对任意轨迹 $\xi$ 都存在，且坐标映射处处单射。
@@ -298,7 +298,7 @@ $K=c$ 支中，设事件 $X$ 由 $O$ 出发沿直线段（任意恒定速率 $|u
 
 $$
 s[\gamma_A]=s_1+s[E_A\to F_A]+s_2,\qquad
-s[\gamma_B]=s_1+s[E_B\to F_B]+s_2 .
+s[\gamma_B]=s_1+s[E_B\to F_B]+s_2.
 $$
 
 这里的 $s_1$（段 I）与 $s_2$（段 III）在两式中是**同一个数**——不是“两侧各有一个数值相等的数”。因此相减时它们自行消去：
@@ -326,7 +326,7 @@ $$
 x(t)=\begin{cases}
 -0.6\,t, & 0\le t\le 1,\\[2pt]
 0.3\,t^{2}-1.2\,t+0.3, & 1\le t\le 3,\\[2pt]
-0.6\,t-2.4, & 3\le t\le 4,
+0.6\,t-2.4, & 3\le t\le 4.
 \end{cases}
 $$ {#eq-tn-example}
 

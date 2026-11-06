@@ -55,7 +55,7 @@ $$
 \begin{pmatrix} t'\\ x' \end{pmatrix}
 =
 \begin{pmatrix} A & B\\ C & D \end{pmatrix}
-\begin{pmatrix} t\\ x \end{pmatrix}
+\begin{pmatrix} t\\ x \end{pmatrix}.
 $$ {#eq-isg-mat}
 
 其中 $A,B,C,D$ 为相对速度 $v$ 的函数。以下逐步定出它们。
@@ -65,7 +65,7 @@ $$ {#eq-isg-mat}
 $S'$ 的原点满足 $x'=0$。设其在 $S$ 系中速度为 $v$，即 $x=vt$。由 @eq-isg-mat 第二行：
 
 $$
-C\,t+D\,(vt)=0\quad\Longrightarrow\quad C=-vD
+C\,t+D\,(vt)=0\quad\Longrightarrow\quad C=-vD.
 $$ {#eq-isg-C}
 
 ### 第二步：$S$ 原点在 $S'$ 中的轨迹
@@ -73,19 +73,19 @@ $$ {#eq-isg-C}
 $S$ 的原点满足 $x=0$。由 (A2)（空间反射对称），其在 $S'$ 系中速度为 $-v$：
 
 $$
-x'=-v\,t'
+x'=-v\,t'.
 $$ {#eq-isg-S-origin}
 
 把 $x=0$ 代入 @eq-isg-mat：
 
 $$
-t'=A\,t,\qquad x'=C\,t
+t'=A\,t,\qquad x'=C\,t.
 $$
 
 代入 @eq-isg-S-origin：
 
 $$
-C\,t=-v\,(A\,t)\quad\Longrightarrow\quad C=-vA
+C\,t=-v\,(A\,t)\quad\Longrightarrow\quad C=-vA.
 $$ {#eq-isg-C2}
 
 ### 第三步：由第一步与第二步得 $A=D$
@@ -93,19 +93,19 @@ $$ {#eq-isg-C2}
 比较 @eq-isg-C 与 @eq-isg-C2（$v\neq0$ 时）：
 
 $$
--vD=-vA\quad\Longrightarrow\quad D=A
+-vD=-vA\quad\Longrightarrow\quad D=A.
 $$ {#eq-isg-AD}
 
 代回 @eq-isg-C：
 
 $$
-C=-vA
+C=-vA.
 $$ {#eq-isg-C3}
 
 至此，@eq-isg-mat 化为
 
 $$
-t'=A\,(t+\beta x),\qquad x'=A\,(x-vt)
+t'=A\,(t+\beta x),\qquad x'=A\,(x-vt).
 $$ {#eq-isg-form}
 
 其中记 $B=:A\beta$，$\beta$ 为待定函数。
@@ -115,11 +115,11 @@ $$ {#eq-isg-form}
 设某物在 $S$ 系中速度为 $K$：$x=Kt$。由 @eq-isg-form：
 
 $$
-t'=A\,(t+\beta K t)=A\,t\,(1+\beta K)
+t'=A\,(t+\beta K t)=A\,t\,(1+\beta K),
 $$
 
 $$
-x'=A\,(Kt-vt)=A\,t\,(K-v)
+x'=A\,(Kt-vt)=A\,t\,(K-v).
 $$
 
 由 (A4)，其在 $S'$ 系中速度亦为 $K$：
@@ -127,26 +127,26 @@ $$
 $$
 \frac{x'}{t'}=K
 \quad\Longrightarrow\quad
-\frac{A\,t\,(K-v)}{A\,t\,(1+\beta K)}=K
+\frac{A\,t\,(K-v)}{A\,t\,(1+\beta K)}=K.
 $$
 
 消去 $A\,t$（$A\neq0,\ t\neq0$）：
 
 $$
-K-v=K\,(1+\beta K)=K+\beta K^{2}
+K-v=K\,(1+\beta K)=K+\beta K^{2},
 $$
 
 $$
 -v=\beta K^{2}
 \quad\Longrightarrow\quad
-\beta=-\frac{v}{K^{2}}
+\beta=-\frac{v}{K^{2}}.
 $$ {#eq-isg-beta}
 
 代回 @eq-isg-form，得变换的**形式**
 
 $$
 t'=A(v)\Bigl(t-\frac{v\,x}{K^{2}}\Bigr),\qquad
-x'=A(v)\,(x-vt)
+x'=A(v)\,(x-vt).
 $$ {#eq-isg-family}
 
 其中 $A(v)$ 尚未定出，由 (A3)（群结构）确定。
@@ -160,7 +160,7 @@ $$
 \begin{pmatrix}
 1 & -\dfrac{v}{K^{2}}\\[6pt]
 -v & 1
-\end{pmatrix}
+\end{pmatrix}.
 $$ {#eq-isg-Lambda}
 
 **复合两个变换。** 先算矩阵部分（记 $M(v):=\begin{pmatrix}1&-v/K^{2}\\-v&1\end{pmatrix}$）：
@@ -174,7 +174,7 @@ M(v)\,M(u)=
 \begin{pmatrix}
 1 & -\dfrac{u}{K^{2}}\\[4pt]
 -u & 1
-\end{pmatrix}
+\end{pmatrix}.
 $$
 
 逐项相乘：
@@ -185,7 +185,7 @@ $$
 1\cdot\Bigl(-\dfrac{u}{K^{2}}\Bigr)+\Bigl(-\dfrac{v}{K^{2}}\Bigr)\cdot1\\[10pt]
 (-v)\cdot1+1\cdot(-u) &
 (-v)\Bigl(-\dfrac{u}{K^{2}}\Bigr)+1\cdot1
-\end{pmatrix}
+\end{pmatrix},
 $$
 
 $$
@@ -199,13 +199,13 @@ $$
 \begin{pmatrix}
 1 & -\dfrac{w}{K^{2}}\\[6pt]
 -w & 1
-\end{pmatrix}
+\end{pmatrix}.
 $$
 
 其中
 
 $$
-w:=\frac{u+v}{1+\dfrac{uv}{K^{2}}}
+w:=\frac{u+v}{1+\dfrac{uv}{K^{2}}},
 $$ {#eq-isg-w}
 
 即 $M(v)M(u)=\Bigl(1+\frac{uv}{K^{2}}\Bigr)M(w)$。
@@ -213,23 +213,23 @@ $$ {#eq-isg-w}
 由 (A3)，$\Lambda(v)\Lambda(u)$ 必须仍属于此族，即
 
 $$
-\Lambda(v)\Lambda(u)=\Lambda(w)
+\Lambda(v)\Lambda(u)=\Lambda(w),
 $$
 
 $$
-A(v)A(u)\Bigl(1+\frac{uv}{K^{2}}\Bigr)M(w)=A(w)M(w)
+A(v)A(u)\Bigl(1+\frac{uv}{K^{2}}\Bigr)M(w)=A(w)M(w).
 $$
 
 比较系数：
 
 $$
-A(v)\,A(u)\Bigl(1+\frac{uv}{K^{2}}\Bigr)=A(w)
+A(v)\,A(u)\Bigl(1+\frac{uv}{K^{2}}\Bigr)=A(w).
 $$ {#eq-isg-func}
 
 取 $u=-v$，则 $w=0$，且 $A(0)=1$（恒等变换），代入 @eq-isg-func：
 
 $$
-A(v)\,A(-v)\Bigl(1-\frac{v^{2}}{K^{2}}\Bigr)=1
+A(v)\,A(-v)\Bigl(1-\frac{v^{2}}{K^{2}}\Bigr)=1.
 $$ {#eq-isg-func2}
 
 由 (A2)（空间反射），$A(-v)=A(v)$，故
@@ -237,10 +237,10 @@ $$ {#eq-isg-func2}
 $$
 A(v)^{2}=\frac{1}{1-\dfrac{v^{2}}{K^{2}}}
 \quad\Longrightarrow\quad
-A(v)=\frac{1}{\sqrt{1-\dfrac{v^{2}}{K^{2}}}}
+A(v)=\frac{1}{\sqrt{1-\dfrac{v^{2}}{K^{2}}}}.
 $$ {#eq-isg-A}
 
-（取正根，使 $v\to0$ 时 $A\to1$。)
+（取正根，使 $v\to0$ 时 $A\to1$。）
 
 ### 结果：恒速群
 
@@ -249,13 +249,13 @@ $$ {#eq-isg-A}
 $$
 \boxed{
 t'=\frac{t-\dfrac{v\,x}{K^{2}}}{\sqrt{1-\dfrac{v^{2}}{K^{2}}}},\qquad
-x'=\frac{x-vt}{\sqrt{1-\dfrac{v^{2}}{K^{2}}}}}
+x'=\frac{x-vt}{\sqrt{1-\dfrac{v^{2}}{K^{2}}}}}.
 $$ {#eq-isg-final}
 
 由 @eq-isg-w，相对速度的合成律为
 
 $$
-w=\frac{u+v}{1+\dfrac{uv}{K^{2}}}
+w=\frac{u+v}{1+\dfrac{uv}{K^{2}}}.
 $$ {#eq-isg-composition}
 
 **@eq-isg-final 只含一个自由参数 $K$。**
@@ -269,7 +269,7 @@ $K$ 也进入不变量：本节先看不变量如何随 $K$ 变，再看 $K=\inf
 对任意有限 $K$，由 @eq-isg-final 可直接验证二次型
 
 $$
-Q_K(t,x):=K^{2}t^{2}-x^{2}
+Q_K(t,x):=K^{2}t^{2}-x^{2}.
 $$
 
 在变换下不变。逐项写出：
@@ -277,7 +277,7 @@ $$
 $$
 Q_K(t',x')
 =K^{2}t'^{2}-x'^{2}
-=\frac{K^{2}\left(t-\dfrac{vx}{K^{2}}\right)^{2}-(x-vt)^{2}}{1-\dfrac{v^{2}}{K^{2}}}
+=\frac{K^{2}\left(t-\dfrac{vx}{K^{2}}\right)^{2}-(x-vt)^{2}}{1-\dfrac{v^{2}}{K^{2}}}.
 $$
 
 分子展开（逐项）：
@@ -288,7 +288,7 @@ $$
 &=\left(K^{2}t^{2}-2vtx+\frac{v^{2}x^{2}}{K^{2}}\right)-x^{2}+2vtx-v^{2}t^{2}\\[4pt]
 &=K^{2}t^{2}+\frac{v^{2}x^{2}}{K^{2}}-x^{2}-v^{2}t^{2}\\[4pt]
 &=(K^{2}-v^{2})\,t^{2}-\left(1-\frac{v^{2}}{K^{2}}\right)x^{2}\\[4pt]
-&=\left(1-\frac{v^{2}}{K^{2}}\right)\left(K^{2}t^{2}-x^{2}\right)
+&=\left(1-\frac{v^{2}}{K^{2}}\right)\left(K^{2}t^{2}-x^{2}\right).
 \end{aligned}
 $$
 
@@ -298,7 +298,7 @@ $$
 Q_K(t',x')
 =\frac{\left(1-\dfrac{v^{2}}{K^{2}}\right)\left(K^{2}t^{2}-x^{2}\right)}{1-\dfrac{v^{2}}{K^{2}}}
 =K^{2}t^{2}-x^{2}
-=Q_K(t,x)
+=Q_K(t,x),
 $$
 
 即 $Q_K$ 不变。
@@ -308,7 +308,7 @@ $$
 取 $K\to\infty$，由 @eq-isg-galilei 有 $t'=t$，故任意两事件的时间差满足
 
 $$
-\Delta t'=\Delta t
+\Delta t'=\Delta t.
 $$
 
 此时不变对象不再是二次型，而是**时间差本身**（以及空间长度 $\lvert\Delta x\rvert$）。
@@ -328,7 +328,7 @@ $$
 由 @eq-isg-composition，两个变换的合成对应速度
 
 $$
-w=\frac{u+v}{1+\dfrac{uv}{K^{2}}}
+w=\frac{u+v}{1+\dfrac{uv}{K^{2}}},
 $$
 
 且合成后的变换仍在族内（推导见 @sec-isg-derivation 第五步）。恒等元对应 $v=0$，逆元对应 $v\to-v$。故 $G_K$ 对复合封闭，构成群。
@@ -340,7 +340,7 @@ $$
 对 @eq-isg-final 在 $v=0$ 处求导，得 boost 生成元 $B=-\frac{x}{K^{2}}\partial_t-t\,\partial_x$。与两个平移生成元 $H=\partial_t$、$P=\partial_x$ 一起，唯一的非常数结构括号为
 
 $$
-[B,H]=P,\qquad [B,P]=\frac{1}{K^{2}}\,H
+[B,H]=P,\qquad [B,P]=\frac{1}{K^{2}}\,H.
 $$
 
 **$K$ 在李代数中只出现在结构常数 $1/K^{2}$ 的位置上**：$K$ 有限时 $[B,P]\neq0$（庞加莱型），$K=\infty$ 时 $[B,P]=0$（伽利略型）。**两支的李代数不同构**——这是“两支底层不同”在李代数层面的证明，而群收缩就是一句 $1/K^{2}\to0$。逐项推导见 @sec-invariant-speed-field-group 章。
@@ -361,13 +361,13 @@ $K$ 的取值分段给出：有限值、$K=\infty$、$K\to0$；随后三个端�
 
 $$
 \sqrt{1-\frac{v^{2}}{K^{2}}}\longrightarrow 1,\qquad
-\frac{v}{K^{2}}\longrightarrow 0
+\frac{v}{K^{2}}\longrightarrow 0.
 $$
 
 故
 
 $$
-t'=t,\qquad x'=x-vt
+t'=t,\qquad x'=x-vt.
 $$ {#eq-isg-galilei}
 
 **这就是伽利略变换。** 相应地，@eq-isg-composition 变为 $w=u+v$。
@@ -382,18 +382,18 @@ $$ {#eq-isg-galilei}
 
 $$
 \frac{v^{2}}{K^{2}}=K^{2}\beta^{2}\longrightarrow0,\qquad
-\sqrt{1-\frac{v^{2}}{K^{2}}}\longrightarrow1
+\sqrt{1-\frac{v^{2}}{K^{2}}}\longrightarrow1,
 $$
 
 $$
 \frac{v\,x}{K^{2}}=\frac{K^{2}\beta\,x}{K^{2}}=\beta x,\qquad
-vt=K^{2}\beta t\longrightarrow0
+vt=K^{2}\beta t\longrightarrow0.
 $$
 
 代入 @eq-isg-final：
 
 $$
-\boxed{t'=t-\beta x,\qquad x'=x}
+\boxed{t'=t-\beta x,\qquad x'=x}.
 $$ {#eq-isg-carroll}
 
 **@eq-isg-carroll 是 Carroll 变换**：空间坐标不变，时间坐标依位置平移。
@@ -499,7 +499,7 @@ $K=c$ 时恒速群与狭义洛伦兹变换形状相同；本节说明二者含�
 **弯曲落在哪个分量上。** 无挠情形下，空间截面是平的（空间曲率恒为零），唯一的非零曲率分量是
 
 $$
-R^{i}{}_{tjt}=\partial_{i}\partial_{j}\Phi ,
+R^{i}{}_{tjt}=\partial_{i}\partial_{j}\Phi.
 $$
 
 $\Phi$ 为引力势。在这条路线上，“把引力放进几何”等于“势的二阶导数是曲率分量”，而不是“空间弯了”。把泊松方程 $\nabla^{2}\Phi=4\pi G\rho$ 用这套量重写，其曲率形式即 $R_{tt}=4\pi G\rho$。有挠版本（TNC）在此之外另有结构，本书不用。

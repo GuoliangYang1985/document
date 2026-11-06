@@ -23,7 +23,7 @@
 设 $M$ 是一个 $n+1$ 维光滑流形。称函数
 
 $$
-K:M\longrightarrow(0,\infty]
+K:M\longrightarrow(0,\infty].
 $$
 
 为 $M$ 上的**恒速场**。
@@ -86,7 +86,7 @@ $$
 
 $$
 t'=A(v)\Bigl(t-\frac{v\,x}{K^{2}}\Bigr)+a,\qquad
-x'=A(v)\,(x-vt)+b
+x'=A(v)\,(x-vt)+b.
 $$
 
 在 1+1 维、$K$ 常数时，这是 $3$ 参数群。
@@ -97,13 +97,13 @@ $$
 
 $$
 \left.\frac{\partial t'}{\partial v}\right|_{v=0}=-\frac{x}{K^{2}},\qquad
-\left.\frac{\partial x'}{\partial v}\right|_{v=0}=-t
+\left.\frac{\partial x'}{\partial v}\right|_{v=0}=-t,
 $$
 
 即 boost 生成元为向量场
 
 $$
-B=-\frac{x}{K^{2}}\,\partial_t-t\,\partial_x
+B=-\frac{x}{K^{2}}\,\partial_t-t\,\partial_x.
 $$
 
 另两个生成元为平移：$H=\partial_t$、$P=\partial_x$。
@@ -114,7 +114,7 @@ $$
 
 $$
 [B,H]^{t}=B^{j}\partial_j H^{t}-H^{j}\partial_j B^{t}
-=0-\partial_t\!\left(-\frac{x}{K^{2}}\right)=0
+=0-\partial_t\!\left(-\frac{x}{K^{2}}\right)=0.
 $$
 
 （$K$ 为常数，故 $\partial_t(x/K^{2})=0$。）
@@ -123,33 +123,33 @@ $$
 
 $$
 [B,H]^{x}=B^{j}\partial_j H^{x}-H^{j}\partial_j B^{x}
-=0-\partial_t(-t)=1
+=0-\partial_t(-t)=1.
 $$
 
 故
 
 $$
-[B,H]=P
+[B,H]=P.
 $$ {#eq-ifg-BH}
 
 *$[B,P]$ 的时间分量*：
 
 $$
 [B,P]^{t}=B^{j}\partial_j P^{t}-P^{j}\partial_j B^{t}
-=0-\partial_x\!\left(-\frac{x}{K^{2}}\right)=\frac{1}{K^{2}}
+=0-\partial_x\!\left(-\frac{x}{K^{2}}\right)=\frac{1}{K^{2}}.
 $$
 
 *$[B,P]$ 的空间分量*：
 
 $$
 [B,P]^{x}=B^{j}\partial_j P^{x}-P^{j}\partial_j B^{x}
-=0-\partial_x(-t)=0
+=0-\partial_x(-t)=0.
 $$
 
 故
 
 $$
-[B,P]=\frac{1}{K^{2}}\,H
+[B,P]=\frac{1}{K^{2}}\,H.
 $$ {#eq-ifg-BP}
 
 另有 $[H,P]=0$（直接验算）。
@@ -166,7 +166,7 @@ $$ {#eq-ifg-BP}
 **这两个李代数不同构**——一个有非零结构常数，一个为零。这是 @sec-invariant-speed-group 章“两支底层不同”这句话在李代数层面的证明；而群收缩在李代数层面就是一句
 
 $$
-\frac{1}{K^{2}}\longrightarrow 0\qquad (K\to\infty)
+\frac{1}{K^{2}}\longrightarrow 0\qquad (K\to\infty).
 $$
 
 ### 结构常数变场
@@ -174,7 +174,7 @@ $$
 把 $K$ 换成 $K(p)$，由 @eq-ifg-BH 与 @eq-ifg-BP，每点的结构常数为
 
 $$
-[B,P]_{p}=\frac{1}{K(p)^{2}}\,H
+[B,P]_{p}=\frac{1}{K(p)^{2}}\,H.
 $$
 
 **结构常数成为时空上的函数。** 这个对象的数学名字是**李代数丛**：每根纤维上是一个李代数，不同纤维上的李代数由不同的结构常数刻画。
@@ -198,7 +198,7 @@ $\Lambda\in G_{K(p)}$ 与 $\Lambda'\in G_{K(q)}$ 作用在**不同的向量空�
 取 1+1 维，坐标 $(t,x)$。把 $B$ 的分量中的 $K$ 换成 $K(t,x)$：
 
 $$
-B^{t}=-\frac{x}{K(t,x)^{2}},\qquad B^{x}=-t
+B^{t}=-\frac{x}{K(t,x)^{2}},\qquad B^{x}=-t.
 $$
 
 重算括号。
@@ -209,13 +209,13 @@ $$
 [B,H]^{t}=0-\partial_t\!\left(-\frac{x}{K^{2}}\right)
 =x\,\partial_t\!\left(K^{-2}\right)
 =x\cdot\left(-2K^{-3}\,\partial_tK\right)
-=-\frac{2x}{K^{3}}\,\partial_tK
+=-\frac{2x}{K^{3}}\,\partial_tK.
 $$
 
 空间分量同前为 $1$，故
 
 $$
-[B,H]=P-\frac{2x\,\partial_tK}{K^{3}}\,H
+[B,H]=P-\frac{2x\,\partial_tK}{K^{3}}\,H.
 $$ {#eq-ifg-BH-field}
 
 *$[B,P]$ 的时间分量*：
@@ -223,13 +223,13 @@ $$ {#eq-ifg-BH-field}
 $$
 [B,P]^{t}=0-\partial_x\!\left(-\frac{x}{K^{2}}\right)
 =\partial_x\!\left(x\,K^{-2}\right)
-=K^{-2}+x\left(-2K^{-3}\,\partial_xK\right)
+=K^{-2}+x\left(-2K^{-3}\,\partial_xK\right).
 $$
 
 空间分量同前为 $0$，故
 
 $$
-[B,P]=\left(\frac{1}{K^{2}}-\frac{2x\,\partial_xK}{K^{3}}\right)H
+[B,P]=\left(\frac{1}{K^{2}}-\frac{2x\,\partial_xK}{K^{3}}\right)H.
 $$ {#eq-ifg-BP-field}
 
 ### 两个后果
@@ -243,7 +243,7 @@ $$ {#eq-ifg-BP-field}
 
 $$
 \frac{x\,\partial_\mu K}{K^{3}}
-=\frac{\partial_\mu K}{K}\cdot\frac{x}{K^{2}}
+=\frac{\partial_\mu K}{K}\cdot\frac{x}{K^{2}},
 $$
 
 即都正比于 $\partial_\mu K/K$。
@@ -267,7 +267,7 @@ $$
 在 $n+1$ 维流形上取度规
 
 $$
-\mathrm{d}s^{2}=K^{2}\,\mathrm{d}t^{2}-\delta_{ij}\,\mathrm{d}x^{i}\mathrm{d}x^{j}
+\mathrm{d}s^{2}=K^{2}\,\mathrm{d}t^{2}-\delta_{ij}\,\mathrm{d}x^{i}\mathrm{d}x^{j}.
 $$ {#eq-ifg-metric}
 
 其中 $K=K(t,x^{1},\dots,x^{n})$ 即恒速场，$\delta_{ij}$ 为欧氏度规。
@@ -278,11 +278,11 @@ $$ {#eq-ifg-metric}
 度规分量及其逆：
 
 $$
-g_{00}=K^{2},\qquad g_{ij}=-\delta_{ij},\qquad g_{0i}=0
+g_{00}=K^{2},\qquad g_{ij}=-\delta_{ij},\qquad g_{0i}=0,
 $$
 
 $$
-g^{00}=\frac{1}{K^{2}},\qquad g^{ij}=-\delta^{ij},\qquad g^{0i}=0
+g^{00}=\frac{1}{K^{2}},\qquad g^{ij}=-\delta^{ij},\qquad g^{0i}=0.
 $$
 
 **注意 $g_{ij}=-\delta_{ij}$ 是常数**，故 $\partial_\mu g_{ij}=0$；唯一的非零导数是 $\partial_\mu g_{00}=2K\,\partial_\mu K$。这是下面所有计算得以大幅简化的原因。
@@ -291,7 +291,7 @@ $$
 
 $$
 \Gamma^{\rho}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}
-\bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr)
+\bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr).
 $$
 
 逐项代入（$\rho=0$ 时求和只剩 $\sigma=0$；$\rho=k$ 时只剩 $\sigma=l$）。
@@ -301,7 +301,7 @@ $$
 $$
 \Gamma^{0}_{00}=\frac{1}{2}g^{00}\bigl(\partial_0g_{00}+\partial_0g_{00}-\partial_0g_{00}\bigr)
 =\frac{1}{2}\cdot\frac{1}{K^{2}}\cdot\bigl(2K\,\partial_0K\bigr)
-=\frac{\partial_0K}{K}
+=\frac{\partial_0K}{K}.
 $$
 
 **(b) $\Gamma^{0}_{0i}=\Gamma^{0}_{i0}$**
@@ -309,13 +309,13 @@ $$
 $$
 \Gamma^{0}_{0i}=\frac{1}{2}g^{00}\bigl(\partial_0g_{i0}+\partial_ig_{00}-\partial_0g_{i0}\bigr)
 =\frac{1}{2}\cdot\frac{1}{K^{2}}\cdot\bigl(2K\,\partial_iK\bigr)
-=\frac{\partial_iK}{K}
+=\frac{\partial_iK}{K}.
 $$
 
 **(c) $\Gamma^{0}_{ij}$**
 
 $$
-\Gamma^{0}_{ij}=\frac{1}{2}g^{00}\bigl(\partial_ig_{j0}+\partial_jg_{i0}-\partial_0g_{ij}\bigr)=0
+\Gamma^{0}_{ij}=\frac{1}{2}g^{00}\bigl(\partial_ig_{j0}+\partial_jg_{i0}-\partial_0g_{ij}\bigr)=0.
 $$
 
 （前两项含 $g_{i0}=0$，第三项含 $\partial_0g_{ij}=0$。）
@@ -325,17 +325,17 @@ $$
 $$
 \Gamma^{k}_{00}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{0l}+\partial_0g_{0l}-\partial_lg_{00}\bigr)
 =\frac{1}{2}\bigl(-\delta^{kl}\bigr)\bigl(-2K\,\partial_lK\bigr)
-=K\,\partial_kK
+=K\,\partial_kK.
 $$
 
 **(e) $\Gamma^{k}_{0i}$ 与 $\Gamma^{k}_{ij}$**
 
 $$
-\Gamma^{k}_{0i}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{il}+\partial_ig_{0l}-\partial_lg_{0i}\bigr)=0
+\Gamma^{k}_{0i}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{il}+\partial_ig_{0l}-\partial_lg_{0i}\bigr)=0,
 $$
 
 $$
-\Gamma^{k}_{ij}=\frac{1}{2}g^{kl}\bigl(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\bigr)=0
+\Gamma^{k}_{ij}=\frac{1}{2}g^{kl}\bigl(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\bigr)=0.
 $$
 
 **汇总**（其余为零）：
@@ -343,7 +343,7 @@ $$
 $$
 \Gamma^{0}_{00}=\frac{\partial_0K}{K},\qquad
 \Gamma^{0}_{0i}=\Gamma^{0}_{i0}=\frac{\partial_iK}{K},\qquad
-\Gamma^{k}_{00}=K\,\partial_kK
+\Gamma^{k}_{00}=K\,\partial_kK.
 $$ {#eq-ifg-christoffel}
 
 **关键观察**：所有非零 Christoffel 符号都形如 $\partial_\mu K/K$，与 @sec-ifg-cross 中“多出来的项”同型。
@@ -354,7 +354,7 @@ $$
 R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}_{\nu\sigma}
 -\partial_\nu\Gamma^{\rho}_{\rho\sigma}
 +\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{\nu\sigma}
--\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}
+-\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}.
 $$
 
 记 $\lvert\nabla K\rvert^{2}:=\sum_k(\partial_kK)^{2}$，$\Delta K:=\sum_k\partial_k\partial_kK$（空间拉普拉斯），$K_0:=\partial_0K$。
@@ -366,11 +366,11 @@ $$
 $$
 \partial_\rho\Gamma^{\rho}_{00}
 =\partial_0\Gamma^{0}_{00}+\partial_k\Gamma^{k}_{00}
-=\partial_0\!\left(\frac{K_0}{K}\right)+\partial_k\bigl(K\,\partial_kK\bigr)
+=\partial_0\!\left(\frac{K_0}{K}\right)+\partial_k\bigl(K\,\partial_kK\bigr),
 $$
 
 $$
-=\left(\frac{\partial_0^{2}K}{K}-\frac{K_0^{2}}{K^{2}}\right)+\lvert\nabla K\rvert^{2}+K\,\Delta K
+=\left(\frac{\partial_0^{2}K}{K}-\frac{K_0^{2}}{K^{2}}\right)+\lvert\nabla K\rvert^{2}+K\,\Delta K.
 $$
 
 *第二项*：
@@ -379,7 +379,7 @@ $$
 \partial_0\Gamma^{\rho}_{\rho0}
 =\partial_0\bigl(\Gamma^{0}_{00}+\Gamma^{k}_{k0}\bigr)
 =\partial_0\!\left(\frac{K_0}{K}+0\right)
-=\frac{\partial_0^{2}K}{K}-\frac{K_0^{2}}{K^{2}}
+=\frac{\partial_0^{2}K}{K}-\frac{K_0^{2}}{K^{2}}.
 $$
 
 *第三项*（$\lambda$ 取 $0$ 与 $i$ 两类）：
@@ -388,7 +388,7 @@ $$
 \Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{00}
 =\frac{K_0}{K}\cdot\frac{K_0}{K}
 +\sum_i\frac{\partial_iK}{K}\cdot\bigl(K\,\partial_iK\bigr)
-=\frac{K_0^{2}}{K^{2}}+\lvert\nabla K\rvert^{2}
+=\frac{K_0^{2}}{K^{2}}+\lvert\nabla K\rvert^{2}.
 $$
 
 *第四项*（$(\rho,\lambda)$ 的四种组合 $(0,0)$、$(0,i)$、$(k,0)$、$(k,i)$）：
@@ -399,7 +399,7 @@ $$
 +\frac{\partial_iK}{K}\cdot\bigl(K\,\partial_iK\bigr)
 +\bigl(K\,\partial_kK\bigr)\cdot\frac{\partial_kK}{K}
 +0
-=\frac{K_0^{2}}{K^{2}}+2\lvert\nabla K\rvert^{2}
+=\frac{K_0^{2}}{K^{2}}+2\lvert\nabla K\rvert^{2}.
 $$
 
 *四项相减*（第一项 − 第二项 + 第三项 − 第四项）：
@@ -408,13 +408,13 @@ $$
 R_{00}=\bigl[\lvert\nabla K\rvert^{2}+K\,\Delta K\bigr]
 +\bigl[\lvert\nabla K\rvert^{2}\bigr]
 -\bigl[2\lvert\nabla K\rvert^{2}\bigr]
-=K\,\Delta K
+=K\,\Delta K.
 $$
 
 其中含 $\partial_0^{2}K$ 与 $K_0^{2}$ 的项在第一、二项之间精确抵消。故
 
 $$
-\boxed{R_{00}=K\,\Delta K}
+\boxed{R_{00}=K\,\Delta K}.
 $$
 
 **(b) $R_{ij}$** 的四项分别为：
@@ -426,7 +426,7 @@ $$
 $$
 \partial_j\Gamma^{\rho}_{\rho i}
 =\partial_j\!\left(\frac{\partial_iK}{K}\right)
-=\frac{\partial_i\partial_jK}{K}-\frac{\partial_iK\,\partial_jK}{K^{2}}
+=\frac{\partial_i\partial_jK}{K}-\frac{\partial_iK\,\partial_jK}{K^{2}}.
 $$
 
 *第四项*（只有 $(\rho,\lambda)=(0,0)$ 非零）：
@@ -434,7 +434,7 @@ $$
 $$
 \Gamma^{\rho}_{j\lambda}\Gamma^{\lambda}_{\rho i}
 =\Gamma^{0}_{j0}\,\Gamma^{0}_{0i}
-=\frac{\partial_jK}{K}\cdot\frac{\partial_iK}{K}
+=\frac{\partial_jK}{K}\cdot\frac{\partial_iK}{K}.
 $$
 
 *四项相减*：
@@ -443,11 +443,11 @@ $$
 R_{ij}
 =0-\left(\frac{\partial_i\partial_jK}{K}-\frac{\partial_iK\,\partial_jK}{K^{2}}\right)
 +0-\frac{\partial_iK\,\partial_jK}{K^{2}}
-=-\frac{\partial_i\partial_jK}{K}
+=-\frac{\partial_i\partial_jK}{K},
 $$
 
 $$
-\boxed{R_{ij}=-\frac{\partial_i\partial_jK}{K}}
+\boxed{R_{ij}=-\frac{\partial_i\partial_jK}{K}}.
 $$
 
 **(c) $R_{0i}$** 的四项分别为：
@@ -455,24 +455,24 @@ $$
 $$
 \partial_\rho\Gamma^{\rho}_{0i}
 =\partial_0\!\left(\frac{\partial_iK}{K}\right)
-=\frac{\partial_0\partial_iK}{K}-\frac{\partial_iK\,K_0}{K^{2}}
+=\frac{\partial_0\partial_iK}{K}-\frac{\partial_iK\,K_0}{K^{2}},
 $$
 
 $$
 \partial_i\Gamma^{\rho}_{\rho0}
 =\partial_i\!\left(\frac{K_0}{K}\right)
-=\frac{\partial_0\partial_iK}{K}-\frac{K_0\,\partial_iK}{K^{2}}
+=\frac{\partial_0\partial_iK}{K}-\frac{K_0\,\partial_iK}{K^{2}},
 $$
 
 $$
 \Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{0i}=\frac{K_0}{K}\cdot\frac{\partial_iK}{K},\qquad
-\Gamma^{\rho}_{i\lambda}\Gamma^{\lambda}_{\rho0}=\frac{\partial_iK}{K}\cdot\frac{K_0}{K}
+\Gamma^{\rho}_{i\lambda}\Gamma^{\lambda}_{\rho0}=\frac{\partial_iK}{K}\cdot\frac{K_0}{K}.
 $$
 
 四项相减时，两类项两两精确抵消：
 
 $$
-\boxed{R_{0i}=0}
+\boxed{R_{0i}=0}.
 $$
 
 ### Ricci 标量
@@ -480,16 +480,16 @@ $$
 $$
 R=g^{00}R_{00}+g^{ij}R_{ij}
 =\frac{1}{K^{2}}\bigl(K\,\Delta K\bigr)
-+\bigl(-\delta^{ij}\bigr)\left(-\frac{\partial_i\partial_jK}{K}\right)
++\bigl(-\delta^{ij}\bigr)\left(-\frac{\partial_i\partial_jK}{K}\right),
 $$
 
 $$
 =\frac{\Delta K}{K}+\frac{\delta^{ij}\partial_i\partial_jK}{K}
-=\frac{\Delta K}{K}+\frac{\Delta K}{K}
+=\frac{\Delta K}{K}+\frac{\Delta K}{K},
 $$
 
 $$
-\boxed{R=\frac{2\,\Delta K}{K}}
+\boxed{R=\frac{2\,\Delta K}{K}}.
 $$ {#eq-ifg-R}
 
 **这个结果与空间维数 $n$ 无关。**
@@ -501,29 +501,29 @@ $$ {#eq-ifg-R}
 ### Einstein 张量
 
 $$
-G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}R\,g_{\mu\nu}
+G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}R\,g_{\mu\nu}.
 $$
 
 逐项代入：
 
 $$
 G_{00}=K\,\Delta K-\frac{1}{2}\cdot\frac{2\,\Delta K}{K}\cdot K^{2}
-=K\,\Delta K-K\,\Delta K=0
+=K\,\Delta K-K\,\Delta K=0,
 $$
 
 $$
-G_{0i}=0-\frac{1}{2}R\cdot 0=0
+G_{0i}=0-\frac{1}{2}R\cdot 0=0,
 $$
 
 $$
 G_{ij}=-\frac{\partial_i\partial_jK}{K}
 -\frac{1}{2}\cdot\frac{2\,\Delta K}{K}\cdot\bigl(-\delta_{ij}\bigr)
-=\frac{\Delta K\,\delta_{ij}-\partial_i\partial_jK}{K}
+=\frac{\Delta K\,\delta_{ij}-\partial_i\partial_jK}{K},
 $$ {#eq-ifg-G}
 
 $$
 \boxed{G_{00}=0,\qquad G_{0i}=0,\qquad
-G_{ij}=\frac{\Delta K\,\delta_{ij}-\partial_i\partial_jK}{K}}
+G_{ij}=\frac{\Delta K\,\delta_{ij}-\partial_i\partial_jK}{K}}.
 $$
 
 ### 真空解 {#sec-ifg-vacuum}
@@ -531,7 +531,7 @@ $$
 由 @eq-ifg-G，真空要求 $G_{ij}=0$，即
 
 $$
-\partial_i\partial_jK=\Delta K\,\delta_{ij}
+\partial_i\partial_jK=\Delta K\,\delta_{ij}.
 $$
 
 对 $i=j$ 求和（$n$ 个空间维，$\delta_{ii}=n$）：
@@ -539,13 +539,13 @@ $$
 $$
 \Delta K=\Delta K\cdot n
 \quad\Longrightarrow\quad
-(n-1)\,\Delta K=0
+(n-1)\,\Delta K=0.
 $$
 
 当 $n\geq2$ 时得 $\Delta K=0$，代回得 $\partial_i\partial_jK=0$。故 $K$ 对空间坐标是**仿射**的：
 
 $$
-\boxed{K(t,\mathbf{x})=a(t)+b_i(t)\,x^{i}}
+\boxed{K(t,\mathbf{x})=a(t)+b_i(t)\,x^{i}},
 $$ {#eq-ifg-vacuum}
 
 即：在对角约定下，真空解只允许 $K$ 在空间上线性（其系数可依赖 $t$）。
@@ -563,7 +563,7 @@ $$ {#eq-ifg-vacuum}
 由 @eq-ifg-R，$K$ 场在对角约定下**确实产生曲率**。这是正面结果：
 
 $$
-R=\frac{2\,\Delta K}{K}
+R=\frac{2\,\Delta K}{K}.
 $$
 
 $K$ 为常数 ⟹ $R=0$；$K$ 对空间非线性 ⟹ $R\neq0$。换句话说，**在这一约定下，恒速场的不均匀性就是曲率**。
@@ -583,7 +583,7 @@ $K$ 为常数 ⟹ $R=0$；$K$ 对空间非线性 ⟹ $R\neq0$。换句话说，*
 由 @eq-ifg-G，$G_{00}=0$ **恒成立**。若写 Einstein 方程 $G_{\mu\nu}=\kappa T_{\mu\nu}$，则
 
 $$
-T_{00}=\frac{1}{\kappa}G_{00}=0
+T_{00}=\frac{1}{\kappa}G_{00}=0.
 $$
 
 **这意味着：在对角约定下，无论 $K$ 场取什么形状，能量密度恒为零。**
@@ -672,7 +672,7 @@ $K$ 场可以在不同区域取不同类型的端点值。设 $\Sigma\subset M$ 
 
 $$
 K\bigr|_{\text{一侧}}\ \text{有限},\qquad
-K\bigr|_{\text{另一侧}}\ \to\infty
+K\bigr|_{\text{另一侧}}\ \to\infty.
 $$
 
 由 @sec-invariant-speed-group 章的结论：有限 $K$ 的群彼此同构，但它们与 $K=\infty$ 的群**不同构**（李代数层面即 $[B,P]=H/K^{2}$ 与 $[B,P]=0$ 之别）。

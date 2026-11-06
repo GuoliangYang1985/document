@@ -5,7 +5,7 @@
 本章把规范参数从一个函数换成一个向量场：底空间与度规都不动，仍取 $(\mathbb{R}^{4},\eta)$；基本场从一个 1-形式换成一个对称二阶张量场 $h_{\mu\nu}$，规范变换取
 
 $$
-\delta_{\xi}h_{\mu\nu}:=\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}
+\delta_{\xi}h_{\mu\nu}:=\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}.
 $$ {#eq-gauge-preview}
 
 （@def-linear-gauge 给出这条式子的来源）。这是一次结构上的提升——规范参数由函数变成向量场——本章全部内容都是这一个差别的展开。
@@ -27,13 +27,13 @@ $$ {#eq-gauge-preview}
 底空间固定为 $M=\mathbb{R}^{4}$，其上固定一个平直度规 $\eta$，分量为 $\eta_{\mu\nu}=\mathrm{diag}(+1,-1,-1,-1)$，在一切坐标系中取这同一组常数（$\partial_{\mu}\eta_{\nu\rho}=0$）。取 $M$ 上一个光滑的对称二阶张量场
 
 $$
-h_{\mu\nu}=h_{\nu\mu}
+h_{\mu\nu}=h_{\nu\mu}.
 $$ {#eq-grav-field}
 
 其指标由 $\eta$ 升降。再由 $h$ 定义一个二阶对称张量
 
 $$
-g_{\mu\nu} := \eta_{\mu\nu}+h_{\mu\nu}
+g_{\mu\nu} := \eta_{\mu\nu}+h_{\mu\nu}.
 $$ {#eq-def-g}
 
 @eq-def-g 只是一个定义，不含任何假设：任一可逆的对称二阶张量 $g$ 与固定的 $\eta$ 都可以这样配成一对，也可以反过来由这对张量解出 $h=g-\eta$。
@@ -57,14 +57,14 @@ $$ {#eq-def-g}
 $$
 x^{\mu}\mapsto x'^{\mu}=x^{\mu}-\xi^{\mu}(x),
 \qquad
-|\partial\xi|\ll1
+|\partial\xi|\ll1.
 $$ {#eq-coord-change}
 
 其逆映射为 $x^{\mu}=x'^{\mu}+\xi^{\mu}(x')+O(\xi^{2})$，故
 
 $$
 \frac{\partial x^{\lambda}}{\partial x'^{\mu}}
-=\delta^{\lambda}_{\mu}+\partial_{\mu}\xi^{\lambda}+O(\xi^{2})
+=\delta^{\lambda}_{\mu}+\partial_{\mu}\xi^{\lambda}+O(\xi^{2}).
 $$
 
 任一二阶张量场 $T$ 在这族坐标变换下，同一点的新分量与旧分量由链式法则相联系：
@@ -72,7 +72,7 @@ $$
 $$
 T'_{\mu\nu}(x')
 =\frac{\partial x^{\lambda}}{\partial x'^{\mu}}
-\frac{\partial x^{\sigma}}{\partial x'^{\nu}}\,T_{\lambda\sigma}(x)
+\frac{\partial x^{\sigma}}{\partial x'^{\nu}}\,T_{\lambda\sigma}(x).
 $$
 
 下面按“同一坐标值处比较分量”这一约定，把 $T'_{\mu\nu}(x')$ 在 $x'=x$ 处的取值（此时右端的自变量为 $x(x')=x+\xi(x)+O(\xi^{2})$）与 $T_{\mu\nu}(x)$ 相减。代入上式并展开到 $O(\xi)$：
@@ -85,7 +85,7 @@ T'_{\mu\nu}(x)
 T_{\lambda\sigma}\bigl(x+\xi+O(\xi^{2})\bigr)\\
 &=T_{\mu\nu}(x)+\xi^{\lambda}\partial_{\lambda}T_{\mu\nu}
 +\partial_{\mu}\xi^{\lambda}T_{\lambda\nu}
-+\partial_{\nu}\xi^{\sigma}T_{\mu\sigma}+O(\xi^{2})
++\partial_{\nu}\xi^{\sigma}T_{\mu\sigma}+O(\xi^{2}).
 \end{aligned}
 $$
 
@@ -96,7 +96,7 @@ $$
 =\partial_{\mu}\xi^{\lambda}T_{\lambda\nu}
 +\partial_{\nu}\xi^{\lambda}T_{\mu\lambda}
 +\xi^{\lambda}\partial_{\lambda}T_{\mu\nu}
-+O(\xi^{2})
++O(\xi^{2}).
 $$ {#eq-tensor-change}
 
 （@eq-tensor-change 的右端正是 $T$ 沿 $\xi$ 的李导数 $\mathcal{L}_{\xi}T$ 的分量式：前两项来自指标的变换，第三项来自坐标的改变。）
@@ -114,14 +114,14 @@ $$
 &=\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}
 +\bigl(\partial_{\mu}\xi^{\lambda}h_{\lambda\nu}
 +\partial_{\nu}\xi^{\lambda}h_{\mu\lambda}
-+\xi^{\lambda}\partial_{\lambda}h_{\mu\nu}\bigr)
++\xi^{\lambda}\partial_{\lambda}h_{\mu\nu}\bigr).
 \end{aligned}
 $$ {#eq-g-change}
 
 （第一个等号用到 $\partial_{\mu}\xi^{\lambda}\eta_{\lambda\nu}=\partial_{\mu}\xi_{\nu}$，因为 $\eta$ 的分量为常数。）右端括号内的三项各含一个 $h$，是 $h$ 的一阶小量。本章把 $\eta$ 固定为背景，即约定它的分量改变量为零（$\delta\eta:=0$），于是把 @eq-g-change 的全部改变都记到 $h$ 头上：
 
 $$
-\delta h_{\mu\nu}:=\delta g_{\mu\nu}
+\delta h_{\mu\nu}:=\delta g_{\mu\nu}.
 $$
 
 其最低阶项恰为 @eq-gauge-preview，高阶项各含一个 $h$ 的因子。本章把 $h$ 当作任意光滑场，并按 @def-linear-gauge 把 @eq-gauge-preview 作为一个**精确的**线性微分算子使用，而不把它当作某个展开的首项。
@@ -134,7 +134,7 @@ $$
 $$
 \delta_{\xi}h_{\mu\nu} := \partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu},
 \qquad
-\xi_{\nu} := \eta_{\nu\rho}\xi^{\rho}
+\xi_{\nu} := \eta_{\nu\rho}\xi^{\rho}.
 $$ {#eq-linear-gauge}
 
 称 $\delta_{\xi}$ 为**规范变换**，$\xi$ 为**规范参数**。$\delta_{\xi}$ 关于 $\xi$ 是线性的：$\delta_{\xi^{(1)}+\xi^{(2)}}=\delta_{\xi^{(1)}}+\delta_{\xi^{(2)}}$，$\delta_{a\xi}=a\,\delta_{\xi}$（$a$ 为常数）。参数到算子的对应不是单射：$\delta_{\xi}=0$（作为算子）当且仅当 $\xi$ 是 $\eta$ 的无穷小等距，此时 $\xi_{\mu}=a_{\mu}+b_{\mu\nu}x^{\nu}$（$a$ 为常向量、$b$ 为常反对称矩阵），故 $\ker\delta$ 恰由 $\eta$ 的 $4$ 个平移生成元与 $6$ 个洛伦兹生成元张成，$\dim\ker\delta=4+6=10$。
@@ -147,7 +147,7 @@ $$
 \qquad
 \partial_{\nu}\xi_{\rho}+\partial_{\rho}\xi_{\nu}=0,
 \qquad
-\partial_{\rho}\xi_{\mu}+\partial_{\mu}\xi_{\rho}=0
+\partial_{\rho}\xi_{\mu}+\partial_{\mu}\xi_{\rho}=0.
 $$ {#eq-killing-equations}
 
 对第二式求 $\partial_{\mu}$、对第三式求 $\partial_{\nu}$、对第一式求 $\partial_{\rho}$，再作线性组合（第二式 + 第三式 − 第一式）：
@@ -158,7 +158,7 @@ $$
 +\left(\partial_{\nu}\partial_{\rho}\xi_{\mu}+\partial_{\nu}\partial_{\mu}\xi_{\rho}\right)
 -\left(\partial_{\rho}\partial_{\mu}\xi_{\nu}+\partial_{\rho}\partial_{\nu}\xi_{\mu}\right)\\
 &=\partial_{\mu}\partial_{\nu}\xi_{\rho}+\partial_{\nu}\partial_{\mu}\xi_{\rho}
-=2\,\partial_{\mu}\partial_{\nu}\xi_{\rho}
+=2\,\partial_{\mu}\partial_{\nu}\xi_{\rho}.
 \end{aligned}
 $$
 
@@ -167,7 +167,7 @@ $$
 $$
 \xi_{\rho}=a_{\rho}+b_{\rho\nu}x^{\nu},
 \qquad
-a_{\rho},b_{\rho\nu}\ \text{为常数},\quad b_{\rho\nu}=-b_{\nu\rho}
+a_{\rho},b_{\rho\nu}\ \text{为常数},\quad b_{\rho\nu}=-b_{\nu\rho}.
 $$
 
 自由参数 $4+6=10$ 个。反之，对每个这样的 $\xi$ 有 $\delta_{\xi}h_{\mu\nu}=b_{\nu\mu}+b_{\mu\nu}=0$。故 $\dim\ker\delta=10$。
@@ -178,7 +178,7 @@ $$
 
 $$
 \delta_{\xi}h\;\in\;\ker R^{(1)}
-\qquad\text{对一切 }\xi
+\qquad\text{对一切 }\xi.
 $$
 
 这两条给出读数：$h$ 中被 $R^{(1)}$ 探测到的部分不受规范变换的影响（$R^{(1)}$ 是规范不变量），而 $h$ 中落在 $\delta$ 的像里的部分不携带任何 $R^{(1)}$ 信息。
@@ -188,7 +188,7 @@ $$
 把 Levi-Civita 联络
 
 $$
-\Gamma^{\lambda}{}_{\mu\nu}=\frac{1}{2}g^{\lambda\kappa}\left(\partial_{\mu}g_{\nu\kappa}+\partial_{\nu}g_{\mu\kappa}-\partial_{\kappa}g_{\mu\nu}\right)
+\Gamma^{\lambda}{}_{\mu\nu}=\frac{1}{2}g^{\lambda\kappa}\left(\partial_{\mu}g_{\nu\kappa}+\partial_{\nu}g_{\mu\kappa}-\partial_{\kappa}g_{\mu\nu}\right).
 $$
 
 中的 $g=\eta+h$ 代入。由于 $\partial\eta=0$，零阶项为零，一阶项只来自 $\eta^{\lambda\kappa}\partial h$；又因 $g^{\lambda\kappa}=\eta^{\lambda\kappa}+O(h)$，展开到一阶：
@@ -197,7 +197,7 @@ $$
 \Gamma^{(1)\lambda}{}_{\mu\nu}
 =\frac{1}{2}\eta^{\lambda\kappa}\left(\partial_{\mu}h_{\nu\kappa}+\partial_{\nu}h_{\mu\kappa}-\partial_{\kappa}h_{\mu\nu}\right),
 \qquad
-\Gamma^{\lambda}{}_{\mu\nu}=\Gamma^{(1)\lambda}{}_{\mu\nu}+O(h^{2})
+\Gamma^{\lambda}{}_{\mu\nu}=\Gamma^{(1)\lambda}{}_{\mu\nu}+O(h^{2}).
 $$ {#eq-lin-christoffel}
 
 黎曼张量 $R^{\lambda}{}_{\sigma\mu\nu}=\partial_{\mu}\Gamma^{\lambda}{}_{\nu\sigma}-\partial_{\nu}\Gamma^{\lambda}{}_{\mu\sigma}+\Gamma^{\lambda}{}_{\mu\kappa}\Gamma^{\kappa}{}_{\nu\sigma}-\Gamma^{\lambda}{}_{\nu\kappa}\Gamma^{\kappa}{}_{\mu\sigma}$ 对 $\Gamma$ 是二次的，故 $\Gamma\Gamma$ 项是 $O(h^{2})$，一阶项只来自 $\partial\Gamma$：
@@ -206,7 +206,7 @@ $$
 \begin{aligned}
 R^{(1)}_{\mu\nu\rho\sigma}
 &=\eta_{\rho\lambda}\left(\partial_{\mu}\Gamma^{(1)\lambda}{}_{\sigma\nu}-\partial_{\nu}\Gamma^{(1)\lambda}{}_{\sigma\mu}\right)\\
-&=\frac{1}{2}\left(\partial_{\nu}\partial_{\rho}h_{\mu\sigma}+\partial_{\mu}\partial_{\sigma}h_{\nu\rho}-\partial_{\mu}\partial_{\rho}h_{\nu\sigma}-\partial_{\nu}\partial_{\sigma}h_{\mu\rho}\right)
+&=\frac{1}{2}\left(\partial_{\nu}\partial_{\rho}h_{\mu\sigma}+\partial_{\mu}\partial_{\sigma}h_{\nu\rho}-\partial_{\mu}\partial_{\rho}h_{\nu\sigma}-\partial_{\nu}\partial_{\sigma}h_{\mu\rho}\right).
 \end{aligned}
 $$ {#eq-lin-riemann}
 
@@ -217,13 +217,13 @@ $$ {#eq-lin-riemann}
 $$
 R^{(1)}_{\mu\nu\rho\sigma}=-R^{(1)}_{\nu\mu\rho\sigma}=-R^{(1)}_{\mu\nu\sigma\rho},
 \qquad
-R^{(1)}_{\mu\nu\rho\sigma}=R^{(1)}_{\rho\sigma\mu\nu}
+R^{(1)}_{\mu\nu\rho\sigma}=R^{(1)}_{\rho\sigma\mu\nu}.
 $$ {#eq-riemann-symmetries}
 
 （第一式：交换 $\mu\leftrightarrow\nu$ 时四项互换并整体变号；交换 $\rho\leftrightarrow\sigma$ 同理。第二式：把 $(\mu,\nu)$ 与 $(\rho,\sigma)$ 两组指标互换，四项重新排列后不变。）此外第一比安基恒等式也成立：
 
 $$
-R^{(1)}_{\mu\nu\rho\sigma}+R^{(1)}_{\mu\sigma\nu\rho}+R^{(1)}_{\mu\rho\sigma\nu}=0
+R^{(1)}_{\mu\nu\rho\sigma}+R^{(1)}_{\mu\sigma\nu\rho}+R^{(1)}_{\mu\rho\sigma\nu}=0.
 $$ {#eq-first-bianchi}
 
 其原因为：这三项之和是 $g$ 的黎曼张量的相应组合在 $g=\eta$ 处的一阶项，而 $g$ 的黎曼张量满足同一组合的恒等式（对一切 $g$ 为零），故其线性化也恒为零。
@@ -238,13 +238,13 @@ R^{(1)}_{\mu\nu} = \eta^{\rho\sigma}R^{(1)}_{\mu\rho\nu\sigma},
 \qquad
 R^{(1)} = \eta^{\mu\nu}R^{(1)}_{\mu\nu},
 \qquad
-G^{(1)}_{\mu\nu}[h] = R^{(1)}_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}R^{(1)}
+G^{(1)}_{\mu\nu}[h] = R^{(1)}_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}R^{(1)},
 $$ {#eq-lin-einstein}
 
 则对 @eq-linear-gauge 的任意 $\xi$，
 
 $$
-R^{(1)}_{\mu\nu\rho\sigma}[\delta_{\xi}h] = 0
+R^{(1)}_{\mu\nu\rho\sigma}[\delta_{\xi}h] = 0,
 $$ {#eq-lin-gauge-invariance}
 
 即 $R^{(1)}_{\mu\nu\rho\sigma}$、$R^{(1)}_{\mu\nu}$、$R^{(1)}$、$G^{(1)}_{\mu\nu}$ 都是规范不变量。
@@ -263,7 +263,7 @@ $$
 -\partial_{\mu}\partial_{\rho}\partial_{\sigma}\xi_{\nu}
 -\partial_{\nu}\partial_{\sigma}\partial_{\mu}\xi_{\rho}
 -\partial_{\nu}\partial_{\sigma}\partial_{\rho}\xi_{\mu}\\
-={}&0
+={}&0.
 \end{aligned}
 $$ {#eq-gauge-invariance-expansion}
 
@@ -291,7 +291,7 @@ $$ {#eq-gauge-invariance-expansion}
 $$
 E_{\mu\nu}[h]
 = \alpha\,G^{(1)}_{\mu\nu}[h]
-+\beta\left(R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}\right)
++\beta\left(R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}\right).
 $$ {#eq-fp-general}
 
 其中 $G^{(1)}$、$R^{(1)}$ 见 @eq-lin-einstein。于是 $E=0$ 只有三种可能：
@@ -321,7 +321,7 @@ E_{\mu\nu}
 +c\,\partial_{(\mu}\partial^{\alpha}h_{\nu)\alpha}
 +d\,\partial_{\mu}\partial_{\nu}h
 +e\,\eta_{\mu\nu}\partial^{2} h
-+f\,\eta_{\mu\nu}\partial^{\alpha}\partial^{\beta}h_{\alpha\beta}
++f\,\eta_{\mu\nu}\partial^{\alpha}\partial^{\beta}h_{\alpha\beta}.
 $$ {#eq-general-linear}
 
 七个待定系数 $a,g,b,c,d,e,f$，而这是全部（零阶两项、二阶五项）。
@@ -334,7 +334,7 @@ u&=\eta^{\alpha\beta}u_{\alpha\beta}=2\,\partial\cdot\xi,\\
 \partial^{\alpha}u_{\nu\alpha}&=\partial^{\alpha}\left(\partial_{\nu}\xi_{\alpha}+\partial_{\alpha}\xi_{\nu}\right)=\partial_{\nu}(\partial\cdot\xi)+\partial^{2}\xi_{\nu},\\
 \partial^{\alpha}\partial^{\beta}u_{\alpha\beta}
 &=\partial^{\alpha}\partial^{\beta}\left(\partial_{\alpha}\xi_{\beta}+\partial_{\beta}\xi_{\alpha}\right)
-=2\,\partial^{2}(\partial\cdot\xi)
+=2\,\partial^{2}(\partial\cdot\xi).
 \end{aligned}
 $$
 
@@ -358,7 +358,7 @@ E_{\mu\nu}[u]
 +2g\,\eta_{\mu\nu}\,\partial\cdot\xi
 +(b+c)\left(\partial_{\mu}\partial^{2}\xi_{\nu}+\partial_{\nu}\partial^{2}\xi_{\mu}\right)\\
 &+2(c+d)\,\partial_{\mu}\partial_{\nu}(\partial\cdot\xi)
-+2(e+f)\,\eta_{\mu\nu}\,\partial^{2}(\partial\cdot\xi)
++2(e+f)\,\eta_{\mu\nu}\,\partial^{2}(\partial\cdot\xi).
 \end{aligned}
 $$ {#eq-gauge-variation}
 
@@ -375,7 +375,7 @@ S_{2}=\mathrm{i}\,\eta_{\mu\nu}(k\cdot A),
 S_{3}=-k^{2}S_{1},\\
 S_{4}=-k_{\mu}k_{\nu}(k\cdot A),
 \qquad
-S_{5}=-k^{2}S_{2}
+S_{5}=-k^{2}S_{2}.
 \end{gathered}
 $$
 
@@ -384,7 +384,7 @@ $$
 $$
 \left[a-(b+c)k^{2}\right]S_{1}
 +\left[2g-2(e+f)k^{2}\right]S_{2}
-+2(c+d)\,S_{4}=0
++2(c+d)\,S_{4}=0.
 $$ {#eq-independence}
 
 三个张量 $S_{1}=\mathrm{i}(k_{\mu}A_{\nu}+k_{\nu}A_{\mu})$、$S_{2}=\mathrm{i}\eta_{\mu\nu}(k\cdot A)$、$S_{4}=-k_{\mu}k_{\nu}(k\cdot A)$ 对每个 $k$ 线性无关：取 $k=(k_{0},k_{1},0,0)$（$k_{0}k_{1}\neq0$）与 $A=(1,0,0,0)$，则 $(2,2)$ 元只含 $S_{2}$（值为 $-\mathrm{i}k_{0}$），得 $S_{2}$ 的系数为零；把它代回 $(1,1)$ 元（$-\mathrm{i}k_{0}$ 与 $-k_{0}k_{1}^{2}$ 两项）得 $S_{4}$ 的系数为零；再代回 $(0,1)$ 元（$\mathrm{i}k_{1}$ 与 $-k_{0}^{2}k_{1}$ 两项）得 $S_{1}$ 的系数为零。由于 @eq-independence 对一切 $(A,k)$ 成立而 $A$ 可随 $k$ 任取，三个方括号对一切 $k$ 为零：
@@ -393,7 +393,7 @@ $$
 \begin{gathered}
 a-(b+c)k^{2}\equiv0\ \Longrightarrow\ a=0,\quad b+c=0,\\
 2g-2(e+f)k^{2}\equiv0\ \Longrightarrow\ g=0,\quad e+f=0,\\
-2(c+d)=0
+2(c+d)=0.
 \end{gathered}
 $$
 
@@ -408,7 +408,7 @@ b = -c,
 \qquad
 d = -c,
 \qquad
-e = -f
+e = -f.
 $$ {#eq-fp-conditions}
 
 **第四步：化简。** 把 @eq-fp-conditions 代回 @eq-general-linear，并记
@@ -416,7 +416,7 @@ $$ {#eq-fp-conditions}
 $$
 A_{\mu\nu}:=\partial_{(\mu}\partial^{\alpha}h_{\nu)\alpha}-\partial^{2} h_{\mu\nu}-\partial_{\mu}\partial_{\nu}h,
 \qquad
-B:=\partial^{\alpha}\partial^{\beta}h_{\alpha\beta}-\partial^{2} h
+B:=\partial^{\alpha}\partial^{\beta}h_{\alpha\beta}-\partial^{2} h,
 $$ {#eq-AB-def}
 
 则 $E_{\mu\nu}=c\,A_{\mu\nu}+f\,\eta_{\mu\nu}B$。下面把 $A$、$B$ 用 @eq-lin-einstein 的量表出。由 @eq-lin-riemann 缩并（第二个与第四个指标缩并）得
@@ -427,7 +427,7 @@ R^{(1)}_{\mu\nu}
 \partial_{\nu}\partial^{\alpha}h_{\mu\alpha}
 +\partial_{\mu}\partial^{\alpha}h_{\nu\alpha}
 -\partial_{\mu}\partial_{\nu}h
--\partial^{2}h_{\mu\nu}
+-\partial^{2}h_{\mu\nu}.
 \right)
 $$ {#eq-lin-ricci}
 
@@ -435,7 +435,7 @@ $$ {#eq-lin-ricci}
 
 $$
 A_{\mu\nu}=2R^{(1)}_{\mu\nu}
-=2G^{(1)}_{\mu\nu}+\eta_{\mu\nu}R^{(1)}=2G^{(1)}_{\mu\nu}+\eta_{\mu\nu}B
+=2G^{(1)}_{\mu\nu}+\eta_{\mu\nu}R^{(1)}=2G^{(1)}_{\mu\nu}+\eta_{\mu\nu}B.
 $$ {#eq-A-in-G}
 
 （第二个等号用了 $G^{(1)}_{\mu\nu}=R^{(1)}_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}R^{(1)}$。）再对 @eq-lin-ricci 取迹：
@@ -443,13 +443,13 @@ $$ {#eq-A-in-G}
 $$
 R^{(1)}=\eta^{\mu\nu}R^{(1)}_{\mu\nu}
 =\frac{1}{2}\left(2\,\partial^{\mu}\partial^{\nu}h_{\mu\nu}-2\,\partial^{2}h\right)
-=\partial^{\mu}\partial^{\nu}h_{\mu\nu}-\partial^{2}h=B
+=\partial^{\mu}\partial^{\nu}h_{\mu\nu}-\partial^{2}h=B.
 $$ {#eq-B-equals-R}
 
 代入 $E_{\mu\nu}=cA_{\mu\nu}+f\eta_{\mu\nu}B$：
 
 $$
-E_{\mu\nu} = 2c\,G^{(1)}_{\mu\nu}+(c+f)\eta_{\mu\nu}R^{(1)}
+E_{\mu\nu} = 2c\,G^{(1)}_{\mu\nu}+(c+f)\eta_{\mu\nu}R^{(1)}.
 $$ {#eq-fp-reduced}
 
 **第五步：换成两个独立的缩并。** 记无迹 Ricci 型张量 $S_{\mu\nu}:=R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}$。由定义
@@ -457,7 +457,7 @@ $$ {#eq-fp-reduced}
 $$
 S_{\mu\nu}=G^{(1)}_{\mu\nu}+\frac{1}{4}\eta_{\mu\nu}R^{(1)}
 \quad\Longleftrightarrow\quad
-\eta_{\mu\nu}R^{(1)}=4\left(S_{\mu\nu}-G^{(1)}_{\mu\nu}\right)
+\eta_{\mu\nu}R^{(1)}=4\left(S_{\mu\nu}-G^{(1)}_{\mu\nu}\right).
 $$ {#eq-R-from-SG}
 
 （第一个等号：$R^{(1)}_{\mu\nu}=G^{(1)}_{\mu\nu}+\frac{1}{2}\eta_{\mu\nu}R^{(1)}$，减去 $\frac{1}{4}\eta_{\mu\nu}R^{(1)}$。）代入 @eq-fp-reduced：
@@ -465,7 +465,7 @@ $$ {#eq-R-from-SG}
 $$
 E_{\mu\nu}
 = 2c\,G^{(1)}_{\mu\nu}+4(c+f)\left(S_{\mu\nu}-G^{(1)}_{\mu\nu}\right)
-= -\left(2c+4f\right)G^{(1)}_{\mu\nu}+4(c+f)\,S_{\mu\nu}
+= -\left(2c+4f\right)G^{(1)}_{\mu\nu}+4(c+f)\,S_{\mu\nu},
 $$ {#eq-fp-final}
 
 即 @eq-fp-general，其中
@@ -475,7 +475,7 @@ $$
 \qquad
 \beta=4(c+f),
 \qquad
-\alpha+\beta=2c
+\alpha+\beta=2c.
 $$ {#eq-alpha-beta}
 
 **第六步：三种情形。** 先算两个迹：$\eta^{\mu\nu}G^{(1)}_{\mu\nu}=R^{(1)}-\frac{1}{2}\cdot4R^{(1)}=-R^{(1)}$，$\eta^{\mu\nu}S_{\mu\nu}=R^{(1)}-\frac{1}{4}\cdot4R^{(1)}=0$。故对 @eq-fp-general 取迹得 $\eta^{\mu\nu}E_{\mu\nu}=-\alpha R^{(1)}$。
@@ -493,7 +493,7 @@ h_{\mu\nu}=c_{0}\,\eta_{\mu\nu}\,|x|^{2},
 \qquad
 |x|^{2}:=\eta_{\alpha\beta}x^{\alpha}x^{\beta},
 \qquad
-c_{0}\neq0
+c_{0}\neq0,
 $$
 
 则 $\partial_{\alpha}|x|^{2}=2x_{\alpha}$、$\partial^{\alpha}|x|^{2}=2x^{\alpha}$、$\partial_{\alpha}\partial_{\beta}|x|^{2}=2\eta_{\alpha\beta}$、$\partial^{2}|x|^{2}=8$。又 $h=\eta^{\alpha\beta}h_{\alpha\beta}=4c_{0}|x|^{2}$，故
@@ -505,7 +505,7 @@ $$
 \quad
 \partial_{\mu}\partial_{\nu}h=8c_{0}\eta_{\mu\nu},
 \quad
-\partial^{2}h_{\mu\nu}=8c_{0}\eta_{\mu\nu}
+\partial^{2}h_{\mu\nu}=8c_{0}\eta_{\mu\nu}.
 $$
 
 代入 @eq-lin-ricci：
@@ -515,7 +515,7 @@ R^{(1)}_{\mu\nu}
 =\frac{1}{2}\left(2c_{0}\eta_{\mu\nu}+2c_{0}\eta_{\mu\nu}-8c_{0}\eta_{\mu\nu}-8c_{0}\eta_{\mu\nu}\right)
 =-6c_{0}\eta_{\mu\nu},
 \qquad
-R^{(1)}=-24c_{0}
+R^{(1)}=-24c_{0}.
 $$
 
 于是 $S_{\mu\nu}=R^{(1)}_{\mu\nu}-\frac{1}{4}\eta_{\mu\nu}R^{(1)}=-6c_{0}\eta_{\mu\nu}+6c_{0}\eta_{\mu\nu}=0$，而 $G^{(1)}_{\mu\nu}=-6c_{0}\eta_{\mu\nu}+12c_{0}\eta_{\mu\nu}=6c_{0}\eta_{\mu\nu}\neq0$。故情形（ii）的解集严格包含情形（i）的解集。
@@ -529,7 +529,7 @@ $$
 取 @prp-fierz-pauli 的情形（i）。给定 $M$ 上一个光滑对称张量场 $J_{\mu\nu}$ 与常数 $\kappa\neq0$，考虑线性方程组
 
 $$
-G^{(1)}_{\mu\nu}[h] = \kappa\,J_{\mu\nu}
+G^{(1)}_{\mu\nu}[h] = \kappa\,J_{\mu\nu}.
 $$ {#eq-fsg-field-eq}
 
 @eq-fsg-field-eq 是 $h$ 的二阶线性偏微分方程组（$4\times4$ 个方程，由对称性降为 $10$ 个），其左端恒等地无散度是它的关键性质（@prp-bianchi）。在求解之前，先把 $G^{(1)}$ 写成一个更方便的形式。
@@ -540,19 +540,19 @@ $$ {#eq-fsg-field-eq}
 由迹 $h$ 构造**迹反转场**
 
 $$
-\bar h_{\mu\nu} := h_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}h
+\bar h_{\mu\nu} := h_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}h.
 $$ {#eq-trace-reverse}
 
 称条件 $\partial^{\mu}\bar h_{\mu\nu}=0$ 为**谐和规范**。任一 $h$ 都可以通过 @eq-linear-gauge 的规范变换落入谐和规范。在谐和规范下
 
 $$
-G^{(1)}_{\mu\nu}[h] = -\frac{1}{2}\partial^{2}\bar h_{\mu\nu}
+G^{(1)}_{\mu\nu}[h] = -\frac{1}{2}\partial^{2}\bar h_{\mu\nu}.
 $$ {#eq-harmonic-g}
 
 于是 @eq-fsg-field-eq 成为
 
 $$
-\partial^{2}\bar h_{\mu\nu} = -2\kappa\,J_{\mu\nu}
+\partial^{2}\bar h_{\mu\nu} = -2\kappa\,J_{\mu\nu}.
 $$ {#eq-wave-eq-fsg}
 
 特别地，齐次情形 $J_{\mu\nu}=0$ 时，$\bar h$ 的每个分量都满足达朗贝尔方程。
@@ -563,7 +563,7 @@ $$ {#eq-wave-eq-fsg}
 $$
 \partial^{\alpha}h_{\alpha\nu}-\frac{1}{2}\partial_{\nu}h=0
 \quad\Longleftrightarrow\quad
-\partial^{\alpha}h_{\alpha\nu}=\frac{1}{2}\partial_{\nu}h
+\partial^{\alpha}h_{\alpha\nu}=\frac{1}{2}\partial_{\nu}h.
 $$ {#eq-harmonic-condition}
 
 （第一个等号把 $\partial^{\mu}\bar h_{\mu\nu}$ 展开：$\partial^{\mu}h_{\mu\nu}-\frac{1}{2}\partial_{\nu}h$。）把 @eq-harmonic-condition 代入 @eq-lin-ricci：
@@ -571,7 +571,7 @@ $$ {#eq-harmonic-condition}
 $$
 R^{(1)}_{\mu\nu}
 =\frac{1}{2}\left(\frac{1}{2}\partial_{\nu}\partial_{\mu}h+\frac{1}{2}\partial_{\mu}\partial_{\nu}h-\partial_{\mu}\partial_{\nu}h-\partial^{2}h_{\mu\nu}\right)
-=-\frac{1}{2}\partial^{2}h_{\mu\nu}
+=-\frac{1}{2}\partial^{2}h_{\mu\nu}.
 $$ {#eq-ricci-harmonic}
 
 取迹得 $R^{(1)}=-\frac{1}{2}\partial^{2}h$。代入 @eq-lin-einstein：
@@ -580,7 +580,7 @@ $$
 G^{(1)}_{\mu\nu}
 = -\frac{1}{2}\partial^{2} h_{\mu\nu}+\frac{1}{4}\eta_{\mu\nu}\partial^{2} h
 = -\frac{1}{2}\partial^{2}\left(h_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}h\right)
-= -\frac{1}{2}\partial^{2}\bar h_{\mu\nu}
+= -\frac{1}{2}\partial^{2}\bar h_{\mu\nu},
 $$
 
 即 @eq-harmonic-g；代入 @eq-fsg-field-eq 即得 @eq-wave-eq-fsg。
@@ -589,20 +589,20 @@ $$
 
 $$
 \delta_{\xi}\bar h_{\mu\nu}
-= \partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}-\eta_{\mu\nu}\,\partial^{\alpha}\xi_{\alpha}
+= \partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}-\eta_{\mu\nu}\,\partial^{\alpha}\xi_{\alpha}.
 $$ {#eq-gauge-trace-reverse}
 
 于是 $\partial^{\mu}\left(\bar h_{\mu\nu}+\delta_{\xi}\bar h_{\mu\nu}\right)$ 为
 
 $$
 \partial^{\mu}\bar h_{\mu\nu}+\left(\partial^{2}\xi_{\nu}+\partial_{\nu}\partial\cdot\xi-\partial_{\nu}\partial\cdot\xi\right)
-=\partial^{\mu}\bar h_{\mu\nu}+\partial^{2}\xi_{\nu}
+=\partial^{\mu}\bar h_{\mu\nu}+\partial^{2}\xi_{\nu}.
 $$
 
 要求它为零即得
 
 $$
-\partial^{2}\xi_{\nu}=-\partial^{\mu}\bar h_{\mu\nu}
+\partial^{2}\xi_{\nu}=-\partial^{\mu}\bar h_{\mu\nu}.
 $$ {#eq-harmonic-equation}
 
 这是 $\xi$ 的四分量线性双曲型方程：给定某个坐标面上的初值，无约束地向前演化即得一解，故谐和规范总可达到（可达性只在无穷远处的边界条件上受限）。
@@ -619,13 +619,13 @@ $$ {#eq-harmonic-equation}
 $$
 \bar h_{\mu\nu} = \varepsilon_{\mu\nu}\,e^{\mathrm{i}k_{\lambda}x^{\lambda}},
 \qquad
-k_{\lambda}k^{\lambda}=0
+k_{\lambda}k^{\lambda}=0.
 $$ {#eq-plane-wave-fsg}
 
 谐和规范条件给出横向性
 
 $$
-k^{\mu}\varepsilon_{\mu\nu}=0
+k^{\mu}\varepsilon_{\mu\nu}=0.
 $$ {#eq-transverse}
 
 残余规范（取 $\partial^{2}\xi_{\nu}=0$ 的解，仍非平凡）可再用于把迹消为零：由 @eq-gauge-trace-reverse，迹的变分为 $\delta\bar h=-2\,\partial^{\alpha}\xi_{\alpha}$，故取满足 $\partial^{\alpha}\xi_{\alpha}=\frac{1}{2}\bar h$ 的 $\xi$ 即可（与 $\partial^{2}\xi_{\nu}=0$ 相容，因为两边都满足波动方程）。此后 $\varepsilon^{\mu}_{\ \mu}=0$ 且 $\bar h_{\mu\nu}=h_{\mu\nu}$。这就是**横向无迹规范**。取波沿 $z$ 轴传播，$k^{\lambda}\propto(1,0,0,1)$，则独立的模式张量只有两个：
@@ -645,7 +645,7 @@ $$
 0&0&1&0\\
 0&1&0&0\\
 0&0&0&0
-\end{pmatrix}
+\end{pmatrix}.
 $$ {#eq-polarizations}
 
 相速度为 $|k^{0}|/|\mathbf{k}|=1$。维数计数与此一致：对称张量 $\bar h_{\mu\nu}$ 有 $10$ 个分量，谐和规范 @eq-transverse 消去 $4$ 个；齐次情形下的残余规范（$\partial^{2}\xi_{\nu}=0$）仍有 $4$ 个自由度，其中 $k\cdot\zeta\neq0$ 的那一个把迹消为零，剩下 $3$ 个横向参数再消去 $3$ 个分量。剩 $2$ 个，与 $2\times2$ 无迹对称矩阵的维数（$\frac{2\cdot3}{2}-1=2$）相同。
@@ -661,7 +661,7 @@ $$ {#eq-polarizations}
 
 $$
 \delta_{\xi}\varepsilon_{\mu\nu}
-= \mathrm{i}\left(k_{\mu}\zeta_{\nu}+k_{\nu}\zeta_{\mu}-\eta_{\mu\nu}\,k\cdot\zeta\right)
+= \mathrm{i}\left(k_{\mu}\zeta_{\nu}+k_{\nu}\zeta_{\mu}-\eta_{\mu\nu}\,k\cdot\zeta\right).
 $$ {#eq-gauge-eps}
 
 *（3a）横向性保持。* $k^{\mu}\delta_{\xi}\varepsilon_{\mu\nu}=\mathrm{i}\left(k^{2}\zeta_{\nu}+k_{\nu}(k\cdot\zeta)-k_{\nu}(k\cdot\zeta)\right)=\mathrm{i}k^{2}\zeta_{\nu}=0$，故 @eq-gauge-eps 把满足 @eq-transverse 的 $\varepsilon$ 仍映为满足 @eq-transverse 的 $\varepsilon$。
@@ -679,7 +679,7 @@ $$
 \begin{pmatrix}1&0\\0&-1\end{pmatrix},
 \qquad
 \varepsilon^{(\times)}=
-\begin{pmatrix}0&1\\1&0\end{pmatrix}
+\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 $$
 
 （分别取 $\varepsilon_{11}=1$ 与 $\varepsilon_{12}=1$，其余为零。）把这两个 $2\times2$ 块嵌入第 $1,2$ 行与列，其余分量为零，即 @eq-polarizations 的两个矩阵。直接代回可见二者都满足 $k^{\mu}\varepsilon_{\mu\nu}=0$（它们的非零分量只落在 $1,2$ 方向，而 $k$ 只有 $0,3$ 分量）与 $\varepsilon^{\mu}_{\ \mu}=1+(-1)=0$（$+$）或 $0$（$\times$）。最后 $k^{2}=0$ 给出 $|k^{0}|=|\mathbf{k}|$，相速度为 $1$。
@@ -694,13 +694,13 @@ $$
 对一切光滑 $h$，
 
 $$
-\partial^{\mu}G^{(1)}_{\mu\nu}[h] \equiv 0
+\partial^{\mu}G^{(1)}_{\mu\nu}[h] \equiv 0.
 $$ {#eq-lin-bianchi}
 
 于是 @eq-fsg-field-eq 有解的必要条件是给定张量场 $J$ 满足
 
 $$
-\partial^{\mu}J_{\mu\nu} = 0
+\partial^{\mu}J_{\mu\nu} = 0.
 $$ {#eq-source-conservation}
 :::
 
@@ -722,7 +722,7 @@ $$
 -\partial^{2}\partial^{\mu}h_{\mu\nu}
 \right)\\
 &=\frac{1}{2}\partial_{\nu}\left(\partial^{\mu}\partial^{\alpha}h_{\mu\alpha}-\partial^{2}h\right)
-=\frac{1}{2}\partial_{\nu}R^{(1)}
+=\frac{1}{2}\partial_{\nu}R^{(1)}.
 \end{aligned}
 $$ {#eq-ricci-divergence}
 
@@ -732,7 +732,7 @@ $$
 \partial^{\mu}G^{(1)}_{\mu\nu}
 =\partial^{\mu}R^{(1)}_{\mu\nu}-\frac{1}{2}\eta_{\mu\nu}\partial^{\mu}R^{(1)}
 =\frac{1}{2}\partial_{\nu}R^{(1)}-\frac{1}{2}\partial_{\nu}R^{(1)}
-=0
+=0,
 $$
 
 即 @eq-lin-bianchi。对 @eq-fsg-field-eq 取散度并代入 @eq-lin-bianchi，得 $\kappa\,\partial^{\mu}J_{\mu\nu}=0$；$\kappa\neq0$ 故 @eq-source-conservation 成立。
@@ -746,7 +746,7 @@ $$
 先固定两个记号。称由 $h$ 及其一、二阶导组成的多项式表达式 $T_{\mu\nu}[h]$ 是**局部的**；称局部表达式 $T$ 是**$n$ 次的**，如果它在代换 $h\mapsto\lambda h$（$\lambda$ 常数）下按 $\lambda^{n}$ 变换。对局部对称张量 $\mathcal{G}$，记
 
 $$
-\mathcal{G}_{\mu\nu}[h]=\mathcal{G}^{(1)}_{\mu\nu}[h]+\mathcal{G}^{(2)}_{\mu\nu}[h]+\cdots
+\mathcal{G}_{\mu\nu}[h]=\mathcal{G}^{(1)}_{\mu\nu}[h]+\mathcal{G}^{(2)}_{\mu\nu}[h]+\cdots.
 $$
 
 为它按次数分解的齐次部分之和（有限和或形式幂级数）。
@@ -767,7 +767,7 @@ $$
 $$
 \mathcal{G}_{\mu\nu}[h] = c\,G_{\mu\nu}[\eta+h],
 \qquad
-G_{\mu\nu}[g]:=R_{\mu\nu}[g]-\frac{1}{2}g_{\mu\nu}R[g]
+G_{\mu\nu}[g]:=R_{\mu\nu}[g]-\frac{1}{2}g_{\mu\nu}R[g].
 $$ {#eq-einstein-fsg}
 
 其中 $G_{\mu\nu}[g]$ 是由 $g$ 的 Levi-Civita 联络定义的 Einstein 张量（精确对象，不是展开）。等价地：以 $g_{\mu\nu}:=\eta_{\mu\nu}+h_{\mu\nu}$ 记，完整方程是 $G_{\mu\nu}[g]=\kappa\,J_{\mu\nu}$；把它按 $h$ 的次数展开、并把 $n\ge2$ 的各次部分移到右端，即得
@@ -776,7 +776,7 @@ $$
 G^{(1)}_{\mu\nu}[h]
 = \kappa\left(J_{\mu\nu}+t^{(2)}_{\mu\nu}[h]+t^{(3)}_{\mu\nu}[h]+\cdots\right),
 \qquad
-t^{(n)}_{\mu\nu}[h]:=-\frac{1}{\kappa}G^{(n)}_{\mu\nu}[h]\quad(n\ge2)
+t^{(n)}_{\mu\nu}[h]:=-\frac{1}{\kappa}G^{(n)}_{\mu\nu}[h]\quad(n\ge2).
 $$ {#eq-bootstrap}
 
 其中每个 $t^{(n)}$ 是 $n$ 次的局部对称张量，同一个常数 $\kappa$ 乘在所有项上。$t^{(n)}$ 就是“右端项带上场自身贡献”的那一部分。
@@ -796,7 +796,7 @@ $$ {#eq-bootstrap}
 *（5）逐阶计算所依据的恒等式.* 线性层的恒等式是 @eq-lin-bianchi（$\partial$-散度恒为零）；完整层的恒等式是缩并的比安基恒等式
 
 $$
-\nabla^{\mu}G_{\mu\nu}[g]\equiv0
+\nabla^{\mu}G_{\mu\nu}[g]\equiv0.
 $$ {#eq-bianchi-g}
 
 （它由 $g$ 的黎曼张量的比安基恒等式 $\nabla_{[\lambda}R_{\mu\nu]\rho\sigma}=0$ 缩并两次得到：第一次缩并给 $2\nabla^{\mu}R_{\mu\nu}=\nabla_{\nu}R$，再与 $g_{\mu\nu}$ 组合即得 @eq-bianchi-g。）两条恒等式不能混同。$\nabla$ 与 $\partial$ 的差别含 $h$，把 @eq-bianchi-g 用 $\partial$ 重写给出
@@ -804,7 +804,7 @@ $$ {#eq-bianchi-g}
 $$
 \partial^{\mu}G_{\mu\nu}[\eta+h]
 =-\Gamma^{\mu}{}_{\lambda\mu}G^{\lambda}{}_{\nu}[\eta+h]
-+\Gamma^{\mu}{}_{\lambda\nu}G^{\lambda}{}_{\mu}[\eta+h]
++\Gamma^{\mu}{}_{\lambda\nu}G^{\lambda}{}_{\mu}[\eta+h].
 $$ {#eq-partial-divergence}
 
 （推导：$\nabla^{\mu}G_{\mu\nu}=\partial^{\mu}G_{\mu\nu}+\Gamma^{\mu}{}_{\mu\lambda}G^{\lambda}{}_{\nu}-\Gamma^{\lambda}{}_{\mu\nu}G^{\mu}{}_{\lambda}$；把末项按 $\Gamma^{\lambda}{}_{\mu\nu}=\Gamma^{\lambda}{}_{\nu\mu}$ 与 $G$ 的对称性改写并移项即得上式。）@eq-partial-divergence 的右端是 $\ge2$ 次的局部项，**并不**为零。正因为如此，各级的 $t^{(n)}$ 才必须出现；而它们在每一级上的取值又被低阶项与规范不变性卡住。
@@ -815,7 +815,7 @@ $$ {#eq-partial-divergence}
 
 $$
 S_{2}[h]=\int d^{4}x\;\sqrt{-\eta}\;\eta^{\mu\nu}\mathrm{Ric}^{(2)}_{\mu\nu}(\Gamma)
-+\int d^{4}x\;h^{\mu\nu}\mathrm{Ric}^{(1)}_{\mu\nu}(\Gamma)
++\int d^{4}x\;h^{\mu\nu}\mathrm{Ric}^{(1)}_{\mu\nu}(\Gamma).
 $$
 
 其中 $\mathrm{Ric}^{(n)}$ 是 Ricci 张量按 $\Gamma=\Gamma^{(1)}+\Gamma^{(2)}+\cdots$ 展开的第 $n$ 次部分，且 $\Gamma$ 与 $g=\eta+h$ 独立变分。三步为：
@@ -827,12 +827,12 @@ $$
 $$
 \sqrt{-\eta}\,\eta^{\mu\nu}\mathrm{Ric}^{(2)}_{\mu\nu}(\Gamma)+\cdots
 \;\longrightarrow\;
-\sqrt{-g}\,g^{\mu\nu}\mathrm{Ric}_{\mu\nu}(\Gamma)=\sqrt{-g}\,R[g]
+\sqrt{-g}\,g^{\mu\nu}\mathrm{Ric}_{\mu\nu}(\Gamma)=\sqrt{-g}\,R[g].
 $$
 
 （逐步核对的版本见 [@deser1970; @deser2010]。）
 
-**注记（该论证的地位）。** “逐阶完备化唯一地给出 @eq-einstein-fsg”这一结论被反复讨论。[@padmanabhan2008] 给出批评性审查，[@deser2010] 与 [@butcher2009] 作出回应并给出逐步核对的版本，[@barcelo2014] 显式解出迭代格式并指出解族中还存在与 @prp-fierz-pauli 情形（ii）对应的分支。本章不予裁断，只使用该论证的**方向性**内容：一个满足 @prp-fierz-pauli 条件的线性算子若要与无散度右端项自洽耦合，就不可能停留在线性。
+**注记（该论证的地位）。**“逐阶完备化唯一地给出 @eq-einstein-fsg”这一结论被反复讨论。[@padmanabhan2008] 给出批评性审查，[@deser2010] 与 [@butcher2009] 作出回应并给出逐步核对的版本，[@barcelo2014] 显式解出迭代格式并指出解族中还存在与 @prp-fierz-pauli 情形（ii）对应的分支。本章不予裁断，只使用该论证的**方向性**内容：一个满足 @prp-fierz-pauli 条件的线性算子若要与无散度右端项自洽耦合，就不可能停留在线性。
 
 ## 两种表述的等价 {#sec-fsg-equivalence}
 
@@ -846,7 +846,7 @@ $$
 3. **不变量相同**：任一仅依赖 $g$ 的坐标标量——例如由 $g$ 构造的曲率标量与体积元——在两种表述中取相同的值；换言之，两种表述给出相同的坐标不变量代数。
 :::
 
-**证明.** (1) 由 @prp-bootstrap 直接得到。(2) $h$ 与 $g$ 只差一个固定的 $\eta$，故 $h\mapsto g$ 是一一对应（@def-flat-background）；方程相同，初末条件相同，则解集相同。(3) 所有只依赖 $g$ 的构造在两种表述下是同一个对象：把 $g$ 写成 $\eta+h$ 只是对它作了一次重参数化，而 $\eta$ 是常数张量、不含自由参数。
+**证明.** （1）由 @prp-bootstrap 直接得到。（2）$h$ 与 $g$ 只差一个固定的 $\eta$，故 $h\mapsto g$ 是一一对应（@def-flat-background）；方程相同，初末条件相同，则解集相同。（3）所有只依赖 $g$ 的构造在两种表述下是同一个对象：把 $g$ 写成 $\eta+h$ 只是对它作了一次重参数化，而 $\eta$ 是常数张量、不含自由参数。
 
 **注记（等价表述了什么、不表述什么）。** @thm-equivalence 是一个关于**方程与不变量**的等同，不是关于“哪一套变量更基本”的断定。它既不蕴含“可以把 $\eta$ 取为零”，也不蕴含其否定：$\eta$ 在构造中始终是一个固定张量（它定义了指标升降、@prp-fierz-pauli 中“线性”的含义、以及 @eq-wave-eq-fsg 中 $\partial^{2}$ 的定义）。下面两节说明这个固定张量在多大程度上可见。
 
