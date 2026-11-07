@@ -1,0 +1,145 @@
+# 加速度作为独立源：一项构造 {#sec-acc-source}
+
+前十五章把背景场当作给定的量。@sec-clock-coupling 章 开篇即限于此：它研究的是背景场给定之后各类系统各自的速率，不追问背景场由什么给出。本章走反方向，问一个问题：**源能不能有两项**——除能量动量之外，再加一项由物质的运动状态决定的源（被支撑，还是自由下落）？若可以，账还能不能做平。
+
+这个问题不含测量。它只涉及三件可以写下来、可以核对的事：作用量能不能写成二阶的，场方程自洽不自洽，账守恒不守恒。本章给出一个构造，并把它要付的价逐项列出（@tbl-as-cost）。**前面各章的结论一条也不改动**，理由在本章末说明。
+
+本章的结论是否定式的：守恒律约束的是**和**，不是每一项。一个从守恒律出发的论证，排除不掉第二项源。
+
+## 能不能写下来：物质必须是流场 {#sec-as-flow}
+
+要把加速度放进源，先遇到的不是物理问题，是书写问题。在世界线上写不行。
+
+::: {#prp-as-ghost}
+## 世界线上的加速度耦合给出四阶方程
+
+设 $x^{\mu}(\tau)$ 为一条世界线，$a^{\mu}=\ddot x^{\mu}$。若作用量取 $S[x]=\int L(x,\dot x,\ddot x)\,d\tau$，且 $L$ 对 $\ddot x$ 的依赖不是全导数，则运动方程含 $x$ 的四阶导数。
+:::
+
+**证明.** 变分为
+$$
+\delta S=\int\Bigl(\frac{\partial L}{\partial x^{\mu}}-\frac{d}{d\tau}\frac{\partial L}{\partial\dot x^{\mu}}+\frac{d^{2}}{d\tau^{2}}\frac{\partial L}{\partial\ddot x^{\mu}}\Bigr)\delta x^{\mu}\,d\tau ,
+$$
+最后一项含 $\ddot x$ 的一阶导数，即 $x$ 的四阶导数。$\blacksquare$
+
+四阶方程要四个初值，其中两个对应负能量模式。这不是“形式上不好看”：能量泛函没有下界，账就做不平。
+
+**流场不付这个代价。** 把物质写成连续统，四速 $u^{\mu}$（$u^{\mu}u_{\mu}=1$），令
+$$
+a^{\mu}:=u^{\nu}\nabla_{\nu}u^{\mu} .
+$$ {#eq-as-acc}
+
+对 $u$ 而言右端只含一个导数（联络项里出现的是 $g$ 的导数，不是 $u$ 的）。于是 $a^{\mu}$ 的二次式是 $u$ 的一阶导数的平方，作用量对 $u$ 仍是二阶，变分给出的方程含 $u$ 的二阶导数，阶数不增加。
+
+**代价**：物质必须以连续统表示，点粒子只能作为窄波包的极限出现。下面按连续统写。
+
+## 构造 {#sec-as-construction}
+
+三样东西：度规 $g_{\mu\nu}$（曲率完整保留，不作剥离）；一个标量势 $\psi$，质量 $\mu\ge0$；物质，以能量密度 $\rho$ 与四速 $u^{\mu}$ 表示。
+
+号差取 $(+,-,-,-)$，$c=1$。受支撑的物质元偏离测地线，$a^{\mu}$ 类空，$a_{\mu}a^{\mu}<0$；自由下落的物质元 $a^{\mu}=0$。定义
+$$
+\varepsilon_{a}:=-\tfrac12 a_{\mu}a^{\mu}\ \ge 0 ,
+$$ {#eq-as-eps}
+
+它在自由下落时为零，在受支撑时为正。这是本章唯一的附加源：它不由能量的多少决定，由物质是否偏离测地线决定。（$\varepsilon_{a}$ 的归一化已吸收进耦合常数，故后文只有一个自由参数。）
+
+作用量
+$$
+S=\frac{1}{2\kappa_{0}}\int\sqrt{-g}\,R+\int\sqrt{-g}\Bigl[\mathcal L_{m}+\tfrac12\nabla_{\mu}\psi\nabla^{\mu}\psi-\tfrac12\mu^{2}\psi^{2}+\lambda\,\psi\,\varepsilon_{a}\Bigr],
+$$ {#eq-as-action}
+
+$\kappa_{0}=8\pi G$。对 $g$ 与 $\psi$ 分别变分：
+$$
+G_{\mu\nu}=\kappa_{0}\bigl(T_{\mu\nu}+A_{\mu\nu}\bigr),
+$$ {#eq-as-field}
+$$
+\bigl(\Box+\mu^{2}\bigr)\psi=\lambda\,\varepsilon_{a},\qquad \Box:=\nabla_{\mu}\nabla^{\mu},
+$$ {#eq-as-psi}
+$$
+A_{\mu\nu}:=\nabla_{\mu}\psi\nabla_{\nu}\psi-\tfrac12 g_{\mu\nu}\nabla_{\alpha}\psi\nabla^{\alpha}\psi+\tfrac12\mu^{2}\psi^{2}g_{\mu\nu} .
+$$ {#eq-as-A}
+
+三处口径要说清，后文全靠它们。
+
+**(i) $T_{\mu\nu}$ 指什么。** @eq-as-field 里的 $T_{\mu\nu}$ 是 $\mathcal L_{m}$ **与耦合项**合起来对 $g_{\mu\nu}$ 的变分，不是只 $\mathcal L_{m}$ 的。耦合项也依赖 $g$——$a^{\mu}$ 含联络（@eq-as-acc）——所以它自己贡献一份。这一列因此不是“物质的能量动量”，是“物质与耦合项这一整块”的能量动量。名字归名字，账是账。
+
+**(ii) $A_{\mu\nu}$ 的身份。** 它秩 $2$、对称、与 $T_{\mu\nu}$ 同量纲（能量密度），进同一个槽位，共享同一个 $\kappa_{0}$。$\psi$ 是它的势；源与账都在 $A_{\mu\nu}$ 上。两列不需要各配一个换算。
+
+**(iii) 质量不是必需的。** $\varepsilon_{a}$ 一般不守恒，但这不构成障碍：对标量场，$\mu=0$ 时 @eq-as-psi 对任何源都有解。这与矢量场不同——那里 $\mu=0$ 要求 $\nabla_{\mu}J^{\mu}=0$。所以 @eq-as-psi 里的 $\mu$ 是一个可选参数，给定作用程，不是必须付出的价。
+
+## 账本 {#sec-as-ledger}
+
+::: {#thm-as-bianchi}
+## 账只对和成立
+
+$\nabla_{\mu}G^{\mu\nu}\equiv0$ 给出
+$$
+\nabla_{\mu}\bigl(T^{\mu\nu}+A^{\mu\nu}\bigr)=0 .
+$$ {#eq-as-sum}
+
+它约束两部门之**和**，不分别约束每一部门。
+:::
+
+**证明.** 缩并的比安基恒等式逐点成立。$\blacksquare$
+
+@eq-as-sum 允许多种拆法。取其中的一种：两列各有一个散度，二者反号：
+$$
+\nabla_{\mu}A^{\mu\nu}=+\mathcal X^{\nu},\qquad
+\nabla_{\mu}T^{\mu\nu}=-\mathcal X^{\nu},\qquad
+\mathcal X^{\nu}:=\lambda\,\varepsilon_{a}\nabla^{\nu}\psi .
+$$ {#eq-as-exchange}
+
+第一行可以独立算出来（标量场的标准恒等式）：
+$$
+\nabla_{\mu}A^{\mu\nu}=\bigl(\Box\psi+\mu^{2}\psi\bigr)\nabla^{\nu}\psi=\lambda\,\varepsilon_{a}\nabla^{\nu}\psi .
+$$ {#eq-as-verify}
+
+最后一步用了 @eq-as-psi；中间一步用了 $\nabla_{\mu}\nabla^{\nu}\psi=\nabla^{\nu}\nabla_{\mu}\psi$。第二行是 @eq-as-sum 减去第一行，不是新增的假设。
+
+第三部门是曲率。曲率那一部分账不是张量，只能在渐近平直的坐标下写成（朗道—利夫希茨形式 $t^{\mu\nu}_{\mathrm{LL}}$）：
+$$
+\partial_{\mu}\Bigl[\sqrt{-g}\,\bigl(T^{\mu\nu}+A^{\mu\nu}+t^{\mu\nu}_{\mathrm{LL}}\bigr)\Bigr]=0 .
+$$ {#eq-as-ll}
+
+这一行是**坐标等式**；@eq-as-exchange 的两行是张量等式，随处成立。
+
+三行合起来只说明一件事：$\varepsilon_{a}\to0$ 关闭交换流 $\mathcal X$，不关闭 $\psi$ 的方程。没有一项凭空消失，也没有一项需要凭空补上。
+
+## 撤去支撑 {#sec-as-release}
+
+撤掉支撑，$\varepsilon_{a}$ 在很短的时间里降为零。若把源当成代数量，就会问：那份能量去哪了？
+
+::: {#prp-as-continuous}
+## 释放是连续的
+
+设 $\psi$ 满足 @eq-as-psi，$\varepsilon_{a}$ 在 $[0,\delta t]$ 内连续降为零。则 $\psi$ 与
+$$
+E_{\psi}(t)=\int\Bigl[\tfrac12(\partial_{t}\psi)^{2}+\tfrac12|\nabla\psi|^{2}+\tfrac12\mu^{2}\psi^{2}\Bigr]d^{3}x
+$$ {#eq-as-energy}
+
+在 $t=\delta t$ 处连续；$\delta t\to0$ 时两者都有有限极限。
+:::
+
+**证明.** @eq-as-psi 是二阶双曲方程，其解对源连续依赖。以 $\partial_{t}\psi$ 乘 @eq-as-psi 再对空间积分，左端给出 $\partial_{t}E_{\psi}$，右端给出边界项（辐射通量）与源项 $\lambda\varepsilon_{a}\partial_{t}\psi$；后者在 $[0,\delta t]$ 上的积分有界。$\blacksquare$
+
+**“瞬灭”出现在哪里。** 若把 $\psi$ 取成源区内的静态从仆解 $\psi\simeq\lambda\varepsilon_{a}/\mu^{2}$（@eq-as-psi 略去二阶导数），则源一撤 $\psi$ 立刻归零。那是 $\mu\to\infty$ 的极限：$\psi$ 没有自己的动力学，$A_{\mu\nu}$ 退化成 $\varepsilon_{a}$ 的代数函数，账上就出现一个没有出口的跳变。$\mu$ 有限时 $\psi$ 有自己的方程，源只定它的源项，不定它的值；减量走两个出口（辐射与对物质的功），不越过任何一行。**跳变不是这个构造的性质，是它的一个退化极限的性质。**
+
+## 代价 {#sec-as-cost}
+
+| 项 | 内容 |
+|:---|:---|
+| 物质表示 | 必须是连续统；世界线上的写法给出四阶方程（@prp-as-ghost） |
+| 自由参数 | 一个耦合常数 $\lambda$（量纲为长度的倒数）与可选的 $\mu$，构造内不可定 |
+| 新增通道 | $\psi$ 波与它引起的曲率涨落；$\mu=0$ 时以 $c$ 传播 |
+| 未做的一处 | 弱场静态下把 $\psi$ 的贡献换算成对 $\Phi$ 的增量 |
+
+: 构造的代价 {#tbl-as-cost}
+
+最后一行不是客套。源里多了一项，不等于“支撑起来的物体更重”。要把这一项换算成 $\Phi$ 的增量，必须把口径 (i) 中 $T$ 的耦合部分一并展开——梯度能、势能、耦合项分属不同的项，进泊松方程的方式各不相同。本章不把它们合并，因此不给“更重”或“更轻”的结论。
+
+## 与其余各章的关系 {#sec-as-relations}
+
+1. **不改动任何结论。** 前面各章都没有把“源只有一项”当作前提。@sec-flat-space-gravity 章 的完备化只要求右端项无散度，@eq-as-sum 给出的和正满足这一条。
+2. **与 @sec-clock-coupling 章 只有形式上的对应。** 若把 $\psi$ 当作该章的背景场 $\Phi$，该章的 $Q_{ij}-1=(\alpha_{i}-\alpha_{j})\Delta$（@eq-measurable-signal）还需要一项额外输入：每一类系统对 $\psi$ 的响应系数。本章不提供它，也不从 $\psi$ 推出它。两处的关系只在“差”的形式上，不构成互相支持。
+3. **本章证明的是一条否定命题。** 账能做平，不迫使源只有一项。它没有证明源有两项，也没有给出任何一项的数值。

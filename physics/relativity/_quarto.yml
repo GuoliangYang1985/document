@@ -26,6 +26,7 @@ book:
     - chapters/twins-noninertial.qmd
     - chapters/asymmetric-twins.qmd
     - chapters/layers.qmd
+    - chapters/acc-source.qmd
     - chapters/notation.qmd
     - chapters/term-index.qmd
     - chapters/references.qmd
