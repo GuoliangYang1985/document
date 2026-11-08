@@ -2,13 +2,13 @@
 
 ## 本章的范围 {#sec-qp-scope}
 
-**一句话**：取定相态参数（$K\to\infty$ 且 $\vec\nabla K=0$），从恒速群 $G_K$ 出发，经李代数收缩、射影表示与中央扩张，把非相对论量子力学的代数结构（质量作为中央荷、$[q_i,p_j]=i\hbar\delta_{ij}$、薛定谔方程）逐项推导出来；最后用反证法证明这套结构在 $\vec\nabla K\neq0$ 处不能存在。
+**一句话**：取定相态参数（$K\to\infty$ 且 $\nabla K=0$），从恒速群 $G_K$ 出发，经李代数收缩、射影表示与中央扩张，把非相对论量子力学的代数结构（质量作为中央荷、$[q_i,p_j]=i\hbar\delta_{ij}$、薛定谔方程）逐项推导出来；最后用反证法证明这套结构在 $\nabla K\neq0$ 处不能存在。
 
 **推导链条**：
 
 $$
 \begin{aligned}
-\text{恒速群 } G_K\ \longrightarrow\ &\underbrace{K\to\infty,\ \vec\nabla K=0}_{\text{相态参数}}
+\text{恒速群 } G_K\ \longrightarrow\ &\underbrace{K\to\infty,\ \nabla K=0}_{\text{相态参数}}
 \ \longrightarrow\ \text{伽利略群}\ \longrightarrow\ \text{射影表示 / 中央扩张}\\[4pt]
 \longrightarrow\ &\text{Bargmann 代数}\ \longrightarrow\ \text{波动力学}\ \longrightarrow\ \text{量子力学骨架}.
 \end{aligned}
@@ -17,7 +17,7 @@ $$
 ### 三条禁令（本章的自我约束）
 
 1. **不出现弯曲度规**。本章全程 $K$ 为常数，只用恒速群的不变二次型 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$ 及其对偶算符；不用任何 $g_{\mu\nu}(x)$、不用 Christoffel 符号、不做度规量子化。
-2. **不出现引力**。$\vec\nabla K\neq0$ 只在第四部分作为**反证法的假设**出现，且立即导致矛盾。
+2. **不出现引力**。$\nabla K\neq0$ 只在第四部分作为**反证法的假设**出现，且立即导致矛盾。
 3. **不出现“量子引力”**。本章不构造任何“引力的量子理论”。第四部分的结论恰恰是：那样的对象在本框架内没有定义域。这一结论的范围限定见 @sec-qp-scope-limit。
 
 ### 禁止预设清单
@@ -41,7 +41,7 @@ $$
 - $\hbar$ 的地位：量子化映射 $[\ ,\ ]=i\hbar\{\ ,\ \}$ 的尺度，是经验常数；本章**不声称**推导它的数值。本章推导的是 $m$ 的地位。
 - 符号核验脚本 `images/quantum-phase-algebra.py`，输出见 `images/qp.out`；本章每个闭式后标注核验结果。
 
-## 第一部分　相态参数：$K\to\infty$ 与 $\vec\nabla K=0$ {#sec-qp-part1}
+## 第一部分　相态参数：$K\to\infty$ 与 $\nabla K=0$ {#sec-qp-part1}
 
 第一部分取定相态参数：从恒速群出发做 $K\to\infty$ 极限。
 
@@ -73,6 +73,8 @@ $$
 K->oo 后 boost 生成元 B = (0, -t)
 K->oo 后 [B,P] = (0, 0)
 ```
+
+$\square$
 
 ### 不变量的个数：从 $1$ 个到 $2$ 个
 
@@ -106,17 +108,17 @@ $$
 
 即：**零曲面成为同时超曲面**，信号速度无上界。这正是伽利略时空“瞬时传播”的严格表述，也是后面非相对论极限中“不存在不变波速”的几何根源。
 
-### $\vec\nabla K=0$ 不是简化假设，而是前提
+### $\nabla K=0$ 不是简化假设，而是前提
 
 @sec-invariant-speed-field-group 章已证明：当 $K$ 随点变化时，逐点的 $G_{K(p)}$ 各自成群，但**跨点的复合不再是群运算**——复合多出 $\propto\partial_\mu K/K$ 的项。
 
 **本章第二部分要做的事是“表示论”**：表示论的对象是**一个群**。因此：
 
 $$
-\vec\nabla K\neq0\ \Longrightarrow\ \text{不存在可供表示的全局群}\ \Longrightarrow\ \text{第二部分全部失效}.
+\nabla K\neq0\ \Longrightarrow\ \text{不存在可供表示的全局群}\ \Longrightarrow\ \text{第二部分全部失效}.
 $$
 
-这不是“为了算得动而设的简化”，而是**定义域条件**：量子相态的定义本身就包含 $\vec\nabla K=0$。第四部分会把这一点写成反证法的第一层。
+这不是“为了算得动而设的简化”，而是**定义域条件**：量子相态的定义本身就包含 $\nabla K=0$。第四部分会把这一点写成反证法的第一层。
 
 ### 不变算符与色散关系
 
@@ -222,9 +224,9 @@ $$
 所得的代数**不是** @eq-qp-gal，而是带中央扩张的 **Bargmann 代数**。
 :::
 
-**出处**：伽利略群的射线表示、质量以中央荷的身份出现、以及由此而来的质量超选择规则，原始处理见 Bargmann 1954 [@bargmann1954]；本章用 (M1)—(M4) 重做这条链，目的是把它的**定义域条件**（$K\to\infty$ 且 $\vec\nabla K=0$）显式写出来，见 @sec-qp-scope-limit。
+**出处**：伽利略群的射线表示、质量以中央荷的身份出现、以及由此而来的质量超选择规则，原始处理见 Bargmann 1954 [@bargmann1954]；本章用 (M1)—(M4) 重做这条链，目的是把它的**定义域条件**（$K\to\infty$ 且 $\nabla K=0$）显式写出来，见 @sec-qp-scope-limit。
 
-**证明**：第一式用 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 代入 @eq-qp-algK；第二式用 $[mK^{2}\mathbf 1,\cdot]=0$。极限中 $\hat H_{\text{nr}}/K^{2}\to0$。
+**证明**：第一式用 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 代入 @eq-qp-algK；第二式用 $[mK^{2}\mathbf 1,\cdot]=0$。极限中 $\hat H_{\text{nr}}/K^{2}\to0$。$\quad\square$
 
 **收敛核验**：由 @eq-qp-m2 与 $\hat H=mK^{2}+\hat H_{\text{nr}}$，
 
@@ -335,7 +337,7 @@ H^2(galilei, R) 的维数 = 1
 上边界在 (K_i,P_j) 分量上的值 [K_i,P_j] = {} -> 恒为 0，故代表元非上边界
 ```
 
-**结论**：伽利略代数的中央扩张不是可以随意添加的附加结构，而是**唯一的、且非加不可的**（前提是质量非零）。
+**结论**：伽利略代数的中央扩张不是可以随意添加的附加结构，而是**唯一的、且非加不可的**（前提是质量非零）。$\quad\square$
 
 ### 射影表示与 Bargmann 群
 
@@ -443,7 +445,9 @@ $$ {#eq-qp-casimirG}
 | 相态 | $m$ 的代数身份 | 可否叠加不同 $m$ |
 |---|---|---|
 | $K$ 有限 | Casimir $\hat H^{2}/K^{2}-\lvert\hat{\mathbf P}\rvert^{2}$ 的本征值 $m^{2}K^{2}$ | 可以 |
-| $K\to\infty$、$\vec\nabla K=0$ | **中心元素** $\hat M$ 的本征值 $m$ | **不可以**（超选择） |
+| $K\to\infty$、$\nabla K=0$ | **中心元素** $\hat M$ 的本征值 $m$ | **不可以**（超选择） |
+
+$\square$
 
 ### 位置–动量对易关系的导出 {#sec-qp-ccr}
 
@@ -471,7 +475,7 @@ $$
 =\frac{1}{m}\,i\hbar\delta_{ij}\,m\mathbf 1=i\hbar\delta_{ij}\mathbf 1.
 $$
 
-（用到 $[\hat P_i,\hat P_j]=0$。）
+（用到 $[\hat P_i,\hat P_j]=0$。）$\quad\square$
 
 **显式算子核验**（$\hat B=mx+i\hbar t\partial_x$、$\hat P=-i\hbar\partial_x$、$\hat q=x$）：
 
@@ -576,19 +580,19 @@ $$ {#eq-qp-omega}
 对一切 $\mathbf k$ 的模态作叠加：
 
 $$
-\psi(\mathbf x,t)=\int a(\mathbf k)\,e^{i(\mathbf k\cdot\mathbf x-\omega(\mathbf k)t)}\,\mathrm d^{3}k.
+\psi(\mathbf x,t)=\int a(\mathbf k)\,e^{i(\mathbf k\cdot\mathbf x-\omega(\mathbf k)t)}\,\mathrm{d}^{3}k.
 $$
 
 逐项求时间导数与拉普拉斯：
 
 $$
-i\hbar\partial_t\psi=\int \hbar\omega(\mathbf k)\,a(\mathbf k)e^{i(\cdots)}\mathrm d^{3}k
-=\int\frac{\hbar^{2}\lvert\mathbf k\rvert^{2}}{2m}a(\mathbf k)e^{i(\cdots)}\mathrm d^{3}k,
+i\hbar\partial_t\psi=\int \hbar\omega(\mathbf k)\,a(\mathbf k)e^{i(\cdots)}\mathrm{d}^{3}k
+=\int\frac{\hbar^{2}\lvert\mathbf k\rvert^{2}}{2m}a(\mathbf k)e^{i(\cdots)}\mathrm{d}^{3}k,
 $$
 
 $$
 -\frac{\hbar^{2}}{2m}\nabla^{2}\psi
-=-\frac{\hbar^{2}}{2m}\int(-\lvert\mathbf k\rvert^{2})a(\mathbf k)e^{i(\cdots)}\mathrm d^{3}k
+=-\frac{\hbar^{2}}{2m}\int(-\lvert\mathbf k\rvert^{2})a(\mathbf k)e^{i(\cdots)}\mathrm{d}^{3}k
 =\text{同一表达式}.
 $$
 
@@ -606,7 +610,7 @@ $$
 \mathbf j=\frac{\hbar}{m}\,\mathrm{Im}\!\left(\psi^{*}\nabla\psi\right).
 $$
 
-故 $\int\lvert\psi\rvert^{2}\mathrm d^{3}x$ 守恒，演化酉。这与第二部分的出发点完全一致：**正是“概率守恒 $\Rightarrow$ 态是射线 $\Rightarrow$ 射影表示 $\Rightarrow$ 中央扩张”这条链，把 $m$ 送进了代数。**
+故 $\int\lvert\psi\rvert^{2}\mathrm{d}^{3}x$ 守恒，演化酉。这与第二部分的出发点完全一致：**正是“概率守恒 $\Rightarrow$ 态是射线 $\Rightarrow$ 射影表示 $\Rightarrow$ 中央扩张”这条链，把 $m$ 送进了代数。**
 
 ### 协变性校核
 
@@ -635,9 +639,9 @@ $$
 
 ## 第四部分　相态边界：反证 {#sec-qp-part4}
 
-**命题**：量子力学（第二部分与第三部分的全部结构）只在 $\vec\nabla K=0$ 的相态中存在。
+**命题**：量子力学（第二部分与第三部分的全部结构）只在 $\nabla K=0$ 的相态中存在。
 
-**反证假设**：$K\to\infty$ 的量子相态与 $\vec\nabla K\neq0$ 的引力背景共存。
+**反证假设**：$K\to\infty$ 的量子相态与 $\nabla K\neq0$ 的引力背景共存。
 
 以下三层论据各自独立地推翻该假设。
 
@@ -646,12 +650,12 @@ $$
 @sec-invariant-speed-field-group 章已证明：$K=K(p)$ 时逐点 $G_{K(p)}$ 各自成群，但跨点复合多出 $\propto\partial_\mu K/K$ 的项，**不构成群**。而第二部分的全部工具（李代数、上同调 $H^{2}$、射影表示、Schur 引理）都以“存在一个李群”为前提。
 
 $$
-\vec\nabla K\neq0\ \Longrightarrow\ \text{无全局群}\ \Longrightarrow\ \text{第二部分的对象不存在}.
+\nabla K\neq0\ \Longrightarrow\ \text{无全局群}\ \Longrightarrow\ \text{第二部分的对象不存在}.
 $$
 
 **这不是“算不出来”，而是“没有对象可算”。**
 
-### 第二层：代数层面——Jacobi 恒等式强迫 $\vec\nabla K=0$
+### 第二层：代数层面——Jacobi 恒等式强迫 $\nabla K=0$
 
 即使强行保留生成元，把 @eq-qp-algK 的 $K$ 换成乘法算符 $\hat K(\mathbf x)$，则
 
@@ -684,14 +688,14 @@ $$
 \Bigl(\delta_{ij}\,\partial_kK-\delta_{ik}\,\partial_jK\Bigr).
 $$
 
-取 $i=j$、$k\neq i$，括号内只剩 $\partial_kK$，于是 $\partial_kK=0$。**第三项若当作零处理，这一支就被漏掉了**——恰恰是它把 $\delta_{ik}$ 那一份带进来，使最终条件成为 $\vec\nabla K=0$ 而不是某个单一方向的条件。
+取 $i=j$、$k\neq i$，括号内只剩 $\partial_kK$，于是 $\partial_kK=0$。**第三项若当作零处理，这一支就被漏掉了**——恰恰是它把 $\delta_{ik}$ 那一份带进来，使最终条件成为 $\nabla K=0$ 而不是某个单一方向的条件。
 
 ::: {#thm-qp-jacobi}
-## 中央扩张存在 $\Longleftrightarrow$ $\vec\nabla K=0$
-Jacobi 恒等式 $(\hat P_k,\hat B_i,\hat P_j)$ 在 $\hat H\neq0$ 时成立，当且仅当 $\partial_kK=0$。等价地：中央荷 $\hat M$ 是中心元素，当且仅当 $\vec\nabla K=0$。
+## 中央扩张存在 $\Longleftrightarrow$ $\nabla K=0$
+Jacobi 恒等式 $(\hat P_k,\hat B_i,\hat P_j)$ 在 $\hat H\neq0$ 时成立，当且仅当 $\partial_kK=0$。等价地：中央荷 $\hat M$ 是中心元素，当且仅当 $\nabla K=0$。
 :::
 
-**即：中央扩张（第二部分的全部内容）与“恒速场不均匀”互斥。** 质量作为中央荷的存在条件，正好是 $\vec\nabla K=0$。
+**即：中央扩张（第二部分的全部内容）与“恒速场不均匀”互斥。** 质量作为中央荷的存在条件，正好是 $\nabla K=0$。
 
 ### 第三层：动力学层面——残留项发散且破坏幺正性
 
@@ -725,10 +729,10 @@ $$ {#eq-qp-residual}
 
 **结论**：
 
-1. 残留项 C 按 $K_0^{2}$ 增长，**极限不存在**——非相对论极限在 $\vec\nabla K\neq0$ 处没有定义；
+1. 残留项 C 按 $K_0^{2}$ 增长，**极限不存在**——非相对论极限在 $\nabla K\neq0$ 处没有定义；
 2. 残留项 A、B 是反 Hermite 的，$\hat H_{\text{nr}}$ 不再是自伴算符 ⟹ **幺正性丧失** ⟹ $\int\lvert\varphi\rvert^{2}$ 不再守恒 ⟹ **概率解释崩溃**。
 
-而概率守恒正是第二部分引入射影表示的**唯一理由**。于是论证闭合：**迫使中央扩张出现的那个条件，在 $\vec\nabla K\neq0$ 时先被破坏。**
+而概率守恒正是第二部分引入射影表示的**唯一理由**。于是论证闭合：**迫使中央扩张出现的那个条件，在 $\nabla K\neq0$ 时先被破坏。**
 
 ### 三层各自的输入
 
@@ -740,7 +744,7 @@ $$ {#eq-qp-residual}
 | 第二层 | 生成元对易关系与 Jacobi 恒等式；$\hat K^{-2}$ 作为乘法算符 | 否 |
 | 第三层 | @eq-qp-KG 的具体写法与快变相位的抽取 | 是 |
 
-第三层是在本部分的反证假设下做的计算；它开头写明的最保守写法（不引入度规、不引入协变导数，只把常数换成函数）是这一层的一项输入。换一种方程形式或导数定义，@eq-qp-residual 中三个残留项的形状随之改变；第二层由 @thm-qp-jacobi 给出的条件 $\vec\nabla K=0$ 不随之改变。三层各自给出同一个条件。
+第三层是在本部分的反证假设下做的计算；它开头写明的最保守写法（不引入度规、不引入协变导数，只把常数换成函数）是这一层的一项输入。换一种方程形式或导数定义，@eq-qp-residual 中三个残留项的形状随之改变；第二层由 @thm-qp-jacobi 给出的条件 $\nabla K=0$ 不随之改变。三层各自给出同一个条件。
 
 ### 黑洞视界处
 
@@ -756,14 +760,14 @@ $$
 
 | | 量子相态 | 引力相态 |
 |---|---|---|
-| 参数 | $K\to\infty$，$\vec\nabla K=0$ | $K$ 有限或 $\vec\nabla K\neq0$ |
+| 参数 | $K\to\infty$，$\nabla K=0$ | $K$ 有限或 $\nabla K\neq0$ |
 | 对称结构 | 全局伽利略群（Bargmann 群） | 逐点 $G_{K(p)}$，**跨点不成群** |
 | $m$ 的身份 | **中心元素** $\hat M$（超选择） | Casimir 本征值 / 不成立 |
 | 波方程 | 薛定谔方程（一阶 $t$） | 变系数方程，非相对论极限不存在 |
 | 幺正性 | 保持 | 破坏（残留项反 Hermite） |
 | 典型对象 | 原子、凝聚态、散射 | Schwarzschild 解、黑洞视界 |
 
-两个相态由**相态参数** $(K,\vec\nabla K)$ 的不同区域定义，定义域不相交。在本章这套结构里，$\vec\nabla K\neq0$ 处没有可供求解的对象：@thm-qp-jacobi 要求 $\vec\nabla K=0$，@eq-qp-residual 给出该处的非相对论极限不存在。这个陈述的范围见 @sec-qp-scope-limit。
+两个相态由**相态参数** $(K,\nabla K)$ 的不同区域定义，定义域不相交。在本章这套结构里，$\nabla K\neq0$ 处没有可供求解的对象：@thm-qp-jacobi 要求 $\nabla K=0$，@eq-qp-residual 给出该处的非相对论极限不存在。这个陈述的范围见 @sec-qp-scope-limit。
 
 @fig-qp-phase 给出相态图与静能的分离。
 
@@ -775,11 +779,11 @@ $$
 
 | 层次 | 陈述 | 地位 |
 |---|---|---|
-| (A) 结构内的定理 | 由 $G_K$ 的收缩导出的这套量子力学骨架（第二、三部分的全部对象），其定义域是相态参数区域 $(K\to\infty,\ \vec\nabla K=0)$；在该结构里，把这套对象搬到 $\vec\nabla K\neq0$ 的区域没有指称 | 在本章已列出的输入下**可证** |
+| (A) 结构内的定理 | 由 $G_K$ 的收缩导出的这套量子力学骨架（第二、三部分的全部对象），其定义域是相态参数区域 $(K\to\infty,\ \nabla K=0)$；在该结构里，把这套对象搬到 $\nabla K\neq0$ 的区域没有指称 | 在本章已列出的输入下**可证** |
 | (B) 带条件的推论 | 若某个“量子引力”陈述以本章的这套结构为前提，则该陈述在本框架内没有定义域 | (A) 的直接推论，**可证** |
 | (C) 关于世界的断言 | 一般意义上的量子引力不可能，或它本身是范畴错误 | **不可证，本章也不论证** |
 
-第三层要成立，需要外加一条前提：$G_K$ 框架是任何关于量子与引力的理论都必须落到的底层结构。这条前提本章没有给出——它不来自 @thm-qp-jacobi，也不来自 @eq-qp-residual，因为那两条的**输入**就是 $(G_K,\ \vec\nabla K)$ 这一套处置；用它们去推出 (C)，等于用一个结构的成员身份去否认该结构之外成员的存在。
+第三层要成立，需要外加一条前提：$G_K$ 框架是任何关于量子与引力的理论都必须落到的底层结构。这条前提本章没有给出——它不来自 @thm-qp-jacobi，也不来自 @eq-qp-residual，因为那两条的**输入**就是 $(G_K,\ \nabla K)$ 这一套处置；用它们去推出 (C)，等于用一个结构的成员身份去否认该结构之外成员的存在。
 
 本书自己在 @sec-invariant-speed-group 章把恒速群写成一整个参数族 $G_K$，$K=c$ 只是其中一个取值，同一章还列出至少三套自洽的输入（对称、伽利略、洛伦兹）给出不同的答案。既然框架本身是族中的一元，本书就没有据它去宣称“唯一真理”的资格——这一条与前言的立场是同一条。
 
@@ -804,18 +808,18 @@ $$
 | 薛定谔方程的三条独立导出路线 | @eq-qp-schrodinger |
 | 静能项严格相消，余项 $O(K^{-2})$ | @eq-qp-preSch |
 | 协变性当且仅当带 $m$ 相位 | @eq-qp-boost |
-| 中央扩张 $\Longleftrightarrow\vec\nabla K=0$（Jacobi） | @thm-qp-jacobi |
-| $\vec\nabla K\neq0$ ⟹ 残留项 $\sim K_0^{2}$ 发散 + 反 Hermite | @eq-qp-residual |
+| 中央扩张 $\Longleftrightarrow\nabla K=0$（Jacobi） | @thm-qp-jacobi |
+| $\nabla K\neq0$ ⟹ 残留项 $\sim K_0^{2}$ 发散 + 反 Hermite | @eq-qp-residual |
 
 : 本章各命题及其依据 {#tbl-qp-conclusion}
 
-**一句话**：取定相态参数 $K\to\infty$、$\vec\nabla K=0$ 后，恒速群的李代数经重整化收缩（静能发散与结构常数消失相抵）产生唯一的中央扩张，中央荷即质量 $m$；由此解出 $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$，并由 Casimir 或德布罗意色散关系生成薛定谔方程；而 Jacobi 恒等式反过来要求 $\vec\nabla K=0$——量子力学与引力是两个不相交的相态，二者的强行耦合在本框架内无定义。本章是同一底座上两条派生路线中量子路线的那一端，与引力路线的逐项对照见全书导览。
+**一句话**：取定相态参数 $K\to\infty$、$\nabla K=0$ 后，恒速群的李代数经重整化收缩（静能发散与结构常数消失相抵）产生唯一的中央扩张，中央荷即质量 $m$；由此解出 $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$，并由 Casimir 或德布罗意色散关系生成薛定谔方程；而 Jacobi 恒等式反过来要求 $\nabla K=0$——量子力学与引力是两个不相交的相态，二者的强行耦合在本框架内无定义。本章是同一底座上两条派生路线中量子路线的那一端，与引力路线的逐项对照见全书导览。
 
 ## 术语说明 {#sec-qp-terms}
 
 | 术语 | 本章中的含义 |
 |---|---|
-| 相态参数 | $(K,\vec\nabla K)$；量子相态为 $(K\to\infty,\,0)$ |
+| 相态参数 | $(K,\nabla K)$；量子相态为 $(K\to\infty,\,0)$ |
 | 中央扩张 | 李代数中新增的中心方向；此处唯一，由质量标记 |
 | 中央荷 $\hat M$ | 与一切生成元对易的算符；不可约扇区上 $\hat M=m\mathbf 1$ |
 | Casimir 算符 | 由生成元构造、与一切生成元对易的算符；$K$ 有限时 $m^{2}$ 是它的本征值 |

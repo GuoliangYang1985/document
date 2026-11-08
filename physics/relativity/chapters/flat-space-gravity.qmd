@@ -140,7 +140,7 @@ $$ {#eq-linear-gauge}
 称 $\delta_{\xi}$ 为**规范变换**，$\xi$ 为**规范参数**。$\delta_{\xi}$ 关于 $\xi$ 是线性的：$\delta_{\xi^{(1)}+\xi^{(2)}}=\delta_{\xi^{(1)}}+\delta_{\xi^{(2)}}$，$\delta_{a\xi}=a\,\delta_{\xi}$（$a$ 为常数）。参数到算子的对应不是单射：$\delta_{\xi}=0$（作为算子）当且仅当 $\xi$ 是 $\eta$ 的无穷小等距，此时 $\xi_{\mu}=a_{\mu}+b_{\mu\nu}x^{\nu}$（$a$ 为常向量、$b$ 为常反对称矩阵），故 $\ker\delta$ 恰由 $\eta$ 的 $4$ 个平移生成元与 $6$ 个洛伦兹生成元张成，$\dim\ker\delta=4+6=10$。
 :::
 
-**证明（核的计算）.** 设 $\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}=0$ 对一切 $x$ 成立，即
+**证明（核的计算）** 设 $\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}=0$ 对一切 $x$ 成立，即
 
 $$
 \partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}=0,
@@ -170,7 +170,7 @@ $$
 a_{\rho},b_{\rho\nu}\ \text{为常数},\quad b_{\rho\nu}=-b_{\nu\rho}.
 $$
 
-自由参数 $4+6=10$ 个。反之，对每个这样的 $\xi$ 有 $\delta_{\xi}h_{\mu\nu}=b_{\nu\mu}+b_{\mu\nu}=0$。故 $\dim\ker\delta=10$。
+自由参数 $4+6=10$ 个。反之，对每个这样的 $\xi$ 有 $\delta_{\xi}h_{\mu\nu}=b_{\nu\mu}+b_{\mu\nu}=0$。故 $\dim\ker\delta=10$。$\quad\square$
 
 与 @sec-maxwell-equations 的 $U(1)$ 情形相比，@eq-linear-gauge 的参数是一个**向量场**而不是一个函数：那里的规范群是阿贝尔群 $U(1)$，这里的参数由向量场充当。线性层上 $\delta_{\xi}$ 关于 $\xi$ 仍然是线性的，故线性层的规范变换整体仍构成一个阿贝尔群；参数上的李括号结构要到非线性完备化时才进入（@sec-fsg-bootstrap）。
 
@@ -250,7 +250,7 @@ $$ {#eq-lin-gauge-invariance}
 即 $R^{(1)}_{\mu\nu\rho\sigma}$、$R^{(1)}_{\mu\nu}$、$R^{(1)}$、$G^{(1)}_{\mu\nu}$ 都是规范不变量。
 :::
 
-**证明.** 记 $u_{\mu\nu}:=\delta_{\xi}h_{\mu\nu}=\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}$。把 $u$ 代入 @eq-lin-riemann，对四个源项逐一展开（@eq-lin-riemann 中的 $h_{\mu\sigma}$、$h_{\nu\rho}$、$h_{\nu\sigma}$、$h_{\mu\rho}$ 分别换成 $u_{\mu\sigma}$、$u_{\nu\rho}$、$u_{\nu\sigma}$、$u_{\mu\rho}$），再利用二阶偏导可交换把每项的三个求导指标排成同一顺序：
+**证明** 记 $u_{\mu\nu}:=\delta_{\xi}h_{\mu\nu}=\partial_{\mu}\xi_{\nu}+\partial_{\nu}\xi_{\mu}$。把 $u$ 代入 @eq-lin-riemann，对四个源项逐一展开（@eq-lin-riemann 中的 $h_{\mu\sigma}$、$h_{\nu\rho}$、$h_{\nu\sigma}$、$h_{\mu\rho}$ 分别换成 $u_{\mu\sigma}$、$u_{\nu\rho}$、$u_{\nu\sigma}$、$u_{\mu\rho}$），再利用二阶偏导可交换把每项的三个求导指标排成同一顺序：
 
 $$
 \begin{aligned}
@@ -267,7 +267,7 @@ $$
 \end{aligned}
 $$ {#eq-gauge-invariance-expansion}
 
-八项按 $\xi$ 的下标分成四对，逐对相消：第 1 项与第 5 项（指标集 $\{\nu,\rho,\mu\}$ 相同）、第 2 项与第 8 项（$\{\nu,\rho,\sigma\}$）、第 3 项与第 7 项（$\{\mu,\sigma,\nu\}$）、第 4 项与第 6 项（$\{\mu,\sigma,\rho\}$）各自相消，得 @eq-lin-gauge-invariance。由 $R^{(1)}_{\mu\nu}$、$R^{(1)}$、$G^{(1)}_{\mu\nu}$ 是 $R^{(1)}_{\mu\nu\rho\sigma}$ 的 $\eta$-缩并，规范不变性随之成立。
+八项按 $\xi$ 的下标分成四对，逐对相消：第 1 项与第 5 项（指标集 $\{\nu,\rho,\mu\}$ 相同）、第 2 项与第 8 项（$\{\nu,\rho,\sigma\}$）、第 3 项与第 7 项（$\{\mu,\sigma,\nu\}$）、第 4 项与第 6 项（$\{\mu,\sigma,\rho\}$）各自相消，得 @eq-lin-gauge-invariance。由 $R^{(1)}_{\mu\nu}$、$R^{(1)}$、$G^{(1)}_{\mu\nu}$ 是 $R^{(1)}_{\mu\nu\rho\sigma}$ 的 $\eta$-缩并，规范不变性随之成立。$\quad\square$
 
 **注记（一条不依赖展开的证明）。** @eq-lin-riemann 是 $g$ 的黎曼张量在 $g=\eta$ 处的一阶项，而 $g=\eta$ 处曲率为零。按 @eq-tensor-change，黎曼张量的分量在坐标改变下的变化量正比于“$\xi$ 与曲率本身”的乘积；曲率为零，故该变化量的最低阶（关于 $h$ 的一阶）项必为零，即 $R^{(1)}[\delta_{\xi}h]=0$。@eq-gauge-invariance-expansion 是这个论证的逐项兑现。
 
@@ -303,7 +303,7 @@ $$ {#eq-fp-general}
 特别地，规范不变性强制算子中不含零阶项：一切形如 $m^{2}h_{\mu\nu}$ 的项都被 @eq-linear-gauge 排除。
 :::
 
-**证明.** 按导数阶数枚举满足条件 1、2 的全部结构。
+**证明** 按导数阶数枚举满足条件 1、2 的全部结构。
 
 *零阶（0 个导数）*：由一个对称二阶张量 $h$ 构造零阶对称二阶张量，只有两种缩并方式——直接取 $h_{\mu\nu}$，以及取 $\eta_{\mu\nu}$ 乘以迹 $h$。故为零阶两项。此外零阶结构不可能含常数项（那会破坏线性性）。
 
@@ -364,13 +364,13 @@ $$ {#eq-gauge-variation}
 
 右端是五个结构，依次记为 $S_{1},\dots,S_{5}$。
 
-**第三步：五个结构的线性无关性。** 由于 $E$ 是常系数算子，条件 3 只需对 $\xi_{\mu}=A_{\mu}e^{\mathrm{i}kx}$ 这一族参数检验（$A_{\mu}$ 为常向量，$k_{\mu}$ 为常余向量）：这族参数线性张成全部光滑 $\xi$，而 @eq-gauge-variation 的两端对 $\xi$ 都是线性的。代入后（省略公共因子 $e^{\mathrm{i}kx}$）：
+**第三步：五个结构的线性无关性。** 由于 $E$ 是常系数算子，条件 3 只需对 $\xi_{\mu}=A_{\mu}e^{ikx}$ 这一族参数检验（$A_{\mu}$ 为常向量，$k_{\mu}$ 为常余向量）：这族参数线性张成全部光滑 $\xi$，而 @eq-gauge-variation 的两端对 $\xi$ 都是线性的。代入后（省略公共因子 $e^{ikx}$）：
 
 $$
 \begin{gathered}
-S_{1}=\mathrm{i}\left(k_{\mu}A_{\nu}+k_{\nu}A_{\mu}\right),
+S_{1}=i\left(k_{\mu}A_{\nu}+k_{\nu}A_{\mu}\right),
 \qquad
-S_{2}=\mathrm{i}\,\eta_{\mu\nu}(k\cdot A),
+S_{2}=i\,\eta_{\mu\nu}(k\cdot A),
 \qquad
 S_{3}=-k^{2}S_{1},\\
 S_{4}=-k_{\mu}k_{\nu}(k\cdot A),
@@ -387,7 +387,7 @@ $$
 +2(c+d)\,S_{4}=0.
 $$ {#eq-independence}
 
-三个张量 $S_{1}=\mathrm{i}(k_{\mu}A_{\nu}+k_{\nu}A_{\mu})$、$S_{2}=\mathrm{i}\eta_{\mu\nu}(k\cdot A)$、$S_{4}=-k_{\mu}k_{\nu}(k\cdot A)$ 对每个 $k$ 线性无关：取 $k=(k_{0},k_{1},0,0)$（$k_{0}k_{1}\neq0$）与 $A=(1,0,0,0)$，则 $(2,2)$ 元只含 $S_{2}$（值为 $-\mathrm{i}k_{0}$），得 $S_{2}$ 的系数为零；把它代回 $(1,1)$ 元（$-\mathrm{i}k_{0}$ 与 $-k_{0}k_{1}^{2}$ 两项）得 $S_{4}$ 的系数为零；再代回 $(0,1)$ 元（$\mathrm{i}k_{1}$ 与 $-k_{0}^{2}k_{1}$ 两项）得 $S_{1}$ 的系数为零。由于 @eq-independence 对一切 $(A,k)$ 成立而 $A$ 可随 $k$ 任取，三个方括号对一切 $k$ 为零：
+三个张量 $S_{1}=i(k_{\mu}A_{\nu}+k_{\nu}A_{\mu})$、$S_{2}=i\eta_{\mu\nu}(k\cdot A)$、$S_{4}=-k_{\mu}k_{\nu}(k\cdot A)$ 对每个 $k$ 线性无关：取 $k=(k_{0},k_{1},0,0)$（$k_{0}k_{1}\neq0$）与 $A=(1,0,0,0)$，则 $(2,2)$ 元只含 $S_{2}$（值为 $-ik_{0}$），得 $S_{2}$ 的系数为零；把它代回 $(1,1)$ 元（$-ik_{0}$ 与 $-k_{0}k_{1}^{2}$ 两项）得 $S_{4}$ 的系数为零；再代回 $(0,1)$ 元（$ik_{1}$ 与 $-k_{0}^{2}k_{1}$ 两项）得 $S_{1}$ 的系数为零。由于 @eq-independence 对一切 $(A,k)$ 成立而 $A$ 可随 $k$ 任取，三个方括号对一切 $k$ 为零：
 
 $$
 \begin{gathered}
@@ -484,7 +484,7 @@ $$ {#eq-alpha-beta}
 
 *情形（ii）* $\alpha=0$（即 $f=-c/2$，此时 $c\neq0$ 才使 $E$ 不恒为零）：$E=\beta S_{\mu\nu}$，而 $S_{\mu\nu}$ 无迹，迹方程自动满足；$E=0\iff S_{\mu\nu}=0$ 是 $10-1=9$ 个独立方程，不含 $R^{(1)}$ 的约束。
 
-*情形（iii）* $\alpha+\beta=0$（即 $c=0$，此时 $\alpha=-4f$）：由 @eq-R-from-SG，$E=\alpha\left(G^{(1)}_{\mu\nu}-S_{\mu\nu}\right)=-\frac{\alpha}{4}\eta_{\mu\nu}R^{(1)}$，成为单个标量方程 $R^{(1)}=0$。
+*情形（iii）* $\alpha+\beta=0$（即 $c=0$，此时 $\alpha=-4f$）：由 @eq-R-from-SG，$E=\alpha\left(G^{(1)}_{\mu\nu}-S_{\mu\nu}\right)=-\frac{\alpha}{4}\eta_{\mu\nu}R^{(1)}$，成为单个标量方程 $R^{(1)}=0$。$\quad\square$
 
 **注记（情形（ii）的解集确实更大）。** 取
 
@@ -558,7 +558,7 @@ $$ {#eq-wave-eq-fsg}
 特别地，齐次情形 $J_{\mu\nu}=0$ 时，$\bar h$ 的每个分量都满足达朗贝尔方程。
 :::
 
-**证明.** 先由 @eq-lin-ricci 化简。谐和条件 $\partial^{\mu}\bar h_{\mu\nu}=0$ 等价于
+**证明** 先由 @eq-lin-ricci 化简。谐和条件 $\partial^{\mu}\bar h_{\mu\nu}=0$ 等价于
 
 $$
 \partial^{\alpha}h_{\alpha\nu}-\frac{1}{2}\partial_{\nu}h=0
@@ -605,7 +605,7 @@ $$
 \partial^{2}\xi_{\nu}=-\partial^{\mu}\bar h_{\mu\nu}.
 $$ {#eq-harmonic-equation}
 
-这是 $\xi$ 的四分量线性双曲型方程：给定某个坐标面上的初值，无约束地向前演化即得一解，故谐和规范总可达到（可达性只在无穷远处的边界条件上受限）。
+这是 $\xi$ 的四分量线性双曲型方程：给定某个坐标面上的初值，无约束地向前演化即得一解，故谐和规范总可达到（可达性只在无穷远处的边界条件上受限）。$\quad\square$
 
 **注记（谐和规范的残余自由度）。** @eq-harmonic-equation 只是 $\xi$ 的一个方程，故使 $h$ 落入谐和规范的 $\xi$ 不唯一：若 $\xi$ 是一个解，则 $\xi+\zeta$ 也是解当且仅当 $\partial^{2}\zeta_{\nu}=0$。故谐和规范内仍保留一个由“满足达朗贝尔方程的向量场”构成的规范自由度，它在下一节用于进一步化简。
 
@@ -617,7 +617,7 @@ $$ {#eq-harmonic-equation}
 取 $J_{\mu\nu}=0$，@eq-wave-eq-fsg 成为 $\partial^{2}\bar h_{\mu\nu}=0$，其平面波解为
 
 $$
-\bar h_{\mu\nu} = \varepsilon_{\mu\nu}\,e^{\mathrm{i}k_{\lambda}x^{\lambda}},
+\bar h_{\mu\nu} = \varepsilon_{\mu\nu}\,e^{ik_{\lambda}x^{\lambda}},
 \qquad
 k_{\lambda}k^{\lambda}=0.
 $$ {#eq-plane-wave-fsg}
@@ -651,22 +651,22 @@ $$ {#eq-polarizations}
 相速度为 $|k^{0}|/|\mathbf{k}|=1$。维数计数与此一致：对称张量 $\bar h_{\mu\nu}$ 有 $10$ 个分量，谐和规范 @eq-transverse 消去 $4$ 个；齐次情形下的残余规范（$\partial^{2}\xi_{\nu}=0$）仍有 $4$ 个自由度，其中 $k\cdot\zeta\neq0$ 的那一个把迹消为零，剩下 $3$ 个横向参数再消去 $3$ 个分量。剩 $2$ 个，与 $2\times2$ 无迹对称矩阵的维数（$\frac{2\cdot3}{2}-1=2$）相同。
 :::
 
-**证明.** 逐条验证。
+**证明** 逐条验证。
 
-*（1）平面波与 $k^{2}=0$。* 对 $\bar h_{\mu\nu}=\varepsilon_{\mu\nu}e^{\mathrm{i}kx}$ 有 $\partial_{\lambda}\bar h_{\mu\nu}=\mathrm{i}k_{\lambda}\bar h_{\mu\nu}$，故 $\partial^{2}\bar h_{\mu\nu}=(\mathrm{i}k)^{2}\bar h_{\mu\nu}=-k^{2}\bar h_{\mu\nu}$。于是 $\partial^{2}\bar h_{\mu\nu}=0\iff k^{2}=0$，即 @eq-plane-wave-fsg。
+*（1）平面波与 $k^{2}=0$。* 对 $\bar h_{\mu\nu}=\varepsilon_{\mu\nu}e^{ikx}$ 有 $\partial_{\lambda}\bar h_{\mu\nu}=ik_{\lambda}\bar h_{\mu\nu}$，故 $\partial^{2}\bar h_{\mu\nu}=(ik)^{2}\bar h_{\mu\nu}=-k^{2}\bar h_{\mu\nu}$。于是 $\partial^{2}\bar h_{\mu\nu}=0\iff k^{2}=0$，即 @eq-plane-wave-fsg。
 
-*（2）横向性。* 谐和条件为 $\partial^{\mu}\bar h_{\mu\nu}=\mathrm{i}k^{\mu}\varepsilon_{\mu\nu}e^{\mathrm{i}kx}=0$，即 @eq-transverse；这是 $\varepsilon$ 的 $4$ 个独立的线性条件。
+*（2）横向性。* 谐和条件为 $\partial^{\mu}\bar h_{\mu\nu}=ik^{\mu}\varepsilon_{\mu\nu}e^{ikx}=0$，即 @eq-transverse；这是 $\varepsilon$ 的 $4$ 个独立的线性条件。
 
-*（3）残余规范。* 取 $\xi_{\nu}=\zeta_{\nu}e^{\mathrm{i}kx}$，其中 $\zeta$ 为常向量。$\partial^{2}\xi_{\nu}=0$ 要求 $k^{2}=0$，与 @eq-plane-wave-fsg 相容；由 @eq-gauge-trace-reverse，
+*（3）残余规范。* 取 $\xi_{\nu}=\zeta_{\nu}e^{ikx}$，其中 $\zeta$ 为常向量。$\partial^{2}\xi_{\nu}=0$ 要求 $k^{2}=0$，与 @eq-plane-wave-fsg 相容；由 @eq-gauge-trace-reverse，
 
 $$
 \delta_{\xi}\varepsilon_{\mu\nu}
-= \mathrm{i}\left(k_{\mu}\zeta_{\nu}+k_{\nu}\zeta_{\mu}-\eta_{\mu\nu}\,k\cdot\zeta\right).
+= i\left(k_{\mu}\zeta_{\nu}+k_{\nu}\zeta_{\mu}-\eta_{\mu\nu}\,k\cdot\zeta\right).
 $$ {#eq-gauge-eps}
 
-*（3a）横向性保持。* $k^{\mu}\delta_{\xi}\varepsilon_{\mu\nu}=\mathrm{i}\left(k^{2}\zeta_{\nu}+k_{\nu}(k\cdot\zeta)-k_{\nu}(k\cdot\zeta)\right)=\mathrm{i}k^{2}\zeta_{\nu}=0$，故 @eq-gauge-eps 把满足 @eq-transverse 的 $\varepsilon$ 仍映为满足 @eq-transverse 的 $\varepsilon$。
+*（3a）横向性保持。* $k^{\mu}\delta_{\xi}\varepsilon_{\mu\nu}=i\left(k^{2}\zeta_{\nu}+k_{\nu}(k\cdot\zeta)-k_{\nu}(k\cdot\zeta)\right)=ik^{2}\zeta_{\nu}=0$，故 @eq-gauge-eps 把满足 @eq-transverse 的 $\varepsilon$ 仍映为满足 @eq-transverse 的 $\varepsilon$。
 
-*（3b）消迹。* 取 @eq-gauge-eps 的 $\eta$-迹：$\delta\bar h=\eta^{\mu\nu}\delta_{\xi}\varepsilon_{\mu\nu}=\mathrm{i}\left(2\,k\cdot\zeta-4\,k\cdot\zeta\right)=-2\mathrm{i}\,k\cdot\zeta$。要求 $\varepsilon'=\varepsilon+\delta_{\xi}\varepsilon$ 无迹，即 $0=\varepsilon-2\mathrm{i}\,k\cdot\zeta$，得 $k\cdot\zeta=\dfrac{\varepsilon}{2\mathrm{i}}$。这是一个关于 $\zeta$ 的单个线性方程，总有解；此后 $\varepsilon$ 无迹，且因 $h=\bar h$（迹为零时二者相同），可以不再区分 $h$ 与 $\bar h$。
+*（3b）消迹。* 取 @eq-gauge-eps 的 $\eta$-迹：$\delta\bar h=\eta^{\mu\nu}\delta_{\xi}\varepsilon_{\mu\nu}=i\left(2\,k\cdot\zeta-4\,k\cdot\zeta\right)=-2i\,k\cdot\zeta$。要求 $\varepsilon'=\varepsilon+\delta_{\xi}\varepsilon$ 无迹，即 $0=\varepsilon-2i\,k\cdot\zeta$，得 $k\cdot\zeta=\dfrac{\varepsilon}{2i}$。这是一个关于 $\zeta$ 的单个线性方程，总有解；此后 $\varepsilon$ 无迹，且因 $h=\bar h$（迹为零时二者相同），可以不再区分 $h$ 与 $\bar h$。
 
 *（3c）剩余自由度。* @eq-gauge-eps 中与迹无关的部分还允许 $\zeta$ 满足 $k\cdot\zeta=0$，这是一个 $3$ 维的参数集（$\zeta$ 减去沿 $k$ 的一维）。由（3a）它保持横向性，由 $k\cdot\zeta=0$ 它保持无迹性，故在横向无迹类内仍可作 $3$ 参数变换。
 
@@ -682,7 +682,7 @@ $$
 \begin{pmatrix}0&1\\1&0\end{pmatrix}.
 $$
 
-（分别取 $\varepsilon_{11}=1$ 与 $\varepsilon_{12}=1$，其余为零。）把这两个 $2\times2$ 块嵌入第 $1,2$ 行与列，其余分量为零，即 @eq-polarizations 的两个矩阵。直接代回可见二者都满足 $k^{\mu}\varepsilon_{\mu\nu}=0$（它们的非零分量只落在 $1,2$ 方向，而 $k$ 只有 $0,3$ 分量）与 $\varepsilon^{\mu}_{\ \mu}=1+(-1)=0$（$+$）或 $0$（$\times$）。最后 $k^{2}=0$ 给出 $|k^{0}|=|\mathbf{k}|$，相速度为 $1$。
+（分别取 $\varepsilon_{11}=1$ 与 $\varepsilon_{12}=1$，其余为零。）把这两个 $2\times2$ 块嵌入第 $1,2$ 行与列，其余分量为零，即 @eq-polarizations 的两个矩阵。直接代回可见二者都满足 $k^{\mu}\varepsilon_{\mu\nu}=0$（它们的非零分量只落在 $1,2$ 方向，而 $k$ 只有 $0,3$ 分量）与 $\varepsilon^{\mu}_{\ \mu}=1+(-1)=0$（$+$）或 $0$（$\times$）。最后 $k^{2}=0$ 给出 $|k^{0}|=|\mathbf{k}|$，相速度为 $1$。$\quad\square$
 
 **与 @sec-galilean-electrodynamics 对照**：那里证明了二阶双曲型波解在伽利略群下不可能存在（@cor-no-wave）。因此“存在以不变量速度传播的二阶双曲型解”这件事本身，是洛伦兹群而非伽利略群的性质，与基本场是 1-形式还是对称二阶张量无关。
 
@@ -704,7 +704,7 @@ $$
 $$ {#eq-source-conservation}
 :::
 
-**证明.** 由 @eq-lin-ricci 求散度：
+**证明** 由 @eq-lin-ricci 求散度：
 
 $$
 \begin{aligned}
@@ -735,7 +735,7 @@ $$
 =0,
 $$
 
-即 @eq-lin-bianchi。对 @eq-fsg-field-eq 取散度并代入 @eq-lin-bianchi，得 $\kappa\,\partial^{\mu}J_{\mu\nu}=0$；$\kappa\neq0$ 故 @eq-source-conservation 成立。
+即 @eq-lin-bianchi。对 @eq-fsg-field-eq 取散度并代入 @eq-lin-bianchi，得 $\kappa\,\partial^{\mu}J_{\mu\nu}=0$；$\kappa\neq0$ 故 @eq-source-conservation 成立。$\quad\square$
 
 **注记（这条恒等式的含义）。** @prp-bianchi 说明算子 $G^{(1)}$ 的像落在“无散度的对称张量场”这一子空间内，它给出一个 Fredholm 型的相容性条件：若 $J$ 事先给定，@eq-source-conservation 只是对 $J$ 的一个限制，方程组本身无矛盾；但若要求方程组对一切 $J$ 可解、或 $J$ 的一部分由 $h$ 自身构成（下一节），线性方程就少了一组可自由指定的方程，必须补入高阶项。
 
@@ -782,7 +782,7 @@ $$ {#eq-bootstrap}
 其中每个 $t^{(n)}$ 是 $n$ 次的局部对称张量，同一个常数 $\kappa$ 乘在所有项上。$t^{(n)}$ 就是“右端项带上场自身贡献”的那一部分。
 :::
 
-**证明（骨架：先证高阶项不可避免，再把唯一性归到（iii））.**
+**证明（骨架：先证高阶项不可避免，再把唯一性归到（iii））**
 *（1）最低阶项的形式.* 由（i）与 @prp-fierz-pauli，$\mathcal{G}^{(1)}$ 只能是 $c\,G^{(1)}$（取情形（i），因为只有它给出 $10$ 个独立的方程）。
 
 *（2）高阶项不可避免.* 若 $\mathcal{G}$ 只有一次项，即 $\mathcal{G}=c\,G^{(1)}$，则由 @eq-lin-bianchi，对 @eq-fsg-field-eq 取 $\partial$-散度得 $\partial^{\mu}J_{\mu\nu}=0$：$J$ 不能任取，与（ii）矛盾。故 $\mathcal{G}^{(n)}\neq0$ 对某个 $n\ge2$ 成立，即 @eq-bootstrap 中的 $t^{(n)}$ 必须出现。
@@ -809,13 +809,13 @@ $$ {#eq-partial-divergence}
 
 （推导：$\nabla^{\mu}G_{\mu\nu}=\partial^{\mu}G_{\mu\nu}+\Gamma^{\mu}{}_{\mu\lambda}G^{\lambda}{}_{\nu}-\Gamma^{\lambda}{}_{\mu\nu}G^{\mu}{}_{\lambda}$；把末项按 $\Gamma^{\lambda}{}_{\mu\nu}=\Gamma^{\lambda}{}_{\nu\mu}$ 与 $G$ 的对称性改写并移项即得上式。）@eq-partial-divergence 的右端是 $\ge2$ 次的局部项，**并不**为零。正因为如此，各级的 $t^{(n)}$ 才必须出现；而它们在每一级上的取值又被低阶项与规范不变性卡住。
 
-*（6）计算的省略.* （iii）所断言的“唯一确定”是一个逐阶的有限计算（每一阶解一个有限的线性代数问题），其逐步核对的版本见 [@deser1970; @deser2010; @butcher2009]。本节不作这一步计算。
+*（6）计算的省略.* （iii）所断言的“唯一确定”是一个逐阶的有限计算（每一阶解一个有限的线性代数问题），其逐步核对的版本见 [@deser1970; @deser2010; @butcher2009]。本节不作这一步计算。$\quad\square$
 
 **化归（一阶形式）.** 上述逐阶计算可以用 Palatini 形式写成闭式的三步。把二次泛函写成
 
 $$
-S_{2}[h]=\int d^{4}x\;\sqrt{-\eta}\;\eta^{\mu\nu}\mathrm{Ric}^{(2)}_{\mu\nu}(\Gamma)
-+\int d^{4}x\;h^{\mu\nu}\mathrm{Ric}^{(1)}_{\mu\nu}(\Gamma).
+S_{2}[h]=\int \mathrm{d}^{4}x\;\sqrt{-\eta}\;\eta^{\mu\nu}\mathrm{Ric}^{(2)}_{\mu\nu}(\Gamma)
++\int \mathrm{d}^{4}x\;h^{\mu\nu}\mathrm{Ric}^{(1)}_{\mu\nu}(\Gamma).
 $$
 
 其中 $\mathrm{Ric}^{(n)}$ 是 Ricci 张量按 $\Gamma=\Gamma^{(1)}+\Gamma^{(2)}+\cdots$ 展开的第 $n$ 次部分，且 $\Gamma$ 与 $g=\eta+h$ 独立变分。三步为：
@@ -846,7 +846,7 @@ $$
 3. **不变量相同**：任一仅依赖 $g$ 的坐标标量——例如由 $g$ 构造的曲率标量与体积元——在两种表述中取相同的值；换言之，两种表述给出相同的坐标不变量代数。
 :::
 
-**证明.** （1）由 @prp-bootstrap 直接得到。（2）$h$ 与 $g$ 只差一个固定的 $\eta$，故 $h\mapsto g$ 是一一对应（@def-flat-background）；方程相同，初末条件相同，则解集相同。（3）所有只依赖 $g$ 的构造在两种表述下是同一个对象：把 $g$ 写成 $\eta+h$ 只是对它作了一次重参数化，而 $\eta$ 是常数张量、不含自由参数。
+**证明** （1）由 @prp-bootstrap 直接得到。（2）$h$ 与 $g$ 只差一个固定的 $\eta$，故 $h\mapsto g$ 是一一对应（@def-flat-background）；方程相同，初末条件相同，则解集相同。（3）所有只依赖 $g$ 的构造在两种表述下是同一个对象：把 $g$ 写成 $\eta+h$ 只是对它作了一次重参数化，而 $\eta$ 是常数张量、不含自由参数。$\quad\square$
 
 **注记（等价表述了什么、不表述什么）。** @thm-equivalence 是一个关于**方程与不变量**的等同，不是关于“哪一套变量更基本”的断定。它既不蕴含“可以把 $\eta$ 取为零”，也不蕴含其否定：$\eta$ 在构造中始终是一个固定张量（它定义了指标升降、@prp-fierz-pauli 中“线性”的含义、以及 @eq-wave-eq-fsg 中 $\partial^{2}$ 的定义）。下面两节说明这个固定张量在多大程度上可见。
 
@@ -860,7 +860,7 @@ $$
 特别地，“$h$ 在给定点处是小量”这一陈述依赖分解的选取：一般地 $\eta'$ 可以选得使 $|h'|$ 在给定点任意大。
 :::
 
-**证明.** $g$ 固定，故 $h'-h=\eta-\eta'$。@thm-equivalence 的第 3 条说，两种分解下的所有坐标不变量都只是 $g$ 的函数，而 $g$ 相同，故不变量相同。对第二个陈述：取 $\eta'=\varphi_{*}\eta$（$\eta$ 沿微分同胚 $\varphi$ 的拉回），则 $\eta'$ 仍平直（平直性的拉回仍平直），而 $h'=g-\eta'$ 中含 $\varphi$ 的导数，取 $\varphi$ 的导数足够大即可使 $|h'|$ 在给定点任意大。
+**证明** $g$ 固定，故 $h'-h=\eta-\eta'$。@thm-equivalence 的第 3 条说，两种分解下的所有坐标不变量都只是 $g$ 的函数，而 $g$ 相同，故不变量相同。对第二个陈述：取 $\eta'=\varphi_{*}\eta$（$\eta$ 沿微分同胚 $\varphi$ 的拉回），则 $\eta'$ 仍平直（平直性的拉回仍平直），而 $h'=g-\eta'$ 中含 $\varphi$ 的导数，取 $\varphi$ 的导数足够大即可使 $|h'|$ 在给定点任意大。$\quad\square$
 
 **注记（一个必要的澄清）。** 不应由此得出“$\eta$ 是多余的”。$\eta$ 在构造中是一个**固定的**结构；只是因为最终由它导出的理论恰好对微分同胚不变，这个固定结构才被规范掉。一旦理论失去微分同胚不变性（@sec-fsg-breaking），$\eta$ 立刻进入不变量。因此准确的说法是：**在 @thm-equivalence 成立的范围内，$\eta$ 不出现在任何不变量中；在该等同被破坏的地方，它进入不变量。**
 

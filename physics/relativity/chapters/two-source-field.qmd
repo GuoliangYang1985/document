@@ -189,7 +189,7 @@ $$
 本章以下取
 
 $$
-L:=\partial_{t}^{2}-c^{2}\nabla^{2}.
+L:=\partial_{t}^{2}-c^{2}\nabla^{2}. \quad\square
 $$ {#eq-operator}
 
 **与 A1 的相容性**：$L$ 的平面波解满足 $\omega=\pm c|\boldsymbol{\xi}|$，相速度为 $c$，各方向相同；由旋转对称，其点源波前即以速率 $c$ 扩张的球面，与 A1 一致。
@@ -215,7 +215,7 @@ $$
 $$ {#eq-kirchhoff}
 :::
 
-**证明** 对空间变量作傅里叶变换 $\widehat{\varphi}(\boldsymbol{\xi},t)=\int e^{-i\boldsymbol{\xi}\cdot\mathbf{x}}\varphi(\mathbf{x},t)\,d^{3}x$：
+**证明** 对空间变量作傅里叶变换 $\widehat{\varphi}(\boldsymbol{\xi},t)=\int e^{-i\boldsymbol{\xi}\cdot\mathbf{x}}\varphi(\mathbf{x},t)\,\mathrm{d}^{3}x$：
 
 $$
 \partial_{t}^{2}\widehat{\varphi}+c^{2}|\boldsymbol{\xi}|^{2}\widehat{\varphi}=0,\qquad
@@ -232,7 +232,7 @@ $$
 
 $$
 h_{t}(\mathbf{z}):=\frac{1}{(2\pi)^{3}}\int_{\mathbb{R}^{3}}e^{i\boldsymbol{\xi}\cdot\mathbf{z}}\,
-\frac{\sin\bigl(c|\boldsymbol{\xi}|t\bigr)}{c|\boldsymbol{\xi}|}\,d^{3}\xi,
+\frac{\sin\bigl(c|\boldsymbol{\xi}|t\bigr)}{c|\boldsymbol{\xi}|}\,\mathrm{d}^{3}\xi,
 $$
 
 则 $\varphi(\cdot,t)=\psi*h_{t}$。计算 $h_{t}$：被积函数只依赖 $|\boldsymbol{\xi}|$，取 $\boldsymbol{\xi}$ 空间的球坐标，令 $k=|\boldsymbol{\xi}|$、$r=|\mathbf{z}|$，并把 $\mathbf{z}$ 取为极轴：
@@ -261,10 +261,10 @@ $$
 h_{t}(\mathbf{z})=\frac{\delta\bigl(t-|\mathbf{z}|/c\bigr)}{4\pi c^{2}|\mathbf{z}|}.
 $$
 
-代回卷积并在 $\mathbf{x}-\mathbf{y}$ 处取球坐标（$r=|\mathbf{x}-\mathbf{y}|$，$d^{3}y=r^{2}\,dr\,d\Omega$，且 $\mathbf{y}=\mathbf{x}-r\boldsymbol{\omega}$）：
+代回卷积并在 $\mathbf{x}-\mathbf{y}$ 处取球坐标（$r=|\mathbf{x}-\mathbf{y}|$，$\mathrm{d}^{3}y=r^{2}\,dr\,d\Omega$，且 $\mathbf{y}=\mathbf{x}-r\boldsymbol{\omega}$）：
 
 $$
-\varphi(\mathbf{x},t)=\int_{\mathbb{R}^{3}}\psi(\mathbf{y})\,\frac{\delta\bigl(t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{4\pi c^{2}|\mathbf{x}-\mathbf{y}|}\,d^{3}y,
+\varphi(\mathbf{x},t)=\int_{\mathbb{R}^{3}}\psi(\mathbf{y})\,\frac{\delta\bigl(t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{4\pi c^{2}|\mathbf{x}-\mathbf{y}|}\,\mathrm{d}^{3}y,
 $$
 
 $$
@@ -285,18 +285,18 @@ $$
 =\frac{1}{4\pi c^{2}t}\int_{|\mathbf{y}-\mathbf{x}|=ct}\psi(\mathbf{y})\,dS(\mathbf{y}),
 $$
 
-即 @eq-kirchhoff。
+即 @eq-kirchhoff。$\quad\square$
 
 ## 非齐次方程的推迟解 {#sec-tsf-retarded}
 
-由杜阿梅尔原理：若 $K(\sigma)$ 是把初速度 $\psi$ 映射为 $\sigma$ 时刻齐次问题解的算子，则零初值非齐次问题的解为 $\varphi(t)=\int_{0}^{t}K(t-s)f(\cdot,s)\,ds$。代入 @eq-kirchhoff：
+由杜阿梅尔原理：若 $K(\sigma)$ 是把初速度 $\psi$ 映射为 $\sigma$ 时刻齐次问题解的算子，则零初值非齐次问题的解为 $\varphi(t)=\int_{0}^{t}K(t-s)f(\cdot,s)\,\mathrm{d}s$。代入 @eq-kirchhoff：
 
 $$
-\varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\int_{0}^{t}\frac{ds}{t-s}
+\varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\int_{0}^{t}\frac{\mathrm{d}s}{t-s}
 \int_{|\mathbf{y}-\mathbf{x}|=c(t-s)}f(\mathbf{y},s)\,dS(\mathbf{y}).
 $$ {#eq-duhamel}
 
-把它化成推迟形式。令 $r=c(t-s)$，则 $s=t-r/c$、$ds=-dr/c$、$(t-s)=r/c$，且 $dS=(c(t-s))^{2}d\Omega=r^{2}d\Omega$。$s$ 从 $0$ 到 $t$ 对应 $r$ 从 $ct$ 到 $0$：
+把它化成推迟形式。令 $r=c(t-s)$，则 $s=t-r/c$、$\mathrm{d}s=-dr/c$、$(t-s)=r/c$，且 $dS=(c(t-s))^{2}d\Omega=r^{2}d\Omega$。$s$ 从 $0$ 到 $t$ 对应 $r$ 从 $ct$ 到 $0$：
 
 $$
 \varphi(\mathbf{x},t)
@@ -308,11 +308,11 @@ $$
 =\frac{1}{4\pi c^{2}}\int_{0}^{ct}r\,dr\int_{S^{2}}f\bigl(\mathbf{x}-r\boldsymbol{\omega},\,t-r/c\bigr)\,d\Omega.
 $$
 
-由于 $d^{3}y=r^{2}dr\,d\Omega$、$|\mathbf{x}-\mathbf{y}|=r$，且被积函数在 $r>ct$ 时取 $f$ 的负时刻值（本章取 $f(\cdot,s)=0$ 对 $s<0$），可把上限延至 $\infty$：
+由于 $\mathrm{d}^{3}y=r^{2}dr\,d\Omega$、$|\mathbf{x}-\mathbf{y}|=r$，且被积函数在 $r>ct$ 时取 $f$ 的负时刻值（本章取 $f(\cdot,s)=0$ 对 $s<0$），可把上限延至 $\infty$：
 
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\int_{\mathbb{R}^{3}}
-\frac{f\bigl(\mathbf{y},\,t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{|\mathbf{x}-\mathbf{y}|}\,d^{3}y.
+\frac{f\bigl(\mathbf{y},\,t-|\mathbf{x}-\mathbf{y}|/c\bigr)}{|\mathbf{x}-\mathbf{y}|}\,\mathrm{d}^{3}y.
 $$ {#eq-retarded}
 
 ::: {#prp-retarded-form}
@@ -332,7 +332,7 @@ $$
 其中 $q$ 支撑在 $[0,\infty)$，$\mathbf{p}$ 为一条给定的曲线。代入 @eq-retarded 并插入
 
 $$
-1=\int_{-\infty}^{\infty}\delta\bigl(t-\tau-|\mathbf{x}-\mathbf{y}|/c\bigr)\,d\tau.
+1=\int_{-\infty}^{\infty}\delta\bigl(t-\tau-|\mathbf{x}-\mathbf{y}|/c\bigr)\,\mathrm{d}\tau.
 $$
 
 把 $\tau$ 积分移到外层：
@@ -341,7 +341,7 @@ $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\iint
 \delta\bigl(t-\tau-|\mathbf{x}-\mathbf{y}|/c\bigr)\,
 \delta^{3}\bigl(\mathbf{y}-\mathbf{p}(\tau)\bigr)\,q(\tau)\,
-\frac{d^{3}y\,d\tau}{|\mathbf{x}-\mathbf{y}|}.
+\frac{\mathrm{d}^{3}y\,\mathrm{d}\tau}{|\mathbf{x}-\mathbf{y}|}.
 $$
 
 $\mathbf{y}$ 积分被 $\delta^{3}$ 固定在 $\mathbf{y}=\mathbf{p}(\tau)$，此时 $|\mathbf{x}-\mathbf{y}|=R(\tau)$。记
@@ -354,7 +354,7 @@ $$
 
 $$
 \varphi(\mathbf{x},t)=\frac{1}{4\pi c^{2}}\int_{-\infty}^{\infty}q(\tau)\,
-\frac{\delta\bigl(g(\tau)\bigr)}{R(\tau)}\,d\tau,
+\frac{\delta\bigl(g(\tau)\bigr)}{R(\tau)}\,\mathrm{d}\tau,
 $$ {#eq-retarded-integral}
 
 再用一维换元公式 $\delta\bigl(g(\tau)\bigr)=\sum_{g(\tau^{*})=0}\dfrac{\delta(\tau-\tau^{*})}{|g'(\tau^{*})|}$：
@@ -456,7 +456,7 @@ $$
 需计算 $|g'(\tau^{*})|$。由
 
 $$
-\frac{d}{d\tau}|\mathbf{x}-\mathbf{b}-\mathbf{v}\tau|
+\frac{\mathrm{d}}{\mathrm{d}\tau}|\mathbf{x}-\mathbf{b}-\mathbf{v}\tau|
 =-\frac{(\mathbf{x}-\mathbf{p}_{B}(\tau))\cdot\mathbf{v}}{|\mathbf{x}-\mathbf{p}_{B}(\tau)|}
 =-\hat{\mathbf{n}}\cdot\mathbf{v},
 \qquad \hat{\mathbf{n}}:=\frac{\mathbf{x}-\mathbf{p}_{B}(\tau)}{|\mathbf{x}-\mathbf{p}_{B}(\tau)|}.
@@ -729,7 +729,7 @@ $$
 
 第三步（坐标无关性）。$\tau_{k}=t(E_{k})$ 是点 $E_{k}\in M$ 的静系时间坐标。由 A2，$t'=t$，故这个数值在用 $S_{0}$ 还是用 $S_{\mathbf{u}}$ 的坐标去读时相同。
 
-于是两位参与方的输出相等，判定一致。
+于是两位参与方的输出相等，判定一致。$\quad\square$
 
 ::: {#rem-measurement-supersonic}
 ## $v>c$ 的情形

@@ -88,7 +88,7 @@ $$ {#eq-lemma-L}
 2. $\mathbf{b}$ 是一个按 $\mathbf{b}' = \mathbf{b} - a\mathbf{u}$ 变换的对象。
 :::
 
-**证明** 将 @eq-operator-transform 代入 $L$ 展开、合并 $\partial_{t'}$ 与 $\nabla'$ 的系数即得 @eq-lemma-L。
+**证明** 将 @eq-operator-transform 代入 $L$ 展开、合并 $\partial_{t'}$ 与 $\nabla'$ 的系数即得 @eq-lemma-L。$\quad\square$
 
 ::: {#cor-no-wave}
 ## 无波定理
@@ -129,7 +129,7 @@ $$ {#eq-convective-proof}
 $$
 \partial_{t'} + \mathbf{w}'\cdot\nabla'
 = \left(\partial_{t} + \mathbf{u}\cdot\nabla\right) + \left(\mathbf{w}-\mathbf{u}\right)\cdot\nabla
-= \partial_{t} + \mathbf{w}\cdot\nabla.
+= \partial_{t} + \mathbf{w}\cdot\nabla. \quad\square
 $$
 
 ### 一条硬约束：$\mathbf{w}$ 必须是常向量
@@ -148,7 +148,7 @@ $$ {#eq-commutation}
 上式对一切 $\mathbf{F}$ 为零，当且仅当 $\partial_{j}w_{l}=0$ 对一切 $j,l$ 成立，即 **$\mathbf{w}$ 是常向量**。
 :::
 
-**证明要点** 展开两端，$w_{l}\partial_{j}\partial_{l}F_{k}$ 一类的项因偏导数可交换而相消，只剩含 $\partial_{j}w_{l}$ 的项。若 $\mathbf{w}$ 非常值，取 $\partial_{l}F_{k}$ 为任意矩阵即可使 @eq-commutation 非零。
+**证明要点** 展开两端，$w_{l}\partial_{j}\partial_{l}F_{k}$ 一类的项因偏导数可交换而相消，只剩含 $\partial_{j}w_{l}$ 的项。若 $\mathbf{w}$ 非常值，取 $\partial_{l}F_{k}$ 为任意矩阵即可使 @eq-commutation 非零。$\quad\square$
 
 这条约束的后果：**本构造中 $\mathbf{w}$ 只能取常向量**。若允许 $\mathbf{w}=\mathbf{w}(\mathbf{x},t)$，则旋度方程与散度方程不再自洽地配对（齐次结构断裂），需要另行引入修正项——那是另一个模型，见 @sec-gal-boundary 的讨论。
 
@@ -241,7 +241,7 @@ $$
 
 两项对流贡献**恰好相消**。
 
-这个“恰好相消”不是巧合：$\mathbf{J}-\rho\mathbf{w}$ 正是“$\mathbf{J}$ 在以 $\mathbf{w}$ 运动的坐标网中的表现”，连续性方程的不变性由此自动成立。
+这个“恰好相消”不是巧合：$\mathbf{J}-\rho\mathbf{w}$ 正是“$\mathbf{J}$ 在以 $\mathbf{w}$ 运动的坐标网中的表现”，连续性方程的不变性由此自动成立。$\quad\square$
 
 ## 验证一：形式不变性 {#sec-gal-covariance}
 
@@ -262,7 +262,7 @@ $$
 = -\,\mathcal{D}_{t}^{(\mathbf{w})}\,\mathbf{B}.
 $$
 
-其中第二个等号用了 @lem-convective-invariance。即：带撇系中的方程与原方程逐字相同。散度方程不含 $\partial_t$，而 $\nabla'=\nabla$，自动不变。
+其中第二个等号用了 @lem-convective-invariance。即：带撇系中的方程与原方程逐字相同。散度方程不含 $\partial_t$，而 $\nabla'=\nabla$，自动不变。$\quad\square$
 
 ### 换元定理：这组方程的全部解都是已知的
 
@@ -280,7 +280,7 @@ $$ {#eq-change-of-variables}
 则 $\partial_{\tau} = \mathcal{D}_{t}^{(\mathbf{w})}$、$\nabla_{\boldsymbol{\xi}} = \nabla$。于是 $\left(\mathbf{E},\mathbf{B}\right)$ 是修改后方程组的解，当且仅当 $\left(\mathbf{E},\mathbf{B}\right)$ 作为 $\left(\boldsymbol{\xi},\tau\right)$ 的函数是标准系统 @eq-standard-maxwell 的解。
 :::
 
-**证明** 直接对 @eq-change-of-variables 求链式法则：$\partial_t|_{\mathbf{x}} = \partial_{\tau}|_{\boldsymbol{\xi}} - \mathbf{w}\cdot\nabla_{\boldsymbol{\xi}}$，移项即 $\mathcal{D}_t^{(\mathbf{w})} = \partial_\tau$。
+**证明** 直接对 @eq-change-of-variables 求链式法则：$\partial_t|_{\mathbf{x}} = \partial_{\tau}|_{\boldsymbol{\xi}} - \mathbf{w}\cdot\nabla_{\boldsymbol{\xi}}$，移项即 $\mathcal{D}_t^{(\mathbf{w})} = \partial_\tau$。$\quad\square$
 
 **@thm-change-of-variables 的含义**：修改后方程组的解空间与标准系统的解空间之间只隔着一个**伽利略换元**——每一个解都是“标准解的剪切像”（把标准解沿速度 $\mathbf{w}$ 平移）。因此本构造**没有制造新的数学内容**，它做的是：把标准系统与伽利略群**打包成一个整体**，使形式不变性成为构造的自动性质而非事后检验。这正是①（逐字不变 + 补偿结构）的本质：**把②所需要的表示变换外包给一个新对象 $\mathbf{w}$ 去承担。**
 

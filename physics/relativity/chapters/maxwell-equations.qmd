@@ -16,7 +16,7 @@ $$ {#eq-galileo}
 然而，麦克斯韦方程组预言了真空中光速 $c$ 为一个普适常数，见 @eq-light-speed-c。
 
 $$
-c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}.
+c = \frac{1}{\sqrt{\mu_{0}\varepsilon_{0}}}.
 $$ {#eq-light-speed-c}
 
 这与伽利略变换下的速度合成法则相矛盾。
@@ -160,15 +160,15 @@ $$ {#eq-A-four}
 $\partial^{\mu}$ 是逆变四维梯度算符，为 @eq-partial-four。
 
 $$
-\partial^{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \boldsymbol{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right).
+\partial^{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \nabla \right) = \left(\frac{1}{c}\frac{\partial}{\partial t}, - \frac{\partial}{\partial x}, - \frac{\partial}{\partial y}, - \frac{\partial}{\partial z} \right).
 $$ {#eq-partial-four}
 
 电场和磁场 [@feynman2020vol2]（第 240 页）由势定义为 @eq-E 和 @eq-B。
 
-$$\mathbf{E} = - \boldsymbol{\nabla}\phi - \frac{\partial\mathbf{A}}{\partial t}$$ {#eq-E}
+$$\mathbf{E} = - \nabla\phi - \frac{\partial\mathbf{A}}{\partial t}$$ {#eq-E}
 
 $$
-\mathbf{B} = \boldsymbol{\nabla} \times \mathbf{A} =
+\mathbf{B} = \nabla \times \mathbf{A} =
 \begin{vmatrix}
 \mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\
 \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\[8pt]
@@ -181,15 +181,15 @@ $$ {#eq-B}
 $$ E_{i} = - \frac{\partial\phi}{\partial x^{i}} - \frac{\partial A^i}{\partial t}$$ {#eq-E-i}
 
 $$
-B_x = (\boldsymbol{\nabla} \times \mathbf{A})_x = \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z},
+B_x = (\nabla \times \mathbf{A})_x = \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z},
 $$ {#eq-B-x}
 
 $$
-B_y = (\boldsymbol{\nabla} \times \mathbf{A})_y = \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x},
+B_y = (\nabla \times \mathbf{A})_y = \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x},
 $$ {#eq-B-y}
 
 $$
-B_z = (\boldsymbol{\nabla} \times \mathbf{A})_z = \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}.
+B_z = (\nabla \times \mathbf{A})_z = \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}.
 $$ {#eq-B-z}
 
 ### 计算矩阵形式
@@ -276,7 +276,7 @@ $$ {#eq-maxwell-inhomo}
 其中 $\partial_{\mu}$ 是协变四维导数 @eq-partial-cov，$J^\nu$ 是四维电流密度 @eq-four-current。
 
 $$
-\partial_{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t},\boldsymbol{\nabla} \right) = \left(\frac{1}{c}\frac{\partial}{\partial t},\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right),
+\partial_{\mu} = \left(\frac{1}{c}\frac{\partial}{\partial t},\nabla \right) = \left(\frac{1}{c}\frac{\partial}{\partial t},\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z} \right),
 $$ {#eq-partial-cov}
 
 $$
@@ -297,18 +297,18 @@ $$
 \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z} = \mu_{0}c^{2}\rho.
 $$ {#eq-gauss-step2}
 
-利用 @eq-light-speed-c 得 $\mu_{0}c^{2} = 1/\epsilon_{0}$，代入 @eq-gauss-step2 整理后得到高斯电场定律 @eq-gauss-E。
+利用 @eq-light-speed-c 得 $\mu_{0}c^{2} = 1/\varepsilon_{0}$，代入 @eq-gauss-step2 整理后得到高斯电场定律 @eq-gauss-E。
 
 $$
-\boldsymbol{\nabla} \cdot \mathbf{E} = \frac{\rho}{\epsilon_{0}}.
+\nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_{0}}.
 $$ {#eq-gauss-E}
 
 #### 安培-麦克斯韦定律
 
-磁感应强度 $\mathbf{B}$ 的旋度 $\boldsymbol{\nabla} \times \mathbf{B}$ 为 @eq-nabla-times-B。
+磁感应强度 $\mathbf{B}$ 的旋度 $\nabla \times \mathbf{B}$ 为 @eq-nabla-times-B。
 
 $$
-\boldsymbol{\nabla} \times \mathbf{B} =
+\nabla \times \mathbf{B} =
 \begin{vmatrix}
 \mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\
 \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
@@ -319,21 +319,21 @@ $$ {#eq-nabla-times-B}
 @eq-nabla-times-B 可以展开为三个分量方程 @eq-curl-Bx、@eq-curl-By、@eq-curl-Bz。
 
 $$
-(\boldsymbol{\nabla} \times \mathbf{B})_x = \frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z},
+(\nabla \times \mathbf{B})_x = \frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z},
 $$ {#eq-curl-Bx}
 
 $$
-(\boldsymbol{\nabla} \times \mathbf{B})_y = \frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x},
+(\nabla \times \mathbf{B})_y = \frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x},
 $$ {#eq-curl-By}
 
 $$
-(\boldsymbol{\nabla} \times \mathbf{B})_z = \frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y}.
+(\nabla \times \mathbf{B})_z = \frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y}.
 $$ {#eq-curl-Bz}
 
 由 @eq-light-speed-c 得到 @eq-mu0-eps0。
 
 $$
-\frac{1}{c^{2}} = \mu_{0}\epsilon_{0}.
+\frac{1}{c^{2}} = \mu_{0}\varepsilon_{0}.
 $$ {#eq-mu0-eps0}
 
 取空间分量 $\nu = 1$ 时，$\partial_{\mu}F^{\mu 1}$ 是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 第 1 列的点乘，得到 @eq-amp-m-x，其中 $J^{1} = J_{x}$。
@@ -345,7 +345,7 @@ $$ {#eq-amp-m-x}
 将 @eq-mu0-eps0 和 @eq-curl-Bx 代入 @eq-amp-m-x 后整理得到 @eq-amp-x。
 
 $$
-\left(\boldsymbol{\nabla} \times \mathbf{B} \right)_{x} - \mu_{0}\epsilon_{0}\frac{\partial E_x}{\partial t} = \mu_{0} J_{x}.
+\left(\nabla \times \mathbf{B} \right)_{x} - \mu_{0}\varepsilon_{0}\frac{\partial E_x}{\partial t} = \mu_{0} J_{x}.
 $$ {#eq-amp-x}
 
 当 $\nu = 2$ 时，$\partial_{\mu}F^{\mu 2}$ 是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 第 2 列的点乘，为 @eq-amp-m-y，其中 $J^{2} = J_{y}$。
@@ -357,7 +357,7 @@ $$ {#eq-amp-m-y}
 将 @eq-mu0-eps0 和 @eq-curl-By 代入 @eq-amp-m-y 后整理得到 @eq-amp-y。
 
 $$
-\left(\boldsymbol{\nabla} \times \mathbf{B} \right)_{y} - \mu_{0}\epsilon_{0}\frac{\partial E_y}{\partial t} = \mu_{0} J_{y}.
+\left(\nabla \times \mathbf{B} \right)_{y} - \mu_{0}\varepsilon_{0}\frac{\partial E_y}{\partial t} = \mu_{0} J_{y}.
 $$ {#eq-amp-y}
 
 当 $\nu = 3$ 时，$\partial_{\mu}F^{\mu 3}$ 是 $\partial_{\mu}$ 与 $F^{\mu\nu}$ 第 3 列的点乘，为 @eq-amp-m-z，其中 $J^{3} = J_{z}$。
@@ -369,13 +369,13 @@ $$ {#eq-amp-m-z}
 将 @eq-mu0-eps0 和 @eq-curl-Bz 代入 @eq-amp-m-z 后整理得到 @eq-amp-z。
 
 $$
-\left(\boldsymbol{\nabla} \times \mathbf{B} \right)_{z} - \mu_{0}\epsilon_{0}\frac{\partial E_z}{\partial t} = \mu_{0} J_{z}.
+\left(\nabla \times \mathbf{B} \right)_{z} - \mu_{0}\varepsilon_{0}\frac{\partial E_z}{\partial t} = \mu_{0} J_{z}.
 $$ {#eq-amp-z}
 
 合并三个分量方程 @eq-amp-x、@eq-amp-y、@eq-amp-z 为矢量形 @eq-ampere，此方程给出安培-麦克斯韦定律。
 
 $$
-\boldsymbol{\nabla} \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\epsilon_{0}\frac{\partial\mathbf{E}}{\partial t}.
+\nabla \times \mathbf{B} = \mu_{0}\mathbf{J} + \mu_{0}\varepsilon_{0}\frac{\partial\mathbf{E}}{\partial t}.
 $$ {#eq-ampere}
 
 #### 对应关系
@@ -384,8 +384,8 @@ $$ {#eq-ampere}
 
 | 4 维形式 | 3 维形式 | 物理定律 |
 |:---------|:---------|:---------|
-| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 0$ | $\boldsymbol{\nabla} \cdot \mathbf{E} = \rho/\epsilon_0$ | 高斯电场定律 |
-| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 1,2,3$ | $\boldsymbol{\nabla} \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \partial_t \mathbf{E}$ | 安培-麦克斯韦定律 |
+| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 0$ | $\nabla \cdot \mathbf{E} = \rho/\varepsilon_0$ | 高斯电场定律 |
+| $\partial_\mu F^{\mu\nu} = \mu_0 J^\nu$，$\nu = 1,2,3$ | $\nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \partial_t \mathbf{E}$ | 安培-麦克斯韦定律 |
 
 : 有源项：4 维与 3 维的对应关系 {#tbl-sourceful tbl-colwidths=“[34,38,28]”}
 
@@ -416,15 +416,15 @@ $$ {#eq-hom-123-sub}
 将 @eq-hom-123-sub 整理后得高斯磁场定律 @eq-gauss-B。
 
 $$
-\boldsymbol{\nabla} \cdot \mathbf{B} = 0.
+\nabla \cdot \mathbf{B} = 0.
 $$ {#eq-gauss-B}
 
 #### 法拉第电磁感应定律
 
-电场 $\mathbf{E}$ 的旋度 $\boldsymbol{\nabla} \times \mathbf{E}$ 为 @eq-nabla-times-E。
+电场 $\mathbf{E}$ 的旋度 $\nabla \times \mathbf{E}$ 为 @eq-nabla-times-E。
 
 $$
-\boldsymbol{\nabla} \times \mathbf{E} =
+\nabla \times \mathbf{E} =
 \begin{vmatrix}
 \mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\
 \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
@@ -435,15 +435,15 @@ $$ {#eq-nabla-times-E}
 @eq-nabla-times-E 可以展开为三个分量方程 @eq-curl-Ex、@eq-curl-Ey、@eq-curl-Ez。
 
 $$
-(\boldsymbol{\nabla} \times \mathbf{E})_x = \frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z},
+(\nabla \times \mathbf{E})_x = \frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z},
 $$ {#eq-curl-Ex}
 
 $$
-(\boldsymbol{\nabla} \times \mathbf{E})_y = \frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x},
+(\nabla \times \mathbf{E})_y = \frac{\partial E_x}{\partial z} - \frac{\partial E_z}{\partial x},
 $$ {#eq-curl-Ey}
 
 $$
-(\boldsymbol{\nabla} \times \mathbf{E})_z = \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}.
+(\nabla \times \mathbf{E})_z = \frac{\partial E_y}{\partial x} - \frac{\partial E_x}{\partial y}.
 $$ {#eq-curl-Ez}
 
 x-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,2,3)$，得到 @eq-hom-023。
@@ -467,7 +467,7 @@ $$ {#eq-m-nabla-times-E-x}
 将 @eq-curl-Ex 代入 @eq-m-nabla-times-E-x 得到 @eq-nabla-times-E-x。
 
 $$
-\left(\boldsymbol{\nabla} \times \mathbf{E} \right)_{x} = -\frac{\partial B_x}{\partial t}.
+\left(\nabla \times \mathbf{E} \right)_{x} = -\frac{\partial B_x}{\partial t}.
 $$ {#eq-nabla-times-E-x}
 
 y-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,3,1)$，得到 @eq-hom-031。
@@ -491,7 +491,7 @@ $$ {#eq-m-nabla-times-E-y}
 将 @eq-curl-Ey 代入 @eq-m-nabla-times-E-y 得到 @eq-nabla-times-E-y。
 
 $$
-\left(\boldsymbol{\nabla} \times \mathbf{E} \right)_{y} = -\frac{\partial B_y}{\partial t}.
+\left(\nabla \times \mathbf{E} \right)_{y} = -\frac{\partial B_y}{\partial t}.
 $$ {#eq-nabla-times-E-y}
 
 z-分量：@eq-S-homogeneous 选择 $(\lambda,\mu,\nu) = (0,1,2)$，得到 @eq-hom-012。
@@ -515,12 +515,12 @@ $$ {#eq-m-nabla-times-E-z}
 将 @eq-curl-Ez 代入 @eq-m-nabla-times-E-z 得到 @eq-nabla-times-E-z。
 
 $$
-\left(\boldsymbol{\nabla} \times \mathbf{E} \right)_{z} = -\frac{\partial B_z}{\partial t}.
+\left(\nabla \times \mathbf{E} \right)_{z} = -\frac{\partial B_z}{\partial t}.
 $$ {#eq-nabla-times-E-z}
 
 合并三个分量方程 @eq-nabla-times-E-x、@eq-nabla-times-E-y、@eq-nabla-times-E-z 得到法拉第电磁感应定律 @eq-farad。
 
-$$\boldsymbol{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#eq-farad}
+$$\nabla \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$$ {#eq-farad}
 
 #### 对应关系
 
@@ -528,8 +528,8 @@ $$\boldsymbol{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}
 
 | 4 维形式 | 3 维形式 | 物理定律 |
 |:---------|:---------|:---------|
-| $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\boldsymbol{\nabla} \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
-| $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in\{(0,2,3),(0,3,1),(0,1,2)\}$ | $\boldsymbol{\nabla} \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
+| $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)=(1,2,3)$ | $\nabla \cdot \mathbf{B} = 0$ | 高斯磁场定律 |
+| $\partial^{\lambda}F^{\mu\nu}+\partial^{\mu}F^{\nu\lambda}+\partial^{\nu}F^{\lambda\mu} = 0$，$(\lambda,\mu,\nu)\in\{(0,2,3),(0,3,1),(0,1,2)\}$ | $\nabla \times \mathbf{E} = -\frac{\partial\mathbf{B}}{\partial t}$ | 法拉第电磁感应定律 |
 
 : 无源项：4 维与 3 维的对应关系 {#tbl-sourceless tbl-colwidths=“[57,18,25]”}
 

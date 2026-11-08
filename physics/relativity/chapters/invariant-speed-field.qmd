@@ -74,7 +74,7 @@ $$
 2. 第四步（定出 $\beta=-v/K^{2}$）：只用到 $p$ 点处速度为 $K(p)$ 的变换行为；
 3. 第五步（定出 $A(v)=1/\sqrt{1-v^{2}/K^{2}}$）：只用到同一个 $K$ 值下的群闭合。
 
-因此把 $K$ 换成 $K(p)$，全部推导逐字成立：在 $p$ 点，$G_{K(p)}$ 对复合封闭、含恒等元、每个元素可逆。
+因此把 $K$ 换成 $K(p)$，全部推导逐字成立：在 $p$ 点，$G_{K(p)}$ 对复合封闭、含恒等元、每个元素可逆。$\quad\square$
 
 **此命题的适用范围**：只限于**同一根纤维内**（同一切空间上）的复合。跨纤维的复合见 @sec-ifg-cross。
 
@@ -290,60 +290,60 @@ $$
 ### Christoffel 符号（逐项）
 
 $$
-\Gamma^{\rho}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}
+\Gamma^{\rho}{}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}
 \bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr).
 $$
 
 逐项代入（$\rho=0$ 时求和只剩 $\sigma=0$；$\rho=k$ 时只剩 $\sigma=l$）。
 
-**(a) $\Gamma^{0}_{00}$**
+**(a) $\Gamma^{0}{}_{00}$**
 
 $$
-\Gamma^{0}_{00}=\frac{1}{2}g^{00}\bigl(\partial_0g_{00}+\partial_0g_{00}-\partial_0g_{00}\bigr)
+\Gamma^{0}{}_{00}=\frac{1}{2}g^{00}\bigl(\partial_0g_{00}+\partial_0g_{00}-\partial_0g_{00}\bigr)
 =\frac{1}{2}\cdot\frac{1}{K^{2}}\cdot\bigl(2K\,\partial_0K\bigr)
 =\frac{\partial_0K}{K}.
 $$
 
-**(b) $\Gamma^{0}_{0i}=\Gamma^{0}_{i0}$**
+**(b) $\Gamma^{0}{}_{0i}=\Gamma^{0}{}_{i0}$**
 
 $$
-\Gamma^{0}_{0i}=\frac{1}{2}g^{00}\bigl(\partial_0g_{i0}+\partial_ig_{00}-\partial_0g_{i0}\bigr)
+\Gamma^{0}{}_{0i}=\frac{1}{2}g^{00}\bigl(\partial_0g_{i0}+\partial_ig_{00}-\partial_0g_{i0}\bigr)
 =\frac{1}{2}\cdot\frac{1}{K^{2}}\cdot\bigl(2K\,\partial_iK\bigr)
 =\frac{\partial_iK}{K}.
 $$
 
-**(c) $\Gamma^{0}_{ij}$**
+**(c) $\Gamma^{0}{}_{ij}$**
 
 $$
-\Gamma^{0}_{ij}=\frac{1}{2}g^{00}\bigl(\partial_ig_{j0}+\partial_jg_{i0}-\partial_0g_{ij}\bigr)=0.
+\Gamma^{0}{}_{ij}=\frac{1}{2}g^{00}\bigl(\partial_ig_{j0}+\partial_jg_{i0}-\partial_0g_{ij}\bigr)=0.
 $$
 
 （前两项含 $g_{i0}=0$，第三项含 $\partial_0g_{ij}=0$。）
 
-**(d) $\Gamma^{k}_{00}$**
+**(d) $\Gamma^{k}{}_{00}$**
 
 $$
-\Gamma^{k}_{00}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{0l}+\partial_0g_{0l}-\partial_lg_{00}\bigr)
+\Gamma^{k}{}_{00}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{0l}+\partial_0g_{0l}-\partial_lg_{00}\bigr)
 =\frac{1}{2}\bigl(-\delta^{kl}\bigr)\bigl(-2K\,\partial_lK\bigr)
 =K\,\partial_kK.
 $$
 
-**(e) $\Gamma^{k}_{0i}$ 与 $\Gamma^{k}_{ij}$**
+**(e) $\Gamma^{k}{}_{0i}$ 与 $\Gamma^{k}{}_{ij}$**
 
 $$
-\Gamma^{k}_{0i}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{il}+\partial_ig_{0l}-\partial_lg_{0i}\bigr)=0,
+\Gamma^{k}{}_{0i}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{il}+\partial_ig_{0l}-\partial_lg_{0i}\bigr)=0,
 $$
 
 $$
-\Gamma^{k}_{ij}=\frac{1}{2}g^{kl}\bigl(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\bigr)=0.
+\Gamma^{k}{}_{ij}=\frac{1}{2}g^{kl}\bigl(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\bigr)=0.
 $$
 
 **汇总**（其余为零）：
 
 $$
-\Gamma^{0}_{00}=\frac{\partial_0K}{K},\qquad
-\Gamma^{0}_{0i}=\Gamma^{0}_{i0}=\frac{\partial_iK}{K},\qquad
-\Gamma^{k}_{00}=K\,\partial_kK.
+\Gamma^{0}{}_{00}=\frac{\partial_0K}{K},\qquad
+\Gamma^{0}{}_{0i}=\Gamma^{0}{}_{i0}=\frac{\partial_iK}{K},\qquad
+\Gamma^{k}{}_{00}=K\,\partial_kK.
 $$ {#eq-ifg-christoffel}
 
 **关键观察**：所有非零 Christoffel 符号都形如 $\partial_\mu K/K$，与 @sec-ifg-cross 中“多出来的项”同型。
@@ -351,10 +351,10 @@ $$ {#eq-ifg-christoffel}
 ### Ricci 张量（逐项）
 
 $$
-R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}_{\nu\sigma}
--\partial_\nu\Gamma^{\rho}_{\rho\sigma}
-+\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{\nu\sigma}
--\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}.
+R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
+-\partial_\nu\Gamma^{\rho}{}_{\rho\sigma}
++\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{\nu\sigma}
+-\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
 $$
 
 记 $\lvert\nabla K\rvert^{2}:=\sum_k(\partial_kK)^{2}$，$\Delta K:=\sum_k\partial_k\partial_kK$（空间拉普拉斯），$K_0:=\partial_0K$。
@@ -364,8 +364,8 @@ $$
 *第一项*：
 
 $$
-\partial_\rho\Gamma^{\rho}_{00}
-=\partial_0\Gamma^{0}_{00}+\partial_k\Gamma^{k}_{00}
+\partial_\rho\Gamma^{\rho}{}_{00}
+=\partial_0\Gamma^{0}{}_{00}+\partial_k\Gamma^{k}{}_{00}
 =\partial_0\!\left(\frac{K_0}{K}\right)+\partial_k\bigl(K\,\partial_kK\bigr),
 $$
 
@@ -376,8 +376,8 @@ $$
 *第二项*：
 
 $$
-\partial_0\Gamma^{\rho}_{\rho0}
-=\partial_0\bigl(\Gamma^{0}_{00}+\Gamma^{k}_{k0}\bigr)
+\partial_0\Gamma^{\rho}{}_{\rho0}
+=\partial_0\bigl(\Gamma^{0}{}_{00}+\Gamma^{k}{}_{k0}\bigr)
 =\partial_0\!\left(\frac{K_0}{K}+0\right)
 =\frac{\partial_0^{2}K}{K}-\frac{K_0^{2}}{K^{2}}.
 $$
@@ -385,7 +385,7 @@ $$
 *第三项*（$\lambda$ 取 $0$ 与 $i$ 两类）：
 
 $$
-\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{00}
+\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{00}
 =\frac{K_0}{K}\cdot\frac{K_0}{K}
 +\sum_i\frac{\partial_iK}{K}\cdot\bigl(K\,\partial_iK\bigr)
 =\frac{K_0^{2}}{K^{2}}+\lvert\nabla K\rvert^{2}.
@@ -394,7 +394,7 @@ $$
 *第四项*（$(\rho,\lambda)$ 的四种组合 $(0,0)$、$(0,i)$、$(k,0)$、$(k,i)$）：
 
 $$
-\Gamma^{\rho}_{0\lambda}\Gamma^{\lambda}_{\rho0}
+\Gamma^{\rho}{}_{0\lambda}\Gamma^{\lambda}{}_{\rho0}
 =\frac{K_0}{K}\cdot\frac{K_0}{K}
 +\frac{\partial_iK}{K}\cdot\bigl(K\,\partial_iK\bigr)
 +\bigl(K\,\partial_kK\bigr)\cdot\frac{\partial_kK}{K}
@@ -419,12 +419,12 @@ $$
 
 **(b) $R_{ij}$** 的四项分别为：
 
-第一项 $\partial_\rho\Gamma^{\rho}_{ij}=0$（因 $\Gamma^{0}_{ij}=\Gamma^{k}_{ij}=0$）；第三项 $\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{ij}=0$（因 $\Gamma^{\lambda}_{ij}=0$）。
+第一项 $\partial_\rho\Gamma^{\rho}{}_{ij}=0$（因 $\Gamma^{0}{}_{ij}=\Gamma^{k}{}_{ij}=0$）；第三项 $\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{ij}=0$（因 $\Gamma^{\lambda}{}_{ij}=0$）。
 
 *第二项*：
 
 $$
-\partial_j\Gamma^{\rho}_{\rho i}
+\partial_j\Gamma^{\rho}{}_{\rho i}
 =\partial_j\!\left(\frac{\partial_iK}{K}\right)
 =\frac{\partial_i\partial_jK}{K}-\frac{\partial_iK\,\partial_jK}{K^{2}}.
 $$
@@ -432,8 +432,8 @@ $$
 *第四项*（只有 $(\rho,\lambda)=(0,0)$ 非零）：
 
 $$
-\Gamma^{\rho}_{j\lambda}\Gamma^{\lambda}_{\rho i}
-=\Gamma^{0}_{j0}\,\Gamma^{0}_{0i}
+\Gamma^{\rho}{}_{j\lambda}\Gamma^{\lambda}{}_{\rho i}
+=\Gamma^{0}{}_{j0}\,\Gamma^{0}{}_{0i}
 =\frac{\partial_jK}{K}\cdot\frac{\partial_iK}{K}.
 $$
 
@@ -453,20 +453,20 @@ $$
 **(c) $R_{0i}$** 的四项分别为：
 
 $$
-\partial_\rho\Gamma^{\rho}_{0i}
+\partial_\rho\Gamma^{\rho}{}_{0i}
 =\partial_0\!\left(\frac{\partial_iK}{K}\right)
 =\frac{\partial_0\partial_iK}{K}-\frac{\partial_iK\,K_0}{K^{2}},
 $$
 
 $$
-\partial_i\Gamma^{\rho}_{\rho0}
+\partial_i\Gamma^{\rho}{}_{\rho0}
 =\partial_i\!\left(\frac{K_0}{K}\right)
 =\frac{\partial_0\partial_iK}{K}-\frac{K_0\,\partial_iK}{K^{2}},
 $$
 
 $$
-\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{0i}=\frac{K_0}{K}\cdot\frac{\partial_iK}{K},\qquad
-\Gamma^{\rho}_{i\lambda}\Gamma^{\lambda}_{\rho0}=\frac{\partial_iK}{K}\cdot\frac{K_0}{K}.
+\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{0i}=\frac{K_0}{K}\cdot\frac{\partial_iK}{K},\qquad
+\Gamma^{\rho}{}_{i\lambda}\Gamma^{\lambda}{}_{\rho0}=\frac{\partial_iK}{K}\cdot\frac{K_0}{K}.
 $$
 
 四项相减时，两类项两两精确抵消：

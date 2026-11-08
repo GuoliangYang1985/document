@@ -17,7 +17,7 @@ $$
 
 $$
 \nabla^{2}:=\delta^{ij}\partial_i\partial_j,\qquad
-\lvert\vec\nabla K\rvert^{2}:=\delta^{ij}\partial_iK\,\partial_jK,\qquad
+\lvert\nabla K\rvert^{2}:=\delta^{ij}\partial_iK\,\partial_jK,\qquad
 \lvert\nabla K\rvert^{2}_{\eta}:=\eta^{\mu\nu}\partial_{\mu}K\,\partial_{\nu}K.
 $$
 
@@ -37,15 +37,15 @@ $$ {#eq-isd-tetrad}
 
 即 $K$ 场同时控制局部时间尺度与局部空间尺度——这正是本章与对角约定的分野：对角约定中空间标架是刚性的 $e^{i}=\mathrm{d}x^{i}$。
 
-写成 $e^{a}=e^{a}_{\ \mu}\,\mathrm{d}x^{\mu}$：
+写成 $e^{a}=e^\{a\}_\{\mu\}\,\mathrm{d}x^{\mu}$：
 
 $$
-e^{0}_{\ 0}=K,\qquad e^{i}_{\ j}=K\,\delta^{i}_{j},\qquad \text{其余为 }0.
+e^\{0\}_\{0\}=K,\qquad e^\{i\}_\{j\}=K\,\delta^{i}_{j},\qquad \text{其余为 }0.
 $$
 
 ### 度规分量
 
-由 $g_{\mu\nu}=e^{a}_{\ \mu}\,e^{b}_{\ \nu}\,\eta_{ab}$：
+由 $g_{\mu\nu}=e^\{a\}_\{\mu\}\,e^\{b\}_\{\nu\}\,\eta_{ab}$：
 
 $$
 g_{\mu\nu}=K^{2}\,\eta_{\mu\nu}.
@@ -81,28 +81,28 @@ $$ {#eq-isd-det}
 ### 闭式
 
 $$
-\Gamma^{\rho}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}
+\Gamma^{\rho}{}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}
 \bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr).
 $$
 
 由 @eq-isd-g，$g_{\nu\sigma}=K^{2}\eta_{\nu\sigma}$，故 $\partial_\mu g_{\nu\sigma}=2K(\partial_{\mu}K)\eta_{\nu\sigma}$。代入：
 
 $$
-\Gamma^{\rho}_{\mu\nu}=\frac{1}{2}K^{-2}\eta^{\rho\sigma}\cdot 2K
+\Gamma^{\rho}{}_{\mu\nu}=\frac{1}{2}K^{-2}\eta^{\rho\sigma}\cdot 2K
 \bigl[(\partial_{\mu}K)\eta_{\nu\sigma}+(\partial_{\nu}K)\eta_{\mu\sigma}-(\partial_{\sigma}K)\eta_{\mu\nu}\bigr].
 $$
 
 $\eta^{\rho\sigma}\eta_{\nu\sigma}=\delta^{\rho}_{\nu}$，$\eta^{\rho\sigma}\eta_{\mu\sigma}=\delta^{\rho}_{\mu}$，$\eta^{\rho\sigma}\partial_{\sigma}K=\partial^{\rho}K$，故
 
 $$
-\boxed{\Gamma^{\rho}_{\mu\nu}=\frac{1}{K}
+\boxed{\Gamma^{\rho}{}_{\mu\nu}=\frac{1}{K}
 \Bigl(\delta^{\rho}_{\nu}\,\partial_{\mu}K+\delta^{\rho}_{\mu}\,\partial_{\nu}K-\eta_{\mu\nu}\,\partial^{\rho}K\Bigr)}.
 $$ {#eq-isd-gamma}
 
 等价地，用 $u:=\ln K$（$\partial_\mu u=\partial_{\mu}K/K$）：
 
 $$
-\Gamma^{\rho}_{\mu\nu}=\delta^{\rho}_{\nu}\,\partial_\mu u+\delta^{\rho}_{\mu}\,\partial_\nu u-\eta_{\mu\nu}\,\partial^{\rho}u.
+\Gamma^{\rho}{}_{\mu\nu}=\delta^{\rho}_{\nu}\,\partial_\mu u+\delta^{\rho}_{\mu}\,\partial_\nu u-\eta_{\mu\nu}\,\partial^{\rho}u.
 $$ {#eq-isd-gamma-u}
 
 ### 逐项验证（样本）
@@ -111,12 +111,12 @@ $$ {#eq-isd-gamma-u}
 
 | $\Gamma$ | 由 @eq-isd-gamma 算出 | 符号计算输出 |
 |---|---|---|
-| $\Gamma^{0}_{00}$ | $\dfrac{1}{K}(\partial_0K+\partial_0K-\partial_0K)=\dfrac{\partial_0K}{K}$ | $\partial_tK/K$ |
-| $\Gamma^{0}_{01}$ | $\dfrac{1}{K}(0+\partial_1K-0)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
-| $\Gamma^{1}_{00}$ | $\dfrac{1}{K}(0+0-\eta_{00}\partial^{1}K)=\dfrac{1}{K}\bigl(0+0-(-\partial_1K)\bigr)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
-| $\Gamma^{1}_{11}$ | $\dfrac{1}{K}(\partial_1K+\partial_1K-\eta_{11}\partial^{1}K)=\dfrac{1}{K}(2\partial_1K-\partial_1K)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
-| $\Gamma^{1}_{22}$ | $\dfrac{1}{K}(0+0-\eta_{22}\partial^{1}K)=\dfrac{1}{K}\bigl(0+0-(-\partial_1K)\bigr)\cdot(-1)=\dfrac{-\partial_1K}{K}$ | $-\partial_xK/K$ |
-| $\Gamma^{0}_{11}$ | $\dfrac{1}{K}(0+0-\eta_{11}\partial^{0}K)=\dfrac{1}{K}\partial_0K$ | $\partial_tK/K$ |
+| $\Gamma^{0}{}_{00}$ | $\dfrac{1}{K}(\partial_0K+\partial_0K-\partial_0K)=\dfrac{\partial_0K}{K}$ | $\partial_tK/K$ |
+| $\Gamma^{0}{}_{01}$ | $\dfrac{1}{K}(0+\partial_1K-0)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
+| $\Gamma^{1}{}_{00}$ | $\dfrac{1}{K}(0+0-\eta_{00}\partial^{1}K)=\dfrac{1}{K}\bigl(0+0-(-\partial_1K)\bigr)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
+| $\Gamma^{1}{}_{11}$ | $\dfrac{1}{K}(\partial_1K+\partial_1K-\eta_{11}\partial^{1}K)=\dfrac{1}{K}(2\partial_1K-\partial_1K)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
+| $\Gamma^{1}{}_{22}$ | $\dfrac{1}{K}(0+0-\eta_{22}\partial^{1}K)=\dfrac{1}{K}\bigl(0+0-(-\partial_1K)\bigr)\cdot(-1)=\dfrac{-\partial_1K}{K}$ | $-\partial_xK/K$ |
+| $\Gamma^{0}{}_{11}$ | $\dfrac{1}{K}(0+0-\eta_{11}\partial^{0}K)=\dfrac{1}{K}\partial_0K$ | $\partial_tK/K$ |
 
 全部相符。
 
@@ -127,10 +127,10 @@ Christoffel 符号就位后，按收缩顺序给出 Ricci 张量与 Ricci 标量
 ### Ricci 张量
 
 $$
-R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}_{\nu\sigma}
--\partial_\nu\Gamma^{\rho}_{\rho\sigma}
-+\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{\nu\sigma}
--\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\sigma}.
+R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
+-\partial_\nu\Gamma^{\rho}{}_{\rho\sigma}
++\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{\nu\sigma}
+-\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
 $$
 
 把 @eq-isd-gamma 代入并逐项化简，得
@@ -216,18 +216,18 @@ G_{00}=
 -\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$
 
-代入 $\Box_\eta K=\partial_0^{2}K-\nabla^{2}K$ 与 $\lvert\nabla K\rvert^{2}_{\eta}=(\partial_0K)^{2}-\lvert\vec\nabla K\rvert^{2}$：
+代入 $\Box_\eta K=\partial_0^{2}K-\nabla^{2}K$ 与 $\lvert\nabla K\rvert^{2}_{\eta}=(\partial_0K)^{2}-\lvert\nabla K\rvert^{2}$：
 
 $$
 G_{00}=
 \underbrace{-\frac{2\partial_0^{2}K}{K}+\frac{2\partial_0^{2}K}{K}}_{=\,0}
 -\frac{2\nabla^{2}K}{K}
-+\frac{4(\partial_0K)^{2}-(\partial_0K)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}},
++\frac{4(\partial_0K)^{2}-(\partial_0K)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}},
 $$
 
 $$
 \boxed{G_{00}=
-\frac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}
+\frac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}
 -\frac{2\,\nabla^{2}K}{K}}.
 $$ {#eq-isd-G00}
 
@@ -237,13 +237,13 @@ $$ {#eq-isd-G00}
 
 $$
 \boxed{G_{00}\bigr|_{\partial_tK=0}=
-\frac{\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\,\nabla^{2}K}{K}}.
+\frac{\lvert\nabla K\rvert^{2}}{K^{2}}-\frac{2\,\nabla^{2}K}{K}}.
 $$ {#eq-isd-G00-static}
 
 用 $u=\ln K$ 写（由 @eq-isd-G-u 或 @eq-isd-G00）：
 
 $$
-G_{00}=3(\partial_tu)^{2}-\lvert\vec\nabla u\rvert^{2}-2\nabla^{2}u.
+G_{00}=3(\partial_tu)^{2}-\lvert\nabla u\rvert^{2}-2\nabla^{2}u.
 $$ {#eq-isd-G00-u}
 
 ### $G_{0i}$ 与 $G_{ij}$
@@ -286,7 +286,7 @@ $$
 $$
 
 $$
-\lvert\vec\nabla K\rvert^{2}=\frac{\alpha^{2}}{r^{6}}\sum_i x_i^{2}=\frac{\alpha^{2}}{r^{4}}.
+\lvert\nabla K\rvert^{2}=\frac{\alpha^{2}}{r^{6}}\sum_i x_i^{2}=\frac{\alpha^{2}}{r^{4}}.
 $$
 
 二阶导数（利用 $\nabla^{2}(1/r)=0$，$r>0$）：
@@ -437,7 +437,7 @@ $$ {#eq-isd-kg}
 
 ## 波动力学之三：非相对论极限 {#sec-isd-nr}
 
-第三节考察非相对论极限：$K$ 为常数时等式严格成立，$\vec\nabla K\neq0$ 时极限不再存在。
+第三节考察非相对论极限：$K$ 为常数时等式严格成立，$\nabla K\neq0$ 时极限不再存在。
 
 ### 局域情形（$K$ 为常数）：等式严格成立
 
@@ -502,7 +502,7 @@ $$ {#eq-isd-sch}
 
 **薛定谔方程。** 这一步是严格的，未作任何近似。
 
-### 变系数情形（$\vec\nabla K\neq0$）：极限不存在
+### 变系数情形（$\nabla K\neq0$）：极限不存在
 
 现在问：当 $K$ 依赖位置时，@eq-isd-sch 还成不成立？
 
@@ -528,11 +528,11 @@ $$
 &\frac{1}{K^{2}}\partial_t^{2}\varphi
 -\frac{2im}{\hbar}\partial_t\varphi
 -\frac{1}{K^{2}}\nabla^{2}\varphi
--\frac{2}{K^{3}}(\vec\nabla K)\!\cdot\!(\vec\nabla\varphi)\\[4pt]
-&\quad+\frac{4imt}{\hbar K}(\vec\nabla K)\!\cdot\!(\vec\nabla\varphi)
+-\frac{2}{K^{3}}(\nabla K)\!\cdot\!(\nabla\varphi)\\[4pt]
+&\quad+\frac{4imt}{\hbar K}(\nabla K)\!\cdot\!(\nabla\varphi)
 +\frac{2imt}{\hbar K}\nabla^{2}K\,\varphi\\[4pt]
-&\quad+\frac{6imt}{\hbar K^{2}}\lvert\vec\nabla K\rvert^{2}\varphi
-+\frac{4m^{2}t^{2}}{\hbar^{2}}\lvert\vec\nabla K\rvert^{2}\varphi=0.
+&\quad+\frac{6imt}{\hbar K^{2}}\lvert\nabla K\rvert^{2}\varphi
++\frac{4m^{2}t^{2}}{\hbar^{2}}\lvert\nabla K\rvert^{2}\varphi=0.
 \end{aligned}
 $$ {#eq-isd-nr-field}
 
@@ -542,7 +542,7 @@ $$ {#eq-isd-nr-field}
 
 $$
 \partial_iK=K_0\,\partial_if,\qquad
-\lvert\vec\nabla K\rvert^{2}=K_0^{2}\lvert\vec\nabla f\rvert^{2},\qquad
+\lvert\nabla K\rvert^{2}=K_0^{2}\lvert\nabla f\rvert^{2},\qquad
 \nabla^{2}K=K_0\nabla^{2}f.
 $$
 
@@ -552,18 +552,18 @@ $$
 |---|---|---|
 | $\dfrac{1}{K^{2}}\partial_t^{2}\varphi$ | $\dfrac{1}{K_0^{2}f^{2}}\partial_t^{2}\varphi$ | $\to0$ |
 | $-\dfrac{1}{K^{2}}\nabla^{2}\varphi$ | $-\dfrac{1}{K_0^{2}f^{2}}\nabla^{2}\varphi$ | $\to0$ |
-| $-\dfrac{2}{K^{3}}(\vec\nabla K)\!\cdot\!(\vec\nabla\varphi)$ | $-\dfrac{2}{K_0^{2}f^{3}}(\vec\nabla f)\!\cdot\!(\vec\nabla\varphi)$ | $\to0$ |
-| $\dfrac{4imt}{\hbar K}(\vec\nabla K)\!\cdot\!(\vec\nabla\varphi)$ | $\dfrac{4imt}{\hbar f}(\vec\nabla f)\!\cdot\!(\vec\nabla\varphi)$ | **有限、非零** |
+| $-\dfrac{2}{K^{3}}(\nabla K)\!\cdot\!(\nabla\varphi)$ | $-\dfrac{2}{K_0^{2}f^{3}}(\nabla f)\!\cdot\!(\nabla\varphi)$ | $\to0$ |
+| $\dfrac{4imt}{\hbar K}(\nabla K)\!\cdot\!(\nabla\varphi)$ | $\dfrac{4imt}{\hbar f}(\nabla f)\!\cdot\!(\nabla\varphi)$ | **有限、非零** |
 | $\dfrac{2imt}{\hbar K}\nabla^{2}K\,\varphi$ | $\dfrac{2imt}{\hbar f}\nabla^{2}f\,\varphi$ | **有限、非零** |
-| $\dfrac{6imt}{\hbar K^{2}}\lvert\vec\nabla K\rvert^{2}\varphi$ | $\dfrac{6imt}{\hbar f^{2}}\lvert\vec\nabla f\rvert^{2}\varphi$ | **有限、非零** |
-| $\dfrac{4m^{2}t^{2}}{\hbar^{2}}\lvert\vec\nabla K\rvert^{2}\varphi$ | $\dfrac{4m^{2}t^{2}}{\hbar^{2}}K_0^{2}\lvert\vec\nabla f\rvert^{2}\varphi$ | **发散** |
+| $\dfrac{6imt}{\hbar K^{2}}\lvert\nabla K\rvert^{2}\varphi$ | $\dfrac{6imt}{\hbar f^{2}}\lvert\nabla f\rvert^{2}\varphi$ | **有限、非零** |
+| $\dfrac{4m^{2}t^{2}}{\hbar^{2}}\lvert\nabla K\rvert^{2}\varphi$ | $\dfrac{4m^{2}t^{2}}{\hbar^{2}}K_0^{2}\lvert\nabla f\rvert^{2}\varphi$ | **发散** |
 
 **结论（严格）**：
 
-- 若 $\vec\nabla K\equiv0$（$K$ 空间均匀），表中所有含 $\vec\nabla f$ 的项恒为零，极限严格存在，得到 @eq-isd-sch；
-- 若 $\vec\nabla K\neq0$，最后一项 $\propto K_0^{2}$ 发散，**非相对论极限不存在**。
+- 若 $\nabla K\equiv0$（$K$ 空间均匀），表中所有含 $\nabla f$ 的项恒为零，极限严格存在，得到 @eq-isd-sch；
+- 若 $\nabla K\neq0$，最后一项 $\propto K_0^{2}$ 发散，**非相对论极限不存在**。
 
-**这是一个数学结论，不是近似判断**：恒速场的空间梯度与非相对论极限不相容。薛定谔方程只在 $\vec\nabla K=0$ 的点上严格成立。
+**这是一个数学结论，不是近似判断**：恒速场的空间梯度与非相对论极限不相容。薛定谔方程只在 $\nabla K=0$ 的点上严格成立。
 
 ## 波动力学之四：中央扩张 {#sec-isd-bargmann}
 
@@ -582,9 +582,9 @@ $$
 
 ### 与上一节结论的合流
 
-由 @sec-isd-nr，非相对论极限只在 $\vec\nabla K=0$ 处存在。而中央扩张（Bargmann 群）是非相对论端的结构，因此：
+由 @sec-isd-nr，非相对论极限只在 $\nabla K=0$ 处存在。而中央扩张（Bargmann 群）是非相对论端的结构，因此：
 
-**Bargmann 中央扩张只在 $\vec\nabla K=0$ 的那些点上良定义。** 在 $\vec\nabla K\neq0$ 处，既不存在非相对论极限，也没有中央扩张的落脚点——质量的两种身份在该点都无法切换。
+**Bargmann 中央扩张只在 $\nabla K=0$ 的那些点上良定义。** 在 $\nabla K\neq0$ 处，既不存在非相对论极限，也没有中央扩张的落脚点——质量的两种身份在该点都无法切换。
 
 ### 方程层面的对位
 
@@ -592,8 +592,8 @@ $$
 |---|---|---|
 | $K=c$（常数） | Klein–Gordon 方程 | 无 |
 | $K\to\infty$（常数） | 薛定谔方程（Bargmann 表示） | 无 |
-| $K=K(\mathbf{x})$，$\vec\nabla K=0$ | 同上，逐点成立 | 需空间均匀 |
-| $K=K(\mathbf{x})$，$\vec\nabla K\neq0$ | 变系数方程 @eq-isd-kg；**无**非相对论极限 | 严格结论 |
+| $K=K(\mathbf{x})$，$\nabla K=0$ | 同上，逐点成立 | 需空间均匀 |
+| $K=K(\mathbf{x})$，$\nabla K\neq0$ | 变系数方程 @eq-isd-kg；**无**非相对论极限 | 严格结论 |
 
 ## 结论 {#sec-isd-conclusion}
 
@@ -602,24 +602,24 @@ $$
 | tetrad 约定给出 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$ | @eq-isd-g |
 | Christoffel 闭式 $\Gamma=\frac1K(\delta\partial K+\delta\partial K-\eta\,\partial K)$ | @eq-isd-gamma，符号核验 OK |
 | Ricci 标量 $R=-6\Box_\eta K/K^{3}$ | @eq-isd-R，符号核验 True |
-| $G_{00}=\dfrac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\dfrac{2\nabla^{2}K}{K}\neq0$ | @eq-isd-G00，符号核验 True |
+| $G_{00}=\dfrac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\dfrac{2\nabla^{2}K}{K}\neq0$ | @eq-isd-G00，符号核验 True |
 | $G_{\mu\nu}$ 通式（$u=\ln K$ 形式） | @eq-isd-G-u，16 个分量核验 OK |
 | 球对称例 $K=K_0+\alpha/r$ 给出 $G_{00}=\dfrac{\alpha^{2}}{r^{2}(K_0r+\alpha)^{2}}>0$ | @eq-isd-density |
 | Weyl 张量 $\equiv0$，Schwarzschild 不在其内 | 共形不变性 |
 | 变系数波动方程为 $\Box_\eta\psi+\frac2K(\partial_{\mu}K)\partial^\mu\psi+\frac{m^2K^4}{\hbar^2}\psi=0$ | @eq-isd-kg |
 | 局域（$K$ 常数）非相对论极限严格给出薛定谔方程 | @eq-isd-sch |
-| $\vec\nabla K\neq0$ 时非相对论极限不存在 | @eq-isd-nr-field 末项 $\propto K_0^{2}$ 发散 |
-| Bargmann 中央扩张只在 $\vec\nabla K=0$ 处良定义 | @sec-isd-bargmann |
+| $\nabla K\neq0$ 时非相对论极限不存在 | @eq-isd-nr-field 末项 $\propto K_0^{2}$ 发散 |
+| Bargmann 中央扩张只在 $\nabla K=0$ 处良定义 | @sec-isd-bargmann |
 
 : 本章各命题及其依据 {#tbl-isd-conclusion}
 
-**一句话**：换用 tetrad 约定后，$K$ 场给出非零的 $G_{00}=\frac{3(\partial_tK)^{2}+\lvert\vec\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$（外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 并把 $T_{00}$ 读作能量密度时，对应 $T_{00}>0$）；但这类度规共形平坦、Weyl 张量恒为零，仍装不下真空外解。方程一端，变系数波动方程严格成立，而它的非相对论极限只在 $\vec\nabla K=0$ 处存在——恒速场的空间梯度与非相对论极限不相容。
+**一句话**：换用 tetrad 约定后，$K$ 场给出非零的 $G_{00}=\frac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$（外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 并把 $T_{00}$ 读作能量密度时，对应 $T_{00}>0$）；但这类度规共形平坦、Weyl 张量恒为零，仍装不下真空外解。方程一端，变系数波动方程严格成立，而它的非相对论极限只在 $\nabla K=0$ 处存在——恒速场的空间梯度与非相对论极限不相容。
 
 ## 术语说明 {#sec-isd-terms}
 
 | 术语 | 本章中的含义 |
 |---|---|
-| tetrad / 标架 | 局部标准正交余标架 $e^{a}=e^{a}_{\ \mu}\mathrm{d}x^{\mu}$，$g_{\mu\nu}=e^{a}_{\ \mu}e^{b}_{\ \nu}\eta_{ab}$ |
+| tetrad / 标架 | 局部标准正交余标架 $e^{a}=e^\{a\}_\{\mu\}\mathrm{d}x^{\mu}$，$g_{\mu\nu}=e^\{a\}_\{\mu\}e^\{b\}_\{\nu\}\eta_{ab}$ |
 | 共形平坦 | 度规可写为 $K^{2}\eta_{\mu\nu}$，即共形于 Minkowski |
 | Weyl 张量 | 度规中不受共形变换影响的部分；$K^{2}\eta_{\mu\nu}$ 的 Weyl 张量恒为零 |
 | $\Box_\eta$ | $\eta^{\mu\nu}\partial_\mu\partial_\nu=\partial_t^{2}-\nabla^{2}$ |

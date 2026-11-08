@@ -40,7 +40,7 @@
 对 $K=c$ 与 $K=\infty$，$\iota(t,x)=(t,-x)$ 满足 $\iota^{*}\mathrm{d}s^{2}_{K}=\mathrm{d}s^{2}_{K}$。
 :::
 
-**证明**：$\iota^{*}\mathrm{d}t=\mathrm{d}t$，$\iota^{*}\mathrm{d}x=-\mathrm{d}x$，故 $\iota^{*}\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-(-\mathrm{d}x)^{2}/K^{2}=\mathrm{d}s^{2}_{K}$。
+**证明**：$\iota^{*}\mathrm{d}t=\mathrm{d}t$，$\iota^{*}\mathrm{d}x=-\mathrm{d}x$，故 $\iota^{*}\mathrm{d}s^{2}_{K}=\mathrm{d}t^{2}-(-\mathrm{d}x)^{2}/K^{2}=\mathrm{d}s^{2}_{K}$。$\quad\square$
 
 ::: {#cor-tn-length}
 
@@ -51,7 +51,7 @@ $s[\gamma_B]=s[\gamma_A]$，对 $K=c$ 与 $K=\infty$ 都成立。
 
 **证明**：曲线在等距映射下的长度不变（换元 $y=\iota(x)$，被积式与积分域都被 $\iota$ 保形搬移，积分值不变）。$\gamma_B=\iota(\gamma_A)$，故 $s[\gamma_B]=s[\gamma_A]$。
 
-@cor-tn-length 是 (M3) 与 (M4) 的直接推论，全程未使用任何变换公式与任何坐标选择。
+@cor-tn-length 是 (M3) 与 (M4) 的直接推论，全程未使用任何变换公式与任何坐标选择。$\quad\square$
 
 ## 换到 A 的坐标 {#sec-tn-construct}
 
@@ -81,9 +81,9 @@ $$
 $$ {#eq-tn-metric-inf}
 :::
 
-**证明**（$K=c$）：对 @eq-tn-fermi 求偏导：$\partial_s T=(1+a x_A)\cosh\theta$，$\partial_{x_A}T=\sinh\theta$，$\partial_s X=(1+a x_A)\sinh\theta$，$\partial_{x_A}X=\cosh\theta$。代入 $\mathrm{d}t^{2}-\mathrm{d}x^{2}$，用 $\cosh^{2}\theta-\sinh^{2}\theta=1$ 逐项化简即得。该式对任意 $a(s)$ **精确成立**，不是近似。
+**证明**（$K=c$）：对 @eq-tn-fermi 求偏导：$\partial_s T=(1+a x_A)\cosh\theta$，$\partial_{x_A}T=\sinh\theta$，$\partial_s X=(1+a x_A)\sinh\theta$，$\partial_{x_A}X=\cosh\theta$。代入 $\mathrm{d}t^{2}-\mathrm{d}x^{2}$，用 $\cosh^{2}\theta-\sinh^{2}\theta=1$ 逐项化简即得。该式对任意 $a(s)$ **精确成立**，不是近似。$\quad\square$
 
-**证明**（$K=\infty$）：该支的变换满足 $t'=t$，取 A 视角坐标 $t_A=t$、$x_A=x-X(t)$（沿 $\gamma_A$ 的横移），代入 $\mathrm{d}s^{2}=\mathrm{d}t^{2}$ 得 $\mathrm{d}s^{2}=\mathrm{d}t_A^{2}$；加速轨迹 $X(t)$ 不出现在结果中。
+**证明**（$K=\infty$）：该支的变换满足 $t'=t$，取 A 视角坐标 $t_A=t$、$x_A=x-X(t)$（沿 $\gamma_A$ 的横移），代入 $\mathrm{d}s^{2}=\mathrm{d}t^{2}$ 得 $\mathrm{d}s^{2}=\mathrm{d}t_A^{2}$；加速轨迹 $X(t)$ 不出现在结果中。$\quad\square$
 
 | | $K=c$ | $K=\infty$ |
 |------|------|------|
@@ -138,7 +138,7 @@ $$ {#eq-tn-condition-c}
 $K=\infty$ 支：映射 $t_A=t$、$x_A=x-X(t)$ 的雅可比行列式为 $1$，处处非零；上式在该支**没有对应的限制**，映射在全体 $(t,x)$ 上一一对应。
 :::
 
-**证明**：$K=c$ 支中 $g_{ss}=(1+a x_A/c^{2})^{2}$ 在 $x_A=-c^{2}/a$ 处为零。几何上，$t_A=\text{常数}$ 的线在 $(t,x)$ 平面中是直线 $t=\bigl(x+c^{2}/a\bigr)\tanh(a t_A/c)$（$a$ 为常数时），它们**全部过点** $(-c^{2}/a,\,0)$。该点是这族直线的公共交点：越过它，不同的 $(s,x_A)$ 对应同一事件，映射不再一一对应。公共交点位于 $\gamma_A$ 的曲率反方向、距离 $c^{2}/a$ 处。$K=\infty$ 支中 $\partial(t_A,x_A)/\partial(t,x)=\det\begin{pmatrix}1&0\\-X'(t)&1\end{pmatrix}=1$。
+**证明**：$K=c$ 支中 $g_{ss}=(1+a x_A/c^{2})^{2}$ 在 $x_A=-c^{2}/a$ 处为零。几何上，$t_A=\text{常数}$ 的线在 $(t,x)$ 平面中是直线 $t=\bigl(x+c^{2}/a\bigr)\tanh(a t_A/c)$（$a$ 为常数时），它们**全部过点** $(-c^{2}/a,\,0)$。该点是这族直线的公共交点：越过它，不同的 $(s,x_A)$ 对应同一事件，映射不再一一对应。公共交点位于 $\gamma_A$ 的曲率反方向、距离 $c^{2}/a$ 处。$K=\infty$ 支中 $\partial(t_A,x_A)/\partial(t,x)=\det\begin{pmatrix}1&0\\-X'(t)&1\end{pmatrix}=1$。$\quad\square$
 
 ### 另一条曲线的像在哪里断掉
 
@@ -263,7 +263,7 @@ $K=c$ 支中，设事件 $X$ 由 $O$ 出发沿直线段（任意恒定速率 $|u
 
 **证明**：直线 $x=ut$ 上，$s=\displaystyle\int_{0}^{t(X)}\sqrt{1-u^{2}/c^{2}}\,\mathrm{d}t'=t(X)\sqrt{1-u^{2}/c^{2}}$，而 $t(X)^{2}-x(X)^{2}/c^{2}=t(X)^{2}\bigl(1-u^{2}/c^{2}\bigr)=s^{2}$。$K=\infty$ 支即 @eq-tn-read-inf 的直接读出。
 
-引理的要点是**与速率无关**：两个以不同恒定速率从 $O$ 出发的人，跨过同一条 $\Lambda_O(s)$ 时线长同为 $s$（数值核验：$u=0.1,0.6,0.9,0.99$ 的直线跨 $\Lambda_O(0.4)$，线长均为 $0.4$）。
+引理的要点是**与速率无关**：两个以不同恒定速率从 $O$ 出发的人，跨过同一条 $\Lambda_O(s)$ 时线长同为 $s$（数值核验：$u=0.1,0.6,0.9,0.99$ 的直线跨 $\Lambda_O(0.4)$，线长均为 $0.4$）。$\quad\square$
 
 ### 分段定理
 
@@ -288,7 +288,7 @@ $K=c$ 支中，设事件 $X$ 由 $O$ 出发沿直线段（任意恒定速率 $|u
 3. $\iota$ 保持 $t^{2}-x^{2}/c^{2}$ 与 $t$（@prp-tn-isometry 的计算），故 $\iota\bigl(\Lambda_O(s_1)\bigr)=\Lambda_O(s_1)$、$\iota\bigl(\Lambda_M(s_2)\bigr)=\Lambda_M(s_2)$，且 $\iota$ 把 $\gamma_A$ 的段 I、III 分别映为 $\gamma_B$ 的段 I、III。交点唯一给出 $\iota(E_A)=E_B$、$\iota(F_A)=F_B$；$\iota$ 保持线元，子段的线长不变（@cor-tn-length 的同一论证用于子段）。
 4. 三段相加，用 1、2、3。
 
-注：结论 1、2 由校准引理给出；结论 3 由镜像 $\iota$ 保线元给出。
+注：结论 1、2 由校准引理给出；结论 3 由镜像 $\iota$ 保线元给出。$\quad\square$
 
 ::: {#cor-tn-legs}
 

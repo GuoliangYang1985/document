@@ -2,6 +2,16 @@
 
 本书跨十六章，涉及群论、微分几何、量子力学与场论，同一个字母在不同章可能承担不同角色。本表登记全书主要符号及其角色，供查阅。
 
+## 全局约定 {#sec-notation-global}
+
+以下约定全书生效，写作与检查以《书籍规范》§7.1 为准：
+
+1. **度规签名**：$\eta=\mathrm{diag}(1,-1,-1,-1)$（时间分量取正）；线元在 $K=c$ 支为 $\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$。爱因斯坦求和约定全书生效。
+2. **字体**：三维向量用粗正体 $\mathbf{x}$、$\mathbf{E}$（`\mathbf`）；希腊字母向量用 $\boldsymbol{\xi}$（`\mathbf` 对希腊字母失效的技术例外）；**nabla 不加粗**，写 $\nabla$；微分用正体 $\mathrm{d}$；虚数单位用斜体 $i$；算子名用正体（如 $\operatorname{supp}$）。
+3. **字形分工**：$\phi$ 用于标量势（电磁学）与球坐标方位角；$\varphi$ 用于波场／波函数与微分同胚映射。同一对象不混用两种字形。
+4. **同形记号辨析**：无下标的 $\gamma$ 及 $\gamma_{u}$、$\gamma_{v}$、$\gamma_{w}$ 是变换因子（下标为速度参数）；带大写字母下标的 $\gamma_{A}$、$\gamma_{B}$ 是世界线。二者不同类，靠下标风格区分。
+5. **张量指标**：一上多下的张量用错位指标，如 $\Gamma^{\lambda}{}_{\mu\nu}$、$R^{\mu}{}_{\nu\rho\sigma}$；曲率符号约定见下文“线长、几何与曲率”一节的显式定义式。
+
 ## 时空、坐标与指标 {#sec-notation-coords}
 
 | 符号 | 含义 | 主要出处 |
@@ -71,10 +81,10 @@
 
 $$
 R_{\mu\nu}
-=\partial_{\rho}\Gamma^{\rho}_{\nu\mu}
--\partial_{\nu}\Gamma^{\rho}_{\rho\mu}
-+\Gamma^{\rho}_{\rho\lambda}\Gamma^{\lambda}_{\nu\mu}
--\Gamma^{\rho}_{\nu\lambda}\Gamma^{\lambda}_{\rho\mu},
+=\partial_{\rho}\Gamma^{\rho}{}_{\nu\mu}
+-\partial_{\nu}\Gamma^{\rho}{}_{\rho\mu}
++\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{\nu\mu}
+-\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\mu},
 \qquad R=g^{\mu\nu}R_{\mu\nu}.
 $$
 
