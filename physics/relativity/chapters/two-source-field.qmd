@@ -7,7 +7,7 @@
 底空间为 $\mathbb{R}^{3}\times\mathbb{R}$，坐标记 $(\mathbf{x},t)$，$\mathbf{x}=(x^{1},x^{2},x^{3})^{T}$。列向量一律按时间分量在前的顺序排列：$(t,x^{1},x^{2},x^{3})^{T}$，与 @sec-lorentz-4d 一致。
 
 ::: {#cnj-propagation}
-## 传播律（A1）
+## 传播律 A1
 
 存在一个**被选定的**惯性参考系 $S_{0}$，本章称之为**静系**。在 $S_{0}$ 中，时刻 $\tau$ 自点 $\mathbf{p}$ 发出的扰动，其在时刻 $t>\tau$ 的波前为球面
 
@@ -19,7 +19,7 @@ $$
 :::
 
 ::: {#cnj-galilei-transform}
-## 坐标变换（A2）
+## 坐标变换 A2
 
 任意两个惯性系之间的坐标变换为伽利略变换
 
@@ -366,7 +366,7 @@ $$ {#eq-retarded-sum}
 
 下面对两条世界线分别求出 $\tau^{*}$ 与 $|g'(\tau^{*})|$。
 
-## 源 A：$\mathbf{p}_{A}(\tau)=\mathbf{a}$ {#sec-tsf-source-a}
+## 源 A　$\mathbf{p}_{A}(\tau)=\mathbf{a}$ {#sec-tsf-source-a}
 
 此时 $R(\tau)\equiv R_{A}=|\mathbf{x}-\mathbf{a}|$ 与 $\tau$ 无关，故
 
@@ -387,7 +387,7 @@ $$
 \qquad R_{A}=|\mathbf{x}-\mathbf{a}|.
 $$ {#eq-field-A}
 
-## 源 B：$\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$ {#sec-tsf-source-b}
+## 源 B　$\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$ {#sec-tsf-source-b}
 
 源 B 以恒速运动，其推迟时间是二次方程的根：本节给出代数解、判定正根、算 Jacobian 因子，末小节登记结果。
 
@@ -649,7 +649,7 @@ $$
 
 : 测量程序的输入与输出 {#tbl-measurement-data}
 
-### 引理：单次接收的欠定性
+### 单次接收的欠定性引理
 
 一次接收只给出**一个**方程
 
@@ -696,7 +696,7 @@ $$
 \widehat{\tau}^{(i)}_{B}=t^{(i)}_{B}-s_{+}.
 $$ {#eq-measure-B}
 
-### 定理：程序输出的参与方无关性
+### 程序输出的参与方无关性定理
 
 ::: {#prp-measurement-invariance}
 ## 输出与参与方无关

@@ -42,10 +42,10 @@ $$
 
 把本设定与 @sec-twins-comparison 章的对称设定放在一起看，差别也在这里：对称设定下两条曲线互为镜像，$\iota$ 把一条映到另一条，改换指定不产生任何可分辨的后果；本设定下两条不互为镜像——一条各段曲率恒为零、一条不恒为零——改换指定把更长的那条换给了另一方，结论随之翻转。至于 $K=\infty$ 一支，两侧同为 $T$，换不换都读不出差别。
 
-## 第一支：$K=c$ {#sec-at-branch-c}
+## 第一支 $K=c$ {#sec-at-branch-c}
 
 ::: {#cnj-ta-lorentz}
-## 洛伦兹公理（$K=c$）
+## 洛伦兹公理
 
 恒速群取 $K=c$，即存在有限的不变速度 $c$。据此：
 
@@ -55,7 +55,7 @@ $$
 :::
 
 ::: {#prp-ta-lorentz-result}
-## 在该公理下：线长沿各自的路径累积
+## 线长沿各自的路径累积
 
 $$
 \Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\sqrt{\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}}.
@@ -74,7 +74,7 @@ $$
 \Delta s_D-\Delta s_G=2t_1\Bigl(1-\frac{1}{\gamma}\Bigr)+(\Delta-\varepsilon).
 $$ {#eq-at-diff}
 
-### 按运动类型归堆比较 {#sec-at-pile}
+### 按运动类型分组比较 {#sec-at-pile}
 
 把两侧线长各自按运动类型分成两堆：
 
@@ -84,7 +84,7 @@ $$ {#eq-at-diff}
 | 转向部分 | $0$ | $\varepsilon$ | $-\varepsilon$ |
 | 合计 | $2t_1+\Delta$ | $2t_1/\gamma+\varepsilon$ | @eq-at-diff |
 
-: 两侧线长按运动类型归堆 {#tbl-at-pile}
+: 两侧线长按运动类型分组 {#tbl-at-pile}
 
 本设定中 $D$ 没有转向段，故 $D$ 的转向部分线长为 $0$。
 
@@ -100,7 +100,7 @@ $$
 
 掉头段只通过它占用的 $\mathrm{d}t$ 进入积分；令掉头段历时趋于零，上式不变。取 $v=0.6c$、$T=100$ 年（$\gamma=1.25$）：$\Delta s_D=100$ 年、$\Delta s_G=80$ 年，差 $20$ 年。
 
-### 固定转向段，只延长惯性飞行 {#sec-at-scan}
+### 固定转向段只延长惯性飞行 {#sec-at-scan}
 
 把转向段完全固定住——$\Delta$ 与 $\varepsilon$ 都取定值——只改变惯性飞行的时长 $t_1$。取 $v=0.6$（$\gamma=1.25$），转向段理想化为瞬时（$\Delta=\varepsilon=0$）：
 
@@ -140,10 +140,10 @@ $$
 
 两处核对：$v\to0$ 时 $\gamma\to1$，@eq-at-diff 给出差 $\to\Delta-\varepsilon$；转向段取瞬时（$\Delta=\varepsilon=0$）时差 $\to0$，两条路径的线长相同。
 
-## 第二支：$K=\infty$ {#sec-at-branch-infty}
+## 第二支 $K=\infty$ {#sec-at-branch-infty}
 
 ::: {#cnj-ta-absolute-time}
-## 绝对时间公理（$K=\infty$）
+## 绝对时间公理
 
 恒速群取 $K=\infty$，即不变速度为无穷大（不存在有限的不变速度）。据此：
 
@@ -153,7 +153,7 @@ $$
 :::
 
 ::: {#prp-ta-equal}
-## 在该公理下：两条世界线的线长相同
+## 两条世界线的线长相同
 
 $$
 \Delta s=\int_{\gamma}\mathrm{d}s=\int_{\gamma}\mathrm{d}t=t(M)-t(O)=T.

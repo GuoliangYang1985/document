@@ -51,11 +51,11 @@ $$ {#eq-standard-maxwell}
 
 : “形式不变”的三种含义 {#tbl-form-invariance}
 
-**对照**：洛伦兹协变属于②，且在那里是免费的——洛伦兹群自带不变量（光锥、达朗贝尔算符 $\partial_\mu\partial^\mu$），场按现成的张量表示变换即可。伽利略群没有这样的不变量，②走不通，于是只剩①：**引入一个补偿对象，让它替场去变换**。这就是 @sec-gal-kinematics 的引理将要严格证明的事。
+**对照**：洛伦兹协变属于②，且在该支无需额外构造——洛伦兹群自带不变量（光锥、达朗贝尔算符 $\partial_\mu\partial^\mu$），场按现成的张量表示变换即可。伽利略群没有这样的不变量，②不可行，于是只剩①：**引入一个补偿对象，由它代替场进行变换**。这就是 @sec-gal-kinematics 的引理将要严格证明的事。
 
 **记号约定**（全章统一）：$\mathbf{u}$ 只出现在坐标变换中，表示**两套坐标之间的相对速度**；$\mathbf{w}$ 只出现在方程中，是**补偿速度**（一个给定的常向量）。$c$ 是方程的参数，不参与任何变换。
 
-## 运动学：唯一可用的算子 {#sec-gal-kinematics}
+## 运动学与唯一可用的算子 {#sec-gal-kinematics}
 
 在伽利略坐标变换下，可用的算子受到严格限制。本节先登记两个基本恒等式，再给一阶算子的完整分类。
 
@@ -71,7 +71,7 @@ $$ {#eq-operator-transform}
 
 **梯度不变，时间偏导数不是。** 这一行是全部构造的起点。
 
-### 引理：一阶算子的分类
+### 一阶算子的分类引理
 
 ::: {#lem-operator-classification}
 ## 算子分类
@@ -132,7 +132,7 @@ $$
 = \partial_{t} + \mathbf{w}\cdot\nabla. \quad\square
 $$
 
-### 一条硬约束：$\mathbf{w}$ 必须是常向量
+### 硬约束　$\mathbf{w}$ 必须为常向量
 
 ::: {#lem-commutation}
 ## 交换性
@@ -152,11 +152,11 @@ $$ {#eq-commutation}
 
 这条约束的后果：**本构造中 $\mathbf{w}$ 只能取常向量**。若允许 $\mathbf{w}=\mathbf{w}(\mathbf{x},t)$，则旋度方程与散度方程不再自洽地配对（齐次结构断裂），需要另行引入修正项——那是另一个模型，见 @sec-gal-boundary 的讨论。
 
-## 构造：修改清单 {#sec-gal-construction}
+## 构造的修改清单 {#sec-gal-construction}
 
 构造只做**一个动作**：凡标准系统中出现 $\partial_t$ 的地方，全部换成 $\mathcal{D}_t^{(\mathbf{w})}$。
 
-### 修改后的方程组（无源）
+### 修改后的无源方程组
 
 $$
 \nabla\cdot\mathbf{E} = 0,
@@ -201,7 +201,7 @@ $$ {#eq-gauge-transform}
 
 它保持 @eq-potentials 不变，从而给出修改后系统自带的规范自由度。这里必须同步替换的原因是：$\nabla\times$ 与 $\mathcal{D}_t^{(\mathbf{w})}$ 的可交换性（@lem-commutation）正是“齐次方程 $\Leftrightarrow$ 存在势”这条等价性的支柱——$\mathbf{w}$ 取常向量时该等价性完整保留。
 
-### 有源情形：源项必须同步修改
+### 有源情形　源项必须同步修改
 
 引入标量源 $\rho$ 与矢量源 $\mathbf{J}$，把高斯型与安培型改为
 
@@ -243,7 +243,7 @@ $$
 
 这个“恰好相消”不是巧合：$\mathbf{J}-\rho\mathbf{w}$ 正是“$\mathbf{J}$ 在以 $\mathbf{w}$ 运动的坐标网中的表现”，连续性方程的不变性由此自动成立。$\quad\square$
 
-## 验证一：形式不变性 {#sec-gal-covariance}
+## 验证一　形式不变性 {#sec-gal-covariance}
 
 第一项验证：全部场方程在伽利略变换（含补偿速度 $\mathbf{w}$ 的替换）下形式不变。
 
@@ -264,7 +264,7 @@ $$
 
 其中第二个等号用了 @lem-convective-invariance。即：带撇系中的方程与原方程逐字相同。散度方程不含 $\partial_t$，而 $\nabla'=\nabla$，自动不变。$\quad\square$
 
-### 换元定理：这组方程的全部解都是已知的
+### 换元定理　全部解均为已知
 
 ::: {#thm-change-of-variables}
 ## 换元定理
@@ -284,7 +284,7 @@ $$ {#eq-change-of-variables}
 
 **@thm-change-of-variables 的含义**：修改后方程组的解空间与标准系统的解空间之间只隔着一个**伽利略换元**——每一个解都是“标准解的剪切像”（把标准解沿速度 $\mathbf{w}$ 平移）。因此本构造**没有制造新的数学内容**，它做的是：把标准系统与伽利略群**打包成一个整体**，使形式不变性成为构造的自动性质而非事后检验。这正是①（逐字不变 + 补偿结构）的本质：**把②所需要的表示变换外包给一个新对象 $\mathbf{w}$ 去承担。**
 
-## 验证二：波解与速度叠加 {#sec-gal-wave}
+## 验证二　波解与速度叠加 {#sec-gal-wave}
 
 第二项验证在波解层面：色散关系在变换下形式不变，相速度与群速度给出速度叠加的两种表现。
 
@@ -306,7 +306,7 @@ $$ {#eq-dispersion}
 
 （取正向分支；负向分支对应反向传播。）这就是目标 (G2)：**速度叠加不是假设，是从方程里掉出来的**。
 
-### 相速度、群速度：叠加的两种表现
+### 相速度与群速度　叠加的两种表现
 
 由 @eq-dispersion 直接求导：
 
@@ -338,11 +338,11 @@ $$ {#eq-galilean-wave-transform}
 
   把 @eq-dispersion 代入 @eq-galilean-wave-transform 立得 $\omega' = c|\mathbf{k}'| + (\mathbf{w}-\mathbf{u})\cdot\mathbf{k}'$——色散关系在变换下形式不变，与 $\mathbf{w}'=\mathbf{w}-\mathbf{u}$ 自洽。
 
-## 数学边界：走不通的路与自由参数 {#sec-gal-boundary}
+## 数学边界　不可行路线与自由参数 {#sec-gal-boundary}
 
-本节划定这套构造的数学边界：一阶计算表明路线②走不通、系数层修补补不上缺口，最后登记本构造剩余的三个自由参数。
+本节划定这套构造的数学边界：一阶计算表明路线②不可行、系数层的修补无法弥合缺口，最后登记本构造剩余的三个自由参数。
 
-### 注记：为什么路线②走不通（一阶计算）
+### 注记　路线②不可行的一阶计算
 
 设仍要求场做非平凡变换 $\mathbf{E}' = \mathbf{E} + a\,\mathbf{u}\times\mathbf{B}$、$\mathbf{B}'=\mathbf{B}$（$a$ 待定），并要求标准系统 @eq-standard-maxwell 在伽利略变换下共变。用 @eq-operator-transform 逐条检验：
 
