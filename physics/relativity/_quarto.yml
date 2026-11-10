@@ -6,7 +6,7 @@ project:
 book:
   title: "理论测量的边界"
   author: "杨国梁"
-  version: "1.1"
+  version: "1.2"
   downloads: pdf
   chapters:
     - index.qmd
@@ -27,6 +27,7 @@ book:
     - chapters/asymmetric-twins.qmd
     - chapters/layers.qmd
     - chapters/acc-source.qmd
+    - chapters/sector-metrics.qmd
     - chapters/notation.qmd
     - chapters/term-index.qmd
     - chapters/references.qmd

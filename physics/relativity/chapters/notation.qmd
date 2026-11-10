@@ -1,6 +1,6 @@
 # 符号与约定 {#sec-notation .unnumbered}
 
-本书跨十六章，涉及群论、微分几何、量子力学与场论，同一个字母在不同章可能承担不同角色。本表登记全书主要符号及其角色，供查阅。
+本书跨十七章，涉及群论、微分几何、量子力学与场论，同一个字母在不同章可能承担不同角色。本表登记全书主要符号及其角色，供查阅。
 
 ## 全局约定 {#sec-notation-global}
 
@@ -134,7 +134,7 @@ $$
 | $t_1$、$\Delta$、$\varepsilon$ | 惯性段的坐标时、转向段占的坐标时、转向段的线长（@sec-asymmetric-twins 章） |
 | $T$ | 全程坐标时；@sec-asymmetric-twins 章中 $T=2t_1+\Delta$ |
 
-## 书末一章的符号 {#sec-notation-acc}
+## 书末两章的符号 {#sec-notation-acc}
 
 | 符号 | 含义 |
 |------|------|
@@ -144,6 +144,16 @@ $$
 | $A_{\mu\nu}$ | $\psi$ 的能量动量张量；与 $T_{\mu\nu}$ 同槽位、同量纲 |
 
 只在 @sec-acc-source 章内出现，不进入其余各章的算式。三处同形不同义须留意：这里的 $u^{\mu}$ 是四速，与 @sec-transform-derivation 章的 boost 参数 $u$ 无关；这里的 $\mu$ 是场的质量，与 @sec-quantum-phase 章的中央荷 $m$ 无关；这里的 $\lambda$ 不进入量子部分。
+
+@sec-sector-metric 章另带一组符号：
+
+| 符号 | 含义 |
+|------|------|
+| $a(\mathbf{x})$、$\Phi$ | 位置函数及其势（$a=-\nabla\Phi$，$\Phi$ 即该章的牛顿势） |
+| $q_{s}$ | 扇区 $s$ 的响应系数；与 @sec-clock-coupling 章的 $\alpha_{i}$ 同族（下标记物质类别），符号取法不同 |
+| $g^{(s)}$ | 扇区度规族；上标记扇区，非导数 |
+
+与 @sec-acc-source 章的 $a^{\mu}$（四维加速度，带上标指标）同形不同义；本章 $a(\mathbf{x})$ 是三维位置函数，不带指标。
 
 ## 体例约定 {#sec-notation-style}
 
