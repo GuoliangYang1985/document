@@ -95,53 +95,59 @@ $$
 \left.\frac{\partial x'}{\partial v}\right|_{v=0}=-t,
 $$
 
-即 boost 生成元为向量场
-
+即 boost 生成元为向量场，和两个生成元为时间与空间平移：
 $$
-B=-\frac{x}{K^{2}}\,\partial_t-t\,\partial_x.
-$$
-
-另两个生成元为平移：$H=\partial_t$、$P=\partial_x$。
-
-**逐项计算李括号**（记 $B^{t}=-x/K^{2}$、$B^{x}=-t$；$H^{t}=1$、$H^{x}=0$；$P^{t}=0$、$P^{x}=1$）：
-
-*$[B,H]$ 的时间分量*：
-
-$$
-[B,H]^{t}=B^{j}\partial_j H^{t}-H^{j}\partial_j B^{t}
-=0-\partial_t\!\left(-\frac{x}{K^{2}}\right)=0.
+B = -\frac{x}{K^2}\partial_t - t\partial_x, \qquad H = \partial_t, \qquad P = \partial_x. 
 $$
 
-（$K$ 为常数，故 $\partial_t(x/K^{2})=0$。）
-
-*$[B,H]$ 的空间分量*：
-
+在坐标基 $(t,x)$ 下，任意生成元均可展开为向量场 $V = V^t \partial_t + V^x \partial_x$。提取上述三个生成元的时间与空间分量（即向量场的系数），记为：
 $$
-[B,H]^{x}=B^{j}\partial_j H^{x}-H^{j}\partial_j B^{x}
-=0-\partial_t(-t)=1.
+B^t = -\frac{x}{K^2}, \quad B^x = -t; \qquad H^t = 1, \quad H^x = 0; \qquad P^t = 0, \quad P^x = 1. 
 $$
 
-故
+依据李括号的分量展开式 $[U,V]^t = U^t\partial_t V^t + U^x\partial_x V^t - (V^t\partial_t U^t + V^x\partial_x U^t)$，逐项计算 $[B, H]$ 的时间分量：
+$$
+\begin{aligned}
+[B, H]^t &= B^t \partial_t H^t + B^x \partial_x H^t - (H^t \partial_t B^t + H^x \partial_x B^t) \\
+&= \left(-\frac{x}{K^2}\right)\partial_t(1) + (-t)\partial_x(1) - 1 \cdot \partial_t\left(-\frac{x}{K^2}\right) - 0 \cdot \partial_x\left(-\frac{x}{K^2}\right) \\
+&= 0 + 0 - 0 - 0 = 0.
+\end{aligned} 
+$$
+
+同理计算其空间分量：
+$$
+\begin{aligned}
+[B, H]^x &= B^t \partial_t H^x + B^x \partial_x H^x - (H^t \partial_t B^x + H^x \partial_x B^x) \\
+&= \left(-\frac{x}{K^2}\right)\partial_t(0) + (-t)\partial_x(0) - 1 \cdot \partial_t(-t) - 0 \cdot \partial_x(-t) \\
+&= 0 + 0 - (-1) - 0 = 1.
+\end{aligned} 
+$$
+
+该结果与平移生成元 $P$ 的分量完全一致，故得出关系：
 
 $$
 [B,H]=P.
 $$ {#eq-ifg-BH}
 
-*$[B,P]$ 的时间分量*：
-
+采用相同的分量运算规则，继续计算 $[B, P]$ 的时间分量：
 $$
-[B,P]^{t}=B^{j}\partial_j P^{t}-P^{j}\partial_j B^{t}
-=0-\partial_x\!\left(-\frac{x}{K^{2}}\right)=\frac{1}{K^{2}}.
-$$
-
-*$[B,P]$ 的空间分量*：
-
-$$
-[B,P]^{x}=B^{j}\partial_j P^{x}-P^{j}\partial_j B^{x}
-=0-\partial_x(-t)=0.
+\begin{aligned}
+[B, P]^t &= B^t \partial_t P^t + B^x \partial_x P^t - (P^t \partial_t B^t + P^x \partial_x B^t) \\
+&= \left(-\frac{x}{K^2}\right)\partial_t(0) + (-t)\partial_x(0) - 0 \cdot \partial_t\left(-\frac{x}{K^2}\right) - 1 \cdot \partial_x\left(-\frac{x}{K^2}\right) \\
+&= 0 + 0 - 0 - \left(-\frac{1}{K^2}\right) = \frac{1}{K^2}.
+\end{aligned}
 $$
 
-故
+其空间分量为：
+$$
+\begin{aligned}
+[B, P]^x &= B^t \partial_t P^x + B^x \partial_x P^x - (P^t \partial_t B^x + P^x \partial_x B^x) \\
+&= \left(-\frac{x}{K^2}\right)\partial_t(1) + (-t)\partial_x(1) - 0 \cdot \partial_t(-t) - 1 \cdot \partial_x(-t) \\
+&= 0 + 0 - 0 - 0 = 0.
+\end{aligned}
+$$
+
+所得结果恰为时间平移生成元 $H$ 的 $1/K^2$ 倍，即
 
 $$
 [B,P]=\frac{1}{K^{2}}\,H.
@@ -156,7 +162,7 @@ $$ {#eq-ifg-BP}
 | 有限 | $\dfrac{1}{K^{2}}H\neq0$ | 庞加莱型 |
 | $\infty$ | $0$ | 伽利略型 |
 
-**这两个李代数不同构**——一个有非零结构常数，一个为零。这是 @sec-invariant-speed-group 章“两支底层不同”这句话在李代数层面的证明；而群收缩在李代数层面就是一句
+在李代数层面，两个类型不同构，一个有非零结构常数，一个为零；而群收缩就是
 
 $$
 \frac{1}{K^{2}}\longrightarrow 0\qquad (K\to\infty).
@@ -170,7 +176,7 @@ $$
 [B,P]_{p}=\frac{1}{K(p)^{2}}\,H.
 $$
 
-**结构常数成为时空上的函数。** 这个对象的数学名字是**李代数丛**：每根纤维上是一个李代数，不同纤维上的李代数由不同的结构常数刻画。
+结构常数成为时空上的函数，称为**李代数丛**：每根纤维上是一个李代数，不同纤维上的李代数由不同的结构常数刻画。
 
 ## 跨纤维的复合失效 {#sec-ifg-cross}
 
