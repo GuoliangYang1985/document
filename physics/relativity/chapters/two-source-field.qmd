@@ -366,9 +366,9 @@ $$ {#eq-retarded-sum}
 
 下面对两条世界线分别求出 $\tau^{*}$ 与 $|g'(\tau^{*})|$。
 
-## 源 A　$\mathbf{p}_{A}(\tau)=\mathbf{a}$ {#sec-tsf-source-a}
+## 源 A：静止点源 {#sec-tsf-source-a}
 
-此时 $R(\tau)\equiv R_{A}=|\mathbf{x}-\mathbf{a}|$ 与 $\tau$ 无关，故
+源 A 静止，其世界线为 $\mathbf{p}_{A}(\tau)=\mathbf{a}$。此时 $R(\tau)\equiv R_{A}=|\mathbf{x}-\mathbf{a}|$ 与 $\tau$ 无关，故
 
 $$
 g(\tau)=t-\tau-\frac{R_{A}}{c},\qquad g'(\tau)\equiv-1.
@@ -387,9 +387,9 @@ $$
 \qquad R_{A}=|\mathbf{x}-\mathbf{a}|.
 $$ {#eq-field-A}
 
-## 源 B　$\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$ {#sec-tsf-source-b}
+## 源 B：匀速运动源 {#sec-tsf-source-b}
 
-源 B 以恒速运动，其推迟时间是二次方程的根：本节给出代数解、判定正根、算 Jacobian 因子，末小节登记结果。
+源 B 匀速运动，其世界线为 $\mathbf{p}_{B}(\tau)=\mathbf{b}+\mathbf{v}\tau$；其推迟时间是二次方程的根：本节给出代数解、判定正根、算 Jacobian 因子，末小节登记结果。
 
 ### 推迟时间的代数解
 
@@ -661,7 +661,7 @@ $$
 
 这说明：补充“发射者世界线”不是外加的假设，而是把问题变为可解的**必要条件**；补充之后未知量只剩 $\tau$ 一个。
 
-### 程序 $\mathcal{P}$
+### 程序 $𝒫$
 
 对第 $i$ 位参与方与第 $k$ 个源（$k=A,B$），执行：
 

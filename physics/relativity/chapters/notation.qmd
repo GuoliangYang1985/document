@@ -4,7 +4,7 @@
 
 ## 全局约定 {#sec-notation-global}
 
-以下约定全书生效，写作与检查以《书籍规范》§7.1 为准：
+以下约定全书生效：
 
 1. **度规签名**：$\eta=\mathrm{diag}(1,-1,-1,-1)$（时间分量取正）；线元在 $K=c$ 支为 $\mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}x^{2}/c^{2}$。爱因斯坦求和约定全书生效。
 2. **字体**：三维向量用粗正体 $\mathbf{x}$、$\mathbf{E}$（`\mathbf`）；希腊字母向量用 $\boldsymbol{\xi}$（`\mathbf` 对希腊字母失效的技术例外）；**nabla 不加粗**，写 $\nabla$；微分用正体 $\mathrm{d}$；虚数单位用斜体 $i$；算子名用正体（如 $\operatorname{supp}$）。

@@ -100,7 +100,7 @@ format:
     toc: true
     toc-depth: 3
     number-sections: true
-    # KaTeX 渲染数学公式（快速且离线友好）
+    # KaTeX 渲染数学公式
     html-math-method: katex
     link-citations: true
     # 图片自适应缩放

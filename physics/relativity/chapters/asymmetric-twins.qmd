@@ -140,7 +140,7 @@ $$
 
 两处核对：$v\to0$ 时 $\gamma\to1$，@eq-at-diff 给出差 $\to\Delta-\varepsilon$；转向段取瞬时（$\Delta=\varepsilon=0$）时差 $\to0$，两条路径的线长相同。
 
-## 第二支 $K=\infty$ {#sec-at-branch-infty}
+## 第二支 $K=∞$ {#sec-at-branch-infty}
 
 ::: {#cnj-ta-absolute-time}
 ## 绝对时间公理

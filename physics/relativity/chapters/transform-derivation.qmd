@@ -88,7 +88,7 @@ $$ {#eq-lin-x}
 
 下面两小节按 @tbl-roadmap 执行前两步：各用一条几何设定消去一个待定常数，两条约束都与第三条公理无关，因此两种变换共享其结果。
 
-### 约束 1　追踪 $S'$ 的原点
+### 约束 1：追踪 $S'$ 的原点
 
 $S'$ 的原点满足 $x' = 0$，它在 $S$ 系中对应 $x = vt$。代入 @eq-lin-x：
 
@@ -107,7 +107,7 @@ x' &= D(x - vt).
 \end{aligned}
 $$ {#eq-after-origin}
 
-### 约束 2　相对速度
+### 约束 2：相对速度
 
 由相对性原理（@cnj-covariance），$S$ 系在自己看来静止，而在 $S'$ 系中必须以速度 $-v$ 退行，即其原点 $x = 0$ 满足 $x' = -v t'$。
 
@@ -131,7 +131,7 @@ $$ {#eq-matrix-form}
 
 本支取 @cnj-invariant-time。约束 3 用它消去 $B$，约束 4 由群结构定下 $A$（@tbl-roadmap 的后两步）。
 
-### 约束 3G　不变时间
+### 约束 3G：不变时间
 
 由 @cnj-invariant-time，$t = 0 \Rightarrow t' = 0$。在 @eq-lin-t 中令 $t = 0$，得 $t' = Bx$；要求它对一切 $x$ 为零，故
 
@@ -141,7 +141,7 @@ $$ {#eq-constraint-time}
 
 于是变换进一步收缩为 $t' = A t$、$x' = A(x - vt)$——这是一个**保时**的变换。
 
-### 约束 4G　群结构
+### 约束 4G：群结构
 
 由 @cnj-covariance，变换集合构成群，故速度为 $v$ 的变换与速度为 $-v$ 的变换互逆：$\Lambda(v)\,\Lambda(-v) = I$。
 
@@ -206,7 +206,7 @@ $$
 
 爱因斯坦以“光速不变原理”为前提 [@einstein1905]；本节的推导不引入任何具体物理对象，只用 @cnj-invariant-speed 这一条关于变换形式的约束。
 
-### 约束 3L　不变速度
+### 约束 3L：不变速度
 
 由 @cnj-invariant-speed，要求 $x = ct \Rightarrow x' = ct'$。取满足 $x = ct$ 的事件；由 @eq-constraint-velocity 有 $D = A$，故 @eq-after-origin 给出 $x' = A(x - vt)$。用它和 @eq-lin-t 构造组合 $x' - ct'$：
 
@@ -226,7 +226,7 @@ $$ {#eq-constraint-light}
 
 对满足 $x = -ct$ 的事件，同样构造 $x' + ct'$，得到的是同一个约束 $Av + Bc^{2} = 0$，不产生新的限制。
 
-### 约束 4L　群结构
+### 约束 4L：群结构
 
 与伽利略一支同样的理由（@cnj-covariance）：$\Lambda(v)\,\Lambda(-v) = I$。由各向同性，$A(-v) = A(v) \equiv A$，故
 

@@ -39,9 +39,8 @@ $$
 - 生成元：**Hermitian** 算符 $\hat H$（时间平移）、$\hat P_i$（空间平移）、$\hat B_i$（boost）、$\hat J_i$（转动）、$\hat M$（中央荷）。位置算符记作 $\hat q_i$，以免与 $K$ 混淆。
 - 向量场 $X$ 与其 Hermitian 算符的对应：$[\hat X,\hat Y]=i\hbar\,[X,Y]_{\text{vf}}$。据此 $\hat P_i=-i\hbar\partial_i$、$\hat H=i\hbar\partial_t$。
 - $\hbar$ 的地位：量子化映射 $[\ ,\ ]=i\hbar\{\ ,\ \}$ 的尺度，是经验常数；本章**不声称**推导它的数值。本章推导的是 $m$ 的地位。
-- 符号核验脚本 `images/quantum-phase-algebra.py`，输出见 `images/qp.out`；本章每个闭式后标注核验结果。
 
-## 第一部分　相态参数 $K\to\infty$ 与 $\nabla K=0$ {#sec-qp-part1}
+## 第一部分：相态参数 $K\to\infty$ 与 $\nabla K=0$ {#sec-qp-part1}
 
 第一部分取定相态参数：从恒速群出发做 $K\to\infty$ 极限。
 
@@ -146,7 +145,7 @@ $$ {#eq-qp-m2}
 
 @eq-qp-m2 中的 $m$ 是质量壳参数；它的代数身份（本征值还是中央荷）由第二部分定出。
 
-## 第二部分　伽利略代数与中央扩张 {#sec-qp-part2}
+## 第二部分：伽利略代数与中央扩张 {#sec-qp-part2}
 
 第二部分处理代数：把恒速代数收缩到伽利略代数，再走射影表示与中央扩张，定出 $m$ 的代数身份。
 
@@ -236,7 +235,7 @@ $$
 \ \xrightarrow{K\to\infty}\ \boxed{\hat H_{\text{nr}}=\frac{\lvert\hat{\mathbf P}\rvert^{2}}{2m}}.
 $$ {#eq-qp-casimir-contract}
 
-符号核验输出：`展开 E^2/K^2 - p^2 - m^2K^2 = E_nr**2/K**2 + 2*E_nr*m - p**2`，极限为 `2*E_nr*m - p**2`。
+符号核验：代入 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 逐项展开，$\hat H^{2}/K^{2}-\lvert\hat{\mathbf P}\rvert^{2}-m^{2}K^{2}=\hat H_{\text{nr}}^{2}/K^{2}+2m\hat H_{\text{nr}}-\lvert\hat{\mathbf P}\rvert^{2}$；取 $K\to\infty$ 极限得 $2m\hat H_{\text{nr}}-\lvert\hat{\mathbf P}\rvert^{2}$，与 @eq-qp-casimir-contract 一致。
 
 ### 经典实现已经带着中央荷
 
@@ -326,16 +325,7 @@ $$ {#eq-qp-cocycle}
 
 上边界形如 $c_f(X,Y)=f([X,Y])$（$f$ 为线性泛函）。但 $[\hat B_i,\hat P_j]=0$，故对任何 $f$ 都有 $c_f(\hat B_i,\hat P_j)=f(0)=0\neq\beta\delta_{ij}$。故 $\beta\neq0$ 时该上闭链**不是上边界**，上同调类非平凡。
 
-**符号核验**（$10$ 生成元、$45$ 个待定分量、$120$ 个 Jacobi 方程，逐一解出）：
-
-```
-未扩张伽利略代数 Jacobi 自检: True
-2-闭上链空间维数: 10
-2-上边界空间维数: 9
-H^2(galilei, R) 的维数 = 1
-代表元 c(P_i,K_j)=delta_ij 满足全部 Jacobi: True
-上边界在 (K_i,P_j) 分量上的值 [K_i,P_j] = {} -> 恒为 0，故代表元非上边界
-```
+**符号核验**（$10$ 生成元、$45$ 个待定分量、$120$ 个 Jacobi 方程，逐一解出）：未扩张伽利略代数的 Jacobi 恒等式全部通过；$2$-闭上链空间维数为 $10$，$2$-上边界空间维数为 $9$，故 $H^{2}(\mathfrak{g},\mathbb R)$ 的维数为 $1$；代表元 $c(P_{i},K_{j})=\delta_{ij}$ 满足全部 Jacobi 恒等式；而上边界在 $(K_{i},P_{j})$ 分量上的取值必为 $f([K_{i},P_{j}])=f(0)=0$，恒为零，故该代表元不是上边界。
 
 **结论**：伽利略代数的中央扩张不是可以随意添加的附加结构，而是**唯一的、且非加不可的**（前提是质量非零）。$\quad\square$
 
@@ -358,7 +348,7 @@ i\hbar\partial_t\Phi+\frac{\hbar^{2}}{2m}\partial_x^{2}\Phi
 =i\hbar\partial_t\psi+\frac{\hbar^{2}}{2m}\partial_x^{2}\psi-i\hbar v\,\partial_x\psi.
 $$
 
-残留项 $-i\hbar v\,\partial_x\psi\neq0$（`残留 = -I*V*hbar*psi_X`）。**故相位不是装饰，而是协变性的必要条件。**
+残留项 $-i\hbar v\,\partial_x\psi\neq0$（符号核验与此一致）。**故相位不是装饰，而是协变性的必要条件。**
 
 **理由三（经典理论已经如此）**。@eq-qp-poisson 表明经典实现本身就带 $m$；量子化不能把一个非零的括号变成零。
 
@@ -477,22 +467,17 @@ $$
 
 （用到 $[\hat P_i,\hat P_j]=0$。）$\quad\square$
 
-**显式算子核验**（$\hat B=mx+i\hbar t\partial_x$、$\hat P=-i\hbar\partial_x$、$\hat q=x$）：
-
-```
-[K,P] f = I*hbar*m*f(X, T) 期望 i hbar m f
-[q,P] f = I*hbar*f(X, T) 期望 i hbar f
-```
+**显式算子核验**（$\hat B=mx+i\hbar t\partial_x$、$\hat P=-i\hbar\partial_x$、$\hat q=x$，作用于任意波函数 $f$）：直接计算得 $[\hat B,\hat P]f=i\hbar m\,f$、$[\hat q,\hat P]f=i\hbar\,f$，与 @eq-qp-ccr 一致。
 
 **反之，若中央荷为零**（@thm-qp-contraction 的朴素收缩）：$[\hat B_i,\hat P_j]=0$，于是 $[\hat q_i,\hat P_j]=0$。此时 $\hat q$ 与 $\hat P$ 可同时对角化：**没有不确定性原理，没有不可对易的观测量，量子化无从谈起**。这正是“伽利略代数本身 $[x,p]=0$、无法支撑量子化”的严格形式——缺的不是某个技巧，缺的是中央扩张。
 
 **推论（不确定性）**：由 @eq-qp-ccr 与 Cauchy–Schwarz，$\Delta q_i\,\Delta P_i\geq\dfrac{\hbar}{2}$。$\hbar$ 在此第一次以“不可对易性的尺度”出现。
 
-## 第三部分　波动力学方程的生成 {#sec-qp-part3}
+## 第三部分：波动力学方程的生成 {#sec-qp-part3}
 
 第三部分生成波动力学方程：三条路线分别从 Casimir、不变波动方程的极限、德布罗意关系出发，随后核验概率守恒与协变性。
 
-### 路线一　从 Casimir 直接生成
+### 路线一：从 Casimir 直接生成
 
 在不可约表示上代入 @eq-qp-casimirG，并用 $\hat H_{\text{nr}}=i\hbar\partial_t$、$\hat P_i=-i\hbar\partial_i$、$\hat M=m\mathbf 1$：
 
@@ -508,7 +493,7 @@ $$ {#eq-qp-schrodinger}
 
 **这就是薛定谔方程**——它是“$\hat H_{\text{nr}}$ 由 $\hat{\mathbf P}$ 与 $\hat M$ 经 Casimir 决定”这一表示论事实的解析表达。
 
-### 路线二　从不变波动方程取极限的完整计算
+### 路线二：从不变波动方程取极限
 
 由 @eq-qp-box 与质量壳 @eq-qp-m2，恒速群的不变波动方程为
 
@@ -536,7 +521,7 @@ $$
 =-\frac{m^{2}K^{2}}{\hbar^{2}}\varphi+\frac{m^{2}K^{2}}{\hbar^{2}}\varphi=0.
 $$
 
-符号核验：`静能项 m^2K^2/hbar^2 是否相消（core - claim）: 0`。余下
+符号核验：逐项展开与上式之差为零。余下
 
 $$
 \frac{1}{K^{2}}\partial_t^{2}\varphi-\frac{2im}{\hbar}\partial_t\varphi-\nabla^{2}\varphi=0.
@@ -556,7 +541,7 @@ $$ {#eq-qp-preSch}
 1. 相位 $e^{-imK^{2}t/\hbar}$ 的选择 = 正能支的选择；反号则取负能支。$K\to\infty$ 时两支被无穷大的静能间隙隔开，**反粒子在极限中消失**——这是相态边界的另一条痕迹。
 2. 静能 $mK^{2}$ 本身在极限中不收敛，它没有可观测量对应；它的“残余”正是中央荷 $\hat M=m\mathbf 1$。@thm-qp-central 与这里的相消是同一件事的代数版与分析版。
 
-### 路线三　德布罗意关系与色散关系
+### 路线三：德布罗意关系与色散关系
 
 极限色散关系由 @eq-qp-casimir-contract 给出：
 
@@ -632,12 +617,11 @@ $$
 =e^{\frac{i}{\hbar}S}\Bigl[i\hbar\partial_t\psi+\frac{\hbar^{2}}{2m}\nabla^{2}\psi\Bigr].
 $$
 
-符号核验：`i hbar Phi_T + (hbar^2/2m) Phi_XX` 化为 `e^{iS/hbar} * [...]`，其中
-`[...] = hbar**2*psi_XX/(2*m) + I*hbar*psi_T`；代入方程后括号内为 `0`。
+符号核验：方括号内恰为 $i\hbar\partial_t\psi+\dfrac{\hbar^{2}}{2m}\nabla^{2}\psi$；代回原方程后方括号内化为零。
 
 **故 $\psi$ 满足方程 $\Leftrightarrow$ $\psi'$ 满足方程**，且相位使 $\lvert\psi'\rvert^{2}=\lvert\psi\rvert^{2}$（Born 规则不变）。去掉相位则残留 $-i\hbar\mathbf v\cdot\nabla\psi\neq0$（见 @sec-qp-part2 理由二）。**中央扩张与协变性是同一件事。**
 
-## 第四部分　相态边界的反证 {#sec-qp-part4}
+## 第四部分：相态边界的反证 {#sec-qp-part4}
 
 **命题**：量子力学（第二部分与第三部分的全部结构）只在 $\nabla K=0$ 的相态中存在。
 
@@ -645,7 +629,7 @@ $$
 
 以下三层论据各自独立地推翻该假设。
 
-### 第一层　群层面　无可供表示的群
+### 第一层：无可供表示的群
 
 @sec-invariant-speed-field-group 章已证明：$K=K(p)$ 时逐点 $G_{K(p)}$ 各自成群，但跨点复合多出 $\propto\partial_\mu K/K$ 的项，**不构成群**。而第二部分的全部工具（李代数、上同调 $H^{2}$、射影表示、Schur 引理）都以“存在一个李群”为前提。
 
@@ -655,7 +639,7 @@ $$
 
 **这不是“算不出来”，而是“没有对象可算”。**
 
-### 第二层　代数层面　Jacobi 恒等式强制 $\nabla K=0$
+### 第二层：Jacobi 恒等式强制 $\nabla K=0$
 
 即使强行保留生成元，把 @eq-qp-algK 的 $K$ 换成乘法算符 $\hat K(\mathbf x)$，则
 
@@ -697,7 +681,7 @@ Jacobi 恒等式 $(\hat P_k,\hat B_i,\hat P_j)$ 在 $\hat H\neq0$ 时成立，�
 
 **即：中央扩张（第二部分的全部内容）与“恒速场不均匀”互斥。** 质量作为中央荷的存在条件，正好是 $\nabla K=0$。
 
-### 第三层　动力学层面　残留项发散且破坏幺正性
+### 第三层：残留项发散且破坏幺正性
 
 退一步：不顾前两层，直接在 @eq-qp-KG 中把常数 $K$ 换成 $K(\mathbf x)$（这是**最保守**的写法：不引入度规、不引入协变导数，只把常数换成函数），仍取相位 $\psi=e^{-\frac{i}{\hbar}mK(\mathbf x)^{2}t}\varphi$。此时 $\theta=\dfrac{mK(\mathbf x)^{2}t}{\hbar}$ 含 $\mathbf x$，故
 
@@ -706,7 +690,7 @@ $$
 \nabla^{2}\theta=\frac{mt}{\hbar}\nabla^{2}\!\bigl(K^{2}\bigr).
 $$
 
-静能项仍逐点相消，但 $\nabla^{2}$ 作用于相位产生**三个残留项**（符号核验 `core2 - 预期形式 = 0`）：
+静能项仍逐点相消，但 $\nabla^{2}$ 作用于相位产生**三个残留项**（符号核验：展开与下式之差为零）：
 
 $$
 \boxed{
