@@ -37,15 +37,15 @@ $$ {#eq-isd-tetrad}
 
 即 $K$ 场同时控制局部时间尺度与局部空间尺度——这正是本章与对角约定的分野：对角约定中空间标架是刚性的 $e^{i}=\mathrm{d}x^{i}$。
 
-写成 $e^{a}=e^\{a\}_\{\mu\}\,\mathrm{d}x^{\mu}$：
+写成 $e^{a}=e^{a}{}_{\mu}\,\mathrm{d}x^{\mu}$：
 
 $$
-e^\{0\}_\{0\}=K,\qquad e^\{i\}_\{j\}=K\,\delta^{i}_{j},\qquad \text{其余为 }0.
+e^{0}{}_{0}=K,\qquad e^{i}{}_{j}=K\,\delta^{i}_{j},\qquad \text{其余为 }0.
 $$
 
 ### 度规分量
 
-由 $g_{\mu\nu}=e^\{a\}_\{\mu\}\,e^\{b\}_\{\nu\}\,\eta_{ab}$：
+由 $g_{\mu\nu}=e^{a}{}_{\mu}\,e^{b}{}_{\nu}\,\eta_{ab}$：
 
 $$
 g_{\mu\nu}=K^{2}\,\eta_{\mu\nu}.
@@ -619,7 +619,7 @@ $$
 
 | 术语 | 本章中的含义 |
 |---|---|
-| tetrad / 标架 | 局部标准正交余标架 $e^{a}=e^\{a\}_\{\mu\}\mathrm{d}x^{\mu}$，$g_{\mu\nu}=e^\{a\}_\{\mu\}e^\{b\}_\{\nu\}\eta_{ab}$ |
+| tetrad / 标架 | 局部标准正交余标架 $e^{a}=e^{a}{}_{\mu}\mathrm{d}x^{\mu}$，$g_{\mu\nu}=e^{a}{}_{\mu}e^{b}{}_{\nu}\eta_{ab}$ |
 | 共形平坦 | 度规可写为 $K^{2}\eta_{\mu\nu}$，即共形于 Minkowski |
 | Weyl 张量 | 度规中不受共形变换影响的部分；$K^{2}\eta_{\mu\nu}$ 的 Weyl 张量恒为零 |
 | $\Box_\eta$ | $\eta^{\mu\nu}\partial_\mu\partial_\nu=\partial_t^{2}-\nabla^{2}$ |

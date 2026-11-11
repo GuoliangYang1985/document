@@ -27,7 +27,7 @@ $$
 若 tetrad 可分解为“共形因子 $\times$ 局部洛伦兹变换”，即
 
 $$
-e^\{a\}_\{\mu\}=K(x)\,\Lambda^\{a\}_\{b\}(x)\,\delta^\{b\}_\{\mu\},\qquad \Lambda(x)\in SO(1,3),
+e^{a}{}_{\mu}=K(x)\,\Lambda^{a}{}_{b}(x)\,\delta^{b}{}_{\mu},\qquad \Lambda(x)\in SO(1,3),
 $$
 
 则 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，从而 Weyl 张量恒为零。
@@ -36,8 +36,8 @@ $$
 **证明**：
 
 $$
-g_{\mu\nu}=e^\{a\}_\{\mu\}e^\{b\}_\{\nu\}\eta_{ab}
-=K^{2}\,\Lambda^\{a\}_\{\mu\}\Lambda^\{b\}_\{\nu\}\eta_{ab}
+g_{\mu\nu}=e^{a}{}_{\mu}e^{b}{}_{\nu}\eta_{ab}
+=K^{2}\,\Lambda^{a}{}_{\mu}\Lambda^{b}{}_{\nu}\eta_{ab}
 =K^{2}\,(\Lambda^{\mathsf{T}}\eta\Lambda)_{\mu\nu}.
 $$
 
