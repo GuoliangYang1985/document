@@ -97,12 +97,12 @@ $$
 
 即 boost 生成元为向量场，和两个生成元为时间与空间平移：
 $$
-B = -\frac{x}{K^2}\partial_t - t\partial_x, \qquad H = \partial_t, \qquad P = \partial_x. 
+B = -\frac{x}{K^2}\partial_t - t\partial_x, \qquad H = \partial_t, \qquad P = \partial_x.
 $$
 
 在坐标基 $(t,x)$ 下，任意生成元均可展开为向量场 $V = V^t \partial_t + V^x \partial_x$。提取上述三个生成元的时间与空间分量（即向量场的系数），记为：
 $$
-B^t = -\frac{x}{K^2}, \quad B^x = -t; \qquad H^t = 1, \quad H^x = 0; \qquad P^t = 0, \quad P^x = 1. 
+B^t = -\frac{x}{K^2}, \quad B^x = -t; \qquad H^t = 1, \quad H^x = 0; \qquad P^t = 0, \quad P^x = 1.
 $$
 
 依据李括号的分量展开式 $[U,V]^t = U^t\partial_t V^t + U^x\partial_x V^t - (V^t\partial_t U^t + V^x\partial_x U^t)$，逐项计算 $[B, H]$ 的时间分量：
@@ -111,7 +111,7 @@ $$
 [B, H]^t &= B^t \partial_t H^t + B^x \partial_x H^t - (H^t \partial_t B^t + H^x \partial_x B^t) \\
 &= \left(-\frac{x}{K^2}\right)\partial_t(1) + (-t)\partial_x(1) - 1 \cdot \partial_t\left(-\frac{x}{K^2}\right) - 0 \cdot \partial_x\left(-\frac{x}{K^2}\right) \\
 &= 0 + 0 - 0 - 0 = 0.
-\end{aligned} 
+\end{aligned}
 $$
 
 同理计算其空间分量：
@@ -120,7 +120,7 @@ $$
 [B, H]^x &= B^t \partial_t H^x + B^x \partial_x H^x - (H^t \partial_t B^x + H^x \partial_x B^x) \\
 &= \left(-\frac{x}{K^2}\right)\partial_t(0) + (-t)\partial_x(0) - 1 \cdot \partial_t(-t) - 0 \cdot \partial_x(-t) \\
 &= 0 + 0 - (-1) - 0 = 1.
-\end{aligned} 
+\end{aligned}
 $$
 
 该结果与平移生成元 $P$ 的分量完全一致，故得出关系：
