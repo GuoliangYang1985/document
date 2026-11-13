@@ -250,9 +250,7 @@ $$
 
 ### 补上联络之后
 
-一旦补上联络，就可以谈曲率。但联络有无穷多种选法，$K$ 场并不挑出其中任何一种。
-
-**本节做一件事**：取一个**约定**（下文的“对角约定”），使联络由度规唯一确定，从而把联络也用 $K$ 场表达出来。这样得到一个可以完整算到底的例子。这个约定的局限在 @sec-ifg-gr 中说明。
+一旦补上联络，就可以谈曲率。取一个约定（下文的“对角约定”），使联络由度规唯一确定，从而把联络也用 $K$ 场表达出来。这样得到一个可以完整算到底的例子。
 
 ### 对角约定
 
@@ -264,10 +262,7 @@ $$
 \mathrm{d}s^{2}=K^{2}\,\mathrm{d}t^{2}-\delta_{ij}\,\mathrm{d}x^{i}\mathrm{d}x^{j}.
 $$ {#eq-ifg-metric}
 
-其中 $K=K(t,x^{1},\dots,x^{n})$ 即恒速场，$\delta_{ij}$ 为欧氏度规。
-:::
-
-**与 @sec-invariant-speed-group 章的一致性检验**：$K$ 为常数时，@eq-ifg-metric 的二次型正是 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$，即该章的不变量。
+其中 $K=K(t,x^{1},\dots,x^{n})$ 即恒速场，$\delta_{ij}$ 为欧氏度规。$K$ 为常数时，@eq-ifg-metric 的二次型正是 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$，即该章的不变量。
 
 度规分量及其逆：
 
@@ -278,6 +273,27 @@ $$
 $$
 g^{00}=\frac{1}{K^{2}},\qquad g^{ij}=-\delta^{ij},\qquad g^{0i}=0.
 $$
+
+将上述分量写成矩阵形式（按坐标次序 $(t, x^1, x^2, x^3)$ 排列），协变度规及逆度规分别为：
+
+$$
+g_{\mu\nu} =
+\begin{pmatrix}
+K^{2} & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix},
+\qquad
+g^{\mu\nu} =
+\begin{pmatrix}
+\frac{1}{K^{2}} & 0 & 0 & 0 \\
+0 & -1 & 0 & 0 \\
+0 & 0 & -1 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}.
+$$ {#eq-ifg-matrices}
+:::
 
 **注意 $g_{ij}=-\delta_{ij}$ 是常数**，故 $\partial_\mu g_{ij}=0$；唯一的非零导数是 $\partial_\mu g_{00}=2K\,\partial_\mu K$。这是下面所有计算得以大幅简化的原因。
 
@@ -322,11 +338,13 @@ $$
 =K\,\partial_kK.
 $$
 
-**(e) $\Gamma^{k}{}_{0i}$ 与 $\Gamma^{k}{}_{ij}$**
+**(e) $\Gamma^{k}{}_{0i}$**
 
 $$
 \Gamma^{k}{}_{0i}=\frac{1}{2}g^{kl}\bigl(\partial_0g_{il}+\partial_ig_{0l}-\partial_lg_{0i}\bigr)=0,
 $$
+
+**(f) $\Gamma^{k}{}_{ij}$**
 
 $$
 \Gamma^{k}{}_{ij}=\frac{1}{2}g^{kl}\bigl(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\bigr)=0.
@@ -340,7 +358,7 @@ $$
 \Gamma^{k}{}_{00}=K\,\partial_kK.
 $$ {#eq-ifg-christoffel}
 
-**关键观察**：所有非零 Christoffel 符号都形如 $\partial_\mu K/K$，与 @sec-ifg-cross 中“多出来的项”同型。
+所有非零 Christoffel 符号都形如 $\partial_\mu K/K$，与 @sec-ifg-cross 中“多出来的项”同型。
 
 ### Ricci 张量的逐项计算
 
