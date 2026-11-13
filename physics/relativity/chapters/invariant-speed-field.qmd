@@ -112,7 +112,7 @@ $$
 &= \left(-\frac{x}{K^2}\right)\partial_t(1) + (-t)\partial_x(1) - 1 \cdot \partial_t\left(-\frac{x}{K^2}\right) - 0 \cdot \partial_x\left(-\frac{x}{K^2}\right) \\
 &= 0 + 0 - 0 - 0 = 0.
 \end{aligned}
-$$
+$$ {#eq-ifg-BH-T}
 
 同理计算其空间分量：
 $$
@@ -121,7 +121,7 @@ $$
 &= \left(-\frac{x}{K^2}\right)\partial_t(0) + (-t)\partial_x(0) - 1 \cdot \partial_t(-t) - 0 \cdot \partial_x(-t) \\
 &= 0 + 0 - (-1) - 0 = 1.
 \end{aligned}
-$$
+$$ {#eq-ifg-BH-X}
 
 该结果与平移生成元 $P$ 的分量完全一致，故得出关系：
 
@@ -136,7 +136,7 @@ $$
 &= \left(-\frac{x}{K^2}\right)\partial_t(0) + (-t)\partial_x(0) - 0 \cdot \partial_t\left(-\frac{x}{K^2}\right) - 1 \cdot \partial_x\left(-\frac{x}{K^2}\right) \\
 &= 0 + 0 - 0 - \left(-\frac{1}{K^2}\right) = \frac{1}{K^2}.
 \end{aligned}
-$$
+$$ {#eq-ifg-BP-T}
 
 其空间分量为：
 $$
@@ -145,14 +145,13 @@ $$
 &= \left(-\frac{x}{K^2}\right)\partial_t(1) + (-t)\partial_x(1) - 0 \cdot \partial_t(-t) - 1 \cdot \partial_x(-t) \\
 &= 0 + 0 - 0 - 0 = 0.
 \end{aligned}
-$$
+$$ {#eq-ifg-BP-X}
 
 所得结果恰为时间平移生成元 $H$ 的 $1/K^2$ 倍，即
 
 $$
 [B,P]=\frac{1}{K^{2}}\,H.
 $$ {#eq-ifg-BP}
-
 另有 $[H,P]=0$（直接验算）。
 
 由此得到的一个结论，**$K$ 在李代数中只出现在结构常数 $1/K^{2}$ 的位置上。** 于是：
@@ -192,26 +191,24 @@ $\Lambda\in G_{K(p)}$ 与 $\Lambda'\in G_{K(q)}$ 作用在**不同的向量空�
 
 上面的论证是定性的。要看出“失效”具体是什么形状，可以在一个坐标卡里做显式计算。
 
-**须说明这一步的坐标依赖性**：下面把逐点的生成元当作向量场来用，这只有在取定坐标卡、使“位置向量”有意义时才成立，因此它不是内禀的。它的作用只是把失效的量显式写出来。
+下面把逐点的生成元当作向量场来用，这只有在取定坐标卡、使“位置向量”有意义时才成立，因此它不是内禀的。它的作用只是把失效的量显式写出来。
 
-取 1+1 维，坐标 $(t,x)$。把 $B$ 的分量中的 $K$ 换成 $K(t,x)$：
+取 1+1 维，坐标 $(t,x)$。把 $B$ 的分量中的 $K$ 换成 $K(t,x)$, 重算括号：
 
 $$
 B^{t}=-\frac{x}{K(t,x)^{2}},\qquad B^{x}=-t.
 $$
 
-重算括号。
-
 *$[B,H]$ 的时间分量*：
 
 $$
-[B,H]^{t}=0-\partial_t\!\left(-\frac{x}{K^{2}}\right)
+[B,H]^{t}=-\partial_t\!\left(-\frac{x}{K^{2}}\right)
 =x\,\partial_t\!\left(K^{-2}\right)
 =x\cdot\left(-2K^{-3}\,\partial_tK\right)
 =-\frac{2x}{K^{3}}\,\partial_tK.
 $$
 
-空间分量同前为 $1$，故
+空间分量同 @eq-ifg-BH-X 为 $1$，故
 
 $$
 [B,H]=P-\frac{2x\,\partial_tK}{K^{3}}\,H.
@@ -220,38 +217,36 @@ $$ {#eq-ifg-BH-field}
 *$[B,P]$ 的时间分量*：
 
 $$
-[B,P]^{t}=0-\partial_x\!\left(-\frac{x}{K^{2}}\right)
+[B,P]^{t}=-\partial_x\!\left(-\frac{x}{K^{2}}\right)
 =\partial_x\!\left(x\,K^{-2}\right)
 =K^{-2}+x\left(-2K^{-3}\,\partial_xK\right).
 $$
 
-空间分量同前为 $0$，故
+空间分量同 @eq-ifg-BP-X 为 $0$，故
 
 $$
 [B,P]=\left(\frac{1}{K^{2}}-\frac{2x\,\partial_xK}{K^{3}}\right)H.
 $$ {#eq-ifg-BP-field}
 
-### 两个后果
+### 两个结果
 
-**后果一：不再闭合。** @eq-ifg-BP-field 的右端是“函数”乘 $H$，而不是“常数”乘 $H$。因此在实常系数下由 $\{H,P,B\}$ 张成的 $3$ 维空间，对李括号**不封闭**：
+**不再闭合。** @eq-ifg-BP-field 的右端是“函数”乘 $H$，而不是“常数”乘 $H$。因此在实常系数下由 $\{H,P,B\}$ 张成的 $3$ 维空间，对李括号**不封闭**：
 
 - $K$ 常数时，右端系数为 $1/K^{2}$，是常数，闭合；
 - $K$ 非常数时，右端系数含 $\partial_xK$，不是常数，漏出这个 $3$ 维空间。
 
-**后果二：多出来的项正比于 $\partial K$。** 由 @eq-ifg-BH-field 与 @eq-ifg-BP-field，两个多出项都形如
+**多出来的项正比于 $\partial K$。** 由 @eq-ifg-BH-field 与 @eq-ifg-BP-field，两个多出项都形如
 
 $$
 \frac{x\,\partial_\mu K}{K^{3}}
 =\frac{\partial_\mu K}{K}\cdot\frac{x}{K^{2}},
 $$
 
-即都正比于 $\partial_\mu K/K$。
-
-**这一点很关键**：@sec-ifg-connection 将算出，在对角约定下 Levi-Civita 联络的 Christoffel 符号恰好是 $\partial_\mu K/K$ 型。也就是说，**联络所做的正是吸收这一类项**。
+即都正比于 $\partial_\mu K/K$。@sec-ifg-connection 将算出，在对角约定下 Levi-Civita 联络的 Christoffel 符号恰好是 $\partial_\mu K/K$ 型。也就是说，**联络所做的正是吸收这一类项**。
 
 ## 从群丛到几何的联络 {#sec-ifg-connection}
 
-把联络补进群丛，几何对象随之出现；本节登记补上联络之后的结构，并对坐标取对角约定。
+把联络补进群丛，几何对象随之出现；本节补上联络之后的结构，对坐标取对角约定。
 
 ### 补上联络之后
 
