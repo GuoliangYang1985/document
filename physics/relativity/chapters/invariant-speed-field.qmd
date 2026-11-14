@@ -419,7 +419,26 @@ R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
 -\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
 $$
 
-记 $\lvert\nabla K\rvert^{2}:=\sum_k(\partial_kK)^{2}$，$\Delta K:=\sum_k\partial_k\partial_kK$（空间拉普拉斯），$K_0:=\partial_0K$。
+在将其代入上述定义式进行逐项缩并之前，由于对角约定下空间度规是刚性的（即 $\partial_\mu g_{ij}=0$），计算过程中会涌现出大量仅含空间指标的偏导数项。为了压缩冗长的代数表达式，引入以下标准记号：
+
+$$
+\lvert\nabla K\rvert^{2}:=\sum_k(\partial_kK)^{2}, \quad 
+\Delta K:=\sum_k\partial_k\partial_kK, \quad 
+K_0:=\partial_0K.
+$${#eq-ricci-notation-def}
+
+具体地，在三维空间坐标 $(x^1,x^2,x^3)=(x,y,z)$ 下，这两个空间算符可具体展开为如下分量形式：
+
+$$
+\begin{aligned}
+\lvert\nabla K\rvert^{2} &= (\partial_1K)^2+(\partial_2K)^2+(\partial_3K)^2 \\
+&= \left(\frac{\partial K}{\partial x}\right)^2+\left(\frac{\partial K}{\partial y}\right)^2+\left(\frac{\partial K}{\partial z}\right)^2, \\[2ex]
+\Delta K &= \partial_1\partial_1K+\partial_2\partial_2K+\partial_3\partial_3K \\
+&= \frac{\partial^2 K}{\partial x^2}+\frac{\partial^2 K}{\partial y^2}+\frac{\partial^2 K}{\partial z^2}.
+\end{aligned}
+$${#eq-ricci-notation-expanded}
+
+其中，$\lvert\nabla K\rvert^2$ 表征恒速场的空间梯度模方，$\Delta K$ 为标量场的空间拉普拉斯（Laplacian）算符，而 $K_0$ 则用于简写时间偏导数。
 
 **(a) $R_{00}$** 的四项分别为：
 
