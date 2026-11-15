@@ -615,14 +615,3 @@ $$
 
 **一句话**：换用 tetrad 约定后，$K$ 场给出非零的 $G_{00}=\frac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$（外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 并把 $T_{00}$ 读作能量密度时，对应 $T_{00}>0$）；但这类度规共形平坦、Weyl 张量恒为零，仍不能容纳真空外解。方程一端，变系数波动方程严格成立，而它的非相对论极限只在 $\nabla K=0$ 处存在——恒速场的空间梯度与非相对论极限不相容。
 
-## 术语说明 {#sec-isd-terms}
-
-| 术语 | 本章中的含义 |
-|---|---|
-| tetrad / 标架 | 局部标准正交余标架 $e^{a}=e^{a}{}_{\mu}\mathrm{d}x^{\mu}$，$g_{\mu\nu}=e^{a}{}_{\mu}e^{b}{}_{\nu}\eta_{ab}$ |
-| 共形平坦 | 度规可写为 $K^{2}\eta_{\mu\nu}$，即共形于 Minkowski |
-| Weyl 张量 | 度规中不受共形变换影响的部分；$K^{2}\eta_{\mu\nu}$ 的 Weyl 张量恒为零 |
-| $\Box_\eta$ | $\eta^{\mu\nu}\partial_\mu\partial_\nu=\partial_t^{2}-\nabla^{2}$ |
-| $\Box_g$ | $\dfrac{1}{\sqrt{-g}}\partial_\mu\bigl(\sqrt{-g}\,g^{\mu\nu}\partial_\nu\bigr)$，本章 $\sqrt{-g}=K^{4}$ |
-| 非相对论极限 | $K\to\infty$ 的极限；本章严格考察，未作近似 |
-| Bargmann 群 | 伽利略群的中央扩张，扩张参数为质量 |

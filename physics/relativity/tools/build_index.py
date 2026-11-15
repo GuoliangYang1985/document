@@ -1,19 +1,23 @@
 # -*- coding: utf-8 -*-
-"""从各章「术语说明」表抽取词条，用已渲染 PDF 的页码生成索引页。
+"""从书末「术语总表」(chapters/glossary.qmd) 抽取词条，用已渲染 PDF 的页码生成索引页。
 
 用法：python tools/build_index.py   （须在 quarto render 成功后运行）
 生成的 chapters/term-index.qmd 会被下一次 render 收进去；页码可能随版式
 变动一行，版式改动后重跑一次即可收敛。
+
+词条的唯一来源是 glossary.qmd 的表格首列（规范 §6.6：章末不设术语表）。
+含 " / " 的复合词条（如 "Ricci 张量 / Ricci 标量"）在正文中总是拆开
+出现，检索时按 " / " 拆成子词分别查找，页码取并集。
 """
-import io, os, re, glob, unicodedata
+import io, os, re, glob, sys, unicodedata
 from pypdf import PdfReader
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PDF = os.path.join(ROOT, "_book", "理论测量的边界.pdf")
 
 # ---- 0. 章号：按 _quarto.yml 的章节顺序编号，前置件与附录取名不计号
-FRONT = {"index.qmd", "reading-guide.qmd", "notation.qmd", "term-index.qmd",
-         "references.qmd", "acc-source.qmd", "sector-metrics.qmd"}
+FRONT = {"index.qmd", "reading-guide.qmd", "notation.qmd", "glossary.qmd",
+         "term-index.qmd", "references.qmd", "acc-source.qmd", "sector-metrics.qmd"}
 
 
 def chapter_map():
@@ -43,21 +47,37 @@ def chap_label(src):
     n = CHAP.get(src)
     return u"第 %d 章" % n if n else "—"
 
-# ---- 1. 词表：从各章「术语说明」抓取，并补充关键专名
-terms = {}
-for f in sorted(glob.glob(os.path.join(ROOT, "chapters", "*.qmd"))):
+# ---- 1. 词表：从书末「术语总表」抓取首列，并补充关键专名
+# sec 标签 -> 所在文件（解析总表第三列的 @sec- 引用，取最早正文章作“首见”）
+SEC_OWNER = {}
+for f in sorted(glob.glob(os.path.join(ROOT, "chapters", "*.qmd"))) + [os.path.join(ROOT, "index.qmd")]:
     txt = io.open(f, encoding="utf-8").read()
-    src = os.path.basename(f)
-    blocks = re.split(r"\n## 术语说明", txt)[1:]
-    for b in blocks:
-        # 术语说明块遇到下一个二级标题就结束（避免吞进「结论」表）
-        b = re.split(r"\n## ", b)[0]
-        for line in b.split("\n"):
-            if line.startswith("|") and "---" not in line:
-                cells = [c.strip() for c in line.strip("|").split("|")]
-                if len(cells) >= 2 and cells[0] and len(cells[0]) <= 24:
-                    name = cells[0].strip("`*_ ")
-                    terms.setdefault(name, src)
+    base = os.path.basename(f)
+    for lab in re.findall(r"\{#(sec-[A-Za-z0-9_-]+)", txt):
+        SEC_OWNER.setdefault(lab, base)
+
+GLOSSARY = os.path.join(ROOT, "chapters", "glossary.qmd")
+terms = {}
+if os.path.exists(GLOSSARY):
+    txt = io.open(GLOSSARY, encoding="utf-8").read()
+    for line in txt.split("\n"):
+        if not line.startswith("|") or "---" in line:
+            continue
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        if len(cells) < 3 or cells[0] in ("", "术语") or not cells[0]:
+            continue
+        name = cells[0].strip("`*_ ")
+        if len(name) > 24:
+            continue
+        # 首见：第三列中最早出现的正文章
+        src = ""
+        owners = [SEC_OWNER[m] for m in re.findall(r"@?(sec-[A-Za-z0-9_-]+)", cells[2])
+                  if m in SEC_OWNER]
+        nums = [CHAP.get(o) for o in owners if CHAP.get(o)]
+        if nums:
+            first = min(nums)
+            src = next(o for o in owners if CHAP.get(o) == first)
+        terms.setdefault(name, src)
 
 # 纯数学符号条目不进索引（已在「符号与约定」附录登记）
 terms = {k: v for k, v in terms.items() if not re.fullmatch(r"\$[^$]*\$", k)}
@@ -71,6 +91,8 @@ for e in extra:
     terms.setdefault(e, "")
 
 # ---- 2. 页码：用印刷页码（正文 arabic），不是 PDF 页序
+if not os.path.exists(PDF):
+    sys.exit(u"未找到 %s；请先在项目根目录运行 quarto render 成功后再运行本脚本。" % PDF)
 reader = PdfReader(PDF)
 try:
     labels = list(reader.page_labels)
@@ -84,17 +106,19 @@ for i, pg in enumerate(reader.pages):
     txt = (pg.extract_text() or "").replace("\n", " ")
     raw.append((lab, txt))
 
-# 索引自身占若干页，其后是参考文献；这一段不能参与检索，
-# 否则每个词条都会命中索引页（旧版只排除了首页，其余索引页仍会中招）。
-# 注意不能用「关键词索引」作锚——目录页里也有这四个字；用索引首页
-# 独有的导语句作锚。
+# 索引自身与其前的「术语总表」各占若干页，其后是参考文献；这两段不能参与
+# 检索，否则每个词条都会命中索引/总表页。注意不能用「关键词索引」作锚——
+# 目录页里也有这四个字；用各首页独有的导语句作锚。
+GLOSS_MARK = u"全书术语按三层安置"
 IDX_MARK = u"本索引列出全书主要术语"
+gloss_start = next((k for k, (_, t) in enumerate(raw) if GLOSS_MARK in t), None)
 idx_start = next((k for k, (_, t) in enumerate(raw) if IDX_MARK in t), None)
 idx_end = None
 if idx_start is not None:
     idx_end = next((k for k in range(idx_start + 1, len(raw)) if u"参考文献" in raw[k][1]),
                    len(raw))
-skip = set(lab for lab, _ in raw[idx_start:idx_end]) if idx_start is not None else set()
+lo = gloss_start if gloss_start is not None else idx_start
+skip = set(lab for lab, _ in raw[lo:idx_end]) if lo is not None and idx_end is not None else set()
 
 pages = []
 for lab, txt in raw:
@@ -129,26 +153,42 @@ def plain(s):
     s = s.replace("^", "").replace("_", "")
     return (re.split(r"[（(\[]", s)[0].strip() or s.strip())
 
-hit = {}
-for name in terms:
+
+def probe_pages(probe):
+    """单个探测词的命中页码（升序列表，可能为空）。"""
+    n = norm(probe)
+    if len(n) < 2:
+        return []
+    found = set(pg for pg, t in pages if n in norm(t))
+    return sorted(found, key=lambda x: int(x))
+
+
+def hit_of(name):
+    """词条的命中页。复合词条（含 " / "）在正文中总是拆开出现，
+    故按 " / " 拆成子词分别检索、页码取并集；拆开皆未命中时退回整名。"""
+    parts = [p.strip() for p in name.split(u" / ") if p.strip()]
+    if len(parts) > 1:
+        got = set()
+        for part in parts:
+            got |= set(hit_of(part))
+        if got:
+            return sorted(got, key=lambda x: int(x))
     probes = [name]
     # PDF 文本可能把希腊字母/上下标拆开，用主词再试一次
     core = plain(name)
     if core and core != name:
         probes.append(core)
     lead = re.split(r"[（(\$]", name)[0].strip()
-    if len(lead) >= 2:
+    if len(lead) >= 2 and lead not in probes:
         probes.append(lead)
     for probe in probes:
-        n = norm(probe)
-        if len(n) < 2:
-            continue
-        found = [pg for pg, t in pages if n in norm(t)]
+        found = probe_pages(probe)
         if found:
-            hit[name] = sorted(set(found), key=lambda x: int(x))
-            break
-    else:
-        hit[name] = []
+            return found
+    return []
+
+
+hit = {name: hit_of(name) for name in terms}
 
 miss = [k for k, v in hit.items() if not v]
 rows = []

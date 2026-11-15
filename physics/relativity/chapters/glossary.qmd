@@ -1,0 +1,77 @@
+# 术语总表 {.unnumbered #sec-glossary}
+
+全书术语按三层安置：**正文首次出现处就地定义**（黑体或定义环境）；**符号与记号**登记在书末“符号与约定”附录；**概念性术语**只在本表定义一次，并标注主要出现章。同一术语的重复定义会造成措辞漂移，本表即其唯一权威出处；某术语在某章的收窄用法，在该章首次出现处说明。
+
+## 恒速结构与群论 {#sec-glossary-group}
+
+| 术语 | 含义 | 主要出现章 |
+|------|------|------|
+| 恒速 $K$ | 由公理引入的不变速度参数，$K\in(0,\infty]$；取值 $K=c$ 与 $K=\infty$ 是同一族参数的两个端点 | @sec-transform-derivation 章—@sec-maxwell-equations 章、@sec-twins-noninertial 章 |
+| 恒速群 $G_K$ | 以 $K$ 为参数的一族群；同一组公式，不同 $K$ 给出不同的群律 | @sec-invariant-speed-group 章、@sec-quantum-phase 章 |
+| 恒速场 | 定义在流形上的函数 $K:M\to(0,\infty]$，逐点指定该点的跨系恒速 | @sec-invariant-speed-field-group 章 |
+| 恒速群丛 | 由恒速场 $K(p)$ 逐点给出的群丛；纤维是群，整体不是群 | @sec-invariant-speed-field-group 章 |
+| 群丛 | 逐点指定一个群所构成的丛；**不是**群，因为跨点无复合运算 | @sec-invariant-speed-field-group 章 |
+| 纤维 | 群丛在底流形一点上的一份结构；每根纤维上是一个作用于该点切空间 $T_pM$ 的群 $G_{K(p)}$ | @sec-invariant-speed-field-group 章 |
+| 李代数丛 | 逐点一个李代数，结构常数随点变化 | @sec-invariant-speed-field-group 章 |
+| 群收缩 | $K\to\infty$ 或 $K\to0$ 的极限操作（Inönü–Wigner 意义），见 @sec-isg-known | @sec-invariant-speed-group 章 |
+| Carroll 结构 | $K\to0$ 端的结构：光锥退化为 $t=$ 常数 | @sec-invariant-speed-group 章 |
+| Newton–Cartan 几何 | $K=\infty$ 端对应的度规形式：度规不可逆，时间一形式（秩 $1$）与空间度规（秩 $3$）分为两个对象 | @sec-invariant-speed-group 章 |
+| Bargmann 群 | 伽利略群的中央扩张，多一个中心坐标 $\zeta$，扩张参数为质量；质量即由该扩张导出 | @sec-invariant-speed-group 章、@sec-invariant-speed-field-group 章、@sec-invariant-speed-dynamics 章、@sec-quantum-phase 章 |
+| 中央扩张 | 给李代数添一个与所有元素对易的中心方向；伽利略代数有，庞加莱型代数无；量子部分中该方向唯一，由质量标记 | @sec-invariant-speed-field-group 章、@sec-quantum-phase 章 |
+| 对角约定 | 把度规限制为 $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ 的约定 | @sec-invariant-speed-field-group 章 |
+
+## 变换与推导 {#sec-glossary-transform}
+
+| 术语 | 含义 | 主要出现章 |
+|------|------|------|
+| 惯性系 $S$、$S'$ | 两条直线型参考世界线；@sec-transform-derivation 章不涉及它们之外的任何第三方坐标 | @sec-transform-derivation 章 |
+| 线性性 | 变换在 $(t,x)$ 上是一次齐次的（原点对原点），由此定出四个待定常数 | @sec-transform-derivation 章 |
+| 不变对象 | 在某个变换群下形式不变的量；$K=\infty$ 支为 $\Delta t$，$K=c$ 支为间隔 $c^{2}t^{2}-x^{2}$ | @sec-transform-derivation 章 |
+| 群结构 | 变换对复合封闭、有单位元与逆元；$K=\infty$ 支由此定出 $A=1$，$K=c$ 支定出 $A=\gamma$ | @sec-transform-derivation 章 |
+| 相对速度 $v$ | $S'$ 原点在 $S$ 中的速度；除 $v<c$ 外不附加任何限制 | @sec-transform-derivation 章 |
+
+## 几何与曲率 {#sec-glossary-geometry}
+
+| 术语 | 含义 | 主要出现章 |
+|------|------|------|
+| lapse $K$ | ADM 分解中的时间尺度因子；本书取 lapse 即恒速场（$h=\delta$ 时等于坐标光速，一般情形见 @sec-isg2-dof 的三行区分） | @sec-invariant-speed-geometry 章 |
+| shift $\beta^{i}$ | 空间坐标随时间的漂移（拖曳），产生 $g_{0i}\neq0$ | @sec-invariant-speed-geometry 章 |
+| 剪切 | $h_{ij}$ 中不可由共形因子吸收的各向异性部分 | @sec-invariant-speed-geometry 章 |
+| 静止限 | $g_{00}=0$ 的曲面，等价于 $\lvert\beta\rvert_h=K$ | @sec-invariant-speed-geometry 章 |
+| 事件视界 | 静态情形下的 Killing 视界；@sec-invariant-speed-geometry 章中为 $g^{rr}=0$ | @sec-invariant-speed-geometry 章 |
+| Weyl 张量 | 度规中不受共形变换影响的部分，度量潮汐效应；$K^{2}\eta_{\mu\nu}$ 的 Weyl 张量恒为零 | @sec-invariant-speed-geometry 章、@sec-invariant-speed-dynamics 章 |
+| Weyl 不变量 | $C_{abcd}C^{abcd}$；Schwarzschild 处为 $48M^{2}/r^{6}$ | @sec-invariant-speed-geometry 章 |
+| tetrad / 标架 | 局部标准正交余标架 $e^{a}=e^{a}{}_{\mu}\mathrm{d}x^{\mu}$，$g_{\mu\nu}=e^{a}{}_{\mu}e^{b}{}_{\nu}\eta_{ab}$ | @sec-invariant-speed-dynamics 章 |
+| 共形平坦 | 度规可写为 $K^{2}\eta_{\mu\nu}$，即共形于 Minkowski | @sec-invariant-speed-dynamics 章 |
+| 联络 | 把相邻点的切空间联系起来的额外结构；不由 $K$ 场给出 | @sec-invariant-speed-field-group 章 |
+| Christoffel 符号 | 联络在坐标卡下的分量 | @sec-invariant-speed-field-group 章 |
+| Ricci 张量 / Ricci 标量 | 由联络的曲率缩并得到，度量“缝合不起来”的程度；显式定义见“符号与约定”附录 | @sec-invariant-speed-field-group 章 |
+| Einstein 张量 | $G_{\mu\nu}=R_{\mu\nu}-\tfrac12 R\,g_{\mu\nu}$ | @sec-invariant-speed-field-group 章、@sec-invariant-speed-geometry 章 |
+| $\Box_\eta$ | $\eta^{\mu\nu}\partial_\mu\partial_\nu=\partial_t^{2}-\nabla^{2}$ | @sec-invariant-speed-dynamics 章 |
+| $\Box_g$ | $\dfrac{1}{\sqrt{-g}}\partial_\mu\bigl(\sqrt{-g}\,g^{\mu\nu}\partial_\nu\bigr)$；@sec-invariant-speed-dynamics 章中 $\sqrt{-g}=K^{4}$ | @sec-invariant-speed-dynamics 章 |
+
+## 量子与表示 {#sec-glossary-quantum}
+
+| 术语 | 含义 | 主要出现章 |
+|------|------|------|
+| 相态参数 | $(K,\nabla K)$；量子相态为 $(K\to\infty,\,0)$ | @sec-quantum-phase 章 |
+| 中央荷 $\hat M$ | 与一切生成元对易的算符；不可约扇区上 $\hat M=m\mathbf 1$ | @sec-quantum-phase 章 |
+| Casimir 算符 | 由生成元构造、与一切生成元对易的算符；$K$ 有限时 $m^{2}$ 是它的本征值 | @sec-quantum-phase 章 |
+| 射影表示 | $U(g_2)U(g_1)=\omega\,U(g_2g_1)$；由态是射线所致 | @sec-quantum-phase 章 |
+| 上闭链 / 上边界 | 决定射影表示相位的 $2$ 形式；模去上边界后即 $H^{2}$ | @sec-quantum-phase 章 |
+| 超选择规则 | 不同中央荷本征值的态不能相干叠加 | @sec-quantum-phase 章 |
+| 重整化收缩 | Inönü–Wigner 收缩中先扣除发散部分（量子部分中为静能 $mK^{2}$）再取极限 | @sec-quantum-phase 章 |
+| 非相对论极限 | $K\to\infty$ 的极限；@sec-invariant-speed-dynamics 章中严格考察，未作近似 | @sec-invariant-speed-dynamics 章、@sec-quantum-phase 章 |
+
+## 双生子实验与分层 {#sec-glossary-layers}
+
+| 术语 | 含义 | 主要出现章 |
+|------|------|------|
+| 世界线长度（线长）$s[\gamma]$ | 沿曲线由线元积分得到的量（定义见 @sec-twins-noninertial 章 (M4)）；$K$ 有限时依赖路径形状，$K=\infty$ 时等于端点时间之差、与路径无关。是否等于某只钟的读数，是另一项外加输入（(P3b)），本书不采用 | @sec-twins-noninertial 章—@sec-asymmetric-twins 章 |
+| 几何层 | 由 $K$、两条曲线与线长定义组成的那一层：给出长度与长度关系，不指向任何参与方，也不把事件配成对 | @sec-layers 章 |
+| 物理层 | 几何层之外、必须补上才能谈“谁的钟”的内容；登记为 (P1)—(P4) 四项 | @sec-layers 章 |
+| 参与方 | 实验中的一方（@sec-asymmetric-twins 章记作 $D$、$G$）；几何不认名字 | @sec-layers 章、@sec-asymmetric-twins 章 |
+| 配对 | 把两条曲线上的两个事件定为“同一对”；由映射、同时面或全局时间给出，不由几何给出 | @sec-layers 章、@sec-twins-comparison 章 |
+| 改换指定 | 场景与事实不动，只把“谁在哪条曲线上”换成另一句（与“换场景”相对）。几何层不设防；其后果由两条曲线是否互为镜像决定（@sec-layers-swap-effect） | @sec-layers 章 |
+| 换场景 | 换一个人去承担那段各段曲率不为零的过程，把整条登记一起换掉；得到另一个自洽的世界 | @sec-layers 章 |
+| 两座桥 | 把“两条曲线”与“两个参与方”接起来的两处外来连接：第一座是 (P2)，第二座把曲线的性质对应到参与方那一侧的某一类事实（@sec-layers-bridges） | @sec-layers 章 |
