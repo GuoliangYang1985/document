@@ -72,7 +72,7 @@ $$ {#eq-isd-det}
 
 ### 与前一章的一致性检验
 
-取 $K$ 为常数时，@eq-isd-g 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$，与 @sec-invariant-speed-group 章的 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$ 一致。✓
+取 $K$ 为常数时，@eq-isd-g 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$，与 @sec-invariant-speed-group 章的 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$ 一致。$\checkmark$
 
 ## Christoffel 符号 {#sec-isd-christoffel}
 
@@ -167,9 +167,9 @@ $$
 =\frac{6\,\bigl(\nabla^{2}K-\partial_t^{2}K\bigr)}{K^{3}}}.
 $$ {#eq-isd-R}
 
-**核验**：符号计算输出为 $\dfrac{6(-\partial_t^{2}K+\partial_x^{2}K+\partial_y^{2}K+\partial_z^{2}K)}{K^{3}}$，与 @eq-isd-R 的差恒为零。✓
+**核验**：符号计算输出为 $\dfrac{6(-\partial_t^{2}K+\partial_x^{2}K+\partial_y^{2}K+\partial_z^{2}K)}{K^{3}}$，与 @eq-isd-R 的差恒为零。$\checkmark$
 
-**自检**：$K$ 为常数 ⟹ $\Box_\eta K=0$ ⟹ $R=0$，平坦。✓
+**自检**：$K$ 为常数 $\Longrightarrow$ $\Box_\eta K=0$ $\Longrightarrow$ $R=0$，平坦。$\checkmark$
 
 ## Einstein 张量 {#sec-isd-einstein}
 
@@ -202,7 +202,7 @@ $$
 +\eta_{\mu\nu}\bigl(2\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}\bigr)}.
 $$ {#eq-isd-G-u}
 
-**核验**：符号计算对全部 $16$ 个分量逐一相减，差值恒为零。✓
+**核验**：符号计算对全部 $16$ 个分量逐一相减，差值恒为零。$\checkmark$
 
 ### $G_{00}$ 非零
 
@@ -263,7 +263,7 @@ G_{ij}=
 +\delta_{ij}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$ {#eq-isd-Gij}
 
-**核验**：符号计算输出的 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，与 @eq-isd-G0i 一致。✓
+**核验**：符号计算输出的 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，与 @eq-isd-G0i 一致。$\checkmark$
 
 ## $G_{00}>0$ 的一个显式例子 {#sec-isd-density}
 
@@ -372,8 +372,8 @@ $$ {#eq-isd-lie}
 
 **与 $K$ 有关的只有第二个括号的结构常数 $1/K(p)^{2}$**：
 
-- $K(p)$ 有限 ⟹ $[B_i,P_j]\neq0$，庞加莱型；
-- $K(p)\to\infty$ ⟹ $[B_i,P_j]\to0$，伽利略型。
+- $K(p)$ 有限 $\Longrightarrow$ $[B_i,P_j]\neq0$，庞加莱型；
+- $K(p)\to\infty$ $\Longrightarrow$ $[B_i,P_j]\to0$，伽利略型。
 
 ### 群收缩即参数极限
 
@@ -408,7 +408,7 @@ $$
 \frac{1}{c^{2}}\partial_t^{2}\psi-\nabla^{2}\psi+\frac{m^{2}c^{2}}{\hbar^{2}}\psi=0,
 $$
 
-即标准 Klein–Gordon 方程。✓
+即标准 Klein–Gordon 方程。$\checkmark$
 
 ### $K$ 为场时的变系数方程
 

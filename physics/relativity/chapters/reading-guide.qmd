@@ -6,7 +6,7 @@
 
 | 部分 | 章 | 页数 | 作用 |
 |---|---|---|---|
-| 主线 | @sec-transform-derivation 章—@sec-quantum-phase 章 | 约 90 页 | 严格导出变换（@sec-transform-derivation 章）→ 把它读作同一个群族的两端并给出公理（@sec-invariant-speed-group 章）→ 把参数升级为场（@sec-invariant-speed-field-group 章）→ 动力学与几何后果（@sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章）→ 量子相态的代数生成（@sec-quantum-phase 章）。这是本书新意所在的部分 |
+| 主线 | @sec-transform-derivation 章—@sec-quantum-phase 章 | 约 90 页 | 严格导出变换（@sec-transform-derivation 章）$\rightarrow$ 把它读作同一个群族的两端并给出公理（@sec-invariant-speed-group 章）$\rightarrow$ 把参数升级为场（@sec-invariant-speed-field-group 章）$\rightarrow$ 动力学与几何后果（@sec-invariant-speed-dynamics 章、@sec-invariant-speed-geometry 章）$\rightarrow$ 量子相态的代数生成（@sec-quantum-phase 章）。这是本书新意所在的部分 |
 | 校准案例与旁支 | @sec-maxwell-equations 章—@sec-clock-coupling 章 | 约 85 页 | 把主线的符号与口径对到读者熟悉的标准结果上（@sec-maxwell-equations 章、@sec-flat-space-gravity 章），或把同一套分层方法用到相邻问题上（@sec-galilean-electrodynamics 章、@sec-two-source-field 章、@sec-clock-coupling 章）。它们的价值在**可核对**，不在新结论 |
 | 收束 | @sec-twins-comparison 章—@sec-asymmetric-twins 章 | 约 55 页 | 用双生子实验把前面各章的工具用上去，三章各换一样东西：@sec-twins-comparison 章换配对（同一个几何读出三个不同的比值），@sec-twins-noninertial 章换坐标（长度不变，图能核对一部分、读不出全部），@sec-asymmetric-twins 章换设定（非对称，两支各一个长度之差） |
 | 登记 | @sec-layers 章 | 约 14 页 | 把上面三章用到的每一项按来源分开登记：(P1) 取哪个 $K$、(P2) 谁在哪条曲线上、(P3) 线长与读数的关系（分弱式 (P3a) 与强式 (P3b)，本书不采用后者）、(P4) 哪两个事件配成一对。想判断某个结论的强度时读这一章。第 2 步另有边界：几何层对改换 (P2) 不设防，身份由几何之外的那一层定 |

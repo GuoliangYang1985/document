@@ -38,7 +38,7 @@
 
 两条第三公理的**形式条件**各取一个代表对象：不变时间取等时面 $t = 0$，要求 $t = 0 \Rightarrow t' = 0$；不变速度取特征射线 $x = \pm ct$，要求 $x' = \pm ct'$。下文四步消参中的约束 3 直接代入这两组条件；@tbl-axiom-duality 的“形式条件”行是同一内容的登记。
 
-| | @cnj-invariant-time（→ 伽利略） | @cnj-invariant-speed（→ 洛伦兹） |
+| | @cnj-invariant-time（$\rightarrow$ 伽利略） | @cnj-invariant-speed（$\rightarrow$ 洛伦兹） |
 |------|------|------|
 | 不变对象 | 等时面 $t = 0$ | 特征射线 $x = ct$ |
 | 形式条件 | $t = 0 \Rightarrow t' = 0$ | $x = ct \Rightarrow x' = ct'$ |

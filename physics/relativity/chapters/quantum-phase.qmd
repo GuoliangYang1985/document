@@ -707,14 +707,14 @@ $$ {#eq-qp-residual}
 
 | 项 | 量级 | 性质 |
 |---|---|---|
-| 残留项 A | $\sim K_0$ | 一阶导数、系数纯虚 ⟹ **反 Hermite** |
-| 残留项 B | $\sim K_0$ | 零阶、系数纯虚 ⟹ **反 Hermite** |
-| 残留项 C | $\sim K_0^{2}$ | 零阶、实系数 ⟹ Hermite，但**发散** |
+| 残留项 A | $\sim K_0$ | 一阶导数、系数纯虚 $\Longrightarrow$ **反 Hermite** |
+| 残留项 B | $\sim K_0$ | 零阶、系数纯虚 $\Longrightarrow$ **反 Hermite** |
+| 残留项 C | $\sim K_0^{2}$ | 零阶、实系数 $\Longrightarrow$ Hermite，但**发散** |
 
 **结论**：
 
 1. 残留项 C 按 $K_0^{2}$ 增长，**极限不存在**——非相对论极限在 $\nabla K\neq0$ 处没有定义；
-2. 残留项 A、B 是反 Hermite 的，$\hat H_{\text{nr}}$ 不再是自伴算符 ⟹ **幺正性丧失** ⟹ $\int\lvert\varphi\rvert^{2}$ 不再守恒 ⟹ **概率解释崩溃**。
+2. 残留项 A、B 是反 Hermite 的，$\hat H_{\text{nr}}$ 不再是自伴算符 $\Longrightarrow$ **幺正性丧失** $\Longrightarrow$ $\int\lvert\varphi\rvert^{2}$ 不再守恒 $\Longrightarrow$ **概率解释崩溃**。
 
 而概率守恒正是第二部分引入射影表示的**唯一理由**。于是论证闭合：**迫使中央扩张出现的那个条件，在 $\nabla K\neq0$ 时先被破坏。**
 
@@ -783,17 +783,17 @@ $$
 | 不变量成为 $\Delta t$ 与 $\lvert\Delta\mathbf{x}\rvert$ 两个 | @eq-qp-two-invariants |
 | 零锥成为 $t=$ 常数 | @sec-qp-part1 |
 | 恒速代数 $[\hat B_i,\hat P_j]=\frac{i\hbar}{K^{2}}\delta_{ij}\hat H$ 的收缩 | @eq-qp-algK、@thm-qp-contraction |
-| 静能 $mK^{2}$ 发散与 $1/K^{2}$ 相抵 ⟹ 中央荷 $\hat M=m\mathbf 1$ | @thm-qp-central |
+| 静能 $mK^{2}$ 发散与 $1/K^{2}$ 相抵 $\Longrightarrow$ 中央荷 $\hat M=m\mathbf 1$ | @thm-qp-central |
 | 经典实现 $\{K_i,p_j\}=m\delta_{ij}$ 已带中央荷 | @eq-qp-poisson |
 | $H^{2}(\mathfrak{gal},\mathbb R)=\mathbb R$，唯一代表元 $c(\hat B_i,\hat P_j)=\delta_{ij}$ | @thm-qp-extension |
 | 上闭链 $\xi=\mathbf v_2\cdot R_2\mathbf a_1+\frac12\lvert\mathbf v_2\rvert^{2}b_1$；Bargmann 群 | @eq-qp-cocycle-explicit |
-| $m$ 是**中心元**（非 Casimir 本征值）⟹ 质量超选择 | @thm-qp-mass |
+| $m$ 是**中心元**（非 Casimir 本征值）$\Longrightarrow$ 质量超选择 | @thm-qp-mass |
 | $[\hat q_i,\hat P_j]=i\hbar\delta_{ij}$；$\hat M=0$ 时为 $0$ | @thm-qp-ccr |
 | 薛定谔方程的三条独立导出路线 | @eq-qp-schrodinger |
 | 静能项严格相消，余项 $O(K^{-2})$ | @eq-qp-preSch |
 | 协变性当且仅当带 $m$ 相位 | @eq-qp-boost |
 | 中央扩张 $\Longleftrightarrow\nabla K=0$（Jacobi） | @thm-qp-jacobi |
-| $\nabla K\neq0$ ⟹ 残留项 $\sim K_0^{2}$ 发散 + 反 Hermite | @eq-qp-residual |
+| $\nabla K\neq0$ $\Longrightarrow$ 残留项 $\sim K_0^{2}$ 发散 + 反 Hermite | @eq-qp-residual |
 
 : 本章各命题及其依据 {#tbl-qp-conclusion}
 

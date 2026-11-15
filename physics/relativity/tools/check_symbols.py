@@ -9,7 +9,9 @@
   5. \\mathrm{i} —— 虚数单位统一斜体 i；
   6. \\mathrm d —— 须写 \\mathrm{d}；
   7. 数学片段内裸微分 d（dt/ds/dx/dy/dz/d^2/d^3/d^4/d\\tau）—— 须 \\mathrm{d}；
-  8. \\Gamma^{a}_{bc} —— Christoffel 须用错位指标 \\Gamma^{a}{}_{bc}。
+  8. \\Gamma^{a}_{bc} —— Christoffel 须用错位指标 \\Gamma^{a}{}_{bc}；
+  9. 文本模式的 ⟹ ⟸ ⇒ ⇔ → ← ✓ 等符号 —— 正文字体（Latin Modern Roman）无此字形，
+     渲染为空白；改用数学模式 $\\Longrightarrow$ $\\checkmark$ $\\rightarrow$ 等。
 """
 import glob
 import io
@@ -31,6 +33,8 @@ CHECKS = [
 ]
 RX_BARE_D = re.compile(
     r"(?<![\\A-Za-z])d(?=[tsxyz](?![A-Za-z])|\\tau(?![A-Za-z])|\^\{?[234]\}?(?![A-Za-z0-9]))")
+RX_TEXT_SYMBOL = re.compile(r"[⟹⟸⟺⇒⇐⇔→←↔✓✗✔✘]")
+RX_CODE = re.compile(r"`[^`]*`")
 
 hits = []
 for fp in FILES:
@@ -58,6 +62,30 @@ for fp in FILES:
                 seg = s if j < 0 else s[:j]
                 for m in RX_BARE_D.finditer(seg):
                     hits.append("%s:%d  裸微分 d 须 \\mathrm{d}  | %s" % (rel, i, seg[max(0, m.start() - 18):m.end() + 10].strip()))
+                if j < 0:
+                    break
+                depth_math = False
+                s = s[j + 2:] if s.startswith("$$", j) else s[j + 1:]
+
+    # 第九查：文本模式（数学片段与代码 span 之外）的特殊符号 —— 正文字体缺字
+    depth_math = False
+    for i, line in enumerate(lines, 1):
+        s = line
+        while s:
+            if not depth_math:
+                j = s.find("$")
+                seg = s if j < 0 else s[:j]
+                seg = RX_CODE.sub("", seg)
+                for m in RX_TEXT_SYMBOL.finditer(seg):
+                    hits.append(
+                        "%s:%d  文本模式符号 %s 缺字（正文字体无此字形），改数学模式 $\\Longrightarrow$/ $\\checkmark$/ $\\rightarrow$  | %s"
+                        % (rel, i, m.group(), seg[max(0, m.start() - 15):m.end() + 12].strip()))
+                if j < 0:
+                    break
+                depth_math = True
+                s = s[j + 2:] if s.startswith("$$", j) else s[j + 1:]
+            else:
+                j = s.find("$")
                 if j < 0:
                     break
                 depth_math = False

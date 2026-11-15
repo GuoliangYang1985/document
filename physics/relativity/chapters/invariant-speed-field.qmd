@@ -350,7 +350,7 @@ $$
 \Gamma^{k}{}_{ij}=\frac{1}{2}g^{kl}\bigl(\partial_ig_{jl}+\partial_jg_{il}-\partial_lg_{ij}\bigr)=0.
 $$
 
-**汇总**（其余为零）：
+汇总（其余为零）：
 
 $$
 \Gamma^{0}{}_{00}=\frac{\partial_0K}{K},\qquad
@@ -378,7 +378,7 @@ $$
 \dfrac{\partial_3 K}{K} & 0 & 0 & 0
 \end{pmatrix}.
 \end{aligned}
-$${#eq-ifg-christoffel-matrix-0}
+$$ {#eq-ifg-christoffel-matrix-0}
 
 $$
 \begin{aligned}
@@ -398,11 +398,11 @@ K \partial_k K & 0 & 0 & 0 \\
 0 & 0 & 0 & 0
 \end{pmatrix}.
 \end{aligned}
-$${#eq-ifg-christoffel-matrix-k}
+$$ {#eq-ifg-christoffel-matrix-k}
 
 全部非零 Christoffel 符号都由 $\partial_\mu K$ 经度规升降指标得到：$\Gamma^{0}{}_{00}=\partial_0K/K$、$\Gamma^{0}{}_{0i}=\partial_iK/K$、$\Gamma^{k}{}_{00}=K^{2}\,(\partial_kK/K)$——即都与 @sec-ifg-cross 中“多出来的项”$\partial_\mu K/K$ 成正比（比例因子为 $1$ 或 $K^{2}$）。这不是偶然的巧合，而是恒速群丛结构向弯曲几何过渡的内在机制，可从三个层面说明：
 
-**其一，代数结构的破缺。** 如 @sec-ifg-cross 所述，当常数 $K$ 升级为时空场 $K(p)$ 时，跨点复合的群运算不再闭合，李括号中多出了正比于 $\partial_\mu K/K$ 的残余项。这在代数层面上意味着，由于 $K$ 的非均匀性，原全局群结构在跨点时失效。
+**其一，代数结构的破缺。** 如 @sec-ifg-cross 所述，当常数 $K$ 推广为时空场 $K(p)$ 时，跨点复合的群运算不再闭合，李括号中多出了正比于 $\partial_\mu K/K$ 的残余项。这在代数层面上意味着，由于 $K$ 的非均匀性，原全局群结构在跨点时失效。
 
 **其二，几何联络的补偿。** 在微分几何中，Christoffel 符号刻画基矢随位置的变化，以保证协变导数具有张量性。在对角约定下，非零联络分量全部由 $\partial_\mu K/K$ 生成，仿射联络在数学上恰好充当代数残余项的补偿机制，即联络吸收了跨点复合失效产生的残余项。
 
@@ -419,13 +419,13 @@ R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
 -\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
 $$
 
-在将其代入上述定义式进行逐项缩并之前，由于对角约定下空间度规是刚性的（即 $\partial_\mu g_{ij}=0$），计算过程中会涌现出大量仅含空间指标的偏导数项。为了压缩冗长的代数表达式，引入以下标准记号：
+下文反复出现仅含空间指标的求和，先登记记号：
 
 $$
-\lvert\nabla K\rvert^{2}:=\sum_k(\partial_kK)^{2}, \quad 
-\Delta K:=\sum_k\partial_k\partial_kK, \quad 
+\lvert\nabla K\rvert^{2}:=\sum_k(\partial_kK)^{2},\qquad
+\Delta K:=\sum_k\partial_k\partial_kK,\qquad
 K_0:=\partial_0K.
-$${#eq-ricci-notation-def}
+$$ {#eq-ricci-notation-def}
 
 具体地，在三维空间坐标 $(x^1,x^2,x^3)=(x,y,z)$ 下，这两个空间算符可具体展开为如下分量形式：
 
@@ -440,7 +440,23 @@ $${#eq-ricci-notation-expanded}
 
 其中，$\lvert\nabla K\rvert^2$ 表征恒速场的空间梯度模方，$\Delta K$ 为标量场的空间拉普拉斯（Laplacian）算符，而 $K_0$ 则用于简写时间偏导数。
 
-**(a) $R_{00}$** 的四项分别为：
+为了得到 $R_{00}$，需将 Ricci 张量定义式中的前两项缩并指标全部展开。在诸如 $\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}$ 的通用项中，上下重复出现的 $\rho$ 为哑指标。依据爱因斯坦求和约定，必须对其遍历四维时空坐标求和：
+
+$$
+\partial_\rho\Gamma^{\rho}{}_{\nu\sigma} = \sum_{\rho=0}^{3} \partial_\rho\Gamma^{\rho}{}_{\nu\sigma}.
+$$
+
+本书沿用张量分析的规范约定：希腊字母指标（如 $\rho, \sigma$）代表四维时空 $0, 1, 2, 3$；拉丁字母指标（如 $k, i$）代表三维空间 $1, 2, 3$。因此，上述四维求和可严格拆分为时间部分与空间部分：
+
+$$
+\partial_\rho\Gamma^{\rho}{}_{\nu\sigma} = \underbrace{\partial_0\Gamma^{0}{}_{\nu\sigma}}_{\text{时间部分}} + \underbrace{\partial_k\Gamma^{k}{}_{\nu\sigma}}_{\text{空间部分}}.
+$$
+
+其中，空间部分 $\partial_k\Gamma^{k}{}_{\nu\sigma}$ 实际上包含了 $\partial_1\Gamma^{1}{}_{\nu\sigma} + \partial_2\Gamma^{2}{}_{\nu\sigma} + \partial_3\Gamma^{3}{}_{\nu\sigma}$ 这三项，此处用拉丁字母 $k$ 作简写。这一指标拆分规则将在下文的四项推导中反复使用。
+
+当具体计算 $R_{00}$ 时，自由指标 $\nu$ 与 $\sigma$ 均取为 $0$，上述拆分式即退化为 $\partial_\rho\Gamma^{\rho}{}_{00} = \partial_0\Gamma^{0}{}_{00} + \partial_k\Gamma^{k}{}_{00}$，代入 @eq-ifg-christoffel 后计算。
+
+**(a) $R_{00}$**：自由指标取 $\nu=\sigma=0$，四项分别为：
 
 *第一项*：
 
@@ -577,7 +593,7 @@ $$ {#eq-ifg-R}
 
 **该表达式不含空间维数 $n$**（$\Delta K$ 为 $n$ 维空间拉普拉斯）。
 
-**自检**：$K$ 为常数 ⟹ $\Delta K=0$ ⟹ $R=0$，平坦。✓
+**自检**：$K$ 为常数 $\Longrightarrow$ $\Delta K=0$ $\Longrightarrow$ $R=0$，平坦。$\checkmark$
 
 **一个直接的推论**：$R$ 只含**空间**二阶导数，不含 $\partial_0^{2}K$。也就是说，在这个约定下 $K$ 场的时间依赖不产生曲率。这一点可由如下换元直接验证：若 $K=K(t)$ 只依赖 $t$，作坐标变换 $\tilde t=\int^{t}K(s)\,\mathrm{d}s$，则 $K^{2}\mathrm{d}t^{2}=\mathrm{d}\tilde t^{2}$，@eq-ifg-metric 化为 Minkowski 度规。
 
@@ -635,7 +651,7 @@ $$ {#eq-ifg-vacuum}
 
 即：在对角约定下，真空解只允许 $K$ 在空间上线性（其系数可依赖 $t$）。
 
-**推论：这一类真空解全部是平坦的。** $\partial_i\partial_jK=0$ 使一切含二阶空间导数的曲率分量归零，而 @sec-invariant-speed-dynamics 章 @eq-isd-g 的共形论证给出同一结论（Weyl 张量恒零）；再配上 $R_{\mu\nu}=0$，Riemann 张量恒为零——符号计算对 $K=a(t)+b_i(t)x^{i}$ 逐一核验全部 $R^{\mu}{}_{\nu\rho\sigma}$，均为零。✓
+**推论：这一类真空解全部是平坦的。** $\partial_i\partial_jK=0$ 使一切含二阶空间导数的曲率分量归零，而 @sec-invariant-speed-dynamics 章 @eq-isd-g 的共形论证给出同一结论（Weyl 张量恒零）；再配上 $R_{\mu\nu}=0$，Riemann 张量恒为零——符号计算对 $K=a(t)+b_i(t)x^{i}$ 逐一核验全部 $R^{\mu}{}_{\nu\rho\sigma}$，均为零。$\checkmark$
 
 这一条比“$K$ 对空间坐标是仿射的”更有用：**对角约定 $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ 不能容纳任何非平凡的真空解**，能容纳的只有 $K$ 在空间上变化的非真空情形（此时 $G_{00}\equiv0$，有曲率而没有能量密度）。这一条也构成下一章必须补齐 $\beta^{i}$ 与 $h_{ij}$ 的最强理由——缺的不是解，是自由度。
 
@@ -651,7 +667,7 @@ $$
 R=\frac{2\,\Delta K}{K}.
 $$
 
-$K$ 为常数 ⟹ $R=0$；$K$ 对空间非线性 ⟹ $R\neq0$。换句话说，**在这一约定下，恒速场的不均匀性就是曲率**。
+$K$ 为常数 $\Longrightarrow$ $R=0$；$K$ 对空间非线性 $\Longrightarrow$ $R\neq0$。换句话说，**在这一约定下，恒速场的不均匀性就是曲率**。
 
 @fig-invariant-speed-field 给出一个一维截面的例子。
 
