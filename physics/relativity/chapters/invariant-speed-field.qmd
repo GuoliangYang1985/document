@@ -417,7 +417,7 @@ R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
 -\partial_\nu\Gamma^{\rho}{}_{\rho\sigma}
 +\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{\nu\sigma}
 -\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
-$$
+$$ {#eq-ifg-ricci-def}
 
 下文反复出现仅含空间指标的求和，先登记记号：
 
@@ -454,52 +454,70 @@ $$
 
 其中，空间部分 $\partial_k\Gamma^{k}{}_{\nu\sigma}$ 实际上包含了 $\partial_1\Gamma^{1}{}_{\nu\sigma} + \partial_2\Gamma^{2}{}_{\nu\sigma} + \partial_3\Gamma^{3}{}_{\nu\sigma}$ 这三项，此处用拉丁字母 $k$ 作简写。这一指标拆分规则将在下文的四项推导中反复使用。
 
-当具体计算 $R_{00}$ 时，自由指标 $\nu$ 与 $\sigma$ 均取为 $0$，上述拆分式即退化为 $\partial_\rho\Gamma^{\rho}{}_{00} = \partial_0\Gamma^{0}{}_{00} + \partial_k\Gamma^{k}{}_{00}$，代入 @eq-ifg-christoffel 后计算。
+当具体计算 $R_{00}$ 时，自由指标 $\nu$ 与 $\sigma$ 均取为 $0$，上述拆分式即退化为 $\partial_\rho\Gamma^{\rho}{}_{00} = \partial_0\Gamma^{0}{}_{00} + \partial_k\Gamma^{k}{}_{00}$，代入 @eq-ifg-christoffel 和 @eq-ricci-notation-def 后计算。
 
 **(a) $R_{00}$**：自由指标取 $\nu=\sigma=0$，四项分别为：
 
 *第一项*：
 
 $$
+\begin{aligned}
 \partial_\rho\Gamma^{\rho}{}_{00}
-=\partial_0\Gamma^{0}{}_{00}+\partial_k\Gamma^{k}{}_{00}
-=\partial_0\!\left(\frac{K_0}{K}\right)+\partial_k\bigl(K\,\partial_kK\bigr),
+&= \partial_0\Gamma^{0}{}_{00} + \partial_k\Gamma^{k}{}_{00} \\
+&= \partial_0\!\left(\frac{K_0}{K}\right) + \partial_k\bigl(K\,\partial_kK\bigr) \\
+&= \left[ \frac{\partial_0(\partial_0 K)\cdot K - K_0\cdot(\partial_0 K)}{K^2} \right] + \left[ (\partial_k K)(\partial_k K) + K(\partial_k\partial_k K) \right] \\
+&= \left( \frac{\partial_0^2 K}{K} - \frac{K_0^2}{K^2} \right) + \left( (\partial_k K)^2 + K\,\partial_k\partial_k K \right) \\
+&= \left( \frac{\partial_0^2 K}{K} - \frac{K_0^2}{K^2} \right) + \lvert\nabla K\rvert^2 + K\,\Delta K.
+\end{aligned}
 $$
 
-$$
-=\left(\frac{\partial_0^{2}K}{K}-\frac{K_0^{2}}{K^{2}}\right)+\lvert\nabla K\rvert^{2}+K\,\Delta K.
-$$
-
-*第二项*：
+*第二项*，前文算出的联络分量中 $\Gamma^k{}_{k0}=0$，故只保留时间分量：
 
 $$
+\begin{aligned}
 \partial_0\Gamma^{\rho}{}_{\rho0}
-=\partial_0\bigl(\Gamma^{0}{}_{00}+\Gamma^{k}{}_{k0}\bigr)
-=\partial_0\!\left(\frac{K_0}{K}+0\right)
-=\frac{\partial_0^{2}K}{K}-\frac{K_0^{2}}{K^{2}}.
+&= \partial_0\bigl(\Gamma^{0}{}_{00}+\Gamma^{k}{}_{k0}\bigr) \\
+&= \partial_0\!\left(\frac{K_0}{K}+0\right) \\
+&= \frac{\partial_0(\partial_0 K) \cdot K - K_0 \cdot (\partial_0 K)}{K^2} \\
+&= \frac{\partial_0^2 K}{K} - \frac{K_0^2}{K^2}.
+\end{aligned}
 $$
 
-*第三项*（$\lambda$ 取 $0$ 与 $i$ 两类）：
+*第三项*，对 $\lambda$ 分取 $0$ 与 $i$ 两类讨论：
 
 $$
+\begin{aligned}
 \Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{00}
-=\left(\frac{K_0}{K}\right)^{2}
-+\sum_i\frac{\partial_iK}{K}\cdot\bigl(K\,\partial_iK\bigr)
-=\frac{K_0^{2}}{K^{2}}+\lvert\nabla K\rvert^{2}.
+&= \Gamma^{0}{}_{00}\Gamma^{0}{}_{00} + \Gamma^{0}{}_{0i}\Gamma^{i}{}_{00} \\
+&= \left(\frac{K_0}{K}\right)^{2}
++ \sum_i\left(\frac{\partial_iK}{K}\right)\bigl(K\,\partial_iK\bigr) \\
+&= \left(\frac{K_0}{K}\right)^{2}
++ \sum_i(\partial_iK)^{2} \\
+&= \frac{K_0^{2}}{K^{2}}+\lvert\nabla K\rvert^{2}.
+\end{aligned}
 $$
 
-*第四项*（$(\rho,\lambda)$ 的四种组合 $(0,0)$、$(0,i)$、$(k,0)$、$(k,i)$）：
+*第四项*，$(\rho,\lambda)$ 的四种组合 $(0,0)$、$(0,i)$、$(k,0)$、$(k,i)$：
 
 $$
+\begin{aligned}
 \Gamma^{\rho}{}_{0\lambda}\Gamma^{\lambda}{}_{\rho0}
-=\left(\frac{K_0}{K}\right)^{2}
-+\frac{\partial_iK}{K}\cdot\bigl(K\,\partial_iK\bigr)
-+\bigl(K\,\partial_kK\bigr)\cdot\frac{\partial_kK}{K}
-+0
-=\frac{K_0^{2}}{K^{2}}+2\lvert\nabla K\rvert^{2}.
+&= \Gamma^{0}{}_{00}\Gamma^{0}{}_{00} 
++ \Gamma^{0}{}_{0i}\Gamma^{i}{}_{00}
++ \Gamma^{k}{}_{00}\Gamma^{0}{}_{k0} 
++ \Gamma^{k}{}_{0i}\Gamma^{i}{}_{k0} \\
+&= \left(\frac{K_0}{K}\right)^{2}
++ \left(\frac{\partial_iK}{K}\right)\bigl(K\,\partial_iK\bigr)
++ \bigl(K\,\partial_kK\bigr)\left(\frac{\partial_kK}{K}\right)
++ 0 \\
+&= \left(\frac{K_0}{K}\right)^{2}
++ \sum_i(\partial_iK)^{2}
++ \sum_k(\partial_kK)^{2} \\
+&= \frac{K_0^{2}}{K^{2}}+2\lvert\nabla K\rvert^{2}.
+\end{aligned}
 $$
 
-*四项相减*（第一项 − 第二项 + 第三项 − 第四项）：
+将四项代入 @eq-ifg-ricci-def：
 
 $$
 R_{00}=\bigl[\lvert\nabla K\rvert^{2}+K\,\Delta K\bigr]
