@@ -266,11 +266,11 @@ $$ {#eq-ifg-metric}
 
 $$
 g_{00}=K^{2},\qquad g_{ij}=-\delta_{ij},\qquad g_{0i}=0,
-$$
+$$ {#eq-ifg-g-cov}
 
 $$
 g^{00}=\frac{1}{K^{2}},\qquad g^{ij}=-\delta^{ij},\qquad g^{0i}=0.
-$$
+$$ {#eq-ifg-g-contra}
 
 将上述分量写成矩阵形式（按坐标次序 $(t, x^1, x^2, x^3)$ 排列），协变度规及逆度规分别为：
 
@@ -419,7 +419,7 @@ R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
 -\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
 $$ {#eq-ifg-ricci-def}
 
-下文反复出现仅含空间指标的求和，先登记记号：
+下文反复出现仅含空间指标的求和，作如下约定：
 
 $$
 \lvert\nabla K\rvert^{2}:=\sum_k(\partial_kK)^{2},\qquad
@@ -427,7 +427,7 @@ $$
 K_0:=\partial_0K.
 $$ {#eq-ricci-notation-def}
 
-具体地，在三维空间坐标 $(x^1,x^2,x^3)=(x,y,z)$ 下，这两个空间算符可具体展开为如下分量形式：
+在三维空间坐标 $(x^1,x^2,x^3)=(x,y,z)$ 下，这两个空间算符可具体展开为如下分量形式：
 
 $$
 \begin{aligned}
@@ -440,16 +440,16 @@ $${#eq-ricci-notation-expanded}
 
 其中，$\lvert\nabla K\rvert^2$ 表征恒速场的空间梯度模方，$\Delta K$ 为标量场的空间拉普拉斯（Laplacian）算符，而 $K_0$ 则用于简写时间偏导数。
 
-为了得到 $R_{00}$，需将 Ricci 张量定义式中的前两项缩并指标全部展开。在诸如 $\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}$ 的通用项中，上下重复出现的 $\rho$ 为哑指标。依据爱因斯坦求和约定，必须对其遍历四维时空坐标求和：
+将 Ricci 张量定义式中的前两项缩并指标全部展开。在诸如 $\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}$ 的通用项中，上下重复出现的 $\rho$ 为哑指标。依据爱因斯坦求和约定，必须对其遍历四维时空坐标求和：
 
 $$
 \partial_\rho\Gamma^{\rho}{}_{\nu\sigma} = \sum_{\rho=0}^{3} \partial_\rho\Gamma^{\rho}{}_{\nu\sigma}.
 $$
 
-本书沿用张量分析的规范约定：希腊字母指标（如 $\rho, \sigma$）代表四维时空 $0, 1, 2, 3$；拉丁字母指标（如 $k, i$）代表三维空间 $1, 2, 3$。因此，上述四维求和可严格拆分为时间部分与空间部分：
+希腊字母指标（如 $\rho, \sigma$）代表四维时空 $0, 1, 2, 3$；拉丁字母指标（如 $k, i$）代表三维空间 $1, 2, 3$。因此，上述四维求和可严格拆分为时间部分 $\partial_0\Gamma^{0}{}_{\nu\sigma}$ 与空间部分 $\partial_k\Gamma^{k}{}_{\nu\sigma}$：
 
 $$
-\partial_\rho\Gamma^{\rho}{}_{\nu\sigma} = \underbrace{\partial_0\Gamma^{0}{}_{\nu\sigma}}_{\text{时间部分}} + \underbrace{\partial_k\Gamma^{k}{}_{\nu\sigma}}_{\text{空间部分}}.
+\partial_\rho\Gamma^{\rho}{}_{\nu\sigma} = \partial_0\Gamma^{0}{}_{\nu\sigma} + \partial_k\Gamma^{k}{}_{\nu\sigma}.
 $$
 
 其中，空间部分 $\partial_k\Gamma^{k}{}_{\nu\sigma}$ 实际上包含了 $\partial_1\Gamma^{1}{}_{\nu\sigma} + \partial_2\Gamma^{2}{}_{\nu\sigma} + \partial_3\Gamma^{3}{}_{\nu\sigma}$ 这三项，此处用拉丁字母 $k$ 作简写。这一指标拆分规则将在下文的四项推导中反复使用。
@@ -530,7 +530,7 @@ $$
 
 $$
 \boxed{R_{00}=K\,\Delta K}.
-$$
+$$ {#eq-ifg-R00}
 
 **(b) $R_{ij}$** 的四项分别为：
 
@@ -544,7 +544,7 @@ $$
 =\frac{\partial_i\partial_jK}{K}-\frac{\partial_iK\,\partial_jK}{K^{2}}.
 $$
 
-*第四项*（只有 $(\rho,\lambda)=(0,0)$ 非零）：
+*第四项*，只有 $(\rho,\lambda)=(0,0)$ 非零：
 
 $$
 \Gamma^{\rho}{}_{j\lambda}\Gamma^{\lambda}{}_{\rho i}
@@ -552,7 +552,7 @@ $$
 =\frac{\partial_jK}{K}\cdot\frac{\partial_iK}{K}.
 $$
 
-*四项相减*：
+将四项代入 @eq-ifg-ricci-def：
 
 $$
 R_{ij}
@@ -563,7 +563,7 @@ $$
 
 $$
 \boxed{R_{ij}=-\frac{\partial_i\partial_jK}{K}}.
-$$
+$$ {#eq-ifg-Rij}
 
 **(c) $R_{0i}$** 的四项分别为：
 
@@ -580,19 +580,46 @@ $$
 $$
 
 $$
-\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{0i}=\frac{K_0}{K}\cdot\frac{\partial_iK}{K},\qquad
+\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{0i}=\frac{K_0}{K}\cdot\frac{\partial_iK}{K},
+$$
+
+$$
 \Gamma^{\rho}{}_{i\lambda}\Gamma^{\lambda}{}_{\rho0}=\frac{\partial_iK}{K}\cdot\frac{K_0}{K}.
 $$
 
-四项相减时，两类项两两精确抵消：
+将四项代入 @eq-ifg-ricci-def：
 
 $$
 \boxed{R_{0i}=0}.
+$$  {#eq-ifg-R0i}
+
+将 @eq-ifg-R00、 @eq-ifg-Rij 和 @eq-ifg-R0i 汇总为 Ricci 张量 $R_{\mu\nu}$，由于 $R_{\mu\nu}$ 是对称张量，且时间-空间交叉项 $R_{0i}=0$，矩阵呈现为时间与空间完全解耦的形式：
+
 $$
+R_{\mu\nu}
+= \begin{pmatrix}
+K \Delta K & 0_{1\times3} \\[1ex]
+0_{3\times1} & -\dfrac{\partial_i \partial_j K}{K}
+\end{pmatrix}.
+$$ {#eq-ricci-matrix-blocks}
+
+其中右下角的空间部分是一个完整的 $3 \times 3$ 对称矩阵。将其按空间坐标 $(x^1, x^2, x^3)$ 完全展开，整个 $4 \times 4$ Ricci 张量即为：
+
+$$
+R_{\mu\nu} =
+\begin{pmatrix}
+K \Delta K & 0 & 0 & 0 \\[1ex]
+0 & -\dfrac{\partial_1^2 K}{K} & -\dfrac{\partial_1 \partial_2 K}{K} & -\dfrac{\partial_1 \partial_3 K}{K} \\[2ex]
+0 & -\dfrac{\partial_2 \partial_1 K}{K} & -\dfrac{\partial_2^2 K}{K} & -\dfrac{\partial_2 \partial_3 K}{K} \\[2ex]
+0 & -\dfrac{\partial_3 \partial_1 K}{K} & -\dfrac{\partial_3 \partial_2 K}{K} & -\dfrac{\partial_3^2 K}{K}
+\end{pmatrix}.
+$$ {#eq-ricci-matrix-full}
+
+观察 @eq-ricci-matrix-full 可知，第一行与第一列除时间分量 $K\Delta K$ 外全为零，这印证了“对角约定”下时间演化与空间曲率的解耦；而空间部分的非对角项（如 $-\frac{\partial_1\partial_2 K}{K}$）则反映了恒速场在空间分布上的剪切形变对潮汐力的影响。
 
 ### Ricci 标量
 
-缩并 Ricci 张量：
+将 Ricci 张量分量与逆度规 $g^{\mu\nu}$ 缩并，即可得到 Ricci 标量 $R$，代入 @eq-ifg-g-contra, @eq-ifg-R00 和 @eq-ifg-Rij，缩并操作仅由时间分量与空间分量两部分贡献：
 
 $$
 R=g^{00}R_{00}+g^{ij}R_{ij}
@@ -609,11 +636,7 @@ $$
 \boxed{R=\frac{2\,\Delta K}{K}}.
 $$ {#eq-ifg-R}
 
-**该表达式不含空间维数 $n$**（$\Delta K$ 为 $n$ 维空间拉普拉斯）。
-
-**自检**：$K$ 为常数 $\Longrightarrow$ $\Delta K=0$ $\Longrightarrow$ $R=0$，平坦。$\checkmark$
-
-**一个直接的推论**：$R$ 只含**空间**二阶导数，不含 $\partial_0^{2}K$。也就是说，在这个约定下 $K$ 场的时间依赖不产生曲率。这一点可由如下换元直接验证：若 $K=K(t)$ 只依赖 $t$，作坐标变换 $\tilde t=\int^{t}K(s)\,\mathrm{d}s$，则 $K^{2}\mathrm{d}t^{2}=\mathrm{d}\tilde t^{2}$，@eq-ifg-metric 化为 Minkowski 度规。
+@eq-ifg-R 不含空间维数 $n$，$\Delta K$ 为 $n$ 维空间拉普拉斯算符。当 $K$ 为常数时，$\Delta K=0$，由此得出 $R=0$，即变为平直的闵可夫斯基时空。Ricci 标量 $R$ 仅依赖于 $K$ 的空间二阶导数，而不含时间导数 $\partial_0^{2}K$，在对角约定下，$K$ 场的时间演化不产生曲率。
 
 ### Einstein 张量
 
@@ -731,7 +754,7 @@ $1<6$。对角约定是把 $10$ 个分量压成 $1$ 个的极强限制。
 | Einstein 场方程 | 不给出 |
 | 一般度规的 $6$ 个物理自由度 | 不给出 |
 
-**一句话**：恒速群丛是广义相对论的**前置结构**——它给出 GR 所用的运动学骨架，而 GR 的动力学内容在它之外。
+恒速群丛是广义相对论的**前置结构**——它给出 GR 所用的运动学骨架，而 GR 的动力学内容在它之外。
 
 ## 与量子力学：中央扩张的两端 {#sec-ifg-qm}
 
