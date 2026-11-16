@@ -410,7 +410,7 @@ $$ {#eq-ifg-christoffel-matrix-k}
 
 ### Ricci 张量
 
-联络分量既已全部显式，曲率即可代数地算出。Ricci 张量按
+由联络分量出发，通过求导与缩并即可代数地构造出黎曼曲率张量及其缩并。Ricci 张量按如下定义式给出：
 
 $$
 R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
@@ -674,13 +674,13 @@ $$
 
 ### 真空解 {#sec-ifg-vacuum}
 
-由 @eq-ifg-G，真空要求 $G_{ij}=0$，即
+由 @eq-ifg-G，在无物质的真空区域（$T_{\mu\nu}=0$），要求 Einstein 张量的空间分量 $G_{ij}=0$，即
 
 $$
 \partial_i\partial_jK=\Delta K\,\delta_{ij}.
 $$
 
-对 $i=j$ 求和（$n$ 个空间维，$\delta_{ii}=n$）：
+对 $i=j$ 求和（$n$ 个空间维，$\delta_{ii}=n$），代入 @eq-ricci-notation-def：
 
 $$
 \Delta K=\Delta K\cdot n
@@ -696,9 +696,7 @@ $$ {#eq-ifg-vacuum}
 
 即：在对角约定下，真空解只允许 $K$ 在空间上线性（其系数可依赖 $t$）。
 
-**推论：这一类真空解全部是平坦的。** $\partial_i\partial_jK=0$ 使一切含二阶空间导数的曲率分量归零，而 @sec-invariant-speed-dynamics 章 @eq-isd-g 的共形论证给出同一结论（Weyl 张量恒零）；再配上 $R_{\mu\nu}=0$，Riemann 张量恒为零——符号计算对 $K=a(t)+b_i(t)x^{i}$ 逐一核验全部 $R^{\mu}{}_{\nu\rho\sigma}$，均为零。$\checkmark$
-
-这一条比“$K$ 对空间坐标是仿射的”更有用：**对角约定 $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ 不能容纳任何非平凡的真空解**，能容纳的只有 $K$ 在空间上变化的非真空情形（此时 $G_{00}\equiv0$，有曲率而没有能量密度）。这一条也构成下一章必须补齐 $\beta^{i}$ 与 $h_{ij}$ 的最强理由——缺的不是解，是自由度。
+**推论：这一类真空解全部是平坦的。** $\partial_i\partial_jK=0$ 使一切含二阶空间导数的曲率分量归零，而 @sec-invariant-speed-dynamics 章 @eq-isd-g 的共形论证给出同一结论（Weyl 张量恒零）；由符号计算可严格核验，对于 $K=a(t)+b_i(t)x^{i}$，全部 Riemann 张量分量 $R^{\mu}{}_{\nu\rho\sigma}$ 恒为零。**对角约定 $K^{2}\mathrm{d}t^{2}-\delta_{ij}\mathrm{d}x^{i}\mathrm{d}x^{j}$ 不能容纳任何非平凡的真空解**，能容纳的只有 $K$ 在空间上变化的非真空情形（此时 $G_{00}\equiv0$，有曲率而没有能量密度）。这也构成了后续章节必须补齐拖曳 $\beta^{i}$ 与剪切 $h_{ij}$ 的必然要求：所缺的并非特定的解，而是完备的几何自由度。
 
 ## 与广义相对论的比较 {#sec-ifg-gr}
 
