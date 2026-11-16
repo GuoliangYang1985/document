@@ -532,7 +532,35 @@ $$
 \boxed{R_{00}=K\,\Delta K}.
 $$ {#eq-ifg-R00}
 
-**(b) $R_{ij}$** 的四项分别为：
+**(b) $R_{0i}$** 的四项分别为：
+
+$$
+\partial_\rho\Gamma^{\rho}{}_{0i}
+=\partial_0\!\left(\frac{\partial_iK}{K}\right)
+=\frac{\partial_0\partial_iK}{K}-\frac{\partial_iK\,K_0}{K^{2}},
+$$
+
+$$
+\partial_i\Gamma^{\rho}{}_{\rho0}
+=\partial_i\!\left(\frac{K_0}{K}\right)
+=\frac{\partial_0\partial_iK}{K}-\frac{K_0\,\partial_iK}{K^{2}},
+$$
+
+$$
+\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{0i}=\frac{K_0}{K}\cdot\frac{\partial_iK}{K},
+$$
+
+$$
+\Gamma^{\rho}{}_{i\lambda}\Gamma^{\lambda}{}_{\rho0}=\frac{\partial_iK}{K}\cdot\frac{K_0}{K}.
+$$
+
+将四项代入 @eq-ifg-ricci-def：
+
+$$
+\boxed{R_{0i}=0}.
+$$  {#eq-ifg-R0i}
+
+**(c) $R_{ij}$** 的四项分别为：
 
 第一项 $\partial_\rho\Gamma^{\rho}{}_{ij}=0$（因 $\Gamma^{0}{}_{ij}=\Gamma^{k}{}_{ij}=0$）；第三项 $\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{ij}=0$（因 $\Gamma^{\lambda}{}_{ij}=0$）。
 
@@ -564,34 +592,6 @@ $$
 $$
 \boxed{R_{ij}=-\frac{\partial_i\partial_jK}{K}}.
 $$ {#eq-ifg-Rij}
-
-**(c) $R_{0i}$** 的四项分别为：
-
-$$
-\partial_\rho\Gamma^{\rho}{}_{0i}
-=\partial_0\!\left(\frac{\partial_iK}{K}\right)
-=\frac{\partial_0\partial_iK}{K}-\frac{\partial_iK\,K_0}{K^{2}},
-$$
-
-$$
-\partial_i\Gamma^{\rho}{}_{\rho0}
-=\partial_i\!\left(\frac{K_0}{K}\right)
-=\frac{\partial_0\partial_iK}{K}-\frac{K_0\,\partial_iK}{K^{2}},
-$$
-
-$$
-\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{0i}=\frac{K_0}{K}\cdot\frac{\partial_iK}{K},
-$$
-
-$$
-\Gamma^{\rho}{}_{i\lambda}\Gamma^{\lambda}{}_{\rho0}=\frac{\partial_iK}{K}\cdot\frac{K_0}{K}.
-$$
-
-将四项代入 @eq-ifg-ricci-def：
-
-$$
-\boxed{R_{0i}=0}.
-$$  {#eq-ifg-R0i}
 
 将 @eq-ifg-R00、 @eq-ifg-Rij 和 @eq-ifg-R0i 汇总为 Ricci 张量 $R_{\mu\nu}$，由于 $R_{\mu\nu}$ 是对称张量，且时间-空间交叉项 $R_{0i}=0$，矩阵呈现为时间与空间完全解耦的形式：
 
@@ -646,16 +646,20 @@ $$
 G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}R\,g_{\mu\nu}.
 $$
 
-逐项代入：
+代入 @eq-ifg-R00、 @eq-ifg-R 和 @eq-ifg-g-cov：
 
 $$
 G_{00}=K\,\Delta K-\frac{1}{2}\cdot\frac{2\,\Delta K}{K}\cdot K^{2}
 =K\,\Delta K-K\,\Delta K=0,
 $$
 
+代入 @eq-ifg-R0i、 @eq-ifg-R 和 @eq-ifg-g-cov：
+
 $$
 G_{0i}=0-\frac{1}{2}R\cdot 0=0,
 $$
+
+代入 @eq-ifg-Rij、 @eq-ifg-R 和 @eq-ifg-g-cov：
 
 $$
 G_{ij}=-\frac{\partial_i\partial_jK}{K}
@@ -718,7 +722,7 @@ $K$ 为常数 $\Longrightarrow$ $R=0$；$K$ 对空间非线性 $\Longrightarrow$
 
 右栏：同一个 $K(x)$ 的曲线，以及由 @eq-ifg-R 算出的 Ricci 标量 $R=2K''/K$。**$R$ 与 $K$ 的二阶导数同号同步，且在 $K$ 为常数处为零。**
 
-**须说明**：该图只是一维截面的示例，不含超出 @eq-ifg-R 的内容；横轴与纵轴的刻度均无物理含义。
+该图只是一维截面的示例，不含超出 @eq-ifg-R 的内容；横轴与纵轴的刻度均无物理含义。
 
 ### 不能给出的：能量密度
 
