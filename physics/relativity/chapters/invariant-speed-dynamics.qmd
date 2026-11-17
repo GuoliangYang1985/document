@@ -2,7 +2,7 @@
 
 ## 本章的范围 {#sec-isd-scope}
 
-**一句话**：把 @sec-invariant-speed-field-group 章的“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
+把 @sec-invariant-speed-field-group 章的“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
 
 **与上一章的关系**：@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$。本章说明那是**约定的后果，不是恒速群丛的固有性质**——换用 tetrad 约定后 $G_{00}\neq0$。
 
