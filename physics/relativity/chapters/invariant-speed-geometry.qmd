@@ -1,20 +1,8 @@
 # 恒速群丛的完备几何 {#sec-invariant-speed-geometry}
 
-## 本章的范围 {#sec-isg2-scope}
+本章把恒速场 $K(x)$ 从“唯一的几何自由度”降为“完备标架中的一个约束参数”，补上拖曳 $\beta^{i}$ 与空间度规 $h_{ij}$，由此得到完整的 $10$ 个自由度，并在此框架下严格算出 Christoffel、Ricci、Einstein、Weyl 全部非零分量，最后给出黑洞视界的条件。全章沿一条链条推进：恒速场 $K(x)$ 定出洛伦兹变换，洛伦兹变换给出完备几何条件，由此写出完整度规，最终接到广义相对论与黑洞。
 
-把恒速场 $K(x)$ 从“唯一的几何自由度”降为“完备标架中的一个约束参数”，补上拖曳 $\beta^{i}$ 与空间度规 $h_{ij}$，由此得到完整的 $10$ 个自由度，并在此框架下严格算出 Christoffel、Ricci、Einstein、Weyl 全部非零分量，最后给出黑洞视界的条件。
-
-**三步链条**：
-
-$$
-\text{恒速场 } K(x)\ \longrightarrow\ \text{洛伦兹变换}\ \longrightarrow\ \text{完备几何条件}\ \longrightarrow\ \text{完整度规}\ \longrightarrow\ \text{广义相对论与黑洞}.
-$$
-
-**方法声明**：本章所有闭式由符号计算逐项得出（脚本 `images/full-tetrad-geometry.py` 与 `images/full-tetrad-weyl.py`）。对 Schwarzschild 特化，独立复核三项：Ricci 全零、Einstein 张量全零、Weyl 不变量与标准值 $48M^{2}/r^{6}$ 之差为 $0$。
-
-**不做什么**：本章不把量子力学与强引力场强行捏在一起。@sec-isg2-qm 会给出一条**否定的**结论：在 $\nabla K\neq0$ 的背景下，非相对论极限在数学上不成立。
-
-**记号**：$F:=K^{2}$，$s:=\sin\theta$，$c:=\cos\theta$，撇号表示 $\mathrm{d}/\mathrm{d}r$。
+本章所有闭式由符号计算逐项得出（脚本 `images/full-tetrad-geometry.py` 与 `images/full-tetrad-weyl.py`）；对 Schwarzschild 特化，独立复核三项：Ricci 全零、Einstein 张量全零、Weyl 不变量与标准值 $48M^{2}/r^{6}$ 之差为 $0$。本章不把量子力学与强引力场合并处理——@sec-isg2-qm 会给出一条**否定的**结论：在 $\nabla K\neq0$ 的背景下，非相对论极限在数学上不成立。记号取 $F:=K^{2}$、$s:=\sin\theta$、$c:=\cos\theta$，撇号表示 $\mathrm{d}/\mathrm{d}r$。
 
 ## 为什么共形平坦不满足要求 {#sec-isg2-nogo}
 
@@ -639,5 +627,5 @@ $$
 
 : 本章各命题及其依据 {#tbl-isg2-conclusion}
 
-**一句话**：恒速场 $K$ 本身只给出 $1$ 个自由度，只能得到 Weyl$\equiv0$ 的共形几何；把标架完备化（补上拖曳 $\beta^{i}$ 与剪切 $h_{ij}$，$1+3+6=10$）后，Weyl 张量严格非零（Schwarzschild 处 $C_{abcd}C^{abcd}=48M^{2}/r^{6}$），并且真空方程直接给出 $K^{2}=1-\frac{2M}{r}$、视界由 $K=0$ 定出为 $r_s=2M$；在同一背景下 $\nabla K\neq0$，非相对论极限不存在，量子力学不适用。本章是同一底座上两条派生路线中引力路线的那一端，与量子路线的逐项对照见全书导览。
+恒速场 $K$ 本身只给出 $1$ 个自由度，只能得到 Weyl$\equiv0$ 的共形几何；把标架完备化（补上拖曳 $\beta^{i}$ 与剪切 $h_{ij}$，$1+3+6=10$）后，Weyl 张量严格非零（Schwarzschild 处 $C_{abcd}C^{abcd}=48M^{2}/r^{6}$），并且真空方程直接给出 $K^{2}=1-\frac{2M}{r}$、视界由 $K=0$ 定出为 $r_s=2M$；在同一背景下 $\nabla K\neq0$，非相对论极限不存在，量子力学不适用。本章是同一底座上两条派生路线中引力路线的那一端，与量子路线的逐项对照见全书导览。
 

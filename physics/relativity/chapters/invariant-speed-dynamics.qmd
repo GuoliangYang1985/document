@@ -1,12 +1,10 @@
 # 恒速群丛的动力学 {#sec-invariant-speed-dynamics}
 
-## 本章的范围 {#sec-isd-scope}
+本章把 @sec-invariant-speed-field-group 章的“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
 
-把 @sec-invariant-speed-field-group 章的“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
+该章在对角约定下得到 $G_{00}\equiv0$；本章说明那是**约定的后果，不是恒速群丛的固有性质**——换用 tetrad 约定后 $G_{00}\neq0$。
 
-**与上一章的关系**：@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$。本章说明那是**约定的后果，不是恒速群丛的固有性质**——换用 tetrad 约定后 $G_{00}\neq0$。
-
-**本章的方法声明**：以下每个闭式都由符号计算逐项核验（脚本 `images/conformal-curvature.py`）：先把闭式与直接由 Christoffel 算出的结果相减，再判定差值是否恒为零。脚本输出的核验结果为：Christoffel 闭式 OK、Ricci 标量闭式 True、$G_{00}$ 闭式 True、$u=\ln K$ 形式 True、$G_{\mu\nu}$ 通式 OK。不做任何近似，不省略任何项。
+以下每个闭式都由符号计算逐项核验（脚本 `images/conformal-curvature.py`）：先把闭式与直接由 Christoffel 算出的结果相减，再判定差值是否恒为零。脚本输出的核验结果为：Christoffel 闭式 OK、Ricci 标量闭式 True、$G_{00}$ 闭式 True、$u=\ln K$ 形式 True、$G_{\mu\nu}$ 通式 OK。不做任何近似，不省略任何项。
 
 **记号约定**（全程一致，签名 $\eta=\mathrm{diag}(1,-1,-1,-1)$）：
 
@@ -381,7 +379,7 @@ $$
 \frac{1}{K^{2}}\longrightarrow0\qquad (K\to\infty).
 $$
 
-一句话完成收缩。这仍是 @sec-invariant-speed-field-group 章的结论，此处只补上 3+1 维的显式括号。
+收缩在这一步归结为一条极限。这仍是 @sec-invariant-speed-field-group 章的结论，此处只补上 3+1 维的显式括号。
 
 ## 波动力学：变系数波动方程 {#sec-isd-wave}
 
@@ -613,5 +611,5 @@ $$
 
 : 本章各命题及其依据 {#tbl-isd-conclusion}
 
-**一句话**：换用 tetrad 约定后，$K$ 场给出非零的 $G_{00}=\frac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$（外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 并把 $T_{00}$ 读作能量密度时，对应 $T_{00}>0$）；但这类度规共形平坦、Weyl 张量恒为零，仍不能容纳真空外解。方程一端，变系数波动方程严格成立，而它的非相对论极限只在 $\nabla K=0$ 处存在——恒速场的空间梯度与非相对论极限不相容。
+换用 tetrad 约定后，$K$ 场给出非零的 $G_{00}=\frac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\frac{2\nabla^{2}K}{K}$（外加 $G_{\mu\nu}=\kappa T_{\mu\nu}$ 并把 $T_{00}$ 读作能量密度时，对应 $T_{00}>0$）；但这类度规共形平坦、Weyl 张量恒为零，仍不能容纳真空外解。方程一端，变系数波动方程严格成立，而它的非相对论极限只在 $\nabla K=0$ 处存在——恒速场的空间梯度与非相对论极限不相容。
 
