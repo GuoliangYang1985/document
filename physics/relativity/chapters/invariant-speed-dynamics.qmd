@@ -1,10 +1,8 @@
 # 恒速群丛的动力学 {#sec-invariant-speed-dynamics}
 
-本章把 @sec-invariant-speed-field-group 章的“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
+@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$；本章说明那是约定的结果，不是恒速群丛的固有性质，换用 tetrad 约定后 $G_{00}\neq0$。本章把“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
 
-该章在对角约定下得到 $G_{00}\equiv0$；本章说明那是**约定的后果，不是恒速群丛的固有性质**——换用 tetrad 约定后 $G_{00}\neq0$。
-
-以下每个闭式都由符号计算逐项核验（脚本 `images/conformal-curvature.py`）：先把闭式与直接由 Christoffel 算出的结果相减，再判定差值是否恒为零。脚本输出的核验结果为：Christoffel 闭式 OK、Ricci 标量闭式 True、$G_{00}$ 闭式 True、$u=\ln K$ 形式 True、$G_{\mu\nu}$ 通式 OK。不做任何近似，不省略任何项。
+本章后续给出的所有闭式，均借助符号计算脚本（`images/conformal-curvature.py`）进行了严格的代数校验：将推导所得的闭式与直接由 Christoffel 符号展开的计算结果相减，验证其差值是否精确为零。校验结果表明，Christoffel 符号、Ricci 标量、Einstein 张量 $G_{00}$ 分量以及 $G_{\mu\nu}$ 的通式，连同其 $u = \ln K$ 的对数等价形式，均严格恒等成立。上述核验过程未引入任何近似，亦未省略任何项。
 
 **记号约定**（全程一致，签名 $\eta=\mathrm{diag}(1,-1,-1,-1)$）：
 
