@@ -42,7 +42,7 @@ $$ {#eq-isd-tetrad-components}
 将上述分量写成矩阵形式（行指标为局部平直指标 $a$，列指标为时空坐标 $\mu$），协变标架 $e^{a}{}_{\mu}$ 呈现出纯量缩放的对角结构：
 
 $$
-e^{a}{}_{\mu} = 
+e^{a}{}_{\mu} =
 \begin{pmatrix}
 K & 0 & 0 & 0 \\
 0 & K & 0 & 0 \\
@@ -54,7 +54,7 @@ $$ {#eq-isd-tetrad-matrix}
 其逆矩阵，即局部基矢量 $\mathbf{e}_{a} = e^{\mu}{}_{a}\partial_{\mu}$ 的系数为：
 
 $$
-e^{\mu}{}_{a} = 
+e^{\mu}{}_{a} =
 \begin{pmatrix}
 \dfrac{1}{K} & 0 & 0 & 0 \\[1ex]
 0 & \dfrac{1}{K} & 0 & 0 \\[1ex]
@@ -66,7 +66,7 @@ $$ {#eq-isd-tetrad-inverse}
 利用标架重构度规 $g_{\mu\nu} = e^{a}{}_{\mu} e^{b}{}_{\nu} \eta_{ab}$，得到本章的核心度规约定：
 
 $$
-g_{\mu\nu} = K^2 \eta_{\mu\nu} = 
+g_{\mu\nu} = K^2 \eta_{\mu\nu} =
 \begin{pmatrix}
 K^2 & 0 & 0 & 0 \\
 0 & -K^2 & 0 & 0 \\
@@ -165,7 +165,93 @@ R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
 -\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
 $$
 
-把 @eq-isd-gamma 代入并逐项化简，得
+自由指标改记为 $(\mu,\nu)$。推导用 $u=\ln K$ 形式（@eq-isd-gamma-u），中间式只含 $u$ 的一、二阶导数，最后一步换回 $K$。记号沿用 @eq-tcg-gradient-def（把 $K$ 换成 $u$）：$\lvert\nabla u\rvert^{2}_{\eta}:=\eta^{\mu\nu}\partial_{\mu}u\,\partial_{\nu}u$。
+
+**预备：联络的迹。** 在 @eq-isd-gamma-u 中把 $(\mu,\nu)$ 换成 $(\rho,\mu)$ 并对 $\rho$ 求和：
+
+$$
+\Gamma^{\rho}{}_{\rho\mu}
+=\delta^{\rho}_{\mu}\,\partial_{\rho}u+\delta^{\rho}_{\rho}\,\partial_{\mu}u-\eta_{\rho\mu}\,\partial^{\rho}u
+=\partial_{\mu}u+4\,\partial_{\mu}u-\partial_{\mu}u
+=4\,\partial_{\mu}u.
+$$ {#eq-isd-trace}
+
+（第二个等号用 $\delta^{\rho}_{\mu}$ 使求和只剩 $\rho=\mu$、$\delta^{\rho}_{\rho}=4$、$\eta_{\rho\mu}\partial^{\rho}u=\partial_{\mu}u$ 三件事。）
+
+**第一项。**
+
+$$
+\begin{aligned}
+\partial_\rho\Gamma^{\rho}{}_{\nu\mu}
+&=\partial_\rho\Bigl(\delta^{\rho}_{\mu}\,\partial_{\nu}u+\delta^{\rho}_{\nu}\,\partial_{\mu}u-\eta_{\mu\nu}\,\partial^{\rho}u\Bigr)\\
+&=\partial_{\mu}\partial_{\nu}u+\partial_{\nu}\partial_{\mu}u-\eta_{\mu\nu}\,\Box_\eta u\\
+&=2\,\partial_{\mu}\partial_{\nu}u-\eta_{\mu\nu}\,\Box_\eta u.
+\end{aligned}
+$$
+
+（$\delta^{\rho}_{\mu}$ 与 $\delta^{\rho}_{\nu}$ 各自把求和压成一项；混合偏导可交换。）
+
+**第二项。** 由 @eq-isd-trace：
+
+$$
+\partial_\nu\Gamma^{\rho}{}_{\rho\mu}
+=\partial_\nu\bigl(4\,\partial_{\mu}u\bigr)
+=4\,\partial_{\nu}\partial_{\mu}u.
+$$
+
+**第三项。** 由 @eq-isd-trace 与 @eq-isd-gamma-u：
+
+$$
+\begin{aligned}
+\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{\nu\mu}
+&=4\,\partial_{\lambda}u\Bigl(\delta^{\lambda}_{\mu}\,\partial_{\nu}u+\delta^{\lambda}_{\nu}\,\partial_{\mu}u-\eta_{\mu\nu}\,\partial^{\lambda}u\Bigr)\\
+&=4\Bigl(\partial_{\mu}u\,\partial_{\nu}u+\partial_{\nu}u\,\partial_{\mu}u-\eta_{\mu\nu}\,\partial_{\lambda}u\,\partial^{\lambda}u\Bigr)\\
+&=8\,\partial_{\mu}u\,\partial_{\nu}u-4\,\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}.
+\end{aligned}
+$$
+
+**第四项。** 两个因子各含三段，乘积共九项。行取 $\Gamma^{\rho}{}_{\nu\lambda}=\delta^{\rho}_{\lambda}\,\partial_{\nu}u+\delta^{\rho}_{\nu}\,\partial_{\lambda}u-\eta_{\nu\lambda}\,\partial^{\rho}u$ 的三段，列取 $\Gamma^{\lambda}{}_{\rho\mu}=\delta^{\lambda}_{\mu}\,\partial_{\rho}u+\delta^{\lambda}_{\rho}\,\partial_{\mu}u-\eta_{\rho\mu}\,\partial^{\lambda}u$ 的三段：
+
+| 乘积 | $\delta^{\lambda}_{\mu}\,\partial_{\rho}u$ | $\delta^{\lambda}_{\rho}\,\partial_{\mu}u$ | $-\eta_{\rho\mu}\,\partial^{\lambda}u$ |
+|---|---|---|---|
+| $\delta^{\rho}_{\lambda}\,\partial_{\nu}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ | $4\,\partial_{\mu}u\,\partial_{\nu}u$ | $-\partial_{\mu}u\,\partial_{\nu}u$ |
+| $\delta^{\rho}_{\nu}\,\partial_{\lambda}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ | $-\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}$ |
+| $-\eta_{\nu\lambda}\,\partial^{\rho}u$ | $-\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}$ | $-\partial_{\mu}u\,\partial_{\nu}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ |
+
+（第一行第二格用 $\delta^{\rho}_{\lambda}\delta^{\lambda}_{\rho}=4$；三个含 $\eta$ 的格子各用一次 $\eta$ 的升降指标。）
+
+九项相加：
+
+$$
+\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\mu}
+=(1+4-1+1+1-1+1)\,\partial_{\mu}u\,\partial_{\nu}u-2\,\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}
+=6\,\partial_{\mu}u\,\partial_{\nu}u-2\,\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}.
+$$
+
+**合并四项。** 第三项取正号、第四项取负号：
+
+$$
+\begin{aligned}
+R_{\mu\nu}
+&=\bigl(2\,\partial_{\mu}\partial_{\nu}u-\eta_{\mu\nu}\,\Box_\eta u\bigr)
+-4\,\partial_{\mu}\partial_{\nu}u\\
+&\quad+\bigl(8\,\partial_{\mu}u\,\partial_{\nu}u-4\,\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}\bigr)
+-\bigl(6\,\partial_{\mu}u\,\partial_{\nu}u-2\,\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}\bigr)\\
+&=-2\,\partial_{\mu}\partial_{\nu}u+2\,\partial_{\mu}u\,\partial_{\nu}u-\eta_{\mu\nu}\,\Box_\eta u-2\,\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}.
+\end{aligned}
+$$ {#eq-isd-ric-u}
+
+**换回 $K$。** 由 $\partial_{\mu}u=\partial_{\mu}K/K$ 与商规则：
+
+$$
+\partial_{\mu}\partial_{\nu}u=\frac{\partial_{\mu}\partial_{\nu}K}{K}-\frac{\partial_{\mu}K\,\partial_{\nu}K}{K^{2}},
+\qquad
+\Box_\eta u=\frac{\Box_\eta K}{K}-\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}},
+\qquad
+\lvert\nabla u\rvert^{2}_{\eta}=\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
+$$
+
+（第二式是第一式与 $\eta^{\mu\nu}$ 的缩并。）代入 @eq-isd-ric-u 并逐段合并——$-2\,\partial_{\mu}\partial_{\nu}u$ 的第二段与 $+2\,\partial_{\mu}u\,\partial_{\nu}u$ 合并为 $+4\,\partial_{\mu}K\,\partial_{\nu}K/K^{2}$，$-\eta_{\mu\nu}\Box_\eta u$ 的第二段与 $-2\,\eta_{\mu\nu}\lvert\nabla u\rvert^{2}_{\eta}$ 合并为 $-\eta_{\mu\nu}\lvert\nabla K\rvert^{2}_{\eta}/K^{2}$：
 
 $$
 \boxed{R_{\mu\nu}=
@@ -183,16 +269,22 @@ $$
 R=g^{\mu\nu}R_{\mu\nu}=K^{-2}\eta^{\mu\nu}R_{\mu\nu}.
 $$
 
-由 @eq-isd-ric，注意 $\eta^{\mu\nu}\eta_{\mu\nu}=4$：
+由 @eq-isd-ric，对四段分别缩并（$\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}K=\Box_\eta K$，$\eta^{\mu\nu}\partial_{\mu}K\,\partial_{\nu}K=\lvert\nabla K\rvert^{2}_{\eta}$，$\eta^{\mu\nu}\eta_{\mu\nu}=4$）：
 
 $$
-\eta^{\mu\nu}R_{\mu\nu}=
--\frac{2\Box_\eta K}{K}+\frac{4\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
+\begin{aligned}
+\eta^{\mu\nu}R_{\mu\nu}
+&=-\frac{2}{K}\,\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}K
++\frac{4}{K^{2}}\,\eta^{\mu\nu}\partial_{\mu}K\,\partial_{\nu}K
+-\frac{1}{K}\,\eta^{\mu\nu}\eta_{\mu\nu}\,\Box_\eta K
+-\frac{1}{K^{2}}\,\eta^{\mu\nu}\eta_{\mu\nu}\,\lvert\nabla K\rvert^{2}_{\eta}\\
+&=-\frac{2\Box_\eta K}{K}+\frac{4\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
 -\frac{4\Box_\eta K}{K}-\frac{4\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}
 =-\frac{6\Box_\eta K}{K}.
+\end{aligned}
 $$
 
-（含 $\lvert\nabla K\rvert^{2}_{\eta}$ 的两项精确抵消。）
+（含 $\lvert\nabla K\rvert^{2}_{\eta}$ 的两项精确抵消，含 $\Box_\eta K$ 的两项合并。）
 
 $$
 \boxed{R=-\frac{6\,\Box_\eta K}{K^{3}}
@@ -225,7 +317,22 @@ G_{\mu\nu}=
 -\eta_{\mu\nu}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$ {#eq-isd-G}
 
-用 $u=\ln K$（$\partial_\mu\partial_{\nu}K/K=\partial_\mu\partial_\nu u+\partial_\mu u\,\partial_\nu u$）可写成更紧凑的形式：
+用 $u=\ln K$ 改写。所需恒等式在 @sec-isd-ricci 中已备好：$\partial_{\mu}\partial_{\nu}K/K=\partial_{\mu}\partial_{\nu}u+\partial_{\mu}u\,\partial_{\nu}u$、$\Box_\eta K/K=\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}$、$\lvert\nabla K\rvert^{2}_{\eta}/K^{2}=\lvert\nabla u\rvert^{2}_{\eta}$。代入 @eq-isd-G 逐段替换：
+
+$$
+\begin{aligned}
+G_{\mu\nu}
+&=-2\bigl(\partial_{\mu}\partial_{\nu}u+\partial_{\mu}u\,\partial_{\nu}u\bigr)
++4\,\partial_{\mu}u\,\partial_{\nu}u
++2\,\eta_{\mu\nu}\bigl(\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}\bigr)
+-\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}\\
+&=-2\,\partial_{\mu}\partial_{\nu}u
++2\,\partial_{\mu}u\,\partial_{\nu}u
++\eta_{\mu\nu}\bigl(2\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}\bigr),
+\end{aligned}
+$$
+
+即
 
 $$
 \boxed{G_{\mu\nu}=
@@ -394,13 +501,55 @@ $$
 
 ### 逐点的李代数
 
-在 @sec-invariant-speed-field-group 章已建立 1+1 维的情形。推广到 3+1 维，$p$ 点的 boost 生成元 $B_i$、时间平移 $H$、空间平移 $P_i$ 满足（$K$ 视为该点的常数 $K(p)$）：
+@sec-invariant-speed-field-group 章在 1+1 维用向量场逐项算出了括号；本节把同一计算推到 3+1 维。$K$ 视为该点的常数 $K(p)$，生成元取向量场
+
+$$
+H=\partial_t,\qquad
+P_i=\partial_i,\qquad
+B_i=-\frac{x^{i}}{K^{2}}\,\partial_t-t\,\partial_i,
+$$ {#eq-isd-generators}
+
+（$B_i$ 是该章 $B=-\frac{x}{K^{2}}\partial_t-t\,\partial_x$ 的逐方向推广：每个空间方向一个 boost。）括号对试验函数 $f$ 取值。
+
+**$[B_i,H]$。**
+
+$$
+\begin{aligned}
+B_i(Hf)&=-\frac{x^{i}}{K^{2}}\,\partial_t^{2}f-t\,\partial_i\partial_t f,\\
+H(B_if)&=\partial_t\!\Bigl(-\frac{x^{i}}{K^{2}}\,\partial_tf-t\,\partial_if\Bigr)
+=-\frac{x^{i}}{K^{2}}\,\partial_t^{2}f-\partial_if-t\,\partial_t\partial_if,
+\end{aligned}
+$$
+
+两式相减，$[B_i,H]f=\partial_if$，故 $[B_i,H]=P_i$。
+
+**$[B_i,P_j]$。**
+
+$$
+\begin{aligned}
+B_i(P_jf)&=-\frac{x^{i}}{K^{2}}\,\partial_j\partial_tf-t\,\partial_j\partial_if,\\
+P_j(B_if)&=\partial_j\!\Bigl(-\frac{x^{i}}{K^{2}}\,\partial_tf-t\,\partial_if\Bigr)
+=-\frac{\delta_{ij}}{K^{2}}\,\partial_tf-\frac{x^{i}}{K^{2}}\,\partial_j\partial_tf-t\,\partial_j\partial_if,
+\end{aligned}
+$$
+
+两式相减，$[B_i,P_j]f=\frac{\delta_{ij}}{K^{2}}\partial_tf$，故 $[B_i,P_j]=\delta_{ij}\frac{1}{K(p)^{2}}H$。（$K$ 是该点常数，$\partial_j\bigl(x^{i}/K^{2}\bigr)=\delta_{ij}/K^{2}$。）$[H,P_i]=0$：两个常系数平移算子交换，直接验算。
+
+合并写：
 
 $$
 [B_i,H]=P_i,\qquad [B_i,P_j]=\delta_{ij}\frac{1}{K(p)^{2}}\,H,\qquad [H,P_i]=0.
 $$ {#eq-isd-lie}
 
-旋转生成元 $J_{ij}$ 满足的 $\mathfrak{so}(3)$ 括号与 $K$ 无关，不随收缩改变。
+**旋转。** 取 $J_{ij}=x^{i}\partial_j-x^{j}\partial_i$（与 $K$ 无关）。逐项验证的样本：
+
+$$
+[J_{12},P_1]f
+=x^{1}\,\partial_2(\partial_1f)-x^{2}\,\partial_1(\partial_1f)-\partial_1\bigl(x^{1}\partial_2f-x^{2}\partial_1f\bigr)
+=-\partial_2f,
+$$
+
+即 $[J_{12},P_1]=-P_2$；同法得 $[J_{12},B_1]=-B_2$——$B$ 的两段各自按空间指标旋转，$K^{2}$ 是标量不受影响。全部旋转括号归结为 $\mathfrak{so}(3)$ 自身的括号加上 $P_i$、$B_i$ 的三维向量变换规则，结构常数中不含 $K$，不随收缩改变。
 
 **与 $K$ 有关的只有第二个括号的结构常数 $1/K(p)^{2}$**：
 
@@ -553,7 +702,83 @@ $$ {#eq-isd-theta}
 
 注意 $\partial_i\theta$ **随 $t$ 线性增长**——这一项在常数 $K$ 情形中不存在，是全部麻烦的来源。
 
-把 $\partial_\mu\psi=e^{i\theta}\bigl(\partial_\mu\varphi+i(\partial_\mu\theta)\varphi\bigr)$ 逐项代入 @eq-isd-kg。为节省篇幅，只列出最终展开（每一项都来自上述代入，未作省略）：
+**出发点。** @eq-isd-kg 除以 $K^{2}$（与常数情形第三步的出发点同形，便于对照极限）。静态 $K$ 下 $\partial_tK=0$，一阶项只剩空间部分：
+
+$$
+\frac{1}{K^{2}}\Bigl(\partial_t^{2}\psi-\nabla^{2}\psi\Bigr)
+-\frac{2}{K^{3}}\,\partial_iK\,\partial_i\psi
++\frac{m^{2}K^{2}}{\hbar^{2}}\,\psi=0.
+$$ {#eq-isd-nr-start}
+
+**$\theta$ 的二阶空间导数。** 除 @eq-isd-theta 外还需 $\partial_i\partial_i\theta$（对 $i$ 求和）：
+
+$$
+\partial_i\partial_i\theta
+=-\frac{2mt}{\hbar}\,\partial_i\bigl(K\,\partial_iK\bigr)
+=-\frac{2mt}{\hbar}\Bigl(\lvert\nabla K\rvert^{2}+K\,\nabla^{2}K\Bigr).
+$$ {#eq-isd-theta2}
+
+**三个导数恒等式。** 相位求导（$\theta$ 依赖 $\mathbf{x}$，空间导数不再是纯平移）：
+
+$$
+\partial_t^{2}\psi=e^{i\theta}\Bigl(\partial_t^{2}\varphi-\frac{2imK^{2}}{\hbar}\,\partial_t\varphi-\frac{m^{2}K^{4}}{\hbar^{2}}\,\varphi\Bigr),
+$$
+
+（$\partial_t\theta$ 只含 $K(\mathbf{x})$ 与常数，$\partial_t^{2}\theta=0$。）
+
+$$
+\nabla^{2}\psi=e^{i\theta}\Bigl(\nabla^{2}\varphi+2i\,\partial_i\theta\,\partial_i\varphi-\bigl(\partial_i\theta\bigr)\bigl(\partial_i\theta\bigr)\varphi+i\,\bigl(\partial_i\partial_i\theta\bigr)\varphi\Bigr),
+$$
+
+$$
+\partial_i\psi=e^{i\theta}\Bigl(\partial_i\varphi+i\,\partial_i\theta\,\varphi\Bigr).
+$$
+
+**逐段代入 @eq-isd-nr-start。** 约去公共因子 $e^{i\theta}$，三段各给出若干项。时间段给出三项：
+
+$$
+\frac{1}{K^{2}}\partial_t^{2}\varphi
+-\frac{2im}{\hbar}\,\partial_t\varphi
+-\frac{m^{2}K^{2}}{\hbar^{2}}\,\varphi,
+$$
+
+空间段给出四项：
+
+$$
+-\frac{1}{K^{2}}\nabla^{2}\varphi
+-\frac{2i}{K^{2}}\,\partial_i\theta\,\partial_i\varphi
++\frac{1}{K^{2}}\bigl(\partial_i\theta\bigr)\bigl(\partial_i\theta\bigr)\varphi
+-\frac{i}{K^{2}}\,\partial_i\partial_i\theta\,\varphi,
+$$
+
+一阶项给出两项：
+
+$$
+-\frac{2}{K^{3}}\,\partial_iK\,\partial_i\varphi
+-\frac{2i}{K^{3}}\,\partial_iK\,\partial_i\theta\,\varphi,
+$$
+
+质量段一项 $+\frac{m^{2}K^{2}}{\hbar^{2}}\varphi$，与时间段末项精确抵消。
+
+**代入 $\theta$ 的导数并合并。** 由 @eq-isd-theta 与 @eq-isd-theta2：
+
+$$
+-\frac{2i}{K^{2}}\,\partial_i\theta\,\partial_i\varphi
+=+\frac{4imt}{\hbar K}\,\partial_iK\,\partial_i\varphi,
+\qquad
+\frac{1}{K^{2}}\bigl(\partial_i\theta\bigr)\bigl(\partial_i\theta\bigr)
+=\frac{4m^{2}t^{2}}{\hbar^{2}}\,\lvert\nabla K\rvert^{2},
+$$
+
+$$
+-\frac{i}{K^{2}}\,\partial_i\partial_i\theta
+=+\frac{2imt}{\hbar}\Bigl(\frac{\nabla^{2}K}{K}+\frac{\lvert\nabla K\rvert^{2}}{K^{2}}\Bigr),
+\qquad
+-\frac{2i}{K^{3}}\,\partial_iK\,\partial_i\theta
+=+\frac{4imt}{\hbar K^{2}}\,\lvert\nabla K\rvert^{2}.
+$$
+
+末两式中含 $\lvert\nabla K\rvert^{2}\varphi$ 的系数合并：$\frac{2imt}{\hbar K^{2}}+\frac{4imt}{\hbar K^{2}}=\frac{6imt}{\hbar K^{2}}$。汇总：
 
 $$
 \begin{aligned}
@@ -567,8 +792,6 @@ $$
 +\frac{4m^{2}t^{2}}{\hbar^{2}}\lvert\nabla K\rvert^{2}\varphi=0.
 \end{aligned}
 $$ {#eq-isd-nr-field}
-
-其中质量项 $-\frac{m^{2}K^{2}}{\hbar^{2}}\varphi+\frac{m^{2}K^{2}}{\hbar^{2}}\varphi$ 仍旧精确抵消。
 
 **现在考察 $K\to\infty$ 的极限。** 把 $K$ 写成 $K=K_0f(\mathbf{x})$，$K_0\to\infty$。则
 
