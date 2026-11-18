@@ -252,11 +252,11 @@ $$ {#eq-ifg-metric}
 度规分量及其逆：
 
 $$
-g_{00}=K^{2},\qquad g_{ij}=-\delta_{ij},\qquad g_{0i}=0,
+g_{00}=K^{2},\qquad g_{0i}=0,\qquad g_{ij}=-\delta_{ij},
 $$ {#eq-ifg-g-cov}
 
 $$
-g^{00}=\frac{1}{K^{2}},\qquad g^{ij}=-\delta^{ij},\qquad g^{0i}=0.
+g^{00}=\frac{1}{K^{2}},\qquad g^{0i}=0,\qquad g^{ij}=-\delta^{ij}.
 $$ {#eq-ifg-g-contra}
 
 将上述分量写成矩阵形式（按坐标次序 $(t,x^1,x^2,x^3)$ 排列），协变度规及逆度规分别为：
