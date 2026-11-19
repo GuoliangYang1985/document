@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """数学符号体例检查（对应《书籍规范.md》§7.1）。
 
-八查（全部机器可判，输出 0 即通过）：
+十查（全部机器可判，输出 0 即通过）：
   1. \\vec —— nabla 与向量一律不用箭头体例（向量用 \\mathbf，nabla 不加粗）；
   2. \\boldsymbol{\\nabla} —— nabla 不加粗（Latin Modern Math 下该命令无效）；
   3. \\boldsymbol{拉丁字母} —— \\boldsymbol 对拉丁字母不出粗体，属无效写法；
@@ -10,8 +10,9 @@
   6. \\mathrm d —— 须写 \\mathrm{d}；
   7. 数学片段内裸微分 d（dt/ds/dx/dy/dz/d^2/d^3/d^4/d\\tau）—— 须 \\mathrm{d}；
   8. \\Gamma^{a}_{bc} —— Christoffel 须用错位指标 \\Gamma^{a}{}_{bc}；
-  9. 文本模式的 ⟹ ⟸ ⇒ ⇔ → ← ✓ 等符号 —— 正文字体（Latin Modern Roman）无此字形，
-     渲染为空白；改用数学模式 $\\Longrightarrow$ $\\checkmark$ $\\rightarrow$ 等。
+  9. 文本模式的 ⟹ ⟸ ⇒ ⇔ → ← 等符号 —— 正文字体（Latin Modern Roman）无此字形，
+     渲染为空白；改用数学模式 $\\Longrightarrow$ $\\rightarrow$ 等；
+ 10. 对号（$\\checkmark$ / ✓ / ✔ / ☑ / ✗ / ✘）—— 全书不使用，核验结论写成完整陈述句。
 """
 import glob
 import io
@@ -33,7 +34,8 @@ CHECKS = [
 ]
 RX_BARE_D = re.compile(
     r"(?<![\\A-Za-z])d(?=[tsxyz](?![A-Za-z])|\\tau(?![A-Za-z])|\^\{?[234]\}?(?![A-Za-z0-9]))")
-RX_TEXT_SYMBOL = re.compile(r"[⟹⟸⟺⇒⇐⇔→←↔✓✗✔✘]")
+RX_TEXT_SYMBOL = re.compile(r"[⟹⟸⟺⇒⇐⇔→←↔]")
+RX_CHECKMARK = re.compile(r"\\checkmark|[✓✔☑✗✘]")
 RX_CODE = re.compile(r"`[^`]*`")
 
 hits = []
@@ -78,7 +80,7 @@ for fp in FILES:
                 seg = RX_CODE.sub("", seg)
                 for m in RX_TEXT_SYMBOL.finditer(seg):
                     hits.append(
-                        "%s:%d  文本模式符号 %s 缺字（正文字体无此字形），改数学模式 $\\Longrightarrow$/ $\\checkmark$/ $\\rightarrow$  | %s"
+                        "%s:%d  文本模式符号 %s 缺字（正文字体无此字形），改数学模式 $\\Longrightarrow$/ $\\rightarrow$  | %s"
                         % (rel, i, m.group(), seg[max(0, m.start() - 15):m.end() + 12].strip()))
                 if j < 0:
                     break
@@ -90,6 +92,12 @@ for fp in FILES:
                     break
                 depth_math = False
                 s = s[j + 2:] if s.startswith("$$", j) else s[j + 1:]
+
+    # 第十查：对号一律不使用（含数学模式 $\checkmark$）—— 核验结论写成完整陈述句
+    for i, line in enumerate(lines, 1):
+        for m in RX_CHECKMARK.finditer(line):
+            hits.append("%s:%d  不使用对号 %s，核验结论写成完整陈述句  | %s"
+                        % (rel, i, m.group(), line.strip()[:60]))
 
 for h in hits:
     print(h)

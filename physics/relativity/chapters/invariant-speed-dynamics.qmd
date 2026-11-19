@@ -23,21 +23,32 @@ $$ {#eq-tcg-gradient-def}
 
 ## Tetrad 约定与度规 {#sec-isd-metric}
 
-本章改用 tetrad（局部标准正交标架）约定重建度规：先给标架，再写度规分量，最后与前一章的对角约定做一致性检验。
+本章改用 tetrad（局部标准正交标架）约定重建度规：先给标架，再写度规分量，最后把所得二次型与前一章的对角约定作对照。
 
 ### 局部标准正交标架
 
-取局部标架
+::: {#def-isd-tetrad}
+## Tetrad 约定
+在 $3+1$ 维时空上取局部标架
 
 $$
-e^{0}=K\,\mathrm{d}t,\qquad e^{i}=K\,\mathrm{d}x^{i},
+e^{0}=K\,\mathrm{d}t,\qquad e^{i}=K\,\mathrm{d}x^{i}.
 $$ {#eq-isd-tetrad}
 
-即 $K$ 场同时控制局部时间尺度与局部空间尺度——这正是本章与对角约定的分野：对角约定中空间标架是刚性的 $e^{i}=\mathrm{d}x^{i}$。写成 $e^{a}=e^{a}{}_{\mu}\,\mathrm{d}x^{\mu}$，其非零分量为：
+由 $g_{\mu\nu}=e^{a}{}_{\mu}\,e^{b}{}_{\nu}\,\eta_{ab}$，度规的二次型为
+
+$$
+\mathrm{d}s^{2}=K^{2}\,\mathrm{d}t^{2}-K^{2}\delta_{ij}\,\mathrm{d}x^{i}\mathrm{d}x^{j}.
+$$ {#eq-isd-metric-tetrad}
+
+其中 $K=K(t,x^{1},x^{2},x^{3})$ 即恒速场，$\delta_{ij}$ 为欧氏度规分量。@sec-invariant-speed-field-group 章的对角约定取 $g_{ij}=-\delta_{ij}$，空间标架与 $K$ 无关；本约定取 $g_{ij}=-K^{2}\delta_{ij}$，局部时间尺度与局部空间尺度由同一个 $K$ 给出。
+
+把标架写成一般形式 $e^{a}=e^{a}{}_{\mu}\,\mathrm{d}x^{\mu}$，其非零分量为
 
 $$
 e^{0}{}_{0}=K,\qquad e^{i}{}_{j}=K\,\delta^{i}{}_{j},\qquad \text{其余为 }0.
 $$ {#eq-isd-tetrad-components}
+:::
 
 将上述分量写成矩阵形式（行指标为局部平直指标 $a$，列指标为时空坐标 $\mu$），协变标架 $e^{a}{}_{\mu}$ 呈现出纯量缩放的对角结构：
 
@@ -63,7 +74,7 @@ e^{\mu}{}_{a} =
 \end{pmatrix}.
 $$ {#eq-isd-tetrad-inverse}
 
-利用标架重构度规 $g_{\mu\nu} = e^{a}{}_{\mu} e^{b}{}_{\nu} \eta_{ab}$，得到本章的核心度规约定：
+利用标架重构度规 $g_{\mu\nu}=e^{a}{}_{\mu}\,e^{b}{}_{\nu}\,\eta_{ab}$，得到本章的核心度规约定：
 
 $$
 g_{\mu\nu} = K^2 \eta_{\mu\nu} =
@@ -77,7 +88,7 @@ $$ {#eq-isd-metric-matrix}
 
 ### 度规分量
 
-由 $g_{\mu\nu}=e^{a}{}_{\mu}\,e^{b}{}_{\nu}\,\eta_{ab}$：
+由 @eq-isd-metric-tetrad 读出度规张量：
 
 $$
 g_{\mu\nu}=K^{2}\,\eta_{\mu\nu}.
@@ -102,9 +113,15 @@ $$
 \det g=K^{8}\det\eta=-K^{8},\qquad \sqrt{-g}=K^{4}.
 $$ {#eq-isd-det}
 
-### 与前一章的一致性检验
+### 与对角约定的对照
 
-取 $K$ 为常数时，@eq-isd-g 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$，与 @sec-invariant-speed-group 章的 $Q_K=K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$ 一致。$\checkmark$
+取 $K$ 为常数，@eq-isd-metric-tetrad 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$；@sec-invariant-speed-field-group 章对角约定的二次型为 $K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$，即 @sec-invariant-speed-group 章的不变量 $Q_K$。二者相差一次空间坐标重标度。令 $\mathbf{y}:=K\mathbf{x}$，则
+
+$$
+K^{2}\bigl(t^{2}-\lvert\mathbf{x}\rvert^{2}\bigr)=K^{2}t^{2}-\lvert\mathbf{y}\rvert^{2},
+$$
+
+右端即 $Q_K$ 的形式，故常数 $K$ 时二者经这一坐标变换互化：零锥方程由 $t=\lvert\mathbf{x}\rvert$ 变为 $Kt=\lvert\mathbf{y}\rvert$，描述同一个零锥。该重标度只在 $K$ 为常数时是整体线性变换；$K$ 为场时 $K(p)$ 逐点取值，$\mathbf{y}=K(p)\mathbf{x}$ 不再是整体坐标变换，两种约定给出不同的联络与曲率：对角约定为 $R=2\Delta K/K$，本章为 $R=-6\Box_\eta K/K^{3}$。本章以下固定采用 tetrad 约定。
 
 ## Christoffel 符号 {#sec-isd-christoffel}
 
@@ -291,9 +308,9 @@ $$
 =\frac{6\,\bigl(\nabla^{2}K-\partial_t^{2}K\bigr)}{K^{3}}}.
 $$ {#eq-isd-R}
 
-**核验**：符号计算输出为 $\dfrac{6(-\partial_t^{2}K+\partial_x^{2}K+\partial_y^{2}K+\partial_z^{2}K)}{K^{3}}$，与 @eq-isd-R 的差恒为零。$\checkmark$
+**核验**：符号计算输出为 $\dfrac{6(-\partial_t^{2}K+\partial_x^{2}K+\partial_y^{2}K+\partial_z^{2}K)}{K^{3}}$，与 @eq-isd-R 逐项相减，差恒为零。
 
-**自检**：$K$ 为常数 $\Longrightarrow$ $\Box_\eta K=0$ $\Longrightarrow$ $R=0$，平坦。$\checkmark$
+**自检**：$K$ 为常数时 $\Box_\eta K=0$，故 $R=0$，度规平坦。
 
 ## Einstein 张量 {#sec-isd-einstein}
 
@@ -341,7 +358,7 @@ $$
 +\eta_{\mu\nu}\bigl(2\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}\bigr)}.
 $$ {#eq-isd-G-u}
 
-**核验**：符号计算对全部 $16$ 个分量逐一相减，差值恒为零。$\checkmark$
+**核验**：符号计算对全部 $16$ 个分量逐一相减，差值恒为零，故通式与直接展开相符。
 
 ### $G_{00}$ 非零
 
@@ -402,7 +419,7 @@ G_{ij}=
 +\delta_{ij}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$ {#eq-isd-Gij}
 
-**核验**：符号计算输出的 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，与 @eq-isd-G0i 一致。$\checkmark$
+**核验**：符号计算输出的 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，与 @eq-isd-G0i 相符。
 
 ## $G_{00}>0$ 的一个显式例子 {#sec-isd-density}
 
@@ -589,7 +606,7 @@ $$
 \frac{1}{c^{2}}\partial_t^{2}\psi-\nabla^{2}\psi+\frac{m^{2}c^{2}}{\hbar^{2}}\psi=0,
 $$
 
-即标准 Klein–Gordon 方程。$\checkmark$
+即标准 Klein–Gordon 方程。
 
 ### $K$ 为场时的变系数方程
 
@@ -855,10 +872,10 @@ $$
 | 命题 | 依据 |
 |---|---|
 | tetrad 约定给出 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$ | @eq-isd-g |
-| Christoffel 闭式 $\Gamma=\frac1K(\delta\partial K+\delta\partial K-\eta\,\partial K)$ | @eq-isd-gamma，符号核验 OK |
-| Ricci 标量 $R=-6\Box_\eta K/K^{3}$ | @eq-isd-R，符号核验 True |
-| $G_{00}=\dfrac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\dfrac{2\nabla^{2}K}{K}\neq0$ | @eq-isd-G00，符号核验 True |
-| $G_{\mu\nu}$ 通式（$u=\ln K$ 形式） | @eq-isd-G-u，16 个分量核验 OK |
+| Christoffel 闭式 $\Gamma=\frac1K(\delta\partial K+\delta\partial K-\eta\,\partial K)$ | @eq-isd-gamma，逐项核验相符 |
+| Ricci 标量 $R=-6\Box_\eta K/K^{3}$ | @eq-isd-R，符号核验相符 |
+| $G_{00}=\dfrac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\dfrac{2\nabla^{2}K}{K}\neq0$ | @eq-isd-G00，符号核验相符 |
+| $G_{\mu\nu}$ 通式（$u=\ln K$ 形式） | @eq-isd-G-u，16 个分量逐项相符 |
 | 球对称例 $K=K_0+\alpha/r$ 给出 $G_{00}=\dfrac{\alpha^{2}}{r^{2}(K_0r+\alpha)^{2}}>0$ | @eq-isd-density |
 | Weyl 张量 $\equiv0$，Schwarzschild 不在其内 | 共形不变性 |
 | 变系数波动方程为 $\Box_\eta\psi+\frac2K(\partial_{\mu}K)\partial^\mu\psi+\frac{m^2K^4}{\hbar^2}\psi=0$ | @eq-isd-kg |
