@@ -41,7 +41,7 @@ $$
 \mathrm{d}s^{2}=K^{2}\,\mathrm{d}t^{2}-K^{2}\delta_{ij}\,\mathrm{d}x^{i}\mathrm{d}x^{j}.
 $$ {#eq-isd-metric-tetrad}
 
-其中 $K=K(t,x^{1},x^{2},x^{3})$ 即恒速场，$\delta_{ij}$ 为欧氏度规分量。@sec-invariant-speed-field-group 章的对角约定取 $g_{ij}=-\delta_{ij}$，空间标架与 $K$ 无关；本约定取 $g_{ij}=-K^{2}\delta_{ij}$，局部时间尺度与局部空间尺度由同一个 $K$ 给出。
+其中 $K=K(t,x^{1},x^{2},x^{3})$ 即恒速场，$\delta_{ij}$ 为欧氏度规分量。@sec-invariant-speed-field-group 章的对角约定取 $g_{ij}=-\delta_{ij}$，空间标架与 $K$ 无关；本约定取 $g_{ij}=-K^{2}\delta_{ij}$，局部时间尺度与局部空间尺度由同一个 $K$ 给出。两种约定的差别只在这一项。
 
 把标架写成一般形式 $e^{a}=e^{a}{}_{\mu}\,\mathrm{d}x^{\mu}$，其非零分量为
 
@@ -50,7 +50,7 @@ e^{0}{}_{0}=K,\qquad e^{i}{}_{j}=K\,\delta^{i}{}_{j},\qquad \text{其余为 }0.
 $$ {#eq-isd-tetrad-components}
 :::
 
-将上述分量写成矩阵形式（行指标为局部平直指标 $a$，列指标为时空坐标 $\mu$），协变标架 $e^{a}{}_{\mu}$ 呈现出纯量缩放的对角结构：
+把标架分量排成矩阵（行指标为局部平直指标 $a$，列指标为时空坐标 $\mu$），协变标架 $e^{a}{}_{\mu}$ 是 $K$ 乘单位矩阵：
 
 $$
 e^{a}{}_{\mu} =
@@ -74,25 +74,17 @@ e^{\mu}{}_{a} =
 \end{pmatrix}.
 $$ {#eq-isd-tetrad-inverse}
 
-利用标架重构度规 $g_{\mu\nu}=e^{a}{}_{\mu}\,e^{b}{}_{\nu}\,\eta_{ab}$，得到本章的核心度规约定：
+### 度规分量及其逆
+
+由 @eq-isd-metric-tetrad 读出度规张量及其逆：
 
 $$
-g_{\mu\nu} = K^2 \eta_{\mu\nu} =
-\begin{pmatrix}
-K^2 & 0 & 0 & 0 \\
-0 & -K^2 & 0 & 0 \\
-0 & 0 & -K^2 & 0 \\
-0 & 0 & 0 & -K^2
-\end{pmatrix}.
-$$ {#eq-isd-metric-matrix}
-
-### 度规分量
-
-由 @eq-isd-metric-tetrad 读出度规张量：
-
-$$
-g_{\mu\nu}=K^{2}\,\eta_{\mu\nu}.
+g_{\mu\nu}=K^{2}\,\eta_{\mu\nu},
 $$ {#eq-isd-g}
+
+$$
+g^{\mu\nu}=K^{-2}\eta^{\mu\nu}.
+$$ {#eq-isd-ginv}
 
 逐分量写出：
 
@@ -100,18 +92,37 @@ $$
 g_{00}=K^{2},\qquad g_{0i}=0,\qquad g_{ij}=-K^{2}\delta_{ij}.
 $$ {#eq-isd-g-comp}
 
-**空间部分不再是常数**：$g_{ij}=-K^{2}\delta_{ij}$ 随 $K(t,\mathbf{x})$ 变形。这是对 @sec-invariant-speed-field-group 章那个约定的唯一改动。
-
-逆度规与行列式：
-
 $$
-g^{\mu\nu}=K^{-2}\eta^{\mu\nu},\qquad
 g^{00}=\frac{1}{K^{2}},\qquad g^{0i}=0,\qquad g^{ij}=-\frac{1}{K^{2}}\delta^{ij}.
 $$ {#eq-isd-ginv}
+
+按坐标次序 $(t,x^1,x^2,x^3)$ 排列，将上述分量写成矩阵形式，协变度规及逆度规分别为：
+
+$$
+g_{\mu\nu} =
+\begin{pmatrix}
+K^{2} & 0 & 0 & 0 \\
+0 & -K^{2} & 0 & 0 \\
+0 & 0 & -K^{2} & 0 \\
+0 & 0 & 0 & -K^{2}
+\end{pmatrix},
+\qquad
+g^{\mu\nu} =
+\begin{pmatrix}
+\frac{1}{K^{2}} & 0 & 0 & 0 \\
+0 & -\frac{1}{K^{2}} & 0 & 0 \\
+0 & 0 & -\frac{1}{K^{2}} & 0 \\
+0 & 0 & 0 & -\frac{1}{K^{2}}
+\end{pmatrix}.
+$$ {#eq-isd-metric-matrix}
+
+行列式与度规体积元：
 
 $$
 \det g=K^{8}\det\eta=-K^{8},\qquad \sqrt{-g}=K^{4}.
 $$ {#eq-isd-det}
+
+$g_{ij}=-K^{2}\delta_{ij}$ 不再是常数，故 $\partial_\mu g_{ij}=-2K\,\partial_\mu K\,\delta_{ij}$ 与 $\partial_\mu g_{00}=2K\,\partial_\mu K$ 均非零。后续各项计算以此为基础。
 
 ### 与对角约定的对照
 
@@ -486,7 +497,7 @@ $$
 
 ![球对称例子：$K(r)$ 与 $G_{00}(r)$](images/invariant-speed-density.png){#fig-isd-density width=80%}
 
-## 一个必须写明的局限 {#sec-isd-limit}
+## 存在的局限 {#sec-isd-limit}
 
 这一约定下的全部度规共形平坦、Weyl 张量恒为零；本节先证明这一点，再把三个约定并排对照。
 

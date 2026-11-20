@@ -259,7 +259,7 @@ $$
 g^{00}=\frac{1}{K^{2}},\qquad g^{0i}=0,\qquad g^{ij}=-\delta^{ij}.
 $$ {#eq-ifg-g-contra}
 
-将上述分量写成矩阵形式（按坐标次序 $(t,x^1,x^2,x^3)$ 排列），协变度规及逆度规分别为：
+按坐标次序 $(t,x^1,x^2,x^3)$ 排列，将上述分量写成矩阵形式，协变度规及逆度规分别为：
 
 $$
 g_{\mu\nu} =
@@ -280,7 +280,7 @@ g^{\mu\nu} =
 $$ {#eq-ifg-matrices}
 :::
 
-**注意 $g_{ij}=-\delta_{ij}$ 是常数**，故 $\partial_\mu g_{ij}=0$；唯一的非零导数是 $\partial_\mu g_{00}=2K\,\partial_\mu K$。后续各项计算均以此简化为基础。
+$g_{ij}=-\delta_{ij}$ 是常数，故 $\partial_\mu g_{ij}=0$；唯一的非零导数是 $\partial_\mu g_{00}=2K\,\partial_\mu K$。后续各项计算均以此简化为基础。
 
 ### 联络的逐项计算
 
