@@ -395,16 +395,7 @@ $$ {#eq-ifg-christoffel-matrix-k}
 
 **其三，曲率的来源。** 在此框架下，曲率不是独立引入的假设：$R=2\Delta K/K$ 完全由恒速场 $K$ 的空间二阶导数决定，是 $K$ 的空间不均匀性经由联络在几何层面的体现。
 
-### Ricci 张量
-
-由联络分量出发，通过求导与缩并构造黎曼曲率张量及其缩并。Ricci 张量按如下定义式给出：
-
-$$
-R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
--\partial_\nu\Gamma^{\rho}{}_{\rho\sigma}
-+\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{\nu\sigma}
--\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
-$$ {#eq-ifg-ricci-def}
+### 记号约定
 
 下文反复出现仅含空间指标的求和，作如下约定：
 
@@ -426,6 +417,17 @@ $$
 $$ {#eq-ricci-notation-expanded}
 
 其中 $\lvert\nabla K\rvert^2$ 是 $K$ 的空间梯度模方，$\Delta$ 是空间拉普拉斯（Laplacian）算符，$K_0$ 是 $\partial_0K$ 的简写。
+
+### Ricci 张量
+
+由联络分量出发，通过求导与缩并构造黎曼曲率张量及其缩并。Ricci 张量按如下定义式给出：
+
+$$
+R_{\sigma\nu}=\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}
+-\partial_\nu\Gamma^{\rho}{}_{\rho\sigma}
++\Gamma^{\rho}{}_{\rho\lambda}\Gamma^{\lambda}{}_{\nu\sigma}
+-\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\sigma}.
+$$ {#eq-ifg-ricci-def}
 
 将 Ricci 张量定义式中前两项的哑指标全部展开。在诸如 $\partial_\rho\Gamma^{\rho}{}_{\nu\sigma}$ 的通用项中，上下重复的 $\rho$ 为哑指标，按爱因斯坦求和约定遍历四维坐标：
 

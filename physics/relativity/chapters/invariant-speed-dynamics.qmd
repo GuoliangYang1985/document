@@ -1,6 +1,6 @@
 # 恒速群丛的动力学 {#sec-invariant-speed-dynamics}
 
-@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$；本章说明那是约定的结果，不是恒速群丛的固有性质，换用 tetrad 约定后 $G_{00}\neq0$。本章把“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
+@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$，这不是恒速群丛的固有性质。本章把对角约定换成tetrad 约定，使 $K$ 场同时参与时间与空间的局部几何变形，得到 $G_{00}\neq0$，然后严格算出曲率、Einstein 张量与非相对论极限。
 
 ## 记号约定
 
@@ -21,7 +21,7 @@ $$ {#eq-tcg-gradient-def}
 
 ## Tetrad 约定与度规 {#sec-isd-metric}
 
-本章改用 tetrad（局部标准正交标架）约定重建度规：先给标架，再写度规分量，最后把所得二次型与前一章的对角约定作对照。
+本章改用 tetrad（局部标准正交标架）约定重建度规：先给标架，再写度规分量。
 
 ### 局部标准正交标架
 
@@ -122,15 +122,7 @@ $$ {#eq-isd-det}
 
 $g_{ij}=-K^{2}\delta_{ij}$ 不再是常数，故 $\partial_\mu g_{ij}=-2K\,\partial_\mu K\,\delta_{ij}$ 与 $\partial_\mu g_{00}=2K\,\partial_\mu K$ 均非零。后续各项计算以此为基础。
 
-### 与对角约定的对照
-
-取 $K$ 为常数，@eq-isd-metric-tetrad 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$；@sec-invariant-speed-field-group 章对角约定的二次型为 $K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$，即 @sec-invariant-speed-group 章的不变量 $Q_K$。二者相差一次空间坐标重标度。令 $\mathbf{y}:=K\mathbf{x}$，则
-
-$$
-K^{2}\bigl(t^{2}-\lvert\mathbf{x}\rvert^{2}\bigr)=K^{2}t^{2}-\lvert\mathbf{y}\rvert^{2},
-$$
-
-右端即 $Q_K$ 的形式，故常数 $K$ 时二者经这一坐标变换互化：零锥方程由 $t=\lvert\mathbf{x}\rvert$ 变为 $Kt=\lvert\mathbf{y}\rvert$，描述同一个零锥。该重标度只在 $K$ 为常数时是整体线性变换；$K$ 为场时 $K(p)$ 逐点取值，$\mathbf{y}=K(p)\mathbf{x}$ 不再是整体坐标变换，两种约定给出不同的联络与曲率：对角约定为 $R=2\Delta K/K$，本章为 $R=-6\Box_\eta K/K^{3}$。本章以下固定采用 tetrad 约定。
+本章以下固定采用 tetrad 约定；与 @sec-invariant-speed-field-group 章对角约定的对照见 @sec-isd-diag 节。
 
 ## Christoffel 符号 {#sec-isd-christoffel}
 
@@ -496,6 +488,20 @@ $$
 @fig-isd-density 给出 $K(r)$ 与 $G_{00}(r)$ 的图像。
 
 ![球对称例子：$K(r)$ 与 $G_{00}(r)$](images/invariant-speed-density.png){#fig-isd-density width=80%}
+
+## 与对角约定的对照 {#sec-isd-diag}
+
+曲率各闭式已由前几节推出，此处回过头把本章的 tetrad 约定与 @sec-invariant-speed-field-group 章的对角约定作一对照。
+
+取 $K$ 为常数，@eq-isd-metric-tetrad 的二次型为 $K^{2}(t^{2}-\lvert\mathbf{x}\rvert^{2})$；@sec-invariant-speed-field-group 章对角约定的二次型为 $K^{2}t^{2}-\lvert\mathbf{x}\rvert^{2}$，即 @sec-invariant-speed-group 章的不变量 $Q_K$。二者相差一次空间坐标重标度。令 $\mathbf{y}:=K\mathbf{x}$，则
+
+$$
+K^{2}\bigl(t^{2}-\lvert\mathbf{x}\rvert^{2}\bigr)=K^{2}t^{2}-\lvert\mathbf{y}\rvert^{2},
+$$
+
+右端即 $Q_K$ 的形式，故常数 $K$ 时二者经这一坐标变换互化：零锥方程由 $t=\lvert\mathbf{x}\rvert$ 变为 $Kt=\lvert\mathbf{y}\rvert$，描述同一个零锥。该重标度只在 $K$ 为常数时是整体线性变换；$K$ 为场时 $K(p)$ 逐点取值，$\mathbf{y}=K(p)\mathbf{x}$ 不再是整体坐标变换。
+
+两种约定在 $K$ 为场时给出不同的联络与曲率。本章由 @eq-isd-gamma 出发，经 @sec-isd-ricci 节与 @sec-isd-einstein 节的推导得到 @eq-isd-R，即 $R=-6\Box_\eta K/K^{3}$；@sec-invariant-speed-field-group 章的对角约定则给出 $R=2\Delta K/K$。常数 $K$ 时两式一并归零、两种约定由上述重标度互化；$K$ 为场时联络与曲率标量都不相同，坐标互化不再成立。@sec-isd-limit 节另把本章与对角约定、一般度规并排对照，列出 $G_{00}$ 与 Weyl 张量的差别。
 
 ## 闭式的推导结构 {#sec-isd-structure}
 
