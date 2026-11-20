@@ -6,7 +6,7 @@ project:
 book:
   title: "理论测量的边界"
   author: "杨国梁"
-  version: "1.3"
+  version: "1.4"
   downloads: pdf
   chapters:
     - index.qmd

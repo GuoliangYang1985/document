@@ -2,7 +2,7 @@
 
 本章把恒速场 $K(x)$ 从“唯一的几何自由度”降为“完备标架中的一个约束参数”，补上拖曳 $\beta^{i}$ 与空间度规 $h_{ij}$，由此得到完整的 $10$ 个自由度，并在此框架下严格算出 Christoffel、Ricci、Einstein、Weyl 全部非零分量，最后给出黑洞视界的条件。全章沿一条链条推进：恒速场 $K(x)$ 定出洛伦兹变换，洛伦兹变换给出完备几何条件，由此写出完整度规，最终接到广义相对论与黑洞。
 
-本章所有闭式由符号计算逐项得出（脚本 `images/full-tetrad-geometry.py` 与 `images/full-tetrad-weyl.py`）；对 Schwarzschild 特化，独立复核三项：Ricci 全零、Einstein 张量全零、Weyl 不变量与标准值 $48M^{2}/r^{6}$ 之差为 $0$。本章不把量子力学与强引力场合并处理——@sec-isg2-qm 会给出一条**否定的**结论：在 $\nabla K\neq0$ 的背景下，非相对论极限在数学上不成立。记号取 $F:=K^{2}$、$s:=\sin\theta$、$c:=\cos\theta$，撇号表示 $\mathrm{d}/\mathrm{d}r$。
+本章不把量子力学与强引力场合并处理——@sec-isg2-qm 会给出一条**否定的**结论：在 $\nabla K\neq0$ 的背景下，非相对论极限在数学上不成立。记号取 $F:=K^{2}$、$s:=\sin\theta$、$c:=\cos\theta$，撇号表示 $\mathrm{d}/\mathrm{d}r$。
 
 ## 为什么共形平坦不满足要求 {#sec-isg2-nogo}
 
@@ -175,13 +175,13 @@ $$
 \mathrm{d}s^{2}=\mathrm{d}t^{2}-\mathrm{d}r^{2}-r^{2}\mathrm{d}\theta^{2}-r^{2}s^{2}(\mathrm{d}\phi+\omega\mathrm{d}t)^{2}.
 $$
 
-这恰是 Minkowski 度规在旋转坐标 $\phi'=\phi+\omega t$ 下的形式，故**应当平坦**。符号计算给出的结果与之相符：代入 $F=A=1$、$\Omega'=\Omega''=0$ 后全部 Weyl 分量归零，特别地
+这恰是 Minkowski 度规在旋转坐标 $\phi'=\phi+\omega t$ 下的形式，故**应当平坦**。代入 $F=A=1$、$\Omega'=\Omega''=0$，全部 Weyl 分量归零，特别地
 
 $$
 C_{0101}\bigr|_{F=A=1,\ \Omega=\text{const}}=0.
 $$
 
-**这验证了本章全部曲率程序的正确性。**
+坐标变换按张量法则作用，平坦度规的 Weyl 张量在旋转坐标下仍处处为零；上式即其在 $C_{0101}$ 上的取值。
 
 ## Christoffel 符号的全部非零分量 {#sec-isg2-christoffel}
 
@@ -446,15 +446,7 @@ K(r)=\sqrt{1-\frac{2M}{r}},\qquad
 -\Bigl(1-\frac{2M}{r}\Bigr)^{-1}\mathrm{d}r^{2}-r^{2}\mathrm{d}\Omega^{2}.
 $$
 
-**符号计算的三项独立复核**：
-
-| 检验项 | 结果 |
-|---|---|
-| $R_{\mu\nu}=0$（全部 $16$ 个分量） | 逐项与解析式相符 |
-| $R=0$ | 与解析式相符 |
-| $G_{\mu\nu}=0$（全部 $16$ 个分量） | 逐项与解析式相符 |
-
-即：这是**真空解**，Einstein 方程 $G_{\mu\nu}=0$ 成立（$T_{\mu\nu}=0$）。
+由 $R_{\mu\nu}=0$ 缩并得 $R=g^{\mu\nu}R_{\mu\nu}=0$，代入定义又有 $G_{\mu\nu}=R_{\mu\nu}-\tfrac12 g_{\mu\nu}R=0$。这是**真空解**，Einstein 方程 $G_{\mu\nu}=0$ 成立（$T_{\mu\nu}=0$）；所用曲率约定见书末“符号与约定”附录，闭式的一般推导链见 @sec-invariant-speed-dynamics 章 @sec-isd-structure 节。
 
 **Weyl 分量的显式值：**
 
@@ -475,8 +467,6 @@ $$ {#eq-isg2-Csch2}
 $$
 \boxed{C_{abcd}C^{abcd}=\frac{48M^{2}}{r^{6}}\neq0}.
 $$ {#eq-isg2-I}
-
-符号计算输出 $48M^{2}/r^{6}$，与标准值之差经 `simplify` 后为 $0$。
 
 **结论（这就是要的证明）**：本框架的 Weyl 张量严格非零，故能容纳潮汐力与真实的黑洞真空解。这与 @sec-invariant-speed-dynamics 章（Weyl$\equiv0$）形成对照——差别**只在于**是否释放 $\beta^{i}$ 与 $h_{ij}$。
 

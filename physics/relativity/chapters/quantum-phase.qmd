@@ -60,14 +60,7 @@ $$
 
 **证明**：$\sqrt{1-v^{2}/K^{2}}\to1$；$\dfrac{vx}{K^{2}}\to0$。故 $t'\to t$、$x'\to x-vt$。
 
-符号核验（向量场层面）：boost 生成元 $B=-\dfrac{x}{K^{2}}\partial_t-t\partial_x$ 在 $K\to\infty$ 下给出 $(0,-t)$，即 $-t\partial_x$；且 $[B,P]$ 的极限为 $(0,0)$。输出：
-
-```
-K->oo 后 boost 生成元 B = (0, -t)
-K->oo 后 [B,P] = (0, 0)
-```
-
-$\square$
+在向量场层面取 $K\to\infty$，boost 生成元 $B=-\dfrac{x}{K^{2}}\partial_t-t\partial_x$ 趋于 $-t\partial_x$，且 $[B,P]$ 的极限为 $(0,0)$。$\quad\square$
 
 ### 不变量个数从 $1$ 个到 $2$ 个
 
@@ -145,7 +138,7 @@ $$ {#eq-qp-m2}
 
 ### 恒速代数的收缩
 
-恒速群的生成元（向量场）：$H=\partial_t$、$P_i=\partial_i$、$B_i=-\dfrac{x_i}{K^{2}}\partial_t-t\partial_i$。符号核验给出
+恒速群的生成元（向量场）：$H=\partial_t$、$P_i=\partial_i$、$B_i=-\dfrac{x_i}{K^{2}}\partial_t-t\partial_i$。其对易关系为
 
 $$
 [B_i,P_j]=\frac{\delta_{ij}}{K^{2}}H,\qquad [B_i,H]=P_i,\qquad [H,P_i]=0.
@@ -221,7 +214,7 @@ $$
 
 **证明**：第一式用 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 代入 @eq-qp-algK；第二式用 $[mK^{2}\mathbf 1,\cdot]=0$。极限中 $\hat H_{\text{nr}}/K^{2}\to0$。$\quad\square$
 
-**收敛核验**：由 @eq-qp-m2 与 $\hat H=mK^{2}+\hat H_{\text{nr}}$，
+由 @eq-qp-m2 与 $\hat H=mK^{2}+\hat H_{\text{nr}}$，
 
 $$
 \frac{\hat H^{2}}{K^{2}}-\lvert\hat{\mathbf P}\rvert^{2}=m^{2}K^{2}
@@ -229,7 +222,7 @@ $$
 \ \xrightarrow{K\to\infty}\ \boxed{\hat H_{\text{nr}}=\frac{\lvert\hat{\mathbf P}\rvert^{2}}{2m}}.
 $$ {#eq-qp-casimir-contract}
 
-符号核验：代入 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 逐项展开，$\hat H^{2}/K^{2}-\lvert\hat{\mathbf P}\rvert^{2}-m^{2}K^{2}=\hat H_{\text{nr}}^{2}/K^{2}+2m\hat H_{\text{nr}}-\lvert\hat{\mathbf P}\rvert^{2}$；取 $K\to\infty$ 极限得 $2m\hat H_{\text{nr}}-\lvert\hat{\mathbf P}\rvert^{2}$，与 @eq-qp-casimir-contract 一致。
+代入 $\hat H=mK^{2}\mathbf 1+\hat H_{\text{nr}}$ 逐项展开，得 $\hat H^{2}/K^{2}-\lvert\hat{\mathbf P}\rvert^{2}-m^{2}K^{2}=\hat H_{\text{nr}}^{2}/K^{2}+2m\hat H_{\text{nr}}-\lvert\hat{\mathbf P}\rvert^{2}$；取 $K\to\infty$ 极限即得 @eq-qp-casimir-contract。
 
 ### 经典实现已经带着中央荷
 
@@ -319,7 +312,7 @@ $$ {#eq-qp-cocycle}
 
 上边界形如 $c_f(X,Y)=f([X,Y])$（$f$ 为线性泛函）。但 $[\hat B_i,\hat P_j]=0$，故对任何 $f$ 都有 $c_f(\hat B_i,\hat P_j)=f(0)=0\neq\beta\delta_{ij}$。故 $\beta\neq0$ 时该上闭链**不是上边界**，上同调类非平凡。
 
-**符号核验**（$10$ 生成元、$45$ 个待定分量、$120$ 个 Jacobi 方程，逐一解出）：未扩张伽利略代数的 Jacobi 恒等式全部通过；$2$-闭上链空间维数为 $10$，$2$-上边界空间维数为 $9$，故 $H^{2}(\mathfrak{g},\mathbb R)$ 的维数为 $1$；代表元 $c(P_{i},K_{j})=\delta_{ij}$ 满足全部 Jacobi 恒等式；而上边界在 $(K_{i},P_{j})$ 分量上的取值必为 $f([K_{i},P_{j}])=f(0)=0$，恒为零，故该代表元不是上边界。
+由 $10$ 个生成元、$45$ 个待定分量所满足的 $120$ 个 Jacobi 方程解得：未扩张伽利略代数的 Jacobi 恒等式全部成立；$2$-闭上链空间维数为 $10$，$2$-上边界空间维数为 $9$，故 $H^{2}(\mathfrak{g},\mathbb R)$ 的维数为 $1$；代表元 $c(P_{i},K_{j})=\delta_{ij}$ 满足全部 Jacobi 恒等式；而上边界在 $(K_{i},P_{j})$ 分量上的取值必为 $f([K_{i},P_{j}])=f(0)=0$，恒为零，故该代表元不是上边界。
 
 **结论**：伽利略代数的中央扩张不是可以随意添加的附加结构，而是**唯一的、且非加不可的**（前提是质量非零）。$\quad\square$
 
@@ -335,14 +328,14 @@ $$ {#eq-qp-projective}
 
 即**射影表示**。上同调分类（@thm-qp-extension）告诉我们：$\omega$ 的非平凡部分只有一个参数。
 
-**理由二（真表示不够用）**。若坚持 $\omega\equiv1$（真表示），则中央荷 $\hat M=0$，后果有三（见 @sec-qp-ccr）：位置算符无从定义；$\hat H_{\text{nr}}=\lvert\hat{\mathbf P}\rvert^{2}/2\hat M$ 不可定义；且波方程在 boost 下不协变——符号核验给出：去掉相位后
+**理由二（真表示不够用）**。若坚持 $\omega\equiv1$（真表示），则中央荷 $\hat M=0$，后果有三（见 @sec-qp-ccr）：位置算符无从定义；$\hat H_{\text{nr}}=\lvert\hat{\mathbf P}\rvert^{2}/2\hat M$ 不可定义；且波方程在 boost 下不协变——去掉相位后
 
 $$
 i\hbar\partial_t\Phi+\frac{\hbar^{2}}{2m}\partial_x^{2}\Phi
 =i\hbar\partial_t\psi+\frac{\hbar^{2}}{2m}\partial_x^{2}\psi-i\hbar v\,\partial_x\psi.
 $$
 
-残留项 $-i\hbar v\,\partial_x\psi\neq0$（符号核验与此一致）。**故相位不是装饰，而是协变性的必要条件。**
+残留项 $-i\hbar v\,\partial_x\psi\neq0$。**故相位不是装饰，而是协变性的必要条件。**
 
 **理由三（经典理论已经如此）**。@eq-qp-poisson 表明经典实现本身就带 $m$；量子化不能把一个非零的括号变成零。
 
@@ -461,7 +454,7 @@ $$
 
 （用到 $[\hat P_i,\hat P_j]=0$。）$\quad\square$
 
-**显式算子核验**（$\hat B=mx+i\hbar t\partial_x$、$\hat P=-i\hbar\partial_x$、$\hat q=x$，作用于任意波函数 $f$）：直接计算得 $[\hat B,\hat P]f=i\hbar m\,f$、$[\hat q,\hat P]f=i\hbar\,f$，与 @eq-qp-ccr 一致。
+取 $\hat B=mx+i\hbar t\partial_x$、$\hat P=-i\hbar\partial_x$、$\hat q=x$ 作用于任意波函数 $f$，直接计算得 $[\hat B,\hat P]f=i\hbar m\,f$、$[\hat q,\hat P]f=i\hbar\,f$，与 @eq-qp-ccr 一致。
 
 **反之，若中央荷为零**（@thm-qp-contraction 的朴素收缩）：$[\hat B_i,\hat P_j]=0$，于是 $[\hat q_i,\hat P_j]=0$。此时 $\hat q$ 与 $\hat P$ 可同时对角化：**没有不确定性原理，没有不可对易的观测量，量子化无从谈起**。这正是“伽利略代数本身 $[x,p]=0$、无法支撑量子化”的严格形式——缺的不是某个技巧，缺的是中央扩张。
 
@@ -515,7 +508,7 @@ $$
 =-\frac{m^{2}K^{2}}{\hbar^{2}}\varphi+\frac{m^{2}K^{2}}{\hbar^{2}}\varphi=0.
 $$
 
-符号核验：逐项展开与上式之差为零。余下
+逐项展开，与上式之差为零。余下
 
 $$
 \frac{1}{K^{2}}\partial_t^{2}\varphi-\frac{2im}{\hbar}\partial_t\varphi-\nabla^{2}\varphi=0.
@@ -611,7 +604,7 @@ $$
 =e^{\frac{i}{\hbar}S}\Bigl[i\hbar\partial_t\psi+\frac{\hbar^{2}}{2m}\nabla^{2}\psi\Bigr].
 $$
 
-符号核验：方括号内恰为 $i\hbar\partial_t\psi+\dfrac{\hbar^{2}}{2m}\nabla^{2}\psi$；代回原方程后方括号内化为零。
+方括号内恰为 $i\hbar\partial_t\psi+\dfrac{\hbar^{2}}{2m}\nabla^{2}\psi$；代回原方程后方括号内化为零。
 
 **故 $\psi$ 满足方程 $\Leftrightarrow$ $\psi'$ 满足方程**，且相位使 $\lvert\psi'\rvert^{2}=\lvert\psi\rvert^{2}$（Born 规则不变）。去掉相位则残留 $-i\hbar\mathbf v\cdot\nabla\psi\neq0$（见 @sec-qp-part2 理由二）。**中央扩张与协变性是同一件事。**
 
@@ -684,7 +677,7 @@ $$
 \nabla^{2}\theta=\frac{mt}{\hbar}\nabla^{2}\!\bigl(K^{2}\bigr).
 $$
 
-静能项仍逐点相消，但 $\nabla^{2}$ 作用于相位产生**三个残留项**（符号核验：展开与下式之差为零）：
+静能项仍逐点相消，但 $\nabla^{2}$ 作用于相位产生**三个残留项**：
 
 $$
 \boxed{

@@ -77,7 +77,7 @@
 
 上表前两行的 $\tau$ 与 $s$ 是两个记号，定义各自独立，全书不预设二者取同一个值：@sec-twins-noninertial 章、@sec-asymmetric-twins 章，以及 @sec-twins-comparison 章的主体都只使用 @sec-twins-noninertial 章的输入 (M1)—(M4)，只算 $s$——那里出现的比值全是线长增量之比。要不要把 $s$ 接着读作钟的读数，是 @sec-layers 章登记的一项外加输入 (P3b)，本书不采用；另一项更弱的输入 (P3a) 只给出“互为镜像的两段读数相同”，不含数值（见 @sec-twins-comparison 章 @sec-tc-weak）。二者的相等不作为前提使用。
 
-**曲率约定**（各章一致，由 `chapters/images/` 下的符号计算脚本按此式逐项给出）：
+**曲率约定**（各章一致）：
 
 $$
 R_{\mu\nu}
@@ -87,6 +87,8 @@ R_{\mu\nu}
 -\Gamma^{\rho}{}_{\nu\lambda}\Gamma^{\lambda}{}_{\rho\mu},
 \qquad R=g^{\mu\nu}R_{\mu\nu}.
 $$
+
+从这一定义到各章所用闭式的代入步骤：共形度规 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$ 的完整推导与推导链的一般结构见 @sec-invariant-speed-dynamics 章。
 
 ## 电磁场 {#sec-notation-em}
 

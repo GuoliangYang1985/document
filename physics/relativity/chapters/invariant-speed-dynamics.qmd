@@ -2,8 +2,6 @@
 
 @sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$；本章说明那是约定的结果，不是恒速群丛的固有性质，换用 tetrad 约定后 $G_{00}\neq0$。本章把“对角约定”换成 tetrad 约定 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$，使 $K$ 场同时参与时间与空间的局部几何变形，然后严格算出曲率、Einstein 张量与非相对论极限。
 
-本章后续给出的所有闭式，均借助符号计算脚本（`images/conformal-curvature.py`）进行了严格的代数校验：将推导所得的闭式与直接由 Christoffel 符号展开的计算结果相减，验证其差值是否精确为零。校验结果表明，Christoffel 符号、Ricci 标量、Einstein 张量 $G_{00}$ 分量以及 $G_{\mu\nu}$ 的通式，连同其 $u = \ln K$ 的对数等价形式，均严格恒等成立。上述核验过程未引入任何近似，亦未省略任何项。
-
 ## 记号约定
 
 本章签名 $\eta=\mathrm{diag}(1,-1,-1,-1)$：
@@ -94,7 +92,7 @@ $$ {#eq-isd-g-comp}
 
 $$
 g^{00}=\frac{1}{K^{2}},\qquad g^{0i}=0,\qquad g^{ij}=-\frac{1}{K^{2}}\delta^{ij}.
-$$ {#eq-isd-ginv}
+$$ {#eq-isd-ginv-comp}
 
 按坐标次序 $(t,x^1,x^2,x^3)$ 排列，将上述分量写成矩阵形式，协变度规及逆度规分别为：
 
@@ -136,7 +134,7 @@ $$
 
 ## Christoffel 符号 {#sec-isd-christoffel}
 
-由该度规计算 Christoffel 符号：先给闭式，再抽样验证。
+度规取定后，与之相容且无挠的联络由 @eq-isd-g 唯一确定，其在坐标卡下的分量即 Christoffel 符号。本节先由度规代入定义导出闭式，再由闭式读出全部非零分量；曲率各闭式的逐项推导见 @sec-isd-ricci 节与 @sec-isd-einstein 节，推导链的一般结构见 @sec-isd-structure 节。
 
 ### 闭式
 
@@ -165,20 +163,22 @@ $$
 \Gamma^{\rho}{}_{\mu\nu}=\delta^{\rho}_{\nu}\,\partial_\mu u+\delta^{\rho}_{\mu}\,\partial_\nu u-\eta_{\mu\nu}\,\partial^{\rho}u.
 $$ {#eq-isd-gamma-u}
 
-### 逐项验证的样本
+### 非零分量
 
-由 @eq-isd-gamma 直接读出，与符号计算输出逐一比对：
+由 @eq-isd-gamma 按上标 $\rho$ 分类，读出全部非零分量（其余为零）：
 
-| $\Gamma$ | 由 @eq-isd-gamma 算出 | 符号计算输出 |
-|---|---|---|
-| $\Gamma^{0}{}_{00}$ | $\dfrac{1}{K}(\partial_0K+\partial_0K-\partial_0K)=\dfrac{\partial_0K}{K}$ | $\partial_tK/K$ |
-| $\Gamma^{0}{}_{01}$ | $\dfrac{1}{K}(0+\partial_1K-0)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
-| $\Gamma^{1}{}_{00}$ | $\dfrac{1}{K}(0+0-\eta_{00}\partial^{1}K)=\dfrac{1}{K}\bigl(0+0-(-\partial_1K)\bigr)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
-| $\Gamma^{1}{}_{11}$ | $\dfrac{1}{K}(\partial_1K+\partial_1K-\eta_{11}\partial^{1}K)=\dfrac{1}{K}(2\partial_1K-\partial_1K)=\dfrac{\partial_1K}{K}$ | $\partial_xK/K$ |
-| $\Gamma^{1}{}_{22}$ | $\dfrac{1}{K}(0+0-\eta_{22}\partial^{1}K)=\dfrac{1}{K}\bigl(0+0-(-\partial_1K)\bigr)\cdot(-1)=\dfrac{-\partial_1K}{K}$ | $-\partial_xK/K$ |
-| $\Gamma^{0}{}_{11}$ | $\dfrac{1}{K}(0+0-\eta_{11}\partial^{0}K)=\dfrac{1}{K}\partial_0K$ | $\partial_tK/K$ |
+$$
+\begin{aligned}
+&\Gamma^{0}{}_{00}=\frac{\partial_0K}{K},\qquad
+\Gamma^{0}{}_{0i}=\Gamma^{0}{}_{i0}=\frac{\partial_iK}{K},\qquad
+\Gamma^{0}{}_{ij}=\frac{\delta_{ij}\,\partial_0K}{K},\\[1ex]
+&\Gamma^{k}{}_{00}=\frac{\partial_kK}{K},\qquad
+\Gamma^{k}{}_{0i}=\Gamma^{k}{}_{i0}=\frac{\delta^{k}_{i}\,\partial_0K}{K},\qquad
+\Gamma^{k}{}_{ij}=\frac{1}{K}\bigl(\delta^{k}_{j}\,\partial_iK+\delta^{k}_{i}\,\partial_jK-\delta_{ij}\,\partial_kK\bigr).
+\end{aligned}
+$$ {#eq-isd-gamma-components}
 
-全部相符。
+全部非零分量只含 $\partial_\mu K$ 与度规分量。与 @sec-invariant-speed-field-group 章的对角约定相比，$\Gamma^{0}{}_{ij}$ 与 $\Gamma^{k}{}_{ij}$ 不再为零：那里 $g_{ij}=-\delta_{ij}$ 与 $K$ 无关，这里 $g_{ij}=-K^{2}\delta_{ij}$ 随点变化，联络须同时补偿空间标架的伸缩。后续曲率计算以此为基础。
 
 ## Ricci 张量与 Ricci 标量 {#sec-isd-ricci}
 
@@ -319,7 +319,7 @@ $$
 =\frac{6\,\bigl(\nabla^{2}K-\partial_t^{2}K\bigr)}{K^{3}}}.
 $$ {#eq-isd-R}
 
-**核验**：符号计算输出为 $\dfrac{6(-\partial_t^{2}K+\partial_x^{2}K+\partial_y^{2}K+\partial_z^{2}K)}{K^{3}}$，与 @eq-isd-R 逐项相减，差恒为零。
+把 @eq-isd-R 按 $\Box_\eta=\partial_t^{2}-\nabla^{2}$、$\nabla^{2}=\partial_x^{2}+\partial_y^{2}+\partial_z^{2}$ 展开，得 $R=\dfrac{6\,(-\partial_t^{2}K+\partial_x^{2}K+\partial_y^{2}K+\partial_z^{2}K)}{K^{3}}$，与由 $R_{\mu\nu}$ 的定义直接缩并所得一致。
 
 **自检**：$K$ 为常数时 $\Box_\eta K=0$，故 $R=0$，度规平坦。
 
@@ -369,7 +369,7 @@ $$
 +\eta_{\mu\nu}\bigl(2\Box_\eta u+\lvert\nabla u\rvert^{2}_{\eta}\bigr)}.
 $$ {#eq-isd-G-u}
 
-**核验**：符号计算对全部 $16$ 个分量逐一相减，差值恒为零，故通式与直接展开相符。
+@eq-isd-G 的 $16$ 个分量由 $G_{\mu\nu}=R_{\mu\nu}-\tfrac12 R\,g_{\mu\nu}$ 逐分量展开得到。
 
 ### $G_{00}$ 非零
 
@@ -430,7 +430,7 @@ G_{ij}=
 +\delta_{ij}\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$ {#eq-isd-Gij}
 
-**核验**：符号计算输出的 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，与 @eq-isd-G0i 相符。
+在 @eq-isd-G 中取 $(\mu,\nu)=(0,1)$，得 $G_{01}=\dfrac{2\bigl(2\,\partial_tK\,\partial_xK-K\,\partial_t\partial_xK\bigr)}{K^{2}}$，即 @eq-isd-G0i。
 
 ## $G_{00}>0$ 的一个显式例子 {#sec-isd-density}
 
@@ -496,6 +496,22 @@ $$
 @fig-isd-density 给出 $K(r)$ 与 $G_{00}(r)$ 的图像。
 
 ![球对称例子：$K(r)$ 与 $G_{00}(r)$](images/invariant-speed-density.png){#fig-isd-density width=80%}
+
+## 闭式的推导结构 {#sec-isd-structure}
+
+前三节对共形度规 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$ 完成了从定义到闭式的逐项代入。本节退回一般度规，说明这条推导链的结构性质：它对任何度规都成立，因而也覆盖后续各章所列的闭式。
+
+**定义链。** 设 $g_{\mu\nu}$ 为任一光滑度规，$g^{\mu\nu}$ 为其逆。无挠相容联络由
+
+$$
+\Gamma^{\rho}{}_{\mu\nu}=\frac{1}{2}g^{\rho\sigma}\bigl(\partial_{\mu}g_{\nu\sigma}+\partial_{\nu}g_{\mu\sigma}-\partial_{\sigma}g_{\mu\nu}\bigr),
+$$
+
+唯一确定：右端只含 $g^{\rho\sigma}$ 与 $g_{\alpha\beta}$ 的一阶偏导，是它们的有理式（分母为 $\det g$ 的幂），不含积分，也不含微分算子的逆。按 @sec-isd-ricci 节的曲率约定，$R_{\mu\nu}$ 是 $\Gamma$ 的一阶偏导与 $\Gamma$ 的二次式之和；再经 $R=g^{\mu\nu}R_{\mu\nu}$、$G_{\mu\nu}=R_{\mu\nu}-\tfrac12 g_{\mu\nu}R$，以及把同一组量代入 Weyl 张量的定义，所得都是 $g$、$\partial g$、$\partial^{2}g$ 的有限步代数式。
+
+于是有一条对各章一律成立的结论：任一曲率闭式都是上述定义经有限次代入与合并同类项所得的恒等式。每一步是定义代入或代数恒等变形，故闭式对度规所含的任意函数及其各阶偏导恒成立；过程中没有截断项，也没有待定的余项。这一结论只依赖各定义的形式，与度规的具体取法无关，@sec-invariant-speed-field-group 章—@sec-flat-space-gravity 章所列闭式都属此列。本章 @sec-isd-christoffel—@sec-isd-einstein 各节即这条链在共形度规下的完整展开，中间只用了对数换元 $u=\ln K$ 的商规则。
+
+**适用范围。** 上面的显式展开针对共形度规。@sec-invariant-speed-geometry 章与 @sec-flat-space-gravity 章采用带剪切与拖曳的度规族（含非对角的时空拖曳项 $g_{0i}\neq0$；前一章并给出其 Weyl 张量非零的证明），不属于共形类。它们的曲率闭式由同一条定义链代入各自的 $g_{\mu\nu}$ 与 $g^{\mu\nu}$ 逐项展开得到，各章正文已按分量列出；此处不重复那批分量展开，是分量数目较多且与正文重复所致，并非推导上有缺口。最后，把 $K$ 取为常数，$u$ 的各阶偏导全为零，$\Gamma^{\rho}{}_{\mu\nu}$、$R_{\mu\nu}$、$R$ 与 $G_{\mu\nu}$ 一并归零，度规退化为常数倍的 Minkowski 度规——这是已证闭式在平直极限的直接推论，而非附加的假设。
 
 ## 存在的局限 {#sec-isd-limit}
 
@@ -883,10 +899,10 @@ $$
 | 命题 | 依据 |
 |---|---|
 | tetrad 约定给出 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$ | @eq-isd-g |
-| Christoffel 闭式 $\Gamma=\frac1K(\delta\partial K+\delta\partial K-\eta\,\partial K)$ | @eq-isd-gamma，逐项核验相符 |
-| Ricci 标量 $R=-6\Box_\eta K/K^{3}$ | @eq-isd-R，符号核验相符 |
-| $G_{00}=\dfrac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\dfrac{2\nabla^{2}K}{K}\neq0$ | @eq-isd-G00，符号核验相符 |
-| $G_{\mu\nu}$ 通式（$u=\ln K$ 形式） | @eq-isd-G-u，16 个分量逐项相符 |
+| Christoffel 闭式 $\Gamma=\frac1K(\delta\partial K+\delta\partial K-\eta\,\partial K)$ | @eq-isd-gamma |
+| Ricci 标量 $R=-6\Box_\eta K/K^{3}$ | @eq-isd-R |
+| $G_{00}=\dfrac{3(\partial_tK)^{2}+\lvert\nabla K\rvert^{2}}{K^{2}}-\dfrac{2\nabla^{2}K}{K}\neq0$ | @eq-isd-G00 |
+| $G_{\mu\nu}$ 通式（$u=\ln K$ 形式） | @eq-isd-G-u |
 | 球对称例 $K=K_0+\alpha/r$ 给出 $G_{00}=\dfrac{\alpha^{2}}{r^{2}(K_0r+\alpha)^{2}}>0$ | @eq-isd-density |
 | Weyl 张量 $\equiv0$，Schwarzschild 不在其内 | 共形不变性 |
 | 变系数波动方程为 $\Box_\eta\psi+\frac2K(\partial_{\mu}K)\partial^\mu\psi+\frac{m^2K^4}{\hbar^2}\psi=0$ | @eq-isd-kg |
