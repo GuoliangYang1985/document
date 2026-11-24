@@ -1,6 +1,6 @@
 # 恒速群丛的动力学 {#sec-invariant-speed-dynamics}
 
-@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$，这不是恒速群丛的固有性质。本章把对角约定换成tetrad 约定，使 $K$ 场同时参与时间与空间的局部几何变形，得到 $G_{00}\neq0$，然后严格算出曲率、Einstein 张量与非相对论极限。
+@sec-invariant-speed-field-group 章在对角约定下得到 $G_{00}\equiv0$。本章把对角约定换成tetrad 约定，使 $K$ 场同时参与时间与空间的局部几何变形，得到 $G_{00}\neq0$，然后算出曲率、Einstein 张量与非相对论极限。
 
 ## 记号约定
 
@@ -17,11 +17,11 @@ $$
 \lvert\nabla K\rvert^{2}_{\eta}:=\eta^{\mu\nu}\partial_{\mu}K\,\partial_{\nu}K.
 $$ {#eq-tcg-gradient-def}
 
-拉丁指标 $i,j,k$ 取 $1,2,3$（空间），希腊指标取 $0,1,2,3$。
+拉丁指标 $i,j,k$ 取 $1,2,3$，希腊指标取 $0,1,2,3$。
 
 ## Tetrad 约定与度规 {#sec-isd-metric}
 
-本章改用 tetrad（局部标准正交标架）约定重建度规：先给标架，再写度规分量。
+本节使用 tetrad（局部标准正交标架）约定重建度规：先给标架，再写度规分量。
 
 ### 局部标准正交标架
 
@@ -122,11 +122,9 @@ $$ {#eq-isd-det}
 
 $g_{ij}=-K^{2}\delta_{ij}$ 不再是常数，故 $\partial_\mu g_{ij}=-2K\,\partial_\mu K\,\delta_{ij}$ 与 $\partial_\mu g_{00}=2K\,\partial_\mu K$ 均非零。后续各项计算以此为基础。
 
-本章以下固定采用 tetrad 约定；与 @sec-invariant-speed-field-group 章对角约定的对照见 @sec-isd-diag 节。
-
 ## Christoffel 符号 {#sec-isd-christoffel}
 
-度规取定后，与之相容且无挠的联络由 @eq-isd-g 唯一确定，其在坐标卡下的分量即 Christoffel 符号。本节先由度规代入定义导出闭式，再由闭式读出全部非零分量；曲率各闭式的逐项推导见 @sec-isd-ricci 节与 @sec-isd-einstein 节，推导链的一般结构见 @sec-isd-structure 节。
+度规取定后，本节先由度规代入定义导出闭式，再由闭式读出全部非零分量。
 
 ### 闭式
 
@@ -135,7 +133,7 @@ $$
 \bigl(\partial_\mu g_{\nu\sigma}+\partial_\nu g_{\mu\sigma}-\partial_\sigma g_{\mu\nu}\bigr).
 $$
 
-由 @eq-isd-g，$g_{\nu\sigma}=K^{2}\eta_{\nu\sigma}$，故 $\partial_\mu g_{\nu\sigma}=2K(\partial_{\mu}K)\eta_{\nu\sigma}$。代入：
+由 @eq-isd-g 得 $\partial_\mu g_{\nu\sigma}=2K(\partial_{\mu}K)\eta_{\nu\sigma}$。代入：
 
 $$
 \Gamma^{\rho}{}_{\mu\nu}=\frac{1}{2}K^{-2}\eta^{\rho\sigma}\cdot 2K
