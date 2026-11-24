@@ -155,7 +155,56 @@ $$ {#eq-isd-gamma-u}
 
 ### 非零分量
 
-由 @eq-isd-gamma 按上标 $\rho$ 分类，读出全部非零分量（其余为零）：
+把 @eq-isd-gamma 逐项代入（$\delta^{0}_{i}=\delta^{k}_{0}=0$、$\delta^{0}_{0}=\delta^{k}_{i}=1$；$\eta_{00}=1$、$\eta_{0i}=0$、$\eta_{ij}=-\delta_{ij}$；$\partial^{0}K=\partial_0K$、$\partial^{k}K=-\partial_kK$）。
+
+**(a) $\Gamma^{0}{}_{00}$**
+
+$$
+\Gamma^{0}{}_{00}=\frac{1}{K}\bigl(\delta^{0}_{0}\,\partial_0K+\delta^{0}_{0}\,\partial_0K-\eta_{00}\,\partial^{0}K\bigr)
+=\frac{1}{K}\bigl(\partial_0K+\partial_0K-\partial_0K\bigr)
+=\frac{\partial_0K}{K}.
+$$
+
+**(b) $\Gamma^{0}{}_{0i}=\Gamma^{0}{}_{i0}$**
+
+$$
+\Gamma^{0}{}_{0i}=\frac{1}{K}\bigl(\delta^{0}_{i}\,\partial_0K+\delta^{0}_{0}\,\partial_iK-\eta_{0i}\,\partial^{0}K\bigr)
+=\frac{1}{K}\bigl(0+\partial_iK-0\bigr)
+=\frac{\partial_iK}{K}.
+$$
+
+**(c) $\Gamma^{0}{}_{ij}$**
+
+$$
+\Gamma^{0}{}_{ij}=\frac{1}{K}\bigl(\delta^{0}_{j}\,\partial_iK+\delta^{0}_{i}\,\partial_jK-\eta_{ij}\,\partial^{0}K\bigr)
+=\frac{1}{K}\bigl(0+0+\delta_{ij}\,\partial_0K\bigr)
+=\frac{\delta_{ij}\,\partial_0K}{K}.
+$$
+
+**(d) $\Gamma^{k}{}_{00}$**
+
+$$
+\Gamma^{k}{}_{00}=\frac{1}{K}\bigl(\delta^{k}_{0}\,\partial_0K+\delta^{k}_{0}\,\partial_0K-\eta_{00}\,\partial^{k}K\bigr)
+=\frac{1}{K}\bigl(0+0+\partial_kK\bigr)
+=\frac{\partial_kK}{K}.
+$$
+
+**(e) $\Gamma^{k}{}_{0i}=\Gamma^{k}{}_{i0}$**
+
+$$
+\Gamma^{k}{}_{0i}=\frac{1}{K}\bigl(\delta^{k}_{i}\,\partial_0K+\delta^{k}_{0}\,\partial_iK-\eta_{0i}\,\partial^{k}K\bigr)
+=\frac{1}{K}\bigl(\delta^{k}_{i}\,\partial_0K+0-0\bigr)
+=\frac{\delta^{k}_{i}\,\partial_0K}{K}.
+$$
+
+**(f) $\Gamma^{k}{}_{ij}$**
+
+$$
+\Gamma^{k}{}_{ij}=\frac{1}{K}\bigl(\delta^{k}_{j}\,\partial_iK+\delta^{k}_{i}\,\partial_jK-\eta_{ij}\,\partial^{k}K\bigr)
+=\frac{1}{K}\bigl(\delta^{k}_{j}\,\partial_iK+\delta^{k}_{i}\,\partial_jK-\delta_{ij}\,\partial_kK\bigr).
+$$
+
+汇总（其余为零：$\mu\neq\nu$ 且 $\rho\notin\{\mu,\nu\}$ 时 @eq-isd-gamma 的三项全为零）：
 
 $$
 \begin{aligned}
