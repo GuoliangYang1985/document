@@ -147,7 +147,7 @@ $$
 \Bigl(\delta^{\rho}_{\nu}\,\partial_{\mu}K+\delta^{\rho}_{\mu}\,\partial_{\nu}K-\eta_{\mu\nu}\,\partial^{\rho}K\Bigr)}.
 $$ {#eq-isd-gamma}
 
-等价地，用 $u:=\ln K$（$\partial_\mu u=\partial_{\mu}K/K$）：
+等价地，用 $u:=\ln K$，其偏导数满足 $\partial_\mu u=\partial_{\mu}K/K$：
 
 $$
 \Gamma^{\rho}{}_{\mu\nu}=\delta^{\rho}_{\nu}\,\partial_\mu u+\delta^{\rho}_{\mu}\,\partial_\nu u-\eta_{\mu\nu}\,\partial^{\rho}u.
@@ -234,7 +234,7 @@ $$
 
 自由指标改记为 $(\mu,\nu)$。推导用 $u=\ln K$ 形式（@eq-isd-gamma-u），中间式只含 $u$ 的一、二阶导数，最后一步换回 $K$。记号沿用 @eq-tcg-gradient-def（把 $K$ 换成 $u$）：$\lvert\nabla u\rvert^{2}_{\eta}:=\eta^{\mu\nu}\partial_{\mu}u\,\partial_{\nu}u$。
 
-**预备：联络的迹。** 在 @eq-isd-gamma-u 中把 $(\mu,\nu)$ 换成 $(\rho,\mu)$ 并对 $\rho$ 求和：
+在 @eq-isd-gamma-u 中把 $(\mu,\nu)$ 换成 $(\rho,\mu)$ 并对 $\rho$ 求和：
 
 $$
 \Gamma^{\rho}{}_{\rho\mu}
@@ -243,9 +243,9 @@ $$
 =4\,\partial_{\mu}u.
 $$ {#eq-isd-trace}
 
-（第二个等号用 $\delta^{\rho}_{\mu}$ 使求和只剩 $\rho=\mu$、$\delta^{\rho}_{\rho}=4$、$\eta_{\rho\mu}\partial^{\rho}u=\partial_{\mu}u$ 三件事。）
+第二个等号用 $\delta^{\rho}_{\mu}$ 使求和只剩 $\rho=\mu$、$\delta^{\rho}_{\rho}=4$、$\eta_{\rho\mu}\partial^{\rho}u=\partial_{\mu}u$。
 
-**第一项。**
+**第一项，**由 @eq-isd-gamma-u 与 @eq-tcg-dalembert-def：
 
 $$
 \begin{aligned}
@@ -256,9 +256,9 @@ $$
 \end{aligned}
 $$
 
-（$\delta^{\rho}_{\mu}$ 与 $\delta^{\rho}_{\nu}$ 各自把求和压成一项；混合偏导可交换。）
+$\delta^{\rho}_{\mu}$ 与 $\delta^{\rho}_{\nu}$ 各自把求和压成一项；混合偏导可交换。
 
-**第二项。** 由 @eq-isd-trace：
+**第二项，** 由 @eq-isd-trace：
 
 $$
 \partial_\nu\Gamma^{\rho}{}_{\rho\mu}
@@ -266,7 +266,7 @@ $$
 =4\,\partial_{\nu}\partial_{\mu}u.
 $$
 
-**第三项。** 由 @eq-isd-trace 与 @eq-isd-gamma-u：
+**第三项，** 由 @eq-isd-trace 与 @eq-isd-gamma-u：
 
 $$
 \begin{aligned}
@@ -277,15 +277,55 @@ $$
 \end{aligned}
 $$
 
-**第四项。** 两个因子各含三段，乘积共九项。行取 $\Gamma^{\rho}{}_{\nu\lambda}=\delta^{\rho}_{\lambda}\,\partial_{\nu}u+\delta^{\rho}_{\nu}\,\partial_{\lambda}u-\eta_{\nu\lambda}\,\partial^{\rho}u$ 的三段，列取 $\Gamma^{\lambda}{}_{\rho\mu}=\delta^{\lambda}_{\mu}\,\partial_{\rho}u+\delta^{\lambda}_{\rho}\,\partial_{\mu}u-\eta_{\rho\mu}\,\partial^{\lambda}u$ 的三段：
+**第四项，** 两个因子各含三段，乘积共九项。行取 $\Gamma^{\rho}{}_{\nu\lambda}=\delta^{\rho}_{\lambda}\,\partial_{\nu}u+\delta^{\rho}_{\nu}\,\partial_{\lambda}u-\eta_{\nu\lambda}\,\partial^{\rho}u$ 的三段，列取 $\Gamma^{\lambda}{}_{\rho\mu}=\delta^{\lambda}_{\mu}\,\partial_{\rho}u+\delta^{\lambda}_{\rho}\,\partial_{\mu}u-\eta_{\rho\mu}\,\partial^{\lambda}u$ 的三段。乘积中 $\rho$、$\lambda$ 为哑标，缩并只用 $\delta$ 换标与 $\eta$ 的升降。
 
-| 乘积 | $\delta^{\lambda}_{\mu}\,\partial_{\rho}u$ | $\delta^{\lambda}_{\rho}\,\partial_{\mu}u$ | $-\eta_{\rho\mu}\,\partial^{\lambda}u$ |
-|---|---|---|---|
-| $\delta^{\rho}_{\lambda}\,\partial_{\nu}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ | $4\,\partial_{\mu}u\,\partial_{\nu}u$ | $-\partial_{\mu}u\,\partial_{\nu}u$ |
-| $\delta^{\rho}_{\nu}\,\partial_{\lambda}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ | $-\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}$ |
-| $-\eta_{\nu\lambda}\,\partial^{\rho}u$ | $-\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}$ | $-\partial_{\mu}u\,\partial_{\nu}u$ | $\partial_{\mu}u\,\partial_{\nu}u$ |
+以第一段 $\delta^{\rho}_{\lambda}\,\partial_{\nu}u$ 遍乘列三段，$\delta^{\rho}_{\rho}=4$ 为四维迹：
 
-（第一行第二格用 $\delta^{\rho}_{\lambda}\delta^{\lambda}_{\rho}=4$；三个含 $\eta$ 的格子各用一次 $\eta$ 的升降指标。）
+$$
+\begin{aligned}
+\delta^{\rho}_{\lambda}\,\delta^{\lambda}_{\mu}\,\partial_{\nu}u\,\partial_{\rho}u
+&=\delta^{\rho}_{\mu}\,\partial_{\nu}u\,\partial_{\rho}u
+=\partial_{\mu}u\,\partial_{\nu}u\\
+\delta^{\rho}_{\lambda}\,\delta^{\lambda}_{\rho}\,\partial_{\nu}u\,\partial_{\mu}u
+&=\delta^{\rho}_{\rho}\,\partial_{\nu}u\,\partial_{\mu}u
+=4\,\partial_{\mu}u\,\partial_{\nu}u\\
+-\delta^{\rho}_{\lambda}\,\eta_{\rho\mu}\,\partial_{\nu}u\,\partial^{\lambda}u
+&=-\eta_{\rho\mu}\,\partial^{\rho}u\,\partial_{\nu}u
+=-\partial_{\mu}u\,\partial_{\nu}u.
+\end{aligned}
+$$
+
+以第二段 $\delta^{\rho}_{\nu}\,\partial_{\lambda}u$ 遍乘列三段：
+
+$$
+\begin{aligned}
+\delta^{\rho}_{\nu}\,\delta^{\lambda}_{\mu}\,\partial_{\lambda}u\,\partial_{\rho}u
+&=\delta^{\rho}_{\nu}\,\partial_{\mu}u\,\partial_{\rho}u
+=\partial_{\mu}u\,\partial_{\nu}u\\
+\delta^{\rho}_{\nu}\,\delta^{\lambda}_{\rho}\,\partial_{\lambda}u\,\partial_{\mu}u
+&=\delta^{\lambda}_{\nu}\,\partial_{\lambda}u\,\partial_{\mu}u
+=\partial_{\mu}u\,\partial_{\nu}u\\
+-\delta^{\rho}_{\nu}\,\eta_{\rho\mu}\,\partial_{\lambda}u\,\partial^{\lambda}u
+&=-\eta_{\nu\mu}\,\partial_{\lambda}u\,\partial^{\lambda}u
+=-\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}.
+\end{aligned}
+$$
+
+以第三段 $-\eta_{\nu\lambda}\,\partial^{\rho}u$ 遍乘列三段，末式两负号相乘：
+
+$$
+\begin{aligned}
+-\eta_{\nu\lambda}\,\delta^{\lambda}_{\mu}\,\partial^{\rho}u\,\partial_{\rho}u
+&=-\eta_{\nu\mu}\,\partial^{\rho}u\,\partial_{\rho}u
+=-\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}\\
+-\eta_{\nu\lambda}\,\delta^{\lambda}_{\rho}\,\partial^{\rho}u\,\partial_{\mu}u
+&=-\eta_{\nu\rho}\,\partial^{\rho}u\,\partial_{\mu}u
+=-\partial_{\mu}u\,\partial_{\nu}u\\
+\eta_{\nu\lambda}\,\eta_{\rho\mu}\,\partial^{\rho}u\,\partial^{\lambda}u
+&=\eta_{\nu\lambda}\,\partial_{\mu}u\,\partial^{\lambda}u
+=\partial_{\mu}u\,\partial_{\nu}u.
+\end{aligned}
+$$
 
 九项相加：
 
@@ -295,7 +335,7 @@ $$
 =6\,\partial_{\mu}u\,\partial_{\nu}u-2\,\eta_{\mu\nu}\,\lvert\nabla u\rvert^{2}_{\eta}.
 $$
 
-**合并四项。** 第三项取正号、第四项取负号：
+合并四项，第一三项取正号、第二四项取负号：
 
 $$
 \begin{aligned}
@@ -308,7 +348,7 @@ R_{\mu\nu}
 \end{aligned}
 $$ {#eq-isd-ric-u}
 
-**换回 $K$。** 由 $\partial_{\mu}u=\partial_{\mu}K/K$ 与商规则：
+换回 $K$， 由 $\partial_{\mu}u=\partial_{\mu}K/K$ 与商规则：
 
 $$
 \partial_{\mu}\partial_{\nu}u=\frac{\partial_{\mu}\partial_{\nu}K}{K}-\frac{\partial_{\mu}K\,\partial_{\nu}K}{K^{2}},
@@ -318,7 +358,7 @@ $$
 \lvert\nabla u\rvert^{2}_{\eta}=\frac{\lvert\nabla K\rvert^{2}_{\eta}}{K^{2}}.
 $$
 
-（第二式是第一式与 $\eta^{\mu\nu}$ 的缩并。）代入 @eq-isd-ric-u 并逐段合并——$-2\,\partial_{\mu}\partial_{\nu}u$ 的第二段与 $+2\,\partial_{\mu}u\,\partial_{\nu}u$ 合并为 $+4\,\partial_{\mu}K\,\partial_{\nu}K/K^{2}$，$-\eta_{\mu\nu}\Box_\eta u$ 的第二段与 $-2\,\eta_{\mu\nu}\lvert\nabla u\rvert^{2}_{\eta}$ 合并为 $-\eta_{\mu\nu}\lvert\nabla K\rvert^{2}_{\eta}/K^{2}$：
+第二式是第一式与 $\eta^{\mu\nu}$ 的缩并。代入 @eq-isd-ric-u 并逐段合并——$-2\,\partial_{\mu}\partial_{\nu}u$ 的第二段与 $+2\,\partial_{\mu}u\,\partial_{\nu}u$ 合并为 $+4\,\partial_{\mu}K\,\partial_{\nu}K/K^{2}$，$-\eta_{\mu\nu}\Box_\eta u$ 的第二段与 $-2\,\eta_{\mu\nu}\lvert\nabla u\rvert^{2}_{\eta}$ 合并为 $-\eta_{\mu\nu}\lvert\nabla K\rvert^{2}_{\eta}/K^{2}$：
 
 $$
 \boxed{R_{\mu\nu}=

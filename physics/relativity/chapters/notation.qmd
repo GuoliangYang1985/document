@@ -88,7 +88,7 @@ R_{\mu\nu}
 \qquad R=g^{\mu\nu}R_{\mu\nu}.
 $$
 
-从这一定义到各章所用闭式的代入步骤：共形度规 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$ 的完整推导与推导链的一般结构见 @sec-invariant-speed-dynamics 章。
+黎曼张量取 $R^{\lambda}{}_{\sigma\mu\nu}=\partial_{\mu}\Gamma^{\lambda}{}_{\nu\sigma}-\partial_{\nu}\Gamma^{\lambda}{}_{\mu\sigma}+\Gamma^{\lambda}{}_{\mu\kappa}\Gamma^{\kappa}{}_{\nu\sigma}-\Gamma^{\lambda}{}_{\nu\kappa}\Gamma^{\kappa}{}_{\mu\sigma}$（@sec-flat-space-gravity 章同此），$R_{\mu\nu}=R^{\lambda}{}_{\mu\lambda\nu}$ 为其缩并。从这一定义到各章所用闭式的代入步骤：共形度规 $g_{\mu\nu}=K^{2}\eta_{\mu\nu}$ 的完整推导与推导链的一般结构见 @sec-invariant-speed-dynamics 章。
 
 ## 电磁场 {#sec-notation-em}
 
